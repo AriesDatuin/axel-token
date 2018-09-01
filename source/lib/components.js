@@ -2,6 +2,7 @@
 /* ACCORDION
 /* -------------------------------------------------- */
 
+/*removeIf(production)*/
 var comAccordion = function() {
 	"use strict";
 	
@@ -39,12 +40,14 @@ var comAccordion = function() {
 
 	
 }; // END comAccordion
+/*endRemoveIf(production)*/
 
 
 /* -------------------------------------------------- */
 /* BLOG
 /* -------------------------------------------------- */ 
 
+/*removeIf(production)*/
 var comBlog = function() {
 	
 	if ( $$(".page").data("page") === "about" || $$(".page").data("page") === "team"  || $$(".page").data("page") === "press" || $$(".page").data("page") === "careers" ) {
@@ -161,6 +164,7 @@ var comBlog = function() {
 
 	
 }; // END comBlog
+/*endRemoveIf(production)*/
 
 
 /* -------------------------------------------------- */
@@ -833,6 +837,7 @@ var comSlider = function() {
 /* TEAM
 /* -------------------------------------------------- */
 
+/*removeIf(production)*/
 var comTeam = function() {
 	
 	if ( $$(".page").data("page") === "about" || $$(".page").data("page") === "team" ) {
@@ -1238,6 +1243,7 @@ var comTeam = function() {
 	
 	
 }; // END comTeam
+/*endRemoveIf(production)*/
 
 
 /* -------------------------------------------------- */

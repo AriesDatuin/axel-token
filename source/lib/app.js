@@ -20,13 +20,13 @@ var currentURLHash = location.hash;
 
 var components = function() {
 
-	comAccordion();
+	//comAccordion();
 	//comAnimGradient();
-	comBlog();
+	//comBlog();
 	//comCaseStudies();
 	//comParallax();
 	//comParticles();
-	comTeam();
+	//comTeam();
 	//comTilt();
 
 	utilPageVisibility();

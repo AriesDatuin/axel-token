@@ -91,7 +91,7 @@
 
 
 				  "<FORMS>",
-				  "lib/forms/login.js",
+				  ">>>>>lib/forms/login.js",
 
 
 				  "<WRAPPERS>",
