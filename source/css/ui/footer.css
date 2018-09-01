@@ -1,0 +1,103 @@
+/* -------------------------------------------------- */
+/* FOOTER
+/* -------------------------------------------------- */
+
+/* PARENT */
+#footer {
+    z-index: 1;
+	overflow: hidden;
+	display: block;
+}
+
+
+/* CHILD */
+#footer .nav-items {
+    padding-left: 1rem;
+    padding-right: 1rem;
+	width: 100%;
+    /*max-width: 1024px;*/
+}
+
+#footer .nav-items div ul.nav {
+	padding-top: 1rem;
+}
+
+
+/* ITEM */
+#footer .nav-items div ul.nav > li {
+    position: relative;
+	margin: 0.25rem 0 0.25rem 0;
+	padding: 0 0 0 0;
+    /* width: 100%; */
+}
+
+#footer .nav-items div ul.nav > li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: transparent;
+    
+    transition: var(--ease);
+}
+
+#footer .nav-items div ul.nav > li:hover::before {
+    width: 100%;
+}
+
+
+/* TITLE */
+#footer .nav-items div ul.nav > li.title {
+	cursor: default;
+    pointer-events: none;
+	margin: 0 0 0 0;
+	color: var(--dark-grey-color);
+	font-size: 1em;
+	font-weight: bold;
+	
+	user-select: none;
+}
+
+/*
+#footer .nav-items div ul.nav > li.title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 25%;
+    height: 1px;
+    background-color: var(--dark-grey-color);
+}
+*/
+
+/* LINK */
+#footer .nav-items div ul.nav > li > a {
+    /*display: block;*/
+    overflow: hidden;
+	padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+    width: 100%;
+	color: var(--dark-grey-color);
+	font-size: 0.875em;
+	text-align: left;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+    
+	transition: var(--ease);
+}
+
+
+/* HOVER */
+#footer .nav-items div ul.nav > li:hover > a {
+	color: var(--white-color);
+    margin-left: 0;
+}
+
+
+/* ACTIVE */
+#footer .nav-items div ul.nav > li > a.active {
+	cursor: pointer;
+	pointer-events: none;
+	color: var(--primary-color);
+}

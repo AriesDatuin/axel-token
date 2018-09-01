@@ -1,0 +1,41 @@
+{
+	
+	"/": {
+        "name": "AXEL",
+		"short_name": "AXEL",
+		"url": "https://axeltoken.com/",
+		"start_url": "index.html",
+		"display": "standalone",
+		"description": "The native blockchain deployment redefining distributed exchange protocols. The AXEL Blockchain is the next evolution of our platform, with a unique dual-chain architecture and ad-hoc proof of custody consensus.",
+		
+		"favicon-16": "assets/icons/favicon-16x16.png",
+		"favicon-32": "assets/icons/favicon-32x32.png",
+		"safari-pinned-tab": "assets/icons/safari-pinned-tab.svg",
+		
+		"image-icon-150": "assets/icons/mstile-150x150.png",
+		"image-icon-180": "assets/icons/apple-touch-icon.png",
+		"image-icon-192": "assets/icons/android-chrome-192x192.png",
+		"image-icon-512": "assets/icons/android-chrome-512x512.png",
+		
+		"image-profile": "assets/social/profile.png",
+		"image-cover": "assets/social/social.png",
+		
+		"theme": "#fff",
+		"background": "#fff",
+		
+		"twitter": "@axelunlimited",
+		
+		"og-locale": "en_US",
+		"og-locale-alt": "",
+		"og-type": "website",
+		"og-image-width": 1200,
+		"og-image-height": 630,
+		
+		"handheld-friendly": true,
+		"web-app-capable": "no",
+		
+		"itunes-app-id": "708142788",
+		"play-app-id": "com.stoamigo.storage"
+	}
+	
+}

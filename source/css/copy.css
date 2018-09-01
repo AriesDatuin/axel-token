@@ -1,0 +1,351 @@
+/* -------------------------------------------------- */
+/* GENERAL
+/* -------------------------------------------------- */
+
+body {
+	font-family: var(--font-copy);
+}
+
+h1, h2, h3, h4, h5, h6,
+.font-header {
+	font-family: var(--font-header);
+}
+
+.font-subheader {
+	font-family: var(--font-subheader);
+}
+
+.font-heavy {
+    font-family: var(--font-heavy);
+}
+
+.font-paragraph {
+    font-family: var(--font-copy);
+}
+
+.font-alt {
+    font-family: var(--font-alt);
+	font-weight: 500;
+}
+
+blockquote p,
+.font-blockquote {
+    /*font-family: var(--font-copy);*/
+}
+
+cite,
+.font-cite {
+    /*font-family: var(--font-copy);*/
+	font-style: italic;
+}
+
+.font-system {
+    font-family: var(--font-stack);
+}
+
+/*
+a, blockquote, button, div, figcaption, h1, h2, h3, h4, h5, h6, input, label, dl, li, ol, p, select, span, table, textarea {
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	letter-spacing: inherit;
+	text-align: inherit;
+	border: 0;
+	
+	voice-family: female;
+	volume: medium;
+	azimuth: 0;
+	elevation: level;
+	pitch: medium;
+	richness: 50;
+	stress: 25;
+	speak: normal;
+	speak-header: once;
+	speak-numeral: continuous;
+	speak-punctuation: none;
+	speech-rate: medium;
+}
+*/
+
+a,
+button, input, label,
+cite,
+dt, dd, li, ol,
+div, p, span,
+tr, th, td {
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	letter-spacing: inherit;
+	/*text-align: inherit;*/
+	border: 0;
+}
+
+a:not(.button):not([class^="social-icon-"]) {
+	transition: var(--ease);
+}
+
+a:not(.button):not([class^="social-icon-"]):hover {
+	text-decoration: none;
+}
+
+a:not(.button):not([class^="social-icon-"]):focus {
+	text-decoration: none;
+}
+
+a:not(.button):not([class^="social-icon-"]):active {
+	/*color:  var(--accent-color);*/
+	text-decoration: none;
+	background-color: transparent;
+}
+
+
+/* -------------------------------------------------- */
+/* HEADER
+/* -------------------------------------------------- */	
+
+h1, .h1 {
+	font-size: 3.5em;
+}
+
+h2, .h2 {
+	font-size: 3em;
+}
+
+h3, .h3 {
+	font-size: 2.5em;
+}
+
+h4, .h4 {
+	font-size: 2em;
+}
+
+h5, .h5 {
+	font-size: 1.5em;
+}
+
+h6, .h6 {
+	font-size: 1em;
+}
+
+
+/* -------------------------------------------------- */
+/* PARAGRAPHS
+/* -------------------------------------------------- */
+
+.p1 {
+	font-size: 2.125em;
+}
+
+.p2 {
+	font-size: 2em;
+}
+
+.p3 {
+	font-size: 1.875em;
+}
+
+.p4 {
+	font-size: 1.75em;
+}
+
+.p5 {
+	font-size: 1.625em;
+}
+
+.p6 {
+	font-size: 1.5em;
+}
+
+.p7 {
+	font-size: 1.375em;
+}
+
+.p8 {
+	font-size: 1.25em;
+}
+
+.p9 {
+	font-size: 1.125em;
+}
+
+.p10 {
+	font-size: 0.875em;
+}
+
+.small-print {
+	font-size: 0.75em;
+	
+}
+
+
+/* -------------------------------------------------- */
+/* BLOCKQUOTE
+/* -------------------------------------------------- */	
+
+blockquote {
+	position: relative;
+    width: 100%;
+	/*border-left: 1px solid var(--white-color);*/
+}
+
+blockquote::after {
+	content: '\f10d';
+	z-index: auto;
+	opacity: 0.15;
+	position: absolute;
+	top: -0.25em;
+	left: 0.12em;
+	font-size: 4em;
+    font-family: 'FontAwesome';
+}
+
+blockquote p, cite {
+	color: var(--charcoal-color);
+}
+
+
+/* -------------------------------------------------- */
+/* HEADER STYLES
+/* -------------------------------------------------- */
+
+ /* COMMMON */
+.header-accent::after,
+.header-accent-left::after,
+.header-accent-right::after,
+.header-accent-center::after {
+	content: '';
+	display: block;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	width: 8%;
+	height: 4px;
+	border-radius: 0;
+}
+
+.header-accent-left::after {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+.header-accent-right::after {
+	margin-left: auto;
+	margin-right: 0;
+}
+
+.header-accent-center::after {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+/* STYLES */
+.header-accent-quarter::after {
+	width: 25%;
+}
+
+.header-accent-half::after {
+	width: 50%;
+}
+
+.header-accent-three-quarters::after {
+	width: 75%;
+}
+
+.header-accent-full::after {
+	width: 100%;
+}
+
+
+/* COLORS */
+.header-accent-primary::after {
+	background-color: var(--primary-color);
+}
+
+.header-accent-secondary::after {
+	background-color: var(--secondary-color);
+}
+
+.header-accent-accent::after {
+	background-color: var(--accent-color);
+}
+
+.header-wild-accent::after {
+	background-color: var(--wild-color);
+}
+
+
+	/* ////////// */
+	.header-accent-white::after {
+		background-color: var(--white-color);
+	}
+
+	.header-accent-light-grey::after {
+		background-color: var(--light-grey-color);
+	}
+
+	.header-accent-dark-grey::after {
+		background-color: var(--dark-grey-color);
+	}
+
+	.header-accent-charcoal::after {
+		background-color: var(--charcoal-color);
+	}
+
+	.header-accent-black::after {
+		background-color: var(--black-color);
+	}
+
+	.header-accent-ok::after {
+		background-color: var(--ok-color);
+	}
+
+	.header-accent-error::after {
+		background-color: var(--error-color);
+	}
+
+	.header-accent-warning::after {
+		background-color: var(--warning-color);
+	}
+
+
+/* REPONSIVE */
+@media only screen and (min-width: 0) and (max-width: 639px) {
+	
+	.header-accent-left-mobile::after {
+		margin-left: 0;
+		margin-right: auto;
+	}
+
+	.header-accent-right-mobile::after {
+		margin-left: auto;
+		margin-right: 0;
+	}
+
+	.header-accent-center-mobile::after {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+}
+
+@media only screen and (min-width: 0) and (max-width: 1023px) {
+	
+	.header-accent-left-tablet::after {
+		margin-left: 0;
+		margin-right: auto;
+	}
+
+	.header-accent-right-tablet::after {
+		margin-left: auto;
+		margin-right: 0;
+	}
+
+	.header-accent-center-tablet::after {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+}

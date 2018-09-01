@@ -1,0 +1,54 @@
+/* -------------------------------------------------- */
+/* HERO
+/* -------------------------------------------------- */
+
+/* PARENT */
+.hero#welcome {
+	position: relative;
+}
+
+
+/* HEADER */
+.hero#welcome header {
+	/*
+	border-radius: var(--radius-md);
+	background-color: var(--white-color);
+
+	box-shadow: 0 8px 10px 1px rgba(0,0,0,0.06),
+				0 3px 14px 2px rgba(0,0,0,0.04),
+				0 5px 5px -3px rgba(0,0,0,0.08);
+
+	*/
+
+}
+
+
+/* COPY */
+.hero#welcome header h1 {
+	color: var(--primary-color);
+	font-size: 1.75em;
+	line-height: 1.5em;
+}
+
+.hero#welcome header p {
+	color: var(--charcoal-color);
+	font-size: 1.25em;
+	line-height: 1.5em;
+}
+
+
+/* RESPONSIVE */
+@media screen and (min-width: 0) and (max-width: 414px) {
+
+	/* COPY */
+	.hero#welcome header h1 {
+		font-size: 1.5em;
+		line-height: 1.25em;
+	}
+
+	.hero#welcome header p {
+		font-size: 1.25em;
+		line-height: 1.5em;
+	}
+
+}

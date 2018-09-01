@@ -1,0 +1,114 @@
+/* -------------------------------------------------- */
+/* GRADIENT
+/* -------------------------------------------------- */
+
+/* COMMON */
+.button-fx-primary,
+.button-fx-secondary,
+.button-fx-accent,
+.button-fx-wild {
+	position: relative;
+	color: #fff;
+	background-size: 200% auto;
+
+	text-shadow: 1px 1px 0px rgba(175,175,175,1),
+				 0 0 0 rgba(0,0,0,0.5);
+
+	transform: translate3d(0, 0, 0);
+
+	transition: var(--ease);
+ }
+
+
+/* HOVER */
+.button-fx-primary:hover,
+.button-fx-secondary:hover,
+.button-fx-accent:hover,
+.button-fx-wild:hover {
+	color: #fff;
+	background-position: right center;
+
+	text-shadow: 1px 1px 0px rgba(175,175,175,1),
+				 5px 5px 10px rgba(0,0,0,0.25);
+
+	transform: translate3d(-1px, -1px, 2px);
+}
+
+
+/* COLORS */
+.button-fx-primary {
+	background-image: linear-gradient(to right, var(--primary-color) 0%, var(--secondary-color) 100%);
+
+	box-shadow: 0 2px 2px 0 rgba(var(--primary-color-rgb),0.2),
+				0 1px 5px 0 rgba(var(--primary-color-rgb),0.3),
+				0 3px 1px -2px rgba(var(--primary-color-rgb),0.4);
+
+}
+
+.button-fx-secondary {
+	background-image: linear-gradient(to right, var(--secondary-color) 0%, var(--accent-color) 100%);
+
+	box-shadow: 0 2px 2px 0 rgba(var(--secondary-color-rgb),0.2),
+				0 1px 5px 0 rgba(var(--secondary-color-rgb),0.3),
+				0 3px 1px -2px rgba(var(--secondary-color-rgb),0.4);
+}
+
+.button-fx-accent {
+	background-image: linear-gradient(to right, var(--accent-color) 0%, var(--accent-color) 100%);
+
+	box-shadow: 0 2px 2px 0 rgba(var(--accent-color-rgb),0.2),
+				0 1px 5px 0 rgba(var(--accent-color-rgb),0.3),
+				0 3px 1px -2px rgba(var(--accent-color-rgb),0.4);
+}
+
+.button-fx-wild {
+	background-image: linear-gradient(to right, var(--wild-color) 0%, var(--wild-color) 100%);
+
+	box-shadow: 0 2px 2px 0 rgba(var(--wild-color-rgb),0.2),
+				0 1px 5px 0 rgba(var(--wild-color-rgb),0.3),
+				0 3px 1px -2px rgba(var(--wild-color-rgb),0.4);
+}
+
+
+/* HOVER */
+.button-fx-primary:hover {
+	box-shadow: 0 8px 10px 1px rgba(var(--secondary-color-rgb),0.1),
+				0 3px 14px 2px rgba(var(--secondary-color-rgb),0.2),
+				0 5px 5px -3px rgba(var(--secondary-color-rgb),0.3);
+ }
+
+.button-fx-secondary:hover {
+	box-shadow: 0 8px 10px 1px rgba(var(--accent-color-rgb),0.1),
+				0 3px 14px 2px rgba(var(--accent-color-rgb),0.2),
+				0 5px 5px -3px rgba(var(--accent-color-rgb),0.3);
+ }
+
+.button-fx-accent:hover {
+	box-shadow: 0 8px 10px 1px rgba(var(--accent-color-rgb),0.1),
+				0 3px 14px 2px rgba(var(--accent-color-rgb),0.2),
+				0 5px 5px -3px rgba(var(--accent-color-rgb),0.3);
+ }
+
+.button-fx-wild:hover {
+	box-shadow: 0 8px 10px 1px rgba(var(--wild-color-rgb),0.1),
+				0 3px 14px 2px rgba(var(--wild-color-rgb),0.2),
+				0 5px 5px -3px rgba(var(--wild-color-rgb),0.3);
+}
+
+
+/* HELPERS */
+.button-fx-flat {
+	text-shadow: none;
+	box-shadow: none;
+ }
+
+.button-fx-flat:hover {
+	text-shadow: none;
+	box-shadow: none;
+
+	transform: translate3d(0, 0, 0);
+}
+
+.button-fx-static:hover {
+	transform: none;
+}

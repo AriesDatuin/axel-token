@@ -1,0 +1,189 @@
+/* -------------------------------------------------- */
+/* CASE STUDIES
+/* -------------------------------------------------- */
+
+/* PARENT */
+#case-studies {
+	height: 100%;
+}
+
+
+/* -------------------------------------------------- */
+/* PROFILE / USER
+/* -------------------------------------------------- */
+
+/* CHILD / CONTAINER */
+#case-studies .profiles {
+
+}
+
+
+/* COMMON */
+#case-studies .profiles .cell {
+	cursor: pointer;
+    position: relative;
+    margin-bottom: 4rem;
+    border-radius: 10px 10px 10px 10px;
+    background-color: #fff;
+    
+    box-shadow: 0 16px 24px 2px rgba(0,0,0,0.06),
+                0 6px 30px 5px rgba(0,0,0,0.04),
+                0 8px 10px -5px rgba(0,0,0,0.08);
+    
+    /*transition: all 1s ease-in-out;*/
+}
+
+#case-studies .profiles .cell .text-container {
+	overflow: hidden;
+    padding: 4rem 1rem 0 1rem;
+	height: 350px;
+    text-align: center;
+}
+
+
+#case-studies .profiles .cell .text-container h2 {
+	margin: 0 auto 0 auto;
+	width: 200px;
+	text-transform: capitalize;
+}
+
+
+#case-studies .profiles .cell .text-container p {
+    display: block;
+    text-overflow: ellipsis;
+}
+
+
+/* PARENT */
+#case-studies {
+	position: relative;
+}
+
+
+/* CHILD / CONTAINER */
+#case-studies .profiles {
+	position: relative;
+	transition: all 0.5s ease-in-out;
+}
+
+
+/* ITEM: JOSH */
+#case-studies .profiles #josh {
+
+}
+
+#case-studies .profiles #josh svg {
+
+}
+
+#case-studies .profiles #josh .text-container {
+
+}
+
+#case-studies .profiles #josh .text-container h2 {
+
+}
+
+#case-studies .profiles #josh .text-container p {
+
+}
+
+#case-studies .profiles #josh a.button {
+
+}
+
+
+/* PSEUDO */
+.text-truncate-fade::before {
+    content: '';
+	opacity: 1;
+    z-index: 0;
+    pointer-events: none;
+    position: absolute;
+    bottom: 0;
+	left: 0;
+	width: 100%;
+    height: 35%;
+    background: rgba(0,0,0,0);
+    background: linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+	
+	transition: all 0.5s ease-in-out;
+}
+
+
+/* ACTIVE */
+#case-studies .profiles.active {
+	/*flex-flow: nowrap;*/
+}
+
+#case-studies .profiles .cell.active.animate {
+	
+}
+
+#case-studies .profiles .cell.active.animate .text-truncate-fade::before {
+    opacity: 0;
+}
+
+
+/* -------------------------------------------------- */
+/* BIO
+/* -------------------------------------------------- */
+
+/* PARENT */
+#case-study.profile-bio {
+	overflow: hidden;
+	position: absolute;
+	width: 100%;
+	height: auto;
+	background-color: #fff;
+}
+
+
+/* PHOTO */
+#case-study.profile-bio .profile-large-photo {
+	overflow: hidden;
+	position: relative;
+	height: 100%;
+	background-color: #333;
+	background-image: url(../assets/backgrounds/pattern-pixel-transparent.png);
+	background-position: center top;
+	background-repeat: repeat;
+	background-size: contain;
+
+	transform-origin: center;
+}
+
+
+/* COPY */
+#case-study.profile-bio .text-container {
+	overflow: hidden;
+	position: relative;
+	/*padding: 2.5rem 1.5rem 2.5rem 1.5rem;*/
+	height: auto;
+	background-color: transparent;
+}
+
+#case-study.profile-bio .text-container h2 {
+	padding-top: 2rem;
+	text-transform: capitalize;
+
+}
+
+#case-study.profile-bio .text-container p {
+
+}
+
+
+/* RESPONSIVE */
+@media screen and (min-width: 0) and (max-width: 639px) {
+
+	/* PHOTO */
+	#case-study.profile-bio .profile-large-photo {
+		position: relative;
+		height: 400px !important;
+		background-position: center top !important;
+
+	}
+	
+}
+	
