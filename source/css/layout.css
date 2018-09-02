@@ -104,7 +104,7 @@ main section:not(.padding-none) {
 @media screen and (min-width: 0) and (max-width: 414px) {
 
 	/* X */
-	.grid-x.grid-padding-x > .cell:not(.padding-none .padding-left-none .padding-right-none .padding-top-none .padding-bottom-none .padding-lr-none .padding-tb-none) {
+	.grid-x.grid-padding-x > .cell:not(.padding-none):not(.padding-top-none):not(.padding-left-none):not(.padding-bottom-none):not(.padding-right-none):not(.padding-tb-none):not(.padding-lr-none) {
 		padding-top: var(--cell-padding-top-mobile);
 		padding-left: var(--cell-padding-left-mobile);
 		padding-bottom: var(--cell-padding-bottom-mobile);

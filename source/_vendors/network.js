@@ -6,8 +6,7 @@ var $isAndroidCanvas = navigator.userAgent.toLowerCase().indexOf("android") > -1
     $isMobileCanvas = $isAndroidCanvas || $isiPhoneCanvas || $isiPadCanvas || $isiPodCanvas;
 
 
-
-if ( !$isMobileCanvas ) {
+var fxNeuralNetwork = function() {
 
     // canvas settings
     var viewWidth = window.innerWidth,
@@ -42,7 +41,7 @@ if ( !$isMobileCanvas ) {
     function createNodes() {
         var rad = viewWidth * 1 - 10;
 
-        for (var i = 0; i < 20; i++) {
+        for (var i = 0; i < 15; i++) {
             var q = Math.random() * (Math.PI * 2);
             var r = Math.sqrt(Math.random());
             var x = (rad * r) * Math.cos(q) + viewWidth * 0.5;
@@ -124,11 +123,19 @@ if ( !$isMobileCanvas ) {
         },
         draw:function() {
             //ctx.globalAlpha= 0;
-            ctx.strokeStyle = 'rgba(50,0,250,0.75)';
+            ctx.strokeStyle = 'rgba(50,0,250,1)';
             ctx.fillStyle = 'rgba(0,250,200,1)';
             ctx.lineWidth = 0.1;
 
-            ctx.fillRect(this.x, this.y, 1, 1);
+
+
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, 4, 0, 2 * Math.PI);
+            ctx.fill();
+
+
+            //ctx.fillRect(this.x, this.y, 10, 10);
+
 
             for (var i = 0; i < this.connections.length; i++) {
                 ctx.beginPath();
@@ -147,8 +154,8 @@ if ( !$isMobileCanvas ) {
         this.jumps = 0;
         
         var tint = (signalCount % 12) * 30;
-        //var tint = Math.floor(Math.random() * 360);
-        console.log(tint);
+        var tint = Math.floor(Math.random() * 360);
+        //console.log(tint);
         this.style = 'hsl(' + tint + ',100%,50%)';
 
         for (var i = 0; i < start.connections.length; i++) {
@@ -231,7 +238,7 @@ if ( !$isMobileCanvas ) {
             lerp(this.start, this.end, t1, this.p1);
 
             ctx.strokeStyle = this.style;
-            ctx.lineWidth = this.strength * 0.5;
+            ctx.lineWidth = this.strength * 0.4;
             ctx.lineCap = 'round';
             ctx.beginPath();
             ctx.moveTo(this.p0.x, this.p0.y);
@@ -289,5 +296,12 @@ if ( !$isMobileCanvas ) {
             return c/2*(t*t*t + 2) + b;
         }
     };
+
+};
+
+
+if ( !$isMobileCanvas ) {
+
+    fxNeuralNetwork();
 
 }
