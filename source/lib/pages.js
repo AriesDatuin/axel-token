@@ -39,7 +39,7 @@ var pages = function() {
 		/* HERO HEADER INTRO
 		/* -------------------------------------------------- */
 
-		function heroIntro() {
+		var heroIntro = function() {
 
 
 	        var introParent = $$("#welcome"),
