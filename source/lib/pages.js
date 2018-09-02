@@ -82,7 +82,7 @@ var pages = function() {
 	        }
 
 
-		}
+		};
 
 		heroIntro();
 

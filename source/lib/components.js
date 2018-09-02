@@ -825,8 +825,6 @@ var comSlider = function() {
 
 		$$("ol.flickity-page-dots > li.dot").remove();
 
-		console.log($isSmallScreen);
-
 	}
 
 

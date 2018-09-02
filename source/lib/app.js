@@ -34,8 +34,6 @@ var components = function() {
 	
 	animController();
 
-	detectHover();
-
 };
 
 var core = function() {

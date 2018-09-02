@@ -176,39 +176,34 @@ var $isSmallScreen = Modernizr.mq("(min-width: 0) and (max-width: 640px)"),
 /* DETECT TOUCH
 /* -------------------------------------------------- */
 
-function detectHover() {
-    var hasHoverClass = false;
-    var container = document.body;
-    var lastTouchTime = 0;
+if ( $hasTouch ) {
+	
+	console.log("This device is touch enabled and will disable all :hover states.");
 
-    function enableHover() {
-        // filter emulated events coming from touch events
-        if (new Date() - lastTouchTime < 500) return;
-        if (hasHoverClass) return;
+	try {
 
-        container.className += ' hasHover';
-        hasHoverClass = true;
-    }
+		// Prevent exception on browsers not supporting DOM 'styleSheet' properly.
+		for (var si in document.styleSheets) {
+			var styleSheet = document.styleSheets[si];
+			if (!styleSheet.rules) continue;
 
-    function disableHover() {
-        if (!hasHoverClass) return;
+			for (var ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
+				if (!styleSheet.rules[ri].selectorText) continue;
+				if (styleSheet.rules[ri].selectorText.match(":hover")) {
+					
+					styleSheet.deleteRule(ri);
 
-        container.className = container.className.replace(' hasHover', '');
-        hasHoverClass = false;
-    }
+				}
+			}
+		}
 
-    function updateLastTouchTime() {
-        lastTouchTime = new Date();
-    }
+	}
 
-    document.addEventListener('touchstart', updateLastTouchTime, true);
-    document.addEventListener('touchstart', disableHover, true);
-    document.addEventListener('mousemove', enableHover, true);
+	catch (ex) {
 
-    enableHover();
+	}
+
 }
-
-//detectHover();
 
 
 /* -------------------------------------------------- */

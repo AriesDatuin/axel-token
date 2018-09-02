@@ -18,7 +18,7 @@
 	
 	"ga": {
 		"track": true,
-		"url": "axel.org",
+		"url": "axeltoken.com",
 		"uid": "UA-92957315-1",
 		"anonymizeIp": true,
 		"bounceTime": "",
@@ -58,10 +58,17 @@
 		"data": "_data/",
 		"modals": "modals/**/*.{html,hbs,handlebars}",
 		
-		"vendors": "_vendors/vendor.js",
+		"scripts": "_scripts/*.js",
 		"critical": "css/critical.css"
 	},
 	
+	"vendors": {
+		"bundle": "vendor.js",
+		"lint": false,
+
+		"paths": ["_vendors/*.js"]
+	},
+
 	"js": {
 		"bundle": "app.js",
 		"lint": true,

@@ -34,9 +34,9 @@
 
 .fade-bottom::after {
 	bottom: 0;
-	height: 12%;
+	height: 25%;
 	background: rgba(0,0,0,0);
-	background: linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,0.25) 100%);
+	background: linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
 }
 
 

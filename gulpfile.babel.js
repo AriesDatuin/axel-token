@@ -219,9 +219,9 @@ export function sw(done) {
 /* -------------------------------------------------- */
 
 // JS
-export function checkJS() {
+export function checkjs() {
 
-	return gulp.src( config.paths.source + "lib/*.js" ) 
+	return gulp.src(config.paths.source + "lib/*.js")
 			   .pipe(gulpif( config.js.lint, jshint() ))
 			   .pipe(gulpif( config.js.lint, jshint.reporter() ));
 
@@ -229,7 +229,7 @@ export function checkJS() {
 
 
 // CSS
-export function checkCSS() {
+export function checkcss() {
 
 	return gulp.src( config.paths.source + "css/**/*.css" )
 			   .pipe(gulpif( config.css.lint, csslint.formatter() ))
@@ -310,6 +310,7 @@ export function inject(done) {
 /* JS
 /* -------------------------------------------------- */
 
+// CORE
 export function js() {
 
 	console.log("Compiling " + config.js.bundle);
@@ -335,6 +336,38 @@ export function js() {
 			   //.pipe(babel())
 			   .pipe(gulpif( production, uglify(uglifyJSOptions).on("error", gutil.log) ))
 			   .pipe(concat(config.js.bundle))
+			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.write("maps") ))
+			   .pipe(gulp.dest( config.paths.build + "scripts/" ));
+
+}
+
+
+// VENDORS
+export function vendors() {
+
+	console.log("Compiling " + config.vendors.bundle);
+
+
+	// OPTIONS *Note: Leave as-is. These are the recommended values.
+	const uglifyJSOptions = {
+			compress: {
+					   drop_console: true,
+					   dead_code: true
+			},
+			mangle: true,
+			toplevel: false,
+			keep_fnames: false,
+			ie8: false
+	};
+
+
+	// TASK
+	return gulp.src(config.vendors.paths.map( function(base) { return config.paths.source + base } ), {allowEmpty: true} )
+			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.init() ))
+			   //.pipe(modernizr())
+			   //.pipe(babel())
+			   .pipe(gulpif( production, uglify(uglifyJSOptions).on("error", gutil.log) ))
+			   .pipe(concat(config.vendors.bundle))
 			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.write("maps") ))
 			   .pipe(gulp.dest( config.paths.build + "scripts/" ));
 
@@ -450,9 +483,14 @@ export function html() {
 										 tpl: '<base href="%s">'
 								  },
 
-								  vendor: {
-										   src: gulp.src( config.paths.source + config.html.vendors ),
+								  scripts: {
+										   src: gulp.src( config.paths.source + config.html.scripts ),
 										   tpl: "<script>%s</script>"
+										  },
+
+								  vendors: {
+										   src: "scripts/" + config.vendors.bundle,
+										   tpl: '<script src="%s"></script>'
 										  },
 
 								  critical: {
@@ -693,7 +731,8 @@ export function sync() {
 
 
 	// WATCH
-	gulp.watch(config.paths.source + "**/*.js").on("all", js, reload);
+	gulp.watch(config.paths.source + "**/*.js").on("all", vendors, js, reload);
+
 
 	gulp.watch(config.paths.source + "**/*.css").on("all", css);
 
@@ -1418,11 +1457,11 @@ function completed(done) {
 /* -------------------------------------------------- */
 
 // TEST
-gulp.task("test", gulp.series(mode, clear, html, js, css, move, meta, compress, clean, sync));
+gulp.task("test", gulp.series(mode, clear, html, vendors, js, css, move, meta, compress, clean, sync));
 
 
 // BUILD
-gulp.task("build", gulp.series(clear, checkJS, checkCSS, html, js, css, hash, move, compress, analytics, meta, sitemap, sw, clean, preview));
+gulp.task("build", gulp.series(clear, checkjs, checkcss, html, vendors, js, css, hash, move, compress, analytics, meta, sitemap, sw, clean, preview));
 
 
 // DEPLOY
@@ -1437,5 +1476,5 @@ gulp.task("deploy", gulp.series("build", deployinit, awsdeploy, gitdeploy, ftpde
 gulp.task("images", gulp.series(move, assets, compress, clean));
 
 
-// CSS / JS
-gulp.task("scripts", gulp.series(checkJS, checkCSS, js, css, hash, inject));
+// HTML / CSS / JS
+gulp.task("htmlscripts", gulp.series(checkjs, checkcss, html, vendors, js, css, hash, inject));
