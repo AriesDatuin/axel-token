@@ -72,7 +72,6 @@ main section:not(.padding-none) {
 	padding-right: 0;
 }
 
-
 .grid-x.grid-padding-x > .cell.padding-left-none {
 	padding-left: 0;
 }
@@ -261,7 +260,6 @@ main section:not(.padding-none) {
 /* -------------------------------------------------- */
 /* MEDIA OBJECT SECTION
 /* -------------------------------------------------- */
-
 
 /* PARENT */
 .media-object-section {

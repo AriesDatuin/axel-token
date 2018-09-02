@@ -3,11 +3,9 @@
 /* -------------------------------------------------- */
 
 :root {
-
 	font-size: 16px; /* Set a base level 'font-size' for entire document. */
 	letter-spacing: 0; /* Set a base level 'letter-spacing' for entire document. */
 	line-height: 1.5; /* Set a base level unit-less 'line-height' for entire document. */
-
 }
 
 html, body {

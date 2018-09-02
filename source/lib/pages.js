@@ -39,37 +39,55 @@ var pages = function() {
 		/* HERO HEADER INTRO
 		/* -------------------------------------------------- */
 
-        var introParent = $$("#welcome"),
-			introHeader = $$("#welcome header");
-        
-		
-        // SET-UP
-        var heroHeaderSplitText = new SplitText(introHeader.find("h1"), {type: "words, chars, lines"}), 
-            $heroHeaderSplitText = heroHeaderSplitText.words;
-
-        var heroParagraphSplitText = new SplitText(introHeader.find("p"), {type: "words, chars, lines"}), 
-            $heroParagraphSplitText = heroParagraphSplitText.words;
-
-		
-        // ANIMATION
-        var tlHeroHeader = new TimelineMax({paused: true});
-			tlHeroHeader.staggerFrom($heroHeaderSplitText, 0.5, {autoAlpha: 0, y: 5, ease: Power4.easeInOut}, 0.1, "start-=0")
-						.staggerFrom($heroParagraphSplitText, 0.25, {autoAlpha: 0, y: 5, ease: Power4.easeInOut}, 0.05, "-=0.25")
+		function heroIntro() {
 
 
-						.from(introHeader.find(".button"), 0.5, {autoAlpha: 0, ease: Power4.easeOut}, "-=1")
-						.fromTo(introHeader.find("form"), 0.5, {autoAlpha: 0, ease: Power4.easeOut}, {autoAlpha: 1, ease: Power4.easeOut}, "-=0.75");
-        
-		
-		if ( !hero.hasClass("sticky") ) {
+	        var introParent = $$("#welcome"),
+				introHeader = $$("#welcome header");
+	        
 			
-			tlHeroHeader.play().timeScale(1).delay($delayInterval);
-            
-		} else {
+	        // SET-UP
+	        var heroHeaderSplitText = new SplitText(introHeader.find("h1"), {type: "words, chars, lines"}), 
+	            $heroHeaderSplitText = heroHeaderSplitText.words;
+
+	        var heroParagraphSplitText = new SplitText(introHeader.find("p"), {type: "words, chars, lines"}), 
+	            $heroParagraphSplitText = heroParagraphSplitText.words;
+
 			
-			tlHeroHeader.seek("end", false);
-			
-        }
+	        // ANIMATION
+	        var tlHeroHeader = new TimelineMax({paused: true});
+				tlHeroHeader.staggerFrom($heroHeaderSplitText, 0.5, {autoAlpha: 0, y: 5, ease: Power4.easeInOut}, 0.1, "start-=0")
+							.staggerFrom($heroParagraphSplitText, 0.25, {autoAlpha: 0, y: 5, ease: Power4.easeInOut}, 0.05, "-=0.25")
+
+							.from(introHeader.find(".button"), 0.5, {autoAlpha: 0, ease: Power4.easeOut}, "-=1")
+							.fromTo(introHeader.find("form"), 0.5, {autoAlpha: 0, ease: Power4.easeOut}, {autoAlpha: 1, ease: Power4.easeOut}, "-=0.75")
+
+							.add( function() { introHeader.find("h1").addClass("header-accent header-accent-left header-accent-primary"); } );
+
+
+
+			if ( !hero.hasClass("sticky") ) {
+				
+				tlHeroHeader.play().timeScale(1).delay($delayInterval);
+	            
+			} else {
+				
+				tlHeroHeader.seek("end", false);
+				
+	        }
+
+
+		}
+
+		heroIntro();
+
+
+		if ( !$hasTouch ) {
+
+			$$(pageContent).on("resize", _.debounce(heroIntro, $delayInterval));
+
+		}
+
 		
 	}
 
