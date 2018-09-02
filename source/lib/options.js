@@ -94,7 +94,7 @@ $navbarOrder = "right", // Define order of elements: left (logo, navbar menu ite
 
 $navbarItemsPosition = "right", // Define alignment: left, center, right.
 $showNavbarLogoOnSticky = true,
-$showNav = true,
+$showNav = false,
 
 
 $showNavbarLogo = true,

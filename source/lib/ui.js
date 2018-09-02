@@ -257,8 +257,6 @@ var uiCommon = function() {
 
 	closePanel.on("click touchdown", function() {
 		
-		console.log("Test");
-
 		var self = $(this);
 		
 

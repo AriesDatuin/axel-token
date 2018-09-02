@@ -176,7 +176,7 @@ var $isSmallScreen = Modernizr.mq("(min-width: 0) and (max-width: 640px)"),
 /* DETECT TOUCH
 /* -------------------------------------------------- */
 
-function watchForHover() {
+function detectHover() {
     var hasHoverClass = false;
     var container = document.body;
     var lastTouchTime = 0;
@@ -208,7 +208,7 @@ function watchForHover() {
     enableHover();
 }
 
-watchForHover();
+//detectHover();
 
 
 /* -------------------------------------------------- */
