@@ -180,15 +180,15 @@ self.__precacheManifest = [
   },
   {
     "url": "copyright.html",
-    "revision": "82431535d24f7de33205c8eef0a245fe"
+    "revision": "e46e0ce079caa44fdb24458bd27c4f69"
   },
   {
     "url": "error.html",
-    "revision": "376a0942353509058785fd8ea2c606f9"
+    "revision": "ee2670543998db91449794d53012b3fd"
   },
   {
     "url": "eula.html",
-    "revision": "79ceac0fa37f4a2d19e9113d110e9f8a"
+    "revision": "c881bf3031f62054e04f5baa77f5567f"
   },
   {
     "url": "fonts/fontawesome-webfont.eot",
@@ -512,7 +512,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "37b09a604b37568ac49773137308e6a7"
+    "revision": "d6f8f75a792e3edf3c43ee2b81c584a8"
   },
   {
     "url": "modals/press.html",
@@ -536,11 +536,15 @@ self.__precacheManifest = [
   },
   {
     "url": "privacy-bill-of-rights.html",
-    "revision": "8db791adc25b0a52d093b443834729ae"
+    "revision": "f5f3af26b7a7ba20278fec10152c7d20"
   },
   {
     "url": "privacy-policy.html",
-    "revision": "07b3341e26c5b6a6ecf02a1a723545cf"
+    "revision": "79ed9f6cd6d2454f9313297c1a09484f"
+  },
+  {
+    "url": "scripts/app.11f6090422.min.11f6090422.min.11f6090422.min.11f6090422.min.11f6090422.min.11f6090422.min.css",
+    "revision": "11f609042223f1041e80def794ae71c2"
   },
   {
     "url": "scripts/app.11f6090422.min.11f6090422.min.11f6090422.min.11f6090422.min.css",
@@ -551,31 +555,35 @@ self.__precacheManifest = [
     "revision": "11f609042223f1041e80def794ae71c2"
   },
   {
-    "url": "scripts/app.11f6090422.min.css",
-    "revision": "11f609042223f1041e80def794ae71c2"
+    "url": "scripts/app.3e01423199.min.3e01423199.min.3e01423199.min.3e01423199.min.3e01423199.min.3e01423199.min.3e01423199.min.3e01423199.min.3e01423199.min.3e01423199.min.css",
+    "revision": "3e01423199af70c3337692434cdd4a70"
   },
   {
     "url": "scripts/app.3e01423199.min.3e01423199.min.3e01423199.min.3e01423199.min.3e01423199.min.3e01423199.min.3e01423199.min.3e01423199.min.css",
     "revision": "3e01423199af70c3337692434cdd4a70"
   },
   {
-    "url": "scripts/app.3e01423199.min.3e01423199.min.3e01423199.min.3e01423199.min.3e01423199.min.3e01423199.min.css",
-    "revision": "3e01423199af70c3337692434cdd4a70"
+    "url": "scripts/app.4852ea9c25.min.4852ea9c25.min.4852ea9c25.min.4852ea9c25.min.4852ea9c25.min.4852ea9c25.min.4852ea9c25.min.4852ea9c25.min.4852ea9c25.min.js",
+    "revision": "4852ea9c25ba721af256f5714c386a4c"
   },
   {
     "url": "scripts/app.4852ea9c25.min.4852ea9c25.min.4852ea9c25.min.4852ea9c25.min.4852ea9c25.min.4852ea9c25.min.4852ea9c25.min.js",
     "revision": "4852ea9c25ba721af256f5714c386a4c"
   },
   {
-    "url": "scripts/app.4852ea9c25.min.4852ea9c25.min.4852ea9c25.min.4852ea9c25.min.4852ea9c25.min.js",
+    "url": "scripts/app.4852ea9c25.min.4852ea9c25.min.4852ea9c25.min.4852ea9c25.min.js",
     "revision": "4852ea9c25ba721af256f5714c386a4c"
   },
   {
-    "url": "scripts/app.4852ea9c25.min.4852ea9c25.min.js",
-    "revision": "4852ea9c25ba721af256f5714c386a4c"
+    "url": "scripts/app.af3431a068.min.af3431a068.min.af3431a068.min.af3431a068.min.af3431a068.min.af3431a068.min.af3431a068.min.af3431a068.min.af3431a068.min.js",
+    "revision": "af3431a068960f47dcba2f5e7df7a8ab"
   },
   {
-    "url": "scripts/app.af3431a068.min.af3431a068.min.af3431a068.min.af3431a068.min.af3431a068.min.af3431a068.min.af3431a068.min.js",
+    "url": "scripts/app.af3431a068.min.af3431a068.min.af3431a068.min.js",
+    "revision": "af3431a068960f47dcba2f5e7df7a8ab"
+  },
+  {
+    "url": "scripts/app.af3431a068.min.af3431a068.min.js",
     "revision": "af3431a068960f47dcba2f5e7df7a8ab"
   },
   {
@@ -583,11 +591,23 @@ self.__precacheManifest = [
     "revision": "af3431a068960f47dcba2f5e7df7a8ab"
   },
   {
+    "url": "scripts/app.da8c2f7d78.min.css",
+    "revision": "da8c2f7d784f3c67b30cee28f4a7f152"
+  },
+  {
+    "url": "scripts/vendor.697a29f8de.min.697a29f8de.min.697a29f8de.min.697a29f8de.min.697a29f8de.min.697a29f8de.min.697a29f8de.min.697a29f8de.min.697a29f8de.min.js",
+    "revision": "697a29f8de987d856186e4ee353a468b"
+  },
+  {
     "url": "scripts/vendor.697a29f8de.min.697a29f8de.min.697a29f8de.min.697a29f8de.min.697a29f8de.min.697a29f8de.min.697a29f8de.min.js",
     "revision": "697a29f8de987d856186e4ee353a468b"
   },
   {
-    "url": "scripts/vendor.697a29f8de.min.697a29f8de.min.697a29f8de.min.697a29f8de.min.697a29f8de.min.js",
+    "url": "scripts/vendor.697a29f8de.min.697a29f8de.min.697a29f8de.min.697a29f8de.min.js",
+    "revision": "697a29f8de987d856186e4ee353a468b"
+  },
+  {
+    "url": "scripts/vendor.697a29f8de.min.697a29f8de.min.697a29f8de.min.js",
     "revision": "697a29f8de987d856186e4ee353a468b"
   },
   {

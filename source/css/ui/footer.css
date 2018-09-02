@@ -4,8 +4,6 @@
 
 /* PARENT */
 #footer {
-    z-index: 1;
-	overflow: hidden;
 	display: block;
 }
 
