@@ -1477,4 +1477,4 @@ gulp.task("images", gulp.series(move, assets, compress, clean));
 
 
 // HTML / CSS / JS
-gulp.task("htmlscripts", gulp.series(checkjs, checkcss, html, vendors, js, css, hash, inject));
+gulp.task("htmlscripts", gulp.series(checkjs, checkcss, html, vendors, js, css, hash, analytics, meta, sitemap, sw, clean));
