@@ -805,7 +805,7 @@ var comSlider = function() {
 
 	//var sliderTestimonials = $$("#slider-testimonials").flickity({});
 
-	$("#slider-testimonials").on("select.flickity", function() {
+	$$("#slider-testimonials").on("select.flickity", function() {
 
 		TweenMax.to("#slider-testimonials .slider-item.is-selected", 0.75, {scale: 1, ease: Back.easeInOut});
 		TweenMax.to("#slider-testimonials .slider-item:not(.is-selected)", 0.5, {scale: 0.75, ease: Back.easeOut});
