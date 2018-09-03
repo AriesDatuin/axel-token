@@ -115,22 +115,6 @@ self.__precacheManifest = [
     "revision": "696133a38a45311c5ff881ab32a98adc"
   },
   {
-    "url": "assets/logo.png",
-    "revision": "17b8293c1c58d01068867a4cf626131f"
-  },
-  {
-    "url": "assets/logo.webp",
-    "revision": "56e11f84afdbd470e4918b55477f00fa"
-  },
-  {
-    "url": "assets/modal-blockchain.png",
-    "revision": "e988b62e9d6c2e19703f45744180b04d"
-  },
-  {
-    "url": "assets/modal-blockchain.webp",
-    "revision": "e24fc029a7beb4e9cf0067d207fd49fc"
-  },
-  {
     "url": "assets/social/profile.png",
     "revision": "6a3889e53815d0aec8624bd7f55ac01c"
   },
@@ -147,48 +131,16 @@ self.__precacheManifest = [
     "revision": "8a543b55a6afb2d804351af521fbc5fc"
   },
   {
-    "url": "assets/ui-generic-laptop-template-1400.png",
-    "revision": "93e42bc419724f607a075d7895be8f29"
-  },
-  {
-    "url": "assets/ui-generic-laptop-template-1400.webp",
-    "revision": "002d73c48c06851c3c1ce169989bbce5"
-  },
-  {
-    "url": "assets/ui-generic-laptop-template.png",
-    "revision": "b788d17761e3ffda1d8f37b36ffdd129"
-  },
-  {
-    "url": "assets/ui-generic-laptop-template.webp",
-    "revision": "1b4b7c91b875c2cdcb9753ed3b9cdb74"
-  },
-  {
-    "url": "assets/ui-generic-mobile-template.png",
-    "revision": "1177b12ca2a6846f09cd7af44854f2b6"
-  },
-  {
-    "url": "assets/ui-generic-mobile-template.webp",
-    "revision": "8fe366ad0af48002a50d904d31c10694"
-  },
-  {
-    "url": "assets/ui-generic-tablet-template.png",
-    "revision": "73babf7102def64898a868e656bd323a"
-  },
-  {
-    "url": "assets/ui-generic-tablet-template.webp",
-    "revision": "c181c9c240f80ee4efa31e3c77c8597b"
-  },
-  {
     "url": "copyright.html",
-    "revision": "8397a596370f42998f67671baf22c627"
+    "revision": "3be6a41a8ab21bba1e6f2e4d9aaee63c"
   },
   {
     "url": "error.html",
-    "revision": "6d57b5e16bb9229a03b2c02d1bbc8b7d"
+    "revision": "d31ff2c5ebede509223b627a24562e2d"
   },
   {
     "url": "eula.html",
-    "revision": "f9247be16750e84df2320d6ee3fb1e9d"
+    "revision": "686e1c0a0be2d1c8e59ff3f7181a5be4"
   },
   {
     "url": "fonts/fontawesome-webfont.eot",
@@ -468,7 +420,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "5bf00c010e8baade50a5184c0fed10e5"
+    "revision": "f6c0992d5e2f35d46f395e264ea3f361"
   },
   {
     "url": "modals/press.html",
@@ -492,19 +444,19 @@ self.__precacheManifest = [
   },
   {
     "url": "privacy-bill-of-rights.html",
-    "revision": "0ac6d1843c712439c7b12d29cd3c9551"
+    "revision": "bf7e4173833a9fdff8169fa1045335f1"
   },
   {
     "url": "privacy-policy.html",
-    "revision": "7d054c7bb6594896b3833d76911f4bda"
+    "revision": "51da930ee432fff58cdd56d998c40875"
   },
   {
     "url": "scripts/app.20ed1d67a6.min.css",
     "revision": "20ed1d67a60c45c14c334273def2dd76"
   },
   {
-    "url": "scripts/app.4ea1394cbf.min.js",
-    "revision": "4ea1394cbf7ab307f7f09ce88b8a0e00"
+    "url": "scripts/app.7b50d43cc0.min.js",
+    "revision": "7b50d43cc06505eda3a05ce3fa6cff2e"
   },
   {
     "url": "scripts/vendor.2ab28593a6.min.js",

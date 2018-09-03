@@ -176,34 +176,38 @@ var $isSmallScreen = Modernizr.mq("(min-width: 0) and (max-width: 640px)"),
 /* DETECT TOUCH
 /* -------------------------------------------------- */
 
-if ( $hasTouch ) {
-	
-	console.log("This device is touch enabled and will disable all :hover states.");
+var hasTouch = function() {
 
-	try {
+	if ( $hasTouch ) {
+		
+		console.log("This device is touch enabled and will disable all :hover states.");
 
-		// Prevent exception on browsers not supporting DOM 'styleSheet' properly.
-		for (var si in document.styleSheets) {
-			var styleSheet = document.styleSheets[si];
-			if (!styleSheet.rules) continue;
+		try {
 
-			for (var ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
-				if (!styleSheet.rules[ri].selectorText) continue;
-				if (styleSheet.rules[ri].selectorText.match(":hover")) {
-					
-					styleSheet.deleteRule(ri);
+			// Prevent exception on browsers not supporting DOM 'styleSheet' properly.
+			for (var si in document.styleSheets) {
+				var styleSheet = document.styleSheets[si];
+				if (!styleSheet.rules) continue;
 
+				for (var ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
+					if (!styleSheet.rules[ri].selectorText) continue;
+					if (styleSheet.rules[ri].selectorText.match(":hover")) {
+						
+						styleSheet.deleteRule(ri);
+
+					}
 				}
 			}
+
+		}
+
+		catch (ex) {
+
 		}
 
 	}
 
-	catch (ex) {
-
-	}
-
-}
+};
 
 
 /* -------------------------------------------------- */

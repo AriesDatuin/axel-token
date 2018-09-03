@@ -34,6 +34,8 @@ var components = function() {
 	
 	animController();
 
+	hasTouch();
+
 };
 
 var core = function() {
