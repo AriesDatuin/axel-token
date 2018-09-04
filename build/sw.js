@@ -428,15 +428,15 @@ self.__precacheManifest = [
   },
   {
     "url": "modals/story-josh.html",
-    "revision": "b62da3ac9ced7b4e472c4e8ef7ded4dc"
+    "revision": "3040bf338b4ea0f7a08a13253971ed9e"
   },
   {
     "url": "modals/story-shera.html",
-    "revision": "0ab0034e94dd4e08d0db1123d7d55a5d"
+    "revision": "5d5d33f36aa73a756d7b89528002db02"
   },
   {
     "url": "modals/story-tina.html",
-    "revision": "5ccdefa8476bba30ce729d7bd1b22e13"
+    "revision": "02ca906d1592b720c12243b852804c44"
   },
   {
     "url": "modals/whitepaper.html",
