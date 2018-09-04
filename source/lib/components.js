@@ -499,7 +499,7 @@ var comModal = function() {
 
 
 	/* -------------------------------------------------- */
-	/* MODAL
+	/* POPUP
 	/* -------------------------------------------------- */
 
 		//*Note: Same origin policy is in effect using this method. External or third-party links will not load into 'modal-container'.

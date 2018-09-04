@@ -329,7 +329,7 @@ var utilEmergence = function() {
 
 
 /* -------------------------------------------------- */
-/* PAGE VISIBILITY API
+/* PAGE VISIBILITY
 /* -------------------------------------------------- */
 
 var utilPageVisibility = function() {

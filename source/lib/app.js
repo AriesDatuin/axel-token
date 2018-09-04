@@ -39,6 +39,15 @@ var components = function() {
 };
 
 var core = function() {
+	utilAssetObserver();
+	utilDataAttributes();
+	utilEmergence();
+	utilPrint();
+
+	comCaseStudies();
+	comModal();
+	comSlider();
+
 	uiInit();
 	uiCommon();
 	uiLinkDelegation();
@@ -47,15 +56,6 @@ var core = function() {
 	uiNav();
 	uiButtons();
 	uiRelayout();
-
-	comCaseStudies();
-	comModal();
-	comSlider();
-
-	utilAssetObserver();
-	utilDataAttributes();
-	utilEmergence();
-	utilPrint();
 	
 	//hashNav();
 	pages();

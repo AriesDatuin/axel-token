@@ -7,7 +7,6 @@
 		"serviceworker": true,
 		"appBanner": false,
 		"sourcemaps": false,
-		"jsAttribute": "defer",
 		"previewURL": "index.html"
 	},
 	
@@ -39,7 +38,7 @@
 	},
 	
 	"images": {
-		"paths": "images/",
+		"paths": "assets/",
 		"optimizationLevel": 5,
 		"interlaced": true,
 		"progressive": true,
@@ -56,15 +55,17 @@
 		"partials": "_partials/",
 		"helpers": "_helpers/",
 		"data": "_data/",
-		"modals": "modals/**/*.{html,hbs,handlebars}",
+		"modals": "_modals/**/*.{html,hbs,handlebars}",
 		
 		"scripts": "_scripts/*.js",
 		"critical": "css/critical.css"
 	},
 	
 	"vendors": {
+		"useVendorScripts": false,
 		"bundle": "vendor.js",
 		"lint": false,
+		"jsAttribute": "async",
 
 		"paths": ["_vendors/*.js"]
 	},
@@ -72,6 +73,7 @@
 	"js": {
 		"bundle": "app.js",
 		"lint": true,
+		"jsAttribute": "defer",
 		
 		"paths": ["<JQUERY>",
 				  "lib/jquery/jquery.js",
@@ -128,12 +130,12 @@
 				  ">>>>>lib/assets/granim.js",
 				  ">>>>>lib/particles/particles.core.js",
 				  ">>>>>lib/particles/particles.app.js",
+				  "_vendors/network.js",
 
 
 				  "<ELEMENT MANIPULATION>",
 				  ">>>>>lib/assets/adaptive-background.js",
 				  "lib/assets/duotone.js",
-				  ">>>>>lib/assets/fx.text.3d.js",
 				  ">>>>>lib/assets/tilt.js",
 
 
@@ -206,7 +208,6 @@
 				  ">>>>>lib/languages/en-strings.js",
 				  ">>>>>lib/languages/es-strings.js",
 				  ">>>>>lib/language.js",
-				  "lib/text.js",
 				  "lib/utilities.js",
 				  "lib/components.js",
 				  "lib/ui.js",

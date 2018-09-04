@@ -4,7 +4,7 @@
 
 var uiInit = function() {
 	"use strict";
-	//console.log("Initializing core UI.");
+	//console.log("Initializing core UI...);
 	
 	/* -------------------------------------------------- */
 	/* CACHE SELECTORS
@@ -242,7 +242,7 @@ var uiInit = function() {
 
 var uiCommon = function() {
 	"use strict";
-	//console.log("Initializing core UI.");
+	//console.log("Initializing uiCommon...");
 	
 	/* -------------------------------------------------- */
 	/* CACHE SELECTORS
@@ -322,14 +322,14 @@ var uiCommon = function() {
 
 var uiLinkDelegation = function() {
 	"use strict";
-	//console.log("Initializing uiLinkDelegation.");
+	//console.log("Initializing uiLinkDelegation...");
 	
 	/* -------------------------------------------------- */
 	/* CACHE SELECTORS
 	/* -------------------------------------------------- */
 	
 	var	navPreviousPage = $$(".previous-page"),
-		navLink = $$("a").not('[target="_blank"]').not(".dropdown").not(".external").not(".prevent-default").not(".popup").not(navPreviousPage).not(".scroll-to");
+		navLink = $$("a").not('[target="_blank"]').not(".dropdown").not(".external").not(".prevent-default").not(navPreviousPage).not(".scroll-to");
 	
 	
 	/* -------------------------------------------------- */
@@ -505,7 +505,7 @@ var uiLinkDelegation = function() {
 	*/
 	
 	
-}; // END uiNav
+}; // END uiLinkDelegation
 
 
 /* -------------------------------------------------- */
@@ -514,7 +514,7 @@ var uiLinkDelegation = function() {
 
 var uiScrollEvents = function() {
     "use strict";
-	//console.log("Initializing uiScrollEvents");
+	//console.log("Initializing uiScrollEvents...");
 	
 	/* -------------------------------------------------- */
 	/* CACHE SELECTORS
@@ -780,7 +780,7 @@ var uiScrollEvents = function() {
 
 var uiSmoothScroll = function() {
 	"use strict";
-	//console.log("Initializing uiSmoothScroll");
+	//console.log("Initializing uiSmoothScroll...");
 
 	/* -------------------------------------------------- */
 	/* CACHE SELECTORS
@@ -908,7 +908,7 @@ var uiSmoothScroll = function() {
 
 var uiNav = function() {
 	"use strict";
-	//console.log("Initializing uiCustom");
+	//console.log("Initializing uiNav...");
 
 	/* -------------------------------------------------- */
 	/* CACHE SELECTORS
@@ -1174,7 +1174,7 @@ var uiNav = function() {
 	});
 
 
-}; // END uiCustom
+}; // END uiNav
 
 
 /* -------------------------------------------------- */
@@ -1183,7 +1183,7 @@ var uiNav = function() {
 
 var uiButtons = function() {
 	"use strict";
-	//console.log("Initializing uiCustom");
+	//console.log("Initializing uButtons...");
 	
 	/* -------------------------------------------------- */
 	/* CACHE SELECTORS
@@ -1283,7 +1283,7 @@ var uiButtons = function() {
 	}
 	
 	
-}; // END uiCustom
+}; // END uiButtons
 
 /* -------------------------------------------------- */
 /* UI LAYOUT
@@ -1291,18 +1291,13 @@ var uiButtons = function() {
 
 var uiRelayout = function() {  
 	"use strict";
-	//console.log("Initializing uiRelayout");
+	//console.log("Initializing uiRelayout...");
 
 	/* -------------------------------------------------- */
 	/* CACHE SELECTORS
 	/* -------------------------------------------------- */
 	
-	var	stripe = $$(".stripe"),
-		stripeTop = $$(".stripe.stripe-top"),
-		stripeBottom = $$(".stripe.stripe-bottom"),
-		stripeCenter = $$(".stripe.stripe-center"),
-	
-		menubarLogo = $$(".menubar .logo"),
+	var	menubarLogo = $$(".menubar .logo"),
 		menubarCallout = $$(".menubar .callout"),
 		menubarNavToggleLabel = $$(".menubar .nav-toggle-label"),
 		menubarNavToggle = $$(".menubar .nav-toggle");
@@ -1317,33 +1312,6 @@ var uiRelayout = function() {
 
 	// Reset '.height-vh-full' class.
 	//$(".height-vh-full").css({"height" : "100vh"});
-
-	// Recalculate '.stripe' elements.
-	stripeTop.css({"height" : pageContent.innerHeight / 2 + "px",
-				   "top" : - pageContent.innerHeight / 3 + "px"});
-
-
-	//$(".stripe.stripe-center").css({"height" : pageContent.innerHeight / 2 + "px"});
-
-
-	stripeBottom.css({"height" : pageContent.innerHeight / 2 + "px",
-					  "bottom" : - pageContent.innerHeight / 3 + "px"});
-
-
-	if ( $isMobile ) {
-		//console.log("Mobile");
-		
-		stripeTop.css({"height" : pageContent.innerHeight / 2 + "px",
-					   "top" : - pageContent.innerHeight / 4 + "px"});
-
-
-		//$stripeCenter.css({"height" : pageContent.innerHeight / 2 + "px"});
-
-
-		stripeBottom.css({"height" : pageContent.innerHeight / 2 + "px",
-						  "bottom" : - pageContent.innerHeight / 4 + "px"});
-
-	}
 
 	
 	/* -------------------------------------------------- */
@@ -1522,7 +1490,7 @@ var uiRelayout = function() {
 }; // END uiRelayout
 
 
-$$(pageContent).on("resize", _.debounce(uiRelayout, 0));
+$$(pageContent).on("resize", _.debounce(uiRelayout, $delayInterval));
 
 // Delay 'uiRelayout' function.
 //TweenMax.delayedCall(tlPreloaderEnd.duration() + $delayInterval, uiRelayout);

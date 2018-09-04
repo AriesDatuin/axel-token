@@ -41,7 +41,7 @@ import gulpif from "gulp-if"; // Allows for conditional operators (if, &&, ||, =
 import gutil from "gulp-util"; // For logging tasks and process streams.
 import htmlmin from "gulp-htmlmin"; // Minify HTML files.
 import htmlreplace from "gulp-html-replace"; // Replace build blocks in HTML files.
-import imagemin from "gulp-imagemin"; // Minify image assets (JPGs, PNGs, GIFs).
+import imagemin from "gulp-imagemin"; // Compress raster image assets.
 import jsonReplace from "gulp-json-replace"; // Replaces strings from JSON data.
 import jshint from "gulp-jshint"; // Detect errors and potential problems in JavaScript code.
 import modernizr from "gulp-modernizr"; // Detect browser and device specific features.
@@ -62,6 +62,7 @@ import revDelete from "gulp-rev-delete-original"; // Delete the original file re
 import revFormat from "gulp-rev-format"; // Formatting options for revisioned files.
 import sourcemaps from "gulp-sourcemaps"; // Generate JS or CSS sourcemaps.
 import svg2png from "gulp-svg2png"; // Convert SVG files to PNG files.
+import svgmin from "gulp-svgmin"; //Compress SVG assets.
 import uglify from "gulp-uglify"; // Minify JS files.
 import webp from "gulp-webp"; // Convert image assets to WebP format.
 import workbox from "workbox-build"; // Integrate Service Worker to leverage precache features.
@@ -291,6 +292,8 @@ export function inject(done) {
 
 	if ( config.options.versioning && production ) {
 
+		console.log("Injecting hashed files...");
+
 		const manifest = gulp.src( revFile );
 
 		return gulp.src([config.paths.build + "**/*"])
@@ -310,26 +313,25 @@ export function inject(done) {
 /* JS
 /* -------------------------------------------------- */
 
-// CORE
+// OPTIONS *Note: Leave as-is. These are the recommended values.
+const uglifyJSOptions = {
+		compress: {
+				   dead_code: true,
+				   drop_console: true,
+		},
+		ie8: false,
+		keep_fnames: false,
+		mangle: true,
+		toplevel: false
+};
+
+
+// MAIN
 export function js() {
 
 	console.log("Compiling " + config.js.bundle);
 
 
-	// OPTIONS *Note: Leave as-is. These are the recommended values.
-	const uglifyJSOptions = {
-			compress: {
-					   drop_console: true,
-					   dead_code: true
-			},
-			mangle: true,
-			toplevel: false,
-			keep_fnames: false,
-			ie8: false
-	};
-
-
-	// TASK
 	return gulp.src(config.js.paths.map( function(base) { return config.paths.source + base } ), {allowEmpty: true} )
 			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.init() ))
 			   //.pipe(modernizr())
@@ -348,20 +350,6 @@ export function vendors() {
 	console.log("Compiling " + config.vendors.bundle);
 
 
-	// OPTIONS *Note: Leave as-is. These are the recommended values.
-	const uglifyJSOptions = {
-			compress: {
-					   drop_console: true,
-					   dead_code: true
-			},
-			mangle: true,
-			toplevel: false,
-			keep_fnames: false,
-			ie8: false
-	};
-
-
-	// TASK
 	return gulp.src(config.vendors.paths.map( function(base) { return config.paths.source + base } ), {allowEmpty: true} )
 			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.init() ))
 			   //.pipe(modernizr())
@@ -378,59 +366,58 @@ export function vendors() {
 /* CSS
 /* -------------------------------------------------- */
 
+// OPTIONS *Note: Leave as-is. These are the recommended values.
+const plugins = [//autoprefixer({browsers: ['last 1 version']}),
+				 postcssvariables({preserve: false, preserveInjectedVariables: false})
+				];
+
+
+const purgeCSSOptions = {
+						 content: [config.paths.build + "**/*.{html,php}",
+								   config.paths.build + "**/*.js"],
+						 css: [config.paths.build + "**/*.css"]
+	  },
+	  autoPrefixCSSOptions = {
+	  						  cascade: false,
+							  browsers: config.optimizations.support,
+							  flexbox: config.optimizations.flexbox,
+							  grid: config.optimizations.grid
+	  };
+
+
+const cleanCSSOptions = {
+		compatibility: "*",
+		level: {
+				1: {
+					all: true,
+					specialComments: false
+				},
+				2: {
+					mergeAdjacentRules: true, // Controls adjacent rules merging; defaults to true.
+					mergeIntoShorthands: false, // Controls merging properties into shorthands; defaults to true. *Note: Might cause unusual results. 
+					mergeMedia: true, // Controls '@media' merging; defaults to true. *Note: Might cause unusual results.
+					mergeNonAdjacentRules: true, // Controls non-adjacent rule merging; defaults to true.
+					mergeSemantically: false, // Controls semantic merging; defaults to false.
+					overrideProperties: true, // Controls property overriding based on understandability; defaults to true.
+					removeEmpty: true, // Controls removing empty rules and nested blocks; defaults to true.
+					reduceNonAdjacentRules: true, // Controls non-adjacent rule reducing; defaults to true.
+					removeDuplicateFontRules: true, // Controls duplicate '@font-face' removing; defaults to true.
+					removeDuplicateMediaBlocks: true, // Controls duplicate '@media' removing; defaults to true.
+					removeDuplicateRules: true, // Controls duplicate rules removing; defaults to true.
+					removeUnusedAtRules: false, // Controls unused at rule removing; defaults to false (available since 4.1.0).
+					restructureRules: false, // Controls rule restructuring; defaults to false.
+					skipProperties: [] // Controls which properties won't be optimized, defaults to '[]' which means all will be optimized (since 4.1.0).
+				}
+		}
+};
+
+
+// MAIN
 export function css() {
 
 	console.log("Compiling " + config.css.bundle);
 
 
-	const plugins = [//autoprefixer({browsers: ['last 1 version']}),
-					 postcssvariables({preserve: false, preserveInjectedVariables: false})
-					];
-
-
-	// OPTIONS
-	const purgeCSSOptions = {
-							 content: [config.paths.build + "**/*.{html,php}",
-									   config.paths.build + "**/*.js"],
-							 css: [config.paths.build + "**/*.css"]
-		  },
-		  autoPrefixCSSOptions = {
-								  browsers: config.optimizations.support, // last 2 versions", "ie >= 9", "Android >= 2.3", "ios >= 7
-								  flexbox: config.optimizations.flexbox,
-								  grid: config.optimizations.grid,
-								  cascade: false
-		  };
-
-
-	// IN-DEPTH OPTIONS *Note: Leave as-is. These are the recommended values.
-	const cleanCSSOptions = {
-			compatibility: "*",
-			level: {
-					1: {
-						all: true,
-						specialComments: false
-					},
-					2: {
-						mergeAdjacentRules: true, // Controls adjacent rules merging; defaults to true.
-						mergeIntoShorthands: false, // Controls merging properties into shorthands; defaults to true. *Note: Might cause unusual results. 
-						mergeMedia: true, // Controls '@media' merging; defaults to true. *Note: Might cause unusual results.
-						mergeNonAdjacentRules: true, // Controls non-adjacent rule merging; defaults to true.
-						mergeSemantically: false, // Controls semantic merging; defaults to false.
-						overrideProperties: true, // Controls property overriding based on understandability; defaults to true.
-						removeEmpty: true, // Controls removing empty rules and nested blocks; defaults to true.
-						reduceNonAdjacentRules: true, // Controls non-adjacent rule reducing; defaults to true.
-						removeDuplicateFontRules: true, // Controls duplicate '@font-face' removing; defaults to true.
-						removeDuplicateMediaBlocks: true, // Controls duplicate '@media' removing; defaults to true.
-						removeDuplicateRules: true, // Controls duplicate rules removing; defaults to true.
-						removeUnusedAtRules: false, // Controls unused at rule removing; defaults to false (available since 4.1.0).
-						restructureRules: false, // Controls rule restructuring; defaults to false.
-						skipProperties: [] // Controls which properties won't be optimized, defaults to '[]' which means all will be optimized (since 4.1.0).
-					}
-			}
-	};
-
-
-	// TASK
 	return gulp.src(config.css.paths.map( function(base) { return config.paths.source + base } ), {allowEmpty: true} )
 			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.init() ))
 			   .pipe(concat(config.css.bundle, {rebaseUrls: false}))
@@ -449,6 +436,16 @@ export function css() {
 /* HTML
 /* -------------------------------------------------- */
 
+// OPTIONS *Note: Leave as-is. These are the recommended values.
+const htmlminOptions = {
+	  collapseWhitespace: true,
+	  minifyCSS: true,
+	  minifyJS: true,
+	  removeComments: true,
+	  useShortDoctype: true
+};
+
+
 // MAIN
 export function html() {
 
@@ -456,25 +453,15 @@ export function html() {
 
 	const stylesheet = "'stylesheet'";
 
-	
-	// OPTIONS *Note: Leave as-is. These are the recommended values.
-	const htmlminOptions = {
-		  useShortDoctype: true,
-		  collapseWhitespace: true,
-		  minifyCSS: true,
-		  minifyJS: true,
-		  removeComments: true
-	};
-
 
 	// TASK
 	return gulp.src( config.paths.source + config.html.paths )
 			   .pipe(panini({
-							 root: config.paths.source + config.html.root,
+							 data: config.paths.source + config.html.data,
+							 helpers: config.paths.source + config.html.helpers,
 							 layouts: config.paths.source + config.html.layouts,
 							 partials: config.paths.source + config.html.partials,
-							 helpers: config.paths.source + config.html.helpers,
-							 data: config.paths.source + config.html.data
+							 root: config.paths.source + config.html.root
 							})
 			   )
 			   .pipe(htmlreplace({
@@ -490,7 +477,7 @@ export function html() {
 
 								  vendors: {
 										   src: "scripts/" + config.vendors.bundle,
-										   tpl: '<script src="%s"></script>'
+										   tpl: '<script src="%s" '+config.vendors.jsAttribute+'></script>'
 										  },
 
 								  critical: {
@@ -505,7 +492,7 @@ export function html() {
 
 								  js: {
 									   src: "scripts/" + config.js.bundle,
-									   tpl: '<script src="%s" '+config.options.jsAttribute+'></script>'
+									   tpl: '<script src="%s" '+config.js.jsAttribute+'></script>'
 								  }
 								  //css: cssApp,
 								  //js: jsApp
@@ -515,37 +502,25 @@ export function html() {
 			   .pipe(gulpif( !server.aws.upload, removeCode({removeBase: true}) ))
 			   .pipe(gulpif( !config.options.serviceworker || !config.options.serviceworker && !production, removeCode({removeSW: true}) ))
 			   .pipe(gulpif( !config.options.appBanner, removeCode({removeAppBanner: true}) ))
+			   .pipe(gulpif( !config.vendors.useVendorScripts, removeCode({removeVendor: true}) ))
 			   .pipe(noopener.overwrite())
 			   .pipe(gulpif( production, htmlmin(htmlminOptions) ))
-			   .pipe(gulp.dest( config.paths.build ))
-
-			   .on("end", function () {
-
-							console.log("Compiling modals...");
-
-							return gulp.src( config.paths.source + config.html.modals, {base: config.paths.source} )
-									   .pipe(gulpif( production, htmlmin(htmlminOptions) ))
-									   .pipe(noopener.overwrite())
-									   .pipe(gulp.dest( config.paths.build ));
-
-			   });
+			   .pipe(gulp.dest( config.paths.build ));
 
 }
 
 
 // MODALS
-/*
 export function modals() {
 
 	console.log("Compiling modals...");
 
-	return gulp.src(config.html.modals, {base: config.paths.source})
+	return gulp.src( config.paths.source + config.html.modals )
 			   .pipe(gulpif( production, htmlmin(htmlminOptions) ))
 			   .pipe(noopener.overwrite())
-			   .pipe(gulp.dest( config.paths.build ));
+			   .pipe(gulp.dest( config.paths.build + "modals/" ));
 
 }
-*/
 
 
 /* -------------------------------------------------- */
@@ -605,19 +580,83 @@ export function assets() {
 /* ASSET COMPRESSION
 /* -------------------------------------------------- */
 
-export function compress() {
+// RASTER IMAGES (GIF, JPG, PNG)
+export function raster() {
 
-	console.log("Compressing images...");
+	console.log("Compressing images assets...");
 
 	return gulp.src( config.paths.build + "**/*.{gif,jpg,jpeg,png,svg}", {base: config.paths.build} )
 			   .pipe(gulpif( production, imagemin([imagemin.optipng({optimizationLevel: config.images.optimizationLevel}),
 							   imagemin.gifsicle({interlaced: config.images.interlaced}),
 							   imagemin.jpegtran({progressive: config.images.progressive}),
-							   imagemin.svgo({plugins: [{removeViewBox: config.images.svgViewbox}, {cleanupIDs: config.images.svgCleanup}] })
 							  ], {verbose: true}) )
 			   )
 			   .pipe(gulpif( config.images.webp, webp() ))
 			   .pipe(gulp.dest( config.paths.build ));
+
+}
+
+
+// VECTOR (SVG)
+// OPTIONS *Note: Leave as-is. These are the recommended values.
+const svgminOptions = {
+	  addAttributesToSVGElement: true, // Adds attributes to an outer <svg> element (disabled by default).
+	  addClassesToSVGElement: true, // Add classnames to an outer <svg> element (disabled by default).
+	  cleanupAttrs: true, // Cleanup attributes from newlines, trailing, and repeating spaces.
+	  cleanupEnableBackground: true, // Remove or cleanup enable-background attribute when possible.
+	  cleanupIDs: true, // Remove unused and minify used IDs.
+	  cleanupListOfValues: true, // Round numeric values in attributes that take a list of numbers (like viewBox or enable-background).
+	  cleanupNumericValues: true, // Round numeric values to the fixed precision, remove default px units.
+	  collapseGroups: true, // Collapse useless groups.
+	  convertColors: true, // Convert colors (from rgb() to #rrggbb, from #rrggbb to #rgb).
+	  convertPathData: true, // Convert Path data to relative or absolute (whichever is shorter), convert one segment to another, trim useless delimiters, smart rounding, and much more.
+	  convertShapeToPath: true, // Convert some basic shapes to <path>.
+	  convertStyleToAttrs: true, // Convert styles into attributes.
+	  convertTransform: true, // Collapse multiple transforms into one, convert matrices to the short aliases, and much more.
+
+	  inlineStyles: true, // Move and merge styles from <style> elements to element style attributes.	  removeComments: true, // Remove comments.
+	  
+	  mergePaths: true, // Merge multiple Paths into one.
+	  minifyStyles: true, // Minify <style> elements content with CSSO.
+	  moveElemsAttrsToGroup: true, // Move elements' attributes to their enclosing group.
+	  moveGroupAttrsToElems: true, // Move some group attributes to the contained elements.
+
+	  removeAttrs: true, // Remove attributes by pattern (disabled by default).
+	  removeDimensions: true, // Remove width/height attributes if viewBox is present (opposite to removeViewBox, disable it first) (disabled by default).
+	  removeDoctype: true, // Remove doctype declaration.
+	  removeDesc: true, // Remove <desc>.
+	  removeEditorsNSData: true, // Remove editors namespaces, elements, and attributes.
+	  removeElementsByAttr: true, // Remove arbitrary elements by ID or className (disabled by default).
+
+	  removeEmptyAttrs: true, // Remove empty attributes.
+	  removeEmptyContainers: true, // Remove empty Container elements.
+	  removeEmptyText: true, // Remove empty Text elements.
+	  removeTitle: true, // Remove <title>.
+	  removeHiddenElems: true, // Remove hidden elements.
+	  removeMetadata: true, // Remove <metadata>.
+	  removeNonInheritableGroupAttrs: true, // Remove non-inheritable group's "presentation" attributes.
+	  removeRasterImages: false, // Remove raster images (disabled by default).
+	  removeScriptElement: true, // Remove <script> elements (disabled by default).
+	  removeStyleElement: true, // Remove <style> elements (disabled by default).
+	  removeUnknownsAndDefaults: true, // Remove unknown elements content and attributes, remove attrs with default values.
+	  removeUnusedNS: true, // Remove unused namespaces declaration.
+	  removeUselessDefs: true, // Remove elements of <defs> without id.
+	  removeUselessStrokeAndFill: true, // Remove useless stroke and fill attrs.
+	  removeViewBox: true, // Remove viewBox attribute when possible.
+	  removeXMLNS: false, // Removes xmlns attribute (for inline svg, disabled by default).
+	  removeXMLProcInst: true, // Remove XML processing instructions.
+
+	  sortAttrs: true // Sort element attributes for epic readability (disabled by default).
+};
+
+
+export function svg() {
+
+	console.log("Compressing svg assets...");
+
+	return gulp.src( config.paths.buil + "**/*.svg", {base: config.paths.build} )
+			   .pipe(svgmin(svgminOptions))
+			   .pipe(gulp.dest(config.paths.build));
 
 }
 
@@ -731,8 +770,9 @@ export function sync() {
 
 
 	// WATCH
-	gulp.watch(config.paths.source + "**/*.js").on("all", vendors, js, reload);
+	gulp.watch(config.paths.source + "**/*.js").on("all", js, reload);
 
+	//gulp.watch(config.paths.source + config.vendors.path + "**/*.js").on("all", vendors, reload);
 
 	gulp.watch(config.paths.source + "**/*.css").on("all", css);
 
@@ -742,19 +782,18 @@ export function sync() {
 				config.paths.source + config.html.paths
 			   ]).on("all", gulp.series(html, meta, refresh));
 
-	//gulp.watch(config.paths.source + "modals/**/*.{html,hbs,handlebars}").on("all", gulp.series(modals, reload));
 
 	gulp.watch([configFile,
 				//credentialsFile,
 				metadataFile,
-				config.paths.source + "{_layouts,_partials,_helpers,_data}/**/*.{html,hbs,handlebars,json,yml}",
+				config.paths.source + "{_data,_helpers,_layouts,_modals,_partials}/**/*.{html,hbs,handlebars,json,yml}",
 				config.paths.source + "**/critical.css",
 				config.paths.source + "**/browserconfig.xml",
 				config.paths.source + "**/manifest.json",
-			   ]).on("all", gulp.series(refresh, html, meta, reload));
+			   ]).on("all", gulp.series(refresh, modals, html, meta, reload));
 	
 	
-	gulp.watch([config.paths.source + "{modals}/**/*.{html,hbs,handlebars}"]).on("all", gulp.series(refresh, html));
+	//gulp.watch([config.paths.source + "{_modals}/**/*.{html,hbs,handlebars}"]).on("all", gulp.series(modals, reload));
 
 }
 
@@ -1457,11 +1496,11 @@ function completed(done) {
 /* -------------------------------------------------- */
 
 // TEST
-gulp.task("test", gulp.series(mode, clear, html, vendors, js, css, move, meta, compress, clean, sync));
+gulp.task("test", gulp.series(mode, clear, html, modals, vendors, js, css, move, meta, raster, svg, clean, sync));
 
 
 // BUILD
-gulp.task("build", gulp.series(clear, checkjs, checkcss, html, vendors, js, css, hash, move, compress, analytics, meta, sitemap, sw, clean, preview));
+gulp.task("build", gulp.series(clear, checkjs, checkcss, html, modals, vendors, js, css, hash, move, raster, svg, analytics, meta, sitemap, sw, clean, preview));
 
 
 // DEPLOY
@@ -1473,8 +1512,8 @@ gulp.task("deploy", gulp.series("build", deployinit, awsdeploy, gitdeploy, ftpde
 /* -------------------------------------------------- */
 
 // ASSETS
-gulp.task("images", gulp.series(move, assets, compress, clean));
+gulp.task("images", gulp.series(move, assets, raster, svg, clean));
 
 
 // HTML / CSS / JS
-gulp.task("htmlscripts", gulp.series(checkjs, checkcss, html, vendors, js, css, hash, move, analytics, meta, sitemap, sw, clean, preview));
+gulp.task("htmlscripts", gulp.series(checkjs, checkcss, html, modals, vendors, js, css, hash, move, analytics, meta, sitemap, sw, clean, preview));

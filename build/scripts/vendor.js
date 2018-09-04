@@ -33,7 +33,7 @@ var ctx,
     nodeLineWidth = 0.075,
     signalLineWidth = 0.2,
     signalDuration = 2,
-    swayAmount = 25;
+    swayAmount = 35;
 
 
 // ASSEMBLY
@@ -403,7 +403,8 @@ var canvas = new Visibility({
 
 // FUNCTIONS / CALLBACKS
 function isCanvasHidden () {
-    //console.log(fxNeuralNetworkIsAnimating);
+    console.log("Page is inactive.");
+
 
     fxNeuralNetworkIsAnimating = false;
     fxNeuralNetworkControl();
@@ -412,44 +413,12 @@ function isCanvasHidden () {
 
 
 function isCanvasVisible () {
-    //console.log(fxNeuralNetworkIsAnimating);
+    console.log("Page is active");
 
-    fxNeuralNetworkIsAnimating = true;
-    fxNeuralNetworkControl();
+   // fxNeuralNetworkIsAnimating = true;
+   // fxNeuralNetworkControl();
 
 }
 
 
-//$$(pageContent).on("resize", _.debounce(fxNeuralNetworkUpdate, 2));
-
-
-
-
-(function() {
-
-    window.addEventListener("resize", resizeThrottler, false);
-
-    var resizeTimeout;
-
-    function resizeThrottler() {
-
-        // ignore resize events as long as an actualResizeHandler execution is in the queue
-        if ( !resizeTimeout ) {
-
-            resizeTimeout = setTimeout(function() {
-            resizeTimeout = null;
-            actualResizeHandler();
-         
-           // The actualResizeHandler will execute at a rate of 15fps
-        }, 66); }
-
-    }
-
-    function actualResizeHandler() {
-
-        // handle the resize event
-        fxNeuralNetworkUpdate();
-
-    }
-
-}());
+$$(pageContent).on("resize", _.debounce(fxNeuralNetworkUpdate, 2));
