@@ -25,13 +25,13 @@
 
 /* COPY */
 .hero#welcome header h1 {
-	color: var(--primary-color);
+	color: var(--accent-color);
 	font-size: 2em;
 	line-height: 1.5em;
 }
 
 .hero#welcome header p {
-	color: var(--charcoal-color);
+	color: var(--white-color);
 	font-size: 1.25em;
 	line-height: 1.5em;
 }
@@ -51,17 +51,4 @@
 		line-height: 1.25em;
 	}
 
-}
-
-
-/* -------------------------------------------------- */
-/* FX
-/* -------------------------------------------------- */
-
-#fx-network {
-	z-index: auto;
-	position: absolute;
-	top: 0;
-	left: 0;
-    margin: auto;
 }

@@ -29,21 +29,20 @@ var components = function() {
 	//comTeam();
 	//comTilt();
 
+	utilEmergence();
 	utilPageVisibility();
-	//utilEmergence();
-	
-	animController();
 
+	animController();
+	
 	hasTouch();
 
 };
 
 var core = function() {
+
 	utilAssetObserver();
 	utilDataAttributes();
-	utilEmergence();
 	utilPrint();
-
 	comCaseStudies();
 	comModal();
 	comSlider();

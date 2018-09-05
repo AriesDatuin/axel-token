@@ -151,7 +151,7 @@ ul.social-icons.light > li > a {
 }
 
 ul.social-icons.light > li > a:hover {
-	color: var(--primary-color);
+	color: var(--accent-color);
 }
 
 
@@ -190,9 +190,9 @@ ul.social-icons.fixed > li > a:hover {
 }
 
 ul.social-icons.fixed:hover {
- 	box-shadow: 0 16px 24px 2px rgba(var(--secondary-color-rgb),0.06),
-				0 6px 30px 5px rgba(var(--secondary-color-rgb),0.04),
-				0 8px 10px -5px rgba(var(--secondary-color-rgb),0.08);
+ 	box-shadow: 0 16px 24px 2px rgba(var(--secondary-color-rgb),0.1),
+				0 6px 30px 5px rgba(var(--secondary-color-rgb),0.14),
+				0 8px 10px -5px rgba(var(--secondary-color-rgb),0.16);
 }
 
 

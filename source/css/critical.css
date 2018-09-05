@@ -89,7 +89,7 @@ html, body {
 /* -------------------------------------------------- */
 
 /* PARENT */
-noscript {
+body noscript {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -100,7 +100,7 @@ noscript {
 	background-color: #333;
 }
 
-noscript div {
+body noscript div {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -117,11 +117,11 @@ noscript div {
 	transform: translate(-50%,-50%);
 }
 
-noscript div img { 
+body noscript div img { 
 	display: block;
 }
 
-noscript div span {
+body noscript div span {
 	color: #fff;
 	font-weight: bold;
 }

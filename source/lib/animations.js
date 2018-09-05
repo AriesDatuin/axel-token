@@ -316,7 +316,7 @@ animInteract.on("mouseover touchdown", function() {
 //animStarWars.css({ "height" : $$(pageContent).height() })
 //animStarWars.children().css({ "height" : $$(pageContent).height() })
 
-TweenMax.set(animStarWars, {scale: 1.75, force3D: true, perspective: 600});
+TweenMax.set(animStarWars, {scale: 1, force3D: true, perspective: 1000});
 
 TweenMax.set(animStarWars.children(), {y: 0, rotationX: 25, force3D: true, autoRound: false});
 

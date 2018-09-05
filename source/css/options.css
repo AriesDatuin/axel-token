@@ -43,7 +43,7 @@
 		/* COMMON */
 		--white-color: #fff;
 		--light-grey-color: #ddd;
-		--dark-grey-color: #999;
+		--dark-grey-color: #4b4b4b;
 		--charcoal-color: #333;
 		--black-color: #000;
 
@@ -68,7 +68,7 @@
 		/* COMMON */
 		--white-color-rgb: 255,255,255;
 		--light-grey-color-rgb: 225,225,225;
-		--dark-grey-color-rgb: 150,150,150;
+		--dark-grey-color-rgb: 75,75,75;
 		--charcoal-color-rgb: 50,50,50;
 		--black-color-rgb: 25,25,25;
 

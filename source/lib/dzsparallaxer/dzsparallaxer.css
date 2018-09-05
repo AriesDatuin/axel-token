@@ -60,6 +60,16 @@
     box-sizing: border-box;
 }
 
+.dzsparallaxer.overflow-visible:not(.mode-oneelement) {
+    overflow: visible;
+}
+
+.dzsparallaxer.overflow-hidden:not(.mode-oneelement) {
+    /*height: 300px;*/
+    overflow: hidden;
+    /*background-color: #1c1a17;*/
+}
+
 .dzsparallaxer:not(.mode-oneelement) * {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;

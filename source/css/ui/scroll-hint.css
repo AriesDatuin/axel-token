@@ -20,7 +20,7 @@
 	width: 50px;
 	height: 50px;
 	border-radius: 100px;
-	background-color: var(--white-color);
+	background-color: transparent;
 }
 
 
@@ -32,7 +32,7 @@
 	width: 22px;
 	height: 35px;
 	border-radius: 15px;
-	border: 2px solid var(--secondary-color);
+	border: 2px solid var(--white-color);
 
 	transform: translateY(-50%);
 
@@ -45,7 +45,7 @@
 	height: 4px;
 	margin: 0.25rem auto 0 auto;
 	border-radius: 4px;
-	background-color: var(--secondary-color);
+	background-color: var(--white-color);
 
 	animation: animScroll 1s linear infinite;
 	animation-direction: normal;
@@ -66,12 +66,12 @@
 
 /* HOVER */
 .scroll-hint:hover .mouse {
-	border: 2px solid var(--secondary-color);
-	background-color: var(--secondary-color);
+	border: 2px solid var(--accent-color);
+	background-color: var(--accent-color);
 } 
 
 .scroll-hint:hover .mouse .scroll-tick {
-	background-color: var(--white-color);
+	background-color: var(--secondary-color);
 }
 
 .scroll-hint:hover p {

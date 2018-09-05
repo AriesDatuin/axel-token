@@ -180,7 +180,7 @@ var utilAssetObserver = function() {
 					   callback_load: null,
 					   callback_set: lazySet,
 					   callback_error: null,
-					   to_webp: true
+					   to_webp: false
 	};
 	
 	
@@ -298,19 +298,19 @@ var utilEmergence = function() {
 
 				}
 
-				$$(element).addClass("emergence-visible");
-				$$(element).find(anim).not(animInteract).addClass("anim-play");
+				$(element).addClass("emergence-visible");
+				$(element).find(anim).not(animInteract).addClass("anim-play");
 
 			} else if ( state === "reset" ) {
 
 				//console.log("Element is hidden with reset.");
 
-				$$(element).removeClass("emergence-visible");
-				$$(element).find(anim).not(animInteract).removeClass("anim-play");
+				$(element).removeClass("emergence-visible");
+				$(element).find(anim).not(animInteract).removeClass("anim-play");
 
 			} else if ( state === "noreset" ) {
 
-				//console.log("Element is hidden with NO reset.");
+				//console.log("Element is hidden with no reset.");
 
 			}
 

@@ -6,9 +6,10 @@
 .button-fx-primary,
 .button-fx-secondary,
 .button-fx-accent,
-.button-fx-wild {
+.button-fx-wild,
+.button-fx-charcoal {
 	position: relative;
-	color: #fff;
+	color: var(--white-color);
 	background-size: 200% auto;
 
 	text-shadow: 1px 1px 0px rgba(175,175,175,1),
@@ -19,19 +20,36 @@
 	transition: var(--ease);
  }
 
+.button-fx-accent,
+.button-fx-wild {
+	color: var(--charcoal-color);
+
+	text-shadow: 1px 1px 0px rgba(150,150,150,1),
+				 0 0 0 rgba(0,0,0,0.5);
+ }
+
 
 /* HOVER */
 .button-fx-primary:hover,
 .button-fx-secondary:hover,
 .button-fx-accent:hover,
-.button-fx-wild:hover {
-	color: #fff;
+.button-fx-wild:hover,
+.button-fx-charcoal:hover {
+	color: var(--white-color);
 	background-position: right center;
 
 	text-shadow: 1px 1px 0px rgba(175,175,175,1),
 				 5px 5px 10px rgba(0,0,0,0.25);
 
 	transform: translate3d(-1px, -1px, 2px);
+}
+
+.button-fx-accent:hover,
+.button-fx-wild:hover {
+	color: var(--charcoal-color);
+
+	text-shadow: 1px 1px 0px rgba(150,150,150,1),
+				 5px 5px 10px rgba(0,0,0,0.25);
 }
 
 
@@ -54,7 +72,7 @@
 }
 
 .button-fx-accent {
-	background-image: linear-gradient(to right, var(--accent-color) 0%, var(--accent-color) 100%);
+	background-image: linear-gradient(to right, var(--accent-color) 0%, var(--primary-color) 100%);
 
 	box-shadow: 0 2px 2px 0 rgba(var(--accent-color-rgb),0.2),
 				0 1px 5px 0 rgba(var(--accent-color-rgb),0.3),
@@ -62,7 +80,15 @@
 }
 
 .button-fx-wild {
-	background-image: linear-gradient(to right, var(--wild-color) 0%, var(--wild-color) 100%);
+	background-image: linear-gradient(to right, var(--wild-color) 0%, var(--accent-color) 100%);
+
+	box-shadow: 0 2px 2px 0 rgba(var(--wild-color-rgb),0.2),
+				0 1px 5px 0 rgba(var(--wild-color-rgb),0.3),
+				0 3px 1px -2px rgba(var(--wild-color-rgb),0.4);
+}
+
+.button-fx-charcoal {
+	background-image: linear-gradient(to right, var(--dark-grey-color) 0%, var(--charcoal-color) 100%);
 
 	box-shadow: 0 2px 2px 0 rgba(var(--wild-color-rgb),0.2),
 				0 1px 5px 0 rgba(var(--wild-color-rgb),0.3),
@@ -72,9 +98,9 @@
 
 /* HOVER */
 .button-fx-primary:hover {
-	box-shadow: 0 8px 10px 1px rgba(var(--secondary-color-rgb),0.1),
-				0 3px 14px 2px rgba(var(--secondary-color-rgb),0.2),
-				0 5px 5px -3px rgba(var(--secondary-color-rgb),0.3);
+	box-shadow: 0 8px 10px 1px rgba(var(--secondary-color-rgb),0.4),
+				0 3px 14px 2px rgba(var(--secondary-color-rgb),0.6),
+				0 5px 5px -3px rgba(var(--secondary-color-rgb),0.8);
  }
 
 .button-fx-secondary:hover {
@@ -93,6 +119,12 @@
 	box-shadow: 0 8px 10px 1px rgba(var(--wild-color-rgb),0.1),
 				0 3px 14px 2px rgba(var(--wild-color-rgb),0.2),
 				0 5px 5px -3px rgba(var(--wild-color-rgb),0.3);
+}
+
+.button-fx-charcoal:hover {
+	box-shadow: 0 8px 10px 1px rgba(var(--charcoal-color-rgb),0.1),
+				0 3px 14px 2px rgba(var(--charcoal-color-rgb),0.2),
+				0 5px 5px -3px rgba(var(--charcoal-color-rgb),0.3);
 }
 
 

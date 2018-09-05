@@ -54,7 +54,7 @@ var pages = function() {
 	            $heroParagraphSplitText = heroParagraphSplitText.words;
 
 
-			TweenMax.set(introHeader.find(".button-group").children(), {autoAlpha: 0, scale: 0.95, rotationX: 0, transformOrigin: "center center", perspective: 100, y: 5});
+			TweenMax.set(introHeader.find(".button-group").children(), {autoAlpha: 0, scale: 0.95, transformOrigin: "center center", perspective: 100, y: 5});
 
 			
 	        // ANIMATION
@@ -62,7 +62,7 @@ var pages = function() {
 				tlHeroHeader.staggerFrom($heroHeaderSplitText, 0.5, {autoAlpha: 0, y: 5, ease: Power4.easeInOut}, 0.1, "start-=0")
 							.staggerFrom($heroParagraphSplitText, 0.25, {autoAlpha: 0, y: 5, ease: Power4.easeInOut}, 0.05, "-=0.25")
 
-							.staggerTo(introHeader.find(".button-group").children(), 0.25, {autoAlpha: 1, scale: 1, rotationX: 0, transformOrigin: "center center", perspective: 100, y: 5, ease: Power4.easeInOut}, 0.2, "-=1");
+							.staggerTo(introHeader.find(".button-group").children(), 0.25, {autoAlpha: 1, scale: 1, transformOrigin: "center center", perspective: 100, y: 5, ease: Power4.easeInOut}, 0.2, "-=1");
 
 
 

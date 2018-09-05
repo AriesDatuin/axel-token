@@ -524,7 +524,7 @@ var comModal = function() {
 
 				uiModal += "<div class='modal-container cell align-self-top'></div>"; // CONTAINER
 
-				uiModal += "<a class='modal-close cell align-self-bottom padding-tb-md center-element p11 text-secondary text-primary-hover text-bold text-uppercase button button-width-full background-transparent background-transparent-hover no-touch-feedback prevent-default z-auto'><i class='fa fa-times-circle margin-right-xs'></i>Close</a>"; // BUTTON: CLOSE
+				uiModal += "<a class='modal-close cell align-self-bottom padding-tb-md center-element p11 text-white text-secondary-hover text-bold text-uppercase button button-width-full background-secondary background-transparent-hover no-touch-feedback prevent-default z-auto'><i class='fa fa-times-circle margin-right-xs'></i>Close</a>"; // BUTTON: CLOSE
 
 			uiModal += "</div>"; // MODAL
 	
@@ -707,14 +707,19 @@ var comParticles = function() {
 /* SLIDER
 /* -------------------------------------------------- */
 
+// CACHE SELECTORS
+var sliderDefault = $$(".slider-default"),
+	sliderDefaultAdapt = $$(".slider-default.adapt").flickity({});
+
+
 var comSlider = function() {
 	"use strict";
-    
+
     /* -------------------------------------------------- */
     /* SLIDER
     /* -------------------------------------------------- */
 
-    var sliderDefault = $$(".slider-default");
+    //var sliderDefault = $$(".slider-default");
       
     TweenMax.set(sliderDefault, {autoAlpha: 0});
     TweenMax.to(sliderDefault, 0.5, {autoAlpha: 1, delay: 1});
@@ -752,7 +757,7 @@ var comSlider = function() {
 	
     
 	// SET-UP
-    var sliderDefaultAdapt = $$(".slider-default.adapt").flickity({});
+    //var sliderDefaultAdapt = $$(".slider-default.adapt").flickity({});
     
     sliderDefault.has(".adapt").each(function() {
         
@@ -826,6 +831,38 @@ var comSlider = function() {
 		$$("ol.flickity-page-dots > li.dot").remove();
 
 	}
+
+
+	/* -------------------------------------------------- */
+	/* CONTROLLER
+	/* -------------------------------------------------- */
+
+	var animSliderController = function() {
+
+		sliderDefault.each(function() {
+
+			// Cache selectors.
+			var self = $(this);
+
+			if ( self.hasClass("anim-play") ) {
+
+				$$(pageContent).on("scrollstart", function() { self.flickity("pausePlayer"); } );
+				$$(pageContent).on("scrollstop", function() { self.flickity("unpausePlayer"); } );
+
+				self.flickity("playPlayer");
+				//self.flickity("unpausePlayer");
+
+			} else {
+
+				self.flickity("stopPlayer");
+
+			}
+
+		});
+
+	};
+
+	$$(pageContent).on("scrollstop", animSliderController);
 
 
 }; // END comSlider
