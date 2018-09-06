@@ -54,17 +54,21 @@ main section {
 
 	/* X */
 	.grid-x.grid-margin-x > .cell:not(.margin-none) {
+		/*
 		margin-top: var(--cell-margin-top);
 		margin-left: var(--cell-margin-left);
 		margin-bottom: var(--cell-margin-bottom);
 		margin-right: var(--cell-margin-right);
+		*/
 	}
 
 
 	/* Y */
 	.grid-y.grid-margin-y > .cell:not(.margin-none) {
+		/*
 		margin-top: var(--cell-margin-top);
 		margin-bottom: var(--cell-margin-bottom);
+		*/
 	}
 
 
@@ -174,17 +178,21 @@ main section {
 
 		/* X */
 		.grid-x.grid-margin-x > .cell:not(.margin-none):not(.margin-top-none):not(.margin-left-none):not(.margin-bottom-none):not(.margin-right-none):not(.margin-tb-none):not(.margin-lr-none) {
+			/*
 			margin-top: var(--cell-margin-top-mobile);
 			margin-left: var(--cell-margin-left-mobile);
 			margin-bottom: var(--cell-margin-bottom-mobile);
 			margin-right: var(--cell-margin-right-mobile);
+			*/
 		}
 
 
 		/* Y */
 		.grid-y.grid-margin-y > .cell:not(.margin-none) {
+			/*
 			margin-top: var(--cell-margin-top-mobile);
 			margin-bottom: var(--cell-margin-bottom-mobile);
+			*/
 		}
 
 

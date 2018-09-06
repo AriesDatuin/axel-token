@@ -6,7 +6,7 @@
 		"url": "https://axeltoken.com/",
 		"start_url": "index.html",
 		"display": "standalone",
-		"description": "The native blockchain deployment redefining distributed exchange protocols. The AXEL Blockchain is the next evolution of our platform, with a unique dual-chain architecture and ad-hoc proof of custody consensus.",
+		"description": "The AXEL (Autonomous eXchange via Entrusted Ledger) Blockchain is the next evolution of our platform, with a unique dual-chain architecture and delegated proof of stake consensus.",
 		
 		"favicon-16": "assets/icons/favicon-16x16.png",
 		"favicon-32": "assets/icons/favicon-32x32.png",
@@ -20,8 +20,8 @@
 		"image-profile": "assets/social/profile.png",
 		"image-cover": "assets/social/social.png",
 		
-		"theme": "#fff",
-		"background": "#fff",
+		"theme": "#6400fa",
+		"background": "#6400fa",
 		
 		"twitter": "@axelunlimited",
 		

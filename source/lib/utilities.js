@@ -168,8 +168,8 @@ var utilAssetObserver = function() {
 	// OPTIONS
 	var lazyOptions = {container: document,
 					   elements_selector: ".lazy",
-					   threshold: 0,
-					   load_delay: 100,
+					   threshold: 100,
+					   load_delay: 0,
 					   data_src: "src",
 					   data_srcset: "srcset",
 					   data_sizes: "sizes",
@@ -270,7 +270,7 @@ var utilEmergence = function() {
 	// PROPERTIES
 	if ( !$isMobile && !$hasTouch ) {
 
-		TweenMax.set(emergenceElement.not(emergenceIgnore).children().not(emergenceIgnoreChild).not(anim).children(), {opacity: 0, y: 25});
+		TweenMax.set(emergenceElement.not(emergenceIgnore).children().not(emergenceIgnoreChild).not(anim).children(), {opacity: 0});
 
 	}
 
@@ -294,7 +294,7 @@ var utilEmergence = function() {
 
 				if ( !$isMobile && !$hasTouch ) {
 
-					TweenMax.staggerTo($(element).not(emergenceIgnore).children().not(emergenceIgnoreChild).not(anim).children(), 0.75, {opacity: 1, y: 0, delay: 0, ease: Power4.easeOut, overwrite: "false", clearProps:"all"}, 0.12);
+					TweenMax.staggerTo($(element).not(emergenceIgnore).children().not(emergenceIgnoreChild).not(anim).children(), 0.75, {opacity: 1, delay: 0, ease: Power4.easeOut, overwrite: "false", clearProps:"all"}, 0.12);
 
 				}
 

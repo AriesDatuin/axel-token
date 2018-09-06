@@ -1,0 +1,115 @@
+
+# TEAM
+info:
+ -
+  title: "Tony Tan"
+  subtitle: "CEO & Chairman"
+  description: ""
+  image: "assets/team/small-tony-tan.jpg"
+  social:
+    -
+      icon: linkedin
+      link: https://linkedin.com
+
+
+ -
+  title: "Michael Conn"
+  subtitle: "Chief Strategy Officer"
+  description: ""
+  image: "assets/team/small-michael-conn.jpg"
+  social:
+    -
+      icon: linkedin
+      link: https://linkedin.com
+
+
+ -
+  title: "Ben Ow"
+  subtitle: "CTO & President"
+  description: ""
+  image: "assets/team/small-ben-ow.jpg"
+  social:
+    -
+      icon: linkedin
+      link: https://linkedin.com
+
+
+ -
+  title: "Jeremy Forsberg"
+  subtitle: "CMO & VP"
+  description: ""
+  image: "assets/team/small-jeremy-forsberg.jpg"
+  social:
+    -
+      icon: facebook
+      link: https://facebook.com
+    -
+      icon: linkedin
+      link: https://linkedin.com
+    -
+      icon: twitter
+      link: https://twitter.com
+
+
+ -
+  title: "Dave Kaplan"
+  subtitle: "VP General Counsel"
+  description: ""
+  image: "assets/team/small-dave-kaplan.jpg"
+  social:
+    -
+      icon: facebook
+      link: https://facebook.com
+    -
+      icon: linkedin
+      link: https://linkedin.com
+    -
+      icon: twitter
+      link: https://twitter.com
+
+
+ -
+  title: "Rick Stiles"
+  subtitle: "VP of Product Development"
+  description: ""
+  image: "assets/team/small-rick-stiles.jpg"
+  social:
+    -
+      icon: linkedin
+      link: https://linkedin.com
+
+
+ -
+  title: "Diane Zhang"
+  subtitle: "VP of Finance"
+  description: ""
+  image: "assets/team/small-diana-zhang.jpg"
+  social:
+    -
+      icon: linkedin
+      link: https://linkedin.com
+
+
+ -
+  title: "Dmitry Kogosov"
+  subtitle: "VP of Operations"
+  description: ""
+  image: "assets/team/small-dmitry-kogosov.jpg"
+  social:
+    -
+      icon: linkedin
+      link: https://linkedin.com
+
+
+ -
+  title: "Dmytro Ashkinazi"
+  subtitle: "Director of European Operations"
+  description: ""
+  image: "assets/team/small-dmytro-ashkinazi.jpg"
+  social:
+    -
+      icon: github
+      link: https://github.com
+    -
+      icon: linkedin
+      link: https://linkedin.com

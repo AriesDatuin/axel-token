@@ -25,7 +25,7 @@ var components = function() {
 	//comBlog();
 	//comCaseStudies();
 	//comOdometer();
-	//comParallax();
+	comParallax();
 	//comParticles();
 	//comTeam();
 	//comTilt();

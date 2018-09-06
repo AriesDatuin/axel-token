@@ -17,9 +17,6 @@ var pages = function() {
 		
 		linkHome = $$(".link-home"),
 
-		linkAbout = $$(".link-about"),
-		linkTeam = $$(".link-team"),
-
 		linkPrivacyPolicy = $$(".link-privacy-policy"),
 		linkEULA = $$(".link-eula");
 	
@@ -87,55 +84,6 @@ var pages = function() {
 			$$(pageContent).on("resize", _.debounce(heroIntro, $delayInterval));
 
 		}
-
-		
-	}
-
-	
-    /* -------------------------------------------------- */
-	/* ABOUT
-	/* -------------------------------------------------- */
-
-	else if ( page === "about" ) {
-		console.log("About Page");
-
-		linkAbout.addClass("active");
-		//navbar.addClass("dark");
-        
-		var checkSectionHash = function() {
-            
-			if ( $("#team").hasClass("emergence-visible") ) {
-
-				console.log("Team Section");
-                
-                linkAbout.removeClass("active");
-				linkTeam.addClass("active");
-
-			} else {
-
-				console.log("About Section");
-
-				linkAbout.addClass("active");
-                linkTeam.removeClass("active");
-
-			}
-            
-        };
-		
-		$$(pageContent).on("scrollstop", checkSectionHash);
-		
-	}
-    
-	
-    /* -------------------------------------------------- */
-	/* TEAM
-	/* -------------------------------------------------- */
-
-	else if ( page === "team" ) {
-		console.log("Team Page");
-		
-		linkTeam.addClass("active");
-		//navbar.addClass("dark");
 
 		
 	}

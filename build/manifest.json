@@ -3,7 +3,7 @@
     "short_name": "AXEL",
 	"start_url": "index.html",
 	"display": "standalone",
-	"description": "The native blockchain deployment redefining distributed exchange protocols. The AXEL Blockchain is the next evolution of our platform, with a unique dual-chain architecture and ad-hoc proof of custody consensus.",
+	"description": "The AXEL (Autonomous eXchange via Entrusted Ledger) Blockchain is the next evolution of our platform, with a unique dual-chain architecture and delegated proof of stake consensus.",
     "icons": [
         {
             "src": "assets/icons/android-chrome-192x192.png",
@@ -16,6 +16,6 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#fff",
-    "background_color": "#fff"
+    "theme_color": "#6400fa",
+    "background_color": "#6400fa"
 }

@@ -1,10 +1,10 @@
 
 <!-- PROFILE CARD -->
-{{#each profiles.profiles}}
+{{#each profile.info}}
 
 
 	<!-- CARD -->
-	<div class="cell card media-object stack-for-small background-white">
+	<div class="cell card media-object background-white">
 
 
 	  <!-- MEDIA OBJECT -->
@@ -12,7 +12,7 @@
 
 
 		<!-- IMAGE -->
-		<div class="wh-xs round-full border-xxs border-solid border-secondary background-secondary background-cover background-tc background-no-repeat lazy" alt="{{ title }}" data-src="{{ image }}"></div>
+		<div class="wh-xs round-full border-xxs border-solid border-light-grey background-secondary background-cover background-tc background-no-repeat lazy" alt="{{ title }}" data-src="{{ image }}"></div>
 		<!-- // IMAGE -->
 
 
@@ -21,17 +21,29 @@
 
 
 	  <!-- MEDIA OBJECT -->
-	  <div class="media-object-section">
+	  <div class="media-object-section position-relative">
 
 
 		<!-- COPY -->
-		<h3 class="p6 font-paragraph text-secondary text-bold header-accent-left header-accent-secondary">{{ title }}</h3>
-		<p>{{ description }}</p>
+		<h3 class="margin-bottom-none p6 font-paragraph text-secondary text-bold">{{ title }}</h3>
+		<h4 class="p10 font-paragraph text-dark-grey">{{ subtitle }}</h4>
+		<p class="p10">{{ description }}</p>
 		<!-- // COPY -->
 
 
+		<!-- SOCIAL -->
+		<ul class="social-icons dark list-horizontal text-left">
 
+			{{#each social}}
+				<li>
+					<a href="{{ link }}" target="_blank" rel="noopener" class="social-icon-{{ icon }}-hover" aria-label="{{ icon }}">
+						<span class="fa fa-{{ icon }}" aria-hidden="true"></span>
+					</a>
+				</li>
+			{{/each}}
 
+		</ul>
+		<!-- // SOCIAL -->
 
 
 	  </div>

@@ -87,7 +87,7 @@ footer {
 
 /* HOVER */
 #navbar-logo a svg:hover path {
-	fill: var(--primary-color);
+	fill: var(--secondary-color);
 }
 
 

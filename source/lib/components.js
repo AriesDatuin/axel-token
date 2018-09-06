@@ -691,9 +691,9 @@ var comCounter = function() {
 	// ANIMATION
 	var tlCounter = new TimelineMax({paused: true});
 	
-		tlCounter.from(counter01, 0.5, {autoAlpha: 0, delay: 0.5, ease: Power4.easeOut, onStart: function() { counter01.html(200); } })
-				 .from(counter02, 0.5, {autoAlpha: 0, delay: 0.5, ease: Power4.easeOut, onStart: function() { counter02.html(1300); } })
-				 .from(counter03, 0.5, {autoAlpha: 0, delay: 1, ease: Power4.easeOut, onStart: function() { counter03.html(7800000000); } });
+		tlCounter.from(counter01, 0.75, {autoAlpha: 0, delay: 0, ease: Power4.easeOut, onStart: function() { counter01.html(200); } })
+				 .from(counter02, 0.75, {autoAlpha: 0, delay: 0.25, ease: Power4.easeOut, onStart: function() { counter02.html(1300); } })
+				 .from(counter03, 0.75, {autoAlpha: 0, delay: 0.5, ease: Power4.easeOut, onStart: function() { counter03.html(7800000000); } });
 	
 
 	// CONTROLLER
@@ -703,59 +703,7 @@ var comCounter = function() {
 
 			tlCounter.play();
 
-		} else {
-
-			/*
-			console.log("Reset.");
-
-			TweenMax.set(counter01, {autoAlpha: 0});
-			TweenMax.set(counter02, {autoAlpha: 0});
-			TweenMax.set(counter03, {autoAlpha: 0});
-
-			counter01.html(0);
-			counter02.html(0);
-			counter03.html(0)
-
-			tlCounter.restart();
-			*/
-
 		}
-		
-
-
-
-
-		/*
-		if ( counter01.hasClass("anim-play") ) {
-
-			counter01.html(200);
-
-		} else {
-
-			counter01.html();
-
-		}
-
-
-		if ( counter02.hasClass("anim-play") ) {
-
-			counter02.html(1300);
-
-		} else {
-			counter02.html();
-		}
-
-
-		if ( counter03.hasClass("anim-play") ) {
-
-			counter03.html(7800000000);
-
-		} else {
-
-			counter03.html();
-
-		}
-		*/
 
 
 	};
@@ -772,6 +720,21 @@ var comCounter = function() {
 /* -------------------------------------------------- */
 /* PARALLAX
 /* -------------------------------------------------- */
+
+var comParallax = function() {
+
+	dzsprx_init( ".dzsparallaxer", {
+
+		direction: "reverse", // normal, reverse
+		settings_mode: "scroll", // scroll, mouse, mouse_body
+		mode_scroll: "normal", // normal, fromtop
+		animation_duration: "5",
+		easing: "easeIn" // easeIn, easeOutQuad, easeInOutSine
+
+	});
+
+};
+
 
 /*
 var comParallax = function() {
@@ -916,6 +879,7 @@ var comSlider = function() {
 	/* -------------------------------------------------- */ 
 
 	// SLIDER
+	/*
 	TweenMax.set("#slider-testimonials .slider-item:not(.is-selected)", {scale: 0.75, transformOrigin: "bottom center"});
 
 	//var sliderTestimonials = $$("#slider-testimonials").flickity({});
@@ -930,6 +894,7 @@ var comSlider = function() {
 		//TweenMax.to(".slider-item:not(.is-selected)", 0.5, {scale: 0.75, ease: Back.easeOut});
 
 	});
+	*/
 
 	
 	/* -------------------------------------------------- */
@@ -976,419 +941,6 @@ var comSlider = function() {
 
 
 }; // END comSlider
-
-
-/* -------------------------------------------------- */
-/* TEAM
-/* -------------------------------------------------- */
-
-/*removeIf(production)*/
-var comTeam = function() {
-	
-	if ( $$(".page").data("page") === "about" || $$(".page").data("page") === "team" ) {
-	
-		/* -------------------------------------------------- */
-		/* CACHE SELECTORS
-		/* -------------------------------------------------- */
-	
-		var teamData = "assets/team.json",
-			$teamSection = $$("#team"),
-			$profiles = $$(".profiles"),
-			profileUser = ".profile-user",
-			profileSmallPhoto = ".profile-small-photo",
-			$profileInfo = $$("ul.profile-info"),
-			profileInfoName = "li.name",
-			profileInfoPosition = "li.position",
-			profileBio = ".profile-bio",
-			profileLargePhoto = ".profile-large-photo",
-			//$profileImagePreloader = $$(".profile-img-preloader"),
-			//$profileStatus = $$(".status-data"),
-			people = [];
-	
-
-			$.getJSON(teamData, function(response) {
-
-				
-			   $.each(response.person, function(key, value) {
-
-				   // Create data keys / values and push items to an array.
-				   people.push([value.name, value.position, value.smallimage, value.largeimage, value.bio]);
-
-
-				   // Append user profile image tiles.
-				   $profiles.append('<a id='+ value.name.replace(/\s+/g, '-').toLowerCase()+' class="cell profile-user padding-none no-pointer '+value.position.replace(/\s+/g, '-').toLowerCase()+'" data-name="'+value.name+'" data-position="'+value.position +'" data-bio="'+ value.bio +'" data-photo="'+value.largeimage+'"> <ul class="profile-info img-preload-wait"> <li class="name">'+value.name+'</li> <li class="position">'+value.position+'</li> </ul> <img src="'+value.smallimage+'" alt="'+ value.name+'" class="profile-small-photo duotone-process img-clone img-preload"/> </a>');			   
-
-
-				   // Attach a preloader to user profile.   
-				   $$(profileUser).find(".profile-small-photo").before('<div class="profile-img-preloader position-absolute top left padding-xxs width-full height-full p5 text-white background-black-25 z-03"><span class="fa fa-spinner fa-pulse center-vh" aria-hidden="true"></span></div>');
-
-
-				   // Attach a status message during profile image tile generation.
-				   $profiles.before('<p class="status-data position-absolute margin-sm padding-xs round-sm p10 text-charcoal background-white bring-to-front"><span class="fa fa-spinner fa-pulse margin-lr-xs" aria-hidden="true"></span></p>');
-
-
-				   // Hide elements temporarily while content loads.
-				   TweenMax.set($profiles, {autoAlpha: 0});
-				   TweenMax.set($profiles.children(), {autoAlpha: 0});
-				   TweenMax.set($profileInfo.children(), {autoAlpha: 0, y: 25 });
-
-			   });
-
-				
-			})
-
-			.done(function(teamData) {
-
-				console.log("Fetching Team data...");
-
-			})
-
-			.fail(function(teamData) {
-
-				console.log("Error: Unable to load Team data.");
-
-				// Attach an error message on JSON data fail.
-				$profiles.replaceWith('<p class="status-error position-absolute margin-sm padding-xs round-sm p10 text-charcoal background-white bring-to-front"><span class="fa fa-exclamation-circle margin-right-xs" aria-hidden="true"></span><strong>Error:</strong> Unable to fetch team member data.</p>');
-
-			})
-
-			.always(function(teamData) {
-
-				console.log("Team data loaded.");
-
-
-				/* -------------------------------------------------- */
-				/* OBSERVE IMAGE LOAD
-				/* -------------------------------------------------- */
-
-				$(".profile-small-photo").imagesLoaded({ background: false })
-
-					.always( function( instance, image ) {
-
-						console.log("Loading images...");
-
-					})
-
-					.done( function( instance ) {
-
-						console.log("All images successfully loaded.");
-
-						// Generate image tiles function to be called later.
-						var createProfileImageTiles = function() {
-
-
-							/* -------------------------------------------------- */
-							/* FUNCTIONS
-							/* -------------------------------------------------- */
-
-							var enableProfileImageTiles = function() {
-
-								$(".profile-img-preloader").remove();
-								$(".status-data").remove();
-								$profiles.children().removeClass("no-pointer");
-
-							};
-
-
-							/* -------------------------------------------------- */
-							/* STYLE ATTIBUTES
-							/* -------------------------------------------------- */
-
-							$(profileUser).css( { "height" : $$(".profile-small-photo").height() } );
-
-
-							/* -------------------------------------------------- */
-							/* ANIMATE
-							/* -------------------------------------------------- */
-
-							var tlProfileTileImages = new TimelineMax({paused: false, delay: 0, repeatDelay: 0, yoyo: true, repeat: false});
-								tlProfileTileImages.to($profiles, 0.5, {autoAlpha: 1, ease: Power4.easeInOut}) // Animate elements into place when images have fully loaded.
-												   .staggerTo($profiles.children(), 0.75, {autoAlpha: 1, ease: Power4.easeOut}, 0.12) // Animate profile images.
-												   .staggerTo($profileInfo.children(), 0.75, {autoAlpha: 1, y: 0, delay: 0.5, ease: Power4.easeOut}, 0.12) // Animate '$profileInfo' info.
-												   .staggerTo(".profile-img-preloader", 0.5, {autoAlpha: 0, ease: Power4.easeOut}, 0.05) // Remove '$profileImagePreloader'.
-												   .to(".status-data", 0.5, {autoAlpha: 0, x: -10, ease: Power4.easeInOut}) // Remove '$profileImagePreloader'.
-												   .add(enableProfileImageTiles);
-
-
-							/* -------------------------------------------------- */
-							/* CLONE / DUOTONE FX
-							/* -------------------------------------------------- */
-
-							$(".profile-small-photo").each(function() {
-
-								var self = $(this),
-									img = new Image();
-
-								img.src = Image;
-
-								self.parent().css( { "height" : self.height() } );
-
-								//console.log(self.height());
-
-								// Clone '.profile-small-photo'.
-								self.clone()
-									   .insertAfter(this)
-									   .removeClass("duotone-process")
-									   .addClass("duotone-reset")
-									   .css({"opacity" : "1",
-											"visibility" : "visible",
-											"position" : "absolute",
-											"top" : "0",
-											"left" : "0",
-											"z-index" : "0"});
-
-
-								// Apply duotone process effect.
-								self.duotone({
-									gradientMap: "#6400fa, #32e14b"
-								});
-
-								// Set default style properties.
-								//TweenMax.set(self.find(".duotone-process"), {transformOrigin: "center center"});
-								//TweenMax.set(self.find(".duotone-reset"), {transformOrigin: "center center"});
-
-							});
-
-
-							// Allow interaction for '.profile-small-photo'.
-							$(profileUser).on("mouseover touchstart", function() {
-
-								TweenMax.to($(this).find(".duotone-process"), 0.5, {autoAlpha: 0, scale: 1.35, ease: Back.easeOut});
-								TweenMax.to($(this).find(".duotone-reset"), 0.75, {scale: 1.05, ease: Back.easeOut});
-
-							}).on("mouseout touchend touchmove touchleave", function() {
-
-								TweenMax.to($(this).find(".duotone-process"), 1, {autoAlpha: 1, scale: 1, ease: Power4.easeOut});
-								TweenMax.to($(this).find(".duotone-reset"), 0.75, {scale: 1, ease: Power4.easeOut});
-
-							});
-
-						};
-
-						// Delay 'createProfileImageTiles'.
-						TweenMax.delayedCall(2, createProfileImageTiles);
-
-
-						/* -------------------------------------------------- */
-						/* FUNCTIONS
-						/* -------------------------------------------------- */
-
-						var profileBioIsOpen = false;
-
-
-						var scrollToProfile = function() {
-
-								if ( $isEdge ) {
-
-										TweenMax.to(body, $scrollToSpeed, {scrollTo: {y: $$("#profile").offset().top - navbar.height(), offsetY: 0, autoKill: true}, ease: $scrollToEase});
-
-								} else if ( $hasTouch ) {
-
-										$$(pageContent).scrollTop($$("#profile").offset().top - navbar.height() );
-
-								} else {
-
-										TweenMax.to(html, $scrollToSpeed, {scrollTo: {y: $$("#profile").offset().top - navbar.height(), offsetY: 0, autoKill: true}, ease: $scrollToEase});
-
-								}
-
-						};
-
-
-						var profileBioReset = function() {
-
-							TweenMax.to($$(profileBio).find(".close"), 0.25, {autoAlpha: 0, ease: Power4.easeOut});
-
-							TweenMax.to($$(profileUser + ".active").find(".duotone-process"), 1.25, {autoAlpha: 0, scale: 1, delay: 0.25, ease: Back.easeOut});
-							TweenMax.to($$(profileUser + ".active").find(".duotone-reset"), 0.25, {scale: 1, delay: 0.25, ease: Back.easeOut});
-
-							TweenMax.to($$(profileUser).not(".active").find(".duotone-process"), 1.25, {autoAlpha: 1, scale: 1, delay: 0.25, ease: Back.easeOut});
-							TweenMax.to($$(profileUser).not(".active").find(".duotone-reset"), 0.25, {scale: 1, delay: 0.25, ease: Back.easeOut});
-
-						};
-
-
-						var profileRemove = function() {
-
-							$$(profileBio).remove();
-
-						};
-
-
-						var profileBioOpen = function() { 
-
-							profileBioIsOpen = true;
-							profileBioReset();
-
-
-							TweenMax.to($$(profileBio).find(".close"), 1, {autoAlpha: 1, delay: 0.25, ease: Power4.easeOut});
-
-							
-							if ( $teamSection.find(profileBio).length ) {
-								console.log("Bio is open.");
-
-
-								if ( $hasTouch && $isSmallScreen ) {
-
-									scrollToProfile();
-									TweenMax.to(profileBio, 0.75, {height: $$(profileBio).find(".text-container").innerHeight() + $$(".profile-large-photo").innerHeight(), delay: 0.25, ease: Power4.easeOut, autoRound: false});
-
-								} else {
-
-									TweenMax.to(profileBio, 0.75, {height: $$(profileBio).find(".text-container").outerHeight() + 400, delay: 0.25, ease: Back.easeOut, onComplete: scrollToProfile, autoRound: false});
-
-
-								}
-
-								
-								// Add close handler.
-								$$(profileBio).find(".close").on("click", function() {
-										console.log("Closing profile.");
-										//e.preventDefault();
-
-										profileBioClose();
-
-								});
-
-							}
-
-						};
-
-
-						var profileBioClose = function() { 
-							console.log("Bio is closed.");
-
-							profileBioIsOpen = false;
-
-							$(profileUser).removeClass("active");
-							profileBioReset();
-
-							TweenMax.to(profileBio, 0.75, {height: 0, ease: Power4.easeOut, onComplete: profileRemove});
-
-
-						};
-
-
-						/* -------------------------------------------------- */
-						/* BUTTONS
-						/* -------------------------------------------------- */
-
-						// Open handler.
-						$(profileUser).not(".active").on("click", function(e) {
-							e.preventDefault();
-
-							//console.log( $(this).data("bio") );
-							//console.log(data.person[0].name);
-
-							var selfProfile = $(this),
-								profileBioContent = '<section id="profile" class="profile-bio grid-x align-center align-middle padding-none small-up-1 medium-up-2">     <div class="close dark z-01"><span></span><span></span></div>      <div class="cell profile-large-photo" style="background-image: url(' +selfProfile.data("photo")+ ')">   </div></div>           <div class="cell text-container padding-md"> <h2 class="p8 font-paragraph text-secondary header-accent header-accent-secondary">' +selfProfile.data("name")+ '</h2> <h3 class="p10 font-paragraph text-dark-grey">' +selfProfile.data("position")+ '</h3> <p>' +selfProfile.data("bio")+ '</p> </div>      </section>';
-
-							selfProfile.addClass("active");
-							$(profileUser).not(selfProfile).removeClass("active");
-
-							/*
-							$.getJSON("pages/team/profiles.json", function(data) {
-
-							   $.each(data.person, function(key, value) {
-
-
-								   people.push([value.id, value.name, value.position, value.smallimage, value.largeimage, value.bio]);
-
-
-							   });
-
-								console.log(data.person[0].name);
-
-							})
-							*/
-
-							if ( !$teamSection.find(profileBio).length ) { // Create a new instances of 'Profile Bio' if one does not exist.
-
-								console.log("Profile bio instance not found. Creating new instance.");
-
-								$profiles.before(profileBioContent);
-								profileBioOpen();
-
-							} 
-
-
-
-							if ( profileBioIsOpen ) { // If user selects another 'Member Profile' close current 'Profile Bio' and open again with new profile information.
-
-								console.log("Profile bio already found. Replacing with new instance.");
-
-								TweenMax.to($$(profileBio).find(".close"), 0.25, {autoAlpha: 0, ease: Power4.easeOut});
-
-
-								TweenMax.to(profileBio, 0.5, {height: 0, ease: Power4.easeOut,
-
-									onComplete: function() {
-
-										$$(profileBio).replaceWith(profileBioContent);
-										profileBioOpen();
-
-									}
-
-								});
-
-
-							}
-
-						});
-
-
-						// Recalculate image size and reapply duotone process on window resize.
-						var profileResizeInit = function() {
-
-							TweenMax.delayedCall(0.25,
-
-								function() {
-
-									/*
-									if ( profileBioIsOpen ) {
-
-										profileBioClose();
-
-									}
-									*/
-
-
-									$$(".profile-small-photo").parent().css( { "height" : $$(".profile-small-photo").height() } );
-									$$(".profile-small-photo").not(".duotone-reset").duotone("process");
-
-								}
-
-							);
-
-						};
-
-
-						$$(pageContent).on("resize", _.debounce(profileResizeInit, $updateInterval));
-
-
-					})
-
-					.fail( function() {
-
-						console.log("All images loaded, at least one broken.");
-
-					})
-
-					.progress( function( instance, image ) {
-
-						//var result = image.isLoaded ? 'loaded' : 'broken';
-						//console.log( 'image is ' + result + ' for ' + image.img.src );
-
-				});
-
-
-			});
-
-	}
-	
-	
-}; // END comTeam
-/*endRemoveIf(production)*/
 
 
 /* -------------------------------------------------- */
