@@ -42,8 +42,8 @@ var pages = function() {
 		var heroIntro = function() {
 
 
-	        var introParent = $$("#welcome"),
-				introHeader = $$("#welcome header");
+	        var introParent = $$("#hero"),
+				introHeader = $$("#hero header");
 	        
 			
 	        // SET-UP

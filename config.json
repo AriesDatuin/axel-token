@@ -44,7 +44,11 @@
 		"progressive": true,
 		"svgViewbox": true,
 		"svgCleanup": false,
-		"webp": true
+		"webp": true,
+		"webpOptimizationLevel": 0,
+		"webpQuality": 100,
+		"webpAlphaQuality": 100,
+		"webpSharpness": 0
 	},
 	
 	"html": {

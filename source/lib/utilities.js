@@ -351,7 +351,7 @@ var utilPageVisibility = function() {
 	function isPageHidden () {
 		//console.log("Page is inactive.");
 
-		TweenMax.set(pageVisibility.not(pageVisibilityIgnore), {autoAlpha: 0});
+		//TweenMax.set(pageVisibility.not(pageVisibilityIgnore), {autoAlpha: 0});
 
 		animPauseAll();
 
@@ -363,11 +363,7 @@ var utilPageVisibility = function() {
 
 		animController();
 
-		TweenMax.staggerTo(pageVisibility.not(pageVisibilityIgnore), 0.25, {autoAlpha: 1, delay: 0, ease: Power2.easeInOut}, 0.12);
-
-		TweenMax.staggerFrom($$(".profile-user").not(".active").find(".duotone-reset"), 1, {autoAlpha: 0, delay: 0, ease: Power2.easeInOut}, 0.12);
-		TweenMax.staggerFrom($$(".profile-user").not(".active").find(".duotone-process"), 1, {autoAlpha: 0, delay: 0.25, ease: Power2.easeInOut}, 0.12);
-		TweenMax.staggerFrom($$(".profile-info").children(), 0.5, {autoAlpha: 0, delay: 0.5, ease: Power2.easeInOut}, 0.12);
+		//TweenMax.staggerTo(pageVisibility.not(pageVisibilityIgnore), 0.25, {autoAlpha: 1, delay: 0, ease: Power2.easeInOut}, 0.12);
 
 	}
 	

@@ -1,0 +1,46 @@
+
+<!-- PROFILE CARD -->
+{{#each profiles.profiles}}
+
+
+	<!-- CARD -->
+	<div class="cell card media-object stack-for-small background-white">
+
+
+	  <!-- MEDIA OBJECT -->
+	  <div class="media-object-section">
+
+
+		<!-- IMAGE -->
+		<div class="wh-xs round-full border-xxs border-solid border-secondary background-secondary background-cover background-tc background-no-repeat lazy" alt="{{ title }}" data-src="{{ image }}"></div>
+		<!-- // IMAGE -->
+
+
+	  </div>
+	  <!-- // MEDIA OBJECT -->
+
+
+	  <!-- MEDIA OBJECT -->
+	  <div class="media-object-section">
+
+
+		<!-- COPY -->
+		<h3 class="p6 font-paragraph text-secondary text-bold header-accent-left header-accent-secondary">{{ title }}</h3>
+		<p>{{ description }}</p>
+		<!-- // COPY -->
+
+
+
+
+
+
+	  </div>
+	  <!-- // MEDIA OBJECT -->
+
+
+	</div>
+	<!-- // CARD -->
+
+
+{{/each}}
+<!-- // PROFILE CARD -->

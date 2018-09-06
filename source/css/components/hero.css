@@ -3,13 +3,13 @@
 /* -------------------------------------------------- */
 
 /* PARENT */
-.hero#welcome {
+.hero#hero {
 	position: relative;
 }
 
 
 /* HEADER */
-.hero#welcome header {
+.hero#hero header {
 	/*
 	border-radius: var(--radius-md);
 	background-color: var(--white-color);
@@ -24,12 +24,12 @@
 
 
 /* COPY */
-.hero#welcome header h1 {
+.hero#hero header h1 {
 	font-size: 2em;
 	line-height: 1.5em;
 }
 
-.hero#welcome header p {
+.hero#hero header p {
 	font-size: 1.25em;
 	line-height: 1.5em;
 }
@@ -39,12 +39,12 @@
 @media screen and (min-width: 0) and (max-width: 414px) {
 
 	/* COPY */
-	.hero#welcome header h1 {
+	.hero#hero header h1 {
 		font-size: 1.5em;
 		line-height: 1.25em;
 	}
 
-	.hero#welcome header p {
+	.hero#hero header p {
 		font-size: 1em;
 		line-height: 1.25em;
 	}

@@ -677,7 +677,7 @@ var comCounter = function() {
 
 	// OPTIONS
 	window.counterOptions = {
-		value: 0000, // Set starting integer.
+		value: 0, // Set starting integer.
 		//auto: true, // Don't automatically initialize everything with class 'odometer'.
 		selector: ".odometer", // Change the selector used to automatically find things to be animated.
 		format: "(,ddd)", // Formatting: (,ddd), (,ddd).dd, (.ddd),dd, ( ddd),dd, d
@@ -691,9 +691,9 @@ var comCounter = function() {
 	// ANIMATION
 	var tlCounter = new TimelineMax({paused: true});
 	
-		tlCounter.from(counter01, 0.5, {autoAlpha: 0, delay: 0.5, ease: Power4.easeOut, onStart: function() { counter01.html(200) } })
-				 .from(counter02, 0.5, {autoAlpha: 0, delay: 0.5, ease: Power4.easeOut, onStart: function() { counter02.html(1300) } })
-				 .from(counter03, 0.5, {autoAlpha: 0, delay: 2, ease: Power4.easeOut, onStart: function() { counter03.html(7800000000) } });
+		tlCounter.from(counter01, 0.5, {autoAlpha: 0, delay: 0.5, ease: Power4.easeOut, onStart: function() { counter01.html(200); } })
+				 .from(counter02, 0.5, {autoAlpha: 0, delay: 0.5, ease: Power4.easeOut, onStart: function() { counter02.html(1300); } })
+				 .from(counter03, 0.5, {autoAlpha: 0, delay: 1, ease: Power4.easeOut, onStart: function() { counter03.html(7800000000); } });
 	
 
 	// CONTROLLER
