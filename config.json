@@ -189,6 +189,7 @@
 				  "lib/metafizzy/imagesloaded.js",
 				  ">>>>>lib/metafizzy/isotope.js",
 				  "lib/metafizzy/plugins/background.lazyload.js",
+				  "lib/odometer/odometer.js",
 
 
 				  "<WIDGETS>",
@@ -215,6 +216,7 @@
 				  "lib/notice.js",
 				  "lib/pages.js",
 				  ">>>>>lib/transition.js",
+				  "lib/scenes/*.js",
 				  "lib/app.js"
 				 ]
 	
@@ -262,6 +264,7 @@
 				  ">>>>>lib/fullpage/fullpage.css",
 				  ">>>>>lib/fullpage/nav.css",
 				  "lib/metafizzy/flickity.css",
+				  "lib/odometer/odometer-theme-minimal.css",
 
 
 				  "<WIDGETS>",
@@ -289,9 +292,10 @@
 				  "css/utilities/*.css",
 
 
-				  "<CORE>",
+				  "<APP>",
 				  "css/copy.css",
 				  "css/layout.css",
+				  "lib/scenes/*.css",
 				  "css/rules.css",
 				  "css/theme.css",
 				  "css/responsive.css"

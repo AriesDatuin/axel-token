@@ -81,7 +81,7 @@ footer {
 
 /* PATH */
 #navbar-logo a svg path {
-	fill: var(--accent-color);
+	fill: var(--primary-color);
 }
 
 

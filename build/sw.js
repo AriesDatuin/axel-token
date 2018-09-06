@@ -36,7 +36,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/backgrounds/pattern-pixel-transparent.webp",
-    "revision": "fb7090b866e9c51ee5aca28676a297ff"
+    "revision": "c1eabcce53115ab886c71eabf5789754"
   },
   {
     "url": "assets/backgrounds/pattern-pixel-white.png",
@@ -44,7 +44,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/backgrounds/pattern-pixel-white.webp",
-    "revision": "57169d5bed279262c744e93203362e6e"
+    "revision": "304bb58a9b12c9dca970619bf2f3eab8"
   },
   {
     "url": "assets/case-studies/emma.jpg",
@@ -52,31 +52,43 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/case-studies/emma.webp",
-    "revision": "506757f8504473cf88542c1687e53b2d"
+    "revision": "f596f37dc69d90f75c3089df3cfc9bfe"
   },
   {
     "url": "assets/case-studies/josh.jpg",
     "revision": "bd21a7701fdd9741e598ecdca7b36323"
   },
   {
+    "url": "assets/case-studies/josh.png",
+    "revision": "201b4e651bd97a5cedf6f766017de51f"
+  },
+  {
     "url": "assets/case-studies/josh.webp",
-    "revision": "fcaa36e2a6f53e99cd4a16b13226fc4d"
+    "revision": "064e526ab36f59040225c59dbfaed25d"
   },
   {
     "url": "assets/case-studies/shera.jpg",
     "revision": "92cd29e021b8a8e56e22d1fb9301ee99"
   },
   {
+    "url": "assets/case-studies/shera.png",
+    "revision": "e468ccf1fe60337108336b6273456e96"
+  },
+  {
     "url": "assets/case-studies/shera.webp",
-    "revision": "86611d0c26603982fa0f45bdaf04f79a"
+    "revision": "07e974f92235a39ede66f9dee0059f60"
   },
   {
     "url": "assets/case-studies/tina.jpg",
     "revision": "c80ed84105192f3de8c0953bc2c4d566"
   },
   {
+    "url": "assets/case-studies/tina.png",
+    "revision": "c2fa10ea0e1ac21c2df05e7f8c45b4cf"
+  },
+  {
     "url": "assets/case-studies/tina.webp",
-    "revision": "a273768aa958d2cbac49b0e6e66ab63d"
+    "revision": "d8d1516e524ceb9ec3448e87334d97d3"
   },
   {
     "url": "assets/error.gif",
@@ -96,7 +108,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/icons/android-chrome-192x192.webp",
-    "revision": "bc747d0b067b5ceb6669ac58bf75fbcb"
+    "revision": "a092492a4a940975f09576102e111f57"
   },
   {
     "url": "assets/icons/android-chrome-512x512.png",
@@ -104,7 +116,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/icons/android-chrome-512x512.webp",
-    "revision": "8299ad3c4e2ad2c26fa297788dab5f57"
+    "revision": "81a8c0f898cca159754696b14c93ea78"
   },
   {
     "url": "assets/icons/apple-touch-icon.png",
@@ -112,7 +124,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/icons/apple-touch-icon.webp",
-    "revision": "8839dce79e1b561570acbf1ba4c9bd24"
+    "revision": "83f5ec4e7a4dc434f561b5510a1f5460"
   },
   {
     "url": "assets/icons/favicon-16x16.png",
@@ -120,7 +132,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/icons/favicon-16x16.webp",
-    "revision": "56ef5f9d44bbf33f3fd0d44cad2cff13"
+    "revision": "e0bb2dabf468927227ff290d30e646f4"
   },
   {
     "url": "assets/icons/favicon-32x32.png",
@@ -128,7 +140,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/icons/favicon-32x32.webp",
-    "revision": "3504bb25fd06b8e2a5750cddf2c4dad0"
+    "revision": "6a61a416b8ba809cdbe38f44e86b07b0"
   },
   {
     "url": "assets/icons/icon.png",
@@ -136,7 +148,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/icons/icon.webp",
-    "revision": "7120f59dc9132c867d60f0cdc08f08bb"
+    "revision": "6686e982f9838087628b702b368511e3"
   },
   {
     "url": "assets/icons/mstile-150x150.png",
@@ -144,7 +156,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/icons/mstile-150x150.webp",
-    "revision": "13f9a1dccf812630abd714b58a1adf28"
+    "revision": "f794f36ec70b0c2fb1eb1b560ef45a52"
   },
   {
     "url": "assets/icons/safari-pinned-tab.svg",
@@ -153,6 +165,10 @@ self.__precacheManifest = [
   {
     "url": "assets/illustrations/data.svg",
     "revision": "f799cad79f9869061f70dd2f50dffd19"
+  },
+  {
+    "url": "assets/illustrations/hacker.svg",
+    "revision": "3fdb0464a9def4da0213523e064033a9"
   },
   {
     "url": "assets/illustrations/jacob-alt.svg",
@@ -184,7 +200,23 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/index/blockchain.webp",
-    "revision": "58aa903a264c2e8443d936585a91af15"
+    "revision": "788bf872896957571f6a864655c03ba3"
+  },
+  {
+    "url": "assets/index/data-01.png",
+    "revision": "6e65d39e97e89337956d680e73ec76d4"
+  },
+  {
+    "url": "assets/index/data-01.webp",
+    "revision": "af2cebfbf5ae08ef2864e281f41b17de"
+  },
+  {
+    "url": "assets/index/diagram-how-it-works.png",
+    "revision": "374d9f3c9024e1f0f94d38de517358d7"
+  },
+  {
+    "url": "assets/index/diagram-how-it-works.webp",
+    "revision": "685555fc9c32a59bf692eebb77c6912c"
   },
   {
     "url": "assets/index/network-01.png",
@@ -192,7 +224,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/index/network-01.webp",
-    "revision": "20a68ea447dd43900b2f372898c8087d"
+    "revision": "eb68c49111fcbc902907517d30b8c974"
   },
   {
     "url": "assets/index/network-02.png",
@@ -200,23 +232,51 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/index/network-02.webp",
-    "revision": "9f1636bdc0075f82296bb70e88893482"
+    "revision": "db68dd4aebc2f41ea1f14e25573a3a7e"
   },
   {
-    "url": "assets/index/people-alt.jpg",
-    "revision": "c95d09165bb6101283884609272cbbed"
+    "url": "assets/index/network-03.png",
+    "revision": "07b3ebf42330ef4b1f5fe35dfb39f6ef"
   },
   {
-    "url": "assets/index/people-alt.webp",
-    "revision": "ce90c6c44820d526f36393f6de7c32bd"
+    "url": "assets/index/network-03.webp",
+    "revision": "05ab8cb502e6bdcc6942383b778cf1b4"
   },
   {
-    "url": "assets/index/people.jpg",
-    "revision": "a34fabb18852bafc68721c078cc36eb9"
+    "url": "assets/index/network-04.png",
+    "revision": "124ee15cc95cdbb9037afe6ba2821329"
+  },
+  {
+    "url": "assets/index/network-04.webp",
+    "revision": "32de44375bd8a6a55c63fc1b4ddced38"
   },
   {
     "url": "assets/index/people.webp",
-    "revision": "4f70ea6c8f0dfa74966340925232d904"
+    "revision": "dd448187a234986b48eef99139c5e42e"
+  },
+  {
+    "url": "assets/index/privacy-01.png",
+    "revision": "08f50eea42daf9c475aa6381eea84ce5"
+  },
+  {
+    "url": "assets/index/privacy-01.webp",
+    "revision": "c1d4266d34afbea56652df873cc2df88"
+  },
+  {
+    "url": "assets/index/privacy-02.png",
+    "revision": "bb49218d8dc428035815a25bab1d6ce6"
+  },
+  {
+    "url": "assets/index/privacy-02.webp",
+    "revision": "3b296fd3d1164f2b001b7785eb1a6ca6"
+  },
+  {
+    "url": "assets/index/screenshot-paid-link.png",
+    "revision": "0bedba04b0ad6748a1a84fb8eac114b8"
+  },
+  {
+    "url": "assets/index/screenshot-paid-link.webp",
+    "revision": "25b6f6e6b5c1bd7fa09734669fcd7a2d"
   },
   {
     "url": "assets/index/teamwork.png",
@@ -224,7 +284,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/index/teamwork.webp",
-    "revision": "788215528913c28e5efab0c10a170b53"
+    "revision": "3355c4f3ec1689fee57fca8fd700ba97"
   },
   {
     "url": "assets/index/timeline-alt.png",
@@ -232,7 +292,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/index/timeline-alt.webp",
-    "revision": "b41b6065909bbf657acf275222f084a6"
+    "revision": "ad004a54893e96ea88bef71cae1a88b9"
   },
   {
     "url": "assets/index/timeline.svg",
@@ -240,7 +300,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/index/timeline.webp",
-    "revision": "b449a3bfbc06c2c975906f702567e1ae"
+    "revision": "7d7da4f786badf9bdc9b111dc9c86cd7"
   },
   {
     "url": "assets/social/profile.png",
@@ -248,7 +308,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/social/profile.webp",
-    "revision": "2a3136c2dd3fb9c67c804dfa69961cdb"
+    "revision": "4b046b775d8731de3aa7290cabfa06dd"
   },
   {
     "url": "assets/social/social.png",
@@ -256,7 +316,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/social/social.webp",
-    "revision": "8a543b55a6afb2d804351af521fbc5fc"
+    "revision": "e00eef5ac7f11003e2d93d6f1c6e218a"
   },
   {
     "url": "assets/team/large-ben-ow.jpg",
@@ -264,7 +324,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/team/large-ben-ow.webp",
-    "revision": "ec4da7978ddfa50f458cdaeeeeb3327c"
+    "revision": "fe9f02bef0d71c5e471fbe1faa570e74"
   },
   {
     "url": "assets/team/large-dave-kaplan.jpg",
@@ -272,7 +332,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/team/large-dave-kaplan.webp",
-    "revision": "efc254f6828262afd90f8938ae8471e0"
+    "revision": "dc4d7472ac00dcee0d025fc6669b18c5"
   },
   {
     "url": "assets/team/large-diana-zhang.jpg",
@@ -280,7 +340,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/team/large-diana-zhang.webp",
-    "revision": "d7da9b2c776d381abb1eca2922dbe611"
+    "revision": "6cddac9a3956a102bc224a53fc87fba6"
   },
   {
     "url": "assets/team/large-dmitry-kogosov.jpg",
@@ -288,7 +348,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/team/large-dmitry-kogosov.webp",
-    "revision": "2106563bd42f5605effc930c7bc996e3"
+    "revision": "15d9d79ac1cfc94abee0f8053bcbb3b2"
   },
   {
     "url": "assets/team/large-dmytro-ashkinazi.jpg",
@@ -296,7 +356,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/team/large-dmytro-ashkinazi.webp",
-    "revision": "8e0ced5d3d86f535d29123678a2cf27e"
+    "revision": "332d39e3251bf24544adcc09365bbe20"
   },
   {
     "url": "assets/team/large-jeremy-forsberg.jpg",
@@ -304,7 +364,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/team/large-jeremy-forsberg.webp",
-    "revision": "24b345f5da19c4071809fdeb95792ac2"
+    "revision": "1e347a8a0045e07a6fb3e6d58b855926"
   },
   {
     "url": "assets/team/large-michael-conn.jpg",
@@ -312,7 +372,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/team/large-michael-conn.webp",
-    "revision": "c81d04aa47f17d602a4dfe2d585fd5b9"
+    "revision": "8876a268221a07e4794811ec4db1be98"
   },
   {
     "url": "assets/team/large-rick-stiles.jpg",
@@ -320,7 +380,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/team/large-rick-stiles.webp",
-    "revision": "a6e664522b1b8c6ecd39f5a3c25fef2c"
+    "revision": "fad0d44d399dad2e095f995185a765d2"
   },
   {
     "url": "assets/team/large-sandy-zhou.jpg",
@@ -328,7 +388,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/team/large-sandy-zhou.webp",
-    "revision": "6435406cc86f5dfe97d0c298e19f4f57"
+    "revision": "5312508ce1e41f078f3f52773069ea03"
   },
   {
     "url": "assets/team/large-tony-tan.jpg",
@@ -336,7 +396,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/team/large-tony-tan.webp",
-    "revision": "e29d044fe80a3486dcf9a6ebe527e903"
+    "revision": "db100e617df05f4fe5481fed7e44f535"
   },
   {
     "url": "assets/team/small-ben-ow.jpg",
@@ -344,7 +404,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/team/small-ben-ow.webp",
-    "revision": "ebc739c7a4a4c987bd93b7f2cb904c73"
+    "revision": "ea29ff443acb427e555d02513336e7dc"
   },
   {
     "url": "assets/team/small-dave-kaplan.jpg",
@@ -352,7 +412,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/team/small-dave-kaplan.webp",
-    "revision": "0dddc01e6ea13b085dde5cd162166009"
+    "revision": "dd0beb0dea4383855495234c09b0afde"
   },
   {
     "url": "assets/team/small-diana-zhang.jpg",
@@ -360,7 +420,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/team/small-diana-zhang.webp",
-    "revision": "5e3aa9f3ac13c1b0644efa1728a28603"
+    "revision": "f38f1db6d47b8fe41e4fd9fa216505a7"
   },
   {
     "url": "assets/team/small-dmitry-kogosov.jpg",
@@ -368,7 +428,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/team/small-dmitry-kogosov.webp",
-    "revision": "102b158a3196bf4474885977961665f5"
+    "revision": "a8820f2bc32978dacdc51a1090fdf067"
   },
   {
     "url": "assets/team/small-dmytro-ashkinazi.jpg",
@@ -376,7 +436,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/team/small-dmytro-ashkinazi.webp",
-    "revision": "ccacaf8c794df6c196ce2e23a07ca812"
+    "revision": "e8a04a141c43aff2180d9cb323c3bf12"
   },
   {
     "url": "assets/team/small-jeremy-forsberg.jpg",
@@ -384,7 +444,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/team/small-jeremy-forsberg.webp",
-    "revision": "b96fd9345f6b9c8a9b92d518d75efaaf"
+    "revision": "68fefb0d7daf0dab1fd2237f2206597b"
   },
   {
     "url": "assets/team/small-michael-conn.jpg",
@@ -392,7 +452,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/team/small-michael-conn.webp",
-    "revision": "ac3c99c35dc699b43286c7b0e72133e1"
+    "revision": "fbd4ad7cf574b141b206223ce1b98d88"
   },
   {
     "url": "assets/team/small-rick-stiles.jpg",
@@ -400,7 +460,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/team/small-rick-stiles.webp",
-    "revision": "39714a977fcb80ce51b166d0bdc9c8b2"
+    "revision": "098a7838858ef68d309633ec84f39e5e"
   },
   {
     "url": "assets/team/small-sandy-zhou.jpg",
@@ -408,7 +468,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/team/small-sandy-zhou.webp",
-    "revision": "bb796e75211bbc12aadede2d395394cb"
+    "revision": "c994ff045306613586d74f15c79f5e4f"
   },
   {
     "url": "assets/team/small-tony-tan.jpg",
@@ -416,19 +476,19 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/team/small-tony-tan.webp",
-    "revision": "aec1a453a517b3f8dee4577d1d3cb834"
+    "revision": "95fd26eb031e7d97210ccb836a2f8f44"
   },
   {
     "url": "copyright.html",
-    "revision": "e9a2c06f037620083a35f49dc57c31de"
+    "revision": "259b034052cd7748c3c83d0c2e057106"
   },
   {
     "url": "error.html",
-    "revision": "f7a34b576b9d9dce4366f6ac73f136de"
+    "revision": "22df36bf36a93063ee0ffc6716b808c6"
   },
   {
     "url": "eula.html",
-    "revision": "01e59666d3a60fc606088dbc29a095e2"
+    "revision": "5294d29bd292e073ea3fb2ea7d51ee6b"
   },
   {
     "url": "fonts/fontawesome-webfont.eot",
@@ -460,7 +520,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "c4cdd6134638057ca0af92cd6f46eaa3"
+    "revision": "932362fa838937a96154f0c8d1a4d3f5"
   },
   {
     "url": "modals/press.html",
@@ -468,15 +528,15 @@ self.__precacheManifest = [
   },
   {
     "url": "modals/story-josh.html",
-    "revision": "3040bf338b4ea0f7a08a13253971ed9e"
+    "revision": "da8f9a69dead5bb5675638f1d3a8ea1f"
   },
   {
     "url": "modals/story-shera.html",
-    "revision": "5d5d33f36aa73a756d7b89528002db02"
+    "revision": "ae626da688ad89db1cd62f03db1923c7"
   },
   {
     "url": "modals/story-tina.html",
-    "revision": "02ca906d1592b720c12243b852804c44"
+    "revision": "048d578676aef768832d82eeab6e84ac"
   },
   {
     "url": "modals/whitepaper.html",
@@ -484,19 +544,19 @@ self.__precacheManifest = [
   },
   {
     "url": "privacy-bill-of-rights.html",
-    "revision": "78e8e4e48a322f4b39cd783821352b03"
+    "revision": "418bde1aa84686f66c469e68b2194f0b"
   },
   {
     "url": "privacy-policy.html",
-    "revision": "8737fbcd3ab98bf2289c66d18e1a7a09"
+    "revision": "b88a35a2b0ceb37b8ddf433142093705"
   },
   {
-    "url": "scripts/app.5c5607e1ed.min.js",
-    "revision": "5c5607e1edace941dbf6032bfd41496c"
+    "url": "scripts/app.39211fe4f3.min.css",
+    "revision": "39211fe4f35269a17ab6e2169fe90439"
   },
   {
-    "url": "scripts/app.bb1776b6f3.min.css",
-    "revision": "bb1776b6f37425f72d97057c656eb239"
+    "url": "scripts/app.65272f205e.min.js",
+    "revision": "65272f205ea2d5c456e291ec37a98178"
   },
   {
     "url": "scripts/vendor.ca6cbf53e8.min.js",

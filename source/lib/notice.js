@@ -33,7 +33,7 @@ var	cookiePrivacyPolicy = "privacy-policy",
 				uiModalPrivacyPolicy += "<div class='grid-x align-center align-middle small-up-1 medium-up-2 large-up-2 center-element width-sm'>";
 
 
-					uiModalPrivacyPolicy += "<p id='ui-privacy-policy-message' class='cell medium-auto text-white padding-bottom-sm-mobile'>This website uses cookies to ensure you get the best experience. <a href='privacy-policy' class='text-primary text-accent-hover text-bold'>Read our privacy policy to learn more.</a></p>";
+					uiModalPrivacyPolicy += "<p id='ui-privacy-policy-message' class='cell medium-auto text-white padding-bottom-sm-mobile'>This website uses cookies to ensure you get the best experience. <a href='https://axel.org/privacy-policy' target='_blank' class='text-primary text-accent-hover text-bold external'>Read our privacy policy to learn more.</a></p>";
 
 					uiModalPrivacyPolicy += "<a id='ui-modal-button-privacy-policy' href='#' class='cell round-full button button-md button-fx-secondary button-fx-flat button-fx-static width-full-mobile round-full text-white text-bold text-center background-secondary background-white-hover external'>Got it!</a>";
 

@@ -591,7 +591,7 @@ export function raster() {
 							   imagemin.jpegtran({progressive: config.images.progressive}),
 							  ], {verbose: true}) )
 			   )
-			   .pipe(gulpif( config.images.webp, webp() ))
+			   .pipe(gulpif( config.images.webp, webp({ method: 0, quality: 75, alphaQuality: 100, sharpness: 0, filter: 0, autoFilter: false, lossless: false, nearLossless: 100, sns: 80 }) ))
 			   .pipe(gulp.dest( config.paths.build ));
 
 }

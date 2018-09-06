@@ -146,12 +146,12 @@ ul.social-icons > li > a:hover {
 
 /* LIGHT */
 ul.social-icons.light > li > a {
-	color: var(--white-color);
+	color: var(--accent-color);
 	background-color: transparent;
 }
 
 ul.social-icons.light > li > a:hover {
-	color: var(--accent-color);
+	color: var(--white-color);
 }
 
 

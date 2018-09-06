@@ -2944,6 +2944,16 @@ li::after {
 	background-position: bottom center;
 }
 
+
+.background-lc {
+	background-position: left center;
+}
+
+.background-rc {
+	background-position: right center;
+}
+
+
 .fullscreen {
 	margin-left: auto;
 	margin-right: auto;

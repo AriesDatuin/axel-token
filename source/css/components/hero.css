@@ -25,13 +25,11 @@
 
 /* COPY */
 .hero#welcome header h1 {
-	color: var(--accent-color);
 	font-size: 2em;
 	line-height: 1.5em;
 }
 
 .hero#welcome header p {
-	color: var(--white-color);
 	font-size: 1.25em;
 	line-height: 1.5em;
 }

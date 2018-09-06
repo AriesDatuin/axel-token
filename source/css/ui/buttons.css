@@ -98,9 +98,9 @@
 
 /* HOVER */
 .button-fx-primary:hover {
-	box-shadow: 0 8px 10px 1px rgba(var(--secondary-color-rgb),0.4),
-				0 3px 14px 2px rgba(var(--secondary-color-rgb),0.6),
-				0 5px 5px -3px rgba(var(--secondary-color-rgb),0.8);
+	box-shadow: 0 8px 10px 1px rgba(var(--secondary-color-rgb),0.1),
+				0 3px 14px 2px rgba(var(--secondary-color-rgb),0.2),
+				0 5px 5px -3px rgba(var(--secondary-color-rgb),0.3);
  }
 
 .button-fx-secondary:hover {

@@ -127,7 +127,7 @@ var utilAssetObserver = function() {
 	
 	var lazyLoading = function(element) {		
 		
-		$$(element).imagesLoaded({ background: true })
+		$(element).imagesLoaded({ background: true })
 		
 			.always( function() {
 			
@@ -146,7 +146,7 @@ var utilAssetObserver = function() {
 	
 	var lazySet = function(element) {
 		
-		$$(element).imagesLoaded({ background: true })
+		$(element).imagesLoaded({ background: true })
 
 			.done( function() {
 			
@@ -180,7 +180,7 @@ var utilAssetObserver = function() {
 					   callback_load: null,
 					   callback_set: lazySet,
 					   callback_error: null,
-					   to_webp: false
+					   to_webp: true
 	};
 	
 	
@@ -270,7 +270,7 @@ var utilEmergence = function() {
 	// PROPERTIES
 	if ( !$isMobile && !$hasTouch ) {
 
-		TweenMax.set(emergenceElement.not(emergenceIgnore).children().not(emergenceIgnoreChild).not(anim).children(), {autoAlpha: 0, y: 10});
+		TweenMax.set(emergenceElement.not(emergenceIgnore).children().not(emergenceIgnoreChild).not(anim).children(), {opacity: 0, y: 25});
 
 	}
 
@@ -294,7 +294,7 @@ var utilEmergence = function() {
 
 				if ( !$isMobile && !$hasTouch ) {
 
-					TweenMax.staggerTo($(element).not(emergenceIgnore).children().not(emergenceIgnoreChild).not(anim).children(), 0.5, {autoAlpha: 1, y: 0, delay: 0, ease: Power4.easeOut, overwrite: "false", clearProps:"all"}, 0.12);
+					TweenMax.staggerTo($(element).not(emergenceIgnore).children().not(emergenceIgnoreChild).not(anim).children(), 0.75, {opacity: 1, y: 0, delay: 0, ease: Power4.easeOut, overwrite: "false", clearProps:"all"}, 0.12);
 
 				}
 
@@ -363,7 +363,7 @@ var utilPageVisibility = function() {
 
 		animController();
 
-		TweenMax.staggerTo(pageVisibility.not(pageVisibilityIgnore), 0.5, {autoAlpha: 1, delay: 0.5, ease: Power2.easeInOut}, 0.12);
+		TweenMax.staggerTo(pageVisibility.not(pageVisibilityIgnore), 0.25, {autoAlpha: 1, delay: 0, ease: Power2.easeInOut}, 0.12);
 
 		TweenMax.staggerFrom($$(".profile-user").not(".active").find(".duotone-reset"), 1, {autoAlpha: 0, delay: 0, ease: Power2.easeInOut}, 0.12);
 		TweenMax.staggerFrom($$(".profile-user").not(".active").find(".duotone-process"), 1, {autoAlpha: 0, delay: 0.25, ease: Power2.easeInOut}, 0.12);

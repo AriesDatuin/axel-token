@@ -28,13 +28,14 @@ var ctx,
     tansmitInterval = 4000,
     minNodes = 2,
     maxNodes = 4,
-    nodeSize = 2,
+    nodeSize = 3,
     nodeColor = "rgba(0,250,200,1)",
-    nodeLineColor = "rgba(250,250,250,1)",
-    nodeLineWidth = 0.3,
-    signalLineWidth = 0.4,
-    signalDuration = 2,
-    swayAmount = 10;
+    nodeLineColor = "rgba(0,0,0,1)",
+    signalColor = "rgba(250,0,150)", //"hsl(168,100%,50%)", 'hsl(' + tint + ',100%,50%)';
+    nodeLineWidth = 0.1,
+    signalLineWidth = 0.5,
+    signalDuration = 1,
+    swayAmount = 12;
 
 
 // ASSEMBLY
@@ -210,7 +211,7 @@ function Signal(start) {
     var tint = Math.floor(Math.random() * 360);
     //console.log(tint);
     //this.style = 'hsl(' + tint + ',100%,50%)';
-    this.style = 'hsl(168,100%,50%)';
+    this.style = signalColor;
     //this.style = ['hsl(324,100%,50%)', 'hsl(168,100%,50%)', 'hsl(252,100%,50%)'];
 
     for (var i = 0; i < start.connections.length; i++) {

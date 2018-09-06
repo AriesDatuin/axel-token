@@ -524,7 +524,7 @@ var comModal = function() {
 
 				uiModal += "<div class='modal-container cell align-self-top'></div>"; // CONTAINER
 
-				uiModal += "<a class='modal-close cell align-self-bottom padding-tb-md center-element p11 text-white text-secondary-hover text-bold text-uppercase button button-width-full background-secondary background-transparent-hover no-touch-feedback prevent-default z-auto'><i class='fa fa-times-circle margin-right-xs'></i>Close</a>"; // BUTTON: CLOSE
+				uiModal += "<a class='modal-close cell align-self-bottom padding-tb-md center-element p11 text-secondary text-charcoal-hover text-bold text-uppercase button button-width-full background-white background-white-hover no-touch-feedback prevent-default z-auto'><i class='fa fa-times-circle margin-right-xs'></i>Close</a>"; // BUTTON: CLOSE
 
 			uiModal += "</div>"; // MODAL
 	
@@ -663,6 +663,113 @@ var comModal = function() {
 
 
 /* -------------------------------------------------- */
+/* ODOMETER / TICKER COUNTER
+/* -------------------------------------------------- */
+
+var comCounter = function() {
+	
+	// CACHE SELECTORS
+	var counter = $$(".counter.anim"),
+		counter01 = $$("#counter-01.anim"),
+		counter02 = $$("#counter-02.anim"),
+		counter03 = $$("#counter-03.anim");
+
+
+	// OPTIONS
+	window.counterOptions = {
+		value: 0000, // Set starting integer.
+		//auto: true, // Don't automatically initialize everything with class 'odometer'.
+		selector: ".odometer", // Change the selector used to automatically find things to be animated.
+		format: "(,ddd)", // Formatting: (,ddd), (,ddd).dd, (.ddd),dd, ( ddd),dd, d
+		duration: 5000, // Change how long the javascript expects the CSS animation to take.
+		theme: "minimal", // Specify the theme: default, minimal, car, plaza, slot-machine, train-station, digital
+		animation: "count" // Count is a simpler animation method which just increments the value, use it when you're looking for something more subtle.
+
+	}; //od = new Odometer(counterOptions);
+
+
+	// ANIMATION
+	var tlCounter = new TimelineMax({paused: true});
+	
+		tlCounter.from(counter01, 0.5, {autoAlpha: 0, delay: 0.5, ease: Power4.easeOut, onStart: function() { counter01.html(200) } })
+				 .from(counter02, 0.5, {autoAlpha: 0, delay: 0.5, ease: Power4.easeOut, onStart: function() { counter02.html(1300) } })
+				 .from(counter03, 0.5, {autoAlpha: 0, delay: 2, ease: Power4.easeOut, onStart: function() { counter03.html(7800000000) } });
+	
+
+	// CONTROLLER
+	var animCounterController = function() {
+
+		if ( counter01.hasClass("anim-play") ) {
+
+			tlCounter.play();
+
+		} else {
+
+			/*
+			console.log("Reset.");
+
+			TweenMax.set(counter01, {autoAlpha: 0});
+			TweenMax.set(counter02, {autoAlpha: 0});
+			TweenMax.set(counter03, {autoAlpha: 0});
+
+			counter01.html(0);
+			counter02.html(0);
+			counter03.html(0)
+
+			tlCounter.restart();
+			*/
+
+		}
+		
+
+
+
+
+		/*
+		if ( counter01.hasClass("anim-play") ) {
+
+			counter01.html(200);
+
+		} else {
+
+			counter01.html();
+
+		}
+
+
+		if ( counter02.hasClass("anim-play") ) {
+
+			counter02.html(1300);
+
+		} else {
+			counter02.html();
+		}
+
+
+		if ( counter03.hasClass("anim-play") ) {
+
+			counter03.html(7800000000);
+
+		} else {
+
+			counter03.html();
+
+		}
+		*/
+
+
+	};
+
+
+	$$(pageContent).on("scrollstop", animCounterController);
+
+	TweenMax.delayedCall($delayInterval, animCounterController);
+
+
+}; // END comOdometer
+
+
+/* -------------------------------------------------- */
 /* PARALLAX
 /* -------------------------------------------------- */
 
@@ -707,13 +814,16 @@ var comParticles = function() {
 /* SLIDER
 /* -------------------------------------------------- */
 
-// CACHE SELECTORS
-var sliderDefault = $$(".slider-default"),
-	sliderDefaultAdapt = $$(".slider-default.adapt").flickity({});
-
-
 var comSlider = function() {
 	"use strict";
+
+	/* -------------------------------------------------- */
+	/* CACHE SELECTORS
+	/* -------------------------------------------------- */
+
+	var sliderDefault = $$(".slider-default"),
+		sliderDefaultAdapt = $$(".slider-default.adapt").flickity({});
+
 
     /* -------------------------------------------------- */
     /* SLIDER

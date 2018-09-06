@@ -24,6 +24,7 @@ var components = function() {
 	//comAnimGradient();
 	//comBlog();
 	//comCaseStudies();
+	//comOdometer();
 	//comParallax();
 	//comParticles();
 	//comTeam();
@@ -55,6 +56,8 @@ var core = function() {
 	uiNav();
 	uiButtons();
 	uiRelayout();
+
+	comCounter();
 	
 	//hashNav();
 	pages();
