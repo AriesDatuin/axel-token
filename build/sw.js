@@ -184,11 +184,11 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/index/diagram-our-technology.png",
-    "revision": "c6c44ac1d2c42d6547121b432a623526"
+    "revision": "e9069dbee80161b54a33ffcdb5eb2605"
   },
   {
     "url": "assets/index/diagram-our-technology.webp",
-    "revision": "0afc79d6c0e3d0b70bdf03de1361c38f"
+    "revision": "4658efd0b975ce60eeec95614d258652"
   },
   {
     "url": "assets/index/earth.png",
@@ -488,7 +488,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "e92e672c556c4cd0a9eff92d74ffe19b"
+    "revision": "681d716fbb3b0f344181caf229a817e3"
   },
   {
     "url": "modals/eula.html",
