@@ -23,7 +23,7 @@ h1, h2, h3, h4, h5, h6,
     font-family: var(--font-copy);
 }
 
-.font-wild {
+.font-alt {
     font-family: var(--font-alt);
 	font-weight: 500;
 }

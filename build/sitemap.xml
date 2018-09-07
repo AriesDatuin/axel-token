@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://axeltoken.com/copyright.html</loc>
-        <lastmod>2018-09-07T06:53:38.755Z</lastmod>
-    </url>
-    <url>
         <loc>https://axeltoken.com/error.html</loc>
-        <lastmod>2018-09-07T06:53:38.796Z</lastmod>
+        <lastmod>2018-09-07T20:03:53.955Z</lastmod>
     </url>
     <url>
         <loc>https://axeltoken.com/eula.html</loc>
-        <lastmod>2018-09-07T06:53:38.809Z</lastmod>
+        <lastmod>2018-09-07T20:03:53.990Z</lastmod>
     </url>
     <url>
         <loc>https://axeltoken.com/</loc>
-        <lastmod>2018-09-07T06:53:38.811Z</lastmod>
+        <lastmod>2018-09-07T20:03:53.991Z</lastmod>
     </url>
     <url>
-        <loc>https://axeltoken.com/privacy-bill-of-rights.html</loc>
-        <lastmod>2018-09-07T06:53:38.812Z</lastmod>
-    </url>
-    <url>
-        <loc>https://axeltoken.com/privacy-policy.html</loc>
-        <lastmod>2018-09-07T06:53:38.813Z</lastmod>
+        <loc>https://axeltoken.com/modals/eula.html</loc>
+        <lastmod>2018-09-07T20:03:53.995Z</lastmod>
     </url>
     <url>
         <loc>https://axeltoken.com/modals/press.html</loc>
-        <lastmod>2018-09-07T06:53:38.815Z</lastmod>
+        <lastmod>2018-09-07T20:03:53.998Z</lastmod>
+    </url>
+    <url>
+        <loc>https://axeltoken.com/modals/privacy-policy.html</loc>
+        <lastmod>2018-09-07T20:03:54.000Z</lastmod>
+    </url>
+    <url>
+        <loc>https://axeltoken.com/modals/profile-tony-tan.html</loc>
+        <lastmod>2018-09-07T20:03:54.001Z</lastmod>
     </url>
     <url>
         <loc>https://axeltoken.com/modals/story-josh.html</loc>
-        <lastmod>2018-09-07T06:53:38.816Z</lastmod>
+        <lastmod>2018-09-07T20:03:54.003Z</lastmod>
     </url>
     <url>
         <loc>https://axeltoken.com/modals/story-shera.html</loc>
-        <lastmod>2018-09-07T06:53:38.817Z</lastmod>
+        <lastmod>2018-09-07T20:03:54.004Z</lastmod>
     </url>
     <url>
         <loc>https://axeltoken.com/modals/story-tina.html</loc>
-        <lastmod>2018-09-07T06:53:38.817Z</lastmod>
+        <lastmod>2018-09-07T20:03:54.004Z</lastmod>
     </url>
     <url>
         <loc>https://axeltoken.com/modals/whitepaper.html</loc>
-        <lastmod>2018-09-07T06:53:38.818Z</lastmod>
+        <lastmod>2018-09-07T20:03:54.005Z</lastmod>
     </url>
 </urlset>

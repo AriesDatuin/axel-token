@@ -35,7 +35,7 @@ assets: assets/
 								 "setGallerySize": true,
 								 "resize": true,
 								 "cellAlign": "center",
-								 "contain": false,
+								 "contain": true,
 								 "imagesLoaded": true,
 								 "percentPosition": false,
 								 "rightToLeft": false,
@@ -623,7 +623,7 @@ assets: assets/
 
 
 			<!-- IMAGE -->
-			<img class="lazy" alt="A Team Of Distributed Exchange Developers With A Track Record." data-src="{{ root }}{{ assets }}/illustrations/teamwork-alt.svg">
+			<img class="lazy" alt="A Team Of Distributed Exchange Developers With A Track Record" data-src="{{ root }}{{ assets }}/illustrations/teamwork-alt.svg">
 			<!-- // IMAGE -->
 
 
@@ -825,7 +825,7 @@ assets: assets/
 
 
 			<!-- HEADER -->
-			<h2 class="margin-left-xl margin-none-mobile p2 font-paragraph text-secondary text-left header-accent header-accent-left header-accent-secondary">Scalable + Accessible + Secure</h2>
+			<h2 class="margin-left-xl margin-none-mobile p2 font-paragraph text-secondary text-left header-accent header-accent-left header-accent-secondary">Scalable <span class="text-accent">+</span> Accessible <span class="text-accent">+</span> Secure</h2>
 			<!-- // HEADER -->
 
 
@@ -980,7 +980,7 @@ assets: assets/
 
 
 			<!-- IMAGE -->
-			<img class="lazy" data-src="{{ root }}{{ assets }}{{ page }}/diagram-our-technology.png">
+			<img class="lazy" alt="Our Technology" data-src="{{ root }}{{ assets }}{{ page }}/diagram-our-technology.png">
 			<!-- // IMAGE -->
 
 
@@ -1181,16 +1181,16 @@ assets: assets/
 
 
 	<!-- GRID -->
-	<div class="grid-x grid-margin-x grid-padding-x align-center align-top small-up-1 medium-up-2 center-element padding-bottom-xl width-lg">
+	<div class="grid-x grid-margin-x grid-padding-x align-center align-middle small-up-1 medium-up-2 center-element padding-bottom-xl width-lg">
 
 
 		<!-- CELL -->
-		<div class="cell small-order-1 medium-order-1">
+		<div class="cell card padding-none background-secondary small-order-2 medium-order-1 padding-none background-cover background-center background-no-repeat lazy" data-src="{{ root }}{{ assets }}{{ page }}/network-02.png">
 
 
-			<!-- HEADER -->
-			<h2 class="p2 font-paragraph text-secondary text-left text-center-mobile header-accent header-accent-left header-accent-center-mobile header-accent-secondary">Here's How We Plan For Users To Get &amp; Spend AXEL Tokens</h2>
-			<!-- // HEADER -->
+			<!-- IMAGE -->
+			<img class="lazy" alt="How It Works" data-src="{{ root }}{{ assets }}{{ page }}/diagram-how-it-works.png">
+			<!-- // IMAGE -->
 
 
 		</div>
@@ -1198,11 +1198,16 @@ assets: assets/
 
 
 		<!-- CELL -->
-		<div class="cell card padding-none background-secondary small-order-2 medium-order-2 padding-none background-cover background-center background-no-repeat lazy" data-src="{{ root }}{{ assets }}{{ page }}/network-02.png">
+		<div class="cell small-order-1 medium-order-2">
+
+
+			<!-- HEADER -->
+			<h2 class="p2 font-paragraph text-secondary text-left text-center-mobile header-accent header-accent-left header-accent-center-mobile header-accent-secondary">Here's How We Plan For Users To Get &amp; Spend AXEL Tokens</h2>
+			<!-- // HEADER -->
 
 
 			<!-- IMAGE -->
-			<img class="lazy" data-src="{{ root }}{{ assets }}{{ page }}/diagram-how-it-works.png">
+			<img class="lazy" alt="Here's How We Plan For Users To Get &amp; Spend AXEL Tokens" data-src="{{ root }}{{ assets }}/illustrations/tokens.svg">
 			<!-- // IMAGE -->
 
 
@@ -1240,23 +1245,18 @@ assets: assets/
 
 
 	<!-- CONTAINER -->
-	<div class="position-absolute center-v">
-
-
-		<!-- HEADER -->
-		<h2 class="position-relative font-paragraph padding-auto padding-top-lg-mobile padding-bottom-none p2 text-white text-center header-accent-center header-accent-white z-auto">Historical &amp; Planned Development Timeline</h2>
-		<!-- // HEADER -->
+	<div class="height-full">
 
 
 		<!-- SLIDER -->
-		<div class="slider-default overflow light js-flickity"
+		<div class="slider-default overflow light js-flickity height-full"
 			 data-flickity-options='{"cellSelector": ".slider-item",
 									 "initialIndex": 0,
 									 "accessibility": true,
 									 "setGallerySize": true,
 									 "resize": true,
-									 "cellAlign": "left",
-									 "contain": true,
+									 "cellAlign": "center",
+									 "contain": false,
 									 "imagesLoaded": true,
 									 "percentPosition": false,
 									 "rightToLeft": false,
@@ -1272,39 +1272,17 @@ assets: assets/
 									 "selectedAttraction": 0.2,
 									 "friction": 0.8,
 									 "freeScrollFriction": 0.03,
-									 "prevNextButtons": false,
+									 "prevNextButtons": true,
 									 "pageDots": true,
 									 "lazyLoad": 2,
 									 "bgLazyLoad": 1
 									}'>
-
-
-			<!-- ITEM -->
-			<div data-id="" class="slider-item width-xxxs height-xxxs height-xxs-mobile">
-				
-
-				<div class="card tip-bottom overflow-visible margin-sm padding-sm background-white">
-					
-					<!-- COPY -->
-					<h3 class="p10 font-paragraph text-dark-grey text-bold">2013</h3>
-
-					<ul class="list-horizontal p10 text-dark-grey">
-						<li>Launch of CloudLocker decentralized storage device.</li>
-					</ul>
-					<!-- // COPY -->
-
-				</div>
-
-
-				<div class="position-absolute center-vh margin-top-md width-full border-xxs border-top border-dotted border-light-grey text-center">
-					<span class="position-absolute center-v left p8 text-white fa fa-ellipsis-v" aria-hidden="true"></span>
-					<span class="position-absolute center-vh p10 text-accent fa fa-circle" aria-hidden="true"></span>
-				</div>
-
-				
-			</div>
-			<!-- // ITEM -->
 			
+
+			<!-- HEADER -->
+			<h2 class="position-relative font-paragraph padding-auto padding-top-xl padding-top-lg-mobile padding-bottom-none p2 text-white text-center header-accent-center header-accent-white z-auto">Historical &amp; Planned Development Timeline</h2>
+			<!-- // HEADER -->
+
 
 			<!-- ITEM -->
 			<div data-id="" class="slider-item width-xxxs height-xxxs height-xxs-mobile">
@@ -1409,10 +1387,10 @@ assets: assets/
 				<div class="card tip-bottom overflow-visible margin-sm padding-sm background-white">
 					
 					<!-- COPY -->
-					<h3 class="p10 font-paragraph text-secondary text-bold">Q2 2018</h3>
+					<h3 class="p10 font-paragraph text-dark-grey text-bold">Q2 2018</h3>
 
-					<ul class="list-horizontal p10">
-						<li>Release of new user experience and interface on all applicatins.</li>
+					<ul class="list-horizontal p10 text-dark-grey">
+						<li>Release of new user experience and interface on all applications.</li>
 					</ul>
 					<!-- // COPY -->
 
@@ -1432,9 +1410,9 @@ assets: assets/
 				<div class="card tip-bottom overflow-visible margin-sm padding-sm background-white">
 					
 					<!-- COPY -->
-					<h3 class="p10 font-paragraph text-secondary text-bold">Q3 2018</h3>
+					<h3 class="p10 font-paragraph text-dark-grey text-bold">Q3 2018</h3>
 
-					<ul class="list-horizontal p10">
+					<ul class="list-horizontal p10 text-dark-grey">
 						<li>Launch of AXEL Pay.</li>
 					</ul>
 					<!-- // COPY -->
@@ -1645,7 +1623,7 @@ assets: assets/
 		<!-- CELL -->
 		<div class="cell small-order-1 medium-order-1">
 
-			<img class="width-full lazy" data-src="{{ root }}{{ assets }}{{ page }}/screenshot-paid-link.png">
+			<img class="width-full lazy" alt="Paid Link" data-src="{{ root }}{{ assets }}{{ page }}/screenshot-paid-link.png">
 
 		</div>
 		<!-- // CELL -->
@@ -1657,7 +1635,7 @@ assets: assets/
 			<h2 class="margin-bottom-md p2 font-paragraph text-secondary header-accent header-accent-left header-accent-secondary">The AXEL Exchange Will Be The Blockchain's Flagship Native App</h2>
 
 			<p>
-			The centralization of control in the hand of content platforms has locked millions out of the digital economy. The AXEL Exchange will the first dApp on the network.
+			The centralization of control in the hands of content platforms has locked millions out of the digital economy. The AXEL Exchange will be the first DApp on the network.
 			</p>
 
 		</div>
@@ -2003,7 +1981,7 @@ assets: assets/
 			<!-- COPY -->
 			<h2 class="p4 text-white text-uppercase">Millions Of People Already Use AXEL – The App That Will Catalyze The Exchange</h2>
 			<p class="text-white">
-			AXEL is a multi-platform app that makes files easy. Sharing them. Transferring them between your devices. Streaming videos.<br><br>
+			AXEL is a multi-platform app that makes files easy. Share, stream, or transfer them between your devices.<br><br>
 
 			It also links together all your content across computers, phones, and tablets - giving you just one place to access and do everything.<br><br>
 
@@ -2079,7 +2057,7 @@ assets: assets/
 
 
 			<!-- IMAGE -->
-			<img class="lazy" alt="A Team Of Distributed Exchange Developers With A Track Record." data-src="{{ root }}{{ assets }}/illustrations/shopping.svg">
+			<img class="lazy" alt="A Team Of Distributed Exchange Developers With A Track Record" data-src="{{ root }}{{ assets }}/illustrations/shopping.svg">
 			<!-- // IMAGE -->
 
 
@@ -2304,7 +2282,7 @@ assets: assets/
 
 
 <!-- SECTION: JOIN US ON OUR MISSION -->
-<section class="position-relative padding-top-none padding-bottom-xl background-secondary overflow-hidden" data-emergence="hidden">
+<section class="position-relative padding-top-none padding-bottom-xl background-white overflow-hidden">
 
 
 	<!-- SHAPE -->
@@ -2315,27 +2293,27 @@ assets: assets/
 
 
 	<!-- HEADER -->
-	<h2 class="padding-auto padding-top-xl center-element p2 font-paragraph text-white text-center header-accent header-accent-center header-accent-white">Join Us On Our Mission</h2>
+	<h2 class="padding-auto padding-bottom-none center-element p2 font-paragraph text-secondary text-center header-accent header-accent-center header-accent-secondary">Join Us On Our Mission</h2>
 	<!-- // HEADER -->
 
 
 	<!-- GRID -->
-	<div class="grid-x grid-padding-x align-center align-middle position-relative center-element width-lg">
+	<div class="grid-x grid-padding-x align-center align-middle small-up-1 medium-up-2 position-relative center-element width-lg">
 
 
 		<!-- CELL -->
-		<div class="cell medium-5 small-order-2 medium-order-1">
+		<div class="cell small-order-2 medium-order-1">
 
 
-			<!-- CELL -->
-			<a href="https://t.me/axelnetwork" target="_blank" class="card card-accent margin-tb-sm media-object stack-for-small padding-sm background-white" aria-label="Join Our Telegram">
+			<!-- CARD -->
+			<a href="https://t.me/axelnetwork" target="_blank" class="card card-accent media-object stack-for-small margin-tb-sm padding-sm background-secondary" aria-label="Join Our Telegram">
 
 
 				  <!-- MEDIA OBJECT -->
 				  <div class="media-object-section">
 
 					<!-- IMAGE -->
-					<svg class="wh-xxxs svg-secondary svg-stroke-none" preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+					<svg class="wh-xxxs svg-white svg-stroke-none" preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
 
 						<title>Join Our Telegram</title>
 						<rect width="100" height="100" style="fill:none"/>
@@ -2353,7 +2331,7 @@ assets: assets/
 
 
 					<!-- COPY -->
-					<h3 class="p8 padding-top-xs padding-top-none-mobile font-paragraph text-secondary">Join Our Telegram</h3>
+					<h3 class="p8 padding-top-xs padding-top-none-mobile font-paragraph text-white">Join Our Telegram</h3>
 					<!-- // COPY -->
 
 
@@ -2362,18 +2340,18 @@ assets: assets/
 
 
 			</a>
-			<!-- // CELL -->
+			<!-- // CARD -->
 
 
-			<!-- CELL -->
-			<a href="modals/whitepaper" class="card card-accent margin-tb-sm media-object stack-for-small padding-sm background-white popup external" data-content-selector="" data-content-width="600" data-content-height="660" aria-label="Read the White Paper">
+			<!-- CARD -->
+			<a href="modals/whitepaper" class="card card-accent media-object stack-for-small margin-tb-sm margin-bottom-none-mobile padding-sm background-secondary popup external" data-content-selector="" data-content-width="600" data-content-height="660" aria-label="Read the White Paper">
 
 
 				  <!-- MEDIA OBJECT -->
 				  <div class="media-object-section">
 
 					<!-- IMAGE -->
-					<svg class="wh-xxxs svg-secondary svg-stroke-none" preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+					<svg class="wh-xxxs svg-white svg-stroke-none" preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
 
 						<title>Read the White Paper</title>
 						<rect width="100" height="100" style="fill:none"/>
@@ -2391,7 +2369,7 @@ assets: assets/
 
 
 					<!-- COPY -->
-					<h3 class="p8 padding-top-xs padding-top-none-mobile font-paragraph text-secondary">Read the White Paper</h3>
+					<h3 class="p8 padding-top-xs padding-top-none-mobile font-paragraph text-white">Read the White Paper</h3>
 					<!-- // COPY -->
 
 
@@ -2400,18 +2378,18 @@ assets: assets/
 
 
 			</a>
-			<!-- // CELL -->
+			<!-- // CARD -->
 
 
-			<!-- CELL -->
-			<a href="#" target="_blank" class="card card-accent margin-tb-sm media-object stack-for-small padding-sm background-white" aria-label="Join the Whitelist">
+			<!-- CARD -->
+			<a href="#" target="_blank" class="card card-accent media-object stack-for-small margin-tb-sm padding-sm background-secondary" aria-label="Join the Whitelist">
 
 
 				  <!-- MEDIA OBJECT -->
 				  <div class="media-object-section">
 
 					<!-- IMAGE -->
-					<svg class="wh-xxxs svg-secondary svg-stroke-none" preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+					<svg class="wh-xxxs svg-white svg-stroke-none" preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
 
 						<title>Join the Whitelist</title>
 						<rect width="100" height="100" style="fill:none"/>
@@ -2429,7 +2407,7 @@ assets: assets/
 
 
 					<!-- COPY -->
-					<h3 class="p8 padding-top-xs padding-top-none-mobile font-paragraph text-secondary">Join the Whitelist</h3>
+					<h3 class="p8 padding-top-xs padding-top-none-mobile font-paragraph text-white">Join the Whitelist</h3>
 					<!-- // COPY -->
 
 
@@ -2438,7 +2416,7 @@ assets: assets/
 
 
 			</a>
-			<!-- // CELL -->
+			<!-- // CARD -->
 
 
 		</div>
@@ -2446,11 +2424,11 @@ assets: assets/
 
 
 		<!-- CELL -->
-		<div class="cell medium-7 small-order-1 medium-order-2 padding-none background-none">
+		<div class="cell small-order-1 medium-order-2 padding-none background-none">
 
 
 			<!-- IMAGE -->
-			<img class="lazy" alt="Join Us On Our Mission." data-src="{{ root }}{{ assets }}/illustrations/dream-big.svg">
+			<img class="lazy" alt="Join Us On Our Mission" data-src="{{ root }}{{ assets }}/illustrations/dream-big.svg">
 			<!-- // IMAGE -->
 
 

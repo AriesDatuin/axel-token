@@ -112,3 +112,14 @@
   }
 
 }
+
+
+/* RESPONSIVE */
+@media screen and (min-height: 0) and (max-height: 730px) {
+
+	/* PARENT */
+	.scroll-hint {
+		display: none;
+	}
+
+}

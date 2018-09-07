@@ -23,7 +23,7 @@
 .card-wild:hover,
 .card-charcoal:hover,
 .card-light-grey:hover {
-	/*transform: scale(1.01);*/
+	transform: scale(1.01);
 }
 
 
@@ -33,7 +33,7 @@
 .card-wild:hover div *,
 .card-charcoal:hover div *,
 .card-light-grey:hover div * {
-	/*color: var(--charcoal-color);*/
+	color: var(--white-color);
 }
 
 

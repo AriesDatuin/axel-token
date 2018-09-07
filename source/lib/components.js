@@ -524,7 +524,7 @@ var comModal = function() {
 
 				uiModal += "<div class='modal-container cell align-self-top'></div>"; // CONTAINER
 
-				uiModal += "<a class='modal-close cell align-self-bottom padding-tb-md center-element p11 text-secondary text-charcoal-hover text-bold text-uppercase button button-width-full background-white background-white-hover no-touch-feedback prevent-default z-auto'><i class='fa fa-times-circle margin-right-xs'></i>Close</a>"; // BUTTON: CLOSE
+				uiModal += "<a class='modal-close cell align-self-bottom padding-tb-md center-element p11 text-secondary text-charcoal-hover text-bold text-uppercase button button-width-full background-white background-white-hover no-touch-feedback prevent-default hide z-auto'><i class='fa fa-times-circle margin-right-xs'></i>Close</a>"; // BUTTON: CLOSE
 
 			uiModal += "</div>"; // MODAL
 	

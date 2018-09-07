@@ -132,7 +132,7 @@ var utilAssetObserver = function() {
 			.always( function() {
 			
 				lazyLog("LOADING...", element);			
-				TweenMax.set(element, {autoAlpha: 0});
+				TweenMax.set(element, {opacity: 0});
 			
 			})
 			
@@ -151,7 +151,7 @@ var utilAssetObserver = function() {
 			.done( function() {
 			
 				lazyLog("SET", element);
-				TweenMax.to(element, 0.5, {autoAlpha: 1, delay: 0.25, ease: Power2.easeOut});
+				TweenMax.to(element, 0.25, {opacity: 1, delay: 0, ease: Power2.easeOut});
 				imageBackgroundResize();
 			
 			})
@@ -294,7 +294,7 @@ var utilEmergence = function() {
 
 				if ( !$isMobile && !$hasTouch ) {
 
-					TweenMax.staggerTo($(element).not(emergenceIgnore).children().not(emergenceIgnoreChild).not(anim).children(), 0.75, {opacity: 1, delay: 0, ease: Power4.easeOut, overwrite: "false", clearProps:"all"}, 0.12);
+					TweenMax.staggerTo($(element).not(emergenceIgnore).children().not(emergenceIgnoreChild).not(anim).children(), 0.5, {opacity: 1, delay: 0, ease: Power4.easeOut, overwrite: "false", clearProps:"all"}, 0.12);
 
 				}
 

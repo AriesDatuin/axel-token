@@ -5,7 +5,8 @@ content:
   title: "Tony Tan"
   subtitle: "CEO & Chairman"
   description: ""
-  image: "assets/team/small-tony-tan.jpg"
+  thumb: "assets/team/small-tony-tan.jpg"
+  image: "assets/team/large-tony-tan"
   social:
     -
       icon: linkedin
@@ -16,7 +17,8 @@ content:
   title: "Michael Conn"
   subtitle: "Chief Strategy Officer"
   description: ""
-  image: "assets/team/small-michael-conn.jpg"
+  thumb: "assets/team/small-michael-conn.jpg"
+  image: "assets/team/large-tony-tan"
   social:
     -
       icon: linkedin
@@ -27,7 +29,8 @@ content:
   title: "Ben Ow"
   subtitle: "CTO & President"
   description: ""
-  image: "assets/team/small-ben-ow.jpg"
+  thumb: "assets/team/small-ben-ow.jpg"
+  image: "assets/team/large-tony-tan"
   social:
     -
       icon: linkedin
@@ -38,7 +41,8 @@ content:
   title: "Jeremy Forsberg"
   subtitle: "CMO & VP"
   description: ""
-  image: "assets/team/small-jeremy-forsberg.jpg"
+  thumb: "assets/team/small-jeremy-forsberg.jpg"
+  image: "assets/team/large-tony-tan"
   social:
     -
       icon: facebook
@@ -55,7 +59,8 @@ content:
   title: "Dave Kaplan"
   subtitle: "VP General Counsel"
   description: ""
-  image: "assets/team/small-dave-kaplan.jpg"
+  thumb: "assets/team/small-dave-kaplan.jpg"
+  image: "assets/team/large-tony-tan"
   social:
     -
       icon: facebook
@@ -72,7 +77,8 @@ content:
   title: "Rick Stiles"
   subtitle: "VP of Product Development"
   description: ""
-  image: "assets/team/small-rick-stiles.jpg"
+  thumb: "assets/team/small-rick-stiles.jpg"
+  image: "assets/team/large-tony-tan"
   social:
     -
       icon: linkedin
@@ -83,7 +89,8 @@ content:
   title: "Diane Zhang"
   subtitle: "VP of Finance"
   description: ""
-  image: "assets/team/small-diana-zhang.jpg"
+  thumb: "assets/team/small-diana-zhang.jpg"
+  image: "assets/team/large-tony-tan"
   social:
     -
       icon: linkedin
@@ -94,7 +101,8 @@ content:
   title: "Dmitry Kogosov"
   subtitle: "VP of Operations"
   description: ""
-  image: "assets/team/small-dmitry-kogosov.jpg"
+  thumb: "assets/team/small-dmitry-kogosov.jpg"
+  image: "assets/team/large-tony-tan"
   social:
     -
       icon: linkedin
@@ -105,7 +113,8 @@ content:
   title: "Dmytro Ashkinazi"
   subtitle: "Director of European Operations"
   description: ""
-  image: "assets/team/small-dmytro-ashkinazi.jpg"
+  thumb: "assets/team/small-dmytro-ashkinazi.jpg"
+  image: "assets/team/large-tony-tan"
   social:
     -
       icon: github

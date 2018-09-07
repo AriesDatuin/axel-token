@@ -135,8 +135,16 @@ self.__precacheManifest = [
     "revision": "a16b6abc9d5e9d759c703628abbfaf88"
   },
   {
+    "url": "assets/illustrations/big-ideas.svg",
+    "revision": "af537a82124eea5a2ab8584c25ff4c36"
+  },
+  {
+    "url": "assets/illustrations/dream-big-alt.svg",
+    "revision": "0739fb7bd75a0ca2ed8ee041901d3c66"
+  },
+  {
     "url": "assets/illustrations/dream-big.svg",
-    "revision": "3af31595ac95f490f6b521052add8286"
+    "revision": "71ffab0036a169d55323f5920fe19937"
   },
   {
     "url": "assets/illustrations/scalable.svg",
@@ -144,7 +152,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/illustrations/shopping.svg",
-    "revision": "d6b333e5bab2cbe3710b945dc2fc5156"
+    "revision": "485b1d94a0f816ebeb0edc5f8bc049eb"
   },
   {
     "url": "assets/illustrations/teamwork-alt.svg",
@@ -153,6 +161,10 @@ self.__precacheManifest = [
   {
     "url": "assets/illustrations/teamwork.svg",
     "revision": "30e0ff33c6c16745ff779a8ddc665593"
+  },
+  {
+    "url": "assets/illustrations/tokens.svg",
+    "revision": "2313b2ec035d2a8d3feb92ded88df493"
   },
   {
     "url": "assets/index/data-01.png",
@@ -164,19 +176,27 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/index/diagram-how-it-works.png",
-    "revision": "c90493626dff1dafd0ab6ac00db8db2f"
+    "revision": "29130a5155c3deea421eb4aeff40dcdb"
   },
   {
     "url": "assets/index/diagram-how-it-works.webp",
-    "revision": "917ca9e2e1a878cf29f966593e1da90f"
+    "revision": "a66577dd638106e252b004ab4a0b3bce"
   },
   {
     "url": "assets/index/diagram-our-technology.png",
-    "revision": "afbd4389a838516cfe7eff918b06f669"
+    "revision": "c6c44ac1d2c42d6547121b432a623526"
   },
   {
     "url": "assets/index/diagram-our-technology.webp",
-    "revision": "abeec14819a4176faba62a7b2cc937c6"
+    "revision": "0afc79d6c0e3d0b70bdf03de1361c38f"
+  },
+  {
+    "url": "assets/index/earth.png",
+    "revision": "baa8c6fbf7907a7a131dd68d68e706a8"
+  },
+  {
+    "url": "assets/index/earth.webp",
+    "revision": "79f7186cfa0b9a1d3f313844b135ca31"
   },
   {
     "url": "assets/index/network-01.png",
@@ -423,16 +443,12 @@ self.__precacheManifest = [
     "revision": "33204e7fb12b75033f026fa7be848279"
   },
   {
-    "url": "copyright.html",
-    "revision": "4ab63bc137ebd1718702b023aff265c4"
-  },
-  {
     "url": "error.html",
-    "revision": "738f8d729bc768562e7539cce6cfb3c0"
+    "revision": "f9e84963e78c4512596368e58f2f7a49"
   },
   {
     "url": "eula.html",
-    "revision": "dec7edae010709d3fff62578aa13d1c8"
+    "revision": "abfce109ee99673552c31c201d1934d6"
   },
   {
     "url": "fonts/fontawesome-webfont.eot",
@@ -464,19 +480,31 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "60fd05a700ecdb0d7d13b23f054eea51"
+    "revision": "ffd8d023469284b64158d77cf971fcc4"
+  },
+  {
+    "url": "modals/eula.html",
+    "revision": "62e468e808092524143251a3f3fe9281"
   },
   {
     "url": "modals/press.html",
-    "revision": "14e934ccaab7eba4a78ed350dea6fd47"
+    "revision": "2280f2399abb213cfeb2a4802e4f89ac"
+  },
+  {
+    "url": "modals/privacy-policy.html",
+    "revision": "868c549598ae798cab6e4026de8cd442"
+  },
+  {
+    "url": "modals/profile-tony-tan.html",
+    "revision": "41a0db2f2cf41cee4a604bb8f82635f7"
   },
   {
     "url": "modals/story-josh.html",
-    "revision": "a1b0e1afd13ec7cfb444b7b4f58aa0bf"
+    "revision": "51fb171639ecc8226e35bca366a4ccaa"
   },
   {
     "url": "modals/story-shera.html",
-    "revision": "2c8942973df20fe77c89526cfbb368fc"
+    "revision": "8fae58e2ab0b9048102ed4c607760e97"
   },
   {
     "url": "modals/story-tina.html",
@@ -484,23 +512,15 @@ self.__precacheManifest = [
   },
   {
     "url": "modals/whitepaper.html",
-    "revision": "f294f93c9ad45050962931b95992db52"
+    "revision": "557d1f1b6b3b4938faf913f935a2ca18"
   },
   {
-    "url": "privacy-bill-of-rights.html",
-    "revision": "0b9034e6bab724a810abdd9dbbac55ac"
+    "url": "scripts/app.23f544f8b6.min.css",
+    "revision": "23f544f8b69608e54148c23f0ebfec8d"
   },
   {
-    "url": "privacy-policy.html",
-    "revision": "cfedec5cab4aef67a779a22a3589e370"
-  },
-  {
-    "url": "scripts/app.109d254b87.min.js",
-    "revision": "109d254b877f7f60f98dd2ff7503d966"
-  },
-  {
-    "url": "scripts/app.f6e9e20981.min.css",
-    "revision": "f6e9e2098143e107b5674f0b1e0f92f5"
+    "url": "scripts/app.905157b693.min.js",
+    "revision": "905157b693133d2660a5bce5886b5adf"
   },
   {
     "url": "scripts/vendor.ca6cbf53e8.min.js",

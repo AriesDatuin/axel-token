@@ -3,8 +3,10 @@ layout: modal
 assets: assets/
 ---
 
+{{#each profile.content}}
 
-<article class="profiles grid-x align-center align-middle background-contain background-no-repeat background-tc background-white" style="background-image: url({{ assets }}case-studies/josh.png)">
+
+<article class="profiles grid-x align-center align-middle background-contain background-no-repeat background-tc background-white" style="background-image: url({{ image }})">
 	
 	
 	<!-- CELL -->
@@ -35,3 +37,6 @@ assets: assets/
 
 
 </article>
+
+
+{{/each}}
