@@ -424,15 +424,15 @@ self.__precacheManifest = [
   },
   {
     "url": "copyright.html",
-    "revision": "6b5a37005eba1f7a10e0b1256e355662"
+    "revision": "8306789c3995d911d7fee2879cef6d12"
   },
   {
     "url": "error.html",
-    "revision": "11adff9ba23852c26b7ee610920ad1fd"
+    "revision": "87182372a350f5ac6ea8adeeb2b27122"
   },
   {
     "url": "eula.html",
-    "revision": "c03c7a22f66d1b11c1b09f82ff3326dc"
+    "revision": "e514f3f52f76798108e0ba21370e6e2e"
   },
   {
     "url": "fonts/fontawesome-webfont.eot",
@@ -464,7 +464,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "328679b1a65483375a73622fc9b2ed5f"
+    "revision": "fde8b014402d5b2806374e01c5017e85"
   },
   {
     "url": "modals/press.html",
@@ -472,7 +472,7 @@ self.__precacheManifest = [
   },
   {
     "url": "modals/story-josh.html",
-    "revision": "c061bd8166fd5d84543ae899fbb75766"
+    "revision": "7f39fb9db8ff449c6667bb777052c017"
   },
   {
     "url": "modals/story-shera.html",
@@ -484,23 +484,23 @@ self.__precacheManifest = [
   },
   {
     "url": "modals/whitepaper.html",
-    "revision": "99f7f247fede9bb7557207360a889a80"
+    "revision": "f294f93c9ad45050962931b95992db52"
   },
   {
     "url": "privacy-bill-of-rights.html",
-    "revision": "fc570854ea4b037e0a014af45a142905"
+    "revision": "a6850195d0a4e5d58170fcf380fa4db9"
   },
   {
     "url": "privacy-policy.html",
-    "revision": "bf0fd91e7130b8ea11ed64c6c48d123c"
+    "revision": "48b737a19e415de1f17a8a462670471f"
   },
   {
-    "url": "scripts/app.99b68712ae.min.js",
-    "revision": "99b68712aeed2d9e03ed04e5d3577e02"
+    "url": "scripts/app.5931dd8e25.min.css",
+    "revision": "5931dd8e25f19ea80bf683e78cf462b4"
   },
   {
-    "url": "scripts/app.ba1cec038e.min.css",
-    "revision": "ba1cec038edfe72144215ed4b5163e71"
+    "url": "scripts/app.635b4a5a49.min.js",
+    "revision": "635b4a5a49ec89d600a99fc28562b2f1"
   },
   {
     "url": "scripts/vendor.ca6cbf53e8.min.js",

@@ -510,12 +510,23 @@ export function html() {
 }
 
 
+
+
+
 // MODALS
 export function modals() {
 
 	console.log("Compiling modals...");
 
 	return gulp.src( config.paths.source + config.html.modals )
+			   .pipe(panini({
+							 data: config.paths.source + config.html.data,
+							 helpers: config.paths.source + config.html.helpers,
+							 layouts: config.paths.source + config.html.layouts,
+							 partials: config.paths.source + config.html.partials,
+							 root: config.paths.source + config.html.modals
+							})
+			   )
 			   .pipe(gulpif( production, htmlmin(htmlminOptions) ))
 			   .pipe(noopener.overwrite())
 			   .pipe(gulp.dest( config.paths.build + "modals/" ));
@@ -780,7 +791,7 @@ export function sync() {
 
 	gulp.watch([metadataFile,
 				config.paths.source + config.html.paths
-			   ]).on("all", gulp.series(html, meta, refresh));
+			   ]).on("all", gulp.series(html, modals, meta, refresh));
 
 
 	gulp.watch([configFile,
@@ -790,7 +801,7 @@ export function sync() {
 				config.paths.source + "**/critical.css",
 				config.paths.source + "**/browserconfig.xml",
 				config.paths.source + "**/manifest.json",
-			   ]).on("all", gulp.series(refresh, modals, html, meta, reload));
+			   ]).on("all", gulp.series(refresh, html, modals, meta, reload));
 	
 	
 	//gulp.watch([config.paths.source + "{_modals}/**/*.{html,hbs,handlebars}"]).on("all", gulp.series(modals, reload));

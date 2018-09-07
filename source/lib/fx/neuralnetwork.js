@@ -31,7 +31,7 @@ var ctx,
     nodeSize = 3,
     nodeColor = "rgba(0,250,200,1)",
     nodeLineColor = "rgba(0,0,0,1)",
-    signalColor = "rgba(0,250,200)", //"hsl(168,100%,50%)", 'hsl(' + tint + ',100%,50%)';
+    signalColor = "rgba(0,250,200,1)", //"hsl(168,100%,50%)", 'hsl(' + tint + ',100%,50%)';
     nodeLineWidth = 0.1,
     signalLineWidth = 1,
     signalDuration = 1,

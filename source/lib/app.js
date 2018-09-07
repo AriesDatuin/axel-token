@@ -24,10 +24,9 @@ var components = function() {
 	//comAnimGradient();
 	//comBlog();
 	//comCaseStudies();
-	//comOdometer();
+	//comCounter();
 	comParallax();
 	//comParticles();
-	//comTeam();
 	//comTilt();
 
 	utilEmergence();

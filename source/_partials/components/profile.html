@@ -1,10 +1,10 @@
 
 <!-- PROFILE CARD -->
-{{#each profile.info}}
+{{#each profile.content}}
 
 
 	<!-- CARD -->
-	<div class="cell card media-object background-white">
+	<div class="cell card card-light-grey media-object background-white">
 
 
 	  <!-- MEDIA OBJECT -->
@@ -12,7 +12,7 @@
 
 
 		<!-- IMAGE -->
-		<div class="wh-xs round-full border-xxs border-solid border-light-grey background-secondary background-cover background-tc background-no-repeat lazy" alt="{{ title }}" data-src="{{ image }}"></div>
+		<div class="wh-xs round-full border-xxs border-solid border-light-grey background-secondary background-cover background-tc background-no-repeat lazy transition-ease" alt="{{ title }}" data-src="{{ image }}"></div>
 		<!-- // IMAGE -->
 
 
@@ -25,7 +25,7 @@
 
 
 		<!-- COPY -->
-		<h3 class="margin-bottom-none p6 font-paragraph text-secondary text-bold">{{ title }}</h3>
+		<h3 class="margin-bottom-none p9 font-paragraph text-secondary text-bold text-truncate">{{ title }}</h3>
 		<h4 class="p10 font-paragraph text-dark-grey">{{ subtitle }}</h4>
 		<p class="p10">{{ description }}</p>
 		<!-- // COPY -->

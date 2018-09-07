@@ -319,7 +319,7 @@
 
 		"cors": true,
 		"open": "external",
-		"tunnel": "my-private-site",
+		"tunnel": false,
 		"xip": false,
 
 		"codeSync": true,
