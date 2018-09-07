@@ -239,12 +239,20 @@ self.__precacheManifest = [
     "revision": "85fbaf1f395e2a295d963c4018909161"
   },
   {
+    "url": "assets/index/screenshot-laptop-paid-link.png",
+    "revision": "17a2240025be21f2028d1217215aa9e8"
+  },
+  {
+    "url": "assets/index/screenshot-laptop-paid-link.webp",
+    "revision": "7884f4001396aa4246cf3d08a786ccd5"
+  },
+  {
     "url": "assets/index/screenshot-paid-link.png",
-    "revision": "8ead065d61ab8f81faea647503c5f2c2"
+    "revision": "abd8a4d74d7e0d26dcfd93b56c342ca8"
   },
   {
     "url": "assets/index/screenshot-paid-link.webp",
-    "revision": "97d37f585855df343e5f0ac48acce61f"
+    "revision": "cc618c62b7329ed52b7f26b6f6eb7c07"
   },
   {
     "url": "assets/index/teamwork-01.png",
@@ -444,11 +452,11 @@ self.__precacheManifest = [
   },
   {
     "url": "error.html",
-    "revision": "f9e84963e78c4512596368e58f2f7a49"
+    "revision": "af80465d7ccbd30c97d4a323b64cf3c6"
   },
   {
     "url": "eula.html",
-    "revision": "abfce109ee99673552c31c201d1934d6"
+    "revision": "f9d7be4841774cd920d1e7ad79f469fb"
   },
   {
     "url": "fonts/fontawesome-webfont.eot",
@@ -480,7 +488,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "ffd8d023469284b64158d77cf971fcc4"
+    "revision": "e92e672c556c4cd0a9eff92d74ffe19b"
   },
   {
     "url": "modals/eula.html",
@@ -495,32 +503,64 @@ self.__precacheManifest = [
     "revision": "868c549598ae798cab6e4026de8cd442"
   },
   {
+    "url": "modals/profile-ben-ow.html",
+    "revision": "e4c6ca9fbbc03933aa9f18df63537154"
+  },
+  {
+    "url": "modals/profile-dave-kaplan.html",
+    "revision": "decbc69eb55b68c619c5a30414ff0640"
+  },
+  {
+    "url": "modals/profile-diana-zhang.html",
+    "revision": "9f0041dd2b0ff852400e3c2366d008d2"
+  },
+  {
+    "url": "modals/profile-dmitry-kogosov.html",
+    "revision": "0053475fa8253a38376420c8d3b5862f"
+  },
+  {
+    "url": "modals/profile-dmytro-ashkinazi.html",
+    "revision": "3fd1d7abc847befd7caddfac01231484"
+  },
+  {
+    "url": "modals/profile-jeremy-forsberg.html",
+    "revision": "0a12096c0888dd52725926c237818dc2"
+  },
+  {
+    "url": "modals/profile-michael-conn.html",
+    "revision": "3406af2c185dd49fb82437fa32a0c7ab"
+  },
+  {
+    "url": "modals/profile-rick-stiles.html",
+    "revision": "ef45e26b75c8b275bbd45dc9c5b7f9ac"
+  },
+  {
     "url": "modals/profile-tony-tan.html",
-    "revision": "41a0db2f2cf41cee4a604bb8f82635f7"
+    "revision": "0e6e632a424f6521b6c8a7ea03362276"
   },
   {
     "url": "modals/story-josh.html",
-    "revision": "51fb171639ecc8226e35bca366a4ccaa"
+    "revision": "03b2ef592e9442d4730834d3c847c828"
   },
   {
     "url": "modals/story-shera.html",
-    "revision": "8fae58e2ab0b9048102ed4c607760e97"
+    "revision": "280028a9376a27236127846ea319f001"
   },
   {
     "url": "modals/story-tina.html",
-    "revision": "faae3b35aef578ccad3b15d8538ceffa"
+    "revision": "001ce48d31fecab9a189db74010d8353"
   },
   {
     "url": "modals/whitepaper.html",
     "revision": "557d1f1b6b3b4938faf913f935a2ca18"
   },
   {
-    "url": "scripts/app.23f544f8b6.min.css",
-    "revision": "23f544f8b69608e54148c23f0ebfec8d"
-  },
-  {
     "url": "scripts/app.905157b693.min.js",
     "revision": "905157b693133d2660a5bce5886b5adf"
+  },
+  {
+    "url": "scripts/app.dc47705d8d.min.css",
+    "revision": "dc47705d8d2d7ee5e3f2d8e375dfbc6b"
   },
   {
     "url": "scripts/vendor.ca6cbf53e8.min.js",

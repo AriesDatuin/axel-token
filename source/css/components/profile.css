@@ -2,5 +2,31 @@
 /* PROFILES
 /* -------------------------------------------------- */
 
-/* COMMON */
+/* PARENT */
+.profile {
+	background-color: var(--white-color);
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
 
+
+/* CHILD */
+.profile .cell {
+	position: relative;
+	margin-top: 600px;
+	padding: var(--gutter-lg);
+	background-color: var(--white-color);
+}
+
+
+/* RESPONSIVE */
+@media screen and (min-width: 0) and (max-width: 500px) {
+
+	/* CHILD */
+	.profile .cell {
+		margin-top: 300px;
+		padding: var(--gutter-md);
+	}
+
+}

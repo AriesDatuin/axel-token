@@ -399,7 +399,7 @@ main section {
 /* -------------------------------------------------- */
 
 /* PARENT */
-.media-object-section {
+.media-object-section:not(.padding-none) {
 	padding-bottom: 0 !important;
 }
 

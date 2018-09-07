@@ -4,121 +4,91 @@ content:
  -
   title: "Tony Tan"
   subtitle: "CEO & Chairman"
-  description: ""
-  thumb: "assets/team/small-tony-tan.jpg"
-  image: "assets/team/large-tony-tan"
-  social:
-    -
-      icon: linkedin
-      link: https://linkedin.com
+  image: "assets/team/small-tony-tan.jpg"
+  link: profile-tony-tan
 
 
  -
   title: "Michael Conn"
   subtitle: "Chief Strategy Officer"
-  description: ""
-  thumb: "assets/team/small-michael-conn.jpg"
-  image: "assets/team/large-tony-tan"
+  image: "assets/team/small-michael-conn.jpg"
+  link: profile-michael-conn
   social:
     -
       icon: linkedin
-      link: https://linkedin.com
+      link: https://www.linkedin.com/in/michaelhconn
 
 
  -
   title: "Ben Ow"
   subtitle: "CTO & President"
-  description: ""
-  thumb: "assets/team/small-ben-ow.jpg"
-  image: "assets/team/large-tony-tan"
+  image: "assets/team/small-ben-ow.jpg"
+  link: profile-ben-ow
   social:
     -
       icon: linkedin
-      link: https://linkedin.com
+      link: https://www.linkedin.com/in/ben-ow
 
 
  -
   title: "Jeremy Forsberg"
   subtitle: "CMO & VP"
-  description: ""
-  thumb: "assets/team/small-jeremy-forsberg.jpg"
-  image: "assets/team/large-tony-tan"
+  image: "assets/team/small-jeremy-forsberg.jpg"
+  link: profile-jeremy-forsberg
   social:
     -
       icon: facebook
-      link: https://facebook.com
+      link: https://www.facebook.com
     -
       icon: linkedin
-      link: https://linkedin.com
+      link: https://www.linkedin.com/in/jeremyforsberg
     -
       icon: twitter
-      link: https://twitter.com
+      link: https://www.twitter.com
 
 
  -
   title: "Dave Kaplan"
   subtitle: "VP General Counsel"
-  description: ""
-  thumb: "assets/team/small-dave-kaplan.jpg"
-  image: "assets/team/large-tony-tan"
+  image: "assets/team/small-dave-kaplan.jpg"
+  link: profile-dave-kaplan
   social:
     -
-      icon: facebook
-      link: https://facebook.com
-    -
       icon: linkedin
-      link: https://linkedin.com
-    -
-      icon: twitter
-      link: https://twitter.com
+      link: https://www.linkedin.com/in/djkaplan5
 
 
  -
   title: "Rick Stiles"
   subtitle: "VP of Product Development"
-  description: ""
-  thumb: "assets/team/small-rick-stiles.jpg"
-  image: "assets/team/large-tony-tan"
+  image: "assets/team/small-rick-stiles.jpg"
+  link: profile-rick-stiles
   social:
     -
       icon: linkedin
-      link: https://linkedin.com
+      link: https://www.linkedin.com/in/rick-stiles-7779b01b
 
 
  -
   title: "Diane Zhang"
   subtitle: "VP of Finance"
-  description: ""
-  thumb: "assets/team/small-diana-zhang.jpg"
-  image: "assets/team/large-tony-tan"
-  social:
-    -
-      icon: linkedin
-      link: https://linkedin.com
+  image: "assets/team/small-diana-zhang.jpg"
+  link: profile-diana-zhang
 
 
  -
   title: "Dmitry Kogosov"
   subtitle: "VP of Operations"
-  description: ""
-  thumb: "assets/team/small-dmitry-kogosov.jpg"
-  image: "assets/team/large-tony-tan"
+  image: "assets/team/small-dmitry-kogosov.jpg"
+  link: profile-dmitry-kogosov
   social:
     -
       icon: linkedin
-      link: https://linkedin.com
+      link: https://www.linkedin.com/in/dmitry-kogosov-5a56901
 
 
  -
   title: "Dmytro Ashkinazi"
   subtitle: "Director of European Operations"
-  description: ""
-  thumb: "assets/team/small-dmytro-ashkinazi.jpg"
-  image: "assets/team/large-tony-tan"
-  social:
-    -
-      icon: github
-      link: https://github.com
-    -
-      icon: linkedin
-      link: https://linkedin.com
+  image: "assets/team/small-dmytro-ashkinazi.jpg"
+  link: profile-dmytro-ashkinazi
