@@ -33,7 +33,7 @@ var ctx,
     nodeLineColor = "rgba(0,0,0,1)",
     signalColor = "rgba(0,250,200,1)", //"hsl(168,100%,50%)", 'hsl(' + tint + ',100%,50%)';
     nodeLineWidth = 0.1,
-    signalLineWidth = 0.25,
+    signalLineWidth = 0.2,
     signalDuration = 1,
     swayAmount = 12;
 
