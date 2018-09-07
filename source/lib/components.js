@@ -669,10 +669,8 @@ var comModal = function() {
 var comCounter = function() {
 	
 	// CACHE SELECTORS
-	var counter = $$(".counter.anim"),
-		counter01 = $$("#counter-01.anim"),
-		counter02 = $$("#counter-02.anim"),
-		counter03 = $$("#counter-03.anim");
+	var counter01 = $$("#counter-01.anim"),
+		counter02 = $$("#counter-02.anim");
 
 
 	// OPTIONS
@@ -692,8 +690,7 @@ var comCounter = function() {
 	var tlCounter = new TimelineMax({paused: true});
 	
 		tlCounter.from(counter01, 0.75, {autoAlpha: 0, delay: 0, ease: Power4.easeOut, onStart: function() { counter01.html(200); } })
-				 .from(counter02, 0.75, {autoAlpha: 0, delay: 0.25, ease: Power4.easeOut, onStart: function() { counter02.html(1300); } })
-				 .from(counter03, 0.75, {autoAlpha: 0, delay: 0.5, ease: Power4.easeOut, onStart: function() { counter03.html(7800000000); } });
+				 .from(counter02, 0.75, {autoAlpha: 0, delay: 0.25, ease: Power4.easeOut, onStart: function() { counter02.html(1300); } });
 	
 
 	// CONTROLLER

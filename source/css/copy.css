@@ -23,7 +23,7 @@ h1, h2, h3, h4, h5, h6,
     font-family: var(--font-copy);
 }
 
-.font-alt {
+.font-wild {
     font-family: var(--font-alt);
 	font-weight: 500;
 }
@@ -178,6 +178,11 @@ h6, .h6 {
 .small-print {
 	font-size: 0.75em;
 	
+}
+
+.giant-print {
+	font-size: 6em;
+	line-height: 0.8em;
 }
 
 

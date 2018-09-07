@@ -29,7 +29,7 @@ var ctx,
     minNodes = 2,
     maxNodes = 4,
     nodeSize = 3,
-    nodeColor = "rgba(0,250,200,1)",
+    nodeColor = "rgba(250,0,150,0.5)",
     nodeLineColor = "rgba(0,0,0,1)",
     signalColor = "rgba(0,250,200,1)", //"hsl(168,100%,50%)", 'hsl(' + tint + ',100%,50%)';
     nodeLineWidth = 0.1,
