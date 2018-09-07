@@ -488,7 +488,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "681d716fbb3b0f344181caf229a817e3"
+    "revision": "fb6fc9ae1d32661cd6671e0fba09e232"
   },
   {
     "url": "modals/eula.html",
@@ -524,7 +524,7 @@ self.__precacheManifest = [
   },
   {
     "url": "modals/profile-jeremy-forsberg.html",
-    "revision": "0a12096c0888dd52725926c237818dc2"
+    "revision": "ac816575bfeaf1543e8484ab90544936"
   },
   {
     "url": "modals/profile-michael-conn.html",
