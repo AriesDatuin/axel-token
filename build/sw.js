@@ -424,15 +424,15 @@ self.__precacheManifest = [
   },
   {
     "url": "copyright.html",
-    "revision": "a892b5046fffe0218a0e999045e42f5f"
+    "revision": "4ab63bc137ebd1718702b023aff265c4"
   },
   {
     "url": "error.html",
-    "revision": "46483ac577fc1804e4c80df9c3f63388"
+    "revision": "738f8d729bc768562e7539cce6cfb3c0"
   },
   {
     "url": "eula.html",
-    "revision": "63bf5e66764bf4d3ca868931b18e724c"
+    "revision": "dec7edae010709d3fff62578aa13d1c8"
   },
   {
     "url": "fonts/fontawesome-webfont.eot",
@@ -464,7 +464,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "8cd8926f00918359ab75674a619f6883"
+    "revision": "60fd05a700ecdb0d7d13b23f054eea51"
   },
   {
     "url": "modals/press.html",
@@ -472,15 +472,15 @@ self.__precacheManifest = [
   },
   {
     "url": "modals/story-josh.html",
-    "revision": "7f39fb9db8ff449c6667bb777052c017"
+    "revision": "a1b0e1afd13ec7cfb444b7b4f58aa0bf"
   },
   {
     "url": "modals/story-shera.html",
-    "revision": "7d78e2572ddf04db9154f84b422dcf77"
+    "revision": "2c8942973df20fe77c89526cfbb368fc"
   },
   {
     "url": "modals/story-tina.html",
-    "revision": "f941bf6df125855c768b30e8aa4c738b"
+    "revision": "faae3b35aef578ccad3b15d8538ceffa"
   },
   {
     "url": "modals/whitepaper.html",
@@ -488,15 +488,15 @@ self.__precacheManifest = [
   },
   {
     "url": "privacy-bill-of-rights.html",
-    "revision": "bd843726b960bc57411e4b224f6575a8"
+    "revision": "0b9034e6bab724a810abdd9dbbac55ac"
   },
   {
     "url": "privacy-policy.html",
-    "revision": "539d04adb9bd7faeaa4119ddf4887889"
+    "revision": "cfedec5cab4aef67a779a22a3589e370"
   },
   {
-    "url": "scripts/app.96ca03d4f2.min.js",
-    "revision": "96ca03d4f262cbe93d261872475b62a6"
+    "url": "scripts/app.109d254b87.min.js",
+    "revision": "109d254b877f7f60f98dd2ff7503d966"
   },
   {
     "url": "scripts/app.f6e9e20981.min.css",
