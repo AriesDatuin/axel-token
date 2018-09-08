@@ -895,7 +895,7 @@ export function deployinit(done) {
 
 				"aws": {
 					"upload": false,
-					"dist": ["./test"],
+					"dist": ["./your-production-folder"],
 					"region": "us-west-1",
 					"bucket": "your.bucket.com",
 					"accessKeyId": "",
@@ -910,13 +910,13 @@ export function deployinit(done) {
 
 				"git": {
 					"upload": true,
-					"dist": ["./test"],
-					"promise": "github.com/AriesDatuin/test-build",
-					"repo": "https://github.com/AriesDatuin/wow.git",
+					"dist": ["./your-production-folder"],
+					"promise": "github.com/username/repo",
+					"repo": "https://github.com/username/repo.git",
 					"origin": "origin",
 					"branch": "master",
-					"user": "AriesDatuin",
-					"password": "Pumpkins2530",
+					"user": "Username",
+					"password": "Password",
 					"message": ["Initial commit."],
 					"timeOffset": 1000,
 					"quiet": false,
@@ -925,11 +925,11 @@ export function deployinit(done) {
 
 				"ftp": {
 					"upload": false,
-					"dist": ["./test"],
+					"dist": ["./your-production-folder"],
 					"host": "",
 					"path": "dev/build",
-					"user": "Aries",
-					"password": "Pumpkins2530",
+					"user": "Username",
+					"password": "Password",
 					"secure": false,
 					"parallel": 10,
 					"maxConnections": 5,
