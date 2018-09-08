@@ -336,6 +336,7 @@ export function js() {
 			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.init() ))
 			   //.pipe(modernizr())
 			   //.pipe(babel())
+			   .pipe(removeCode({production: true}))
 			   .pipe(gulpif( production, uglify(uglifyJSOptions).on("error", gutil.log) ))
 			   .pipe(concat(config.js.bundle))
 			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.write("maps") ))
@@ -354,6 +355,7 @@ export function vendors() {
 			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.init() ))
 			   //.pipe(modernizr())
 			   //.pipe(babel())
+			   .pipe(removeCode({production: true}))
 			   .pipe(gulpif( production, uglify(uglifyJSOptions).on("error", gutil.log) ))
 			   .pipe(concat(config.vendors.bundle))
 			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.write("maps") ))
@@ -499,6 +501,7 @@ export function html() {
 
 			   }, {keepUnassigned: true, keepBlockTags: true, resolvePaths: true} ))
 			   //.pipe(defer())	
+			   .pipe(removeCode({production: true}) )
 			   .pipe(gulpif( !server.aws.upload, removeCode({removeBase: true}) ))
 			   .pipe(gulpif( !config.options.serviceworker || !config.options.serviceworker && !production, removeCode({removeSW: true}) ))
 			   .pipe(gulpif( !config.options.appBanner, removeCode({removeAppBanner: true}) ))
@@ -895,7 +898,7 @@ export function deployinit(done) {
 
 				"aws": {
 					"upload": false,
-					"dist": ["./test"],
+					"dist": ["./your-production-folder"],
 					"region": "us-west-1",
 					"bucket": "your.bucket.com",
 					"accessKeyId": "",
@@ -910,13 +913,13 @@ export function deployinit(done) {
 
 				"git": {
 					"upload": true,
-					"dist": ["./test"],
-					"promise": "github.com/AriesDatuin/test-build",
-					"repo": "https://github.com/AriesDatuin/wow.git",
+					"dist": ["./your-production-folder"],
+					"promise": "github.com/username/repo",
+					"repo": "https://github.com/username/repo.git",
 					"origin": "origin",
 					"branch": "master",
-					"user": "AriesDatuin",
-					"password": "Pumpkins2530",
+					"user": "Username",
+					"password": "Password",
 					"message": ["Initial commit."],
 					"timeOffset": 1000,
 					"quiet": false,
@@ -925,11 +928,11 @@ export function deployinit(done) {
 
 				"ftp": {
 					"upload": false,
-					"dist": ["./test"],
+					"dist": ["./your-production-folder"],
 					"host": "",
-					"path": "dev/build",
-					"user": "Aries",
-					"password": "Pumpkins2530",
+					"path": "./remote-path",
+					"user": "Username",
+					"password": "Password",
 					"secure": false,
 					"parallel": 10,
 					"maxConnections": 5,
@@ -1516,6 +1519,10 @@ gulp.task("build", gulp.series(clear, checkjs, checkcss, html, modals, vendors, 
 
 // DEPLOY
 gulp.task("deploy", gulp.series("build", deployinit, awsdeploy, gitdeploy, ftpdeploy));
+
+
+// DEPLOY
+gulp.task("config", gulp.series(deployinit));
 
 
 /* -------------------------------------------------- */

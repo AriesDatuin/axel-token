@@ -92,7 +92,6 @@
 				  "<FEATURE DETECTION / POLYFILLS / FALLBACK>",
 				  "lib/assets/modernizr.js",
 				  ">>>>>lib/polyfills/intersectobserver.js",
-				  ">>>>>lib/polyfills/loadcss.js",
 				  ">>>>>lib/polyfills/objectfit.js",
 				  ">>>>>lib/polyfills/webp.js",
 

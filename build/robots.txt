@@ -1,4 +1,4 @@
-Sitemap: https://axel.org/sitemap.xml
+Sitemap: https://axeltoken.com/sitemap.xml
 
 User-agent: *
 Disallow: /assets

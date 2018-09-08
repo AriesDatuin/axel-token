@@ -52,9 +52,9 @@ var core = function() {
 	uiLinkDelegation();
 	uiScrollEvents();
 	uiSmoothScroll();
-	uiNav();
+	//uiNav();
 	uiButtons();
-	uiRelayout();
+	//uiRelayout();
 
 	comCounter();
 	

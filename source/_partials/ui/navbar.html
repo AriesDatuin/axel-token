@@ -2,13 +2,16 @@
 <!-- NAVBAR -->
 <nav id="navbar">
 	
-	{{#ifpage 'index' 'copyright' 'eula' 'privacy-policy' 'privacy-bill-of-rights'}}
+
+	{{#ifpage 'index'}}
 		{{> scroll-progress}}
 	{{/ifpage}}
 	
+
 	<!-- GRID -->
 	<div class="grid-x align-middle menubar">
 		
+
 		<!-- CELL -->
 		<div id="navbar-logo" class="cell logo">
 			
@@ -29,75 +32,7 @@
 		</div>
 		<!-- // CELL -->
 
-		<!-- CELL -->
-		<div id="navbar-contents" class="cell auto">
 
-			<!-- ITEMS -->
-			<nav id="navbar-items">
-				
-				<ul class="nav">
-					
-					<li>
-						<a class="dropdown" href="#">Features</a>
-                    
-                        <!-- DROPDOWN -->
-                        <ul class="features subnav">
-
-                            <li class="subnav-tip"><a href="#"></a></li>
-							
-                            {{#each nav.features}}
-								<li><a class="link-{{ id }}{{ classes }}" href="{{ root }}{{ link }}" {{{ attributes }}}>{{ title }}</a></li>
-                            {{/each}}
-
-                        </ul>
-                        <!-- // DROPDOWN -->
-                    
-					</li>
-					<li>
-						<a class="dropdown" href="#">Company</a>
-					
-                        <!-- DROPDOWN -->
-                        <ul class="company subnav">
-                            
-                            <li class="subnav-tip"><a href="#"></a></li>
-							
-                            {{#each nav.company}}
-								<li><a class="link-{{ id }}{{ classes }}" href="{{ root }}{{ link }}" {{{ attributes }}}>{{ title }}</a></li>
-                            {{/each}}
-                            
-                        </ul>
-                        <!-- // DROPDOWN -->
-					
-                    </li>
-					<li>
-						<a class="dropdown" href="#">Support</a>
-					
-                        <!-- DROPDOWN -->
-                        <ul class="resources subnav">
-                            
-                            <li class="subnav-tip"><a href="#"></a></li>
-							
-                            {{#each nav.resources}}
-								<li><a class="link-{{ id }}{{ classes }}" href="{{ root }}{{ link }}" {{{ attributes }}}>{{ title }}</a></li>
-                            {{/each}}
-                            
-                        </ul>
-                        <!-- // DROPDOWN -->
-					
-                    </li>
-
-					{{#each nav.links}}
-						<li class="{{ classes }}"><a class="link-{{ id }}{{ classes }}" href="{{ root }}{{ link }}" {{{ attributes }}}>{{ title }}</a></li>
-					{{/each}}
-
-				</ul>
-      
-			</nav>
-			<!-- // ITEMS -->
-    
-		</div>
-		<!-- // CELL -->
-		
 		<!-- CELL -->
 		<!--
 		<div id="navbar-callout" class="cell shrink callout">
@@ -107,15 +42,20 @@
 		</div>
 		-->
 		<!-- // CELL -->
-		
+
+
 		<!-- CELL -->
+		<!--
 		<div id="navbar-label" class="cell shrink nav-toggle-label" data-toggle="nav-panel">Menu</div>
+		-->
 		<!-- // CELL -->
-		
+
+
 		<!-- CELL -->
+		<!--
 		<div id="navbar-toggle" class="cell shrink position-relative nav-toggle" data-toggle="nav-panel">
-		
-			<!-- TOGGLE -->
+
+
 			<div class="center-vh">
 
 				<div class="hamburger">
@@ -130,13 +70,15 @@
 				</div>
 
 			</div>
-			<!-- // TOGGLE --> 
+
 
 		</div>
-		<!-- // CELL -->
+		-->
 		
+
 	</div>
 	<!-- // GRID -->
 	
+
 </nav>
 <!-- // NAVBAR -->

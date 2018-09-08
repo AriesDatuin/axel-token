@@ -21,7 +21,7 @@ var uiInit = function() {
 	$$(document).foundation();
 	
  	// Reinitialize 'Equalizer' plugin.
-	TweenMax.delayedCall($delayInterval, Foundation.reInit, ["equalizer"]);
+	//TweenMax.delayedCall($delayInterval, Foundation.reInit, ["equalizer"]);
     
 
 	/* -------------------------------------------------- */
@@ -68,50 +68,6 @@ var uiInit = function() {
 
 	main.css({"width" : "100%",
               "max-width" : $mainWidth});
-
-	
-	/* -------------------------------------------------- */
-	/* Z-INDEX / STACK ORDER
-	/* -------------------------------------------------- */
-
-	var $zIndexNum = 1;
-
-	zIndexStackOrder.children().not(".stack-order-ignore").each(function(index) {
-
-		var self = $(this);
-
-		self.css({"z-index" : $zIndexNum + index,
-				  "position" : "relative"});
-
-	});
-
-	
-    /* -------------------------------------------------- */
-    /* SCROLL PROGRESS
-    /* -------------------------------------------------- */
-	
-	if ( $navbarAllowSticky || $$(".scroll-progress").length ) {
-		
-		//$(navbar).children().before('<div id="scroll-progress" class="background-secondary-gradient"></div>');
-		
-		var scrollProgressUpdate = function() {
-
-			var $windowScrollProgressTop = $$(window).scrollTop(),
-				$documentScrollProgressHeight = $$(document).height(),
-				$windowScrollProgressHeight = $$(window).height(),
-				$totalScroll = ($windowScrollProgressTop / ($documentScrollProgressHeight - $windowScrollProgressHeight)) * 100;
-
-			//console.log("total scroll" + totalScroll);
-
-			$$(".scroll-progress").css({"width" : $totalScroll + "%"});
-
-		};
-
-        scrollProgressUpdate();
-		
-		$$(pageContent).on("scroll", _.throttle(scrollProgressUpdate, $updateInterval));
-	
-	}
 	
 	
 	/* -------------------------------------------------- */
@@ -232,7 +188,51 @@ var uiInit = function() {
 
 	}
 
+
+	/* -------------------------------------------------- */
+	/* Z-INDEX / STACK ORDER
+	/* -------------------------------------------------- */
+
+	var $zIndexNum = 1;
+
+	zIndexStackOrder.children().not(".stack-order-ignore").each(function(index) {
+
+		var self = $(this);
+
+		self.css({"z-index" : $zIndexNum + index,
+				  "position" : "relative"});
+
+	});
+
 	
+    /* -------------------------------------------------- */
+    /* SCROLL PROGRESS
+    /* -------------------------------------------------- */
+	
+	if ( $navbarAllowSticky || $$(".scroll-progress").length ) {
+		
+		//$(navbar).children().before('<div id="scroll-progress" class="background-secondary-gradient"></div>');
+		
+		var scrollProgressUpdate = function() {
+
+			var $windowScrollProgressTop = $$(window).scrollTop(),
+				$documentScrollProgressHeight = $$(document).height(),
+				$windowScrollProgressHeight = $$(window).height(),
+				$totalScroll = ($windowScrollProgressTop / ($documentScrollProgressHeight - $windowScrollProgressHeight)) * 100;
+
+			//console.log("total scroll" + totalScroll);
+
+			$$(".scroll-progress").css({"width" : $totalScroll + "%"});
+
+		};
+
+        scrollProgressUpdate();
+		
+		$$(pageContent).on("scroll", _.throttle(scrollProgressUpdate, $updateInterval));
+	
+	}
+
+
 }; // END uiInit
 
 
@@ -906,6 +906,7 @@ var uiSmoothScroll = function() {
 /* UI NAV
 /* -------------------------------------------------- */
 
+//removeIf(production)
 var uiNav = function() {
 	"use strict";
 	//console.log("Initializing uiNav...");
@@ -1175,6 +1176,7 @@ var uiNav = function() {
 
 
 }; // END uiNav
+//endRemoveIf(production)
 
 
 /* -------------------------------------------------- */
@@ -1289,6 +1291,7 @@ var uiButtons = function() {
 /* UI LAYOUT
 /* -------------------------------------------------- */
 
+//removeIf(production)
 var uiRelayout = function() {  
 	"use strict";
 	//console.log("Initializing uiRelayout...");
@@ -1307,7 +1310,7 @@ var uiRelayout = function() {
 	/* RESETS / RECALC
 	/* -------------------------------------------------- */
 	
-	TweenMax.delayedCall($delayInterval, Foundation.reInit, ["equalizer"]);
+	//TweenMax.delayedCall($delayInterval, Foundation.reInit, ["equalizer"]);
 
 
 	// Reset '.height-vh-full' class.
@@ -1494,3 +1497,5 @@ $$(pageContent).on("resize", _.debounce(uiRelayout, $delayInterval));
 
 // Delay 'uiRelayout' function.
 //TweenMax.delayedCall(tlPreloaderEnd.duration() + $delayInterval, uiRelayout);
+
+//endRemoveIf(production)

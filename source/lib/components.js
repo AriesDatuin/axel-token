@@ -2,7 +2,7 @@
 /* ACCORDION
 /* -------------------------------------------------- */
 
-/*removeIf(production)*/
+//removeIf(production)
 var comAccordion = function() {
 	"use strict";
 	
@@ -40,14 +40,14 @@ var comAccordion = function() {
 
 	
 }; // END comAccordion
-/*endRemoveIf(production)*/
+//endRemoveIf(production)
 
 
 /* -------------------------------------------------- */
 /* BLOG
 /* -------------------------------------------------- */ 
 
-/*removeIf(production)*/
+//removeIf(production)
 var comBlog = function() {
 	
 	if ( $$(".page").data("page") === "about" || $$(".page").data("page") === "team"  || $$(".page").data("page") === "press" || $$(".page").data("page") === "careers" ) {
@@ -164,7 +164,7 @@ var comBlog = function() {
 
 	
 }; // END comBlog
-/*endRemoveIf(production)*/
+//endRemoveIf(production)
 
 
 /* -------------------------------------------------- */
@@ -177,7 +177,8 @@ var comCaseStudies = function() {
 	/* CACHE SELECTORS
 	/* -------------------------------------------------- */
 
-    var $caseStudies = $$("#case-studies .profiles"),
+    var $caseStudyUser = $$("#case-studies .profiles .cell"),
+    	$caseStudies = $$("#case-studies .profiles"),
         $caseStudyJosh = $$("#josh"),
         $caseStudyShera = $$("#shera"),
         $caseStudyTina = $$("#tina"),

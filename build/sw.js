@@ -132,7 +132,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/icons/safari-pinned-tab.svg",
-    "revision": "a16b6abc9d5e9d759c703628abbfaf88"
+    "revision": "4e4288245e34e0ebbba58a7bb7faaddd"
   },
   {
     "url": "assets/illustrations/big-ideas.svg",
@@ -452,11 +452,7 @@ self.__precacheManifest = [
   },
   {
     "url": "error.html",
-    "revision": "af80465d7ccbd30c97d4a323b64cf3c6"
-  },
-  {
-    "url": "eula.html",
-    "revision": "f9d7be4841774cd920d1e7ad79f469fb"
+    "revision": "a028782bf8adece0dec6cd13e853bdb0"
   },
   {
     "url": "fonts/fontawesome-webfont.eot",
@@ -464,7 +460,7 @@ self.__precacheManifest = [
   },
   {
     "url": "fonts/fontawesome-webfont.svg",
-    "revision": "912ec66d7572ff821749319396470bde"
+    "revision": "acf3dcb7ff752b5296ca23ba2c7c2606"
   },
   {
     "url": "fonts/fontawesome-webfont.ttf",
@@ -480,7 +476,7 @@ self.__precacheManifest = [
   },
   {
     "url": "fonts/fontawesome.css",
-    "revision": "425f06f54e79eba7c035c9c68f7b8fe9"
+    "revision": "77b5c0c7719ad4093de5eaa95de4c882"
   },
   {
     "url": "fonts/FontAwesome.otf",
@@ -488,7 +484,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "fb6fc9ae1d32661cd6671e0fba09e232"
+    "revision": "23d195322a465dfee755a740dbde1366"
   },
   {
     "url": "modals/eula.html",
@@ -555,12 +551,12 @@ self.__precacheManifest = [
     "revision": "557d1f1b6b3b4938faf913f935a2ca18"
   },
   {
-    "url": "scripts/app.905157b693.min.js",
-    "revision": "905157b693133d2660a5bce5886b5adf"
+    "url": "scripts/app.8939c09c6a.min.css",
+    "revision": "8939c09c6aa8849cf9d9f79f4765b365"
   },
   {
-    "url": "scripts/app.dc47705d8d.min.css",
-    "revision": "dc47705d8d2d7ee5e3f2d8e375dfbc6b"
+    "url": "scripts/app.c738b5ce03.min.js",
+    "revision": "c738b5ce03bcbeacc5b7c5dd43070a48"
   },
   {
     "url": "scripts/vendor.ca6cbf53e8.min.js",

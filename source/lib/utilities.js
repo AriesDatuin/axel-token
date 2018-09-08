@@ -103,7 +103,7 @@ var utilAssetObserver = function() {
 
 	//$$(".lazy").before('<div class="img-preloader"><span class="fa fa-spinner fa-pulse" aria-hidden="true"></span></div>').addClass("page-visibility");
 	
-	$$(".lazy").addClass("page-visibility");
+	//$$(".lazy").addClass("page-visibility");
 	
 	var removePreloaders = function() {
 
@@ -351,7 +351,7 @@ var utilPageVisibility = function() {
 	function isPageHidden () {
 		//console.log("Page is inactive.");
 
-		//TweenMax.set(pageVisibility.not(pageVisibilityIgnore), {autoAlpha: 0});
+		TweenMax.set(pageVisibility.not(pageVisibilityIgnore), {opacity: 0});
 
 		animPauseAll();
 
@@ -363,7 +363,7 @@ var utilPageVisibility = function() {
 
 		animController();
 
-		//TweenMax.staggerTo(pageVisibility.not(pageVisibilityIgnore), 0.25, {autoAlpha: 1, delay: 0, ease: Power2.easeInOut}, 0.12);
+		TweenMax.staggerTo(pageVisibility.not(pageVisibilityIgnore), 0.25, {opacity: 1, ease: Power2.easeInOut}, 0.12);
 
 	}
 	
