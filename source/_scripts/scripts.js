@@ -38,7 +38,7 @@
 	WebFontConfig = {
 		
 		google: {
-			families: ["Comfortaa", "Roboto:500"]
+			families: ["Comfortaa"]
 		}
 		
 	};
