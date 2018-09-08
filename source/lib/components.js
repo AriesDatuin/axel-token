@@ -178,10 +178,9 @@ var comCaseStudies = function() {
 	/* -------------------------------------------------- */
 
     var $caseStudies = $$("#case-studies .profiles"),
-        $caseStudyUser = $$("#case-studies .profiles .cell"),
-        $caseStudyJosh = $$("#case-studies .profiles #josh"),
-        $caseStudyShera = $$("#case-studies .profiles #shera"),
-        $caseStudyTina = $$("#case-studies .profiles #tina"),
+        $caseStudyJosh = $$("#josh"),
+        $caseStudyShera = $$("#shera"),
+        $caseStudyTina = $$("#tina"),
 
         $caseStudyBio = $$("#case-study");
 
