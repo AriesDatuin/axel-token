@@ -13,7 +13,23 @@ RewriteEngine on
 
 
 # Only allow my site to frame itself
-Header always set X-Frame-Options SAMEORIGIN
+<IfModule mod_headers.c>
+
+	Header always append X-Frame-Options SAMEORIGIN
+	Header set X-Content-Type-Options nosniff
+
+
+	Header set X-XSS-Protection "1; mode=block"
+
+	# 'mod_headers' cannot match based on the content-type, however,
+	# the 'X-XSS-Protection' response header should be send only for
+	# HTML documents and not for the other resources.
+
+	<FilesMatch "\.(appcache|atom|bbaw|bmp|crx|css|cur|eot|f4[abpv]|flv|geojson|gif|htc|ico|jpe?g|js|json(ld)?|m4[av]|manifest|map|mp4|oex|og[agv]|opus|otf|pdf|png|rdf|rss|safariextz|svgz?|swf|topojson|tt[cf]|txt|vcard|vcf|vtt|webapp|web[mp]|webmanifest|woff2?|xloc|xml|xpi)$">
+		Header unset X-XSS-Protection
+	</FilesMatch>
+	
+</IfModule>
 
 
 
@@ -97,32 +113,6 @@ RewriteRule (.*)$ /$1/ [R=301,L]
 	</IfModule>
 
 </FilesMatch>
-
-
-
-
-
-# Prevent MIME type sniffing
-<IfModule mod_headers.c>
-	Header set X-Content-Type-Options "nosniff"
-</IfModule>
-
-
-
-
-<IfModule mod_headers.c>
-
-	Header set X-XSS-Protection "1; mode=block"
-
-	# 'mod_headers' cannot match based on the content-type, however,
-	# the 'X-XSS-Protection' response header should be send only for
-	# HTML documents and not for the other resources.
-
-	<FilesMatch "\.(appcache|atom|bbaw|bmp|crx|css|cur|eot|f4[abpv]|flv|geojson|gif|htc|ico|jpe?g|js|json(ld)?|m4[av]|manifest|map|mp4|oex|og[agv]|opus|otf|pdf|png|rdf|rss|safariextz|svgz?|swf|topojson|tt[cf]|txt|vcard|vcf|vtt|webapp|web[mp]|webmanifest|woff2?|xloc|xml|xpi)$">
-		Header unset X-XSS-Protection
-	</FilesMatch>
-
-</IfModule>
 
 
 
