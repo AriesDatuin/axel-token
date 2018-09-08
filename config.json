@@ -92,14 +92,14 @@
 				  "<FEATURE DETECTION / POLYFILLS / FALLBACK>",
 				  "lib/assets/modernizr.js",
 				  ">>>>>lib/polyfills/intersectobserver.js",
-				  "">>>>>lib/polyfills/loadcss.js",
+				  ">>>>>lib/polyfills/loadcss.js",
 				  ">>>>>lib/polyfills/objectfit.js",
 				  ">>>>>lib/polyfills/webp.js",
 
 
 				  "<DATA>",
 				  "lib/assets/cookies.js",
-				  "">>>>>lib/assets/dateformat.js",
+				  ">>>>>lib/assets/dateformat.js",
 				  ">>>>>lib/assets/loadjson.js",
 
 
@@ -139,7 +139,7 @@
 
 				  "<ELEMENT MANIPULATION>",
 				  ">>>>>lib/assets/adaptive-background.js",
-				  "">>>>>lib/assets/duotone.js",
+				  ">>>>>lib/assets/duotone.js",
 				  ">>>>>lib/assets/tilt.js",
 
 
