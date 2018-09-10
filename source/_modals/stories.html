@@ -1,0 +1,31 @@
+---
+layout: modal
+assets: assets/
+---
+
+
+<!-- CONTENT -->
+{{#each stories.content}}
+
+
+	<article id="story-{{ id }}" class="profile grid-x align-center align-middle" style="background-image: url({{ image }})">
+		
+		
+		<!-- CELL -->
+		<div class="cell round-md round-top">
+			
+			
+			<!-- COPY -->
+			<h1 class="p2 font-paragraph text-secondary header-accent header-accent-left header-accent-secondary">{{ title }}</h1>
+			<p>{{ description }}</p>
+			<!-- // COPY -->
+
+			
+		</div>
+		<!-- // CELL -->
+
+
+	</article>
+
+
+{{/each}}

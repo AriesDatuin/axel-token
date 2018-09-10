@@ -2,7 +2,7 @@ Sitemap: https://axeltoken.com/sitemap.xml
 
 User-agent: *
 Disallow: /assets
+Disallow: /downloads
 Disallow: /fonts
-Disallow: /images
 Disallow: /modals
 Disallow: /scripts

@@ -20,12 +20,34 @@
 }
 
 
+/* SOCIAL ICONS */
+.profile.social-icons {
+	position: absolute;
+	bottom: 0;
+	padding: var(--gutter-xs);
+	background-color: transparent;
+}
+
+.profile.social-icons li a {
+	width: 35px;
+	height: 35px;
+	font-size: 1em;
+	color: var(--white-color);
+	background-color: var(--secondary-color);
+}
+
+.profile.social-icons li a:hover {
+	color: var(--white-color);
+	background-color: var(--accent-color);
+}
+
+
 /* RESPONSIVE */
 @media screen and (min-width: 0) and (max-width: 500px) {
 
 	/* CHILD */
 	.profile .cell {
-		margin-top: 300px;
+		margin-top: 500px;
 		padding: var(--gutter-md);
 	}
 

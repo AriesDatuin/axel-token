@@ -364,7 +364,7 @@ assets: assets/
 	<!-- BUTTON -->
 	<div class="padding-auto padding-bottom-xl">
 
-		<a href="modals/press" class="width-xxs round-full button button-fx-secondary button-fx-flat button-fx-static popup prevent-default" data-content-selector="#articles" data-content-width="600" data-content-height="800">View More Articles</a>
+		<a href="modals/press" class="width-xxs round-full button button-fx-secondary button-fx-flat button-fx-static popup prevent-default" data-content-selector="articles" data-content-width="600" data-content-height="800">View More Articles</a>
 		
 	</div>
 	<!-- // BUTTON -->
@@ -388,7 +388,7 @@ assets: assets/
 
 
 <!-- SECTION: DISTRIBUTED DATA IS COMPLETELY BROKEN: HERE'S WHY -->
-<section class="position-relative padding-top-none background-secondary background-cover background-tc background-repeat lazy" data-src="{{ root }}{{ assets }}{{ page }}/network-02.png" data-emergence="hidden">
+<section id="data-is-broken" class="position-relative padding-top-none background-secondary background-cover background-tc background-repeat lazy" data-src="{{ root }}{{ assets }}{{ page }}/network-02.png" data-emergence="hidden">
 
 
 	<!-- HEADER -->
@@ -596,7 +596,7 @@ assets: assets/
 
 
 <!-- SECTION: A TEAM OF DISTRIBUTED EXCHANGE DEVELOPERS WITH A TRACK RECORD -->
-<section class="padding-bottom-none padding-bottom-xl-mobile" data-emergence="hidden">
+<section id="a-team-of-distributed-exchange-developers" class="padding-bottom-none padding-bottom-xl-mobile" data-emergence="hidden">
 
 
 	<!-- GRID -->
@@ -623,7 +623,7 @@ assets: assets/
 
 
 			<!-- IMAGE -->
-			<img class="lazy" alt="A Team Of Distributed Exchange Developers With A Track Record" data-src="{{ root }}{{ assets }}/illustrations/teamwork-alt.svg">
+			<img class="lazy" alt="A Team Of Distributed Exchange Developers With A Track Record" data-src="{{ root }}{{ assets }}/illustrations/teamwork.svg">
 			<!-- // IMAGE -->
 
 
@@ -655,7 +655,7 @@ assets: assets/
 
 
 <!-- SECTION: THE AXEL NETWORK -->
-<section data-emergence="hidden">
+<section id="the-axel-network" data-emergence="hidden">
 
 
 	<!-- HEADER -->
@@ -767,7 +767,7 @@ assets: assets/
 
 
 <!-- SECTION: THE FUTURE OF PRIVATE TRANSACTION -->
-<section class="hide" data-emergence="hidden">
+<section id="the-future-of-private-transaction" class="hide" data-emergence="hidden">
 
 
 	<!-- HEADER -->
@@ -800,7 +800,7 @@ assets: assets/
 
 
 <!-- SECTION: SCALABLE + ACCESSIBLE + SECURE -->
-<section class="padding-none" data-emergence="hidden">
+<section id="scalable-accessible-secure" class="padding-none" data-emergence="hidden">
 
 
 	<!-- GRID -->
@@ -968,7 +968,7 @@ assets: assets/
 
 
 <!-- SECTION: OUR TECHNOLOGY -->
-<section data-emergence="hidden">
+<section id="our-technology" data-emergence="hidden">
 
 
 	<!-- GRID -->
@@ -1177,7 +1177,7 @@ assets: assets/
 
 
 <!-- SECTION: HOW IT WORKS -->
-<section class="padding-top-none padding-bottom-xl">
+<section id="how-it-works" class="padding-top-none padding-bottom-xl">
 
 
 	<!-- GRID -->
@@ -1227,11 +1227,11 @@ assets: assets/
 
 
 <!-- SECTION: HISTORICAL AND PLANNED DEVELOPMENT TIMELINE -->
-<section class="position-relative padding-none height-xs overflow-hidden dzsparallaxer">
+<section id="timeline" class="position-relative padding-none height-xs background-secondary overflow-hidden dzsparallaxer">
 
 
 	<!-- IMAGE -->
-	<div class="position-absolute left width-full height-lg background-secondary background-cover background-right background-center-mobile background-center-tablet background-no-repeat dzsparallaxer--target lazy send-to-back" alt="Our partners." data-src="{{ root }}{{ assets }}{{ page }}/teamwork-02.png"></div>
+	<div class="position-absolute left width-full height-lg background-secondary background-cover background-right background-center-mobile background-center-tablet background-no-repeat dzsparallaxer--target lazy z-00" alt="Our partners." data-src="{{ root }}{{ assets }}{{ page }}/teamwork-02.png"></div>
 	<!-- // IMAGE -->
 
 
@@ -1574,6 +1574,15 @@ assets: assets/
 <section id="team" class="position-relative padding-top-none padding-bottom-xl background-secondary" data-emergence="hidden">
 
 
+	<!-- SHAPE -->
+	<!--
+	<svg class="stripe top position-relative emergence-ignore-child" preserveAspectRatio="none" viewBox="0 0 1024 100">
+		<polygon fill="#6400fa" points="511.49 99.8 511.49 100 512 99.9 512.51 100 512.51 99.8 1024 0 512.51 0 511.49 0 0 0 511.49 99.8"/>
+	</svg>
+	-->
+	<!-- // SHAPE -->
+
+
 	<!-- HEADER -->
 	<h2 class="padding-auto padding-top-xl p2 font-paragraph text-white text-center header-accent-center header-accent-white">The Team</h2>
 	<!-- // HEADER -->
@@ -1583,7 +1592,7 @@ assets: assets/
 	<div class="grid-x grid-margin-x grid-margin-y grid-padding-x align-left align-stretch small-up-1 medium-up-2 large-up-3 position-relative padding-bottom-xl center-element width-lg">
 
 
-		{{> profile}}
+		{{> team}}
 
 
 	</div>
@@ -1617,7 +1626,7 @@ assets: assets/
 
 
 <!-- SECTION: THE AXEL EXCHANGE WILL BE THE BLOCKCHAIN'S FLAGSHIP NATIVE APP -->
-<section data-emergence="hidden" class="padding-top-none">
+<section id="the-axel-exchange" data-emergence="hidden" class="padding-top-none">
 
 
 	<!-- GRID -->
@@ -1718,7 +1727,7 @@ assets: assets/
 
 
 <!-- SECTION: LIKE WHAT THE CAR WAS TO THE HORSE - AXEL WILL BE TO PAID DIGITAL CONTENT -->
-<section data-emergence="hidden" class="padding-none padding-top-xl">
+<section id="paid-digital-content" data-emergence="hidden" class="padding-none padding-top-xl">
 
 
 	<!-- HEADER -->
@@ -1948,7 +1957,7 @@ assets: assets/
 
 
 <!-- SECTION: MILLIONS OF PEOPLE ALREADY USE AXEL – THE APP THAT WILL CATALYZE THE EXCHANGE -->
-<section class="position-relative padding-none background-secondary overflow-hidden emergence-ignore" data-emergence="hidden">
+<section id="millions-of-people-already-use-axel" class="position-relative padding-none background-secondary overflow-hidden emergence-ignore" data-emergence="hidden">
 
 
 	<!-- BACKGROUND: SCROLLING PATTERN -->
@@ -2027,7 +2036,7 @@ assets: assets/
 
 
 <!-- SECTION: THE $600 BILLION DIGITAL CONTENT EXCHANGE DESPERATELY NEEDS A BETTER WAY -->
-<section data-emergence="hidden">
+<section id="digital-content-exchange-needs-a-better-way" data-emergence="hidden">
 
 
 	<!-- GRID -->
@@ -2080,8 +2089,8 @@ assets: assets/
 
 
 
-<!-- SECTION: CASE STUDIES -->
-<section id="case-studies" class="position-relative padding-none background-white">
+<!-- SECTION: USER STORIES -->
+<section id="stories" class="position-relative padding-none background-white">
 	
 	
 	<!-- SHAPE -->
@@ -2100,8 +2109,10 @@ assets: assets/
     <div class="profiles grid-x grid-margin-x align-left align-top small-up-1 medium-up-2 large-up-3 padding-top-lg padding-bottom-xl center-element width-sm emergence-ignore-child">
 
 
-		<!-- CELL -->
-        <div id="josh" class="cell popup" data-content-url="modals/story-josh" data-content-selector="" data-content-width="600" data-content-height="800">
+    	{{> stories}}
+
+		<!-- CARD -->
+        <div id="josh" class="hide card cell popup" data-content-url="modals/story-josh" data-content-selector="" data-content-width="600" data-content-height="800">
 
 			
 			<!-- IMAGE -->
@@ -2144,16 +2155,16 @@ assets: assets/
 			
 			
 			<!-- IMAGE -->
-			<div class="position-absolute top left round-md width-full height-full background-cover background-no-repeat" data-image="{{ root }}{{ assets }}/case-studies/josh.png"></div>
+			<div class="position-absolute top left round-md width-full height-full background-cover background-no-repeat" data-image="{{ root }}{{ assets }}/stories/small-josh.png"></div>
 			<!-- // IMAGE -->
 			
 			
 		</div>
-		<!-- // CELL -->
+		<!-- // CARD -->
 
 
-		<!-- CELL -->
-        <div id="shera" class="cell popup" data-content-url="modals/story-shera" data-content-selector="" data-content-width="600" data-content-height="800">
+		<!-- CARD -->
+        <div id="shera" class="hide card cell popup" data-content-url="modals/story-shera" data-content-selector="" data-content-width="600" data-content-height="800">
 
 			
 			<!-- IMAGE -->
@@ -2194,16 +2205,16 @@ assets: assets/
 			
 			
 			<!-- IMAGE -->
-			<div class="position-absolute top left round-md width-full height-full background-cover background-no-repeat" data-image="{{ root }}{{ assets }}/case-studies/shera.png"></div>
+			<div class="position-absolute top left round-md width-full height-full background-cover background-no-repeat" data-image="{{ root }}{{ assets }}/stories/small-shera.png"></div>
 			<!-- // IMAGE -->
 			
 			
 		</div>
-		<!-- // CELL -->
+		<!-- // CARD -->
 
 
-		<!-- CELL -->
-        <div id="tina" class="cell popup" data-content-url="modals/story-tina" data-content-selector="" data-content-width="600" data-content-height="800">
+		<!-- CARD -->
+        <div id="tina" class="hide card cell popup" data-content-url="modals/story-tina" data-content-selector="" data-content-width="600" data-content-height="800">
 
 			
 			<!-- IMAGE -->
@@ -2246,12 +2257,12 @@ assets: assets/
 			
 			
 			<!-- IMAGE -->
-			<div class="position-absolute top left round-md width-full height-full background-cover background-no-repeat" data-image="{{ root }}{{ assets }}/case-studies/tina.png"></div>
+			<div class="position-absolute top left round-md width-full height-full background-cover background-no-repeat" data-image="{{ root }}{{ assets }}/stories/small-tina.png"></div>
 			<!-- // IMAGE -->
 			
 			
 		</div>
-		<!-- // CELL -->
+		<!-- // CARD -->
 
 		
 	</div>
@@ -2267,14 +2278,14 @@ assets: assets/
 
 	
 </section>
-<!-- // SECTION: CASE STUDIES -->
+<!-- // SECTION: USER STORIES -->
 
 
 
 
 
 <!-- SECTION: JOIN US ON OUR MISSION -->
-<section class="position-relative padding-top-none padding-bottom-xl background-white overflow-hidden">
+<section id="join-us" class="position-relative padding-top-none padding-bottom-xl background-white overflow-hidden">
 
 
 	<!-- SHAPE -->
@@ -2336,7 +2347,7 @@ assets: assets/
 
 
 			<!-- CARD -->
-			<a href="modals/whitepaper" class="card card-accent media-object stack-for-small margin-tb-sm margin-bottom-none-mobile padding-sm background-secondary popup external" data-content-selector="" data-content-width="600" data-content-height="660" aria-label="Read the White Paper">
+			<a href="modals/whitepaper" class="card card-accent media-object stack-for-small margin-tb-sm margin-bottom-none-mobile padding-sm background-secondary popup external" data-content-selector="white-paper" data-content-width="600" data-content-height="660" aria-label="Read the White Paper">
 
 
 				  <!-- MEDIA OBJECT -->
@@ -2420,7 +2431,7 @@ assets: assets/
 
 
 			<!-- IMAGE -->
-			<img class="lazy" alt="Join Us On Our Mission" data-src="{{ root }}{{ assets }}/illustrations/dream-big.svg">
+			<img class="lazy" alt="Join Us On Our Mission" data-src="{{ root }}{{ assets }}/illustrations/join-us.svg">
 			<!-- // IMAGE -->
 
 

@@ -1,0 +1,43 @@
+
+<!-- CONTENT -->
+{{#each stories.content}}
+
+
+	<!-- CARD -->
+    <div id="{{ id }}" class="card cell popup" data-content-url="{{ link }}" data-content-selector="story-{{ id }}" data-content-width="600" data-content-height="800">
+
+		
+		<!-- IMAGE -->
+		<div class="position-absolute wh-xs center-element round-full background-accent overflow-hidden top-offset">
+			<img src="{{ icon }}" class="padding-sm center-vh lazy">
+		</div>
+		<!-- // IMAGE -->
+		
+		
+		<!-- COPY -->
+		<div class="text-container">
+			
+			<h3 class="p6 font-paragraph text-accent">{{ subtitle }}</h3>
+			
+			<p class="text-white text-trim text-truncate-fade">{{ description }}</p>
+			
+		</div>
+		<!-- // COPY -->
+		
+		
+		<!-- BUTTON -->
+		<div class="margin-bottom-xs text-accent text-white-hover text-bold text-uppercase button background-transparent background-transparent-hover no-touch-feedback prevent-default"><span class="fa fa-external-link margin-right-xs"></span>Read story</div>
+		<!-- // BUTTON -->
+		
+		
+		<!-- IMAGE -->
+		<div class="position-absolute top left round-md width-full height-full background-cover background-no-repeat" data-image="{{ thumb }}"></div>
+		<!-- // IMAGE -->
+		
+		
+	</div>
+	<!-- // CARD -->
+
+
+{{/each}}
+<!-- // CONTENT -->

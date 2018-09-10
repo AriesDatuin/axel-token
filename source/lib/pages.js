@@ -1,5 +1,14 @@
 /* -------------------------------------------------- */
-/* SET-UP
+/* CACHE SELECTORS
+/* -------------------------------------------------- */
+	
+var page = $$(".page").data("page"),
+	
+	linkHome = $$(".link-home");
+
+
+/* -------------------------------------------------- */
+/* PAGES
 /* -------------------------------------------------- */
 
 var pages = function() {
@@ -7,18 +16,6 @@ var pages = function() {
 
 	// > = greatar than
 	// < = less than
-	
-	
-	/* -------------------------------------------------- */
-	/* CACHE SELECTORS
-	/* -------------------------------------------------- */
-	
-	var page = $$(".page").data("page"),
-		
-		linkHome = $$(".link-home"),
-
-		linkPrivacyPolicy = $$(".link-privacy-policy"),
-		linkEULA = $$(".link-eula");
 	
 	
 	/* -------------------------------------------------- */
@@ -96,6 +93,7 @@ var pages = function() {
 	else if ( page === "privacy-policy" ) {
 		console.log("Privacy and Terms of Use Page");
 		
+		/*
 		linkPrivacyPolicy.addClass("active");
 		navbar.addClass("dark");
 		body.addClass("background-white");
@@ -103,24 +101,10 @@ var pages = function() {
 		
 		$("#ui-privacy-policy-message a").hide();
 		$("#ui-privacy-policy-message").addClass("text-center");
+		*/
 
 	}
     
-	
-    /* -------------------------------------------------- */
-	/* EULA
-	/* -------------------------------------------------- */
-
-	else if ( page === "eula" ) {
-		console.log("EULA Page");
-		
-		linkEULA.addClass("active");
-		navbar.addClass("dark");
-		body.addClass("background-white");
-		body.addClass("background-image-none");
-
-	}
-
 	
 	/* -------------------------------------------------- */
 	/* ERROR
@@ -129,9 +113,8 @@ var pages = function() {
 	else {
 		console.log("Error Page");
 		
-		navbar.addClass("dark");
-		//body.addClass("background-wild");
-		//body.addClass("background-image-none");
+		//navbar.addClass("light");
+
 	}
 	
 };

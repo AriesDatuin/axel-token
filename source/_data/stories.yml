@@ -1,0 +1,34 @@
+
+# STORIES
+content:
+ -
+  id: josh
+  title: Josh
+  subtitle: Josh is a photographer
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat./n/nTest
+  icon: assets/stories/camera.svg
+  thumb: assets/stories/small-josh.png
+  image: assets/stories/large-josh.png
+  link: modals/stories
+
+
+ -
+  id: shera
+  title: Shera
+  subtitle: Shera is a singer
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  icon: assets/stories/acoustic-guitar.svg
+  thumb: assets/stories/small-shera.png
+  image: assets/stories/large-shera.png
+  link: modals/stories
+
+
+ -
+  id: tina
+  title: Tina
+  subtitle: Tina is a gaming influencer
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  icon: assets/stories/gamepad.svg
+  thumb: assets/stories/small-tina.png
+  image: assets/stories/large-tina.png
+  link: modals/stories

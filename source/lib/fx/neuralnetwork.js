@@ -32,6 +32,7 @@ var ctx,
     nodeColor = "rgba(250,0,150,0.5)",
     nodeLineColor = "rgba(0,0,0,1)",
     signalColor = "rgba(0,250,200,1)", //"hsl(168,100%,50%)", 'hsl(' + tint + ',100%,50%)';
+    signalRandomColor = true,
     nodeLineWidth = 0.1,
     signalLineWidth = 0.4,
     signalDuration = 1,
@@ -211,7 +212,17 @@ function Signal(start) {
     var tint = Math.floor(Math.random() * 360);
     //console.log(tint);
     //this.style = 'hsl(' + tint + ',100%,50%)';
-    this.style = signalColor;
+
+    if( signalRandomColor ) {
+
+        this.style = 'hsl(' + tint + ',100%,50%)';
+
+    } else {
+
+        this.style = signalColor;
+
+    }
+
     //this.style = ['hsl(324,100%,50%)', 'hsl(168,100%,50%)', 'hsl(252,100%,50%)'];
 
     for (var i = 0; i < start.connections.length; i++) {
@@ -360,100 +371,95 @@ var ease = {
 };
 
 
-// INIT
-if ( !$isMobile ) {
-
-    //fxNeuralNetwork();
-
-}
-
-//fxNeuralNetwork();
-
-
 /* -------------------------------------------------- */
 /* THROTTLE
 /* -------------------------------------------------- */
 
-var fxNeuralNetworkIsAnimating = true;
+if ( page = $$(".page").data("page") === "index" ) {
 
 
-function fxNeuralNetworkControl() {
-
-    if( !fxNeuralNetworkIsAnimating ) {
-
-        ctx = null;
-
-        return;
-
-    } else {
-
-        fxNeuralNetwork();
-
-    }
-
-}
-
-//fxNeuralNetworkControl();
-
-fxNeuralNetwork();
+    var fxNeuralNetworkIsAnimating = true;
 
 
-// VARS
-var canvas = new Visibility({
-    onHidden: isCanvasHidden,
-    onVisible: isCanvasVisible
-});
+    function fxNeuralNetworkControl() {
 
+        if( !fxNeuralNetworkIsAnimating ) {
 
-// FUNCTIONS / CALLBACKS
-function isCanvasHidden () {
-    //console.log(fxNeuralNetworkIsAnimating);
+            ctx = null;
 
-    fxNeuralNetworkIsAnimating = false;
-    fxNeuralNetworkControl();
+            return;
 
-}
+        } else {
 
+            fxNeuralNetwork();
 
-function isCanvasVisible () {
-    //console.log(fxNeuralNetworkIsAnimating);
-
-    fxNeuralNetworkIsAnimating = true;
-    fxNeuralNetworkControl();
-
-}
-
-
-//$$(pageContent).on("resize", _.debounce(fxNeuralNetworkUpdate, 2));
-
-
-
-
-(function() {
-
-    window.addEventListener("resize", resizeThrottler, false);
-
-    var resizeTimeout;
-
-    function resizeThrottler() {
-
-        // ignore resize events as long as an actualResizeHandler execution is in the queue
-        if ( !resizeTimeout ) {
-
-            resizeTimeout = setTimeout(function() {
-            resizeTimeout = null;
-            actualResizeHandler();
-         
-           // The actualResizeHandler will execute at a rate of 15fps
-        }, 66); }
+        }
 
     }
 
-    function actualResizeHandler() {
+    //fxNeuralNetworkControl();
 
-        // handle the resize event
-        fxNeuralNetworkUpdate();
+    fxNeuralNetwork();
+
+
+    // VARS
+    var canvas = new Visibility({
+        onHidden: isCanvasHidden,
+        onVisible: isCanvasVisible
+    });
+
+
+    // FUNCTIONS / CALLBACKS
+    function isCanvasHidden () {
+        //console.log(fxNeuralNetworkIsAnimating);
+
+        fxNeuralNetworkIsAnimating = false;
+        fxNeuralNetworkControl();
 
     }
 
-}());
+
+    function isCanvasVisible () {
+        //console.log(fxNeuralNetworkIsAnimating);
+
+        fxNeuralNetworkIsAnimating = true;
+        fxNeuralNetworkControl();
+
+    }
+
+
+    //$$(pageContent).on("resize", _.debounce(fxNeuralNetworkUpdate, 2));
+
+
+
+
+    (function() {
+
+        window.addEventListener("resize", resizeThrottler, false);
+
+        var resizeTimeout;
+
+        function resizeThrottler() {
+
+            // ignore resize events as long as an actualResizeHandler execution is in the queue
+            if ( !resizeTimeout ) {
+
+                resizeTimeout = setTimeout(function() {
+                resizeTimeout = null;
+                actualResizeHandler();
+             
+               // The actualResizeHandler will execute at a rate of 15fps
+            }, 66); }
+
+        }
+
+        function actualResizeHandler() {
+
+            // handle the resize event
+            fxNeuralNetworkUpdate();
+
+        }
+
+    }());
+
+};

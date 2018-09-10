@@ -930,11 +930,8 @@ export function deployinit(done) {
 					"upload": false,
 					"dist": ["./your-production-folder"],
 					"host": "",
-<<<<<<< HEAD
 					"path": "./remote-path",
-=======
 					"path": "dev/build",
->>>>>>> 30df482ccd915ab6115ce6794b630a505d72781f
 					"user": "Username",
 					"password": "Password",
 					"secure": false,
