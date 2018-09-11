@@ -3,6 +3,8 @@ Version 2.1
 	Website / App
 		- Fixed images not loading in Edge, IE.
 		- Added preloader to modal / popup content.
+		- Improved IntersectionObserver support.
+		- Major optimizations to CSS and JS.
 		- Full initial release.
 
 
@@ -10,9 +12,14 @@ Version 2.1
 		- Versioning / Cache-busting now supported for images.
 		- Extended versioning / cache-busting options.
 		- Additional image optimization options.
+		- Improved WEBP optimizations.
+		- Improved SVG optimizations.
 		- Added Google Analytics tracking options.
 		- Added robots.txt options.
 		- Revised HTML processing in Panini engine.
+		- Improved modal / popup processing.
+		- Revised inline script injection.
+		- Added option to add vendor scripts.
 		- Completely removed server-config.json from project folder.
 			- Build Framework can now generate a config-server.json by running 'gulp deployinit'.
 			- server-config.json will now be ignored when pushing to Git.
