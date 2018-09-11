@@ -22,7 +22,7 @@
 			"suffix": ".min"
 		},
 		"images": {
-			"allow": true,
+			"allow": false,
 			"prefix": ".",
 			"suffix": ""
 		}

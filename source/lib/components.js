@@ -383,7 +383,9 @@ var comModal = function() {
 
 				uiModal += "<div class='modal-close close dark margin-sm round-full'><span></span><span></span></div>"; // BUTTON: CLOSE
 
-				uiModal += "<div class='modal-container cell align-self-top'></div>"; // CONTAINER
+				uiModal += "<div id='modal-preloader' class='center-vh padding-xs round-sm text-charcoal text-center background-white box-shadow-sm z-01'> <span class='fa fa-circle-o-notch fa-spin p4' aria-hidden='true'></span> <p>Fetching...</p> </div>" // PRELOADER
+
+				uiModal += "<div class='modal-container cell align-self-top'></div>" // CONTAINER
 
 				uiModal += "<a class='modal-close cell align-self-bottom padding-tb-md center-element p11 text-secondary text-charcoal-hover text-bold text-uppercase button button-width-full background-white background-white-hover no-touch-feedback prevent-default hide z-auto'><i class='fa fa-times-circle margin-right-xs'></i>Close</a>"; // BUTTON: CLOSE
 
@@ -413,18 +415,25 @@ var comModal = function() {
 
 													   onStart: function() {
 
+															
 														   $$(html).addClass("no-pointer");
 														   
 														   
 														   $$(".modal-container").load(modalContentURL + modalContentSelector, function ( response, status, xhr ) {
 
+															   // PRELOADER
+															   TweenMax.set( $$("#modal-preloader"), {display: "block", opacity: 1, scale: 1});
+
+
 															   if ( status == "success" ) {
 
-																   utilAssetObserver();
+																   //utilAssetObserver();
 																 
 																   //console.log( modalContentURL + modalContentSelector);
 
 																   //TweenMax.set( $$(".modal"), { maxWidth: $$(".modal-container").children().width() } );
+
+																   TweenMax.to( $$("#modal-preloader"), 0.25, {display: "none", opacity: 0, scale: 0.75, delay: 0, ease: Expo.easeInOut});
 
 																   $$(".modal-close").not(".close").removeClass("hide");
 
@@ -433,7 +442,10 @@ var comModal = function() {
 																   var msg = "Error: Unable to load " + modalContentURL + modalContentSelector;
 
 																   //$(this).html( msg + xhr.status + " " + xhr.statusText );
-																   $$(this).html( '<div class="center-vh text-charcoal text-center"> <span class="fa fa-exclamation-circle margin-bottom-md p4" aria-hidden="true"></span> <p>'+msg+'</p> </div>' );
+																   $$(this).html( '<div class="center-vh text-charcoal text-center"> <span class="fa fa-exclamation-circle p4" aria-hidden="true"></span> <p>'+msg+'</p> </div>' );
+
+																   TweenMax.to( $$("#modal-preloader"), 0.25, {display: "none", opacity: 0, scale: 0.75, delay: 0, ease: Expo.easeInOut});
+
 																   $$(".modal-close").not(".close").addClass("hide");
 
 															   }
