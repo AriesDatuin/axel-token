@@ -3,11 +3,29 @@
 	"options": {
 		"site": "https://axeltoken.com",
 		"production": true,
-		"versioning": true,
 		"serviceworker": true,
 		"appBanner": false,
 		"sourcemaps": false,
 		"previewURL": "index.html"
+	},
+
+	"robots": {
+		"useragent": "*",
+		"allow": [""],
+		"disallow": ["/assets/", "/cgi-bin/", "/downloads/", "/fonts/", "/modals/", "/scripts/"]
+	},
+
+	"versioning": {
+		"scripts": {
+			"allow": true,
+			"prefix": ".",
+			"suffix": ".min"
+		},
+		"images": {
+			"allow": true,
+			"prefix": ".",
+			"suffix": ""
+		}
 	},
 	
 	"paths": {
@@ -48,7 +66,8 @@
 		"webpOptimizationLevel": 0,
 		"webpQuality": 100,
 		"webpAlphaQuality": 100,
-		"webpSharpness": 0
+		"webpSharpness": 0,
+		"versioning": true
 	},
 	
 	"html": {
@@ -59,15 +78,23 @@
 		"partials": "_partials/",
 		"helpers": "_helpers/",
 		"data": "_data/",
-		"modals": "_modals/**/*.{html,hbs,handlebars}",
+
+		"modals": {
+			"paths": "_modals/**/*.{html,hbs,handlebars}",
+			"output": "modals/"
+		},
 		
 		"scripts": "_scripts/*.js",
 		"critical": "css/critical.css"
 	},
+
+	"scripts": {
+		"output": "scripts/"
+	},
 	
 	"vendors": {
 		"useVendorScripts": false,
-		"bundle": "vendor.js",
+		"bundle": "vendors.js",
 		"lint": false,
 		"jsAttribute": "async",
 

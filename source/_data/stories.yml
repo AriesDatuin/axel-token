@@ -5,7 +5,18 @@ content:
   id: josh
   title: Josh
   subtitle: Josh is a photographer
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat./n/nTest
+  description:
+    He loves taking pictures. His friends tell him he should sell them and do this for a living. But he doesn't want to do it full-time, and trying to do it on the side is hard.
+    
+    In today's world, his only realistic chance of doing that is by going to a photo licensing site and asking them to sell it for him. The process is incredibly complicated and he has no idea how to begin. And even if he goes through all that and his pictures get sold, who do you think gets most of the money from that sale?
+
+    Not Josh.
+
+    With the AXEL Marketplace, everything changes. Josh can take a cat picture on his phone. He can then select that picture, set a price, give it some tags like a cat lounging on a stone wall," and hit submit.
+
+    All of a sudden, his picture is up and for sale on the Marketplace. Anyone searching for cat photos can find his work and buy it on the spot.
+    For Josh and people like him, entirely new career paths become viable.
+
   icon: assets/stories/camera.svg
   thumb: assets/stories/small-josh.png
   image: assets/stories/large-josh.png
@@ -16,7 +27,15 @@ content:
   id: shera
   title: Shera
   subtitle: Shera is a singer
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  description:
+    People adore the songs she brings out. Covers of popular songs. Music with personalized lyrics she's written herself. Even her quirky music videos. All that has attracted hundreds of thousands of YouTube subscribers.
+
+    But all those people listening to her music aren't enough to pay her rent. Ad revenues on YouTube are a pittance, and Spotify earns her less than $0.00043 a listen. Even digital downloads through iTunes swallow more than 30% of every sale - and each track is locked at $0.99 a download.
+
+    The AXEL Marketplace will remove the intermediaries between Shera and her fans, letting her set her own pricing and earn what she should be earning.
+
+    All she would have to do is select a song or album, set what she thinks it's actually worth, and get a link she can put anywhere. Using an AXEL link instead of one for iTunes would instantly boost her earnings by a huge margin with a few moments work. No more paying a fortune to the middleman - fans will finally be able to support her without jumping through hoops. AXEL will let artists like Shera reap the full benefits of their work.
+
   icon: assets/stories/acoustic-guitar.svg
   thumb: assets/stories/small-shera.png
   image: assets/stories/large-shera.png
@@ -27,7 +46,19 @@ content:
   id: tina
   title: Tina
   subtitle: Tina is a gaming influencer
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  description: 
+    Gaming is the biggest entertainment industry and Tina likes to game. She also likes to entertain. As a gaming pro with legions of fans, she's building a loyal following through streaming her content by some of the biggest video sites in the world.
+
+    She's doing well, but is frustrated by constant changes in terms, percentages, ad networks, streaming cuts, and restrictions. Some take over 40% of her revenue simply for hosting her content.
+
+    Her loyal fan base wants more content and direct access. They're willing to pay for it, but the platforms aren't on her side.
+
+    Using AXEL's patented digital content and streaming technology, she can stream her content directly to her fans – they're not penalized with fees and forced to watch ads, and she's not hit by large percentage takes. She decides on her content, she decides its value, and she gives access to whoever she wants.
+
+    Not only does she get to stream what she wants for a price she wants, but she doesn't have to use other platforms to provide other cool and exciting content. She can sell apps, digital merchandise, or anything else her fans find of value.
+
+    Tina is now in control over her content, her fan base, and her own business.
+
   icon: assets/stories/gamepad.svg
   thumb: assets/stories/small-tina.png
   image: assets/stories/large-tina.png

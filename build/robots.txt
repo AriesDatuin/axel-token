@@ -1,8 +1,8 @@
-Sitemap: https://axeltoken.com/sitemap.xml
-
 User-agent: *
-Disallow: /assets
-Disallow: /downloads
-Disallow: /fonts
-Disallow: /modals
-Disallow: /scripts
+Disallow: /assets/
+Disallow: /cgi-bin/
+Disallow: /downloads/
+Disallow: /fonts/
+Disallow: /modals/
+Disallow: /scripts/
+Sitemap: https://axeltoken.com/sitemap.xml

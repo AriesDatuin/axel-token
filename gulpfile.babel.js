@@ -60,6 +60,7 @@ import rev from "gulp-rev"; // File revisioning.
 import revRewrite from "gulp-rev-rewrite"; // Rewrite occurrences of file names which have been renamed by gulp-rev.
 import revDelete from "gulp-rev-delete-original"; // Delete the original file rewritten by gulp-rev or gulp-rev-all.
 import revFormat from "gulp-rev-format"; // Formatting options for revisioned files.
+import robots from "gulp-robots"; // Generate robots.txt.
 import sourcemaps from "gulp-sourcemaps"; // Generate JS or CSS sourcemaps.
 import svg2png from "gulp-svg2png"; // Convert SVG files to PNG files.
 import svgmin from "gulp-svgmin"; //Compress SVG assets.
@@ -146,6 +147,25 @@ export function meta() {
 
 
 /* -------------------------------------------------- */
+/* ROBOTS
+/* -------------------------------------------------- */
+
+export function robotstxt() {
+
+	console.log("Generating robots.txt...");
+
+	return gulp.src([config.paths.build + "**/*.html",
+					 "!" + config.paths.build + "modals/*"])
+			   .pipe(robots({useragent: config.robots.useragent,
+			   				 //allow: config.robots.allow,
+			   				 disallow: config.robots.disallow,
+			   				 sitemap: config.options.site + "/sitemap.xml"
+			   }))
+			   .pipe(gulp.dest(config.paths.build));
+}
+
+
+/* -------------------------------------------------- */
 /* SITEMAP
 /* -------------------------------------------------- */
 
@@ -153,11 +173,15 @@ export function sitemap() {
 
 	console.log("Generating sitemap...");
 
-	return gulp.src( config.paths.build + "**/*.html" )
+	return gulp.src([config.paths.build + "**/*.html",
+					 "!" + config.paths.build + "modals/*"])
 			   .pipe(generateSitemap( {siteUrl: config.options.site} ))
 			   .pipe(gulp.dest( config.paths.build ));
 
 }
+
+
+//, data = JSON.stringify(json, null, "\t")
 
 
 /* -------------------------------------------------- */
@@ -222,7 +246,7 @@ export function sw(done) {
 // JS
 export function checkjs() {
 
-	return gulp.src(config.paths.source + "lib/*.js")
+	return gulp.src(config.paths.source + config.js.paths + "*.js")
 			   .pipe(gulpif( config.js.lint, jshint() ))
 			   .pipe(gulpif( config.js.lint, jshint.reporter() ));
 
@@ -232,7 +256,7 @@ export function checkjs() {
 // CSS
 export function checkcss() {
 
-	return gulp.src( config.paths.source + "css/**/*.css" )
+	return gulp.src( config.paths.source + config.css.paths + "*.css" )
 			   .pipe(gulpif( config.css.lint, csslint.formatter() ))
 			   .pipe(gulpif( config.css.lint, csslint() ));
 
@@ -240,35 +264,79 @@ export function checkcss() {
 
 
 /* -------------------------------------------------- */
-/* INJECT
+/* VERSIONING / CACHE BUST
 /* -------------------------------------------------- */
 
 //*Note: In order for cache-bust to work production in config.json must be set to true.
 
-// HASH
-export function hash(done) {
+// JS
+export function hashscripts(done) {
 
-	if ( config.options.versioning && production ) {
+	if ( config.versioning.scripts.allow && production ) {
 
-		console.log("Hashing files...");
+		console.log("Hashing script files...");
 
 		// TASK
-		return gulp.src( config.paths.build + "scripts/**/*" )
+		return gulp.src( config.paths.build + config.scripts.output + "**/*" )
 				   .pipe(rev())
-				   .pipe(revFormat({prefix: ".",
-									suffix: ".min",
+				   .pipe(revFormat({prefix: config.versioning.scripts.prefix,
+									suffix: config.versioning.scripts.suffix,
 									lastExt: false
 					}))
-				   .pipe(gulp.dest( config.paths.build + "scripts/" ))
+				   .pipe(gulp.dest( config.paths.build + config.scripts.output ))
 				   .pipe(revDelete())
 				   .pipe(revRewrite())
 
-				   .pipe(rev.manifest( revFile, { base: config.paths.build + "scripts/", merge: true } )) 
-				   .pipe(gulp.dest( config.paths.build + "scripts/" ))
+				   .pipe(rev.manifest( revFile, { base: config.paths.build + config.scripts.output, merge: true } )) 
+				   .pipe(gulp.dest( config.paths.build + config.scripts.output ))
 
 				   .on("end", function () {
 
-									console.log("Injecting revisioned files...");
+									console.log("Injecting revisioned script files...");
+
+									const manifest = gulp.src( revFile );
+
+									return gulp.src([config.paths.build + "**/*"])
+											   .pipe(revRewrite({ manifest }))
+											   .pipe(gulp.dest( config.paths.build ));
+
+											   });
+
+	} else {
+
+		return done();
+
+	}
+
+}
+
+
+// ASSETS
+export function hashassets(done) {
+
+	if ( config.versioning.images.allow && production ) {
+
+		console.log("Hashing asset files...");
+
+		// TASK
+		return gulp.src([config.paths.build + config.images.paths + "**/*",
+						 "!" + config.paths.build + config.images.paths + "icons/*",
+						 "!" + config.paths.build + config.images.paths + "social/*"])
+				   .pipe(rev())
+				   .pipe(revFormat({prefix: config.versioning.images.prefix,
+									suffix: config.versioning.images.suffix,
+									lastExt: false
+					}))
+				   .pipe(gulp.dest( config.paths.build + config.images.paths ))
+				   .pipe(revDelete())
+				   .pipe(revRewrite())
+
+				   .pipe(rev.manifest( revFile, { base: config.paths.build + config.images.paths, merge: true } )) 
+				   .pipe(gulp.dest( config.paths.build + config.images.paths ))
+
+				   .on("end", function () {
+
+									console.log("Injecting revisioned asset files...");
 
 									const manifest = gulp.src( revFile );
 
@@ -290,7 +358,7 @@ export function hash(done) {
 // INJECT
 export function inject(done) {
 
-	if ( config.options.versioning && production ) {
+	if ( config.versioning.scripts && production ) {
 
 		console.log("Injecting hashed files...");
 
@@ -340,7 +408,7 @@ export function js() {
 			   .pipe(gulpif( production, uglify(uglifyJSOptions).on("error", gutil.log) ))
 			   .pipe(concat(config.js.bundle))
 			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.write("maps") ))
-			   .pipe(gulp.dest( config.paths.build + "scripts/" ));
+			   .pipe(gulp.dest( config.paths.build + config.scripts.output ));
 
 }
 
@@ -359,7 +427,7 @@ export function vendors() {
 			   .pipe(gulpif( production, uglify(uglifyJSOptions).on("error", gutil.log) ))
 			   .pipe(concat(config.vendors.bundle))
 			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.write("maps") ))
-			   .pipe(gulp.dest( config.paths.build + "scripts/" ));
+			   .pipe(gulp.dest( config.paths.build + config.scripts.output ));
 
 }
 
@@ -428,7 +496,7 @@ export function css() {
 			   .pipe(gulpif( config.optimizations.autoprefix, autoprefixer(autoPrefixCSSOptions) ))
 			   .pipe(gulpif( production, cleanCSS(cleanCSSOptions) ))
 			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.write("maps") ))
-			   .pipe(gulp.dest( config.paths.build + "scripts/" ))
+			   .pipe(gulp.dest( config.paths.build + config.scripts.output ))
 			   .pipe(browserSync.stream());
 
 }
@@ -478,7 +546,7 @@ export function html() {
 										  },
 
 								  vendors: {
-										   src: "scripts/" + config.vendors.bundle,
+										   src: config.scripts.output + config.vendors.bundle,
 										   tpl: '<script src="%s" '+config.vendors.jsAttribute+'></script>'
 										  },
 
@@ -488,12 +556,12 @@ export function html() {
 								  },
 
 								  css: {
-										src: "scripts/" + config.css.bundle,
+										src: config.scripts.output + config.css.bundle,
 										tpl: '<link rel="preload" href="%s" as="style" onload="this.onload=null;this.rel='+stylesheet+'">'
 								  },
 
 								  js: {
-									   src: "scripts/" + config.js.bundle,
+									   src: config.scripts.output + config.js.bundle,
 									   tpl: '<script src="%s" '+config.js.jsAttribute+'></script>'
 								  }
 								  //css: cssApp,
@@ -513,26 +581,23 @@ export function html() {
 }
 
 
-
-
-
 // MODALS
 export function modals() {
 
 	console.log("Compiling modals...");
 
-	return gulp.src( config.paths.source + config.html.modals )
+	return gulp.src( config.paths.source + config.html.modals.paths )
 			   .pipe(panini({
 							 data: config.paths.source + config.html.data,
 							 helpers: config.paths.source + config.html.helpers,
 							 layouts: config.paths.source + config.html.layouts,
 							 partials: config.paths.source + config.html.partials,
-							 root: config.paths.source + config.html.modals
+							 root: config.paths.source + config.html.modals.paths
 							})
 			   )
 			   .pipe(gulpif( production, htmlmin(htmlminOptions) ))
 			   .pipe(noopener.overwrite())
-			   .pipe(gulp.dest( config.paths.build + "modals/" ));
+			   .pipe(gulp.dest( config.paths.build + config.html.modals.output ));
 
 }
 
@@ -837,6 +902,19 @@ if ( serverOn ) {
 }
 
 
+if( fs.existsSync(serverFile) ) {
+
+	console.log("FILE EXISTS!");
+	const server = JSON.parse(fs.readFileSync(serverFile));
+
+} else {
+
+	console.log("FILE DOES NOT EXIST.");
+	deployinit();
+
+}
+
+
 // INIT
 export function deployinit(done) {
 
@@ -845,10 +923,11 @@ export function deployinit(done) {
 	/* -------------------------------------------------- */
 
 	// WATCH OBJECT
-	let watcher = gulp.watch(serverFile, launch);
+	//let watcher = gulp.watch(serverFile, launch);
 
 
 	// EVENT
+	/*
 	watcher.on("all",
 
 				function() {
@@ -871,6 +950,7 @@ export function deployinit(done) {
 				}
 
 	);
+	*/
 
 
 	// FUNCTIONS
@@ -960,17 +1040,18 @@ export function deployinit(done) {
 
 		});
 
+
+
 	} else {
 
 		console.log("Found an existing server configuration file.");
 
-		launch();
+		return done();
 
+		//launch();
 		//watcher.close();
 
 	}
-
-	return done();
 
 }
 
@@ -1482,11 +1563,11 @@ export function openBuild(done) {
 }
 
 // VERSION
-function ver(done) {
+export function ver(done) {
 
 	console.log("//////////////////////////////");
 	console.log("//////// BUILD ENGINE ////////");
-	console.log("////////   VER. 1.0   ////////");
+	console.log("////////   VER. 2.0   ////////");
 	console.log("//////////////////////////////");
 	
 	return done();
@@ -1515,15 +1596,11 @@ gulp.task("test", gulp.series(mode, clear, html, modals, vendors, js, css, move,
 
 
 // BUILD
-gulp.task("build", gulp.series(clear, checkjs, checkcss, html, modals, vendors, js, css, hash, move, raster, svg, analytics, meta, sitemap, sw, clean, preview));
+gulp.task("build", gulp.series(clear, checkjs, checkcss, html, modals, vendors, js, css, hashscripts, move, meta, hashassets, raster, svg, analytics, robotstxt, sitemap, sw, clean, preview));
 
 
 // DEPLOY
 gulp.task("deploy", gulp.series("build", deployinit, awsdeploy, gitdeploy, ftpdeploy));
-
-
-// DEPLOY
-gulp.task("config", gulp.series(deployinit));
 
 
 /* -------------------------------------------------- */
@@ -1535,4 +1612,4 @@ gulp.task("images", gulp.series(move, assets, raster, svg, clean));
 
 
 // HTML / CSS / JS
-gulp.task("htmlscripts", gulp.series(checkjs, checkcss, html, modals, vendors, js, css, hash, move, analytics, meta, sitemap, sw, clean, preview));
+gulp.task("htmlscripts", gulp.series(checkjs, checkcss, html, modals, vendors, js, css, hashscripts, move, meta, analytics, sitemap, sw, clean, preview));

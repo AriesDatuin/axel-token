@@ -12,6 +12,15 @@ RewriteEngine on
 
 
 
+# Remove index from url
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.html?/$1 [L]
+
+
+
+
+
 # Only allow my site to frame itself
 <IfModule mod_headers.c>
 

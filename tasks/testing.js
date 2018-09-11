@@ -328,6 +328,51 @@ export function generateMetadata(done) {
 
 
 /* -------------------------------------------------- */
+/* GENERATE ROBOTS.TXT
+/* -------------------------------------------------- */
+
+export function hm(done) {
+
+
+
+
+	// Create data object to write to json settings file.
+
+	/*
+	let json = {
+
+				"User-agent": config.robots.useragent,
+				"Disallow": config.robots.disallow,
+				"Sitemap": config.options.site + "/sitemap.xml"
+
+	}, data = JSON.stringify(json, null, "\t");
+	*/
+
+
+	let data = "User-agent: " + config.robots.useragent + "\r\n" +
+			   "Disallow: " + config.robots.disallow + "\r\n" +
+			   "Sitemap: " + config.options.site + "/sitemap.xml";
+
+
+
+
+		fs.writeFile(config.paths.build + "robots.txt", data, "utf8", function() {
+
+			console.log("Generating robots.txt...");
+
+			/*
+			return gulp.src( serverFile )
+					   .pipe(open());
+			*/
+
+		});
+
+		return done();
+
+}
+
+
+/* -------------------------------------------------- */
 /* ACTIONS
 /* -------------------------------------------------- */
 

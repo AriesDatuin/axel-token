@@ -420,6 +420,8 @@ var comModal = function() {
 
 															   if ( status == "success" ) {
 
+																   utilAssetObserver();
+																 
 																   //console.log( modalContentURL + modalContentSelector);
 
 																   //TweenMax.set( $$(".modal"), { maxWidth: $$(".modal-container").children().width() } );
@@ -428,7 +430,7 @@ var comModal = function() {
 
 															   } else {
 
-																   var msg = "Error: Unable to load " + modalContentURL;
+																   var msg = "Error: Unable to load " + modalContentURL + modalContentSelector;
 
 																   //$(this).html( msg + xhr.status + " " + xhr.statusText );
 																   $$(this).html( '<div class="center-vh text-charcoal text-center"> <span class="fa fa-exclamation-circle margin-bottom-md p4" aria-hidden="true"></span> <p>'+msg+'</p> </div>' );
@@ -504,7 +506,7 @@ var comModal = function() {
  			}
 
 
-			console.log(dataContentURL + " #" + dataConentSelector + " @ " + dataContentWidth + "px");
+			console.log(dataContentURL + " #" + dataConentSelector);
 			
 			modal(dataContentURL, " #" + dataConentSelector, dataContentWidth, dataContentHeight);
 			
@@ -513,7 +515,7 @@ var comModal = function() {
 		});
 
 
-		$(".modal-close").on("click", function(e) {
+		$$(".modal-close").on("click", function(e) {
 			e.preventDefault();
 
 			modal();
