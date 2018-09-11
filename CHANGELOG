@@ -1,13 +1,18 @@
 September 11, 2018
-Version 2.0
+Version 2.1
 	Website / App
-	- Fixed images not loading in Edge, IE.
-	- Full initial release.
+		- Fixed images not loading in Edge, IE.
+		- Added preloader to modal / popup content.
+		- Full initial release.
 
 
 	Build Framework
-		- Added robots.txt options to config.json.
-		- Extended versioning / cache-busting options in config.json.
 		- Versioning / Cache-busting now supported for images.
-		- Additional optimization features added to webp.
-
+		- Extended versioning / cache-busting options.
+		- Additional image optimization options.
+		- Added Google Analytics tracking options.
+		- Added robots.txt options.
+		- Revised HTML processing in Panini engine.
+		- Completely removed server-config.json from project folder.
+			- Build Framework can now generate a config-server.json by running 'gulp deployinit'.
+			- server-config.json will now be ignored when pushing to Git.

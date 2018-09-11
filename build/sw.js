@@ -544,7 +544,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "71f9375d6c8a63bc2fba0636fbc1d28a"
+    "revision": "fe4414ac9c96c5e2b6a67c8573a5c64a"
   },
   {
     "url": "modals/press.html",
@@ -560,7 +560,7 @@ self.__precacheManifest = [
   },
   {
     "url": "modals/team.html",
-    "revision": "af6c29e03246d70e3cbcb36a13470208"
+    "revision": "b97e85a97d3dbd7de2e06038aa0c3467"
   },
   {
     "url": "modals/whitepaper.html",

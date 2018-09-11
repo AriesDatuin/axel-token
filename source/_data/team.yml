@@ -42,7 +42,7 @@ content:
  -
   id: bruce-macdonald
   title: Bruce Macdonald
-  subtitle: Chief Blockchain Architect & VP
+  subtitle: Chief Blockchain Architect
   description: Bruce has many years of full stack software experience, working with everything from internet startups to Fortune 500 companies. These entities include among others the US Navy, Qualcomm, and Raytheon. As a software and architect designer, he played a role in creating ETL pipelines, data imagery and reporting analysis dashboards, big data analytics, and was involved with distributed network design and implementation. He was also responsible for designing and implementing message-based systems using both open and closed source stacks, and distributed multi-tier fault tolerant systems. Bruce did mobile design for Android and iOS, and most recently prototyped dApps for the Ethereum blockchain using client-side packages coupled to the blockchain via Smart Contracts. Bruce graduated from the University of California Berkeley with BA's in Physics and Mathematics and has recently filed provisional and utility patents with the USPTO in the blockchain/crypto and gaming space.
   thumb: assets/team/small-bruce-macdonald.jpg
   image: assets/team/large-bruce-macdonald.jpg
@@ -56,7 +56,7 @@ content:
  -
   id: jeremy-forsberg
   title: Jeremy Forsberg
-  subtitle: CMO & VP
+  subtitle: Chief Marketing Officer
   description: Jeremy was co-founder and CEO of the NAVADA Group - a creative agency that worked with some of Europe's most powerful and recognizable brands. He boosted audience engagement for a horse racing brand by over 2,000%, turning it into the top racing brand in the UK. He's best known for leading the award-winning Road Respect campaign, wielding viral content to slash drunk driving incidents. Jeremy is a regular guest on BBC Radio and holds a postgraduate degree from Newcastle University. He also earned a CPE in Law from the University of Northumbria.
   thumb: assets/team/small-jeremy-forsberg.jpg
   image: assets/team/large-jeremy-forsberg.jpg
@@ -70,7 +70,7 @@ content:
  -
   id: dave-kaplan
   title: Dave Kaplan
-  subtitle: VP General Counsel
+  subtitle: General Counsel
   description: A proven attorney who focuses on the intersection of business, technology, and law. Dave has played a leading role in high-stakes litigation in a broad array of forums, including in many patent matters. He has represented clients such as Volkswagen, Sony, Lenovo, Olympus, Toyota, and GE Healthcare, but also has successfully represented clients against adversaries with much deeper pockets. Dave carries a B.S.E. from the University of Michigan College of Engineering and a law degree from Rutgers University.
   thumb: assets/team/small-dave-kaplan.jpg
   image: assets/team/large-dave-kaplan.jpg
@@ -84,7 +84,7 @@ content:
  -
   id: rick-stiles
   title: Rick Stiles
-  subtitle: VP of Product Development
+  subtitle: VP, Product Development
   description: A communications technology veteran with decades of experience, Rick has spearheaded the development of many innovative communications technologies, some of which are commonly used today. He's served as Vice-President of major telecom companies like HyperEdge and NA Communications, and led product development at others. Rick is named in several significant U.S. patents.
   thumb: assets/team/small-rick-stiles.jpg
   image: assets/team/large-rick-stiles.jpg
@@ -98,7 +98,7 @@ content:
  -
   id: jeff-maher
   title: Jeff Maher
-  subtitle: VP of Communications & Outreach
+  subtitle: VP, Communications
   description: Jeff is an award-winning journalist and veteran broadcaster spending the last 14 years working in television. Prior to joining AXEL, he was anchor and host of ‘Wake up with the CW’, in Las Vegas, Nevada. Jeff produced hundreds of videos and segments relating to technology and trending stories, and was among the first broadcasters to launch a commercialized YouTube channel. Jeff also spent years working as a reporter and anchor for the NBC affiliates in Albuquerque, New Mexico, and Midland, Texas. His work has been seen on Inside Edition, NBC Nightly, The Today Show, Animal Planet, CNN, and CNBC. Jeff has received top awards over his career from the Associated Press, New Mexico Broadcasters Association, and Society of Professional Journalists. Jeff is a graduate of Metro State University in Denver, Colorado.
   thumb: assets/team/small-jeff-maher.jpg
   image: assets/team/large-jeff-maher.jpg
@@ -112,7 +112,7 @@ content:
  -
   id: diana-zhang
   title: Diane Zhang
-  subtitle: VP of Finance
+  subtitle: VP, Finance
   description: With an excellent undergraduate academic record, Diane was offered a research assistantship to pursue graduate studies at The University of Cincinnati. She graduated with an MA in Economics and then pursued her passion for accounting and finance. A Certified Public Account (CPA) since 2006, Diane has accumulated years of hands-on experience in finance and accounting through working for public and private companies across a variety of different industries.
   thumb: assets/team/small-diana-zhang.jpg
   image: assets/team/large-diana-zhang.jpg
@@ -122,7 +122,7 @@ content:
  -
   id: dmitry-kogosov
   title: Dmitry Kogosov
-  subtitle: VP of Operations
+  subtitle: VP, Operations
   description: Retail. Mortgage Banking. Tech. Dmitry has supervised teams in all these fields, and many more besides. At IngramMicro, he handled clients like Dell and other national brands. His specialty is pulling people together from different parts of the world, each with their own time and language and culture - and creating a cohesive team focused on a singular goal. Dmitry is a graduate of the State University of New York at Buffalo, with dual majors in Political Science and Economics.
   thumb: assets/team/small-dmitry-kogosov.jpg
   image: assets/team/large-dmitry-kogosov.jpg
@@ -136,7 +136,7 @@ content:
  -
   id: dmytro-ashkinazi
   title: Dmytro Ashkinazi
-  subtitle: Director of European Operations
+  subtitle: Director, European Operations
   description: Veteran entrepreneur and software specialist. Dmytro founded, built, and sold Dneper and iDom, two European tech companies. He's spent years in IT consulting, helping businesses develop incredible technologies. He brings with him a strong business skill set and vast technical acumen that are born of his experience working in some of the world's best-known tech giants. Dmytro holds a Master's degree from Dnipropetrosvk National University in Software Development.
   thumb: assets/team/small-dmytro-ashkinazi.jpg
   image: assets/team/large-dmytro-ashkinazi.jpg
