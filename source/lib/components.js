@@ -44,6 +44,65 @@ var comAccordion = function() {
 
 
 /* -------------------------------------------------- */
+/* GRADIENTS
+/* -------------------------------------------------- */
+
+/*
+var comAnimGradient() {
+
+	var granimInstance = new Granim({
+		element: "#background-gradient",
+		name: "granim",
+		direction: "radial", // diagonal, left-right, top-bottom, radial
+		opacity: [1, 1],
+		loop: true,
+		stateTransitionSpeed: 500,
+		isPausedWhenNotInView: true,
+		scrollDebounceThreshold: 300,
+		states : {
+
+			"default-state": {
+				gradients: [
+					["#6400fa", "#fa6432"],
+					["#32e14b", "#6400fa"]
+				]
+			},
+
+			"gradient-charcoal": {
+				gradients: [
+					["#000", "#333"],
+					["#333", "#000"]
+				]
+			}
+
+		},
+		onStart: function() {
+			console.log('Granim: onStart');
+
+		},
+		onGradientChange: function(colorDetails) {
+			console.log('Granim: onGradientChange, details: ');
+			console.log(colorDetails);
+
+		},
+		onEnd: function() {
+			console.log('Granim: onEnd');
+
+		}
+
+	});
+
+
+	$$(pageContent).backgroundDefault = function() {
+		granimInstance.changeState("default-state");
+	};
+	
+	
+}
+*/ // END comAnimGradient
+
+
+/* -------------------------------------------------- */
 /* BLOG
 /* -------------------------------------------------- */ 
 
@@ -168,254 +227,56 @@ var comBlog = function() {
 
 
 /* -------------------------------------------------- */
-/* CASE STUDIES
+/* COUNTER / ODOMETER
 /* -------------------------------------------------- */
 
-var comCaseStudies = function() {
-
-	/* -------------------------------------------------- */
-	/* CACHE SELECTORS
-	/* -------------------------------------------------- */
-
-    var $caseStudyUser = $$("#case-studies .profiles .cell"),
-    	$caseStudies = $$("#case-studies .profiles"),
-        $caseStudyJosh = $$("#josh"),
-        $caseStudyShera = $$("#shera"),
-        $caseStudyTina = $$("#tina"),
-
-        $caseStudyBio = $$("#case-study");
+var comCounter = function() {
+	
+	// CACHE SELECTORS
+	var counter01 = $$("#counter-01.anim"),
+		counter02 = $$("#counter-02.anim");
 
 
-	/*
-	window.onresize = function () {
+	// OPTIONS
+	window.counterOptions = {
+		value: 0, // Set starting integer.
+		//auto: true, // Don't automatically initialize everything with class 'odometer'.
+		selector: ".odometer", // Change the selector used to automatically find things to be animated.
+		format: "(,ddd)", // Formatting: (,ddd), (,ddd).dd, (.ddd),dd, ( ddd),dd, d
+		duration: 5000, // Change how long the javascript expects the CSS animation to take.
+		theme: "minimal", // Specify the theme: default, minimal, car, plaza, slot-machine, train-station, digital
+		animation: "count" // Count is a simpler animation method which just increments the value, use it when you're looking for something more subtle.
+
+	}; //od = new Odometer(counterOptions);
 
 
-			TweenMax.delayedCall(1, function() { 
+	// ANIMATION
+	var tlCounter = new TimelineMax({paused: true});
+	
+		tlCounter.from(counter01, 0.75, {autoAlpha: 0, delay: 0, ease: Power4.easeOut, onStart: function() { counter01.html(200); } })
+				 .from(counter02, 0.75, {autoAlpha: 0, delay: 0.25, ease: Power4.easeOut, onStart: function() { counter02.html(1300); } });
+	
 
+	// CONTROLLER
+	var animCounterController = function() {
 
-				caseStudiesHeight = $$("#case-studies .profiles").height(); // Store original 'height' of parent section.
-				console.log("Height: " + caseStudiesHeight);
-				TweenMax.to($caseStudies, 0.25, {height: caseStudiesHeight + 50, ease: Expo.easeIn});
+		if ( counter01.hasClass("anim-play") ) {
 
-
-
-			});
-			
-
-	}
-	*/
-
-
-	/* -------------------------------------------------- */
-	/* FUNCTIONS
-	/* -------------------------------------------------- */
-
-	// Set 'case-study' panel properties.
-	TweenMax.set($caseStudyBio, {autoAlpha: 0, scale: 1.12});
-
-
-		/* -------------------------------------------------- */
-		/* TRIM TEXT
-		/* -------------------------------------------------- */
-		
-		/*
-		var $textTrim = $$(".text-trim"),
-			maxCharCount = 100;    
-
-		$textTrim.each( function() {  
-			
-			var $self = $$(this).text();
-			
-			if( $self.length < maxCharCount ) return;
-
-			
-			
-			$(this).html( $self.slice( 0, maxCharCount ) + '<span>... </span><a href="#" class="more">More</a>' +
-						  '<span style="display:none;">' + $self.slice( maxCharCount, $self.length ) + ' <a href="#" class="less">Less</a></span>'
-			);
-			
-			
-			
-		}); 
-
-
-		$('a.more', $textTrim).click(function(event){
-			event.preventDefault();
-			$(this).hide().prev().hide();
-			$(this).next().show();        
-		});
-
-
-		$('a.less', $textTrim).click(function(event){
-			event.preventDefault();
-			$(this).parent().hide().prev().show().prev().show();    
-		});
-		*/
-
-
-	/* -------------------------------------------------- */
-	/* PROFILES
-	/* -------------------------------------------------- */
-
-		/* -------------------------------------------------- */
-		/* TILES
-		/* -------------------------------------------------- */
-
-		TweenMax.set($caseStudyUser.find("[data-image]"), {autoAlpha: 0, scale: 1.25});
-
-		// JOSH
-		$caseStudyJosh.on("mouseover touchstart", function() {
-			
-			var $self = $(this);
-			
-			$self.addClass("overflow-hidden");
-			
-			TweenMax.to($self.find("svg"), 1, {autoAlpha: 0, ease: Expo.easeOut});
-			TweenMax.to($self.find(".text-container"), 1, {autoAlpha: 0, ease: Expo.easeOut});
-			TweenMax.to($self.find("a.button"), 1, {autoAlpha: 0, ease: Expo.easeOut});
-			TweenMax.to($self.find("[data-image]"), 0.5, {autoAlpha: 1, scale: 1, ease: Expo.easeOut});
-			
-			
-		}).on("mouseout touchend touchleave", function() {
-			
-			var $self = $(this);
-			
-			TweenMax.to($self.find(".text-container"), 0.75, {autoAlpha: 1, ease: Expo.easeOut});
-			TweenMax.to($self.find("a.button"), 0.75, {autoAlpha: 1, ease: Expo.easeOut});
-			TweenMax.to($self.find("[data-image]"), 0.25, {autoAlpha: 0, scale: 1.5, ease: Expo.easeIn,
-														   onComplete: function() { 
-															   $self.removeClass("overflow-hidden");
-															   TweenMax.to($self.find("svg"), 0.75, {autoAlpha: 1, ease: Expo.easeOut});
-				
-														   } });
-			
-		});
-
-
-
-
-
-		// SHERA
-		$caseStudyShera.on("mouseover touchstart", function() {
-			
-			var $self = $(this);
-			
-			$self.addClass("overflow-hidden");
-			
-			TweenMax.to($self.find("svg"), 1, {autoAlpha: 0, ease: Expo.easeOut});
-			TweenMax.to($self.find(".text-container"), 1, {autoAlpha: 0, ease: Expo.easeOut});
-			TweenMax.to($self.find("a.button"), 1, {autoAlpha: 0, ease: Expo.easeOut});
-			TweenMax.to($self.find("[data-image]"), 0.5, {autoAlpha: 1, scale: 1, ease: Expo.easeOut});
-			
-			
-		}).on("mouseout touchend touchleave", function() {
-			
-			var $self = $(this);
-			
-			TweenMax.to($self.find(".text-container"), 0.75, {autoAlpha: 1, ease: Expo.easeOut});
-			TweenMax.to($self.find("a.button"), 0.75, {autoAlpha: 1, ease: Expo.easeOut});
-			TweenMax.to($self.find("[data-image]"), 0.25, {autoAlpha: 0, scale: 1.5, ease: Expo.easeIn,
-														   onComplete: function() { 
-															   $self.removeClass("overflow-hidden");
-															   TweenMax.to($self.find("svg"), 0.75, {autoAlpha: 1, ease: Expo.easeOut});
-				
-														   } });
-			
-		});
-
-
-
-
-
-		// TINA
-		$caseStudyTina.on("mouseover touchstart", function() {
-			
-			var $self = $(this);
-			
-			$self.addClass("overflow-hidden");
-			
-			TweenMax.to($self.find("svg"), 1, {autoAlpha: 0, ease: Expo.easeOut});
-			TweenMax.to($self.find(".text-container"), 1, {autoAlpha: 0, ease: Expo.easeOut});
-			TweenMax.to($self.find("a.button"), 1, {autoAlpha: 0, ease: Expo.easeOut});
-			TweenMax.to($self.find("[data-image]"), 0.5, {autoAlpha: 1, scale: 1, ease: Expo.easeOut});
-			
-			
-		}).on("mouseout touchend touchleave", function() {
-			
-			var $self = $(this);
-			
-			TweenMax.to($self.find(".text-container"), 0.75, {autoAlpha: 1, ease: Expo.easeOut});
-			TweenMax.to($self.find("a.button"), 0.75, {autoAlpha: 1, ease: Expo.easeOut});
-			TweenMax.to($self.find("[data-image]"), 0.25, {autoAlpha: 0, scale: 1.5, ease: Expo.easeIn,
-														   onComplete: function() { 
-															   $self.removeClass("overflow-hidden");
-															   TweenMax.to($self.find("svg"), 0.75, {autoAlpha: 1, ease: Expo.easeOut});
-				
-														   } });
-			
-		});
-
-
-}; // END comCaseStudies
-
-
-/* -------------------------------------------------- */
-/* GRADIENTS
-/* -------------------------------------------------- */
-
-/*
-var comAnimGradient() {
-
-	var granimInstance = new Granim({
-		element: "#background-gradient",
-		name: "granim",
-		direction: "radial", // diagonal, left-right, top-bottom, radial
-		opacity: [1, 1],
-		loop: true,
-		stateTransitionSpeed: 500,
-		isPausedWhenNotInView: true,
-		scrollDebounceThreshold: 300,
-		states : {
-
-			"default-state": {
-				gradients: [
-					["#6400fa", "#fa6432"],
-					["#32e14b", "#6400fa"]
-				]
-			},
-
-			"gradient-charcoal": {
-				gradients: [
-					["#000", "#333"],
-					["#333", "#000"]
-				]
-			}
-
-		},
-		onStart: function() {
-			console.log('Granim: onStart');
-
-		},
-		onGradientChange: function(colorDetails) {
-			console.log('Granim: onGradientChange, details: ');
-			console.log(colorDetails);
-
-		},
-		onEnd: function() {
-			console.log('Granim: onEnd');
+			tlCounter.play();
 
 		}
 
-	});
 
-
-	$$(pageContent).backgroundDefault = function() {
-		granimInstance.changeState("default-state");
 	};
-	
-	
-}
-*/ // END comAnimGradient
+
+
+	$$(pageContent).on("scrollstop", animCounterController);
+
+	TweenMax.delayedCall($delayInterval, animCounterController);
+
+
+}; // END comOdometer
+
 
 /* -------------------------------------------------- */
 /* MODAL
@@ -522,7 +383,9 @@ var comModal = function() {
 
 				uiModal += "<div class='modal-close close dark margin-sm round-full'><span></span><span></span></div>"; // BUTTON: CLOSE
 
-				uiModal += "<div class='modal-container cell align-self-top'></div>"; // CONTAINER
+				uiModal += "<div id='modal-preloader' class='center-vh padding-xs round-sm text-secondary text-center background-white z-01'> <span class='fa fa-circle-o-notch fa-spin p4' aria-hidden='true'></span></div>" // PRELOADER
+
+				uiModal += "<div class='modal-container cell align-self-top'></div>" // CONTAINER
 
 				uiModal += "<a class='modal-close cell align-self-bottom padding-tb-md center-element p11 text-secondary text-charcoal-hover text-bold text-uppercase button button-width-full background-white background-white-hover no-touch-feedback prevent-default hide z-auto'><i class='fa fa-times-circle margin-right-xs'></i>Close</a>"; // BUTTON: CLOSE
 
@@ -552,25 +415,37 @@ var comModal = function() {
 
 													   onStart: function() {
 
+															
 														   $$(html).addClass("no-pointer");
 														   
 														   
 														   $$(".modal-container").load(modalContentURL + modalContentSelector, function ( response, status, xhr ) {
 
+															   // PRELOADER
+															   TweenMax.set( $$("#modal-preloader"), {display: "block", opacity: 1, scale: 1});
+
+
 															   if ( status == "success" ) {
 
+																   //utilAssetObserver();
+																 
 																   //console.log( modalContentURL + modalContentSelector);
 
 																   //TweenMax.set( $$(".modal"), { maxWidth: $$(".modal-container").children().width() } );
+
+																   TweenMax.to( $$("#modal-preloader"), 0.25, {display: "none", opacity: 0, scale: 0.75, delay: 0, ease: Expo.easeInOut});
 
 																   $$(".modal-close").not(".close").removeClass("hide");
 
 															   } else {
 
-																   var msg = "Error: Unable to load " + modalContentURL;
+																   var msg = "Error: Unable to load " + modalContentURL + modalContentSelector;
 
 																   //$(this).html( msg + xhr.status + " " + xhr.statusText );
-																   $$(this).html( '<div class="center-vh text-charcoal text-center"> <span class="fa fa-exclamation-circle margin-bottom-md p4" aria-hidden="true"></span> <p>'+msg+'</p> </div>' );
+																   $$(this).html( '<div class="center-vh text-charcoal text-center"> <span class="fa fa-exclamation-circle p4" aria-hidden="true"></span> <p>'+msg+'</p> </div>' );
+
+																   TweenMax.to( $$("#modal-preloader"), 0.25, {display: "none", opacity: 0, scale: 0.75, delay: 0, ease: Expo.easeInOut});
+
 																   $$(".modal-close").not(".close").addClass("hide");
 
 															   }
@@ -643,16 +518,16 @@ var comModal = function() {
  			}
 
 
-			//console.log(dataContentURL + dataConentSelector + " @ " + dataContentWidth + "px");
+			console.log(dataContentURL + " #" + dataConentSelector);
 			
-			modal(dataContentURL, dataConentSelector, dataContentWidth, dataContentHeight);
+			modal(dataContentURL, " #" + dataConentSelector, dataContentWidth, dataContentHeight);
 			
 			TweenMax.set( $$(".modal"), { maxWidth: dataContentWidth, height: dataContentHeight } );
 
 		});
 
 
-		$(".modal-close").on("click", function(e) {
+		$$(".modal-close").on("click", function(e) {
 			e.preventDefault();
 
 			modal();
@@ -660,58 +535,6 @@ var comModal = function() {
 		});
 
 }; // END comModal
-
-
-/* -------------------------------------------------- */
-/* ODOMETER / TICKER COUNTER
-/* -------------------------------------------------- */
-
-var comCounter = function() {
-	
-	// CACHE SELECTORS
-	var counter01 = $$("#counter-01.anim"),
-		counter02 = $$("#counter-02.anim");
-
-
-	// OPTIONS
-	window.counterOptions = {
-		value: 0, // Set starting integer.
-		//auto: true, // Don't automatically initialize everything with class 'odometer'.
-		selector: ".odometer", // Change the selector used to automatically find things to be animated.
-		format: "(,ddd)", // Formatting: (,ddd), (,ddd).dd, (.ddd),dd, ( ddd),dd, d
-		duration: 5000, // Change how long the javascript expects the CSS animation to take.
-		theme: "minimal", // Specify the theme: default, minimal, car, plaza, slot-machine, train-station, digital
-		animation: "count" // Count is a simpler animation method which just increments the value, use it when you're looking for something more subtle.
-
-	}; //od = new Odometer(counterOptions);
-
-
-	// ANIMATION
-	var tlCounter = new TimelineMax({paused: true});
-	
-		tlCounter.from(counter01, 0.75, {autoAlpha: 0, delay: 0, ease: Power4.easeOut, onStart: function() { counter01.html(200); } })
-				 .from(counter02, 0.75, {autoAlpha: 0, delay: 0.25, ease: Power4.easeOut, onStart: function() { counter02.html(1300); } });
-	
-
-	// CONTROLLER
-	var animCounterController = function() {
-
-		if ( counter01.hasClass("anim-play") ) {
-
-			tlCounter.play();
-
-		}
-
-
-	};
-
-
-	$$(pageContent).on("scrollstop", animCounterController);
-
-	TweenMax.delayedCall($delayInterval, animCounterController);
-
-
-}; // END comOdometer
 
 
 /* -------------------------------------------------- */
@@ -938,6 +761,188 @@ var comSlider = function() {
 
 
 }; // END comSlider
+
+
+/* -------------------------------------------------- */
+/* CASE STUDIES
+/* -------------------------------------------------- */
+
+var comStories = function() {
+
+	/* -------------------------------------------------- */
+	/* CACHE SELECTORS
+	/* -------------------------------------------------- */
+
+    var $caseStudyUser = $$("#stories .profiles .cell"),
+    	$caseStudies = $$("#stories .profiles"),
+        $caseStudyJosh = $$("#josh"),
+        $caseStudyShera = $$("#shera"),
+        $caseStudyTina = $$("#tina");
+
+
+	/*
+	window.onresize = function () {
+
+
+			TweenMax.delayedCall(1, function() { 
+
+
+				caseStudiesHeight = $$("#user-stories .profiles").height(); // Store original 'height' of parent section.
+				console.log("Height: " + caseStudiesHeight);
+				TweenMax.to($caseStudies, 0.25, {height: caseStudiesHeight + 50, ease: Expo.easeIn});
+
+
+
+			});
+			
+
+	}
+	*/
+
+
+	/* -------------------------------------------------- */
+	/* TRIM TEXT
+	/* -------------------------------------------------- */
+	
+	/*
+	var $textTrim = $$(".text-trim"),
+		maxCharCount = 100;    
+
+	$textTrim.each( function() {  
+		
+		var $self = $$(this).text();
+		
+		if( $self.length < maxCharCount ) return;
+
+		
+		
+		$(this).html( $self.slice( 0, maxCharCount ) + '<span>... </span><a href="#" class="more">More</a>' +
+					  '<span style="display:none;">' + $self.slice( maxCharCount, $self.length ) + ' <a href="#" class="less">Less</a></span>'
+		);
+		
+		
+		
+	}); 
+
+
+	$('a.more', $textTrim).click(function(event){
+		event.preventDefault();
+		$(this).hide().prev().hide();
+		$(this).next().show();        
+	});
+
+
+	$('a.less', $textTrim).click(function(event){
+		event.preventDefault();
+		$(this).parent().hide().prev().show().prev().show();    
+	});
+	*/
+
+
+	/* -------------------------------------------------- */
+	/* PROFILES
+	/* -------------------------------------------------- */
+
+		/* -------------------------------------------------- */
+		/* TILES
+		/* -------------------------------------------------- */
+
+		TweenMax.set($caseStudyUser.find("[data-image]"), {autoAlpha: 0, scale: 1.25});
+
+		// JOSH
+		$caseStudyJosh.on("mouseover touchstart", function() {
+			
+			var $self = $(this);
+			
+			$self.addClass("overflow-hidden");
+			
+			TweenMax.to($self.find("svg"), 1, {autoAlpha: 0, ease: Expo.easeOut});
+			TweenMax.to($self.find(".text-container"), 1, {autoAlpha: 0, ease: Expo.easeOut});
+			TweenMax.to($self.find("a.button"), 1, {autoAlpha: 0, ease: Expo.easeOut});
+			TweenMax.to($self.find("[data-image]"), 0.5, {autoAlpha: 1, scale: 1, ease: Expo.easeOut});
+			
+			
+		}).on("mouseout touchend touchleave", function() {
+			
+			var $self = $(this);
+			
+			TweenMax.to($self.find(".text-container"), 0.75, {autoAlpha: 1, ease: Expo.easeOut});
+			TweenMax.to($self.find("a.button"), 0.75, {autoAlpha: 1, ease: Expo.easeOut});
+			TweenMax.to($self.find("[data-image]"), 0.25, {autoAlpha: 0, scale: 1.5, ease: Expo.easeIn,
+														   onComplete: function() { 
+															   $self.removeClass("overflow-hidden");
+															   TweenMax.to($self.find("svg"), 0.75, {autoAlpha: 1, ease: Expo.easeOut});
+				
+														   } });
+			
+		});
+
+
+
+
+
+		// SHERA
+		$caseStudyShera.on("mouseover touchstart", function() {
+			
+			var $self = $(this);
+			
+			$self.addClass("overflow-hidden");
+			
+			TweenMax.to($self.find("svg"), 1, {autoAlpha: 0, ease: Expo.easeOut});
+			TweenMax.to($self.find(".text-container"), 1, {autoAlpha: 0, ease: Expo.easeOut});
+			TweenMax.to($self.find("a.button"), 1, {autoAlpha: 0, ease: Expo.easeOut});
+			TweenMax.to($self.find("[data-image]"), 0.5, {autoAlpha: 1, scale: 1, ease: Expo.easeOut});
+			
+			
+		}).on("mouseout touchend touchleave", function() {
+			
+			var $self = $(this);
+			
+			TweenMax.to($self.find(".text-container"), 0.75, {autoAlpha: 1, ease: Expo.easeOut});
+			TweenMax.to($self.find("a.button"), 0.75, {autoAlpha: 1, ease: Expo.easeOut});
+			TweenMax.to($self.find("[data-image]"), 0.25, {autoAlpha: 0, scale: 1.5, ease: Expo.easeIn,
+														   onComplete: function() { 
+															   $self.removeClass("overflow-hidden");
+															   TweenMax.to($self.find("svg"), 0.75, {autoAlpha: 1, ease: Expo.easeOut});
+				
+														   } });
+			
+		});
+
+
+
+
+
+		// TINA
+		$caseStudyTina.on("mouseover touchstart", function() {
+			
+			var $self = $(this);
+			
+			$self.addClass("overflow-hidden");
+			
+			TweenMax.to($self.find("svg"), 1, {autoAlpha: 0, ease: Expo.easeOut});
+			TweenMax.to($self.find(".text-container"), 1, {autoAlpha: 0, ease: Expo.easeOut});
+			TweenMax.to($self.find("a.button"), 1, {autoAlpha: 0, ease: Expo.easeOut});
+			TweenMax.to($self.find("[data-image]"), 0.5, {autoAlpha: 1, scale: 1, ease: Expo.easeOut});
+			
+			
+		}).on("mouseout touchend touchleave", function() {
+			
+			var $self = $(this);
+			
+			TweenMax.to($self.find(".text-container"), 0.75, {autoAlpha: 1, ease: Expo.easeOut});
+			TweenMax.to($self.find("a.button"), 0.75, {autoAlpha: 1, ease: Expo.easeOut});
+			TweenMax.to($self.find("[data-image]"), 0.25, {autoAlpha: 0, scale: 1.5, ease: Expo.easeIn,
+														   onComplete: function() { 
+															   $self.removeClass("overflow-hidden");
+															   TweenMax.to($self.find("svg"), 0.75, {autoAlpha: 1, ease: Expo.easeOut});
+				
+														   } });
+			
+		});
+
+
+}; // END comCaseStudies
 
 
 /* -------------------------------------------------- */

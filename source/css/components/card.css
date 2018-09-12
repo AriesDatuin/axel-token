@@ -4,7 +4,6 @@
 
 /* COMMON */
 .card {
-	overflow: hidden;
 	position: relative;
 	padding: 0;
 	border-radius: var(--radius-sm);

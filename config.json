@@ -3,18 +3,17 @@
 	"options": {
 		"site": "https://axeltoken.com",
 		"production": true,
-		"versioning": true,
 		"serviceworker": true,
 		"appBanner": false,
 		"sourcemaps": false,
 		"previewURL": "index.html"
 	},
-	
+
 	"paths": {
 		"source": "source/",
 		"build": "build/"
 	},
-	
+
 	"ga": {
 		"track": true,
 		"url": "axeltoken.com",
@@ -30,25 +29,88 @@
 		"tagPlacement": "head"
 	},
 
+	"robots": {
+		"useragent": "*",
+		"allow": [""],
+		"disallow": ["/assets/", "/cgi-bin/", "/downloads/", "/fonts/", "/modals/", "/scripts/"]
+	},
+
+	"versioning": {
+		"scripts": {
+			"allow": true,
+			"prefix": ".",
+			"suffix": ".min"
+		},
+		"images": {
+			"allow": false,
+			"prefix": ".",
+			"suffix": ""
+		}
+	},
+
 	"optimizations": {
 		"autoprefix": true,
 		"support": ["last 2 versions", "ie >= 9", "android >= 4.4", "ios >= 7"],
 		"flexbox": true,
 		"grid" : true
 	},
-	
+
 	"images": {
 		"paths": "assets/",
-		"optimizationLevel": 5,
-		"interlaced": true,
-		"progressive": true,
-		"svgViewbox": true,
-		"svgCleanup": false,
-		"webp": true,
-		"webpOptimizationLevel": 0,
-		"webpQuality": 100,
-		"webpAlphaQuality": 100,
-		"webpSharpness": 0
+
+		"raster": {
+			"level": 5,
+			"interlaced": true,
+			"progressive": true
+		},
+
+		"sprite": {
+			"paths": "sprites/",
+			"convert": false,
+			"mode": "sprite",
+			"layout": "vertical",
+			"class": "test",
+			"selector": "sprite",
+
+			"cssFile": "sprite.css",
+			"svgPath": "/",
+			"pngPath": "/",
+
+			"svg": {
+				"defs": "defs.svg",
+				"sprite": "sprite.svg",
+				"symbols": "symbols.svg"
+			},
+
+			"preview": {
+				"allow": true,
+				"defs": "defs.html",
+				"sprite": "sprite.html",
+				"symbols": "symbols.html"
+			}
+		},
+
+		"svg": {
+			"convert": false,
+			"cleanup": true,
+			"minify": true,
+			"removeEmptyText": true,
+			"removeMetadata": true,
+			"removeTitle": true,
+			"removeRaster": true,
+			"removeScript": true,
+			"removeStyle": true,
+			"removeViewBox": true
+		},
+
+		"webp": {
+			"convert": true,
+			"level": 0,
+			"quality": 100,
+			"alphaQuality": 100,
+			"sharpness": 0
+		}
+
 	},
 	
 	"html": {
@@ -59,19 +121,28 @@
 		"partials": "_partials/",
 		"helpers": "_helpers/",
 		"data": "_data/",
-		"modals": "_modals/**/*.{html,hbs,handlebars}",
+
+		"modals": {
+			"paths": "_modals/**/*.{html,hbs,handlebars}",
+			"output": "modals/"
+		},
 		
-		"scripts": "_scripts/*.js",
-		"critical": "css/critical.css"
+		"inlineScripts": {
+			"js": ["_scripts/*.js"],
+			"css": ["css/critical.css"]
+		}
+	},
+
+	"scripts": {
+		"output": "scripts/"
 	},
 	
 	"vendors": {
+		"paths": ["_vendors/*.js"],
 		"useVendorScripts": false,
-		"bundle": "vendor.js",
+		"bundle": "vendors.js",
 		"lint": false,
-		"jsAttribute": "async",
-
-		"paths": ["_vendors/*.js"]
+		"jsAttribute": "async"
 	},
 
 	"js": {
@@ -305,7 +376,7 @@
 				 ]
 	
 	},
-	
+
 	"sync": {
 		"notify": true,
 

@@ -2,6 +2,7 @@
 layout: default
 title: Welcome
 assets: assets/
+modals: modals/
 ---
 
 
@@ -364,7 +365,7 @@ assets: assets/
 	<!-- BUTTON -->
 	<div class="padding-auto padding-bottom-xl">
 
-		<a href="modals/press" class="width-xxs round-full button button-fx-secondary button-fx-flat button-fx-static popup prevent-default" data-content-selector="#articles" data-content-width="600" data-content-height="800">View More Articles</a>
+		<a href="{{ modals }}press" class="width-xxs round-full button button-fx-secondary button-fx-flat button-fx-static popup prevent-default" data-content-selector="articles" data-content-width="600" data-content-height="800">View More Articles</a>
 		
 	</div>
 	<!-- // BUTTON -->
@@ -388,7 +389,7 @@ assets: assets/
 
 
 <!-- SECTION: DISTRIBUTED DATA IS COMPLETELY BROKEN: HERE'S WHY -->
-<section class="position-relative padding-top-none background-secondary background-cover background-tc background-repeat lazy" data-src="{{ root }}{{ assets }}{{ page }}/network-02.png" data-emergence="hidden">
+<section id="data-is-broken" class="position-relative padding-top-none background-secondary background-cover background-tc background-repeat lazy" data-src="{{ root }}{{ assets }}{{ page }}/network-02.png" data-emergence="hidden">
 
 
 	<!-- HEADER -->
@@ -596,7 +597,7 @@ assets: assets/
 
 
 <!-- SECTION: A TEAM OF DISTRIBUTED EXCHANGE DEVELOPERS WITH A TRACK RECORD -->
-<section class="padding-bottom-none padding-bottom-xl-mobile" data-emergence="hidden">
+<section id="a-team-of-distributed-exchange-developers" class="padding-bottom-none padding-bottom-xl-mobile" data-emergence="hidden">
 
 
 	<!-- GRID -->
@@ -623,7 +624,7 @@ assets: assets/
 
 
 			<!-- IMAGE -->
-			<img class="lazy" alt="A Team Of Distributed Exchange Developers With A Track Record" data-src="{{ root }}{{ assets }}/illustrations/teamwork-alt.svg">
+			<img class="lazy" alt="A Team Of Distributed Exchange Developers With A Track Record" data-src="{{ root }}{{ assets }}illustrations/teamwork.svg">
 			<!-- // IMAGE -->
 
 
@@ -655,7 +656,7 @@ assets: assets/
 
 
 <!-- SECTION: THE AXEL NETWORK -->
-<section data-emergence="hidden">
+<section id="the-axel-network" data-emergence="hidden">
 
 
 	<!-- HEADER -->
@@ -767,7 +768,7 @@ assets: assets/
 
 
 <!-- SECTION: THE FUTURE OF PRIVATE TRANSACTION -->
-<section class="hide" data-emergence="hidden">
+<section id="the-future-of-private-transaction" class="hide" data-emergence="hidden">
 
 
 	<!-- HEADER -->
@@ -800,7 +801,7 @@ assets: assets/
 
 
 <!-- SECTION: SCALABLE + ACCESSIBLE + SECURE -->
-<section class="padding-none" data-emergence="hidden">
+<section id="scalable-accessible-secure" class="padding-none" data-emergence="hidden">
 
 
 	<!-- GRID -->
@@ -812,7 +813,7 @@ assets: assets/
 
 
 			<!-- IMAGE -->
-			<img class="lazy" alt="Scalable + Accessible + Secure" data-src="{{ root }}{{ assets }}/illustrations/scalable.svg">
+			<img class="lazy" alt="Scalable + Accessible + Secure" data-src="{{ root }}{{ assets }}illustrations/scalable.svg">
 			<!-- // IMAGE -->
 
 
@@ -968,7 +969,7 @@ assets: assets/
 
 
 <!-- SECTION: OUR TECHNOLOGY -->
-<section data-emergence="hidden">
+<section id="our-technology" data-emergence="hidden">
 
 
 	<!-- GRID -->
@@ -1177,7 +1178,7 @@ assets: assets/
 
 
 <!-- SECTION: HOW IT WORKS -->
-<section class="padding-top-none padding-bottom-xl">
+<section id="how-it-works" class="padding-top-none padding-bottom-xl">
 
 
 	<!-- GRID -->
@@ -1207,7 +1208,7 @@ assets: assets/
 
 
 			<!-- IMAGE -->
-			<img class="lazy" alt="Here's How We Plan For Users To Get &amp; Spend AXEL Tokens" data-src="{{ root }}{{ assets }}/illustrations/tokens.svg">
+			<img class="lazy" alt="Here's How We Plan For Users To Get &amp; Spend AXEL Tokens" data-src="{{ root }}{{ assets }}illustrations/tokens.svg">
 			<!-- // IMAGE -->
 
 
@@ -1227,11 +1228,11 @@ assets: assets/
 
 
 <!-- SECTION: HISTORICAL AND PLANNED DEVELOPMENT TIMELINE -->
-<section class="position-relative padding-none height-xs overflow-hidden dzsparallaxer">
+<section id="timeline" class="position-relative padding-none height-xs background-secondary overflow-hidden dzsparallaxer">
 
 
 	<!-- IMAGE -->
-	<div class="position-absolute left width-full height-lg background-secondary background-cover background-right background-center-mobile background-center-tablet background-no-repeat dzsparallaxer--target lazy send-to-back" alt="Our partners." data-src="{{ root }}{{ assets }}{{ page }}/teamwork-02.png"></div>
+	<div class="position-absolute left width-full height-lg background-secondary background-cover background-right background-center-mobile background-center-tablet background-no-repeat dzsparallaxer--target lazy z-00" alt="Our partners." data-src="{{ root }}{{ assets }}{{ page }}/teamwork-02.png"></div>
 	<!-- // IMAGE -->
 
 
@@ -1574,6 +1575,15 @@ assets: assets/
 <section id="team" class="position-relative padding-top-none padding-bottom-xl background-secondary" data-emergence="hidden">
 
 
+	<!-- SHAPE -->
+	<!--
+	<svg class="stripe top position-relative emergence-ignore-child" preserveAspectRatio="none" viewBox="0 0 1024 100">
+		<polygon fill="#6400fa" points="511.49 99.8 511.49 100 512 99.9 512.51 100 512.51 99.8 1024 0 512.51 0 511.49 0 0 0 511.49 99.8"/>
+	</svg>
+	-->
+	<!-- // SHAPE -->
+
+
 	<!-- HEADER -->
 	<h2 class="padding-auto padding-top-xl p2 font-paragraph text-white text-center header-accent-center header-accent-white">The Team</h2>
 	<!-- // HEADER -->
@@ -1583,7 +1593,7 @@ assets: assets/
 	<div class="grid-x grid-margin-x grid-margin-y grid-padding-x align-left align-stretch small-up-1 medium-up-2 large-up-3 position-relative padding-bottom-xl center-element width-lg">
 
 
-		{{> profile}}
+		{{> team}}
 
 
 	</div>
@@ -1617,7 +1627,7 @@ assets: assets/
 
 
 <!-- SECTION: THE AXEL EXCHANGE WILL BE THE BLOCKCHAIN'S FLAGSHIP NATIVE APP -->
-<section data-emergence="hidden" class="padding-top-none">
+<section id="the-axel-exchange" data-emergence="hidden" class="padding-top-none">
 
 
 	<!-- GRID -->
@@ -1718,7 +1728,7 @@ assets: assets/
 
 
 <!-- SECTION: LIKE WHAT THE CAR WAS TO THE HORSE - AXEL WILL BE TO PAID DIGITAL CONTENT -->
-<section data-emergence="hidden" class="padding-none padding-top-xl">
+<section id="paid-digital-content" data-emergence="hidden" class="padding-none padding-top-xl">
 
 
 	<!-- HEADER -->
@@ -1948,7 +1958,7 @@ assets: assets/
 
 
 <!-- SECTION: MILLIONS OF PEOPLE ALREADY USE AXEL – THE APP THAT WILL CATALYZE THE EXCHANGE -->
-<section class="position-relative padding-none background-secondary overflow-hidden emergence-ignore" data-emergence="hidden">
+<section id="millions-of-people-already-use-axel" class="position-relative padding-none background-secondary overflow-hidden emergence-ignore" data-emergence="hidden">
 
 
 	<!-- BACKGROUND: SCROLLING PATTERN -->
@@ -2027,7 +2037,7 @@ assets: assets/
 
 
 <!-- SECTION: THE $600 BILLION DIGITAL CONTENT EXCHANGE DESPERATELY NEEDS A BETTER WAY -->
-<section data-emergence="hidden">
+<section id="digital-content-exchange-needs-a-better-way" data-emergence="hidden">
 
 
 	<!-- GRID -->
@@ -2039,7 +2049,7 @@ assets: assets/
 
 
 			<!-- IMAGE -->
-			<img class="lazy" alt="A Team Of Distributed Exchange Developers With A Track Record" data-src="{{ root }}{{ assets }}/illustrations/shopping.svg">
+			<img class="lazy" alt="A Team Of Distributed Exchange Developers With A Track Record" data-src="{{ root }}{{ assets }}illustrations/shopping.svg">
 			<!-- // IMAGE -->
 
 
@@ -2080,8 +2090,8 @@ assets: assets/
 
 
 
-<!-- SECTION: CASE STUDIES -->
-<section id="case-studies" class="position-relative padding-none background-white">
+<!-- SECTION: USER STORIES -->
+<section id="stories" class="position-relative padding-none background-white">
 	
 	
 	<!-- SHAPE -->
@@ -2100,158 +2110,7 @@ assets: assets/
     <div class="profiles grid-x grid-margin-x align-left align-top small-up-1 medium-up-2 large-up-3 padding-top-lg padding-bottom-xl center-element width-sm emergence-ignore-child">
 
 
-		<!-- CELL -->
-        <div id="josh" class="cell popup" data-content-url="modals/story-josh" data-content-selector="" data-content-width="600" data-content-height="800">
-
-			
-			<!-- IMAGE -->
-			<svg class="position-absolute wh-xs center-element top-offset" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true">
-
-				<!--<title>Josh is an photographer</title>-->
-				<circle cx="50" cy="50" r="45" style="fill:#00fac8"/>
-				<path d="M71.08,37.26V35.83A1.08,1.08,0,0,0,70,34.75H65a1.08,1.08,0,0,0-1.08,1.08v1.42H61.5l-3-6.07a1.06,1.06,0,0,0-1-.6h-15a1.09,1.09,0,0,0-1,.6l-3,6.07H36.08V35.83A1.08,1.08,0,0,0,35,34.75H30a1.08,1.08,0,0,0-1.08,1.08v1.43a4.43,4.43,0,0,0-4.17,4.41V65a4.43,4.43,0,0,0,4.42,4.42H70.83A4.43,4.43,0,0,0,75.25,65V41.67A4.43,4.43,0,0,0,71.08,37.26Zm-40,0v-.33h2.84v.33Zm9.84,0,2.25-4.5H56.83l2.25,4.5Zm25.16,0v-.33h2.84v.33ZM26.92,43.92V41.67a2.25,2.25,0,0,1,2.25-2.25H70.83a2.25,2.25,0,0,1,2.25,2.25v2.25H58.57a12.71,12.71,0,0,0-17.14,0ZM50,42.75A10.59,10.59,0,1,1,39.42,53.33,10.59,10.59,0,0,1,50,42.75Zm8.57,20H73.08V65a2.25,2.25,0,0,1-2.25,2.25H29.17A2.25,2.25,0,0,1,26.92,65V62.75H41.43A12.74,12.74,0,0,0,58.57,62.75Zm1.9-16.67H73.08v14.5H60.47A12.7,12.7,0,0,0,60.47,46.08ZM39.53,60.58H26.92V46.08H39.53A12.7,12.7,0,0,0,39.53,60.58Z" style="fill:#6400fa"/><path d="M43,54.42a1.08,1.08,0,0,0,1.08-1.09A5.93,5.93,0,0,1,50,47.42a1.09,1.09,0,0,0,0-2.17h0a8.1,8.1,0,0,0-8.08,8.08A1.08,1.08,0,0,0,43,54.42Z" style="fill:#6400fa"/><path d="M35,40.58H30a1.09,1.09,0,0,0,0,2.17h5a1.09,1.09,0,0,0,0-2.17Z" style="fill:#6400fa"/>
-
-			</svg>
-			<!-- // IMAGE -->
-			
-			
-			<!-- COPY -->
-			<div class="text-container">
-				
-				<h3 class="p6 font-paragraph text-accent">Josh is a photographer</h3>
-				
-				<p class="text-white text-trim text-truncate-fade">
-				He loves taking pictures. His friends tell him he should sell them and do this for a living. But he doesn't want to do it full-time, and trying to do it on the side is hard.<br><br>
-
-				In today's world, his only realistic chance of doing that is by going to a photo licensing site and asking them to sell it for him. The process is incredibly complicated and he has no idea how to begin. And even if he goes through all that and his pictures get sold, who do you think gets most of the money from that sale?<br><br>
-
-				Not Josh.<br><br>
-
-				With the AXEL Exchange, everything changes. Josh can take a cat picture on his phone. He can then select that picture, set a price, give it some tags like "cat lounging on a stone wall," and hit submit.<br><br> 
-
-				All of a sudden, his picture is up and for sale on the Exchange. Anyone searching for cat photos can find his work and buy it on the spot.<br><br>
-
-				For Josh and people like him, entirely new career paths become viable.
-				</p>
-				
-			</div>
-			<!-- // COPY -->
-			
-			
-			<!-- BUTTON -->
-			<a href="#" class="margin-bottom-xs text-accent text-white-hover text-bold text-uppercase button background-transparent background-transparent-hover no-touch-feedback prevent-default"><span class="fa fa-external-link margin-right-xs"></span>Read His Story</a>
-			<!-- // BUTTON -->
-			
-			
-			<!-- IMAGE -->
-			<div class="position-absolute top left round-md width-full height-full background-cover background-no-repeat" data-image="{{ root }}{{ assets }}/case-studies/josh.png"></div>
-			<!-- // IMAGE -->
-			
-			
-		</div>
-		<!-- // CELL -->
-
-
-		<!-- CELL -->
-        <div id="shera" class="cell popup" data-content-url="modals/story-shera" data-content-selector="" data-content-width="600" data-content-height="800">
-
-			
-			<!-- IMAGE -->
-			<svg class="position-absolute wh-xs center-element top-offset" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true">
-
-				<!--<title>Shera is a singer</title>-->
-				<circle cx="50" cy="50" r="45" style="fill:#00fac8"/>
-				<path d="M34.24,57.55l-2.5,2.5a1.07,1.07,0,0,0,0,1.53l6.66,6.67a1.09,1.09,0,0,0,.77.32,1.07,1.07,0,0,0,.76-.32l2.5-2.5a1.07,1.07,0,0,0,0-1.53l-6.66-6.67A1.11,1.11,0,0,0,34.24,57.55ZM40.14,65l-1,1L34,60.82l1-1Z" style="fill:#6400fa"/><path d="M74.34,32.18h0a3.1,3.1,0,0,0,0-4.38l-2.16-2.16a3.16,3.16,0,0,0-4.37,0L67.5,26l-1.08-1.08-1.53,1.53L66,27.49l-1,1-1.08-1.08-1.53,1.53,1.14,1.14a3.13,3.13,0,0,0-.45,1.61l0,.35L52.27,42.85l-.51-.5a6,6,0,0,0-4.29-1.78h0a6,6,0,0,0-4.29,1.78l-2.35,2.34a10.47,10.47,0,0,1-5.08,2.82l-1.14.26a12.71,12.71,0,0,0-6.13,21.38l2.36,2.36a12.62,12.62,0,0,0,9,3.72h0a12.69,12.69,0,0,0,12.38-9.85l.27-1.14a10.5,10.5,0,0,1,2.82-5.09l2.34-2.34a6.08,6.08,0,0,0,0-8.58l-.51-.51L68,36.88l.35,0a3,3,0,0,0,1.6-.45l1.15,1.15,1.53-1.54L71.53,35l1-1,1.08,1.08,1.53-1.54L74,32.49ZM48.92,55.43h-.15v.14a3.16,3.16,0,0,1-4.28-.07,3.09,3.09,0,0,1,0-4.36,3.05,3.05,0,0,1,2.18-.9h0a3.08,3.08,0,0,1,2.25,5.19ZM47,48.08h-.37a5.25,5.25,0,1,0,5.25,5.25c0-.13,0-.25,0-.37l3.7-3.7.51.51a3.91,3.91,0,0,1,0,5.52l-2.35,2.34a12.82,12.82,0,0,0-3.4,6.13L50.1,64.9A10.54,10.54,0,0,1,32.37,70L30,67.62a10.55,10.55,0,0,1,5.08-17.74l1.14-.26a12.57,12.57,0,0,0,6.13-3.4l2.35-2.34a3.91,3.91,0,0,1,5.52,0l.51.5Zm2.33.74L64.17,34l1.8,1.8-14.8,14.8A5.17,5.17,0,0,0,49.37,48.82ZM72.81,30.64,69,34.46a1,1,0,0,1-1.31,0l-2.16-2.16a.93.93,0,0,1,0-1.31l3.82-3.82a.92.92,0,0,1,1.32,0l2.15,2.15A.93.93,0,0,1,72.81,30.64Z" style="fill:#6400fa"/>
-
-			</svg>
-			<!-- // IMAGE -->
-			
-			
-			<!-- COPY -->
-			<div class="text-container">
-				
-				<h3 class="p6 font-paragraph text-accent text-secondary">Shera is a singer</h3>
-				
-				<p class="text-white text-trim text-truncate-fade">
-				People adore the songs she brings out. Covers of popular songs. Music with personalized lyrics she's written herself. Even her quirky music videos. All that has attracted hundreds of thousands of YouTube subscribers.<br><br>
-
-				But all those people listening to her music aren't enough to pay her rent. Ad revenues on YouTube are a pittance, and Spotify earns her less than $0.00043 a listen. Even digital downloads through iTunes swallow more than 30% of every sale - and each track is locked at $0.99 a download.<br><br>
-
-				The AXEL Exchange will remove the intermediaries between Shera and her fans, letting her set her own pricing and earn what she should be earning.<br><br>
-
-				All she would have to do is select a song or album, set what she thinks it's actually worth, and get a link she can put anywhere. Using an AXEL link instead of one for iTunes would instantly boost her earnings by a huge margin with a few moments work. No more paying a fortune to the middleman - fans will finally be able to support her without jumping through hoops.
-
-				AXEL will let artists like Shera reap the full benefits of their work.<br><br>
-				</p>
-				
-			</div>
-			<!-- // COPY -->
-			
-			
-			<!-- BUTTON -->
-			<a href="#" class="margin-bottom-xs text-accent text-white-hover text-bold text-uppercase button background-transparent background-transparent-hover no-touch-feedback prevent-default"><span class="fa fa-external-link margin-right-xs"></span>Read Her Story</a>
-			<!-- // BUTTON -->
-			
-			
-			<!-- IMAGE -->
-			<div class="position-absolute top left round-md width-full height-full background-cover background-no-repeat" data-image="{{ root }}{{ assets }}/case-studies/shera.png"></div>
-			<!-- // IMAGE -->
-			
-			
-		</div>
-		<!-- // CELL -->
-
-
-		<!-- CELL -->
-        <div id="tina" class="cell popup" data-content-url="modals/story-tina" data-content-selector="" data-content-width="600" data-content-height="800">
-
-			
-			<!-- IMAGE -->
-			<svg class="position-absolute wh-xs center-element top-offset" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true">
-
-				<!--<title>Tina is a gaming influencer</title>-->
-				<circle cx="50" cy="50" r="45" style="fill:#00fac8"/>
-				<path d="M75,56.29a46.18,46.18,0,0,0-1.37-9,34.54,34.54,0,0,0-2.8-7.6c-4.36-7.66-9.09-6.47-14.76-5a39.27,39.27,0,0,1-5.73,1.12h-.62A39.27,39.27,0,0,1,44,34.68c-5.67-1.43-10.4-2.68-14.76,5a31.5,31.5,0,0,0-2.8,7.59,46.18,46.18,0,0,0-1.37,9,16.8,16.8,0,0,0,.87,7.1,4.72,4.72,0,0,0,3,2.81,6.1,6.1,0,0,0,4-.44,29.23,29.23,0,0,0,8-5.67c1.93-1.87,5.54-2.8,9.15-2.8s7.22.93,9.15,2.8a29.23,29.23,0,0,0,8,5.67,6.52,6.52,0,0,0,4,.44,4.66,4.66,0,0,0,3-2.87A16.5,16.5,0,0,0,75,56.29Zm-3,6.23a2.48,2.48,0,0,1-1.49,1.56,4.3,4.3,0,0,1-2.55-.32,25.44,25.44,0,0,1-7.23-5.16c-2.36-2.37-6.54-3.55-10.71-3.55s-8.35,1.18-10.77,3.42S34.12,62.83,32,63.64a3.87,3.87,0,0,1-2.55.31A2.49,2.49,0,0,1,28,62.39a14.93,14.93,0,0,1-.62-6,43.25,43.25,0,0,1,1.31-8.6,29.9,29.9,0,0,1,2.61-7c3.43-6.16,7.42-5.16,12.15-3.92A35.63,35.63,0,0,0,49.5,38h.94a35.23,35.23,0,0,0,6.16-1.18c4.73-1.18,8.72-2.24,12.15,3.92a28.92,28.92,0,0,1,2.61,7,47.32,47.32,0,0,1,1.31,8.6A14.48,14.48,0,0,1,72,62.52Z" style="fill:#6400fa"/><path d="M44.27,44.15A3.77,3.77,0,0,0,42,43.09a3.54,3.54,0,0,0-1-2.18L41,40.85a3.52,3.52,0,0,0-2.55-1.06,3.65,3.65,0,0,0-3.62,3.3,3.67,3.67,0,0,0-2.24,1l-.06.06a3.53,3.53,0,0,0-1.06,2.55,3.67,3.67,0,0,0,1.06,2.55,3.42,3.42,0,0,0,2.3,1.06,3.37,3.37,0,0,0,1.06,2.24,3.53,3.53,0,0,0,2.56,1.06A3.65,3.65,0,0,0,41,52.55,3.77,3.77,0,0,0,42,50.31a3.28,3.28,0,0,0,2.24-1.06,3.49,3.49,0,0,0,1.06-2.55A3.67,3.67,0,0,0,44.27,44.15Zm-1.56,3.48a1.27,1.27,0,0,1-.93.38h-.87a1.18,1.18,0,0,0-1.19,1.18V50a1.27,1.27,0,0,1-.37.94,1.37,1.37,0,0,1-1.87,0,1.27,1.27,0,0,1-.37-.94v-.87A1.18,1.18,0,0,0,35.93,48h-.88a1.27,1.27,0,0,1-.93-.38,1.24,1.24,0,0,1-.37-.87,1.26,1.26,0,0,1,.37-.93l.06-.07a1.53,1.53,0,0,1,.87-.31h.88a1.18,1.18,0,0,0,1.18-1.18v-.87a1.32,1.32,0,0,1,2.24-.94l.06.07a1.44,1.44,0,0,1,.31.87v.87a1.18,1.18,0,0,0,1.19,1.18h.87a1.3,1.3,0,0,1,1.31,1.31A1.25,1.25,0,0,1,42.71,47.63Z" style="fill:#6400fa"/><circle cx="60.84" cy="42.28" r="2.18" style="fill:#6400fa"/><circle cx="60.84" cy="51.12" r="2.18" style="fill:#6400fa"/><circle cx="56.41" cy="46.7" r="2.18" style="fill:#6400fa"/><circle cx="65.26" cy="46.7" r="2.18" style="fill:#6400fa"/>
-
-			</svg>
-			<!-- // IMAGE -->
-			
-			
-			<!-- COPY -->
-			<div class="text-container">
-				
-				<h3 class="p6 font-paragraph text-accent">Tina is a gaming influencer</h3>
-				
-				<p class="text-white text-trim text-truncate-fade">
-				Gaming is the biggest entertainment industry and Tina likes to game. She also likes to entertain. As a gaming pro with legions of fans, she's building a loyal following through streaming her content by some of the biggest video sites in the world.<br><br> 
-
-				She's doing well, but is frustrated by constant changes in terms, percentages, ad networks, streaming cuts, and restrictions. Some take over 40% of her revenue simply for hosting her content.<br><br>
-
-				Her loyal fan base wants more content and direct access. They're willing to pay for it, but the platforms aren't on her side.<br><br> 
-
-				Using AXEL's patented digital content and streaming technology, she can stream her content directly to her fans – they're not penalized with fees and forced to watch ads, and she's not hit by large percentage takes. She decides on her content, she decides its value, and she gives access to whoever she wants.<br><br> 
-
-				Not only does she get to stream what she wants for a price she wants, but she doesn't have to use other platforms to provide other cool and exciting content. She can sell apps, digital merchandise, or anything else her fans find of value.<br><br> 
-
-				Tina is now in control over her content, her fan base, and her own business. 
-				</p>
-				
-			</div>
-			<!-- // COPY -->
-			
-			
-			<!-- BUTTON -->
-			<a href="#" class="margin-bottom-xs text-accent text-white-hover text-bold text-uppercase button background-transparent background-transparent-hover no-touch-feedback prevent-default"><span class="fa fa-external-link margin-right-xs"></span>Read Her Story</a>
-			<!-- // BUTTON -->
-			
-			
-			<!-- IMAGE -->
-			<div class="position-absolute top left round-md width-full height-full background-cover background-no-repeat" data-image="{{ root }}{{ assets }}/case-studies/tina.png"></div>
-			<!-- // IMAGE -->
-			
-			
-		</div>
-		<!-- // CELL -->
+    	{{> stories}}
 
 		
 	</div>
@@ -2267,14 +2126,14 @@ assets: assets/
 
 	
 </section>
-<!-- // SECTION: CASE STUDIES -->
+<!-- // SECTION: USER STORIES -->
 
 
 
 
 
 <!-- SECTION: JOIN US ON OUR MISSION -->
-<section class="position-relative padding-top-none padding-bottom-xl background-white overflow-hidden">
+<section id="join-us" class="position-relative padding-top-none padding-bottom-xl background-white overflow-hidden">
 
 
 	<!-- SHAPE -->
@@ -2336,7 +2195,7 @@ assets: assets/
 
 
 			<!-- CARD -->
-			<a href="modals/whitepaper" class="card card-accent media-object stack-for-small margin-tb-sm margin-bottom-none-mobile padding-sm background-secondary popup external" data-content-selector="" data-content-width="600" data-content-height="660" aria-label="Read the White Paper">
+			<a href="{{ modals }}whitepaper" class="card card-accent media-object stack-for-small margin-tb-sm margin-bottom-none-mobile padding-sm background-secondary popup external" data-content-selector="white-paper" data-content-width="600" data-content-height="660" aria-label="Read the White Paper">
 
 
 				  <!-- MEDIA OBJECT -->
@@ -2420,7 +2279,7 @@ assets: assets/
 
 
 			<!-- IMAGE -->
-			<img class="lazy" alt="Join Us On Our Mission" data-src="{{ root }}{{ assets }}/illustrations/dream-big.svg">
+			<img class="lazy" alt="Join Us On Our Mission" data-src="{{ root }}{{ assets }}illustrations/join-us.svg">
 			<!-- // IMAGE -->
 
 

@@ -23,10 +23,10 @@ var components = function() {
 	//comAccordion();
 	//comAnimGradient();
 	//comBlog();
-	//comCaseStudies();
 	//comCounter();
 	comParallax();
 	//comParticles();
+	//comStories();
 	//comTilt();
 
 	utilEmergence();
@@ -40,12 +40,14 @@ var components = function() {
 
 var core = function() {
 
+	comCounter();
+	comModal();
+	comSlider();
+	comStories();
+
 	utilAssetObserver();
 	utilDataAttributes();
 	utilPrint();
-	comCaseStudies();
-	comModal();
-	comSlider();
 
 	uiInit();
 	uiCommon();
@@ -55,8 +57,6 @@ var core = function() {
 	//uiNav();
 	uiButtons();
 	//uiRelayout();
-
-	comCounter();
 	
 	//hashNav();
 	pages();

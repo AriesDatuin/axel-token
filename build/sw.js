@@ -39,40 +39,16 @@ self.__precacheManifest = [
     "revision": "1dede19592d92f97ac0adf6c751c67f8"
   },
   {
-    "url": "assets/case-studies/josh.png",
-    "revision": "581b18042685c9416530a59e39fbe196"
-  },
-  {
-    "url": "assets/case-studies/josh.webp",
-    "revision": "4a1edce3fbdeafc98cfef8b68389d6c1"
-  },
-  {
-    "url": "assets/case-studies/shera.png",
-    "revision": "f84375a81f104c3b517134fbf2536373"
-  },
-  {
-    "url": "assets/case-studies/shera.webp",
-    "revision": "715430ce3a38fb471ce853bec6948869"
-  },
-  {
-    "url": "assets/case-studies/tina.png",
-    "revision": "6d3405dab0f4e8914bec0f13cb1858c3"
-  },
-  {
-    "url": "assets/case-studies/tina.webp",
-    "revision": "e82b2986fe07fe79833d05b651a85373"
-  },
-  {
     "url": "assets/error.gif",
     "revision": "6f851662ad2fe92e38d93dbf1e31b84a"
   },
   {
     "url": "assets/icon-google.svg",
-    "revision": "f16ad52d955fc63de49886ff657e88cd"
+    "revision": "68bc46153c403136512d5a340fa6d5b8"
   },
   {
     "url": "assets/icons-nav.svg",
-    "revision": "54c5e42c9b101ef67753192ca9862933"
+    "revision": "6160059cc76fc2d1774f844cf1add2a5"
   },
   {
     "url": "assets/icons/android-chrome-192x192.png",
@@ -132,39 +108,31 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/icons/safari-pinned-tab.svg",
-    "revision": "4e4288245e34e0ebbba58a7bb7faaddd"
+    "revision": "68a8e083b9d26d045c7aaea94b4d23c1"
   },
   {
     "url": "assets/illustrations/big-ideas.svg",
-    "revision": "af537a82124eea5a2ab8584c25ff4c36"
+    "revision": "252f77db27366a64ccb049dc7738186e"
   },
   {
-    "url": "assets/illustrations/dream-big-alt.svg",
-    "revision": "0739fb7bd75a0ca2ed8ee041901d3c66"
-  },
-  {
-    "url": "assets/illustrations/dream-big.svg",
-    "revision": "71ffab0036a169d55323f5920fe19937"
+    "url": "assets/illustrations/join-us.svg",
+    "revision": "6ad67dbdceccb8423352c5a585f54ca1"
   },
   {
     "url": "assets/illustrations/scalable.svg",
-    "revision": "50fab6639163a3b3c228d88e6adc43ab"
+    "revision": "5376b8a92177eb9e34f92d95d986fe37"
   },
   {
     "url": "assets/illustrations/shopping.svg",
-    "revision": "485b1d94a0f816ebeb0edc5f8bc049eb"
-  },
-  {
-    "url": "assets/illustrations/teamwork-alt.svg",
-    "revision": "f23b369258eff30aa4ed2d5110dada62"
+    "revision": "ebebb3ba7b0b7ce57d5eb2519d8d7716"
   },
   {
     "url": "assets/illustrations/teamwork.svg",
-    "revision": "30e0ff33c6c16745ff779a8ddc665593"
+    "revision": "79654a5f94a95babea18718bd8c394e0"
   },
   {
     "url": "assets/illustrations/tokens.svg",
-    "revision": "2313b2ec035d2a8d3feb92ded88df493"
+    "revision": "39ac3e43daf80f66c3eca7dc136f8c58"
   },
   {
     "url": "assets/index/data-01.png",
@@ -272,7 +240,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/index/timeline.svg",
-    "revision": "f4ba4942646967de73e72eabdf54b5ee"
+    "revision": "f9835bc650a2575ba6f0ecf8550c865a"
   },
   {
     "url": "assets/social/profile.png",
@@ -291,12 +259,132 @@ self.__precacheManifest = [
     "revision": "9e2fa7cf87cdc457494e18e2e14d4661"
   },
   {
+    "url": "assets/sprites/press/bitcoin-exchange-guide.svg",
+    "revision": "18dd1eef4402d9bbaa7355ecc7965d90"
+  },
+  {
+    "url": "assets/sprites/press/bitcoininst.svg",
+    "revision": "a478c68f0bc25356647d03934ee9d73c"
+  },
+  {
+    "url": "assets/sprites/press/ccn.svg",
+    "revision": "7ebbbb31b8600134f48bd5e534619cee"
+  },
+  {
+    "url": "assets/sprites/press/coin-announcer.svg",
+    "revision": "f1b6c9d0831f7ef01833d85340ac1fa2"
+  },
+  {
+    "url": "assets/sprites/press/crains.svg",
+    "revision": "3733f8dc3774c1561dc79d856273e373"
+  },
+  {
+    "url": "assets/sprites/press/e27.svg",
+    "revision": "66fcfbf3bf0a4d6de7e4215aae0eeff6"
+  },
+  {
+    "url": "assets/sprites/press/forbes.svg",
+    "revision": "faec2e6f0abba9b724a5008f17efa056"
+  },
+  {
+    "url": "assets/sprites/press/las-vegas-business-press.svg",
+    "revision": "401eff7442e04adf1aa218d2e890834e"
+  },
+  {
+    "url": "assets/sprites/press/pcmag.svg",
+    "revision": "40ce1b448d2140414d91d21450c8a993"
+  },
+  {
+    "url": "assets/sprites/press/popular-mechanics.svg",
+    "revision": "4cfdbb8f093b02613d4560b656585a6e"
+  },
+  {
+    "url": "assets/sprites/press/tech-bullion.svg",
+    "revision": "6ac4c4b8f80fe9692d71230e0f969409"
+  },
+  {
+    "url": "assets/sprites/press/techaeris.svg",
+    "revision": "46d5a65c09f5a5739bb46eab84522238"
+  },
+  {
+    "url": "assets/sprites/press/vegastech.svg",
+    "revision": "9e9868ed1b0be53da83c58cc33a1c010"
+  },
+  {
+    "url": "assets/stories/acoustic-guitar.svg",
+    "revision": "a3851367efca76fb954d18b0aa9400be"
+  },
+  {
+    "url": "assets/stories/camera.svg",
+    "revision": "8b55bf79e1ffe22c98c0271767c8776d"
+  },
+  {
+    "url": "assets/stories/gamepad.svg",
+    "revision": "d8e383b7707895875623755918aba111"
+  },
+  {
+    "url": "assets/stories/large-josh.png",
+    "revision": "9b9e536eee1f9f671a7b7fdef8a38579"
+  },
+  {
+    "url": "assets/stories/large-josh.webp",
+    "revision": "083404525b79930427c206138f4e41b1"
+  },
+  {
+    "url": "assets/stories/large-shera.png",
+    "revision": "f4e31d90005f7ee9008955bdf8e60d35"
+  },
+  {
+    "url": "assets/stories/large-shera.webp",
+    "revision": "0b46c9c5d3c6f7a051749e593adc0e4b"
+  },
+  {
+    "url": "assets/stories/large-tina.png",
+    "revision": "cfc39270c4634af6187895d1e7b9b4b3"
+  },
+  {
+    "url": "assets/stories/large-tina.webp",
+    "revision": "b5f9bc1eafb8af225091ad0b7fe5a81e"
+  },
+  {
+    "url": "assets/stories/small-josh.png",
+    "revision": "81cdabe844a717c63ed23d55c888613a"
+  },
+  {
+    "url": "assets/stories/small-josh.webp",
+    "revision": "e1cc23d88124b977102045e9e2706e31"
+  },
+  {
+    "url": "assets/stories/small-shera.png",
+    "revision": "667813a98731bac9bb2a830a7749da5e"
+  },
+  {
+    "url": "assets/stories/small-shera.webp",
+    "revision": "a2b11f211d46337ef777595b3ddec22d"
+  },
+  {
+    "url": "assets/stories/small-tina.png",
+    "revision": "62124c9464f750940f347e306c503eaf"
+  },
+  {
+    "url": "assets/stories/small-tina.webp",
+    "revision": "392c79a6b08109e06134a3d51647c418"
+  },
+  {
     "url": "assets/team/large-ben-ow.jpg",
     "revision": "ed9fdbd0bd3cf1dd1b9f2bf84d8bf476"
   },
   {
     "url": "assets/team/large-ben-ow.webp",
     "revision": "e28596ffcd83efbf1b06ea798e639197"
+  },
+  {
+    "url": "assets/team/large-bruce-macdonald.jpg",
+    "revision": "7ccf8a44a7aa7ada55072bb56697e494"
+  },
+  {
+    "url": "assets/team/large-bruce-macdonald.webp",
+    "revision": "57a82716e144bb8c0d609168782da825"
   },
   {
     "url": "assets/team/large-dave-kaplan.jpg",
@@ -331,6 +419,14 @@ self.__precacheManifest = [
     "revision": "ad1dfbc94d792a2939fbe8ddc214ae09"
   },
   {
+    "url": "assets/team/large-jeff-maher.jpg",
+    "revision": "23dedb540b06ecf7fa2c144e57f3d4e4"
+  },
+  {
+    "url": "assets/team/large-jeff-maher.webp",
+    "revision": "5c98e675e74709b45185d63e28881e38"
+  },
+  {
     "url": "assets/team/large-jeremy-forsberg.jpg",
     "revision": "64565e8576e662cb98b8d15b6b806e73"
   },
@@ -340,11 +436,11 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/team/large-michael-conn.jpg",
-    "revision": "ad4012013444b3fa940dd9261ef8e981"
+    "revision": "428e8a377c1f4f1078aacbc1cc7aa735"
   },
   {
     "url": "assets/team/large-michael-conn.webp",
-    "revision": "86d656fd0eb3011d30d8c4435df4df8f"
+    "revision": "4e8d947c234e0c709b7f5a57424b08d5"
   },
   {
     "url": "assets/team/large-rick-stiles.jpg",
@@ -379,6 +475,14 @@ self.__precacheManifest = [
     "revision": "1e51a97d88ce3351dca2eb5bf1e179db"
   },
   {
+    "url": "assets/team/small-bruce-macdonald.jpg",
+    "revision": "369d6f7d3bf0ce5e2845723b40fa1f3e"
+  },
+  {
+    "url": "assets/team/small-bruce-macdonald.webp",
+    "revision": "b5b7ec6530915abd864d10c5e051ac50"
+  },
+  {
     "url": "assets/team/small-dave-kaplan.jpg",
     "revision": "56dcca24dfb7b59a0f28202d141836ea"
   },
@@ -411,6 +515,14 @@ self.__precacheManifest = [
     "revision": "f70b1b37568467a6752c686c5f404504"
   },
   {
+    "url": "assets/team/small-jeff-maher.jpg",
+    "revision": "9db7f12d55159279e558885750fcd378"
+  },
+  {
+    "url": "assets/team/small-jeff-maher.webp",
+    "revision": "9c4860b7bc2f1ca7d21ab814708b47d6"
+  },
+  {
     "url": "assets/team/small-jeremy-forsberg.jpg",
     "revision": "006cebf1ed892f382d78830afa4e096e"
   },
@@ -420,11 +532,11 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/team/small-michael-conn.jpg",
-    "revision": "c778a9c6e8536e3e09ad747ec0efaf4e"
+    "revision": "17a81eaf252dea7e3c11a67905095d3e"
   },
   {
     "url": "assets/team/small-michael-conn.webp",
-    "revision": "7818a3e5c782a1950b41797ffc181393"
+    "revision": "d2b721bdf177249300fc261dddfad0ce"
   },
   {
     "url": "assets/team/small-rick-stiles.jpg",
@@ -452,7 +564,7 @@ self.__precacheManifest = [
   },
   {
     "url": "error.html",
-    "revision": "a028782bf8adece0dec6cd13e853bdb0"
+    "revision": "37e78512f7e0e82f713d5f0ecd492c81"
   },
   {
     "url": "fonts/fontawesome-webfont.eot",
@@ -460,7 +572,7 @@ self.__precacheManifest = [
   },
   {
     "url": "fonts/fontawesome-webfont.svg",
-    "revision": "acf3dcb7ff752b5296ca23ba2c7c2606"
+    "revision": "760bd83ee04dff470e0277f3eb7deebe"
   },
   {
     "url": "fonts/fontawesome-webfont.ttf",
@@ -484,11 +596,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "23d195322a465dfee755a740dbde1366"
-  },
-  {
-    "url": "modals/eula.html",
-    "revision": "62e468e808092524143251a3f3fe9281"
+    "revision": "b8077e1651102069d6941e40e669d6dd"
   },
   {
     "url": "modals/press.html",
@@ -496,71 +604,27 @@ self.__precacheManifest = [
   },
   {
     "url": "modals/privacy-policy.html",
-    "revision": "868c549598ae798cab6e4026de8cd442"
+    "revision": "c311c08be43af9a9e2ab529b8dbf417e"
   },
   {
-    "url": "modals/profile-ben-ow.html",
-    "revision": "e4c6ca9fbbc03933aa9f18df63537154"
+    "url": "modals/stories.html",
+    "revision": "c1f3a416cda18669e9e3f12f56c04c5f"
   },
   {
-    "url": "modals/profile-dave-kaplan.html",
-    "revision": "decbc69eb55b68c619c5a30414ff0640"
-  },
-  {
-    "url": "modals/profile-diana-zhang.html",
-    "revision": "9f0041dd2b0ff852400e3c2366d008d2"
-  },
-  {
-    "url": "modals/profile-dmitry-kogosov.html",
-    "revision": "0053475fa8253a38376420c8d3b5862f"
-  },
-  {
-    "url": "modals/profile-dmytro-ashkinazi.html",
-    "revision": "3fd1d7abc847befd7caddfac01231484"
-  },
-  {
-    "url": "modals/profile-jeremy-forsberg.html",
-    "revision": "ac816575bfeaf1543e8484ab90544936"
-  },
-  {
-    "url": "modals/profile-michael-conn.html",
-    "revision": "3406af2c185dd49fb82437fa32a0c7ab"
-  },
-  {
-    "url": "modals/profile-rick-stiles.html",
-    "revision": "ef45e26b75c8b275bbd45dc9c5b7f9ac"
-  },
-  {
-    "url": "modals/profile-tony-tan.html",
-    "revision": "0e6e632a424f6521b6c8a7ea03362276"
-  },
-  {
-    "url": "modals/story-josh.html",
-    "revision": "03b2ef592e9442d4730834d3c847c828"
-  },
-  {
-    "url": "modals/story-shera.html",
-    "revision": "280028a9376a27236127846ea319f001"
-  },
-  {
-    "url": "modals/story-tina.html",
-    "revision": "001ce48d31fecab9a189db74010d8353"
+    "url": "modals/team.html",
+    "revision": "b97e85a97d3dbd7de2e06038aa0c3467"
   },
   {
     "url": "modals/whitepaper.html",
-    "revision": "557d1f1b6b3b4938faf913f935a2ca18"
+    "revision": "eee44946103f4ca112b840d425211a5e"
   },
   {
-    "url": "scripts/app.8939c09c6a.min.css",
-    "revision": "8939c09c6aa8849cf9d9f79f4765b365"
+    "url": "scripts/app.0f5979e876.min.css",
+    "revision": "0f5979e876fbf9c3d491af0156e0b9bf"
   },
   {
-    "url": "scripts/app.c738b5ce03.min.js",
-    "revision": "c738b5ce03bcbeacc5b7c5dd43070a48"
-  },
-  {
-    "url": "scripts/vendor.ca6cbf53e8.min.js",
-    "revision": "ca6cbf53e80af15afdd8fc7263bcaa6c"
+    "url": "scripts/app.affa28080e.min.js",
+    "revision": "affa28080ed95b93185d27fe2e475301"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();

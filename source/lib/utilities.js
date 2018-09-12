@@ -131,7 +131,7 @@ var utilAssetObserver = function() {
 		
 			.always( function() {
 			
-				lazyLog("LOADING...", element);			
+				lazyLog("LOADING:", element);			
 				TweenMax.set(element, {opacity: 0});
 			
 			})
@@ -150,7 +150,7 @@ var utilAssetObserver = function() {
 
 			.done( function() {
 			
-				lazyLog("SET", element);
+				lazyLog("LOADED:", element);
 				TweenMax.to(element, 0.25, {opacity: 1, delay: 0, ease: Power2.easeOut});
 				imageBackgroundResize();
 			

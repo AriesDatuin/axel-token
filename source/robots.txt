@@ -1,8 +1,0 @@
-Sitemap: https://axeltoken.com/sitemap.xml
-
-User-agent: *
-Disallow: /assets
-Disallow: /fonts
-Disallow: /images
-Disallow: /modals
-Disallow: /scripts
