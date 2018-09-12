@@ -383,11 +383,7 @@ var comModal = function() {
 
 				uiModal += "<div class='modal-close close dark margin-sm round-full'><span></span><span></span></div>"; // BUTTON: CLOSE
 
-<<<<<<< HEAD
-				uiModal += "<div id='modal-preloader' class='center-vh padding-xs round-sm text-secondary text-center background-white z-01'> <span class='fa fa-circle-o-notch fa-spin p4' aria-hidden='true'></span></div>" // PRELOADER
-=======
-				uiModal += "<div id='modal-preloader' class='center-vh padding-xs round-sm text-secondary text-center background-white box-shadow-xl z-01'> <span class='fa fa-circle-o-notch fa-spin p4' aria-hidden='true'></span> <p>Loading...</p> </div>" // PRELOADER
->>>>>>> 1263d2b31132ff57e30493ab1a60f84b3a8ebfd9
+				uiModal += "<div id='modal-preloader' class='center-vh padding-xs round-sm text-secondary text-center background-white z-01'> <span class='fa fa-circle-o-notch fa-spin p4' aria-hidden='true'></span> <p>Loading...</p> </div>" // PRELOADER
 
 				uiModal += "<div class='modal-container cell align-self-top'></div>" // CONTAINER
 

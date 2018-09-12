@@ -112,7 +112,6 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/illustrations/big-ideas.svg",
-<<<<<<< HEAD
     "revision": "252f77db27366a64ccb049dc7738186e"
   },
   {
@@ -134,29 +133,6 @@ self.__precacheManifest = [
   {
     "url": "assets/illustrations/tokens.svg",
     "revision": "39ac3e43daf80f66c3eca7dc136f8c58"
-=======
-    "revision": "7ac451323d32764d5f109ae0ad2db458"
-  },
-  {
-    "url": "assets/illustrations/join-us.svg",
-    "revision": "ea8c453a50cbd51785ff040e2ebaca09"
-  },
-  {
-    "url": "assets/illustrations/scalable.svg",
-    "revision": "4788aec3d860fe7355cbabe0481bacff"
-  },
-  {
-    "url": "assets/illustrations/shopping.svg",
-    "revision": "5905b46c068a322cb746d54178f10a84"
-  },
-  {
-    "url": "assets/illustrations/teamwork.svg",
-    "revision": "07f39f2a4a38a8f19a9c7398674520cd"
-  },
-  {
-    "url": "assets/illustrations/tokens.svg",
-    "revision": "d3d8db618f1a833dc5cda339881f0aa8"
->>>>>>> 1263d2b31132ff57e30493ab1a60f84b3a8ebfd9
   },
   {
     "url": "assets/index/data-01.png",
@@ -283,7 +259,6 @@ self.__precacheManifest = [
     "revision": "9e2fa7cf87cdc457494e18e2e14d4661"
   },
   {
-<<<<<<< HEAD
     "url": "assets/sprites/press/bitcoin-exchange-guide.svg",
     "revision": "18dd1eef4402d9bbaa7355ecc7965d90"
   },
@@ -346,18 +321,6 @@ self.__precacheManifest = [
   {
     "url": "assets/stories/gamepad.svg",
     "revision": "d8e383b7707895875623755918aba111"
-=======
-    "url": "assets/stories/acoustic-guitar.svg",
-    "revision": "7d4b404819982b814e4365ba8bc1faa1"
-  },
-  {
-    "url": "assets/stories/camera.svg",
-    "revision": "ce9ce86cedc94dbdae85388bb896191e"
-  },
-  {
-    "url": "assets/stories/gamepad.svg",
-    "revision": "aad92c44cefa18e06675f78bea522081"
->>>>>>> 1263d2b31132ff57e30493ab1a60f84b3a8ebfd9
   },
   {
     "url": "assets/stories/large-josh.png",
@@ -601,11 +564,7 @@ self.__precacheManifest = [
   },
   {
     "url": "error.html",
-<<<<<<< HEAD
-    "revision": "37e78512f7e0e82f713d5f0ecd492c81"
-=======
-    "revision": "7c87d8e3ab8c2d8666464dd9107be37b"
->>>>>>> 1263d2b31132ff57e30493ab1a60f84b3a8ebfd9
+    "revision": "5ce1a0070899833e67996eed622eb751"
   },
   {
     "url": "fonts/fontawesome-webfont.eot",
@@ -637,11 +596,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-<<<<<<< HEAD
-    "revision": "b8077e1651102069d6941e40e669d6dd"
-=======
-    "revision": "340cbec373641335efcd9f30f34e9855"
->>>>>>> 1263d2b31132ff57e30493ab1a60f84b3a8ebfd9
+    "revision": "c849f07ce25ae5b8a18fa7cf0a11348c"
   },
   {
     "url": "modals/press.html",
@@ -668,13 +623,8 @@ self.__precacheManifest = [
     "revision": "0f5979e876fbf9c3d491af0156e0b9bf"
   },
   {
-<<<<<<< HEAD
-    "url": "scripts/app.affa28080e.min.js",
-    "revision": "affa28080ed95b93185d27fe2e475301"
-=======
-    "url": "scripts/app.bed03360a2.min.js",
-    "revision": "bed03360a21a78b3be0e8c31d3cd6bcc"
->>>>>>> 1263d2b31132ff57e30493ab1a60f84b3a8ebfd9
+    "url": "scripts/app.dddad03854.min.js",
+    "revision": "dddad038545df903406aa2e8d291b122"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
