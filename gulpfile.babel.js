@@ -272,6 +272,7 @@ export function checkcss() {
 
 // JS
 export function hashscripts(done) {
+<<<<<<< HEAD
 
 	if ( config.versioning.scripts.allow && production ) {
 
@@ -337,6 +338,73 @@ export function hashassets(done) {
 
 				   .on("end", function () {
 
+=======
+
+	if ( config.versioning.scripts.allow && production ) {
+
+		console.log("Hashing script files...");
+
+		// TASK
+		return gulp.src( config.paths.build + config.scripts.output + "**/*" )
+				   .pipe(rev())
+				   .pipe(revFormat({prefix: config.versioning.scripts.prefix,
+									suffix: config.versioning.scripts.suffix,
+									lastExt: false
+					}))
+				   .pipe(gulp.dest( config.paths.build + config.scripts.output ))
+				   .pipe(revDelete())
+				   .pipe(revRewrite())
+
+				   .pipe(rev.manifest( revFile, { base: config.paths.build + config.scripts.output, merge: true } )) 
+				   .pipe(gulp.dest( config.paths.build + config.scripts.output ))
+
+				   .on("end", function () {
+
+									console.log("Injecting revisioned script files...");
+
+									const manifest = gulp.src( revFile );
+
+									return gulp.src([config.paths.build + "**/*"])
+											   .pipe(revRewrite({ manifest }))
+											   .pipe(gulp.dest( config.paths.build ));
+
+											   });
+
+	} else {
+
+		return done();
+
+	}
+
+}
+
+
+// ASSETS
+export function hashassets(done) {
+
+	if ( config.versioning.images.allow && production ) {
+
+		console.log("Hashing asset files...");
+
+		// TASK
+		return gulp.src([config.paths.build + config.images.paths + "**/*",
+						 "!" + config.paths.build + config.images.paths + "icons/*",
+						 "!" + config.paths.build + config.images.paths + "social/*"])
+				   .pipe(rev())
+				   .pipe(revFormat({prefix: config.versioning.images.prefix,
+									suffix: config.versioning.images.suffix,
+									lastExt: false
+					}))
+				   .pipe(gulp.dest( config.paths.build + config.images.paths ))
+				   .pipe(revDelete())
+				   .pipe(revRewrite())
+
+				   .pipe(rev.manifest( revFile, { base: config.paths.build + config.images.paths, merge: true } )) 
+				   .pipe(gulp.dest( config.paths.build + config.images.paths ))
+
+				   .on("end", function () {
+
+>>>>>>> 1263d2b31132ff57e30493ab1a60f84b3a8ebfd9
 									console.log("Injecting revisioned asset files...");
 
 									const manifest = gulp.src( revFile );
@@ -1636,7 +1704,11 @@ gulp.task("test", gulp.series(mode, clear, html, modals, vendors, js, css, move,
 
 
 // BUILD
+<<<<<<< HEAD
 gulp.task("build", gulp.series(clear, checkjs, checkcss, html, modals, vendors, js, css, hashscripts, move, meta, hashassets, svg, raster, analytics, robotstxt, sitemap, sw, clean, preview));
+=======
+gulp.task("build", gulp.series(clear, checkjs, checkcss, html, modals, vendors, js, css, hashscripts, move, meta, hashassets, raster, svg, analytics, robotstxt, sitemap, sw, clean, preview));
+>>>>>>> 1263d2b31132ff57e30493ab1a60f84b3a8ebfd9
 
 
 // DEPLOY

@@ -9,6 +9,28 @@
 		"previewURL": "index.html"
 	},
 
+<<<<<<< HEAD
+=======
+	"robots": {
+		"useragent": "*",
+		"allow": [""],
+		"disallow": ["/assets/", "/cgi-bin/", "/downloads/", "/fonts/", "/modals/", "/scripts/"]
+	},
+
+	"versioning": {
+		"scripts": {
+			"allow": true,
+			"prefix": ".",
+			"suffix": ".min"
+		},
+		"images": {
+			"allow": false,
+			"prefix": ".",
+			"suffix": ""
+		}
+	},
+	
+>>>>>>> 1263d2b31132ff57e30493ab1a60f84b3a8ebfd9
 	"paths": {
 		"source": "source/",
 		"build": "build/"
@@ -57,6 +79,7 @@
 
 	"images": {
 		"paths": "assets/",
+<<<<<<< HEAD
 
 		"raster": {
 			"level": 5,
@@ -111,6 +134,19 @@
 			"sharpness": 0
 		}
 
+=======
+		"optimizationLevel": 5,
+		"interlaced": true,
+		"progressive": true,
+		"svgViewbox": true,
+		"svgCleanup": false,
+		"webp": true,
+		"webpOptimizationLevel": 0,
+		"webpQuality": 100,
+		"webpAlphaQuality": 100,
+		"webpSharpness": 0,
+		"versioning": true
+>>>>>>> 1263d2b31132ff57e30493ab1a60f84b3a8ebfd9
 	},
 	
 	"html": {
@@ -131,6 +167,10 @@
 			"js": ["_scripts/*.js"],
 			"css": ["css/critical.css"]
 		}
+	},
+
+	"scripts": {
+		"output": "scripts/"
 	},
 
 	"scripts": {
