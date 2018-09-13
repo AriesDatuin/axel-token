@@ -450,10 +450,11 @@
 	--ease-out: all 0.25s ease-out;
 	--ease-in-out: all 0.25s ease-in-out;
 
-	--ease-quick: all 0.15s ease-in;
-	--ease-fast: all 0.25s ease-in-out;
-	--ease-normal: all 0.5s ease-in-out;
-	--ease-slow: all 1s ease-out;
+	--ease-quick: all 100ms ease-in;
+	--ease-fast: all 200ms ease-in-out;
+	--ease-normal: all 300ms ease-out;
+	--ease-slow: all 400ms ease-out;
+	--ease-very-slow: all 500ms ease-out;
 
 }
 

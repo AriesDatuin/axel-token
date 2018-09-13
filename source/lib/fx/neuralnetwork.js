@@ -385,13 +385,17 @@ if ( page = $$(".page").data("page") === "index" ) {
 
         if( !fxNeuralNetworkIsAnimating ) {
 
+            console.log(fxNeuralNetworkIsAnimating);
+
             ctx = null;
 
             return;
 
         } else {
 
-            fxNeuralNetwork();
+            console.log(fxNeuralNetworkIsAnimating);
+
+            fxNeuralNetworkUpdate(); // Only update canvas. No need to redraw.
 
         }
 
@@ -399,7 +403,7 @@ if ( page = $$(".page").data("page") === "index" ) {
 
     //fxNeuralNetworkControl();
 
-    fxNeuralNetwork();
+    //fxNeuralNetwork();
 
 
     // VARS
@@ -411,7 +415,8 @@ if ( page = $$(".page").data("page") === "index" ) {
 
     // FUNCTIONS / CALLBACKS
     function isCanvasHidden () {
-        //console.log(fxNeuralNetworkIsAnimating);
+        
+        $$("#fx-neural-network").css({ "display": "none" })
 
         fxNeuralNetworkIsAnimating = false;
         fxNeuralNetworkControl();
@@ -420,13 +425,15 @@ if ( page = $$(".page").data("page") === "index" ) {
 
 
     function isCanvasVisible () {
-        //console.log(fxNeuralNetworkIsAnimating);
+
+        $$("#fx-neural-network").css({ "display": "block" })
 
         fxNeuralNetworkIsAnimating = true;
         fxNeuralNetworkControl();
 
     }
 
+    fxNeuralNetwork();
 
     //$$(pageContent).on("resize", _.debounce(fxNeuralNetworkUpdate, 2));
 

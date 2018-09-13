@@ -8,15 +8,36 @@ assets: assets/
 {{#each team.content}}
 
 
-	<article id="team-{{ id }}" class="profile grid-x align-center align-middle" style="background-image: url({{ image }});">
+	<article id="team-{{ id }}" class="profile grid-x grid-padding-x align-center align-top mall-up-1 medium-up-2 large-up-2">
 		
+
+		<!-- CELL -->
+		<div id="photo" class="cell padding-none height-half-mobile overflow-hidden">
+
+
+			<!-- IMAGE -->
+			<img src="{{ image }}" alt="{{ title }}-{{ subtitle }}...">
+			<!-- // IMAGE -->
+
+
+			<!-- SHAPE -->
+			<svg class="stripe position-absolute left bottom emergence-ignore-child" preserveAspectRatio="none" viewBox="0 0 1024 100">
+				<polygon fill="#fff" points="512 100 1024 100 1024 0 512 100"/>
+				<polygon fill="#fff" points="0 100 512 100 0 0 0 100"/>
+			</svg>
+			<!-- // SHAPE -->
+
+
+		</div>
+		<!-- // CELL -->
+
 		
 		<!-- CELL -->
-		<div class="cell round-md round-top">
+		<div id="description" class="cell">
 			
 
 			<!-- COPY -->
-			<h1 class="p2 font-paragraph text-secondary">{{ title }}</h1>
+			<h1 class="margin-top-md p2 font-paragraph text-secondary">{{ title }}</h1>
 			<h2 class="p8 font-paragraph text-dark-grey header-accent header-accent-left header-accent-secondary">{{ subtitle }}</h2>
 
 

@@ -44,11 +44,11 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/icon-google.svg",
-    "revision": "f16ad52d955fc63de49886ff657e88cd"
+    "revision": "68bc46153c403136512d5a340fa6d5b8"
   },
   {
     "url": "assets/icons-nav.svg",
-    "revision": "54c5e42c9b101ef67753192ca9862933"
+    "revision": "6160059cc76fc2d1774f844cf1add2a5"
   },
   {
     "url": "assets/icons/android-chrome-192x192.png",
@@ -108,31 +108,31 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/icons/safari-pinned-tab.svg",
-    "revision": "4e4288245e34e0ebbba58a7bb7faaddd"
+    "revision": "68a8e083b9d26d045c7aaea94b4d23c1"
   },
   {
     "url": "assets/illustrations/big-ideas.svg",
-    "revision": "7ac451323d32764d5f109ae0ad2db458"
+    "revision": "252f77db27366a64ccb049dc7738186e"
   },
   {
     "url": "assets/illustrations/join-us.svg",
-    "revision": "ea8c453a50cbd51785ff040e2ebaca09"
+    "revision": "6ad67dbdceccb8423352c5a585f54ca1"
   },
   {
     "url": "assets/illustrations/scalable.svg",
-    "revision": "4788aec3d860fe7355cbabe0481bacff"
+    "revision": "5376b8a92177eb9e34f92d95d986fe37"
   },
   {
     "url": "assets/illustrations/shopping.svg",
-    "revision": "5905b46c068a322cb746d54178f10a84"
+    "revision": "ebebb3ba7b0b7ce57d5eb2519d8d7716"
   },
   {
     "url": "assets/illustrations/teamwork.svg",
-    "revision": "07f39f2a4a38a8f19a9c7398674520cd"
+    "revision": "79654a5f94a95babea18718bd8c394e0"
   },
   {
     "url": "assets/illustrations/tokens.svg",
-    "revision": "d3d8db618f1a833dc5cda339881f0aa8"
+    "revision": "39ac3e43daf80f66c3eca7dc136f8c58"
   },
   {
     "url": "assets/index/data-01.png",
@@ -240,7 +240,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/index/timeline.svg",
-    "revision": "f4ba4942646967de73e72eabdf54b5ee"
+    "revision": "f9835bc650a2575ba6f0ecf8550c865a"
   },
   {
     "url": "assets/social/profile.png",
@@ -259,16 +259,68 @@ self.__precacheManifest = [
     "revision": "9e2fa7cf87cdc457494e18e2e14d4661"
   },
   {
+    "url": "assets/sprites/press/bitcoin-exchange-guide.svg",
+    "revision": "18dd1eef4402d9bbaa7355ecc7965d90"
+  },
+  {
+    "url": "assets/sprites/press/bitcoininst.svg",
+    "revision": "a478c68f0bc25356647d03934ee9d73c"
+  },
+  {
+    "url": "assets/sprites/press/ccn.svg",
+    "revision": "7ebbbb31b8600134f48bd5e534619cee"
+  },
+  {
+    "url": "assets/sprites/press/coin-announcer.svg",
+    "revision": "f1b6c9d0831f7ef01833d85340ac1fa2"
+  },
+  {
+    "url": "assets/sprites/press/crains.svg",
+    "revision": "3733f8dc3774c1561dc79d856273e373"
+  },
+  {
+    "url": "assets/sprites/press/e27.svg",
+    "revision": "66fcfbf3bf0a4d6de7e4215aae0eeff6"
+  },
+  {
+    "url": "assets/sprites/press/forbes.svg",
+    "revision": "faec2e6f0abba9b724a5008f17efa056"
+  },
+  {
+    "url": "assets/sprites/press/las-vegas-business-press.svg",
+    "revision": "401eff7442e04adf1aa218d2e890834e"
+  },
+  {
+    "url": "assets/sprites/press/pcmag.svg",
+    "revision": "40ce1b448d2140414d91d21450c8a993"
+  },
+  {
+    "url": "assets/sprites/press/popular-mechanics.svg",
+    "revision": "4cfdbb8f093b02613d4560b656585a6e"
+  },
+  {
+    "url": "assets/sprites/press/tech-bullion.svg",
+    "revision": "6ac4c4b8f80fe9692d71230e0f969409"
+  },
+  {
+    "url": "assets/sprites/press/techaeris.svg",
+    "revision": "46d5a65c09f5a5739bb46eab84522238"
+  },
+  {
+    "url": "assets/sprites/press/vegastech.svg",
+    "revision": "9e9868ed1b0be53da83c58cc33a1c010"
+  },
+  {
     "url": "assets/stories/acoustic-guitar.svg",
-    "revision": "7d4b404819982b814e4365ba8bc1faa1"
+    "revision": "a3851367efca76fb954d18b0aa9400be"
   },
   {
     "url": "assets/stories/camera.svg",
-    "revision": "ce9ce86cedc94dbdae85388bb896191e"
+    "revision": "8b55bf79e1ffe22c98c0271767c8776d"
   },
   {
     "url": "assets/stories/gamepad.svg",
-    "revision": "aad92c44cefa18e06675f78bea522081"
+    "revision": "f3fe72239405dc77fa13f36f4efd7e31"
   },
   {
     "url": "assets/stories/large-josh.png",
@@ -328,11 +380,11 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/team/large-bruce-macdonald.jpg",
-    "revision": "7ccf8a44a7aa7ada55072bb56697e494"
+    "revision": "d782498a568e9c220645b2e128e12e56"
   },
   {
     "url": "assets/team/large-bruce-macdonald.webp",
-    "revision": "57a82716e144bb8c0d609168782da825"
+    "revision": "3e35a6caa693350e33cc90bff445fe9f"
   },
   {
     "url": "assets/team/large-dave-kaplan.jpg",
@@ -424,11 +476,11 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/team/small-bruce-macdonald.jpg",
-    "revision": "369d6f7d3bf0ce5e2845723b40fa1f3e"
+    "revision": "4ddf9df72bb9953f0c2e7c90e55614f3"
   },
   {
     "url": "assets/team/small-bruce-macdonald.webp",
-    "revision": "b5b7ec6530915abd864d10c5e051ac50"
+    "revision": "f5fbfcbc5e78fd159b45c934b9f9a2f0"
   },
   {
     "url": "assets/team/small-dave-kaplan.jpg",
@@ -512,7 +564,7 @@ self.__precacheManifest = [
   },
   {
     "url": "error.html",
-    "revision": "7c87d8e3ab8c2d8666464dd9107be37b"
+    "revision": "cb58bbe87fef648882b747af0797811f"
   },
   {
     "url": "fonts/fontawesome-webfont.eot",
@@ -520,7 +572,7 @@ self.__precacheManifest = [
   },
   {
     "url": "fonts/fontawesome-webfont.svg",
-    "revision": "acf3dcb7ff752b5296ca23ba2c7c2606"
+    "revision": "760bd83ee04dff470e0277f3eb7deebe"
   },
   {
     "url": "fonts/fontawesome-webfont.ttf",
@@ -536,7 +588,7 @@ self.__precacheManifest = [
   },
   {
     "url": "fonts/fontawesome.css",
-    "revision": "77b5c0c7719ad4093de5eaa95de4c882"
+    "revision": "bc475e82b8a88fdcc4b1f9f3a0bf8919"
   },
   {
     "url": "fonts/FontAwesome.otf",
@@ -544,7 +596,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "340cbec373641335efcd9f30f34e9855"
+    "revision": "b7050f8cd0738d90c89b8607d559d42b"
   },
   {
     "url": "modals/press.html",
@@ -556,23 +608,23 @@ self.__precacheManifest = [
   },
   {
     "url": "modals/stories.html",
-    "revision": "c1f3a416cda18669e9e3f12f56c04c5f"
+    "revision": "ee09544a47a713f82e949451eef6fda3"
   },
   {
     "url": "modals/team.html",
-    "revision": "b97e85a97d3dbd7de2e06038aa0c3467"
+    "revision": "8adb284b240fa4a7a8481f03828fac4d"
   },
   {
     "url": "modals/whitepaper.html",
     "revision": "eee44946103f4ca112b840d425211a5e"
   },
   {
-    "url": "scripts/app.0f5979e876.min.css",
-    "revision": "0f5979e876fbf9c3d491af0156e0b9bf"
+    "url": "scripts/app.1e327d5b84.min.css",
+    "revision": "1e327d5b846a321ab0e50728446ee95e"
   },
   {
-    "url": "scripts/app.bed03360a2.min.js",
-    "revision": "bed03360a21a78b3be0e8c31d3cd6bcc"
+    "url": "scripts/app.3b94b143a2.min.js",
+    "revision": "3b94b143a2de80fd0c534e923e590139"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();

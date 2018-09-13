@@ -64,6 +64,7 @@ import robots from "gulp-robots"; // Generate robots.txt.
 import sourcemaps from "gulp-sourcemaps"; // Generate JS or CSS sourcemaps.
 import svg2png from "gulp-svg2png"; // Convert SVG files to PNG files.
 import svgmin from "gulp-svgmin"; //Compress SVG assets.
+import svgSprite from "gulp-svg-sprites"; // Generate an SVG sprite sheet.
 import uglify from "gulp-uglify"; // Minify JS files.
 import webp from "gulp-webp"; // Convert image assets to WebP format.
 import workbox from "workbox-build"; // Integrate Service Worker to leverage precache features.
@@ -420,6 +421,8 @@ export function vendors() {
 
 
 	return gulp.src(config.vendors.paths.map( function(base) { return config.paths.source + base } ), {allowEmpty: true} )
+			   .pipe(gulpif( config.vendors.lint, jshint() ))
+			   .pipe(gulpif( config.vendors.lint, jshint.reporter() ))
 			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.init() ))
 			   //.pipe(modernizr())
 			   //.pipe(babel())
@@ -509,8 +512,8 @@ export function css() {
 // OPTIONS *Note: Leave as-is. These are the recommended values.
 const htmlminOptions = {
 	  collapseWhitespace: true,
-	  minifyCSS: true,
-	  minifyJS: true,
+	  minifyCSS: config.html.inlineScripts.minify,
+	  minifyJS: config.html.inlineScripts.minify,
 	  removeComments: true,
 	  useShortDoctype: true
 };
@@ -541,7 +544,7 @@ export function html() {
 								  },
 
 								  scripts: {
-										   src: gulp.src( config.paths.source + config.html.scripts ),
+										   src: gulp.src( config.paths.source + config.html.inlineScripts.js ),
 										   tpl: "<script>%s</script>"
 										  },
 
@@ -551,7 +554,7 @@ export function html() {
 										  },
 
 								  critical: {
-											 src: gulp.src( config.paths.source + config.html.critical ),
+											 src: gulp.src( config.paths.source + config.html.inlineScripts.css ),
 											 tpl: "<style>%s</style>"
 								  },
 
@@ -622,7 +625,9 @@ export function move(done) {
 					console.log("Deleting unnecessary directories...");
 
 					del([config.paths.build + "css/",
-						 config.paths.build + "lib/"]);
+						 config.paths.build + "lib/",
+						 //config.paths.build + config.images.paths + config.images.sprite.paths
+						]);
 
 					deleteEmpty.sync( config.paths.build );
 				
@@ -665,12 +670,22 @@ export function raster() {
 	console.log("Compressing images assets...");
 
 	return gulp.src( config.paths.build + "**/*.{gif,jpg,jpeg,png,svg}", {base: config.paths.build} )
-			   .pipe(gulpif( production, imagemin([imagemin.optipng({optimizationLevel: config.images.optimizationLevel}),
-							   imagemin.gifsicle({interlaced: config.images.interlaced}),
-							   imagemin.jpegtran({progressive: config.images.progressive}),
+			   .pipe(gulpif( production, imagemin([imagemin.optipng({optimizationLevel: config.images.raster.level}),
+							   imagemin.gifsicle({interlaced: config.images.raster.interlaced}),
+							   imagemin.jpegtran({progressive: config.images.raster.progressive}),
 							  ], {verbose: true}) )
 			   )
-			   .pipe(gulpif( config.images.webp, webp({ method: config.images.webpOptimizationLevel, quality: config.images.webpQuality, alphaQuality: config.images.webpAlphaQuality, sharpness: config.images.webpSharpness, filter: 0, autoFilter: false, lossless: false, nearLossless: 100, sns: 80 }) ))
+			   .pipe(gulpif( config.images.webp.convert, webp({method: config.images.webp.level,
+														   	   quality: config.images.webp.quality,
+														   	   alphaQuality: config.images.webp.alphaQuality,
+														   	   sharpness: config.images.webp.sharpness,
+														   	   filter: 0,
+														   	   autoFilter: false,
+														   	   lossless: false,
+														   	   nearLossless: 100,
+														   	   sns: 80})
+			   ))
+			   
 			   .pipe(gulp.dest( config.paths.build ));
 
 }
@@ -681,47 +696,48 @@ export function raster() {
 const svgminOptions = {
 	  addAttributesToSVGElement: true, // Adds attributes to an outer <svg> element (disabled by default).
 	  addClassesToSVGElement: true, // Add classnames to an outer <svg> element (disabled by default).
-	  cleanupAttrs: true, // Cleanup attributes from newlines, trailing, and repeating spaces.
-	  cleanupEnableBackground: true, // Remove or cleanup enable-background attribute when possible.
-	  cleanupIDs: true, // Remove unused and minify used IDs.
-	  cleanupListOfValues: true, // Round numeric values in attributes that take a list of numbers (like viewBox or enable-background).
-	  cleanupNumericValues: true, // Round numeric values to the fixed precision, remove default px units.
-	  collapseGroups: true, // Collapse useless groups.
+	  cleanupAttrs: config.images.svg.cleanup, // Cleanup attributes from newlines, trailing, and repeating spaces.
+	  cleanupEnableBackground: config.images.svg.cleanup, // Remove or cleanup enable-background attribute when possible.
+	  cleanupIDs: config.images.svg.cleanup, // Remove unused and minify used IDs.
+	  cleanupListOfValues: config.images.svg.cleanup, // Round numeric values in attributes that take a list of numbers (like viewBox or enable-background).
+	  cleanupNumericValues: config.images.svg.cleanup, // Round numeric values to the fixed precision, remove default px units.
+	  collapseGroups: config.images.svg.minify, // Collapse useless groups.
 	  convertColors: true, // Convert colors (from rgb() to #rrggbb, from #rrggbb to #rgb).
-	  convertPathData: true, // Convert Path data to relative or absolute (whichever is shorter), convert one segment to another, trim useless delimiters, smart rounding, and much more.
-	  convertShapeToPath: true, // Convert some basic shapes to <path>.
+	  convertPathData: config.images.svg.minify, // Convert Path data to relative or absolute (whichever is shorter), convert one segment to another, trim useless delimiters, smart rounding, and much more.
+	  convertShapeToPath: config.images.svg.minify, // Convert some basic shapes to <path>.
 	  convertStyleToAttrs: true, // Convert styles into attributes.
-	  convertTransform: true, // Collapse multiple transforms into one, convert matrices to the short aliases, and much more.
+	  convertTransform: config.images.svg.minify, // Collapse multiple transforms into one, convert matrices to the short aliases, and much more.
 
-	  inlineStyles: true, // Move and merge styles from <style> elements to element style attributes.	  removeComments: true, // Remove comments.
+	  inlineStyles: true, // Move and merge styles from <style> elements to element style attributes.
 	  
-	  mergePaths: true, // Merge multiple Paths into one.
-	  minifyStyles: true, // Minify <style> elements content with CSSO.
+	  mergePaths: config.images.svg.minify, // Merge multiple Paths into one.
+	  minifyStyles: config.images.svg.minify, // Minify <style> elements content with CSSO.
 	  moveElemsAttrsToGroup: true, // Move elements' attributes to their enclosing group.
 	  moveGroupAttrsToElems: true, // Move some group attributes to the contained elements.
 
 	  removeAttrs: true, // Remove attributes by pattern (disabled by default).
+	  removeComments: config.images.svg.minify, // Remove comments.
 	  removeDimensions: true, // Remove width/height attributes if viewBox is present (opposite to removeViewBox, disable it first) (disabled by default).
-	  removeDoctype: true, // Remove doctype declaration.
-	  removeDesc: true, // Remove <desc>.
-	  removeEditorsNSData: true, // Remove editors namespaces, elements, and attributes.
-	  removeElementsByAttr: true, // Remove arbitrary elements by ID or className (disabled by default).
+	  removeDoctype: config.images.svg.cleanup, // Remove doctype declaration.
+	  removeDesc: config.images.svg.cleanup, // Remove <desc>.
+	  removeEditorsNSData: config.images.svg.minify, // Remove editors namespaces, elements, and attributes.
+	  removeElementsByAttr: config.images.svg.minify, // Remove arbitrary elements by ID or className (disabled by default).
 
-	  removeEmptyAttrs: true, // Remove empty attributes.
-	  removeEmptyContainers: true, // Remove empty Container elements.
-	  removeEmptyText: true, // Remove empty Text elements.
-	  removeTitle: true, // Remove <title>.
-	  removeHiddenElems: true, // Remove hidden elements.
-	  removeMetadata: true, // Remove <metadata>.
-	  removeNonInheritableGroupAttrs: true, // Remove non-inheritable group's "presentation" attributes.
-	  removeRasterImages: false, // Remove raster images (disabled by default).
-	  removeScriptElement: true, // Remove <script> elements (disabled by default).
-	  removeStyleElement: true, // Remove <style> elements (disabled by default).
-	  removeUnknownsAndDefaults: true, // Remove unknown elements content and attributes, remove attrs with default values.
-	  removeUnusedNS: true, // Remove unused namespaces declaration.
-	  removeUselessDefs: true, // Remove elements of <defs> without id.
-	  removeUselessStrokeAndFill: true, // Remove useless stroke and fill attrs.
-	  removeViewBox: true, // Remove viewBox attribute when possible.
+	  removeEmptyAttrs: config.images.svg.cleanup, // Remove empty attributes.
+	  removeEmptyContainers: config.images.svg.cleanup, // Remove empty Container elements.
+	  removeEmptyText: config.images.svg.removeEmptyText, // Remove empty Text elements.
+	  removeTitle: config.images.svg.removeTitle, // Remove <title>.
+	  removeHiddenElems: config.images.svg.cleanup, // Remove hidden elements.
+	  removeMetadata: config.images.svg.removeMetadata, // Remove <metadata>.
+	  removeNonInheritableGroupAttrs: config.images.svg.minify, // Remove non-inheritable group's "presentation" attributes.
+	  removeRasterImages: config.images.svg.removeRaster, // Remove raster images (disabled by default).
+	  removeScriptElement: config.images.svg.removeScript, // Remove <script> elements (disabled by default).
+	  removeStyleElement: config.images.svg.removeStyle, // Remove <style> elements (disabled by default).
+	  removeUnknownsAndDefaults: config.images.svg.minify, // Remove unknown elements content and attributes, remove attrs with default values.
+	  removeUnusedNS: config.images.svg.cleanup, // Remove unused namespaces declaration.
+	  removeUselessDefs: config.images.svg.cleanup, // Remove elements of <defs> without id.
+	  removeUselessStrokeAndFill: config.images.svg.cleanup, // Remove useless stroke and fill attrs.
+	  removeViewBox: config.images.svg.removeViewBox, // Remove viewBox attribute when possible.
 	  removeXMLNS: false, // Removes xmlns attribute (for inline svg, disabled by default).
 	  removeXMLProcInst: true, // Remove XML processing instructions.
 
@@ -733,11 +749,63 @@ export function svg() {
 
 	console.log("Compressing svg assets...");
 
-	return gulp.src( config.paths.buil + "**/*.svg", {base: config.paths.build} )
+	return gulp.src( config.paths.build + "**/*.svg", {base: config.paths.build} )
 			   .pipe(svgmin(svgminOptions))
+			   .pipe(gulpif( config.images.svg.convert, svg2png() ))
 			   .pipe(gulp.dest(config.paths.build));
 
 }
+
+
+// SPRITE GENERATOR (BETA TESTING)
+export function sprite(done) {
+
+	console.log("Generating svg sprite sheet...");
+
+	//console.log( config.paths.build + config.images.paths + config.images.sprite.paths + root )
+
+	gulp.src( config.paths.build + config.images.paths + config.images.sprite.paths + "**/*.svg", {base: config.paths.build } )
+		.pipe(svgSprite({
+
+							mode: config.images.sprite.mode, // defs, sprite, symbols
+							common: config.images.sprite.class,
+							selector: "%f",
+							layout: config.images.sprite.layout,
+							padding: config.images.sprite.padding,
+							baseSize: 10,
+							svgId: "%f",
+
+							svg: { defs: config.images.sprite.mode + ".svg", sprite: config.images.sprite.mode + ".svg", symbols: config.images.sprite.mode + ".svg" },
+
+							cssFile: config.images.sprite.mode + ".css",
+							svgPath: "%f", // Path to be included in CSS.
+							pngPath: "%f", // Path to be included in CSS.
+
+							asyncTransforms: config.images.sprite.asyncTransforms,
+
+							preview: config.images.sprite.preview
+							//preview: { sprite: config.images.sprite.mode + ".html" }
+
+	   				   }
+	   	))
+
+	   	.pipe(gulpif( config.images.sprite.convert, svg2png() ))
+		.pipe(gulp.dest(config.paths.build + config.images.paths + config.images.sprite.paths))
+
+
+		.on("end", function() {
+
+
+
+
+		});
+
+
+
+	return done();
+
+}
+
 
 
 /* -------------------------------------------------- */
@@ -1592,11 +1660,11 @@ function completed(done) {
 /* -------------------------------------------------- */
 
 // TEST
-gulp.task("test", gulp.series(mode, clear, html, modals, vendors, js, css, move, meta, raster, svg, clean, sync));
+gulp.task("test", gulp.series(mode, clear, html, modals, vendors, js, css, move, meta, svg, raster, clean, sync));
 
 
 // BUILD
-gulp.task("build", gulp.series(clear, checkjs, checkcss, html, modals, vendors, js, css, hashscripts, move, meta, hashassets, raster, svg, analytics, robotstxt, sitemap, sw, clean, preview));
+gulp.task("build", gulp.series(clear, checkjs, checkcss, html, modals, vendors, js, css, hashscripts, move, meta, hashassets, svg, raster, analytics, robotstxt, sitemap, sw, clean, preview));
 
 
 // DEPLOY
@@ -1608,7 +1676,7 @@ gulp.task("deploy", gulp.series("build", deployinit, awsdeploy, gitdeploy, ftpde
 /* -------------------------------------------------- */
 
 // ASSETS
-gulp.task("images", gulp.series(move, assets, raster, svg, clean));
+gulp.task("images", gulp.series(move, assets, svg, raster, clean));
 
 
 // HTML / CSS / JS

@@ -5,18 +5,27 @@
 /* PARENT */
 .profile {
 	background-color: var(--white-color);
-	background-position: top center;
-	background-repeat: no-repeat;
-	background-size: contain;
 }
 
 
 /* CHILD */
 .profile .cell {
 	position: relative;
-	margin-top: 600px;
-	padding: var(--gutter-lg);
-	background-color: var(--white-color);
+}
+
+
+/* IMAGE */
+.profile #photo {
+	
+}
+
+
+/* DESCRIPTION */
+.profile #description {
+	/*
+	padding-left: var(--gutter-single-lg);
+	padding-right: var(--gutter-single-lg);
+	*/
 }
 
 
@@ -47,8 +56,7 @@
 
 	/* CHILD */
 	.profile .cell {
-		margin-top: 500px;
-		padding: var(--gutter-md);
+
 	}
 
 }

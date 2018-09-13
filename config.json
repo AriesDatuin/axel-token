@@ -9,6 +9,26 @@
 		"previewURL": "index.html"
 	},
 
+	"paths": {
+		"source": "source/",
+		"build": "build/"
+	},
+
+	"ga": {
+		"track": true,
+		"url": "axeltoken.com",
+		"uid": "UA-92957315-1",
+		"anonymizeIp": true,
+		"bounceTime": "",
+		"demographics": true,
+		"linkAttribution": false,
+		"minify": true,
+		"nonceTag": false,
+		"require": "urlChangeTracker",
+		"sendPageView": true,
+		"tagPlacement": "head"
+	},
+
 	"robots": {
 		"useragent": "*",
 		"allow": [""],
@@ -27,25 +47,49 @@
 			"suffix": ""
 		}
 	},
-	
-	"paths": {
-		"source": "source/",
-		"build": "build/"
-	},
-	
-	"ga": {
-		"track": true,
-		"url": "axeltoken.com",
-		"uid": "UA-92957315-1",
-		"anonymizeIp": true,
-		"bounceTime": "",
-		"demographics": true,
-		"linkAttribution": false,
-		"minify": true,
-		"nonceTag": false,
-		"require": "urlChangeTracker",
-		"sendPageView": true,
-		"tagPlacement": "head"
+
+	"images": {
+		"paths": "assets/",
+
+		"raster": {
+			"level": 5,
+			"interlaced": true,
+			"progressive": true
+		},
+
+		"sprite": {
+			"paths": "sprites/",
+			"convert": false,
+			"mode": "sprite",
+			"class": "sprite-wrapper",
+			"selector": "sprite",
+			"layout": "vertical",
+			"padding": 0,
+			"asyncTransforms": false,
+			"preview": false
+		},
+
+		"svg": {
+			"convert": false,
+			"cleanup": true,
+			"minify": true,
+			"removeEmptyText": true,
+			"removeMetadata": true,
+			"removeTitle": true,
+			"removeRaster": true,
+			"removeScript": true,
+			"removeStyle": true,
+			"removeViewBox": true
+		},
+
+		"webp": {
+			"convert": true,
+			"level": 0,
+			"quality": 100,
+			"alphaQuality": 100,
+			"sharpness": 0
+		}
+
 	},
 
 	"optimizations": {
@@ -54,22 +98,7 @@
 		"flexbox": true,
 		"grid" : true
 	},
-	
-	"images": {
-		"paths": "assets/",
-		"optimizationLevel": 5,
-		"interlaced": true,
-		"progressive": true,
-		"svgViewbox": true,
-		"svgCleanup": false,
-		"webp": true,
-		"webpOptimizationLevel": 0,
-		"webpQuality": 100,
-		"webpAlphaQuality": 100,
-		"webpSharpness": 0,
-		"versioning": true
-	},
-	
+
 	"html": {
 		"paths": "_pages/**/*.{html,hbs,handlebars}",
 		
@@ -84,8 +113,11 @@
 			"output": "modals/"
 		},
 		
-		"scripts": "_scripts/*.js",
-		"critical": "css/critical.css"
+		"inlineScripts": {
+			"js": ["_scripts/*.js"],
+			"css": ["css/critical.css"],
+			"minify": true
+		}
 	},
 
 	"scripts": {
@@ -93,12 +125,11 @@
 	},
 	
 	"vendors": {
+		"paths": ["_vendors/*.js"],
 		"useVendorScripts": false,
 		"bundle": "vendors.js",
 		"lint": false,
-		"jsAttribute": "async",
-
-		"paths": ["_vendors/*.js"]
+		"jsAttribute": "async"
 	},
 
 	"js": {
@@ -332,7 +363,7 @@
 				 ]
 	
 	},
-	
+
 	"sync": {
 		"notify": true,
 

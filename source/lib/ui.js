@@ -66,8 +66,10 @@ var uiInit = function() {
     
     navPanelMenubar.css({"height" : $navbarHeight});
 
+    /*
 	main.css({"width" : "100%",
               "max-width" : $mainWidth});
+	*/
 	
 	
 	/* -------------------------------------------------- */

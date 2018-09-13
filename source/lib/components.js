@@ -379,15 +379,15 @@ var comModal = function() {
 
 		var uiModal = "";
 
-			uiModal += "<div class='modal grid-x align-center align-middle'>"; // MODAL
+			uiModal += "<div class='modal'>"; // MODAL
 
-				uiModal += "<div class='modal-close close dark margin-sm round-full'><span></span><span></span></div>"; // BUTTON: CLOSE
+				uiModal += "<div class='modal-close close dark margin-sm round-full z-01'><span></span><span></span></div>"; // BUTTON: CLOSE
 
-				uiModal += "<div id='modal-preloader' class='center-vh padding-xs round-sm text-secondary text-center background-white box-shadow-xl z-01'> <span class='fa fa-circle-o-notch fa-spin p4' aria-hidden='true'></span> <p>Loading...</p> </div>" // PRELOADER
+				uiModal += "<div id='modal-preloader' class='center-vh padding-xs round-sm text-secondary text-center background-white z-01'> <span class='fa fa-circle-o-notch fa-spin p4' aria-hidden='true'></span> <p>Loading...</p> </div>" // PRELOADER
 
-				uiModal += "<div class='modal-container cell align-self-top'></div>" // CONTAINER
+				uiModal += "<div class='modal-container'></div>" // CONTAINER
 
-				uiModal += "<a class='modal-close cell align-self-bottom padding-tb-md center-element p11 text-secondary text-charcoal-hover text-bold text-uppercase button button-width-full background-white background-white-hover no-touch-feedback prevent-default hide z-auto'><i class='fa fa-times-circle margin-right-xs'></i>Close</a>"; // BUTTON: CLOSE
+				uiModal += "<a class='modal-close padding-tb-md center-element p11 text-secondary text-charcoal-hover text-bold text-uppercase button button-width-full background-white background-white-hover no-touch-feedback prevent-default hide z-auto'><i class='fa fa-times-circle margin-right-xs'></i>Close</a>"; // BUTTON: CLOSE
 
 			uiModal += "</div>"; // MODAL
 	
@@ -427,13 +427,13 @@ var comModal = function() {
 
 															   if ( status == "success" ) {
 
-																   //utilAssetObserver();
+																   utilAssetObserver();
 																 
 																   //console.log( modalContentURL + modalContentSelector);
 
 																   //TweenMax.set( $$(".modal"), { maxWidth: $$(".modal-container").children().width() } );
 
-																   TweenMax.to( $$("#modal-preloader"), 0.25, {display: "none", opacity: 0, scale: 0.75, delay: 0, ease: Expo.easeInOut});
+																   TweenMax.to( $$("#modal-preloader"), 0.5, {display: "none", opacity: 0, scale: 0.75, delay: 0, ease: Expo.easeInOut});
 
 																   $$(".modal-close").not(".close").removeClass("hide");
 
