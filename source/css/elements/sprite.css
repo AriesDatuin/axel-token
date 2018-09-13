@@ -1,0 +1,146 @@
+.sprite-wrapper {
+    font-size: 10px;
+}
+
+.sprite-wrapper:before {
+    content:' ';
+    vertical-align:middle;
+    display: inline-block;
+    background-image: url("../assets/sprites/sprite.svg");
+    background-repeat: no-repeat;
+    background-size: 25em 425em;
+}
+
+.no-svg .sprite-wrapper:before {
+    background-image: url("../assets/sprites/sprite.png");
+}
+
+
+
+  .sprite-wrapper.bitcoin-exchange-guide:before {
+      background-position: 0em 0em;
+      width: 25em;
+      height: 25em;
+  }
+
+
+
+
+  .sprite-wrapper.bitcoininst:before {
+      background-position: 0em -25em;
+      width: 25em;
+      height: 25em;
+  }
+
+
+
+
+  .sprite-wrapper.ccn:before {
+      background-position: 0em -50em;
+      width: 25em;
+      height: 25em;
+  }
+
+
+
+
+  .sprite-wrapper.coin-announcer:before {
+      background-position: 0em -75em;
+      width: 25em;
+      height: 25em;
+  }
+
+
+
+
+  .sprite-wrapper.crains:before {
+      background-position: 0em -100em;
+      width: 25em;
+      height: 25em;
+  }
+
+
+
+
+  .sprite-wrapper.e27:before {
+      background-position: 0em -125em;
+      width: 25em;
+      height: 25em;
+  }
+
+
+
+
+  .sprite-wrapper.forbes:before {
+      background-position: 0em -150em;
+      width: 25em;
+      height: 25em;
+  }
+
+
+
+
+  .sprite-wrapper.las-vegas-business-press:before {
+      background-position: 0em -175em;
+      width: 25em;
+      height: 25em;
+  }
+
+
+
+
+  .sprite-wrapper.pcmag:before {
+      background-position: 0em -200em;
+      width: 25em;
+      height: 25em;
+  }
+
+
+
+
+  .sprite-wrapper.popular-mechanics:before {
+      background-position: 0em -225em;
+      width: 25em;
+      height: 25em;
+  }
+
+
+
+
+  .sprite-wrapper.sprite:before {
+      background-position: 0em -250em;
+      width: 5.88235294117647em;
+      height: 100em;
+  }
+
+
+
+
+  .sprite-wrapper.tech-bullion:before {
+      background-position: 0em -350em;
+      width: 25em;
+      height: 25em;
+  }
+
+
+
+
+  .sprite-wrapper.techaeris:before {
+      background-position: 0em -375em;
+      width: 25em;
+      height: 25em;
+  }
+
+
+
+
+  .sprite-wrapper.vegastech:before {
+      background-position: 0em -400em;
+      width: 25em;
+      height: 25em;
+  }
+
+
+
+
+
