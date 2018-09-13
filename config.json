@@ -27,6 +27,7 @@
 		"require": "urlChangeTracker",
 		"sendPageView": true,
 		"tagPlacement": "head"
+<<<<<<< HEAD
 	},
 
 	"robots": {
@@ -90,6 +91,27 @@
 			"sharpness": 0
 		}
 
+=======
+>>>>>>> 9bfed6125ff34923ea6c61ddd27791972b6232d3
+	},
+
+	"robots": {
+		"useragent": "*",
+		"allow": [""],
+		"disallow": ["/assets/", "/cgi-bin/", "/downloads/", "/fonts/", "/modals/", "/scripts/"]
+	},
+
+	"versioning": {
+		"scripts": {
+			"allow": true,
+			"prefix": ".",
+			"suffix": ".min"
+		},
+		"images": {
+			"allow": false,
+			"prefix": ".",
+			"suffix": ""
+		}
 	},
 
 	"optimizations": {
@@ -99,6 +121,67 @@
 		"grid" : true
 	},
 
+<<<<<<< HEAD
+=======
+	"images": {
+		"paths": "assets/",
+
+		"raster": {
+			"level": 5,
+			"interlaced": true,
+			"progressive": true
+		},
+
+		"sprite": {
+			"paths": "sprites/",
+			"convert": false,
+			"mode": "sprite",
+			"layout": "vertical",
+			"class": "test",
+			"selector": "sprite",
+
+			"cssFile": "sprite.css",
+			"svgPath": "/",
+			"pngPath": "/",
+
+			"svg": {
+				"defs": "defs.svg",
+				"sprite": "sprite.svg",
+				"symbols": "symbols.svg"
+			},
+
+			"preview": {
+				"allow": true,
+				"defs": "defs.html",
+				"sprite": "sprite.html",
+				"symbols": "symbols.html"
+			}
+		},
+
+		"svg": {
+			"convert": false,
+			"cleanup": true,
+			"minify": true,
+			"removeEmptyText": true,
+			"removeMetadata": true,
+			"removeTitle": true,
+			"removeRaster": true,
+			"removeScript": true,
+			"removeStyle": true,
+			"removeViewBox": true
+		},
+
+		"webp": {
+			"convert": true,
+			"level": 0,
+			"quality": 100,
+			"alphaQuality": 100,
+			"sharpness": 0
+		}
+
+	},
+	
+>>>>>>> 9bfed6125ff34923ea6c61ddd27791972b6232d3
 	"html": {
 		"paths": "_pages/**/*.{html,hbs,handlebars}",
 		
@@ -115,8 +198,12 @@
 		
 		"inlineScripts": {
 			"js": ["_scripts/*.js"],
+<<<<<<< HEAD
 			"css": ["css/critical.css"],
 			"minify": true
+=======
+			"css": ["css/critical.css"]
+>>>>>>> 9bfed6125ff34923ea6c61ddd27791972b6232d3
 		}
 	},
 

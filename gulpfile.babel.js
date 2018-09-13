@@ -757,6 +757,7 @@ export function svg() {
 }
 
 
+<<<<<<< HEAD
 // SPRITE GENERATOR (BETA TESTING)
 export function sprite(done) {
 
@@ -803,6 +804,28 @@ export function sprite(done) {
 
 
 	return done();
+=======
+// SPRITE GENERATOR
+export function sprite() {
+
+	console.log("Generating svg sprite sheet...");
+
+	return gulp.src( config.paths.build + config.images.paths + config.images.sprite.paths + "**/*.svg", {base: config.paths.build} )
+			   .pipe(svgSprite({mode: config.images.sprite.mode,
+			   					layout: config.images.sprite.layout,
+			   					common: config.images.sprite.class,
+			   					selector: config.images.sprite.selector + "-%f",
+
+			   					cssFile: config.images.sprite.css,
+			   					svgPath: config.paths.build + config.images.sprite.paths,
+			   					pngPath: config.paths.build + config.images.sprite.paths,
+
+			   					preview: config.images.sprite.preview.allow
+			   				   }
+			   	))
+			   .pipe(gulpif( config.images.sprite.convert, svg2png() ))
+			   .pipe(gulp.dest(config.paths.build + config.images.paths + config.images.sprite.paths));
+>>>>>>> 9bfed6125ff34923ea6c61ddd27791972b6232d3
 
 }
 

@@ -320,7 +320,11 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/stories/gamepad.svg",
+<<<<<<< HEAD
     "revision": "f3fe72239405dc77fa13f36f4efd7e31"
+=======
+    "revision": "d8e383b7707895875623755918aba111"
+>>>>>>> 9bfed6125ff34923ea6c61ddd27791972b6232d3
   },
   {
     "url": "assets/stories/large-josh.png",
@@ -564,7 +568,11 @@ self.__precacheManifest = [
   },
   {
     "url": "error.html",
+<<<<<<< HEAD
     "revision": "cb58bbe87fef648882b747af0797811f"
+=======
+    "revision": "5ce1a0070899833e67996eed622eb751"
+>>>>>>> 9bfed6125ff34923ea6c61ddd27791972b6232d3
   },
   {
     "url": "fonts/fontawesome-webfont.eot",
@@ -596,7 +604,11 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
+<<<<<<< HEAD
     "revision": "b7050f8cd0738d90c89b8607d559d42b"
+=======
+    "revision": "076fcb46491ef7cacfc41d507f79324b"
+>>>>>>> 9bfed6125ff34923ea6c61ddd27791972b6232d3
   },
   {
     "url": "modals/press.html",
@@ -623,8 +635,13 @@ self.__precacheManifest = [
     "revision": "1e327d5b846a321ab0e50728446ee95e"
   },
   {
+<<<<<<< HEAD
     "url": "scripts/app.3b94b143a2.min.js",
     "revision": "3b94b143a2de80fd0c534e923e590139"
+=======
+    "url": "scripts/app.dddad03854.min.js",
+    "revision": "dddad038545df903406aa2e8d291b122"
+>>>>>>> 9bfed6125ff34923ea6c61ddd27791972b6232d3
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();

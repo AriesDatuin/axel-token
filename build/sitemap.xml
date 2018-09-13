@@ -2,10 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://axeltoken.com/error.html</loc>
+<<<<<<< HEAD
         <lastmod>2018-09-12T23:54:51.485Z</lastmod>
     </url>
     <url>
         <loc>https://axeltoken.com/</loc>
         <lastmod>2018-09-12T23:54:51.486Z</lastmod>
+=======
+        <lastmod>2018-09-12T03:40:38.510Z</lastmod>
+    </url>
+    <url>
+        <loc>https://axeltoken.com/</loc>
+        <lastmod>2018-09-12T03:40:38.512Z</lastmod>
+>>>>>>> 9bfed6125ff34923ea6c61ddd27791972b6232d3
     </url>
 </urlset>
