@@ -757,15 +757,13 @@ export function svg() {
 }
 
 
-<<<<<<< HEAD
 // SPRITE GENERATOR (BETA TESTING)
 export function sprite(done) {
 
 	console.log("Generating svg sprite sheet...");
 
-	//console.log( config.paths.build + config.images.paths + config.images.sprite.paths + root )
 
-	gulp.src( config.paths.build + config.images.paths + config.images.sprite.paths + "**/*.svg", {base: config.paths.build } )
+	gulp.src( config.paths.source + config.images.paths + config.images.sprite.paths + "**/*.svg", {base: config.paths.source} )
 		.pipe(svgSprite({
 
 							mode: config.images.sprite.mode, // defs, sprite, symbols
@@ -779,8 +777,8 @@ export function sprite(done) {
 							svg: { defs: config.images.sprite.mode + ".svg", sprite: config.images.sprite.mode + ".svg", symbols: config.images.sprite.mode + ".svg" },
 
 							cssFile: config.images.sprite.mode + ".css",
-							svgPath: "%f", // Path to be included in CSS.
-							pngPath: "%f", // Path to be included in CSS.
+							svgPath: "../" + config.images.paths + config.images.sprite.paths + "%f", // Path to be included in CSS.
+							pngPath: "../" + config.images.paths + config.images.sprite.paths + "%f", // Path to be included in CSS.
 
 							asyncTransforms: config.images.sprite.asyncTransforms,
 
@@ -791,12 +789,31 @@ export function sprite(done) {
 	   	))
 
 	   	.pipe(gulpif( config.images.sprite.convert, svg2png() ))
-		.pipe(gulp.dest(config.paths.build + config.images.paths + config.images.sprite.paths))
+		.pipe(gulp.dest(config.paths.source + config.images.paths + config.images.sprite.paths))
 
 
 		.on("end", function() {
 
 
+			// Move 'sprite.css' to 'scripts/' folder.
+			gulp.src( config.paths.source + config.images.paths + config.images.sprite.paths + config.images.sprite.mode + ".css" )
+				.pipe(gulp.dest(config.paths.source + "css/elements/"));
+
+
+			// Move 'sprite.html' to 'scripts/' folder.
+			/*
+			gulp.src( config.paths.source + config.images.paths + config.images.sprite.paths + config.images.sprite.mode + ".html" )
+				.pipe(gulp.dest(config.paths.source + "css/elements"))
+				.pipe(gulpif( config.images.sprite.preview, open() ));
+			*/
+
+
+			// Delete unnecessary files.
+			console.log("Deleting unnecessary files in: " + config.paths.build + config.images.paths + config.images.sprite.paths);
+
+			del([config.paths.source + config.images.paths + config.images.sprite.paths + config.images.sprite.mode + ".css",
+				 //config.paths.source + config.images.paths + config.images.sprite.paths + config.images.sprite.mode + ".html"
+				]);
 
 
 		});
@@ -804,28 +821,6 @@ export function sprite(done) {
 
 
 	return done();
-=======
-// SPRITE GENERATOR
-export function sprite() {
-
-	console.log("Generating svg sprite sheet...");
-
-	return gulp.src( config.paths.build + config.images.paths + config.images.sprite.paths + "**/*.svg", {base: config.paths.build} )
-			   .pipe(svgSprite({mode: config.images.sprite.mode,
-			   					layout: config.images.sprite.layout,
-			   					common: config.images.sprite.class,
-			   					selector: config.images.sprite.selector + "-%f",
-
-			   					cssFile: config.images.sprite.css,
-			   					svgPath: config.paths.build + config.images.sprite.paths,
-			   					pngPath: config.paths.build + config.images.sprite.paths,
-
-			   					preview: config.images.sprite.preview.allow
-			   				   }
-			   	))
-			   .pipe(gulpif( config.images.sprite.convert, svg2png() ))
-			   .pipe(gulp.dest(config.paths.build + config.images.paths + config.images.sprite.paths));
->>>>>>> 9bfed6125ff34923ea6c61ddd27791972b6232d3
 
 }
 
@@ -1683,11 +1678,11 @@ function completed(done) {
 /* -------------------------------------------------- */
 
 // TEST
-gulp.task("test", gulp.series(mode, clear, html, modals, vendors, js, css, move, meta, svg, raster, clean, sync));
+gulp.task("test", gulp.series(mode, clear, html, modals, vendors, js, css, sprite, move, meta, svg, raster, clean, sync));
 
 
 // BUILD
-gulp.task("build", gulp.series(clear, checkjs, checkcss, html, modals, vendors, js, css, hashscripts, move, meta, hashassets, svg, raster, analytics, robotstxt, sitemap, sw, clean, preview));
+gulp.task("build", gulp.series(clear, checkjs, checkcss, html, modals, vendors, js, css, hashscripts, sprite, move, meta, hashassets, svg, raster, analytics, robotstxt, sitemap, sw, clean, preview));
 
 
 // DEPLOY
@@ -1699,8 +1694,8 @@ gulp.task("deploy", gulp.series("build", deployinit, awsdeploy, gitdeploy, ftpde
 /* -------------------------------------------------- */
 
 // ASSETS
-gulp.task("images", gulp.series(move, assets, svg, raster, clean));
+gulp.task("images", gulp.series(sprite, move, assets, svg, raster, clean));
 
 
 // HTML / CSS / JS
-gulp.task("htmlscripts", gulp.series(checkjs, checkcss, html, modals, vendors, js, css, hashscripts, move, meta, analytics, sitemap, sw, clean, preview));
+gulp.task("htmlscripts", gulp.series(checkjs, checkcss, html, modals, vendors, js, css, hashscripts, sprite, move, meta, analytics, sitemap, sw, clean, preview));

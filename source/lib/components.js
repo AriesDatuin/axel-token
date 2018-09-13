@@ -310,13 +310,14 @@ var comModal = function() {
 			if ( !$$(html).hasClass("blocker-active") ) {
 
 				TweenMax.to( $$(".blocker"), 0.25, {display: "block", opacity: 1, ease: Power4.easeIn,
+
 												   onStart: function() {
 														  
 													   disableContent();
 													   $$(html).addClass("blocker-active");
-													   $$(body).addClass("is-off-canvas-open");
+													   //$$(body).addClass("is-off-canvas-open");
 													   $$(".blocker").addClass("no-pointer");
-														  
+
 												   },
 
 												   onComplete: function() {
@@ -328,12 +329,13 @@ var comModal = function() {
 
 			} else {
 
-				TweenMax.to( $$(".blocker"), 1, {display: "none", opacity: 0, delay: 0.25, ease: Power4.easeOut,
+				TweenMax.to( $$(".blocker"), 0.5, {display: "none", opacity: 0, delay: 0.25, ease: Power4.easeOut,
+
 												onStart: function() {
 														 
 													enableContent();
 													$$(html).removeClass("blocker-active");
-													$$(body).removeClass("is-off-canvas-open");
+													//$$(body).removeClass("is-off-canvas-open");
 													$$(".blocker").addClass("no-pointer");
 														 
 												}
@@ -417,8 +419,16 @@ var comModal = function() {
 
 															
 														   $$(html).addClass("no-pointer");
-														   
-														   
+
+
+														   // Disable scrolling on mobile touch devices.
+														   //var targetElement = $$(".modal");
+														   //bodyScrollLock.disableBodyScroll(targetElement);
+														   bodyScrollLock.disableBodyScroll(document.querySelector(".modal"));
+														   //bodyScrollLock.enableBodyScroll(targetElement, BodyScrollOptions = {reserveScrollBarGap: true});
+														   //bodyScrollLock.clearAllBodyScrollLocks();
+
+
 														   $$(".modal-container").load(modalContentURL + modalContentSelector, function ( response, status, xhr ) {
 
 															   // PRELOADER
@@ -470,6 +480,8 @@ var comModal = function() {
 														onStart: function() {
 
 															$$(".modal").removeClass("open");
+
+															bodyScrollLock.enableBodyScroll(".modal", BodyScrollOptions = {reserveScrollBarGap: true});
 
 														},
 

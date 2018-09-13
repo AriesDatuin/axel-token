@@ -311,6 +311,10 @@ self.__precacheManifest = [
     "revision": "9e9868ed1b0be53da83c58cc33a1c010"
   },
   {
+    "url": "assets/sprites/sprite.svg",
+    "revision": "76f0f37e619a17be885da476cd205a9a"
+  },
+  {
     "url": "assets/stories/acoustic-guitar.svg",
     "revision": "a3851367efca76fb954d18b0aa9400be"
   },
@@ -320,11 +324,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/stories/gamepad.svg",
-<<<<<<< HEAD
     "revision": "f3fe72239405dc77fa13f36f4efd7e31"
-=======
-    "revision": "d8e383b7707895875623755918aba111"
->>>>>>> 9bfed6125ff34923ea6c61ddd27791972b6232d3
   },
   {
     "url": "assets/stories/large-josh.png",
@@ -568,11 +568,7 @@ self.__precacheManifest = [
   },
   {
     "url": "error.html",
-<<<<<<< HEAD
-    "revision": "cb58bbe87fef648882b747af0797811f"
-=======
-    "revision": "5ce1a0070899833e67996eed622eb751"
->>>>>>> 9bfed6125ff34923ea6c61ddd27791972b6232d3
+    "revision": "b16fb3bec8b96c71c2c2d9ccd2b71209"
   },
   {
     "url": "fonts/fontawesome-webfont.eot",
@@ -604,11 +600,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-<<<<<<< HEAD
-    "revision": "b7050f8cd0738d90c89b8607d559d42b"
-=======
-    "revision": "076fcb46491ef7cacfc41d507f79324b"
->>>>>>> 9bfed6125ff34923ea6c61ddd27791972b6232d3
+    "revision": "ba59fd4e5195fe59588bda9714ed60a1"
   },
   {
     "url": "modals/press.html",
@@ -631,17 +623,12 @@ self.__precacheManifest = [
     "revision": "eee44946103f4ca112b840d425211a5e"
   },
   {
-    "url": "scripts/app.1e327d5b84.min.css",
-    "revision": "1e327d5b846a321ab0e50728446ee95e"
+    "url": "scripts/app.3d82458592.min.js",
+    "revision": "3d82458592bebdffb9c79b1a725a5c3d"
   },
   {
-<<<<<<< HEAD
-    "url": "scripts/app.3b94b143a2.min.js",
-    "revision": "3b94b143a2de80fd0c534e923e590139"
-=======
-    "url": "scripts/app.dddad03854.min.js",
-    "revision": "dddad038545df903406aa2e8d291b122"
->>>>>>> 9bfed6125ff34923ea6c61ddd27791972b6232d3
+    "url": "scripts/app.cbcae5bcf2.min.css",
+    "revision": "cbcae5bcf2cc514a9de2d13dfc7a47d5"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();

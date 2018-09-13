@@ -1716,7 +1716,7 @@
 		position: absolute;
 		top: 50%;
 
-		transform: translateY(-50%);
+		transform: translate3d(0,-50%,0);
 	}
 
 	.center-vh-mobile {
@@ -1724,14 +1724,14 @@
 		top: 50%;
 		left: 50%;	
 
-		transform: translate(-50%,-50%);
+		transform: translate3d(-50%,-50%,0);
 	}
     
 	.center-v-clear-mobile {
 		position: relative;
 		top: auto;
 
-		transform: translateY(0);
+		transform: translate3d(0,0,0);
 	}
     
 	.center-vh-clear-mobile {
@@ -1739,7 +1739,7 @@
 		top: auto;
 		left: 50%;	
 
-		transform: translate(-50%,0);
+		transform: translate3d(-50%,0,0);
 	}
 
 	
@@ -3984,7 +3984,7 @@
 		position: absolute;
 		top: 50%;
 
-		transform: translateY(-50%);
+		transform: translate3d(0,-50%,0);
 	}
 
 	.center-vh-tablet {
@@ -3992,14 +3992,14 @@
 		top: 50%;
 		left: 50%;	
 
-		transform: translate(-50%,-50%);
+		transform: translate3d(-50%,-50%,0);
 	}
     
 	.center-v-clear-tablet {
 		position: relative;
 		top: auto;
 
-		transform: translateY(0);
+		transform: translate3d(0,0,0);
 	}
     
 	.center-vh-clear-tablet {
@@ -4007,7 +4007,7 @@
 		top: auto;
 		left: 50%;	
 
-		transform: translate(-50%,0);
+		transform: translate3d(-50%,0,0);
 	}
 
 	

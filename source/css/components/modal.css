@@ -16,20 +16,20 @@
 	height: auto;
 	max-width: 600px;
 
-	background-color: #fff;
-	border-radius: 10px 10px 10px 10px;
+	background-color: var(--white-color);
+	border-radius: var(--radius-md);
 
 	box-shadow: var(--box-shadow-xl);
 
-	transform: translate3d(-50%,-50%,0) scale(1) translateZ(0);
+	transform: translate3d(-50%,-50%,0) scale(1);
 
 	z-index: 99;
 
-	-webkit-overflow-scrolling: touch;
+	/*-webkit-overflow-scrolling: touch;*/
 
 	/* Force GPU Rendering */
 	/*backface-visibility: hidden;*/
-	perspective: 1000;
+	/*perspective: 1000;*/
 
 	transition: var(--ease-fast);
 }
@@ -53,9 +53,8 @@
 @media screen and (min-width: 0) and (max-width: 1023px) and (min-height: 0) and (max-height: 1023px) {
 
 	.modal {
-		margin: 0 0 0 0;
-		height: 100% !important;
-		max-width: 100% !important;
+		height: 100%;
+		max-width: 100%;
 		border-radius: 0;
 	}
 

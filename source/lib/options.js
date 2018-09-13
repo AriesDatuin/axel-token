@@ -75,8 +75,6 @@ $showPrivacyPolicy = true,
 
 
 // ELEMENT SIZING
-$mainWidth = "100%",
-
 $navbarWidth = "100%",
 $navbarHeight = "75px",
 $navbarShrinkHeight = "60px",
