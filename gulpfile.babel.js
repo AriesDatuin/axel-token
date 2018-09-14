@@ -19,7 +19,6 @@ import hubRegistry from "gulp-hub"; // Register tasks.
 
 
 // MODULES
-import autoprefixer from "gulp-autoprefixer"; // Include vedor-specific CSS prefixes in style sheet files.
 import awsPublish from "gulp-awspublish"; // Push files to AWS S3 Bucket.
 import awsSDK from "aws-sdk"; // Official AWS SDK for JavaScript, available for browsers and mobile devices, or Node.js backends.
 import babel from "gulp-babel"; // JavaScript converter and compiler.
@@ -50,7 +49,12 @@ import open from "gulp-open"; // Access and open files in a browser.
 import path from "path"; // Resolves pathing issues.
 import panini from "panini"; // Foundation Handlebars templating engine.
 import postcss from "gulp-postcss"; // CSS Pre and post processer.
-import postcssvariables from "postcss-css-variables"; // Plugin to process CSS variables.
+import postcssAutoprefixer from "autoprefixer"; // Adds vendor prefixes using data from Can I Use.
+import postcssCalc from "postcss-calc"; // Reduces calc() references whenever possible.
+import postcssCombineDuplicatedSelectors from "postcss-combine-duplicated-selectors"; // Combine similar CSS selectors.
+import postcssMQPacker from "css-mqpacker"; // Combine (pack) similar media query rules.
+import postcssVariables from "postcss-css-variables"; // Process CSS variables.
+import postcssZIndex from "postcss-zindex"; // Reduce z-index values without compromising integrity of stack order and layout.
 import prompt from "gulp-prompt"; // Allow user inputs.
 import purgecss from "gulp-purgecss"; // Removes unused CSS in production files. *Note: This will enable ':hover' states on touch devices.
 import purgeHtml from "purgecss-from-html" // Removes unused CSS in production files. *Note: This will enable ':hover' states on touch devices.
@@ -440,21 +444,19 @@ export function vendors() {
 /* -------------------------------------------------- */
 
 // OPTIONS *Note: Leave as-is. These are the recommended values.
-const plugins = [//autoprefixer({browsers: ['last 1 version']}),
-				 postcssvariables({preserve: false, preserveInjectedVariables: false})
+const plugins = [postcssAutoprefixer({ cascade: false, support: config.optimizations.support, flexbox: config.optimizations.flexbox, grid: config.optimizations.grid }),
+				 postcssCalc({ mediaQueries: false, precision: 5, preserve: false, selectors: false, warnWhenCannotResolve: false }),
+				 postcssCombineDuplicatedSelectors({ removeDuplicatedProperties: true }),
+				 postcssMQPacker(),
+				 postcssVariables({ preserve: false, preserveInjectedVariables: false }),
+				 postcssZIndex(),
 				];
 
 
 const purgeCSSOptions = {
-						 content: [config.paths.build + "**/*.{html,php}",
-								   config.paths.build + "**/*.js"],
-						 css: [config.paths.build + "**/*.css"]
-	  },
-	  autoPrefixCSSOptions = {
-	  						  cascade: false,
-							  browsers: config.optimizations.support,
-							  flexbox: config.optimizations.flexbox,
-							  grid: config.optimizations.grid
+		content: [config.paths.build + "**/*.{html,php}",
+				  config.paths.build + "**/*.js"],
+		css: [config.paths.build + "**/*.css"]
 	  };
 
 
@@ -482,7 +484,7 @@ const cleanCSSOptions = {
 					skipProperties: [] // Controls which properties won't be optimized, defaults to '[]' which means all will be optimized (since 4.1.0).
 				}
 		}
-};
+	 };
 
 
 // MAIN
@@ -496,7 +498,7 @@ export function css() {
 			   .pipe(concat(config.css.bundle, {rebaseUrls: false}))
 			   .pipe(postcss(plugins))
 			   .pipe(gulpif( production, purgecss(purgeCSSOptions) ))
-			   .pipe(gulpif( config.optimizations.autoprefix, autoprefixer(autoPrefixCSSOptions) ))
+			   //.pipe(gulpif( config.optimizations.autoprefix, autoprefixer(autoPrefixCSSOptions) ))
 			   .pipe(gulpif( production, cleanCSS(cleanCSSOptions) ))
 			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.write("maps") ))
 			   .pipe(gulp.dest( config.paths.build + config.scripts.output ))
@@ -811,7 +813,8 @@ export function sprite(done) {
 			// Delete unnecessary files.
 			console.log("Deleting unnecessary files in: " + config.paths.build + config.images.paths + config.images.sprite.paths);
 
-			del([config.paths.source + config.images.paths + config.images.sprite.paths + config.images.sprite.mode + ".css",
+			del([//config.paths.source + config.images.paths + config.images.sprite.paths + config.images.sprite.mode + ".css",
+				 //config.paths.source + config.images.paths + config.images.sprite.paths + config.images.sprite.mode + ".svg",
 				 //config.paths.source + config.images.paths + config.images.sprite.paths + config.images.sprite.mode + ".html"
 				]);
 
@@ -825,7 +828,6 @@ export function sprite(done) {
 }
 
 
-
 /* -------------------------------------------------- */
 /* CLEAN BUILD FOLDER
 /* -------------------------------------------------- */
@@ -837,6 +839,9 @@ export function clear() {
 	console.log("Cleaning " + config.paths.build + " folder...");
 	
 	return del([revFile,
+				config.paths.source + "css/elements/" + config.images.sprite.mode + ".css",
+				config.paths.source + config.images.paths + config.images.sprite.paths + config.images.sprite.mode + ".css",
+				config.paths.source + config.images.paths + config.images.sprite.paths + config.images.sprite.mode + ".svg",
 				config.paths.source + "css/sorted",
 				config.paths.build + "**/*",
 				config.paths.build + ".htaccess"]);
@@ -851,6 +856,9 @@ export function clean() {
 	console.log("Cleaning " + config.paths.build + " folder...");
 
 	return del([revFile,
+				config.paths.source + "css/elements/" + config.images.sprite.mode + ".css",
+				config.paths.source + config.images.paths + config.images.sprite.paths + config.images.sprite.mode + ".css",
+				config.paths.source + config.images.paths + config.images.sprite.paths + config.images.sprite.mode + ".svg",
 		 		config.paths.build + "fonts/**/*.css",
 		 		config.paths.build + "fonts/fonts.list"]);
 
@@ -1678,11 +1686,11 @@ function completed(done) {
 /* -------------------------------------------------- */
 
 // TEST
-gulp.task("test", gulp.series(mode, clear, html, modals, vendors, js, css, sprite, move, meta, svg, raster, clean, sync));
+gulp.task("test", gulp.series(mode, clear, html, modals, sprite, vendors, js, css, move, meta, svg, raster, clean, sync));
 
 
 // BUILD
-gulp.task("build", gulp.series(clear, checkjs, checkcss, html, modals, vendors, js, css, hashscripts, sprite, move, meta, hashassets, svg, raster, analytics, robotstxt, sitemap, sw, clean, preview));
+gulp.task("build", gulp.series(clear, checkjs, checkcss, html, modals, sprite, vendors, js, css, hashscripts, move, meta, hashassets, svg, raster, analytics, robotstxt, sitemap, sw, clean, preview));
 
 
 // DEPLOY
@@ -1698,4 +1706,4 @@ gulp.task("images", gulp.series(sprite, move, assets, svg, raster, clean));
 
 
 // HTML / CSS / JS
-gulp.task("htmlscripts", gulp.series(checkjs, checkcss, html, modals, vendors, js, css, hashscripts, sprite, move, meta, analytics, sitemap, sw, clean, preview));
+gulp.task("htmlscripts", gulp.series(checkjs, checkcss, html, modals, sprite, vendors, js, css, hashscripts, move, meta, analytics, sitemap, sw, clean, preview));

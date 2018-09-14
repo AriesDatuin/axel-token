@@ -85,7 +85,7 @@
 
 
 		/* PADDING */
-		--section-padding: 8rem 0rem 8rem 0rem;
+		--section-padding: 2rem 0rem 2rem 0rem;
 
 
 		/* RESPONSIVE */
@@ -117,12 +117,11 @@
 		--margin-bottom-auto: 0rem;
 		--margin-right-auto: auto;
 
-		/*
+		
 		--padding-top-auto: 4rem;
 		--padding-left-auto: 2rem;
-		--padding-bottom-auto: 4rem;
+		--padding-bottom-auto: 2rem;
 		--padding-right-auto: 2rem;
-		*/
 
 
 		/* RESPONSIVE */
@@ -144,12 +143,11 @@
 		--margin-bottom-auto-mobile: 0rem;
 		--margin-right-auto-mobile: auto;
 
-		/*
-		--padding-top-auto-mobile: 4rem;
+		
+		--padding-top-auto-mobile: 2rem;
 		--padding-left-auto-mobile: 2rem;
-		--padding-bottom-auto-mobile: 4rem;
+		--padding-bottom-auto-mobile: 2rem;
 		--padding-right-auto-mobile: 2rem;
-		*/
 
 
 	/* -------------------------------------------------- */

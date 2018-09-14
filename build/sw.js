@@ -119,12 +119,16 @@ self.__precacheManifest = [
     "revision": "6ad67dbdceccb8423352c5a585f54ca1"
   },
   {
+    "url": "assets/illustrations/scalabe-test.svg",
+    "revision": "3f03e7e910d9ee15e50d7040c574a8a6"
+  },
+  {
     "url": "assets/illustrations/scalable.svg",
     "revision": "5376b8a92177eb9e34f92d95d986fe37"
   },
   {
     "url": "assets/illustrations/shopping.svg",
-    "revision": "ebebb3ba7b0b7ce57d5eb2519d8d7716"
+    "revision": "66dd49a87885d2811838f164072628e7"
   },
   {
     "url": "assets/illustrations/teamwork.svg",
@@ -144,11 +148,11 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/index/diagram-how-it-works.png",
-    "revision": "29130a5155c3deea421eb4aeff40dcdb"
+    "revision": "5a86dfdbedc552cdac3e375d5997c003"
   },
   {
     "url": "assets/index/diagram-how-it-works.webp",
-    "revision": "a66577dd638106e252b004ab4a0b3bce"
+    "revision": "a90689df2b0ea0b0a55a9e1059d23ee7"
   },
   {
     "url": "assets/index/diagram-our-technology.png",
@@ -311,8 +315,12 @@ self.__precacheManifest = [
     "revision": "9e9868ed1b0be53da83c58cc33a1c010"
   },
   {
+    "url": "assets/sprites/sprite.css",
+    "revision": "972c89309ca2de79bd55f2729016334a"
+  },
+  {
     "url": "assets/sprites/sprite.svg",
-    "revision": "76f0f37e619a17be885da476cd205a9a"
+    "revision": "f7c64c31e14af84bc5dd3fad7f5c17d5"
   },
   {
     "url": "assets/stories/acoustic-guitar.svg",
@@ -568,7 +576,7 @@ self.__precacheManifest = [
   },
   {
     "url": "error.html",
-    "revision": "b16fb3bec8b96c71c2c2d9ccd2b71209"
+    "revision": "ea86264fe666f7c683c70ad7d42c09a1"
   },
   {
     "url": "fonts/fontawesome-webfont.eot",
@@ -600,7 +608,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "ba59fd4e5195fe59588bda9714ed60a1"
+    "revision": "d8073ca170c1a823ab7c66513ddfb831"
   },
   {
     "url": "modals/press.html",
@@ -623,12 +631,12 @@ self.__precacheManifest = [
     "revision": "eee44946103f4ca112b840d425211a5e"
   },
   {
-    "url": "scripts/app.3d82458592.min.js",
-    "revision": "3d82458592bebdffb9c79b1a725a5c3d"
+    "url": "scripts/app.6896f9c7e4.min.js",
+    "revision": "6896f9c7e410254394984d8b1ce5cd94"
   },
   {
-    "url": "scripts/app.cbcae5bcf2.min.css",
-    "revision": "cbcae5bcf2cc514a9de2d13dfc7a47d5"
+    "url": "scripts/app.9133b2c207.min.css",
+    "revision": "9133b2c2077dbd068e8afd92d92bbc01"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();

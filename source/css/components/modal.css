@@ -25,7 +25,7 @@
 
 	z-index: 99;
 
-	/*-webkit-overflow-scrolling: touch;*/
+	-webkit-overflow-scrolling: touch;
 
 	/* Force GPU Rendering */
 	/*backface-visibility: hidden;*/

@@ -385,11 +385,11 @@ var comModal = function() {
 
 				uiModal += "<div class='modal-close close dark margin-sm round-full z-01'><span></span><span></span></div>"; // BUTTON: CLOSE
 
-				uiModal += "<div id='modal-preloader' class='center-vh padding-xs round-sm text-secondary text-center background-white z-01'> <span class='fa fa-circle-o-notch fa-spin p4' aria-hidden='true'></span> <p>Loading...</p> </div>" // PRELOADER
+				uiModal += "<div id='modal-preloader' class='center-vh padding-xs round-sm text-secondary text-center background-white box-shadow-xl z-01'> <span class='fa fa-circle-o-notch fa-spin p4' aria-hidden='true'></span></div>" // PRELOADER
 
 				uiModal += "<div class='modal-container'></div>" // CONTAINER
 
-				uiModal += "<a class='modal-close padding-tb-md center-element p11 text-secondary text-charcoal-hover text-bold text-uppercase button button-width-full background-white background-white-hover no-touch-feedback prevent-default hide z-auto'><i class='fa fa-times-circle margin-right-xs'></i>Close</a>"; // BUTTON: CLOSE
+				uiModal += "<a class='modal-close padding-tb-md center-element p11 text-secondary text-charcoal-hover text-bold text-uppercase button button-width-full background-white background-white-hover no-touch-feedback prevent-default z-auto'><i class='fa fa-times-circle margin-right-xs'></i>Close</a>"; // BUTTON: CLOSE
 
 			uiModal += "</div>"; // MODAL
 	
@@ -420,13 +420,7 @@ var comModal = function() {
 															
 														   $$(html).addClass("no-pointer");
 
-
-														   // Disable scrolling on mobile touch devices.
-														   //var targetElement = $$(".modal");
-														   //bodyScrollLock.disableBodyScroll(targetElement);
-														   bodyScrollLock.disableBodyScroll(document.querySelector(".modal"));
-														   //bodyScrollLock.enableBodyScroll(targetElement, BodyScrollOptions = {reserveScrollBarGap: true});
-														   //bodyScrollLock.clearAllBodyScrollLocks();
+														   $$(".modal-close").not(".close").css({"display" : "none"});
 
 
 														   $$(".modal-container").load(modalContentURL + modalContentSelector, function ( response, status, xhr ) {
@@ -437,15 +431,15 @@ var comModal = function() {
 
 															   if ( status == "success" ) {
 
-																   utilAssetObserver();
+																   //utilAssetObserver();
 																 
 																   //console.log( modalContentURL + modalContentSelector);
 
 																   //TweenMax.set( $$(".modal"), { maxWidth: $$(".modal-container").children().width() } );
 
-																   TweenMax.to( $$("#modal-preloader"), 0.5, {display: "none", opacity: 0, scale: 0.75, delay: 0, ease: Expo.easeInOut});
+																   TweenMax.to( $$("#modal-preloader"), 0.25, {display: "none", opacity: 0, scale: 0.75, delay: 0, ease: Expo.easeInOut});
 
-																   $$(".modal-close").not(".close").removeClass("hide");
+																   $$(".modal-close").not(".close").css({"display" : "block"});
 
 															   } else {
 
@@ -454,9 +448,7 @@ var comModal = function() {
 																   //$(this).html( msg + xhr.status + " " + xhr.statusText );
 																   $$(this).html( '<div class="center-vh text-charcoal text-center"> <span class="fa fa-exclamation-circle p4" aria-hidden="true"></span> <p>'+msg+'</p> </div>' );
 
-																   TweenMax.to( $$("#modal-preloader"), 0.25, {display: "none", opacity: 0, scale: 0.75, delay: 0, ease: Expo.easeInOut});
-
-																   $$(".modal-close").not(".close").addClass("hide");
+																   TweenMax.to( $$("#modal-preloader"), 0.25, {display: "none", opacity: 0, scale: 0.75, delay: 0.5, ease: Expo.easeInOut});
 
 															   }
 
@@ -481,8 +473,6 @@ var comModal = function() {
 
 															$$(".modal").removeClass("open");
 
-															bodyScrollLock.enableBodyScroll(".modal", BodyScrollOptions = {reserveScrollBarGap: true});
-
 														},
 
 
@@ -490,7 +480,6 @@ var comModal = function() {
 														   
 															$$(".modal-container").html(""); // Clear 'modal-container' and free up some memory.
 
-														 	TweenMax.set( $$(".modal"), {display: "none", opacity: 0});
 													   }
 
 					});

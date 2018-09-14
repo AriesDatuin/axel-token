@@ -316,10 +316,10 @@ main section {
 }
 
 .padding-auto {
-	padding-top: var(--cell-padding-top);
-	padding-left: var(--cell-padding-left);
-	padding-bottom: var(--cell-padding-bottom);
-	padding-right: var(--cell-padding-right);
+	padding-top: var(--padding-top-auto);
+	padding-left: var(--padding-left-auto);
+	padding-bottom: var(--padding-bottom-auto);
+	padding-right: var(--padding-right-auto);
 }
 
 
@@ -334,10 +334,10 @@ main section {
 	}
 
 	.padding-auto {
-		padding-top: var(--cell-padding-top-mobile);
-		padding-left: var(--cell-padding-left-mobile);
-		padding-bottom: var(--cell-padding-bottom-mobile);
-		padding-right: var(--cell-padding-right-mobile);
+		padding-top: var(--padding-top-auto-mobile);
+		padding-left: var(--padding-left-auto-mobile);
+		padding-bottom: var(--padding-bottom-auto-mobile);
+		padding-right: var(--padding-right-auto-mobile);
 	}
 
 }

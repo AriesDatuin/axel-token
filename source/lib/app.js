@@ -77,6 +77,9 @@ var disableContent = function() {
 			  "overflow-y" : "hidden"
 			});
 
+
+	bodyScrollLock.disableBodyScroll(document.querySelector(".modal"));
+
 };
 
 var enableContent = function() {		
@@ -86,6 +89,11 @@ var enableContent = function() {
 	html.css({"overflow-x" : "hidden",
 			  "overflow-y" : "scroll"
 			});
+
+
+	bodyScrollLock.clearAllBodyScrollLocks();
+	//bodyScrollLock.enableBodyScroll(".modal", BodyScrollOptions = {reserveScrollBarGap: true});
+
 };
 
 

@@ -8,7 +8,7 @@
     display: inline-block;
     background-image: url("../assets/sprites/sprite.svg");
     background-repeat: no-repeat;
-    background-size: 25em 425em;
+    background-size: 25em 325em;
 }
 
 .no-svg .sprite-wrapper:before {
@@ -107,17 +107,8 @@
 
 
 
-  .sprite-wrapper.sprite:before {
-      background-position: 0em -250em;
-      width: 5.88235294117647em;
-      height: 100em;
-  }
-
-
-
-
   .sprite-wrapper.tech-bullion:before {
-      background-position: 0em -350em;
+      background-position: 0em -250em;
       width: 25em;
       height: 25em;
   }
@@ -126,7 +117,7 @@
 
 
   .sprite-wrapper.techaeris:before {
-      background-position: 0em -375em;
+      background-position: 0em -275em;
       width: 25em;
       height: 25em;
   }
@@ -135,7 +126,7 @@
 
 
   .sprite-wrapper.vegastech:before {
-      background-position: 0em -400em;
+      background-position: 0em -300em;
       width: 25em;
       height: 25em;
   }

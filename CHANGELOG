@@ -1,6 +1,25 @@
 September 12, 2018
 Version 2.2
 	Website / App
+		- Reduced gap between <section> block elements.
+		- Added sprite sheet for press logos.
+		- General optimizations and fixes.
+		- Adjusted tolerance for IntersectionObserver and lazy-load fallback.
+
+
+	Build Framework
+		- Improved CSS optimization processing.
+		- PostCSS now handles a majority of CSS processing and optimization tasks.
+		- Improved error handling for Gulp tasks.
+		- Added sprite generation with generated CSS.
+
+
+
+
+
+September 12, 2018
+Version 2.2
+	Website / App
 		- Added 'Bruce Mcdonald' to 'Team' section.
 		- Minor layout adjustments.
 		- Revised layout of modal / popups to be more mobile friendly.
