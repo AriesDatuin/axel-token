@@ -78,7 +78,7 @@ var disableContent = function() {
 			});
 
 
-	bodyScrollLock.disableBodyScroll(document.querySelector(".modal"));
+	//bodyScrollLock.disableBodyScroll(document.querySelector(".modal"));
 
 };
 
@@ -91,7 +91,7 @@ var enableContent = function() {
 			});
 
 
-	bodyScrollLock.clearAllBodyScrollLocks();
+	//bodyScrollLock.clearAllBodyScrollLocks();
 	//bodyScrollLock.enableBodyScroll(".modal", BodyScrollOptions = {reserveScrollBarGap: true});
 
 };

@@ -1806,9 +1806,10 @@ svg {
 .center-vh {
 	position: absolute;
 	top: 50%;
-    left: 50%;	
+    left: 0;
+    right: 0;
 	
-	transform: translate3d(-50%,-50%,0);
+	transform: translate3d(0,-50%,0);
 }
 
 

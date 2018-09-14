@@ -406,8 +406,8 @@ var comModal = function() {
 		var modal = function(modalContentURL, modalContentSelector) {
 
 			var modalContentURL, // Variable for content's path / location.
-				modalContentSelector, // Variable for loaded content's selector.
-				modalContentWidth;
+				modalContentSelector; // Variable for loaded content's selector.
+
 
 				blocker();
 
@@ -489,6 +489,18 @@ var comModal = function() {
 		};
 
 
+		$$(pageContent).on("resize", _.debounce(function() {
+
+													if ( $$(".modal").length ) {
+
+														console.log("Modal is open.");
+														TweenMax.set( $$(".modal"), { width: window.innerWidth / 1.2, height: window.innerHeight / 1.2 } );
+
+													}
+
+												}, $delayInterval));
+
+
 		/* -------------------------------------------------- */
 		/* ACTIONS
 		/* -------------------------------------------------- */
@@ -499,8 +511,40 @@ var comModal = function() {
 			var self = $(this),
 				dataContentURL = null, // self.attr("href"), // self.data("content-url"), //self.attr("href"), // Read 'data-content-url' of clicked element and store as a value for 'modal(modalContentURL)'.
 				dataConentSelector = self.data("content-selector"), // Read 'data-content-selector' of clicked element and store as a value for 'modal(modalContentSelector)'.
-				dataContentWidth = self.data("content-width"), // Read 'data-content-width' of clicked element and store as a value for 'modal(modalContentSelector)'.
-				dataContentHeight = self.data("content-height"); // Read 'data-content-height' of clicked element and store as a value for 'modal(modalContentSelector)'.
+				dataContentWidth, // Read 'data-content-width' of clicked element and store as a value.
+				dataContentHeight; // Read 'data-content-height' of clicked element and store as a value.
+
+
+				/* -------------------------------------------------- */
+				/* CONDITIONAL VARIABLES
+				/* -------------------------------------------------- */
+
+				// WIDTH
+				if ( self.data("content-width") === "auto") {
+
+					console.log("Modal set to auto size width.");
+					dataContentWidth = window.innerWidth / 1.2;
+
+				} else {
+
+					console.log("Modal not set to auto size width.");
+					dataContentWidth = self.data("content-width");
+
+				}
+
+
+				// HEIGHT
+				if ( self.data("content-height") === "auto") {
+
+					console.log("Modal set to auto size height.");
+					dataContentHeight = window.innerHeight / 1.2;
+
+				} else {
+
+					console.log("Modal not set to auto size height.");
+					dataContentHeight = self.data("content-height");
+
+				}
 
 
 			// Check if element has href or is a regular element, ex: div or span.
@@ -519,11 +563,11 @@ var comModal = function() {
  			}
 
 
-			console.log(dataContentURL + " #" + dataConentSelector);
+			console.log(dataContentURL + " #" + dataConentSelector + " @ " + dataContentWidth + " x " + dataContentHeight);
 			
 			modal(dataContentURL, " #" + dataConentSelector, dataContentWidth, dataContentHeight);
 			
-			TweenMax.set( $$(".modal"), { maxWidth: dataContentWidth, height: dataContentHeight } );
+			TweenMax.set( $$(".modal"), { width: dataContentWidth, height: dataContentHeight } );
 
 		});
 
@@ -534,6 +578,7 @@ var comModal = function() {
 			modal();
 
 		});
+
 
 }; // END comModal
 

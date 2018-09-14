@@ -7,21 +7,19 @@
 	overflow: auto;
 	position: fixed;
 	top: 50%;
-	left: 50%;
+	left: 0;
 	/*bottom: 0;*/
-	/*right: 0;*/
+	right: 0;
 	margin: 0 auto 0 auto;
 	padding: 0 0 0 0;
-	width: 100%;
 	height: auto;
-	max-width: 600px;
 
 	background-color: var(--white-color);
 	border-radius: var(--radius-md);
 
 	box-shadow: var(--box-shadow-xl);
 
-	transform: translate3d(-50%,-50%,0) scale(1);
+	transform: translate3d(0,-50%,0) scale(1);
 
 	z-index: 99;
 
@@ -44,32 +42,27 @@
 
 
 /* HELPERS */
+/*
 .modal.open {
 	transform: translate3d(-50%,-50%,0) scale(1) translateZ(0);
 }
+*/
 
 
 /* RESPONSIVE */
 @media screen and (min-width: 0) and (max-width: 1023px) and (min-height: 0) and (max-height: 1023px) {
 
 	.modal {
-		height: 100%;
-		max-width: 100%;
-		border-radius: 0;
-	}
-
-}
-
-
-/*
-@media screen and (min-height: 0) and (max-height: 639px) {
-
-	.modal {
-		margin: 0 0 0 0;
-		max-width: 100%;
+		top: 0;
+		left: 0;
+		right: auto;
+		width: 100% !important;
 		height: 100% !important;
+		max-width: 100% !important;
+		max-height: 100% !important;
 		border-radius: 0;
+
+		transform: translate3d(0,0,0) scale(1);
 	}
 
 }
-*/

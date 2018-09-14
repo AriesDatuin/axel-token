@@ -1722,9 +1722,10 @@
 	.center-vh-mobile {
 		position: absolute;
 		top: 50%;
-		left: 50%;	
+		left: 0;
+		right: 0;	
 
-		transform: translate3d(-50%,-50%,0);
+		transform: translate3d(0,-50%,0);
 	}
     
 	.center-v-clear-mobile {
@@ -3990,9 +3991,10 @@
 	.center-vh-tablet {
 		position: absolute;
 		top: 50%;
-		left: 50%;	
+		left: 0;
+		right: 0;	
 
-		transform: translate3d(-50%,-50%,0);
+		transform: translate3d(0,-50%,0);
 	}
     
 	.center-v-clear-tablet {
