@@ -312,26 +312,18 @@
 	}
 	
 	.height-quarter-mobile {
-		height: 25%;
-        min-height: 25vh;
+		height: 25vh;
 	}
 
 	.height-half-mobile {
-		height: 50%;
-        min-height: 50vh;
+        height: 50vh;
 	}
 
 	.height-three-quarters-mobile {
-		height: 75%;
-        min-height: 75vh;
+        height: 75vh;
 	}
 
 	.height-full-mobile {
-		height: 100%;
-		min-height: 100vh;
-	}
-
-	.height-vh-full-mobile {
 		height: 100vh;
 	}
 
@@ -2577,26 +2569,18 @@
 	}
 	
 	.height-quarter-tablet {
-		height: 25%;
-        min-height: 25vh;
+        height: 25vh;
 	}
 
 	.height-half-tablet {
-		height: 50%;
-        min-height: 50vh;
+        height: 50vh;
 	}
 
 	.height-three-quarters-tablet {
-		height: 75%;
-        min-height: 75vh;
+        height: 75vh;
 	}
 
 	.height-full-tablet {
-		height: 100%;
-		min-height: 100vh;
-	}
-
-	.height-vh-full-tablet {
 		height: 100vh;
 	}
 

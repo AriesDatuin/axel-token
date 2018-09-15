@@ -4,7 +4,7 @@
 
 
 	<!-- CARD -->
-	<div id="{{ id }}" class="cell card position-relative padding-none media-object background-white">
+	<div id="{{ id }}" class="cell card position-relative padding-none media-object background-white overflow-hidden">
 
 
 		<!-- LINK -->
@@ -15,6 +15,7 @@
 		<!-- SOCIAL -->
 		<ul class="social-icons profile list-vertical z-02">
 
+
 			{{#each social}}
 			<li>
 				<a href="{{ link }}" target="_blank" rel="noopener" class="social-icon-{{ icon }}-hover" aria-label="{{ icon }}">
@@ -22,6 +23,7 @@
 				</a>
 			</li>
 			{{/each}}
+
 
 		</ul>
 		<!-- // SOCIAL -->

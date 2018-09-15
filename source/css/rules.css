@@ -329,25 +329,18 @@
 }
 
 .height-quarter {
-	height: 25%;
-    min-height: 25vh;
+    height: 25vh;
 }
 
 .height-half {
-	height: 50%;
-    min-height: 50vh;
+    height: 50vh;
 }
 
 .height-three-quarters {
-	height: 75%;
-    min-height: 75vh;
+    height: 75vh;
 }
 
 .height-full {
-	height: 100%;
-}
-
-.height-vh-full {
 	height: 100vh;
 }
 

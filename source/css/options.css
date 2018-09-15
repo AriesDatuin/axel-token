@@ -449,8 +449,8 @@
 	--ease-in-out: all 0.25s ease-in-out;
 
 	--ease-quick: all 100ms ease-in;
-	--ease-fast: all 200ms ease-in-out;
-	--ease-normal: all 300ms ease-out;
+	--ease-fast: all 200ms ease-in;
+	--ease-normal: all 300ms ease-in-out;
 	--ease-slow: all 400ms ease-out;
 	--ease-very-slow: all 500ms ease-out;
 

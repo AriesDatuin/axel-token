@@ -2,6 +2,12 @@
 /* LAZY LOAD
 /* -------------------------------------------------- */
 
+img.lazy {
+    opacity: 0;
+
+    transition: var(--ease-fast);
+}
+
 img.initial,
 img.loaded,
 img.error {
@@ -10,6 +16,16 @@ img.error {
 
 img:not([src]) {
 	visibility: hidden;
+}
+
+
+/* HELPERS */
+img.lazy:not(.lazy-ignore) {
+    transform: scale3d(0.75,0.75,1);
+}
+
+img.lazy.loaded:not(.lazy-ignore) {
+    transform: scale3d(1,1,1);
 }
 
 
@@ -51,4 +67,69 @@ img[data-srcset] {
     margin-right: auto;
     
     transform: translate(-50%,-50%)
+}
+
+
+/* -------------------------------------------------- */
+/* MINI
+/* -------------------------------------------------- */
+
+/* PARENT */
+.mini-preloader {
+    z-index: 11;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: var(--gutter-sm);
+    text-align: center;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--box-shadow-xl);
+
+    transform: translate3d(-50%,-50%,0);
+}
+
+
+/* CHILD */
+.mini-preloader span {
+    font-size: 2em;
+}
+
+.mini-preloader p {
+    display: none;
+    margin-top: 0.5rem;
+}
+
+
+/* THEMES */
+.mini-preloader.light {
+    color: var(--secondary-color);
+    background-color: var(--white-color);
+}
+
+.mini-preloader.dark {
+    color: var(--accent-color);
+    background-color: var(--charcoal-color);
+}
+
+
+/* RESPONSIVE */
+@media screen and (min-width: 0) and (max-width: 1023px) and (min-height: 0) and (max-height: 1023px) {
+
+    /* PARENT */
+    .mini-preloader {
+        top: 0;
+        left: auto;
+        right: 0;
+        margin: var(--gutter-sm);
+        box-shadow: none;
+
+        transform: none;
+    }
+
+
+    /* CHILD */
+    .mini-preloader span {
+        font-size: 1.5em;
+    }
+
 }

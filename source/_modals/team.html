@@ -8,11 +8,11 @@ assets: assets/
 {{#each team.content}}
 
 
-	<article id="team-{{ id }}" class="profile grid-x grid-padding-x align-center align-top mall-up-1 medium-up-2 large-up-2">
+	<article id="team-{{ id }}" class="profile grid-x grid-padding-x align-center align-top small-up-1 medium-up-1 large-up-2">
 		
 
 		<!-- CELL -->
-		<div id="photo" class="cell padding-none height-half-mobile overflow-hidden">
+		<div id="photo" class="cell padding-none height-three-quarters-mobile height-three-quarters-tablet overflow-hidden">
 
 
 			<!-- IMAGE -->
@@ -20,12 +20,11 @@ assets: assets/
 			<!-- // IMAGE -->
 
 
-			<!-- SHAPE -->
-			<svg class="stripe position-absolute left bottom emergence-ignore-child" preserveAspectRatio="none" viewBox="0 0 1024 100">
-				<polygon fill="#fff" points="512 100 1024 100 1024 0 512 100"/>
-				<polygon fill="#fff" points="0 100 512 100 0 0 0 100"/>
+			<!-- BLOCK CAP -->
+			<svg class="block-cap bottom svg-white emergence-ignore-child" preserveAspectRatio="none" viewBox="0 0 1024 100" aria-hidden="true">
+				{{> block-cap-inward  }}
 			</svg>
-			<!-- // SHAPE -->
+			<!-- // BLOCK CAP -->
 
 
 		</div>

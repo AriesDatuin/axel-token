@@ -11,7 +11,7 @@
  * See https://goo.gl/2aRDsh
  */
 
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.4.1/workbox-sw.js");
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.5.0/workbox-sw.js");
 
 workbox.skipWaiting();
 workbox.clientsClaim();
@@ -576,7 +576,7 @@ self.__precacheManifest = [
   },
   {
     "url": "error.html",
-    "revision": "d9f9cd4f0fb8b17319e3c8fe10ffa507"
+    "revision": "e123505bd9b37ad8d9c391c3d4438ef7"
   },
   {
     "url": "fonts/fontawesome-webfont.eot",
@@ -608,7 +608,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "55bc59537b9781d5b2a7aa46da962179"
+    "revision": "523ee46da05c815da52cf2cf00ceddb3"
   },
   {
     "url": "modals/press.html",
@@ -620,26 +620,26 @@ self.__precacheManifest = [
   },
   {
     "url": "modals/stories.html",
-    "revision": "ee09544a47a713f82e949451eef6fda3"
+    "revision": "56c65ead8981c83259012b47956a8642"
   },
   {
     "url": "modals/team.html",
-    "revision": "8adb284b240fa4a7a8481f03828fac4d"
+    "revision": "10e4cba45f78235d028db8e1ff5df3e9"
   },
   {
     "url": "modals/whitepaper.html",
     "revision": "eee44946103f4ca112b840d425211a5e"
   },
   {
-    "url": "scripts/app.3c38c149ac.min.css",
-    "revision": "3c38c149ac79ffe864fce02c7cadd81f"
+    "url": "scripts/app.34af7f9aec.min.js",
+    "revision": "34af7f9aec14e59ba2e8dc8ac1c129c4"
   },
   {
-    "url": "scripts/app.cf011fb45b.min.js",
-    "revision": "cf011fb45bafb23b14b013fac612e2d9"
+    "url": "scripts/app.d083ab2a80.min.css",
+    "revision": "d083ab2a80a1dfca19d900a6bc2bf2f4"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerRoute(/^https:\/\/fonts.(?:googleapis|gstatic).com\/(.*)/, workbox.strategies.cacheFirst({ cacheName: "font-cache", plugins: [new workbox.expiration.Plugin({"maxEntries":10,"purgeOnQuotaError":false})] }), 'GET');
+workbox.routing.registerRoute(/^https:\/\/fonts.(?:googleapis|gstatic).com\/(.*)/, workbox.strategies.cacheFirst({ "cacheName":"font-cache", plugins: [new workbox.expiration.Plugin({"maxEntries":10,"purgeOnQuotaError":false})] }), 'GET');

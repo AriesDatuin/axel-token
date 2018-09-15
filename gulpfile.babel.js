@@ -947,9 +947,9 @@ export function sync() {
 
 	//gulp.watch(config.paths.source + config.vendors.path + "**/*.js").on("all", vendors, reload);
 
-	gulp.watch(config.paths.source + "**/*.css").on("all", css);
+	gulp.watch(config.paths.source + "**/*.css").on("all", sprite, css);
 
-	gulp.watch(config.paths.source + "**/*.{app,avi,dmg,doc,eot,exe,gif,jp2,jpg,jpeg,jxr,mid,midi,mp3,mp4,mpeg,mov,ogg,ogv,otf,pdf,png,rar,svg,tiff,ttf,txt,webm,webp,woff,woff2,zip}", gulp.series(move, reload));
+	gulp.watch(config.paths.source + "**/*.{app,avi,dmg,doc,eot,exe,gif,jp2,jpg,jpeg,jxr,mid,midi,mp3,mp4,mpeg,mov,ogg,ogv,otf,pdf,png,rar,svg,tiff,ttf,txt,webm,webp,woff,woff2,zip}", gulp.series(sprite, move, reload));
 
 	gulp.watch([metadataFile,
 				config.paths.source + config.html.paths
