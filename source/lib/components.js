@@ -595,7 +595,7 @@ var comParallax = function() {
 		settings_mode: "scroll", // scroll, mouse, mouse_body
 		mode_scroll: "normal", // normal, fromtop
 		animation_duration: "5",
-		easing: "easeIn" // easeIn, easeOutQuad, easeInOutSine
+		easing: "easeInOutSine" // easeIn, easeOutQuad, easeInOutSine
 
 	});
 
@@ -819,11 +819,11 @@ var comStories = function() {
 	/* CACHE SELECTORS
 	/* -------------------------------------------------- */
 
-    var $caseStudyUser = $$("#stories .profiles .cell"),
-    	$caseStudies = $$("#stories .profiles"),
-        $caseStudyJosh = $$("#josh"),
-        $caseStudyShera = $$("#shera"),
-        $caseStudyTina = $$("#tina");
+    var caseStudyUser = $$("#stories .profiles .cell"),
+    	caseStudies = $$("#stories .profiles"),
+        caseStudyJosh = $$("#josh"),
+        caseStudyShera = $$("#shera"),
+        caseStudyTina = $$("#tina");
 
 
 	/*
@@ -893,33 +893,37 @@ var comStories = function() {
 		/* TILES
 		/* -------------------------------------------------- */
 
-		TweenMax.set($caseStudyUser.find("[data-image]"), {autoAlpha: 0, scale: 1.25});
+		TweenMax.set(caseStudyUser.find("[data-src]"), {autoAlpha: 0, scale: 1.25});
 
 		// JOSH
-		$caseStudyJosh.on("mouseover touchstart", function() {
+		caseStudyUser.on("mouseover touchstart", function() {
 			
-			var $self = $(this);
+			var self = $(this);
 			
-			$self.addClass("overflow-hidden");
+			self.addClass("overflow-hidden");
 			
-			TweenMax.to($self.find("svg"), 1, {autoAlpha: 0, ease: Expo.easeOut});
-			TweenMax.to($self.find(".text-container"), 1, {autoAlpha: 0, ease: Expo.easeOut});
-			TweenMax.to($self.find("a.button"), 1, {autoAlpha: 0, ease: Expo.easeOut});
-			TweenMax.to($self.find("[data-image]"), 0.5, {autoAlpha: 1, scale: 1, ease: Expo.easeOut});
+			TweenMax.to(self.find(".story-icon"), 0.75, {autoAlpha: 0, scale: 0.5, ease: Back.easeOut});
+			TweenMax.to(self.find(".text-container"), 1, {autoAlpha: 0, ease: Power4.easeOut});
+			TweenMax.to(self.find("a.button"), 1, {autoAlpha: 0, ease: Power4.easeOut});
+			TweenMax.to(self.find("[data-src]"), 0.5, {autoAlpha: 1, scale: 1, ease: Power4.easeOut});
 			
 			
 		}).on("mouseout touchend touchleave", function() {
 			
-			var $self = $(this);
+			var self = $(this);
 			
-			TweenMax.to($self.find(".text-container"), 0.75, {autoAlpha: 1, ease: Expo.easeOut});
-			TweenMax.to($self.find("a.button"), 0.75, {autoAlpha: 1, ease: Expo.easeOut});
-			TweenMax.to($self.find("[data-image]"), 0.25, {autoAlpha: 0, scale: 1.5, ease: Expo.easeIn,
-														   onComplete: function() { 
-															   $self.removeClass("overflow-hidden");
-															   TweenMax.to($self.find("svg"), 0.75, {autoAlpha: 1, ease: Expo.easeOut});
+			TweenMax.to(self.find(".text-container"), 0.75, {autoAlpha: 1, ease: Power4.easeOut});
+			TweenMax.to(self.find("a.button"), 0.75, {autoAlpha: 1, ease: Power4.easeOut});
+			TweenMax.to(self.find("[data-src]"), 0.25, {autoAlpha: 0, scale: 1.25, ease: Power4.easeOut,
+
+														   onComplete: function() {
+
+															   self.removeClass("overflow-hidden");
+															   TweenMax.to(self.find(".story-icon"), 0.25, {autoAlpha: 1, scale: 1, ease: Back.easeOut});
 				
-														   } });
+														   }
+
+														});
 			
 		});
 
@@ -927,65 +931,7 @@ var comStories = function() {
 
 
 
-		// SHERA
-		$caseStudyShera.on("mouseover touchstart", function() {
-			
-			var $self = $(this);
-			
-			$self.addClass("overflow-hidden");
-			
-			TweenMax.to($self.find("svg"), 1, {autoAlpha: 0, ease: Expo.easeOut});
-			TweenMax.to($self.find(".text-container"), 1, {autoAlpha: 0, ease: Expo.easeOut});
-			TweenMax.to($self.find("a.button"), 1, {autoAlpha: 0, ease: Expo.easeOut});
-			TweenMax.to($self.find("[data-image]"), 0.5, {autoAlpha: 1, scale: 1, ease: Expo.easeOut});
-			
-			
-		}).on("mouseout touchend touchleave", function() {
-			
-			var $self = $(this);
-			
-			TweenMax.to($self.find(".text-container"), 0.75, {autoAlpha: 1, ease: Expo.easeOut});
-			TweenMax.to($self.find("a.button"), 0.75, {autoAlpha: 1, ease: Expo.easeOut});
-			TweenMax.to($self.find("[data-image]"), 0.25, {autoAlpha: 0, scale: 1.5, ease: Expo.easeIn,
-														   onComplete: function() { 
-															   $self.removeClass("overflow-hidden");
-															   TweenMax.to($self.find("svg"), 0.75, {autoAlpha: 1, ease: Expo.easeOut});
-				
-														   } });
-			
-		});
 
-
-
-
-
-		// TINA
-		$caseStudyTina.on("mouseover touchstart", function() {
-			
-			var $self = $(this);
-			
-			$self.addClass("overflow-hidden");
-			
-			TweenMax.to($self.find("svg"), 1, {autoAlpha: 0, ease: Expo.easeOut});
-			TweenMax.to($self.find(".text-container"), 1, {autoAlpha: 0, ease: Expo.easeOut});
-			TweenMax.to($self.find("a.button"), 1, {autoAlpha: 0, ease: Expo.easeOut});
-			TweenMax.to($self.find("[data-image]"), 0.5, {autoAlpha: 1, scale: 1, ease: Expo.easeOut});
-			
-			
-		}).on("mouseout touchend touchleave", function() {
-			
-			var $self = $(this);
-			
-			TweenMax.to($self.find(".text-container"), 0.75, {autoAlpha: 1, ease: Expo.easeOut});
-			TweenMax.to($self.find("a.button"), 0.75, {autoAlpha: 1, ease: Expo.easeOut});
-			TweenMax.to($self.find("[data-image]"), 0.25, {autoAlpha: 0, scale: 1.5, ease: Expo.easeIn,
-														   onComplete: function() { 
-															   $self.removeClass("overflow-hidden");
-															   TweenMax.to($self.find("svg"), 0.75, {autoAlpha: 1, ease: Expo.easeOut});
-				
-														   } });
-			
-		});
 
 
 }; // END comCaseStudies

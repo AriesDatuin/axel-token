@@ -576,7 +576,7 @@ self.__precacheManifest = [
   },
   {
     "url": "error.html",
-    "revision": "e70cfa1a4ca1ac4c822bdf5468b91927"
+    "revision": "48c76ff3d4dec0eb34726c6afb9d88af"
   },
   {
     "url": "fonts/fontawesome-webfont.eot",
@@ -608,7 +608,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "c0add80a02ac4d7fe78c05d935d2b324"
+    "revision": "8738ca6e26398857c135acf1f6cff2d2"
   },
   {
     "url": "modals/press.html",
@@ -624,19 +624,19 @@ self.__precacheManifest = [
   },
   {
     "url": "modals/team.html",
-    "revision": "50b57d9f547cf092d85971a6ff054da0"
+    "revision": "cca672da26a62b73b877e1a9a8bff35a"
   },
   {
     "url": "modals/whitepaper.html",
     "revision": "eee44946103f4ca112b840d425211a5e"
   },
   {
-    "url": "scripts/app.34af7f9aec.min.js",
-    "revision": "34af7f9aec14e59ba2e8dc8ac1c129c4"
+    "url": "scripts/app.59b65668ab.min.css",
+    "revision": "59b65668abe58c52804e9f09c12fe5a7"
   },
   {
-    "url": "scripts/app.a89fe953f7.min.css",
-    "revision": "a89fe953f74f6483bcec2bfe9eb632bd"
+    "url": "scripts/app.818678692d.min.js",
+    "revision": "818678692d29ccf45843f2ee286e4395"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();

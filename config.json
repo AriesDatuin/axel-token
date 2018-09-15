@@ -184,7 +184,7 @@
 
 				  "<UI>",
 				  "lib/assets/headroom.js",
-				  "lib/assets/menuaim.js",
+				  ">>>>>lib/assets/menuaim.js",
 
 
 				  "<FX>",
@@ -201,7 +201,7 @@
 
 
 				  "<SCROLL MANIPULATION>",
-				  "lib/assets/scrolllock.js",
+				  ">>>>>lib/assets/scrolllock.js",
 				  "lib/dzsparallaxer/dzsparallaxer.js",
 				  "lib/assets/emergence.js",
 				  ">>>>>lib/assets/rellax.js",
