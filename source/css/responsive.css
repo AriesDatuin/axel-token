@@ -324,7 +324,7 @@
 	}
 
 	.height-full-mobile {
-		height: 100vh;
+		height: 100%;
 	}
 
 	.height-auto-mobile {
@@ -2581,7 +2581,7 @@
 	}
 
 	.height-full-tablet {
-		height: 100vh;
+		height: 100%;
 	}
 
 	.height-auto-tablet {
