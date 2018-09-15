@@ -445,9 +445,9 @@ export function vendors() {
 
 // OPTIONS *Note: Leave as-is. These are the recommended values.
 const plugins = [postcssAutoprefixer({ cascade: false, support: config.optimizations.support, flexbox: config.optimizations.flexbox, grid: config.optimizations.grid }),
-				 postcssCalc({ mediaQueries: false, precision: 5, preserve: false, selectors: false, warnWhenCannotResolve: false }),
-				 postcssCombineDuplicatedSelectors({ removeDuplicatedProperties: true }),
-				 postcssMQPacker(),
+				 //postcssCalc({ mediaQueries: false, precision: 5, preserve: false, selectors: false, warnWhenCannotResolve: false }),
+				 //postcssCombineDuplicatedSelectors({ removeDuplicatedProperties: true }),
+				 //postcssMQPacker(),
 				 postcssVariables({ preserve: false, preserveInjectedVariables: false }),
 				 postcssZIndex(),
 				];
