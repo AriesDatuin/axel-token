@@ -77,7 +77,7 @@ img[data-srcset] {
 /* PARENT */
 .mini-preloader {
     z-index: 11;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     padding: var(--gutter-sm);
