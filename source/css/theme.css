@@ -57,7 +57,7 @@
 .svg-primary *, .svg-secondary *, .svg-accent *, .svg-wild *,
 .svg-white *, .svg-light-grey *, .svg-dark-grey *, .svg-charcoal *, .svg-black *,
 .svg-ok *, .svg-error *, .svg-warning * {
-	transition: var(--ease-fast);
+	/*transition: var(--ease-fast);*/
 }
 
 /* COLORS */
@@ -126,6 +126,10 @@
 
 	.svg-fill-none * {
 		fill: none !important;
+	}
+
+	svg g * {
+		stroke: none !important;
 	}
 
 

@@ -298,14 +298,14 @@ var utilEmergence = function() {
 
 				}
 
-				$(element).addClass("emergence-visible");
+				//$(element).addClass("emergence-visible");
 				$(element).find(anim).not(animInteract).addClass("anim-play");
 
 			} else if ( state === "reset" ) {
 
 				//console.log("Element is hidden with reset.");
 
-				$(element).removeClass("emergence-visible");
+				//$(element).removeClass("emergence-visible");
 				$(element).find(anim).not(animInteract).removeClass("anim-play");
 
 			} else if ( state === "noreset" ) {

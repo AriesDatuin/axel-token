@@ -432,7 +432,9 @@ var tlStarWars = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: 
 			//console.log("Element is active.");
 			tlScrollHorizontal.resume();
 
-		} if ( animPop.hasClass("anim-play") ) {
+		}
+
+		if ( animPop.hasClass("anim-play") ) {
 
 			//console.log("Element is active.");
 			tlPop.resume();
@@ -460,7 +462,6 @@ var tlStarWars = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: 
 
 		}
 
-		
 		if ( navPanel.hasClass("is-open") ) {
 
 			animPauseAll();

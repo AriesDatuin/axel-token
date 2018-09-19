@@ -209,25 +209,25 @@
 
 
 				  "<ANIMATION ENGINE (GSAP)>",
-				  "lib/gsap/TweenMax.min.js",
-				  ">>>>>lib/gsap/TimelineMax.min.js",
-				  ">>>>>lib/gsap/plugins/BezierPlugin.min.js",
-				  ">>>>>lib/gsap/plugins/ColorPropsPlugin.min.js",
-				  ">>>>>lib/gsap/plugins/CSSPlugin.min.js",
-				  ">>>>>lib/gsap/plugins/CSSRulePlugin.min.js",
-				  ">>>>>lib/gsap/plugins/DirectionalRotationPlugin.min.js",
-				  ">>>>>lib/gsap/plugins/ModifiersPlugin.min.js",
-				  "lib/gsap/plugins/ScrollToPlugin.min.js",
-				  ">>>>>lib/gsap/plugins/TextPlugin.min.js",
+				  "lib/gsap/TweenMax.js",
+				  ">>>>>lib/gsap/TimelineMax.js",
+				  ">>>>>lib/gsap/plugins/BezierPlugin.js",
+				  ">>>>>lib/gsap/plugins/ColorPropsPlugin.js",
+				  ">>>>>lib/gsap/plugins/CSSPlugin.js",
+				  ">>>>>lib/gsap/plugins/CSSRulePlugin.js",
+				  "lib/gsap/plugins/DirectionalRotationPlugin.js",
+				  ">>>>>lib/gsap/plugins/ModifiersPlugin.js",
+				  "lib/gsap/plugins/ScrollToPlugin.js",
+				  ">>>>>lib/gsap/plugins/TextPlugin.js",
 
 				  "<Club GreenSock Plugins>",
-				  ">>>>>lib/gsap/plugins/DrawSVGPlugin.min.js",
-				  ">>>>>lib/gsap/plugins/MorphSVGPlugin.min.js",
-				  ">>>>>lib/gsap/plugins/Physics2DPlugin.min.js",
-				  ">>>>>lib/gsap/plugins/PhysicsPropsPlugin.min.js",
-				  ">>>>>lib/gsap/plugins/ScrambleTextPlugin.min.js",
-				  "lib/gsap/plugins/SplitTextPlugin.min.js",
-				  ">>>>>lib/gsap/plugins/ThrowPropsPlugin.min.js",
+				  ">>>>>lib/gsap/plugins/DrawSVGPlugin.js",
+				  ">>>>>lib/gsap/plugins/MorphSVGPlugin.js",
+				  ">>>>>lib/gsap/plugins/Physics2DPlugin.js",
+				  ">>>>>lib/gsap/plugins/PhysicsPropsPlugin.js",
+				  ">>>>>lib/gsap/plugins/ScrambleTextPlugin.js",
+				  "lib/gsap/plugins/SplitTextPlugin.js",
+				  ">>>>>lib/gsap/plugins/ThrowPropsPlugin.js",
 
 
 				  "<3D LIBS>",
@@ -268,6 +268,7 @@
 				  "lib/options.js",
 				  "lib/detect.js",
 				  "lib/animations.js",
+				  "lib/scenes.js",
 				  ">>>>>lib/languages/en-strings.js",
 				  ">>>>>lib/languages/es-strings.js",
 				  ">>>>>lib/language.js",
@@ -278,7 +279,6 @@
 				  "lib/notice.js",
 				  "lib/pages.js",
 				  ">>>>>lib/transition.js",
-				  "lib/scenes/*.js",
 				  "lib/app.js"
 				 ]
 	

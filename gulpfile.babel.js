@@ -498,7 +498,6 @@ export function css() {
 			   .pipe(concat(config.css.bundle, {rebaseUrls: false}))
 			   .pipe(postcss(plugins))
 			   .pipe(gulpif( production, purgecss(purgeCSSOptions) ))
-			   //.pipe(gulpif( config.optimizations.autoprefix, autoprefixer(autoPrefixCSSOptions) ))
 			   .pipe(gulpif( production, cleanCSS(cleanCSSOptions) ))
 			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.write("maps") ))
 			   .pipe(gulp.dest( config.paths.build + config.scripts.output ))
@@ -760,70 +759,51 @@ export function svg() {
 
 
 // SPRITE GENERATOR (BETA TESTING)
-export function sprite(done) {
+export function sprite() {
 
 	console.log("Generating svg sprite sheet...");
 
 
-	gulp.src( config.paths.source + config.images.paths + config.images.sprite.paths + "**/*.svg", {base: config.paths.source} )
-		.pipe(svgSprite({
+	return gulp.src( config.paths.source + config.images.paths + config.images.sprite.paths + "**/*.svg", {base: config.paths.source} )
+			   .pipe(svgSprite({
 
-							mode: config.images.sprite.mode, // defs, sprite, symbols
-							common: config.images.sprite.class,
-							selector: "%f",
-							layout: config.images.sprite.layout,
-							padding: config.images.sprite.padding,
-							baseSize: 10,
-							svgId: "%f",
+								mode: config.images.sprite.mode, // defs, sprite, symbols
+								common: config.images.sprite.class,
+								selector: "%f",
+								layout: config.images.sprite.layout,
+								padding: config.images.sprite.padding,
+								baseSize: 10,
+								svgId: "%f",
 
-							svg: { defs: config.images.sprite.mode + ".svg", sprite: config.images.sprite.mode + ".svg", symbols: config.images.sprite.mode + ".svg" },
+								svg: { defs: config.images.sprite.mode + ".svg", sprite: config.images.sprite.mode + ".svg", symbols: config.images.sprite.mode + ".svg" },
 
-							cssFile: config.images.sprite.mode + ".css",
-							svgPath: "../" + config.images.paths + config.images.sprite.paths + "%f", // Path to be included in CSS.
-							pngPath: "../" + config.images.paths + config.images.sprite.paths + "%f", // Path to be included in CSS.
+								cssFile: config.images.sprite.mode + ".css",
+								svgPath: "../" + config.images.paths + config.images.sprite.paths + "%f", // Path to be included in CSS.
+								pngPath: "../" + config.images.paths + config.images.sprite.paths + "%f", // Path to be included in CSS.
 
-							asyncTransforms: config.images.sprite.asyncTransforms,
+								asyncTransforms: config.images.sprite.asyncTransforms,
 
-							preview: config.images.sprite.preview
-							//preview: { sprite: config.images.sprite.mode + ".html" }
+								preview: config.images.sprite.preview
+								//preview: { sprite: config.images.sprite.mode + ".html" }
 
-	   				   }
-	   	))
+		   				   }
+			   ))
 
-	   	.pipe(gulpif( config.images.sprite.convert, svg2png() ))
-		.pipe(gulp.dest(config.paths.source + config.images.paths + config.images.sprite.paths))
-
-
-		.on("end", function() {
+			   .pipe(gulpif( config.images.sprite.convert, svg2png() ))
+			   .pipe(gulp.dest(config.paths.source + config.images.paths + config.images.sprite.paths))
 
 
-			// Move 'sprite.css' to 'scripts/' folder.
-			gulp.src( config.paths.source + config.images.paths + config.images.sprite.paths + config.images.sprite.mode + ".css" )
-				.pipe(gulp.dest(config.paths.source + "css/elements/"));
+			   .on("end", function() {
+			   		
+					return gulp.src( config.paths.source + config.images.paths + config.images.sprite.paths + config.images.sprite.mode + ".css" )
+							   .pipe(gulp.dest(config.paths.source + "css/elements/"));
+					
+
+			   });
 
 
-			// Move 'sprite.html' to 'scripts/' folder.
-			/*
-			gulp.src( config.paths.source + config.images.paths + config.images.sprite.paths + config.images.sprite.mode + ".html" )
-				.pipe(gulp.dest(config.paths.source + "css/elements"))
-				.pipe(gulpif( config.images.sprite.preview, open() ));
-			*/
+			   //return done();
 
-
-			// Delete unnecessary files.
-			console.log("Deleting unnecessary files in: " + config.paths.build + config.images.paths + config.images.sprite.paths);
-
-			del([//config.paths.source + config.images.paths + config.images.sprite.paths + config.images.sprite.mode + ".css",
-				 //config.paths.source + config.images.paths + config.images.sprite.paths + config.images.sprite.mode + ".svg",
-				 //config.paths.source + config.images.paths + config.images.sprite.paths + config.images.sprite.mode + ".html"
-				]);
-
-
-		});
-
-
-
-	return done();
 
 }
 
@@ -947,7 +927,7 @@ export function sync() {
 
 	//gulp.watch(config.paths.source + config.vendors.path + "**/*.js").on("all", vendors, reload);
 
-	gulp.watch(config.paths.source + "**/*.css").on("all", sprite, css);
+	gulp.watch(config.paths.source + "**/*.css").on("all", css);
 
 	gulp.watch(config.paths.source + "**/*.{app,avi,dmg,doc,eot,exe,gif,jp2,jpg,jpeg,jxr,mid,midi,mp3,mp4,mpeg,mov,ogg,ogv,otf,pdf,png,rar,svg,tiff,ttf,txt,webm,webp,woff,woff2,zip}", gulp.series(sprite, move, reload));
 
@@ -1690,7 +1670,7 @@ gulp.task("test", gulp.series(mode, clear, html, modals, sprite, vendors, js, cs
 
 
 // BUILD
-gulp.task("build", gulp.series(clear, checkjs, checkcss, html, modals, sprite, vendors, js, css, hashscripts, move, meta, hashassets, svg, raster, analytics, robotstxt, sitemap, sw, clean, preview));
+gulp.task("build", gulp.series(clear, checkjs, checkcss, html, modals, sprite, vendors, js, css, move, meta, hashscripts, hashassets, svg, raster, analytics, robotstxt, sitemap, sw, clean, preview));
 
 
 // DEPLOY
@@ -1702,8 +1682,8 @@ gulp.task("deploy", gulp.series("build", deployinit, awsdeploy, gitdeploy, ftpde
 /* -------------------------------------------------- */
 
 // ASSETS
-gulp.task("images", gulp.series(sprite, move, assets, svg, raster, clean));
+gulp.task("images", gulp.series(move, sprite, assets, svg, raster, clean));
 
 
 // HTML / CSS / JS
-gulp.task("htmlscripts", gulp.series(checkjs, checkcss, html, modals, sprite, vendors, js, css, hashscripts, move, meta, analytics, sitemap, sw, clean, preview));
+gulp.task("htmlscripts", gulp.series(checkjs, checkcss, html, modals, sprite, vendors, js, css, move, meta, hashscripts, analytics, sitemap, sw, clean, preview));

@@ -18,7 +18,7 @@
 	border-radius: var(--radius-md);
 	box-shadow: var(--box-shadow-xl);
 
-	transform: translate3d(0,-50%,0) scale(1);
+	transform: translate3d(0,-50%,0) scale(0.9);
 
 	-webkit-overflow-scrolling: touch;
 
@@ -39,11 +39,9 @@
 
 
 /* HELPERS */
-/*
 .modal.open {
-	transform: translate3d(-50%,-50%,0) scale(1) translateZ(0);
+	transform: translate3d(-50%,-50%,1) scale(1);
 }
-*/
 
 
 /* RESPONSIVE */

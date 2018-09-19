@@ -381,11 +381,11 @@ var comModal = function() {
 
 		var uiModal = "";
 
-			uiModal += "<div class='modal grid-x align-center align-top'>"; // MODAL
+			uiModal += "<div class='modal grid-x align-center align-top' tabindex='-1' aria-hidden='true' role='dialog'>"; // MODAL
 
 				uiModal += "<div class='modal-close close dark margin-sm round-full z-01'><span></span><span></span></div>"; // BUTTON: CLOSE
 
-				uiModal += "<div id='modal-preloader' class='mini-preloader light'><span class='fa fa-circle-o-notch fa-spin' aria-hidden='true'></span><p>Loading...</p></div>" // PRELOADER
+				uiModal += "<div id='modal-preloader' class='mini-preloader light'><span class='fa fa-circle-o-notch fa-spin' aria-hidden='true' role='document'></span><p>Loading...</p></div>" // PRELOADER
 
 				uiModal += "<div class='cell modal-container'></div>" // CONTAINER
 
@@ -413,12 +413,13 @@ var comModal = function() {
 
 				if ( !$$(html).hasClass("blocker-active") ) {
 
-					TweenMax.to( $$(".modal"), 0.25, {display: "block", opacity: 1, ease: Power4.easeInOut,
+					TweenMax.to( $$(".modal"), 0.25, {display: "block", opacity: 1, ease: Power4.easeOut,
 
 													   onStart: function() {
 
 															
 														   $$(html).addClass("no-pointer");
+
 
 														   $$(".modal-close").not(".close").css({"display" : "none"});
 
@@ -437,7 +438,7 @@ var comModal = function() {
 
 																   //TweenMax.set( $$(".modal"), { maxWidth: $$(".modal-container").children().width() } );
 
-																   TweenMax.to( $$("#modal-preloader"), 0.25, {display: "none", opacity: 0, scale: 0.75, delay: 1, ease: Expo.easeInOut});
+																   TweenMax.to( $$("#modal-preloader"), 0.25, {display: "none", opacity: 0, scale: 0.75, delay: 0, ease: Expo.easeInOut});
 
 																   $$(".modal-close").not(".close").css({"display" : "block"});
 
@@ -893,7 +894,7 @@ var comStories = function() {
 		/* TILES
 		/* -------------------------------------------------- */
 
-		TweenMax.set(caseStudyUser.find("[data-src]"), {autoAlpha: 0, scale: 1.25});
+		TweenMax.set(caseStudyUser.find("[data-src]"), {autoAlpha: 0, scale: 1.12});
 
 		// JOSH
 		caseStudyUser.on("mouseover touchstart", function() {
@@ -902,7 +903,7 @@ var comStories = function() {
 			
 			self.addClass("overflow-hidden");
 			
-			TweenMax.to(self.find(".story-icon"), 0.75, {autoAlpha: 0, scale: 0.5, ease: Back.easeOut});
+			TweenMax.to(self.find(".story-icon"), 0.75, {autoAlpha: 0, scale: 0.75, ease: Back.easeOut});
 			TweenMax.to(self.find(".text-container"), 1, {autoAlpha: 0, ease: Power4.easeOut});
 			TweenMax.to(self.find("a.button"), 1, {autoAlpha: 0, ease: Power4.easeOut});
 			TweenMax.to(self.find("[data-src]"), 0.5, {autoAlpha: 1, scale: 1, ease: Power4.easeOut});
@@ -914,12 +915,12 @@ var comStories = function() {
 			
 			TweenMax.to(self.find(".text-container"), 0.75, {autoAlpha: 1, ease: Power4.easeOut});
 			TweenMax.to(self.find("a.button"), 0.75, {autoAlpha: 1, ease: Power4.easeOut});
-			TweenMax.to(self.find("[data-src]"), 0.25, {autoAlpha: 0, scale: 1.25, ease: Power4.easeOut,
+			TweenMax.to(self.find("[data-src]"), 0.25, {autoAlpha: 0, scale: 1.12, ease: Power4.easeOut,
 
 														   onComplete: function() {
 
 															   self.removeClass("overflow-hidden");
-															   TweenMax.to(self.find(".story-icon"), 0.25, {autoAlpha: 1, scale: 1, ease: Back.easeOut});
+															   TweenMax.to(self.find(".story-icon"), 0.5, {autoAlpha: 1, scale: 1, ease: Back.easeOut});
 				
 														   }
 
