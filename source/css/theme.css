@@ -121,11 +121,14 @@
 	}
 
 	.svg-stroke-none *,
-	svg g * {
+	.svg-stroke-none g,
+	.svg-stroke-none g * {
 		stroke: none !important;
 	}
 
-	.svg-fill-none * {
+	.svg-fill-none *,
+	.svg-fill-none g,
+	.svg-fill-none g * {
 		fill: none !important;
 	}
 
