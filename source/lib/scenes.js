@@ -132,18 +132,19 @@ var tlIconDataCenters = new TimelineMax({paused: true, delay: 0, repeatDelay: 0,
 TweenMax.set(animIconGettingTokens.find("#token"), {autoAlpha: 0, y: -20, scaleX: 0.5, scaleY: 1.25, transformOrigin: "bottom center"});
 
 var tlIconGettingTokens = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: false, repeat: 0, onComplete: animIconComplete});
-	tlIconGettingTokens.to(animIconGettingTokens.find("#token"), 0.25, {autoAlpha: 1, y: 10, scaleX: 1, scaleY: 0.75, ease: Back.easeOut})
+	tlIconGettingTokens.to(animIconGettingTokens.find("#token"), 0.5, {autoAlpha: 1, y: 10, scaleX: 1, scaleY: 0.75, ease: Back.easeOut})
 					   ////.to(animIconGettingTokens.find("#token"), 1, {autoAlpha: 1, y: 0, directionalRotation: "0_cw", ease: Expo.easeOut})
 					   ////.to(animIconGettingTokens.find("#hand"), 0.75, {rotation: -5, transformOrigin: "top left", ease: Expo.easeOut})
 					   ////.to(animIconGettingTokens.find("#hand"), 0.25, {rotation: 0, ease: Expo.easeOut})
 					   ////.to(animIconGettingTokens.find("#token"), 0.75, {y: 10, directionalRotation: "0_cw", ease: Expo.easeInOut}, "-=0.5")
-					   .to(animIconGettingTokens.find("#hand"), 0.5, {rotation: 12, ease: Back.easeOut}, "-=0.25")
+					   .to(animIconGettingTokens.find("#hand"), 0.5, {rotation: 12, ease: Back.easeOut}, "-=0.5")
 
 					   .to(animIconGettingTokens.find("#token"), 0.25,{y: -8, scaleY: 1, ease: Back.easeInOut})
 					   .to(animIconGettingTokens.find("#token"), 0.25,{y: 0, scaleY: 1, ease: Back.easeInOut})
 
 					   //.to(animIconGettingTokens.find("#hand"), 0.25, {rotation: -12, ease: Back.easeInOut}, "-=0.5")
-					   .to(animIconGettingTokens.find("#hand"), 0.25, {rotation: 0, ease: Back.easeInOut}, "-=0.5");
+					   .to(animIconGettingTokens.find("#hand"), 0.25, {rotation: -8, ease: Back.easeInOut}, "-=0.5")
+					   .to(animIconGettingTokens.find("#hand"), 0.25, {rotation: 0, ease: Expo.easeOut}, "-=0.25");
 
 
 /* -------------------------------------------------- */
@@ -188,9 +189,9 @@ var tlIconWitnessPool = new TimelineMax({paused: true, delay: 0, repeatDelay: 0,
 /* WEIGHTED REPUTATION SYSTEM
 /* -------------------------------------------------- */
 
-var tlIconWeightedReputationSystem = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: false, repeat: 0, onComplete: animIconComplete});
+var tlIconWeightedReputationSystem = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: true, repeat: 0, onComplete: animIconComplete});
 	tlIconWeightedReputationSystem.staggerTo(animIconWeightedReputationSystem.children(), 0.5, {autoAlpha: 0, scale: 0, rotation: 36, transformOrigin: "center center", ease: Back.easeOut}, -0.12)
-								  .staggerTo(animIconWeightedReputationSystem.children(), 1, {autoAlpha: 1, scale: 1, rotation: 0, ease: Elastic.easeOut}, 0.12);
+								  .staggerTo(animIconWeightedReputationSystem.children(), 0.5, {autoAlpha: 1, scale: 1, rotation: 0, ease: Back.easeOut}, 0.12);
 
 
 /* -------------------------------------------------- */
@@ -223,8 +224,8 @@ var tlIconMiddlemen = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, y
 /* -------------------------------------------------- */
 
 var tlIconTransactions = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: false, repeat: 0, onComplete: animIconComplete});
-	tlIconTransactions.from(animIconTransactions.find("#card-01"), 0.25, {autoAlpha: 0, rotation: -36, transformOrigin: "left bottom", ease: Back.easeOut})
-					  .from(animIconTransactions.find("#card-02"), 0.25, {autoAlpha: 0, rotation: 36, transformOrigin: "right bottom", ease: Back.easeOut});
+	tlIconTransactions.from(animIconTransactions.find("#card-01"), 0.5, {autoAlpha: 0, rotation: -36, transformOrigin: "left bottom", ease: Back.easeOut})
+					  .from(animIconTransactions.find("#card-02"), 0.5, {autoAlpha: 0, rotation: 36, transformOrigin: "right bottom", ease: Back.easeOut});
 
 
 /* -------------------------------------------------- */
@@ -274,44 +275,107 @@ var tlIconStartupCloudsBackground = new TimelineMax({paused: true, delay: 0, rep
 
 
 // FLAMES LOOP
-var tlIconStartupTrails = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: true, repeat: -1});
-	tlIconStartupTrails.to(animIconStartup.find("#flames"), 0.2, {autoAlpha: 0.75, scaleX: -1, ease: Linear.easeNone});
+var tlIconStartupFlames = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: true, repeat: -1});
+	tlIconStartupFlames.to(animIconStartup.find("#flames"), 0.2, {autoAlpha: 0.75, scaleX: -1, ease: Linear.easeNone});
+
 
 
 
 
 // SCENE
-var tlIconStartupLanding = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: false, repeat: 0, onComplete: animIconComplete});
-	tlIconStartupLanding.to(animIconStartup.find("#clouds"), 0.5, {display: "none", opacity: 0, delay: 4, ease: Expo.easeOut});
+var tlIconStartupLanding = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: false, repeat: 0});
+	tlIconStartupLanding.to(animIconStartup.find("#clouds"), 1, {display: "none", opacity: 0, delay: 0, ease: Expo.easeOut})
+
+						.to(animIconStartup.find("#rocket"), 2, {y: 25, scaleX: 1, scaleY: 1, ease: Expo.easeInOut})
+
+						.set(animIconStartup.find("#exhaust"), {autoAlpha: 1, scaleX: 1, scaleY: 1}, "-=1")
+						.to(animIconStartup.find("#exhaust"), 0.75, {autoAlpha: 0, scaleX: 2, scaleY: 0, ease: Expo.easeOut}, "-=1")
+
+
+						.to(animIconStartup.find("#flames"), 0.25, {autoAlpha: 0, scaleY: 0, transformOrigin: "bottom center", ease: Expo.easeOut,
+
+							onComplete: function() {
+
+											tlIconStartupRocket.pause();
+											tlIconStartupCloudsForeground.pause();
+											tlIconStartupCloudsBackground.pause();
+
+											animIconStartup.removeClass("no-pointer");
+
+										}
+
+						}, "-=1");
 
 
 
 
 
+var tlIconStartupLaunch = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: false, repeat: 0,
 
+											onStart: function() {
 
+														tlIconStartupRocket.play(0);
+														animIconStartup.addClass("no-pointer");
 
+													}
+											});
 
-var tlIconStartupLaunch = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: false, repeat: 0, onComplete: animIconComplete});
-	tlIconStartupLaunch.add( tlIconStartupRocket.pause(0) )
-
-					   .add( tlIconStartupRocket.play() )
-
-					   .to(animIconStartup.find("#rocket"), 0.25, {scaleY: 0.75, delay: 1, ease: Back.easeOut})
+	tlIconStartupLaunch.to(animIconStartup.find("#rocket"), 0.25, {scaleY: 0.75, delay: 1, ease: Back.easeOut})
 					   .to(animIconStartup.find("#rocket"), 0.25, {y: 0, scaleX: 0.75, scaleY: 1, ease: Back.easeOut})
 					
 					   .set(animIconStartup.find("#exhaust"), {autoAlpha: 1}, "-=0.25")
-					   .to(animIconStartup.find("#exhaust"), 1, {autoAlpha: 0, scaleX: 2, scaleY: 0, ease: Expo.easeOut})
+					   .to(animIconStartup.find("#exhaust"), 1, {autoAlpha: 0, scaleX: 2, scaleY: 0, ease: Expo.easeOut}, "-=0.25")
 
-					   .to(animIconStartup.find("#flames"), 0.5, {autoAlpha: 1, scaleY: 1, ease: Expo.easeOut}, "-=1")
-					   .add( tlIconStartupTrails.play(), "-=0.5" )
+					   .to(animIconStartup.find("#flames"), 0.5, {autoAlpha: 1, scaleY: 1, ease: Expo.easeOut,
+					   		
+					   		onStart: function() {
+					   				
+								tlIconStartupFlames.play()
 
-					   .add( tlIconStartupCloudsForeground.play() )
-					   .add( tlIconStartupCloudsBackground.play() )
+					   		},
 
-					   .add( tlIconStartupLanding.play() );
+					   		onComplete: function() {
+
+								TweenMax.to(animIconStartup.find("#clouds"), 0.5, {display: "block", opacity: 1, ease: Expo.easeOut})
+								tlIconStartupCloudsForeground.play(0);
+								tlIconStartupCloudsBackground.play(0);
 
 
+
+					   		}
+
+
+					   }, "-=1")
+
+
+
+					   .addCallback( function() { tlIconStartupLanding.play(0) }, "+=2" );
+
+
+/* -------------------------------------------------- */
+/* GLOBAL DECENTRALIZED SELLING
+/* -------------------------------------------------- */
+/*
+TweenMax.set(animIconGlobalDecentralizedSelling.find("#awning").children(), {autoAlpha: 0, scaleY: 0, transformOrigin: "top center"});
+TweenMax.set(animIconGlobalDecentralizedSelling.find("#storefront"), {autoAlpha: 0, scaleY: 0, transformOrigin: "top center"});
+TweenMax.set(animIconGlobalDecentralizedSelling.find("#door"), {autoAlpha: 0, scaleX: 0, transformOrigin: "left center"});
+TweenMax.set(animIconGlobalDecentralizedSelling.find("#window"), {autoAlpha: 0, scale: 0, transformOrigin: "center center"});
+*/
+
+var tlIconGlobalDecentralizedSelling = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: false, repeat: 0, onComplete: animIconComplete});
+	tlIconGlobalDecentralizedSelling.staggerTo(animIconGlobalDecentralizedSelling.find("#awning").children(), 0.25, {autoAlpha: 0, scaleY: 0, delay: 1, ease: Back.easeOut}, 0.12)
+						  			.to(animIconGlobalDecentralizedSelling.find("#door"), 0.25, {autoAlpha: 0, scaleX: 0, ease: Back.easeOut}, "-=0.25")
+					  				.to(animIconGlobalDecentralizedSelling.find("#window"), 0.25, {autoAlpha: 0, scaleY: 0, transformOrigin: "top center", ease: Back.easeOut}, "-=0")
+									.to(animIconGlobalDecentralizedSelling.find("#storefront"), 0.25, {autoAlpha: 0, scaleY: 0, transformOrigin: "top center", ease: Back.easeOut}, "-=0")
+
+
+									.staggerTo(animIconGlobalDecentralizedSelling.find("#awning").children(), 0.25, {autoAlpha: 1, scaleY: 1, ease: Expo.easeOut}, 0.12)
+									.to(animIconGlobalDecentralizedSelling.find("#storefront"), 0.25, {autoAlpha: 1, scaleY: 1, ease: Back.easeOut}, "-=0")
+					  				.to(animIconGlobalDecentralizedSelling.find("#door"), 0.25, {autoAlpha: 1, scaleX: 1, ease: Expo.easeOut})
+					  				.to(animIconGlobalDecentralizedSelling.find("#window"), 0.25, {autoAlpha: 1, scaleY: 1, ease: Expo.easeOut})
+
+
+;
 
 
 
@@ -665,6 +729,23 @@ var tlIconStartupLaunch = new TimelineMax({paused: true, delay: 0, repeatDelay: 
 
 
 
+		if ( animIconGlobalDecentralizedSelling.hasClass("anim-play") ) {
+
+			tlIconGlobalDecentralizedSelling.play();
+
+		} else {
+
+			tlIconGlobalDecentralizedSelling.pause(0);
+
+		} if ( animIconGlobalDecentralizedSelling.hasClass("no-pointer") && !tlIconGlobalDecentralizedSelling.isActive() ) {
+			
+			tlIconGlobalDecentralizedSelling.restart();
+
+		}
+
+
+
+
 
 
 	};
@@ -674,7 +755,7 @@ var tlIconStartupLaunch = new TimelineMax({paused: true, delay: 0, repeatDelay: 
 	/* INTERACTIVE
 	/* -------------------------------------------------- */
 
-	animIcon.on("mouseover touchdown", function() {
+	animIcon.on("mouseover touchmove touchstart", function() {
 		"use strict";
 
 		var self = $(this);
