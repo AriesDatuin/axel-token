@@ -57,8 +57,8 @@ TweenMax.set(animIcon, {transformOrigin: "center center"});
 var tlIconMagnifyingGlass = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: false, repeat: 0, onComplete: animIconComplete});
 	tlIconMagnifyingGlass.to(animIconMagnifyingGlass.find("#magnifying-glass"), 0.5, {autoAlpha: 0, scale: 0.5, rotation: 60, transformOrigin: "center center", ease: Back.easeOut})
 						 .to(animIconMagnifyingGlass.find("#magnifying-glass"), 0.5, {autoAlpha: 1, scale: 1, rotation: 0, ease: Back.easeOut})
-						 .staggerTo(animIconMagnifyingGlass.find("#people").children(), 1, {autoAlpha: 0, ease: Expo.easeOut}, 0.12, "-=1.5")
-						 .staggerTo(animIconMagnifyingGlass.find("#people").children(), 1, {autoAlpha: 1, ease: Expo.easeOut}, -0.12);
+						 .staggerTo(animIconMagnifyingGlass.find("#magnifying-glass-people").children(), 1, {autoAlpha: 0, ease: Expo.easeOut}, 0.12, "-=1.5")
+						 .staggerTo(animIconMagnifyingGlass.find("#magnifying-glass-people").children(), 1, {autoAlpha: 1, ease: Expo.easeOut}, -0.12);
 
 
 /* -------------------------------------------------- */
@@ -114,7 +114,7 @@ var tlIconReputation = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, 
 
 var tlIconPublicDecentralization = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: false, repeat: 0, onComplete: animIconComplete});
 	tlIconPublicDecentralization.staggerFrom(animIconPublicDecentralization.find("#segments").children(), 0.25, {autoAlpha: 0, scale: 0, transformOrigin: "center center", ease: Back.easeOut}, 0.12)
-				    	  .staggerFrom(animIconPublicDecentralization.find("#nodes").children(), 1, {autoAlpha: 0, ease: Expo.easeOut}, 0.12, "-=0.75");
+				    	  .staggerFrom(animIconPublicDecentralization.find("#public-decentralization-nodes").children(), 1, {autoAlpha: 0, ease: Expo.easeOut}, 0.12, "-=0.75");
 
 
 /* -------------------------------------------------- */
@@ -123,9 +123,9 @@ var tlIconPublicDecentralization = new TimelineMax({paused: true, delay: 0, repe
 
 var tlIconDataCenters = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: false, repeat: 0, onComplete: animIconComplete});
 	tlIconDataCenters.to(animIconDataCenters.find("#globe"), 0.5, {autoAlpha: 0, scale: 0.9, transformOrigin: "center center", ease: Back.easeOut}, "-=0.5")
-					 .staggerTo(animIconDataCenters.find("#nodes").children(), 1, {autoAlpha: 0, scale: 0, transformOrigin: "center center", ease: Back.easeOut}, -0.12, "-=0.5")
+					 .staggerTo(animIconDataCenters.find("#data-center-nodes").children(), 1, {autoAlpha: 0, scale: 0, transformOrigin: "center center", ease: Back.easeOut}, -0.12, "-=0.5")
 
-					 .staggerTo(animIconDataCenters.find("#nodes").children(), 1, {autoAlpha: 1, scale: 1, transformOrigin: "center center", ease: Back.easeOut}, 0.12)
+					 .staggerTo(animIconDataCenters.find("#data-center-nodes").children(), 1, {autoAlpha: 1, scale: 1, transformOrigin: "center center", ease: Back.easeOut}, 0.12)
 					 .to(animIconDataCenters.find("#globe"), 0.5, {autoAlpha: 1, scale: 1, ease: Back.easeOut}, "-=0.5");
 
 
@@ -213,11 +213,11 @@ var tlIconFullyProtected = new TimelineMax({paused: true, delay: 0, repeatDelay:
 /* -------------------------------------------------- */
 
 var tlIconDualChainArchitecture = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: false, repeat: 0, onComplete: animIconComplete });
-	tlIconDualChainArchitecture.to(animIconDualChainArchitecture.find("#chain-01"), 0.5, {autoAlpha: 0, x: 10, y: 10, scale: 0, transformOrigin: "center center", ease: Back.easeOut})
-							   .to(animIconDualChainArchitecture.find("#chain-02"), 0.5, {autoAlpha: 0, x: -10, y: -10, scale: 0, transformOrigin: "center center", ease: Back.easeOut}, "-=0.5")
+	tlIconDualChainArchitecture.to(animIconDualChainArchitecture.find("#dual-chain-01"), 0.5, {autoAlpha: 0, x: 10, y: 10, scale: 0, transformOrigin: "center center", ease: Back.easeOut})
+							   .to(animIconDualChainArchitecture.find("#dual-chain-02"), 0.5, {autoAlpha: 0, x: -10, y: -10, scale: 0, transformOrigin: "center center", ease: Back.easeOut}, "-=0.5")
 
-							   .to(animIconDualChainArchitecture.find("#chain-01"), 0.5, {autoAlpha: 1, x: 0, y: 0, scale: 1, ease: Back.easeOut})
-							   .to(animIconDualChainArchitecture.find("#chain-02"), 0.5, {autoAlpha: 1, x: 0, y: 0, scale: 1, ease: Back.easeOut}, "-=0.5");
+							   .to(animIconDualChainArchitecture.find("#dual-chain-01"), 0.5, {autoAlpha: 1, x: 0, y: 0, scale: 1, ease: Back.easeOut})
+							   .to(animIconDualChainArchitecture.find("#dual-chain-02"), 0.5, {autoAlpha: 1, x: 0, y: 0, scale: 1, ease: Back.easeOut}, "-=0.5");
 
 
 /* -------------------------------------------------- */
@@ -243,11 +243,11 @@ var tlIconWeightedReputationSystem = new TimelineMax({paused: true, delay: 0, re
 /* -------------------------------------------------- */
 
 var tlIconUnification = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: false, repeat: 0, onComplete: animIconComplete});
-	tlIconUnification.to(animIconUnification.find("#chain-01"), 0.25, {autoAlpha: 0, x: 10, scale: 0.75, rotation: 60, transformOrigin: "center center", ease: Back.easeOut})
-					 .to(animIconUnification.find("#chain-02"), 0.25, {autoAlpha: 0, x: -10, scale: 0.75, rotation: -60, transformOrigin: "center center", ease: Back.easeOut}, "-=0.25")
+	tlIconUnification.to(animIconUnification.find("#unification-chain-01"), 0.25, {autoAlpha: 0, x: 10, scale: 0.75, rotation: 60, transformOrigin: "center center", ease: Back.easeOut})
+					 .to(animIconUnification.find("#unification-chain-02"), 0.25, {autoAlpha: 0, x: -10, scale: 0.75, rotation: -60, transformOrigin: "center center", ease: Back.easeOut}, "-=0.25")
 
-					 .to(animIconUnification.find("#chain-01"), 0.5, {autoAlpha: 1, x: 0, scale: 1, rotation: 0, ease: Back.easeOut})
-					 .to(animIconUnification.find("#chain-02"), 0.5, {autoAlpha: 1, x: 0, scale: 1, rotation: 0, ease: Back.easeOut}, "-=0.5");
+					 .to(animIconUnification.find("#unification-chain-01"), 0.5, {autoAlpha: 1, x: 0, scale: 1, rotation: 0, ease: Back.easeOut})
+					 .to(animIconUnification.find("#unification-chain-02"), 0.5, {autoAlpha: 1, x: 0, scale: 1, rotation: 0, ease: Back.easeOut}, "-=0.5");
 
 
 /* -------------------------------------------------- */
@@ -258,8 +258,8 @@ TweenMax.set(animIconMiddlemen.find("#person"), {autoAlpha: 0})
 
 var tlIconMiddlemen = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: false, repeat: 0, onComplete: animIconComplete});
 	tlIconMiddlemen.to(animIconMiddlemen.find("#middleman"), 1, {autoAlpha: 0, delay: 1, ease: Expo.easeOut})
-				   .staggerTo(animIconMiddlemen.find("#people").children(), 0.5, {autoAlpha: 0, ease: Expo.easeOut}, 0.12, "-=1")
-				   .staggerTo(animIconMiddlemen.find("#people").children(), 0.5, {autoAlpha: 1, ease: Expo.easeOut}, -0.12)
+				   .staggerTo(animIconMiddlemen.find("#middlemen-people").children(), 0.5, {autoAlpha: 0, ease: Expo.easeOut}, 0.12, "-=1")
+				   .staggerTo(animIconMiddlemen.find("#middlemen-people").children(), 0.5, {autoAlpha: 1, ease: Expo.easeOut}, -0.12)
 				   .to(animIconMiddlemen.find("#person"), 1, {autoAlpha: 1, ease: Expo.easeOut}, "-=0.5");
 
 
