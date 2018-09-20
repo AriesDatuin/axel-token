@@ -120,16 +120,13 @@
 		color: var(--warning-color);
 	}
 
-	.svg-stroke-none * {
+	.svg-stroke-none *,
+	svg g * {
 		stroke: none !important;
 	}
 
 	.svg-fill-none * {
 		fill: none !important;
-	}
-
-	svg g * {
-		stroke: none !important;
 	}
 
 

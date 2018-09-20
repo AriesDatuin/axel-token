@@ -16,9 +16,11 @@
 
 
 /* HOVER */
-.card:hover {
+/*
+.card-hover:hover {
 	transform: scale(1.01);
 }
+*/
 
 
 .card-primary:hover div *,
