@@ -604,11 +604,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-<<<<<<< HEAD
-    "revision": "eedb20b3fdff022299b1528a835bbb31"
-=======
-    "revision": "6b9ceba542e86370d08861ddbb19e989"
->>>>>>> 69dc5f53fe9f6f6b749e4576abef6fdaf6e4ad8b
+    "revision": "03db23d41e00b28e8d4986482ad8a801"
   },
   {
     "url": "modals/press.html",
