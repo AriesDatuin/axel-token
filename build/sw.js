@@ -48,7 +48,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/icons-nav.svg",
-    "revision": "6160059cc76fc2d1774f844cf1add2a5"
+    "revision": "54c5e42c9b101ef67753192ca9862933"
   },
   {
     "url": "assets/icons/android-chrome-192x192.png",
@@ -604,7 +604,11 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
+<<<<<<< HEAD
     "revision": "eedb20b3fdff022299b1528a835bbb31"
+=======
+    "revision": "6b9ceba542e86370d08861ddbb19e989"
+>>>>>>> 69dc5f53fe9f6f6b749e4576abef6fdaf6e4ad8b
   },
   {
     "url": "modals/press.html",
