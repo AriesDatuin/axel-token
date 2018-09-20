@@ -6,7 +6,7 @@ var	animIcon = $$("svg.anim"),
 
 	animIconMagnifyingGlass = $$("#icon-magnifying-glass"),
 	animIconHacker = $$("#icon-hacker"),
-	animIconEye = $$("#icon-eye"),
+	animIconEye = $$("#icon-sauron"),
 
 	animIconAnonymity = $$("#icon-anonymity"),
 	animIconReputation = $$("#icon-reputation"),
@@ -358,13 +358,13 @@ var tlIconStartupLaunch = new TimelineMax({paused: true, delay: 0, repeatDelay: 
 
 											onStart: function() {
 
-														tlIconStartupRocket.play(0);
+														tlIconStartupRocket.resume();
 														animIconStartup.addClass("no-pointer");
 
 													}
 											});
 
-	tlIconStartupLaunch.to(animIconStartup.find("#rocket"), 0.25, {scaleY: 0.75, delay: 1, ease: Back.easeOut})
+	tlIconStartupLaunch.to(animIconStartup.find("#rocket"), 0.25, {scaleX: 1, scaleY: 0.75, delay: 0, ease: Back.easeOut})
 					   .to(animIconStartup.find("#rocket"), 0.25, {y: 0, scaleX: 0.75, scaleY: 1, ease: Back.easeOut})
 					
 					   .set(animIconStartup.find("#exhaust"), {autoAlpha: 1}, "-=0.25")
@@ -374,15 +374,15 @@ var tlIconStartupLaunch = new TimelineMax({paused: true, delay: 0, repeatDelay: 
 					   		
 					   		onStart: function() {
 					   				
-								tlIconStartupFlames.play()
+								tlIconStartupFlames.resume()
 
 					   		},
 
 					   		onComplete: function() {
 
 								TweenMax.to(animIconStartup.find("#clouds"), 0.5, {display: "block", opacity: 1, ease: Expo.easeOut})
-								tlIconStartupCloudsForeground.play(0);
-								tlIconStartupCloudsBackground.play(0);
+								tlIconStartupCloudsForeground.resume();
+								tlIconStartupCloudsBackground.resume();
 
 
 
@@ -393,7 +393,7 @@ var tlIconStartupLaunch = new TimelineMax({paused: true, delay: 0, repeatDelay: 
 
 
 
-					   .addCallback( function() { tlIconStartupLanding.play(0) }, "+=2" );
+					   .addCallback( function() { tlIconStartupLanding.play(0) }, "+=1" );
 
 
 /* -------------------------------------------------- */
@@ -440,9 +440,21 @@ var tlIconGlobalDecentralizedSelling = new TimelineMax({paused: true, delay: 0, 
 					  				.to(animIconGlobalDecentralizedSelling.find("#window"), 0.25, {autoAlpha: 1, scaleY: 1, ease: Expo.easeOut});
 
 
+/* -------------------------------------------------- */
+/* INVISIBLE TRANSACTIONS
+/* -------------------------------------------------- */
 
+TweenMax.set(animIconInvisibleTransactions.find("#blind-eye"), {autoAlpha: 0});
+TweenMax.set(animIconInvisibleTransactions.find("#cross-out"), {autoAlpha: 1, scale: 0, transformOrigin: "top right"});
 
+var tlIconInvisibleTransactions = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: true, repeat: 0, onComplete: animIconComplete});
+	tlIconInvisibleTransactions.to(animIconInvisibleTransactions.find("#visible-pupil"), 0.5, {rotation: -90, transformOrigin: "center center", delay: 1, ease: Expo.easeOut})
+							   .to(animIconInvisibleTransactions.find("#visible-pupil"), 0.25, {rotation: 0, ease: Expo.easeOut})
 
+							   .set(animIconInvisibleTransactions.find("#creepy-eye"), {autoAlpha: 0})
+
+							   .to(animIconInvisibleTransactions.find("#blind-eye"), 0.5, {autoAlpha: 1, ease: Expo.easeOut}, "-=0.28")
+							   .to(animIconInvisibleTransactions.find("#cross-out"), 0.5, {autoAlpha: 1, scale: 1, ease: Expo.easeOut}, "-=0.32");
 
 
 
@@ -484,19 +496,25 @@ var tlIconGlobalDecentralizedSelling = new TimelineMax({paused: true, delay: 0, 
 		tlIconSellAnything.pause();
 
 
-		tlIconStartupLaunch.pause();
+		if ( tlIconStartupLaunch.isActive() ) {
 
-		if ( tlIconStartupLaunch.paused(true) ) {
+			tlIconStartupLaunch.pause();
 
-			tlIconStartupRocket.pause();
-			tlIconStartupFlames.pause();
-			tlIconStartupCloudsForeground.pause();
-			tlIconStartupCloudsBackground.pause();
-			
+			if ( tlIconStartupLaunch.paused() ) {
+
+				tlIconStartupRocket.pause();
+				tlIconStartupFlames.pause();
+				tlIconStartupCloudsForeground.pause();
+				tlIconStartupCloudsBackground.pause();
+				
+			}
+
 		}
 
 
+		tlIconNoHostageSituations.pause();
 		tlIconGlobalDecentralizedSelling.pause();
+		tlIconInvisibleTransactions.pause();
 
 	};
 
@@ -803,9 +821,8 @@ var tlIconGlobalDecentralizedSelling = new TimelineMax({paused: true, delay: 0, 
 		if ( animIconStartup.hasClass("anim-play") ) {
 
 			tlIconStartupLaunch.resume();
-
-			/*
-			if ( tlIconStartupLaunch.paused(false) ) {
+			
+			if ( !tlIconStartupLaunch.paused() && tlIconStartupLaunch.isActive() ) {
 
 				tlIconStartupRocket.resume();
 				tlIconStartupFlames.resume();
@@ -813,8 +830,6 @@ var tlIconGlobalDecentralizedSelling = new TimelineMax({paused: true, delay: 0, 
 				tlIconStartupCloudsBackground.resume();
 
 			}
-			*/
-
 
 		} else {
 
@@ -866,6 +881,23 @@ var tlIconGlobalDecentralizedSelling = new TimelineMax({paused: true, delay: 0, 
 
 
 
+		if ( animIconInvisibleTransactions.hasClass("anim-play") ) {
+
+			tlIconInvisibleTransactions.resume();
+
+		} else {
+
+			tlIconInvisibleTransactions.pause(0);
+
+		} if ( animIconInvisibleTransactions.hasClass("no-pointer") && !tlIconInvisibleTransactions.isActive() ) {
+			
+			tlIconInvisibleTransactions.restart();
+
+		}
+
+
+
+
 
 	};
 	
@@ -874,7 +906,7 @@ var tlIconGlobalDecentralizedSelling = new TimelineMax({paused: true, delay: 0, 
 	/* INTERACTIVE
 	/* -------------------------------------------------- */
 
-	animIcon.on("mouseover touchmove touchstart", function() {
+	animIcon.on("mouseover touchstart touchmove", function() {
 		"use strict";
 
 		var self = $(this);

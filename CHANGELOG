@@ -1,3 +1,19 @@
+September 20, 2018
+Version 2.4
+	Website / App
+		- Added animated / interactive icons.
+		- Adjusted global timing for timeline animations.
+		- Optimized SVG graphics.
+		- Updated GSAP library to 2.0.2.
+		- Improved modal / popup preload.
+		- Removed hidden sections in production files.
+		- Removed unused graphics.
+		- Removed unused modules and components.
+
+
+
+
+
 September 12, 2018
 Version 2.3
 	Website / App
