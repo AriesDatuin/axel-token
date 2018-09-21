@@ -18,15 +18,25 @@ function login (form) {
         _a: 'get_auth_types',
         email: email
     }).always(function (response) {
+
         if (response && response.code && response.code == '0') {
-            if (!response.data.length || response.data.indexOf('axel') > -1 || response.data.indexOf('axel_without_password') > -1 || response.data.indexOf('gccas') > -1) {
+
+            /* Reverted back to stoamigo. */
+            if (!response.data.length || response.data.indexOf('stoamigo') > -1 || response.data.indexOf('stoamigo_without_password') > -1 || response.data.indexOf('gccas') > -1) {
+
                 location.href = 'https://login.' + DOMAIN + '/?email=' + encodeURIComponent(email) + '&auth_types=' + encodeURIComponent(JSON.stringify(response.data));
                 ga('gtm1.send',{'hitType': 'event','eventCategory': 'New User','eventAction': 'Signs Up','eventLabel': 'using Signup for Free Button'});
+
             } else if (response.data.indexOf('facebook') > -1) {
+
                 openFacebookAuth();
+
             } else if (response.data.indexOf('google') > -1) {
+
                 openGoogleAuth();
+
             }
+
         } else {
             alert('Failed to sign in.');
         }
