@@ -133,62 +133,27 @@ var tlIconDataCenters = new TimelineMax({paused: true, delay: 0, repeatDelay: 0,
 /* GETTING TOKENS
 /* -------------------------------------------------- */
 
-//TweenMax.set(animIconGettingTokens.find("#token"), {autoAlpha: 0, y: -8, scaleX: 0.25, scaleY: 1.25, transformOrigin: "bottom center"});
-
 var tlIconGettingTokens = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: false, repeat: 0, onComplete: animIconComplete});
 	tlIconGettingTokens
-					   ////.to(animIconGettingTokens.find("#token"), 1, {autoAlpha: 1, y: 0, directionalRotation: "0_cw", ease: Expo.easeOut})
-					   ////.to(animIconGettingTokens.find("#hand"), 0.75, {rotation: -5, transformOrigin: "top left", ease: Expo.easeOut})
-					   ////.to(animIconGettingTokens.find("#hand"), 0.25, {rotation: 0, ease: Expo.easeOut})
-					   ////.to(animIconGettingTokens.find("#token"), 0.75, {y: 10, directionalRotation: "0_cw", ease: Expo.easeInOut}, "-=0.5")
-					   
-
-					   //.to(animIconGettingTokens.find("#token"), 0.25,{y: -8, scaleY: 1, ease: Back.easeInOut})
-
-					   //.to(animIconGettingTokens.find("#hand"), 0.25, {rotation: -12, ease: Back.easeInOut}, "-=0.5")
 
 
-
-					   //.to(animIconGettingTokens.find("#hand"), 0.25, {rotation: 8, ease: Expo.easeOut}, "-=0.25")
-
-
-						.fromTo(animIconGettingTokens.find("#token"), 0.25, {autoAlpha: 0, y: -12, scaleX: 1, scaleY: 1, transformOrigin: "bottom center", ease: Back.easeInOut}, {autoAlpha: 1, y: 10, scaleX: 1, scaleY: 0.75, ease: Back.easeInOut})
-						.fromTo(animIconGettingTokens.find("#hand"), 0.25, {rotation: 0, transformOrigin: "top left", ease: Back.easeInOut}, {rotation: 10, ease: Back.easeInOut}, "-=0.25")
-
-
-
-						.to(animIconGettingTokens.find("#token"), 0.25, {y: -18, scaleX: 0.75, scaleY: 1, transformOrigin: "top center", ease: Back.easeInOut})
-						.to(animIconGettingTokens.find("#token"), 0.25, {y: -5, scaleX: 1, scaleY: 1, transformOrigin: "bottom center", ease: Bounce.easeOut})
-
-						.to(animIconGettingTokens.find("#hand"), 0.25, {rotation: -5, ease: Back.easeInOut}, "-=0.5")
-						.to(animIconGettingTokens.find("#hand"), 0.25, {rotation: 5, ease: Back.easeInOut}, "-=0.25")
-
-
-
+						//.fromTo(animIconGettingTokens.find("#token"), 0.25, {autoAlpha: 1, y: -12, scaleX: 1, scaleY: 1, transformOrigin: "bottom center", ease: Back.easeInOut}, {autoAlpha: 1, y: 10, scaleX: 1, scaleY: 0.75, ease: Back.easeInOut})
 						//.fromTo(animIconGettingTokens.find("#hand"), 0.25, {rotation: 0, transformOrigin: "top left", ease: Back.easeInOut}, {rotation: 10, ease: Back.easeInOut}, "-=0.25")
 
 
 
-
-						/*
-					   .to(animIconGettingTokens.find("#token"), 0.5, {autoAlpha: 1, y: 10, scaleX: 1, scaleY: 0.75, transformOrigin: "bottom center", ease: Back.easeOut})
-
-					   .to(animIconGettingTokens.find("#hand"), 0.5, {rotation: 12, ease: Back.easeOut}, "-=0.5")
-
-					   .to(animIconGettingTokens.find("#token"), 0.25,{y: -15, scaleX: 1, scaleY: 1, ease: Back.easeInOut})
-					   .to(animIconGettingTokens.find("#token"), 0.25,{y: 15, scaleX: 1, scaleY: 1, ease: Expo.easeOut}, "-=0")
+						.to(animIconGettingTokens.find("#token"), 0.5, {y: 10, scaleX: 1, scaleY: 0.75, transformOrigin: "bottom center", ease: Back.easeOut})
+						.to(animIconGettingTokens.find("#hand"), 0.5, {rotation: 10, transformOrigin: "left bottom", ease: Back.easeOut}, "-=0.5")
 
 
-					   .to(animIconGettingTokens.find("#hand"), 0.25, {rotation: -10, ease: Back.easeInOut}, "-=0.5")
-					   .to(animIconGettingTokens.find("#hand"), 0.25, {rotation: 15, ease: Back.easeInOut}, "-=0.35")
+						.to(animIconGettingTokens.find("#token"), 0.5, {y: -20, scaleX: 0.75, scaleY: 1, transformOrigin: "center center", ease: Back.easeOut})
+						.to(animIconGettingTokens.find("#hand"), 0.5, {rotation: 0, ease: Back.easeOut}, "-=0.5")
 
-					   .to(animIconGettingTokens.find("#token"), 0.25,{y: -15, scaleX: 1, scaleY: 0.75, transformOrigin: "top center", ease: Back.easeInOut})
-					   .to(animIconGettingTokens.find("#token"), 0.25,{y: 8, scaleX: 1, scaleY: 1, transformOrigin: "bottom center", ease: Expo.easeOut}, "-=0")
 
-					   .to(animIconGettingTokens.find("#hand"), 0.25, {rotation: 0, ease: Back.easeInOut}, "-=0.5")
-					   */
+						.to(animIconGettingTokens.find("#hand"), 0.5, {rotation: 5, ease: Back.easeOut}, "-=0")
+						.to(animIconGettingTokens.find("#token"), 0.25, {y: 0, scaleX: 1, scaleY: 1, ease: Back.easeOut.config(1.7) }, "-=0.5")
 
-					   ;
+						;
 
 
 /* -------------------------------------------------- */
@@ -277,8 +242,9 @@ var tlIconTransactions = new TimelineMax({paused: true, delay: 0, repeatDelay: 0
 /* -------------------------------------------------- */
 
 var tlIconSellAnything = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: false, repeat: 0, onComplete: animIconComplete});
-	tlIconSellAnything.to(animIconSellAnything.children(), 0.5, {autoAlpha: 0, rotation: -28, transformOrigin: "left bottom", ease: Back.easeOut})
-					  .to(animIconSellAnything.children(), 0.25, {autoAlpha: 1, rotation: 0, ease: Back.easeOut})
+	tlIconSellAnything
+					  //.to(animIconSellAnything.children(), 0.5, {autoAlpha: 0, rotation: -28, transformOrigin: "left bottom", ease: Back.easeOut})
+					  //.to(animIconSellAnything.children(), 0.25, {autoAlpha: 1, rotation: 0, ease: Back.easeOut})
 
 					  .to(animIconSellAnything.children(), 0.5, {y: -10, transformOrigin: "center center", ease: Back.easeOut})
 					  .to(animIconSellAnything.children(), 0.25, {y: 0, ease: Back.easeOut})
@@ -321,9 +287,6 @@ var tlIconStartupCloudsBackground = new TimelineMax({paused: true, delay: 0, rep
 // FLAMES LOOP
 var tlIconStartupFlames = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: true, repeat: -1});
 	tlIconStartupFlames.to(animIconStartup.find("#flames"), 0.2, {autoAlpha: 0.75, scaleX: -1, ease: Linear.easeNone});
-
-
-
 
 
 // SCENE
@@ -384,10 +347,7 @@ var tlIconStartupLaunch = new TimelineMax({paused: true, delay: 0, repeatDelay: 
 								tlIconStartupCloudsForeground.resume();
 								tlIconStartupCloudsBackground.resume();
 
-
-
 					   		}
-
 
 					   }, "-=1")
 
@@ -453,8 +413,8 @@ var tlIconInvisibleTransactions = new TimelineMax({paused: true, delay: 0, repea
 
 							   .set(animIconInvisibleTransactions.find("#creepy-eye"), {autoAlpha: 0})
 
-							   .to(animIconInvisibleTransactions.find("#blind-eye"), 0.5, {autoAlpha: 1, ease: Expo.easeOut}, "-=0.28")
-							   .to(animIconInvisibleTransactions.find("#cross-out"), 0.5, {autoAlpha: 1, scale: 1, ease: Expo.easeOut}, "-=0.32");
+							   .to(animIconInvisibleTransactions.find("#blind-eye"), 0.25, {autoAlpha: 1, ease: Expo.easeOut}, "-=0.25")
+							   .to(animIconInvisibleTransactions.find("#cross-out"), 0.25, {autoAlpha: 1, scale: 1, ease: Expo.easeOut}, "-=0");
 
 
 

@@ -4,8 +4,9 @@ Version 2.4
 		- Added animated / interactive icons.
 		- Adjusted global timing for timeline animations.
 		- Optimized SVG graphics.
+		- Fixed minor layout issues with modal popups.
 		- Updated GSAP library to 2.0.2.
-		- Improved modal / popup preload.
+		- Improved modal popup preload.
 		- Removed hidden sections in production files.
 		- Removed unused graphics.
 		- Removed unused modules and components.
@@ -38,7 +39,7 @@ Version 2.2
 	Website / App
 		- Added 'Bruce Mcdonald' to 'Team' section.
 		- Minor layout adjustments.
-		- Revised layout of modal / popups to be more mobile friendly.
+		- Revised layout of modal popups to be more mobile friendly.
 		- fxNeuralNetwork will stop rendering if window is out of focus and will run fxNeuralNetworkUpdate when window is in focus.
 
 
@@ -53,7 +54,7 @@ September 11, 2018
 Version 2.1
 	Website / App
 		- Fixed images not loading in Edge, IE.
-		- Added preloader to modal / popup content.
+		- Added preloader to modal popup content.
 		- Improved IntersectionObserver support.
 		- Major optimizations to CSS and JS.
 		- Full initial release.
