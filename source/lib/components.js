@@ -417,14 +417,12 @@ var comModal = function() {
 
 													   onStart: function() {
 
-															
-														   $$(html).addClass("no-pointer");
+															   $$(html).addClass("no-pointer");
 
+															   $$(".modal-close").not(".close").css({"display" : "none"});
 
-														   $$(".modal-close").not(".close").css({"display" : "none"});
+															   $$(".modal-container").load(modalContentURL + modalContentSelector, function ( response, status, xhr ) {
 
-
-														   $$(".modal-container").load(modalContentURL + modalContentSelector, function ( response, status, xhr ) {
 
 															   // PRELOADER
 															   TweenMax.set( $$("#modal-preloader"), {display: "block", opacity: 1, scale: 1});
@@ -493,7 +491,7 @@ var comModal = function() {
 		$$(pageContent).on("resize", _.debounce(function() {
 
 													if ( $$(".modal").length ) {
-
+														   
 														console.log("Modal is open.");
 														TweenMax.set( $$(".modal"), { width: window.innerWidth / 1.2, height: window.innerHeight / 1.2 } );
 

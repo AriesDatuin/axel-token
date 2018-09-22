@@ -1,5 +1,17 @@
+September 21, 2018
+Version 2.4.0 (Quick fix)
+	Website / App
+		- Fixed blurry fonts in modal popup.
+		- Removed scale effect in modal popup.
+		- Adjusted width and height values when opening a modal popup.
+		- Minor tweaks and adjustments to icon animations.
+
+
+
+
+
 September 20, 2018
-Version 2.4
+Version 2.4.0
 	Website / App
 		- Added animated / interactive icons.
 		- Adjusted global timing for timeline animations.
@@ -16,7 +28,7 @@ Version 2.4
 
 
 September 12, 2018
-Version 2.3
+Version 2.3.0
 	Website / App
 		- Reduced gap between <section> block elements.
 		- Added sprite sheet for press logos.
@@ -35,7 +47,7 @@ Version 2.3
 
 
 September 12, 2018
-Version 2.2
+Version 2.2.0
 	Website / App
 		- Added 'Bruce Mcdonald' to 'Team' section.
 		- Minor layout adjustments.
@@ -51,7 +63,7 @@ Version 2.2
 
 
 September 11, 2018
-Version 2.1
+Version 2.1.0
 	Website / App
 		- Fixed images not loading in Edge, IE.
 		- Added preloader to modal popup content.
@@ -69,7 +81,7 @@ Version 2.1
 		- Added Google Analytics tracking options.
 		- Added robots.txt options.
 		- Improved HTML processing in Panini engine.
-		- Improved modal / popup processing.
+		- Improved modal popup processing.
 		- Revised inline script injection.
 		- Added option to add vendor scripts.
 		- General optimization and fixes to build framework.

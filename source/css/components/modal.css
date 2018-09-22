@@ -18,15 +18,21 @@
 	border-radius: var(--radius-md);
 	box-shadow: var(--box-shadow-xl);
 
-	transform: translate3d(0,-50%,0) scale(0.9);
+	transform: translate3d(0,-50%,0) translateZ(0);
 
 	-webkit-overflow-scrolling: touch;
 
 	/* Force GPU Rendering */
-	/*backface-visibility: hidden;*/
-	/*perspective: 1000;*/
+	/*
+	backface-visibility: hidden;
+	perspective: 1000;
+	*/
 
 	transition: var(--ease-fast);
+
+	-webkit-font-smoothing: subpixel-antialiased;
+	-webkit-filter: blur(0);
+	will-change: auto;
 }
 
 
@@ -40,7 +46,7 @@
 
 /* HELPERS */
 .modal.open {
-	transform: translate3d(-50%,-50%,1) scale(1);
+	transform: translate3d(0,-50%,1) translateZ(0);
 }
 
 
@@ -57,7 +63,7 @@
 		max-height: 100% !important;
 		border-radius: 0;
 
-		transform: translate3d(0,0,0) scale(1);
+		transform: translate3d(0,0,0) translateZ(0);
 	}
 
 }

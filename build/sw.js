@@ -48,7 +48,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/icons-nav.svg",
-    "revision": "6160059cc76fc2d1774f844cf1add2a5"
+    "revision": "54c5e42c9b101ef67753192ca9862933"
   },
   {
     "url": "assets/icons/android-chrome-192x192.png",
@@ -572,7 +572,7 @@ self.__precacheManifest = [
   },
   {
     "url": "error.html",
-    "revision": "4962b5684df0baa01abd23847a404d56"
+    "revision": "34dc764edc4c2eaf5d71b3bbe95a35b8"
   },
   {
     "url": "fonts/fontawesome-webfont.eot",
@@ -604,7 +604,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "c03347cc8e9ca0b21cb0e9d10c676e1e"
+    "revision": "171ed2299eb2bb3209310a0eac1130d5"
   },
   {
     "url": "modals/press.html",
@@ -631,8 +631,8 @@ self.__precacheManifest = [
     "revision": "5ae02b20ed31642e842182ec60afdfc0"
   },
   {
-    "url": "scripts/app.604f3d909f.min.css",
-    "revision": "604f3d909fa7798598693872b13446eb"
+    "url": "scripts/app.c3b2c8cad6.min.css",
+    "revision": "c3b2c8cad62fa8435fb6c810d61a69a4"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
