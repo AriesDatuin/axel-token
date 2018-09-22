@@ -191,7 +191,7 @@
 				  ">>>>>lib/assets/granim.js",
 				  ">>>>>lib/particles/particles.core.js",
 				  ">>>>>lib/particles/particles.app.js",
-				  "lib/fx/*.js",
+				  "lib/assets/neuralnetwork.js",
 
 
 				  "<ELEMENT MANIPULATION>",
@@ -308,7 +308,6 @@
 
 
 				  "<FX>",
-				  "lib/fx/*.css",
 
 
 				  "<DOM>",
