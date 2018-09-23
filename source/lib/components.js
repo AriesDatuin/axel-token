@@ -458,7 +458,7 @@ var comModal = function() {
 
 													   onComplete: function() {
 
-														   $$(".modal").addClass("open");
+														   //$$(".modal").addClass("open");
 														   $$(html).removeClass("no-pointer");
 
 													   }
@@ -470,7 +470,7 @@ var comModal = function() {
 
 														onStart: function() {
 
-															$$(".modal").removeClass("open");
+															//$$(".modal").removeClass("open");
 
 														},
 

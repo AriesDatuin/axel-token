@@ -215,7 +215,7 @@
 				  ">>>>>lib/gsap/plugins/ColorPropsPlugin.js",
 				  ">>>>>lib/gsap/plugins/CSSPlugin.js",
 				  ">>>>>lib/gsap/plugins/CSSRulePlugin.js",
-				  "lib/gsap/plugins/DirectionalRotationPlugin.js",
+				  ">>>>>lib/gsap/plugins/DirectionalRotationPlugin.js",
 				  ">>>>>lib/gsap/plugins/ModifiersPlugin.js",
 				  "lib/gsap/plugins/ScrollToPlugin.js",
 				  ">>>>>lib/gsap/plugins/TextPlugin.js",

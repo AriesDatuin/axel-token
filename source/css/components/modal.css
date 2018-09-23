@@ -7,7 +7,7 @@
 	z-index: 99;
 	overflow: auto;
 	position: fixed;
-	top: 50%;
+	top: 8%;
 	left: 0;
 	/*bottom: 0;*/
 	right: 0;
@@ -18,7 +18,7 @@
 	border-radius: var(--radius-md);
 	box-shadow: var(--box-shadow-xl);
 
-	transform: translate3d(0,-50%,0) translateZ(0);
+	transform: translate3d(0,-8%,1) translateZ(0);
 
 	-webkit-overflow-scrolling: touch;
 
@@ -27,12 +27,15 @@
 	backface-visibility: hidden;
 	perspective: 1000;
 
-	-webkit-font-smoothing: subpixel-antialiased;
-	-webkit-filter: blur(0);
-	will-change: auto;
+
 	*/
 
 	transition: var(--ease-fast);
+
+	-webkit-font-smoothing: subpixel-antialiased;
+	-webkit-filter: blur(0);
+	will-change: auto;
+
 }
 
 
@@ -63,7 +66,7 @@
 		max-height: 100% !important;
 		border-radius: 0;
 
-		transform: translate3d(0,0,0) translateZ(0);
+		transform: translate3d(0,0,1) translateZ(0);
 	}
 
 }

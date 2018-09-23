@@ -7,11 +7,9 @@
 	position: relative;
 	padding: 0;
 	border-radius: var(--radius-sm);
-	/*background-color: var(--secondary-color);*/
-
 	box-shadow: var(--box-shadow-xl);
 
-	transition: var(--ease-in-out);
+	transition: var(--ease-fast);
 }
 
 
