@@ -214,15 +214,15 @@ var tlIconUnification = new TimelineMax({paused: true, delay: 0, repeatDelay: 0,
 /* MIDDLEMEN
 /* -------------------------------------------------- */
 
-TweenMax.set(animIconMiddlemen.find("#person"), {autoAlpha: 0})
-TweenMax.set(animIconMiddlemen.find("#middleman"), {autoAlpha: 0})
+TweenMax.set(animIconMiddlemen.find("#person"), {autoAlpha: 1, scaleY: 0, transformOrigin: "bottom center"})
+TweenMax.set(animIconMiddlemen.find("#middleman"), {autoAlpha: 0, scaleY: 0, transformOrigin: "bottom center"})
 
 var tlIconMiddlemen = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: false, repeat: 0, onComplete: animIconComplete});
-	tlIconMiddlemen.to(animIconMiddlemen.find("#middleman"), 1, {autoAlpha: 1, delay: 0, ease: Expo.easeOut})
-				   .staggerTo(animIconMiddlemen.find("#middlemen-people").children(), 0.5, {autoAlpha: 0, ease: Expo.easeOut}, 0.12)
-				   .to(animIconMiddlemen.find("#middleman"), 1, {autoAlpha: 0, delay: 0, ease: Expo.easeOut}, "-=0.75")
-				   .staggerTo(animIconMiddlemen.find("#middlemen-people").children(), 0.5, {autoAlpha: 1, ease: Expo.easeOut}, -0.12)
-				   .to(animIconMiddlemen.find("#person"), 1, {autoAlpha: 1, ease: Expo.easeOut}, "-=0.5");
+	tlIconMiddlemen.to(animIconMiddlemen.find("#middleman"), 0.25, {autoAlpha: 1, scaleY: 1, ease: Back.easeOut})
+				   //.staggerTo(animIconMiddlemen.find("#middlemen-people").children(), 0.5, {autoAlpha: 0, ease: Expo.easeOut}, 0.12)
+				   .to(animIconMiddlemen.find("#middleman"), 0.5, {autoAlpha: 0, scaleY: 0, delay: 1, ease: Back.easeOut})
+				   //.staggerTo(animIconMiddlemen.find("#middlemen-people").children(), 0.5, {autoAlpha: 1, ease: Expo.easeOut}, -0.12)
+				   .to(animIconMiddlemen.find("#person"), 0.25, {autoAlpha: 1, scaleY: 1, delay: 1, ease: Back.easeOut});
 
 
 /* -------------------------------------------------- */

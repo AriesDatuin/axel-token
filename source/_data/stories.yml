@@ -3,7 +3,7 @@
 content:
  -
   id: josh
-  title: Josh
+  title: Josh is a photographer
   subtitle: Josh is a photographer
   description:
     He loves taking pictures. His friends tell him he should sell them and do this for a living. But he doesn't want to do it full-time, and trying to do it on the side is hard.
@@ -25,7 +25,7 @@ content:
 
  -
   id: shera
-  title: Shera
+  title: Shera is a singer
   subtitle: Shera is a singer
   description:
     People adore the songs she brings out. Covers of popular songs. Music with personalized lyrics she's written herself. Even her quirky music videos. All that has attracted hundreds of thousands of YouTube subscribers.
@@ -44,7 +44,7 @@ content:
 
  -
   id: tina
-  title: Tina
+  title: Tina is a gaming influencer
   subtitle: Tina is a gaming influencer
   description: 
     Gaming is the biggest entertainment industry and Tina likes to game. She also likes to entertain. As a gaming pro with legions of fans, she's building a loyal following through streaming her content by some of the biggest video sites in the world.
