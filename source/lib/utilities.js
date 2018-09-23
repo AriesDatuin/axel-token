@@ -169,7 +169,7 @@ var utilAssetObserver = function() {
 	var lazyOptions = {container: document,
 					   elements_selector: ".lazy",
 					   threshold: 100,
-					   load_delay: 0,
+					   load_delay: 300,
 					   data_src: "src",
 					   data_srcset: "srcset",
 					   data_sizes: "sizes",

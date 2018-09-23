@@ -26,13 +26,13 @@
 	/*
 	backface-visibility: hidden;
 	perspective: 1000;
-	*/
-
-	transition: var(--ease-fast);
 
 	-webkit-font-smoothing: subpixel-antialiased;
 	-webkit-filter: blur(0);
 	will-change: auto;
+	*/
+
+	transition: var(--ease-fast);
 }
 
 

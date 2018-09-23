@@ -396,7 +396,7 @@ var comModal = function() {
 		// Append content.
 		$$(uiModal).appendTo( $$(body) );
 	
-		TweenMax.set( $$(".modal"), {display: "none", opacity: 0});
+		TweenMax.set( $$(".modal"), {autoAlpha: 0});
 
 
 		/* -------------------------------------------------- */
@@ -413,7 +413,7 @@ var comModal = function() {
 
 				if ( !$$(html).hasClass("blocker-active") ) {
 
-					TweenMax.to( $$(".modal"), 0.25, {display: "block", opacity: 1, ease: Power4.easeOut,
+					TweenMax.to( $$(".modal"), 0.25, {autoAlpha: 1, ease: Power4.easeOut,
 
 													   onStart: function() {
 
@@ -466,7 +466,7 @@ var comModal = function() {
 
 				} else {
 
-					TweenMax.to( $$(".modal"), 0.25, {display: "none", opacity: 0, ease: Power4.easeInOut,
+					TweenMax.to( $$(".modal"), 0.25, {autoAlpha: 0, ease: Power4.easeOut,
 
 														onStart: function() {
 
