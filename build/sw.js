@@ -24,7 +24,7 @@ workbox.clientsClaim();
 self.__precacheManifest = [
   {
     "url": "airdrop.html",
-    "revision": "90b3eabd009f10ab9d7cf0753787f62b"
+    "revision": "ec23ed289f403360e0e92cb4d25d36c0"
   },
   {
     "url": "assets/backgrounds/pattern-pixel-transparent.png",
@@ -580,7 +580,7 @@ self.__precacheManifest = [
   },
   {
     "url": "error.html",
-    "revision": "8dab2548e95ccbed256a3a9831c92591"
+    "revision": "1ed4515ffc8137054ad7a75ce611bdcd"
   },
   {
     "url": "fonts/fontawesome-webfont.eot",
@@ -612,7 +612,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "6a950babe158a581813185df52ab94e3"
+    "revision": "2f06098c6e61ca3425db372e1daa25eb"
   },
   {
     "url": "modals/press.html",
@@ -635,12 +635,12 @@ self.__precacheManifest = [
     "revision": "eee44946103f4ca112b840d425211a5e"
   },
   {
-    "url": "scripts/app.763121df7e.min.js",
-    "revision": "763121df7ec4de26cf16ff0d92e2970f"
+    "url": "scripts/app.ae1bf3628b.min.js",
+    "revision": "ae1bf3628b87ca089826184e021c9445"
   },
   {
-    "url": "scripts/app.cb962ec4f3.min.css",
-    "revision": "cb962ec4f37b7d63c3121ec7a855fa05"
+    "url": "scripts/app.d4c517765f.min.css",
+    "revision": "d4c517765fcb27eb57a53bf25db0b5a6"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();

@@ -248,9 +248,9 @@ var tlIconMiddlemen = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, y
 /* TRANSACTIONS
 /* -------------------------------------------------- */
 
-var tlIconTransactions = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: false, repeat: 0, onComplete: animIconComplete});
-	tlIconTransactions.from(animIconTransactions.find("#card-01"), 0.25, {autoAlpha: 0, scale: 0.5, rotation: -36, transformOrigin: "left bottom", ease: Back.easeOut})
-					  .from(animIconTransactions.find("#card-02"), 0.25, {autoAlpha: 0, scale: 0.75, rotation: 36, transformOrigin: "right bottom", ease: Expo.easeOut});
+var tlIconTransactions = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: true, repeat: 0, onComplete: animIconComplete});
+	tlIconTransactions.staggerFromTo(animIconTransactions.find("#p2p-bars").children(), 0.25, {scaleY: 0, transformOrigin: "bottom center"}, {scale: 1, ease: Back.easeOut}, -0.12)
+					  .fromTo(animIconTransactions.find("#p2p-person"), 0.25, {scaleY: 0, transformOrigin: "bottom center"}, {scale: 1, ease: Back.easeOut});
 
 
 /* -------------------------------------------------- */
@@ -258,34 +258,18 @@ var tlIconTransactions = new TimelineMax({paused: true, delay: 0, repeatDelay: 0
 /* -------------------------------------------------- */
 
 var tlIconSellAnything = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: false, repeat: 0, onComplete: animIconComplete});
-	tlIconSellAnything
+	tlIconSellAnything.to(animIconSellAnything.find("#content-dollar-sign"), 0.5, {autoAlpha: 0, scale: 0, rotation: -36, transformOrigin: "center center", delay: 0.5, ease: Back.easeOut})
 
-					.to(animIconSellAnything.find("#content-dollar-sign"), 0.5, {autoAlpha: 0, scale: 0, rotation: -36, transformOrigin: "center center", delay: 0.5, ease: Back.easeOut})
+					  .staggerFromTo(animIconSellAnything.find("#content-blog").children(), 0.25, {autoAlpha: 0, scale: 0, transformOrigin: "left center", ease: Back.easeOut}, {autoAlpha: 1, scale: 1, ease: Back.easeOut}, 0.12)
+					  .to(animIconSellAnything.find("#content-blog"), 0.25, {autoAlpha: 0, scale: 0, transformOrigin: "center center", delay: 0.75, ease: Back.easeOut})
 
-					.staggerFromTo(animIconSellAnything.find("#content-blog").children(), 0.25, {autoAlpha: 0, scale: 0, transformOrigin: "left center", ease: Back.easeOut}, {autoAlpha: 1, scale: 1, ease: Back.easeOut}, 0.12)
-					.to(animIconSellAnything.find("#content-blog"), 0.25, {autoAlpha: 0, scale: 0, transformOrigin: "center center", delay: 0.75, ease: Back.easeOut})
+					  .staggerFromTo(animIconSellAnything.find("#content-photo").children(), 0.25, {autoAlpha: 0, scale: 0, transformOrigin: "center center", ease: Back.easeOut}, {autoAlpha: 1, scale: 1, ease: Back.easeOut}, -0.12)
+					  .to(animIconSellAnything.find("#content-photo"), 0.25, {autoAlpha: 0, scale: 0, transformOrigin: "center center", delay: 0.75, ease: Back.easeOut})
 
-					.staggerFromTo(animIconSellAnything.find("#content-photo").children(), 0.25, {autoAlpha: 0, scale: 0, transformOrigin: "center center", ease: Back.easeOut}, {autoAlpha: 1, scale: 1, ease: Back.easeOut}, -0.12)
-					.to(animIconSellAnything.find("#content-photo"), 0.25, {autoAlpha: 0, scale: 0, transformOrigin: "center center", delay: 0.75, ease: Back.easeOut})
+					  .staggerFromTo(animIconSellAnything.find("#content-video").children(), 0.25, {autoAlpha: 0, scale: 0, transformOrigin: "center center", ease: Back.easeOut}, {autoAlpha: 1, scale: 1, ease: Back.easeOut}, -0.12)
+					  .to(animIconSellAnything.find("#content-video"), 0.25, {autoAlpha: 0, scale: 0, transformOrigin: "center center", delay: 0.75, ease: Back.easeOut})
 
-					.staggerFromTo(animIconSellAnything.find("#content-video").children(), 0.25, {autoAlpha: 0, scale: 0, transformOrigin: "center center", ease: Back.easeOut}, {autoAlpha: 1, scale: 1, ease: Back.easeOut}, -0.12)
-					.to(animIconSellAnything.find("#content-video"), 0.25, {autoAlpha: 0, scale: 0, transformOrigin: "center center", delay: 0.75, ease: Back.easeOut})
-
-					.to(animIconSellAnything.find("#content-dollar-sign"), 0.25, {autoAlpha: 1, scale: 1, rotation: 0, delay: 0.25, ease: Back.easeOut});
-
-
-
-
-var tlIconSellAnything1 = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: false, repeat: 0, onComplete: animIconComplete});
-	tlIconSellAnything1
-					  //.to(animIconSellAnything.children(), 0.5, {autoAlpha: 0, rotation: -28, transformOrigin: "left bottom", ease: Back.easeOut})
-					  //.to(animIconSellAnything.children(), 0.25, {autoAlpha: 1, rotation: 0, ease: Back.easeOut})
-
-					  .to(animIconSellAnything.children(), 0.5, {y: -10, transformOrigin: "center center", ease: Back.easeOut})
-					  .to(animIconSellAnything.children(), 0.25, {y: 0, ease: Back.easeOut})
-
-					  .to(animIconSellAnything.children(), 0.5, {y: -10, ease: Back.easeOut})
-					  .to(animIconSellAnything.children(), 0.25, {y: 0, ease: Back.easeOut});
+					  .to(animIconSellAnything.find("#content-dollar-sign"), 0.25, {autoAlpha: 1, scale: 1, rotation: 0, delay: 0.25, ease: Back.easeOut});
 
 
 /* -------------------------------------------------- */
@@ -415,15 +399,47 @@ var tlIconNoHostageSituations = new TimelineMax({paused: true, delay: 0, repeatD
 /* -------------------------------------------------- */
 /* GLOBAL DECENTRALIZED SELLING
 /* -------------------------------------------------- */
-/*
-TweenMax.set(animIconGlobalDecentralizedSelling.find("#awning").children(), {autoAlpha: 0, scaleY: 0, transformOrigin: "top center"});
-TweenMax.set(animIconGlobalDecentralizedSelling.find("#storefront"), {autoAlpha: 0, scaleY: 0, transformOrigin: "top center"});
-TweenMax.set(animIconGlobalDecentralizedSelling.find("#door"), {autoAlpha: 0, scaleX: 0, transformOrigin: "left center"});
-TweenMax.set(animIconGlobalDecentralizedSelling.find("#window"), {autoAlpha: 0, scale: 0, transformOrigin: "center center"});
-*/
 
-var tlIconGlobalDecentralizedSelling = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: false, repeat: 0, onComplete: animIconComplete});
-	tlIconGlobalDecentralizedSelling.staggerTo(animIconGlobalDecentralizedSelling.find("#awning").children(), 0.25, {autoAlpha: 0, scaleY: 0, delay: 0, ease: Back.easeOut}, 0.12)
+var tlIconGlobalDecentralizedSelling = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: true, repeat: 0, onComplete: animIconComplete});
+	tlIconGlobalDecentralizedSelling
+
+
+									.fromTo(animIconGlobalDecentralizedSelling.children().find("#gds-mobile-left"), 0.25, {autoAlpha: 0, scale: 0, transformOrigin: "center center"},
+																														  {autoAlpha: 1, scale: 1, ease: Back.easeOut}, 0.12)
+
+									.staggerFromTo(animIconGlobalDecentralizedSelling.children().find("#gds-mobile-left").find("#gds-check-left").children(), 0.25, {autoAlpha: 0, scale: 0, rotation: -36, transformOrigin: "center center"},
+																														  {autoAlpha: 1, scale: 1, rotation: 0, ease: Back.easeOut}, 0.15)
+						  			
+
+									.staggerFromTo(animIconGlobalDecentralizedSelling.children().find("#gds-dots-left").children(), 0.25, {autoAlpha: 0, scale: 0, transformOrigin: "center center"},
+																															   {autoAlpha: 1, scale: 1, ease: Back.easeOut}, 0.12)
+
+
+									.to(animIconGlobalDecentralizedSelling.children(), 0.25, {x: -75, ease: Back.easeOut})
+
+
+									.staggerFromTo(animIconGlobalDecentralizedSelling.children().find("#gds-padlock").children(), 0.5, {autoAlpha: 0, scale: 0, transformOrigin: "center center"},
+																														  		 {autoAlpha: 1, scale: 1, ease: Back.easeInOut}, 0.12, "-=0.25")
+
+
+									.staggerFromTo(animIconGlobalDecentralizedSelling.children().find("#gds-dots-right").children(), 0.25, {autoAlpha: 0, scale: 0, transformOrigin: "center center"},
+																															   {autoAlpha: 1, scale: 1, ease: Back.easeOut}, 0.12)
+
+									.to(animIconGlobalDecentralizedSelling.children(), 0.25, {x: -150, ease: Back.easeOut}, "-=0.25")
+
+									.fromTo(animIconGlobalDecentralizedSelling.children().find("#gds-mobile-right"), 0.25, {autoAlpha: 0, scale: 0, transformOrigin: "center center"},
+																														  {autoAlpha: 1, scale: 1, ease: Back.easeOut}, 0.12)
+
+									.staggerFromTo(animIconGlobalDecentralizedSelling.children().find("#gds-mobile-right").find("#gds-check-right").children(), 0.25, {autoAlpha: 0, scale: 0, rotation: -36, transformOrigin: "center center"},
+																														  {autoAlpha: 1, scale: 1, rotation: 0, ease: Back.easeOut}, 0.15);
+
+
+
+
+
+
+var tlIconGlobalDecentralizedSellingAlt = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: false, repeat: 0, onComplete: animIconComplete});
+	tlIconGlobalDecentralizedSellingAlt.staggerTo(animIconGlobalDecentralizedSelling.find("#awning").children(), 0.25, {autoAlpha: 0, scaleY: 0, delay: 0, ease: Back.easeOut}, 0.12)
 						  			.to(animIconGlobalDecentralizedSelling.find("#door"), 0.25, {autoAlpha: 0, scaleX: 0, ease: Back.easeOut}, "-=0.25")
 					  				.to(animIconGlobalDecentralizedSelling.find("#window"), 0.25, {autoAlpha: 0, scaleY: 0, transformOrigin: "top center", ease: Back.easeOut}, "-=0")
 									.to(animIconGlobalDecentralizedSelling.find("#storefront"), 0.25, {autoAlpha: 0, scaleY: 0, transformOrigin: "top center", ease: Back.easeOut}, "-=0")
