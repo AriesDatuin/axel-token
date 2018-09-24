@@ -222,7 +222,7 @@ var tlIconMiddlemen = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, y
 				   //.staggerTo(animIconMiddlemen.find("#middlemen-people").children(), 0.5, {autoAlpha: 0, ease: Expo.easeOut}, 0.12)
 				   .to(animIconMiddlemen.find("#middleman"), 0.5, {autoAlpha: 0, scaleY: 0, delay: 1, ease: Back.easeOut})
 				   //.staggerTo(animIconMiddlemen.find("#middlemen-people").children(), 0.5, {autoAlpha: 1, ease: Expo.easeOut}, -0.12)
-				   .to(animIconMiddlemen.find("#person"), 0.25, {autoAlpha: 1, scaleY: 1, delay: 1, ease: Back.easeOut});
+				   .to(animIconMiddlemen.find("#person"), 0.25, {autoAlpha: 1, scaleY: 1, delay: 0, ease: Back.easeOut});
 
 
 /* -------------------------------------------------- */
@@ -230,8 +230,8 @@ var tlIconMiddlemen = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, y
 /* -------------------------------------------------- */
 
 var tlIconTransactions = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: false, repeat: 0, onComplete: animIconComplete});
-	tlIconTransactions.from(animIconTransactions.find("#card-01"), 0.75, {autoAlpha: 0, scale: 0.5, rotation: -36, transformOrigin: "left bottom", ease: Back.easeOut})
-					  .from(animIconTransactions.find("#card-02"), 0.5, {autoAlpha: 0, scale: 0.75, rotation: 36, transformOrigin: "right bottom", ease: Expo.easeOut});
+	tlIconTransactions.from(animIconTransactions.find("#card-01"), 0.25, {autoAlpha: 0, scale: 0.5, rotation: -36, transformOrigin: "left bottom", ease: Back.easeOut})
+					  .from(animIconTransactions.find("#card-02"), 0.25, {autoAlpha: 0, scale: 0.75, rotation: 36, transformOrigin: "right bottom", ease: Expo.easeOut});
 
 
 /* -------------------------------------------------- */
@@ -966,7 +966,6 @@ var tlAirdropBoxSway = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, 
 		//endRemoveIf(production)
 
 
-
 	};
 	
 
@@ -981,9 +980,7 @@ var tlAirdropBoxSway = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, 
 
 		self.addClass("no-pointer");
 
-		TweenMax.delayedCall(0, animIconController);
-
-		//animIconController();
+		animIconController();
 
 	});
 
@@ -992,8 +989,8 @@ var tlAirdropBoxSway = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, 
 	/* RUN
 	/* -------------------------------------------------- */
 
-	$$(pageContent).on("scrollstart", animIconPauseAll);
-	$$(pageContent).on("scrollstop", animIconController);
+	$$(pageContent).on("scrollstart", { latency: $updateInterval }, animIconPauseAll);
+	$$(pageContent).on("scrollstop", { latency: $updateInterval }, animIconController);
 
 	TweenMax.delayedCall($delayInterval + 2, animIconController);
 

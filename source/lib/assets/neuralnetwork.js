@@ -25,17 +25,17 @@ var ctx,
     nodes = [],
     signals = [],
     signalCount = 0,
-    tansmitInterval = 4000,
+    tansmitInterval = 8000,
     minNodes = 2,
-    maxNodes = 4,
-    nodeSize = 3,
-    nodeColor = "rgba(250,0,150,0.5)",
-    nodeLineColor = "rgba(0,0,0,1)",
-    signalColor = "rgba(0,250,200,1)", //"hsl(168,100%,50%)", 'hsl(' + tint + ',100%,50%)';
-    signalRandomColor = true,
+    maxNodes = 6,
+    nodeSize = 4,
+    nodeColor = "rgba(0,250,200,1)",
+    nodeLineColor = "rgba(0,0,0,0.5)",
+    signalColor = "rgba(100,0,250,1)", //"hsl(168,100%,50%)", 'hsl(' + tint + ',100%,50%)';
+    signalRandomColor = false,
     nodeLineWidth = 0.1,
-    signalLineWidth = 0.4,
-    signalDuration = 1,
+    signalLineWidth = 0.2,
+    signalDuration = 0.75,
     swayAmount = 12;
 
 
@@ -385,7 +385,7 @@ if ( page = $$(".page").data("page") === "index" ) {
 
         if( !fxNeuralNetworkIsAnimating ) {
 
-            console.log(fxNeuralNetworkIsAnimating);
+            //console.log(fxNeuralNetworkIsAnimating);
 
             ctx = null;
 
@@ -393,7 +393,7 @@ if ( page = $$(".page").data("page") === "index" ) {
 
         } else {
 
-            console.log(fxNeuralNetworkIsAnimating);
+            //console.log(fxNeuralNetworkIsAnimating);
 
             fxNeuralNetworkUpdate(); // Only update canvas. No need to redraw.
 

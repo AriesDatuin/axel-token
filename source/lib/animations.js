@@ -477,8 +477,8 @@ var tlStarWars = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: 
 
 	if ( $microAnimationsPauseOnScroll ) {
 
-		$$(pageContent).on("scrollstart", animPauseAll);
-		$$(pageContent).on("scrollstop", animController);
+		$$(pageContent).on("scrollstart", { latency: $updateInterval }, animPauseAll);
+		$$(pageContent).on("scrollstop", { latency: $updateInterval }, animController);
 
 		animPauseAll();
 

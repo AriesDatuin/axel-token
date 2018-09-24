@@ -396,7 +396,7 @@ var comModal = function() {
 		// Append content.
 		$$(uiModal).appendTo( $$(body) );
 	
-		TweenMax.set( $$(".modal"), {autoAlpha: 0});
+		TweenMax.set( $$(".modal"), {display: "none", opacity: 0});
 
 
 		/* -------------------------------------------------- */
@@ -413,7 +413,7 @@ var comModal = function() {
 
 				if ( !$$(html).hasClass("blocker-active") ) {
 
-					TweenMax.to( $$(".modal"), 0.25, {autoAlpha: 1, ease: Power4.easeOut,
+					TweenMax.to( $$(".modal"), 0.25, {display: "block", opacity: 1, ease: Expo.easeOut,
 
 													   onStart: function() {
 
@@ -423,33 +423,31 @@ var comModal = function() {
 
 															   $$(".modal-container").load(modalContentURL + modalContentSelector, function ( response, status, xhr ) {
 
+																   // PRELOADER
+																   TweenMax.set( $$("#modal-preloader"), {display: "block", opacity: 1, scale: 1});
 
-															   // PRELOADER
-															   TweenMax.set( $$("#modal-preloader"), {display: "block", opacity: 1, scale: 1});
 
+																   // CALLBACK
+																   if ( status == "success" ) {
 
-															   if ( status == "success" ) {
+																	   //utilAssetObserver();
+																	 
+																	   //console.log( modalContentURL + modalContentSelector);
 
-																   //utilAssetObserver();
-																 
-																   //console.log( modalContentURL + modalContentSelector);
+																	   TweenMax.to( $$("#modal-preloader"), 0.25, {display: "none", opacity: 0, scale: 0.75, delay: 0, ease: Expo.easeInOut});
 
-																   //TweenMax.set( $$(".modal"), { maxWidth: $$(".modal-container").children().width() } );
+																	   $$(".modal-close").not(".close").css({"display" : "block"});
 
-																   TweenMax.to( $$("#modal-preloader"), 0.25, {display: "none", opacity: 0, scale: 0.75, delay: 0, ease: Expo.easeInOut});
+																   } else {
 
-																   $$(".modal-close").not(".close").css({"display" : "block"});
+																	   var msg = "Error: Unable to load " + modalContentURL + modalContentSelector;
 
-															   } else {
+																	   //$(this).html( msg + xhr.status + " " + xhr.statusText );
+																	   $$(this).html( '<div class="center-vh text-charcoal text-center"> <span class="fa fa-exclamation-circle p4" aria-hidden="true"></span> <p>'+msg+'</p> </div>' );
 
-																   var msg = "Error: Unable to load " + modalContentURL + modalContentSelector;
+																	   TweenMax.to( $$("#modal-preloader"), 0.25, {display: "none", opacity: 0, scale: 0.75, delay: 0.5, ease: Expo.easeInOut});
 
-																   //$(this).html( msg + xhr.status + " " + xhr.statusText );
-																   $$(this).html( '<div class="center-vh text-charcoal text-center"> <span class="fa fa-exclamation-circle p4" aria-hidden="true"></span> <p>'+msg+'</p> </div>' );
-
-																   TweenMax.to( $$("#modal-preloader"), 0.25, {display: "none", opacity: 0, scale: 0.75, delay: 0.5, ease: Expo.easeInOut});
-
-															   }
+																   }
 
 
 														   });
@@ -466,14 +464,13 @@ var comModal = function() {
 
 				} else {
 
-					TweenMax.to( $$(".modal"), 0.25, {autoAlpha: 0, ease: Power4.easeOut,
+					TweenMax.to( $$(".modal"), 0.25, {display: "none", opacity: 0, ease: Expo.easeOut,
 
 														onStart: function() {
 
 															//$$(".modal").removeClass("open");
 
 														},
-
 
 														onComplete: function() {
 														   
@@ -492,12 +489,13 @@ var comModal = function() {
 
 													if ( $$(".modal").length ) {
 														   
-														console.log("Modal is open.");
+														//console.log("Modal is open.");
+
 														TweenMax.set( $$(".modal"), { width: window.innerWidth / 1.2, height: window.innerHeight / 1.2 } );
 
 													}
 
-												}, $delayInterval));
+												}, $updateInterval));
 
 
 		/* -------------------------------------------------- */
@@ -521,12 +519,12 @@ var comModal = function() {
 				// WIDTH
 				if ( self.data("content-width") === "auto") {
 
-					console.log("Modal set to auto size width.");
+					//console.log("Modal set to auto size width.");
 					dataContentWidth = window.innerWidth / 1.2;
 
 				} else {
 
-					console.log("Modal not set to auto size width.");
+					//console.log("Modal not set to auto size width.");
 					dataContentWidth = self.data("content-width");
 
 				}
@@ -535,12 +533,12 @@ var comModal = function() {
 				// HEIGHT
 				if ( self.data("content-height") === "auto") {
 
-					console.log("Modal set to auto size height.");
+					//console.log("Modal set to auto size height.");
 					dataContentHeight = window.innerHeight / 1.2;
 
 				} else {
 
-					console.log("Modal not set to auto size height.");
+					//console.log("Modal not set to auto size height.");
 					dataContentHeight = self.data("content-height");
 
 				}
@@ -562,7 +560,7 @@ var comModal = function() {
  			}
 
 
-			console.log(dataContentURL + " #" + dataConentSelector + " @ " + dataContentWidth + " x " + dataContentHeight);
+			//console.log(dataContentURL + " #" + dataConentSelector + " @ " + dataContentWidth + " x " + dataContentHeight);
 			
 			modal(dataContentURL, " #" + dataConentSelector, dataContentWidth, dataContentHeight);
 			

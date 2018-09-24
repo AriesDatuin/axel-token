@@ -78,20 +78,21 @@ tr, th, td {
 	border: 0;
 }
 
-a:not(.button):not([class^="social-icon-"]) {
+a:not(.button):not([class^="social-icon-"]):not([class^="card"]) {
 	transition: var(--ease);
 }
 
-a:not(.button):not([class^="social-icon-"]):hover {
+a:not(.button):not([class^="social-icon-"]):not([class^="card"]):hover {
 	text-decoration: none;
 }
 
-a:not(.button):not([class^="social-icon-"]):focus {
+a:not(.button):not([class^="social-icon-"]):not([class^="card"]):focus {
+	color: var(--accent-color);
 	text-decoration: none;
 }
 
-a:not(.button):not([class^="social-icon-"]):active {
-	/*color:  var(--accent-color);*/
+a:not(.button):not([class^="social-icon-"]):not([class^="card"]):active {
+	color: var(--accent-color);
 	text-decoration: none;
 	background-color: transparent;
 }

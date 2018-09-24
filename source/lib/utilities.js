@@ -281,7 +281,7 @@ var utilEmergence = function() {
 		reset: true,
 		handheld: true,
 		throttle: $updateInterval,
-		elemCushion: 0,
+		elemCushion: 0.25,
 		offsetTop: 0,
 		offsetRight: 0,
 		offsetBottom: 0,
