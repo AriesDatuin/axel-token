@@ -2339,6 +2339,10 @@ svg {
 	white-space: nowrap;
 }
 
+.text-break-word {
+	word-wrap: break-word;
+}
+
 .text-break-all {
 	word-break: break-all;
 }
