@@ -11,7 +11,7 @@
  * See https://goo.gl/2aRDsh
  */
 
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.5.0/workbox-sw.js");
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.1/workbox-sw.js");
 
 workbox.skipWaiting();
 workbox.clientsClaim();
@@ -56,7 +56,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/icons-nav.svg",
-    "revision": "6160059cc76fc2d1774f844cf1add2a5"
+    "revision": "54c5e42c9b101ef67753192ca9862933"
   },
   {
     "url": "assets/icons/android-chrome-192x192.png",
@@ -116,7 +116,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/icons/safari-pinned-tab.svg",
-    "revision": "68a8e083b9d26d045c7aaea94b4d23c1"
+    "revision": "0eddbdc440ae6e52de0e9fed6fc40219"
   },
   {
     "url": "assets/illustrations/big-ideas.svg",
@@ -132,7 +132,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/illustrations/shopping.svg",
-    "revision": "66dd49a87885d2811838f164072628e7"
+    "revision": "11251e9d37784dab8a24ddca714aa832"
   },
   {
     "url": "assets/illustrations/teamwork.svg",
@@ -268,55 +268,55 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/sprites/press/bitcoin-exchange-guide.svg",
-    "revision": "18dd1eef4402d9bbaa7355ecc7965d90"
+    "revision": "335ad7a0383b6949976d05a026f80889"
   },
   {
     "url": "assets/sprites/press/bitcoininst.svg",
-    "revision": "a478c68f0bc25356647d03934ee9d73c"
+    "revision": "95c8109489362754779d129de8fac71b"
   },
   {
     "url": "assets/sprites/press/ccn.svg",
-    "revision": "7ebbbb31b8600134f48bd5e534619cee"
+    "revision": "f35eb5b1f6dacb97a49fadd1824c8eae"
   },
   {
     "url": "assets/sprites/press/coin-announcer.svg",
-    "revision": "f1b6c9d0831f7ef01833d85340ac1fa2"
+    "revision": "b260d75d80777e19210eda1b690f524d"
   },
   {
     "url": "assets/sprites/press/crains.svg",
-    "revision": "3733f8dc3774c1561dc79d856273e373"
+    "revision": "d6e52ade6829011f6539fb2fd714680d"
   },
   {
     "url": "assets/sprites/press/e27.svg",
-    "revision": "66fcfbf3bf0a4d6de7e4215aae0eeff6"
+    "revision": "7953969164f385c40f07b7da663dbc2d"
   },
   {
     "url": "assets/sprites/press/forbes.svg",
-    "revision": "faec2e6f0abba9b724a5008f17efa056"
+    "revision": "585238759ec91be0e3660553ee493ecf"
   },
   {
     "url": "assets/sprites/press/las-vegas-business-press.svg",
-    "revision": "401eff7442e04adf1aa218d2e890834e"
+    "revision": "c2221633fb889ca176622a022664d6ae"
   },
   {
     "url": "assets/sprites/press/pcmag.svg",
-    "revision": "40ce1b448d2140414d91d21450c8a993"
+    "revision": "a337dd61b46c9d70b58e730cd83d9d3b"
   },
   {
     "url": "assets/sprites/press/popular-mechanics.svg",
-    "revision": "4cfdbb8f093b02613d4560b656585a6e"
+    "revision": "df8d6efcb1406006d186a9062756bbe3"
   },
   {
     "url": "assets/sprites/press/tech-bullion.svg",
-    "revision": "6ac4c4b8f80fe9692d71230e0f969409"
+    "revision": "320e56d4281396c48595b7f6d3afcd21"
   },
   {
     "url": "assets/sprites/press/techaeris.svg",
-    "revision": "46d5a65c09f5a5739bb46eab84522238"
+    "revision": "f9e55f3f2b28c712143bfe88ad04b535"
   },
   {
     "url": "assets/sprites/press/vegastech.svg",
-    "revision": "9e9868ed1b0be53da83c58cc33a1c010"
+    "revision": "ee6704a0b4adcc56c14bae7b63885efb"
   },
   {
     "url": "assets/sprites/sprite.css",
@@ -324,7 +324,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/sprites/sprite.svg",
-    "revision": "f7c64c31e14af84bc5dd3fad7f5c17d5"
+    "revision": "6fd00884678669eb68fc296f5cda0d35"
   },
   {
     "url": "assets/stories/acoustic-guitar.svg",
@@ -580,7 +580,7 @@ self.__precacheManifest = [
   },
   {
     "url": "error.html",
-    "revision": "5aae1492527472b3f05245cef5afc414"
+    "revision": "7abd7eebda2c49e69186ec1cdfaf63e0"
   },
   {
     "url": "fonts/fontawesome-webfont.eot",
@@ -612,7 +612,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "9a1d2b9d170bd91f95e723e94aaaf274"
+    "revision": "82db36489d9465dca5acfeaf0deaaf64"
   },
   {
     "url": "modals/press.html",
@@ -635,12 +635,12 @@ self.__precacheManifest = [
     "revision": "eee44946103f4ca112b840d425211a5e"
   },
   {
-    "url": "scripts/app.0ecb5a98d4.min.js",
-    "revision": "0ecb5a98d41460e3fbeb4053d63dc6e7"
+    "url": "scripts/app.21134de308.min.js",
+    "revision": "21134de30846c6d616b67541e3572e65"
   },
   {
-    "url": "scripts/app.a6a9e35904.min.css",
-    "revision": "a6a9e359042c4314fb92482b57ae5af9"
+    "url": "scripts/app.fb928ad812.min.css",
+    "revision": "fb928ad812d5ec636140d76cd432b332"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();

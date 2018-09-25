@@ -80,7 +80,7 @@ import workbox from "workbox-build"; // Integrate Service Worker to leverage pre
 
 const config = JSON.parse(fs.readFileSync(configFile)),
 	  server = JSON.parse(fs.readFileSync(serverFile)), // Defined in deploy task.
-	  
+
 	  dir = path.resolve, // path.join
 	  root = dir(__dirname),
 

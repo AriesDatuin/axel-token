@@ -142,6 +142,8 @@ footer {
 	font-weight: bold;
 	
 	border-radius: 100px 100px 100px 100px;
+
+	box-shadow: var(--box-shadow-sm);
 }
 
 
@@ -165,8 +167,10 @@ footer {
 
 /* HOVER */
 #navbar-callout a:hover {
-	color: var(--charcoal-color);
+	color: var(--white-color);
 	background-color: var(--accent-color);
+
+	box-shadow: var(--box-shadow-xl);
 }
 
 #nav-panel-callout a:hover {

@@ -442,10 +442,10 @@
 	/* ANIMATIONS
 	/* -------------------------------------------------- */
 
-	--ease: all 0.25s ease;
-	--ease-in: all 0.25s ease-in;
-	--ease-out: all 0.25s ease-out;
-	--ease-in-out: all 0.25s ease-in-out;
+	--ease: all 200ms ease;
+	--ease-in: all 200ms ease-in;
+	--ease-out: all 200ms ease-out;
+	--ease-in-out: all 200ms ease-in-out;
 
 	--ease-quick: all 100ms ease-in;
 	--ease-fast: all 200ms ease-in;
