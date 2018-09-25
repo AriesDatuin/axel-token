@@ -425,7 +425,7 @@ var tlIconGlobalDecentralizedSelling = new TimelineMax({paused: true, delay: 0, 
 									.staggerFromTo(animIconGlobalDecentralizedSelling.children().find("#gds-dots-right").children(), 0.25, {autoAlpha: 0, scale: 0, transformOrigin: "center center"},
 																															   {autoAlpha: 1, scale: 1, ease: Back.easeOut}, 0.12)
 
-									.to(animIconGlobalDecentralizedSelling.children(), 0.25, {x: -140, ease: Back.easeOut})
+									.to(animIconGlobalDecentralizedSelling.children(), 0.25, {x: -141, ease: Back.easeOut})
 
 									.fromTo(animIconGlobalDecentralizedSelling.children().find("#gds-mobile-right"), 0.25, {autoAlpha: 0, scale: 0, transformOrigin: "center center"},
 																														  {autoAlpha: 1, scale: 1, ease: Back.easeOut})
