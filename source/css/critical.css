@@ -16,7 +16,7 @@ html, body {
 	padding: 0 0 0 0;
 	width: 100%;
 	min-height: 100%; /* Careful with this. Unexpected results in Safari. */
-	background-color: var(--body-color);
+	background-color: #fff;
 
 	/*-webkit-overflow-scrolling: touch;
 	touch-action: none;*/
@@ -169,11 +169,9 @@ noscript div span {
 @media screen and (min-width: 0) and (max-width: 319px), screen and (min-height: 0) and (max-height: 374px) {
 	
 	/* PARENT */
-	/*
 	#error {
 		z-index: 9999;
 		display: block;
 	}
-	*/
 
 }

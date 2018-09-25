@@ -252,19 +252,19 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/social/profile.png",
-    "revision": "607a6b01f6adf165fb189a0defbc8d84"
+    "revision": "e664a96d29cb996a0debce5d9c61c293"
   },
   {
     "url": "assets/social/profile.webp",
-    "revision": "2c3a7bd7508103979b87fcd855233cd2"
+    "revision": "45429878b05594382abd680188f60434"
   },
   {
     "url": "assets/social/social.png",
-    "revision": "2e630276c08e99f0ce17ebb71b4c293a"
+    "revision": "2dea79587f407f002730269dfe3e6be6"
   },
   {
     "url": "assets/social/social.webp",
-    "revision": "9e2fa7cf87cdc457494e18e2e14d4661"
+    "revision": "3436c890b6e5397bb736a83a5495960f"
   },
   {
     "url": "assets/sprites/press/bitcoin-exchange-guide.svg",
@@ -580,7 +580,7 @@ self.__precacheManifest = [
   },
   {
     "url": "error.html",
-    "revision": "93e286b7f33d56ca3319ae1081caedb1"
+    "revision": "75f88f6ccaf8e8223b0e69bd0243f156"
   },
   {
     "url": "fonts/fontawesome-webfont.eot",
@@ -612,7 +612,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "5d6f76892535fe454048f39a1d5a1163"
+    "revision": "677934062026af34140c3cb3bc81a85f"
   },
   {
     "url": "modals/press.html",
@@ -635,12 +635,12 @@ self.__precacheManifest = [
     "revision": "eee44946103f4ca112b840d425211a5e"
   },
   {
-    "url": "scripts/app.2aad202be3.min.js",
-    "revision": "2aad202be382973b060805c1ad3a1716"
+    "url": "scripts/app.0ecb5a98d4.min.js",
+    "revision": "0ecb5a98d41460e3fbeb4053d63dc6e7"
   },
   {
-    "url": "scripts/app.9e0964bfa9.min.css",
-    "revision": "9e0964bfa9068537ad2c73e66d3d22f3"
+    "url": "scripts/app.a6a9e35904.min.css",
+    "revision": "a6a9e359042c4314fb92482b57ae5af9"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();

@@ -73,7 +73,7 @@ footer {
 #navbar-logo a svg,
 #nav-panel-logo a svg {
 	width: 100%;
-	max-width: 120px;
+	max-width: 100px;
 
 	transform: scale(1);
 }
@@ -130,18 +130,24 @@ footer {
 /* COMMON */
 #navbar-callout,
 #nav-panel-callout {
-    margin: 0 1rem 0 1rem;
+    /*margin: 0 1rem 0 1rem;*/
 }
 
 #navbar-callout a,
 #nav-panel-callout a {
 	display: block;
 	margin: 0 auto 0 auto;
-	padding: 0.75rem 1rem 0.75rem 1rem;
-    font-size: 0.875em;
+	padding: 1rem 1.5rem 1rem 1.5rem;
+    font-size: 1em;
 	font-weight: bold;
 	
 	border-radius: 100px 100px 100px 100px;
+}
+
+
+#navbar-callout a .fa,
+#nav-panel-callout a .fa {
+	color: #00fac8 !important;
 }
 
 
@@ -166,6 +172,11 @@ footer {
 #nav-panel-callout a:hover {
 	color: var(--secondary-color);
 	background-color: var(--white-color);
+}
+
+#navbar-callout a:hover .fa,
+#nav-panel-callout a:hover .fa {
+	color: var(--primary-color) !important;
 }
 
 

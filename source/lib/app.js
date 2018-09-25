@@ -138,7 +138,7 @@ if ( $usePreloader ) {
 	
 	enableContent();
 	//preloader.remove();
-	TweenMax.set([container, navPanel, navbar, toolbar], {display: "block", opacity: 1, delay: 0.75 });
+	TweenMax.set([container, navPanel, navbar, toolbar], {display: "block", opacity: 1, delay: 0.5 });
 	
 }
 

@@ -47,13 +47,6 @@ var animIconComplete = function() {
 
 
 /* -------------------------------------------------- */
-/* PROPERTIES
-/* -------------------------------------------------- */
-
-TweenMax.set(animIcon, {transformOrigin: "center center"});
-
-
-/* -------------------------------------------------- */
 /* MAGNIFYING GLASS
 /* -------------------------------------------------- */
 
@@ -156,16 +149,15 @@ var tlIconGettingTokens = new TimelineMax({paused: true, delay: 0, repeatDelay: 
 /* -------------------------------------------------- */
 
 var tlIconFullyProtected = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: false, repeat: 0, onComplete: animIconComplete});
-	tlIconFullyProtected.to(animIconFullyProtected.find("#check"), 0.25, {autoAlpha: 0, scale: 0, rotation: 90, transformOrigin: "center center", ease: Back.easeOut})
-						.to(animIconFullyProtected.find("#radio"), 0.25, {autoAlpha: 0, rotation: 360, scale: 0, transformOrigin: "center center", ease: Back.easeOut}, "-=0.25")
-
-						.to(animIconFullyProtected.find("#shield-left-face"), 0.25, {autoAlpha: 0, scale: 0, transformOrigin: "center center", ease: Expo.easeOut}, "group-01")
-						.to(animIconFullyProtected.find("#shield"), 0.25, {autoAlpha: 0, scale: 0.75, transformOrigin: "center center", ease: Back.easeOut}, "group-01")
+	tlIconFullyProtected.to(animIconFullyProtected.find("#check"), 0.5, {autoAlpha: 0, scale: 0, rotation: 90, transformOrigin: "center center", ease: Back.easeOut})
+						.to(animIconFullyProtected.find("#radio"), 0.5, {autoAlpha: 0, rotation: 360, scale: 0, transformOrigin: "center center", ease: Back.easeOut}, "-=0.25")
+						.to(animIconFullyProtected.find("#shield-left-face"), 0.5, {autoAlpha: 0, scale: 0, transformOrigin: "center center", ease: Expo.easeOut}, "-=0.5")
+						.to(animIconFullyProtected.find("#shield"), 0.5, {autoAlpha: 0, scale: 0.75, transformOrigin: "center center", ease: Back.easeOut}, "-=0.5")
 
 						.to(animIconFullyProtected.find("#shield"), 0.5, {autoAlpha: 1, scale: 1, ease: Back.easeOut})
-						.to(animIconFullyProtected.find("#shield-left-face"), 0.5, {autoAlpha: 1, scale: 1, ease: Expo.easeOut}, "group-02")
-						.to(animIconFullyProtected.find("#radio"), 0.5, {autoAlpha: 1, rotation: 0, scale: 1, ease: Back.easeOut}, "group-02")
-						.to(animIconFullyProtected.find("#check"), 0.5, {autoAlpha: 1, scale: 1, rotation: 0, ease: Back.easeOut}, "group-02");
+						.to(animIconFullyProtected.find("#shield-left-face"), 0.5, {autoAlpha: 1, scale: 1, ease: Expo.easeOut}, "-=0.25")
+						.to(animIconFullyProtected.find("#radio"), 0.5, {autoAlpha: 1, rotation: 0, scale: 1, ease: Back.easeOut}, "-=0.25")
+						.to(animIconFullyProtected.find("#check"), 0.5, {autoAlpha: 1, scale: 1, rotation: 0, ease: Back.easeOut}, "-=0.25");
 						
 
 /* -------------------------------------------------- */
