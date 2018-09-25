@@ -527,8 +527,8 @@ var uiScrollEvents = function() {
 	
 	
 	// ON SCROLL
-	TweenMax.set(showOnScroll, {autoAlpha: 0});
-	TweenMax.set(hideOnScroll, {autoAlpha: 1});
+	TweenMax.set(showOnScroll, {autoAlpha: 0, onStart: function() {showOnScroll.children().removeClass("active");} });
+	TweenMax.set(hideOnScroll, {autoAlpha: 1, onStart: function() {hideOnScroll.children().addClass("active");} });
 	
 	
 	/* -------------------------------------------------- */
@@ -640,8 +640,8 @@ var uiScrollEvents = function() {
 			
 
 			// ON SCROLL
-			TweenMax.to(showOnScroll, 0.25, {autoAlpha: 0, ease: Power4.easeOut});
-			TweenMax.to(hideOnScroll, 0.25, {autoAlpha: 1, ease: Power4.easeOut});
+			TweenMax.to(showOnScroll, 0.25, {autoAlpha: 0, ease: Power4.easeOut, onStart: function() {showOnScroll.children().removeClass("active");} });
+			TweenMax.to(hideOnScroll, 0.25, {autoAlpha: 1, ease: Power4.easeOut, onStart: function() {hideOnScroll.children().addClass("active");} });
 			
 			
 			// SET-UP
@@ -681,8 +681,8 @@ var uiScrollEvents = function() {
 			
 
 			// ON SCROLL
-			TweenMax.to(showOnScroll, 0.25, {autoAlpha: 1, ease: Power4.easeOut});
-			TweenMax.to(hideOnScroll, 0.25, {autoAlpha: 0, ease: Power4.easeOut});
+			TweenMax.to(showOnScroll, 0.25, {autoAlpha: 1, ease: Power4.easeOut, onStart: function() {showOnScroll.children().addClass("active");} });
+			TweenMax.to(hideOnScroll, 0.25, {autoAlpha: 0, ease: Power4.easeOut, onStart: function() {hideOnScroll.children().removeClass("active");} });
 			
 			
 			// SET-UP

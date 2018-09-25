@@ -13,7 +13,6 @@
 	/* LAYOUT */
 	html, body {
 		overflow-x: hidden;
-		overflow-y: scroll; 
 		margin: 0 0 0 0;
 		padding: 0 0 0 0;
 		width: 100%;
@@ -22,19 +21,12 @@
 		background-color: #6400fa;
 	}
 
-
 	/* CONTENT */
-	#airdrop-results {
+	#container {
 		display: block;
-		margin: 0 auto 0 auto;
-		padding: 0 1rem 0 1rem;
-	}
-
-	#airdrop-results ul {
-		display: block;
-		padding: 2rem 2rem 2rem 2rem;
+		margin: 1rem auto 1rem auto;
+		padding: 0 2rem 2rem 2rem;
 		max-width: 600px;
-		color: #6400fa;
 		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, Ubuntu, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 		border-radius: 10px;
 		background-color: #fff;
@@ -44,13 +36,38 @@
 					0 3px 1px -2px rgba(0,0,0,0.5);
 	}
 
-	#airdrop-results ul li {
+
+	#logo {
+		margin-top: 1rem;
+	}
+
+	#logo path {
+		fill: #6400fa;
+	}
+
+
+	h1 {
+		margin: 0 0 0 0;
+		color: #6400fa;
+		font-size: 2em;
+		font-weight: normal;
+	}
+
+
+	ul#user-info {
+		display: block;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+		color: #6400fa;
+	}
+
+	ul#user-info li {
 		display: block;
 		margin: 2rem 0 2rem 0;
 		font-weight: bold;
 	}
 
-	#airdrop-results ul li p {
+	ul#user-info li p {
 		display: inline-block;
 		margin: 0 0 0 0;
 		padding-left: 0.5rem;
@@ -58,8 +75,7 @@
 		font-weight: normal;
 	}
 
-
-	#airdrop-results ul li hr {
+	ul#user-info li hr {
 		border: 0;
 		height: 1px;
 		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
@@ -67,21 +83,24 @@
 
 
 	/* RESPONSIVE */
-	@media screen and (min-width: 0) and (max-width: 639px) {
+	@media screen and (min-width: 0) and (max-width: 720px) {
 
-		#airdrop-results ul {
-			padding: 1rem 1rem 1rem 1rem;
+		#container {
+			margin: 0 auto 0 auto;
+			padding: 0 1.5rem 1.5rem 1.5rem;
+			border-radius: 0;
+
+			box-shadow: none;
 		}
 
 
-		#airdrop-results ul li p {
+		ul#user-info li p {
 			display: block;
 			padding-left: 0;
 			word-wrap: break-word;
 		}
 
 	}
-
 
 </style>
 

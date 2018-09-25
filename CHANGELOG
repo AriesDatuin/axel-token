@@ -1,5 +1,24 @@
+September 24, 2018
+Version 2.4.2
+	Website / App
+		- Added and replaced icons with new icons and animations.
+		- Tweaked icon animations.
+		- Tweaked global animation timing.
+		- Fixed some animations overlapping.
+		- Fixed animation alignment issues.
+		- Fixed some animations not pausing and resuming correctly.
+		- Increased throttling value for scroll events.
+		- Increased latency of IntersectionObserver.
+		- Modified latency of 'scrollstart' and 'scrollstop' events.
+		- Images no longer load if user quickly scrolls pass image assets.
+		- Fixed increasing paint count when certain elements are not in the viewport.
+
+
+
+
+
 September 21, 2018
-Version 2.4.0 (Quick fix)
+Version 2.4.1
 	Website / App
 		- Fixed blurry fonts in modal popup.
 		- Removed scale effect in modal popup.

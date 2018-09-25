@@ -309,7 +309,7 @@ var comModal = function() {
 
 			if ( !$$(html).hasClass("blocker-active") ) {
 
-				TweenMax.to( $$(".blocker"), 0.25, {display: "block", opacity: 1, ease: Power4.easeIn,
+				TweenMax.to( $$(".blocker"), 0.25, {display: "block", opacity: 0.9, ease: Power4.easeIn,
 
 												   onStart: function() {
 														  
@@ -329,7 +329,7 @@ var comModal = function() {
 
 			} else {
 
-				TweenMax.to( $$(".blocker"), 0.5, {display: "none", opacity: 0, delay: 0.25, ease: Power4.easeOut,
+				TweenMax.to( $$(".blocker"), 0.25, {display: "none", opacity: 0, delay: 0.25, ease: Power4.easeOut,
 
 												onStart: function() {
 														 

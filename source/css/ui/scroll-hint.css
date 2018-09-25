@@ -37,6 +37,7 @@
 	transform: translateY(-50%);
 
 	animation: animMouse 0.5s linear;
+	animation-play-state: paused;
 }
 
 .scroll-hint .mouse .scroll-tick {
@@ -49,6 +50,18 @@
 
 	animation: animScroll 1s linear infinite;
 	animation-direction: normal;
+	animation-play-state: paused;
+}
+
+
+/* HELPERS */
+.scroll-hint.active .mouse {
+	animation-play-state: running;
+}
+
+
+.scroll-hint.active .mouse .scroll-tick {
+	animation-play-state: running;
 }
 
 

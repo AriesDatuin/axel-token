@@ -291,6 +291,11 @@ var tlIconStartupRocket = new TimelineMax({paused: true, delay: 0, repeatDelay: 
 	tlIconStartupRocket.to(animIconStartup.find("#rocket"), 0.12, {x: - 1, rotation: - 2, ease: Linear.easeNone});
 
 
+// FLAMES LOOP
+var tlIconStartupFlames = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: true, repeat: -1});
+	tlIconStartupFlames.to(animIconStartup.find("#flames"), 0.2, {autoAlpha: 0.75, scaleX: -1, ease: Linear.easeNone});
+
+
 // CLOUDS FOREGROUND LOOP
 var tlIconStartupCloudsForeground = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: false, repeat: -1});
 	tlIconStartupCloudsForeground.set(animIconStartup.find("#clouds-foreground"), {autoAlpha: 0.5, y: -100})
@@ -301,11 +306,6 @@ var tlIconStartupCloudsForeground = new TimelineMax({paused: true, delay: 0, rep
 var tlIconStartupCloudsBackground = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: false, repeat: -1});
 	tlIconStartupCloudsBackground.set(animIconStartup.find("#clouds-background"), {autoAlpha: 0.25, y: -100})
 								 .to(animIconStartup.find("#clouds-background"), 6, {y: 100, ease: Linear.easeNone});
-
-
-// FLAMES LOOP
-var tlIconStartupFlames = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: true, repeat: -1});
-	tlIconStartupFlames.to(animIconStartup.find("#flames"), 0.2, {autoAlpha: 0.75, scaleX: -1, ease: Linear.easeNone});
 
 
 // SCENE
@@ -323,10 +323,11 @@ var tlIconStartupLanding = new TimelineMax({paused: true, delay: 0, repeatDelay:
 							onComplete: function() {
 
 											tlIconStartupRocket.pause();
+											tlIconStartupFlames.pause();
 											tlIconStartupCloudsForeground.pause();
 											tlIconStartupCloudsBackground.pause();
 
-											animIconStartup.removeClass("no-pointer");
+											//animIconStartup.removeClass("no-pointer");
 
 										}
 
@@ -405,7 +406,7 @@ var tlIconGlobalDecentralizedSelling = new TimelineMax({paused: true, delay: 0, 
 
 
 									.fromTo(animIconGlobalDecentralizedSelling.children().find("#gds-mobile-left"), 0.25, {autoAlpha: 0, scale: 0, transformOrigin: "center center"},
-																														  {autoAlpha: 1, scale: 1, ease: Back.easeOut}, 0.12)
+																														  {autoAlpha: 1, scale: 1, ease: Back.easeOut})
 
 									.staggerFromTo(animIconGlobalDecentralizedSelling.children().find("#gds-mobile-left").find("#gds-check-left").children(), 0.25, {autoAlpha: 0, scale: 0, rotation: -36, transformOrigin: "center center"},
 																														  {autoAlpha: 1, scale: 1, rotation: 0, ease: Back.easeOut}, 0.15)
@@ -415,8 +416,7 @@ var tlIconGlobalDecentralizedSelling = new TimelineMax({paused: true, delay: 0, 
 																															   {autoAlpha: 1, scale: 1, ease: Back.easeOut}, 0.12)
 
 
-									.to(animIconGlobalDecentralizedSelling.children(), 0.25, {x: -75, ease: Back.easeOut})
-
+									.to(animIconGlobalDecentralizedSelling.children(), 0.25, {x: -70, ease: Back.easeOut})
 
 									.staggerFromTo(animIconGlobalDecentralizedSelling.children().find("#gds-padlock").children(), 0.5, {autoAlpha: 0, scale: 0, transformOrigin: "center center"},
 																														  		 {autoAlpha: 1, scale: 1, ease: Back.easeInOut}, 0.12, "-=0.25")
@@ -425,30 +425,18 @@ var tlIconGlobalDecentralizedSelling = new TimelineMax({paused: true, delay: 0, 
 									.staggerFromTo(animIconGlobalDecentralizedSelling.children().find("#gds-dots-right").children(), 0.25, {autoAlpha: 0, scale: 0, transformOrigin: "center center"},
 																															   {autoAlpha: 1, scale: 1, ease: Back.easeOut}, 0.12)
 
-									.to(animIconGlobalDecentralizedSelling.children(), 0.25, {x: -150, ease: Back.easeOut}, "-=0.25")
+									.to(animIconGlobalDecentralizedSelling.children(), 0.25, {x: -140, ease: Back.easeOut})
 
 									.fromTo(animIconGlobalDecentralizedSelling.children().find("#gds-mobile-right"), 0.25, {autoAlpha: 0, scale: 0, transformOrigin: "center center"},
-																														  {autoAlpha: 1, scale: 1, ease: Back.easeOut}, 0.12)
+																														  {autoAlpha: 1, scale: 1, ease: Back.easeOut})
 
 									.staggerFromTo(animIconGlobalDecentralizedSelling.children().find("#gds-mobile-right").find("#gds-check-right").children(), 0.25, {autoAlpha: 0, scale: 0, rotation: -36, transformOrigin: "center center"},
-																														  {autoAlpha: 1, scale: 1, rotation: 0, ease: Back.easeOut}, 0.15);
+																														  {autoAlpha: 1, scale: 1, rotation: 0, ease: Back.easeOut}, 0.15)
+
+									.staggerTo(animIconGlobalDecentralizedSelling.children().find("#gds-dots-right").children(), 0.25, {autoAlpha: 0, scale: 0, ease: Back.easeOut}, 0.12)
 
 
-
-
-
-
-var tlIconGlobalDecentralizedSellingAlt = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: false, repeat: 0, onComplete: animIconComplete});
-	tlIconGlobalDecentralizedSellingAlt.staggerTo(animIconGlobalDecentralizedSelling.find("#awning").children(), 0.25, {autoAlpha: 0, scaleY: 0, delay: 0, ease: Back.easeOut}, 0.12)
-						  			.to(animIconGlobalDecentralizedSelling.find("#door"), 0.25, {autoAlpha: 0, scaleX: 0, ease: Back.easeOut}, "-=0.25")
-					  				.to(animIconGlobalDecentralizedSelling.find("#window"), 0.25, {autoAlpha: 0, scaleY: 0, transformOrigin: "top center", ease: Back.easeOut}, "-=0")
-									.to(animIconGlobalDecentralizedSelling.find("#storefront"), 0.25, {autoAlpha: 0, scaleY: 0, transformOrigin: "top center", ease: Back.easeOut}, "-=0")
-
-
-									.staggerTo(animIconGlobalDecentralizedSelling.find("#awning").children(), 0.25, {autoAlpha: 1, scaleY: 1, ease: Expo.easeOut}, 0.12)
-									.to(animIconGlobalDecentralizedSelling.find("#storefront"), 0.25, {autoAlpha: 1, scaleY: 1, ease: Back.easeOut}, "-=0")
-					  				.to(animIconGlobalDecentralizedSelling.find("#door"), 0.25, {autoAlpha: 1, scaleX: 1, ease: Expo.easeOut})
-					  				.to(animIconGlobalDecentralizedSelling.find("#window"), 0.25, {autoAlpha: 1, scaleY: 1, ease: Expo.easeOut});
+									;
 
 
 /* -------------------------------------------------- */
