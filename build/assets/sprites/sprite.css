@@ -8,7 +8,7 @@
     display: inline-block;
     background-image: url("../assets/sprites/sprite.svg");
     background-repeat: no-repeat;
-    background-size: 25em 325em;
+    background-size: 25em 350em;
 }
 
 .no-svg .sprite-wrapper:before {
@@ -35,7 +35,7 @@
 
 
 
-  .sprite-wrapper.ccn:before {
+  .sprite-wrapper.business-insider:before {
       background-position: 0em -50em;
       width: 25em;
       height: 25em;
@@ -44,7 +44,7 @@
 
 
 
-  .sprite-wrapper.coin-announcer:before {
+  .sprite-wrapper.ccn:before {
       background-position: 0em -75em;
       width: 25em;
       height: 25em;
@@ -53,7 +53,7 @@
 
 
 
-  .sprite-wrapper.crains:before {
+  .sprite-wrapper.coin-announcer:before {
       background-position: 0em -100em;
       width: 25em;
       height: 25em;
@@ -62,7 +62,7 @@
 
 
 
-  .sprite-wrapper.e27:before {
+  .sprite-wrapper.crains:before {
       background-position: 0em -125em;
       width: 25em;
       height: 25em;
@@ -71,7 +71,7 @@
 
 
 
-  .sprite-wrapper.forbes:before {
+  .sprite-wrapper.e27:before {
       background-position: 0em -150em;
       width: 25em;
       height: 25em;
@@ -80,7 +80,7 @@
 
 
 
-  .sprite-wrapper.las-vegas-business-press:before {
+  .sprite-wrapper.forbes:before {
       background-position: 0em -175em;
       width: 25em;
       height: 25em;
@@ -89,7 +89,7 @@
 
 
 
-  .sprite-wrapper.pcmag:before {
+  .sprite-wrapper.las-vegas-business-press:before {
       background-position: 0em -200em;
       width: 25em;
       height: 25em;
@@ -98,7 +98,7 @@
 
 
 
-  .sprite-wrapper.popular-mechanics:before {
+  .sprite-wrapper.pcmag:before {
       background-position: 0em -225em;
       width: 25em;
       height: 25em;
@@ -107,7 +107,7 @@
 
 
 
-  .sprite-wrapper.tech-bullion:before {
+  .sprite-wrapper.popular-mechanics:before {
       background-position: 0em -250em;
       width: 25em;
       height: 25em;
@@ -116,7 +116,7 @@
 
 
 
-  .sprite-wrapper.techaeris:before {
+  .sprite-wrapper.tech-bullion:before {
       background-position: 0em -275em;
       width: 25em;
       height: 25em;
@@ -125,8 +125,17 @@
 
 
 
-  .sprite-wrapper.vegastech:before {
+  .sprite-wrapper.techaeris:before {
       background-position: 0em -300em;
+      width: 25em;
+      height: 25em;
+  }
+
+
+
+
+  .sprite-wrapper.vegastech:before {
+      background-position: 0em -325em;
       width: 25em;
       height: 25em;
   }

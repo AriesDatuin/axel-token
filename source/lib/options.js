@@ -130,7 +130,7 @@ $microAnimationsTiming = 1,
 
 // THROTTLE / DEBOUNCE INTERVAL
 $delayInterval = 1, // Set delay interval before function fires.
-$updateInterval = 500, // Set debounce / throttling interval. Lower numbers degrade performance.
+$updateInterval = 500, // Set debounce / throttling interval. Increasing this value will limit events being fired every so often.
 
 
 // BUTTONS

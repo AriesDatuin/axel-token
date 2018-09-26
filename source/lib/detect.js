@@ -312,7 +312,7 @@ var hasTouch = function() {
 	/* EDGE / EXPLORER
 	/* -------------------------------------------------- */
 
-	if ( $isExplorer || $isEdge ) {
+	if ( $isEdge || $isExplorer ) {
 
 		// Create elements for IE (8 and earlier), cause IE sucks.
 		/*

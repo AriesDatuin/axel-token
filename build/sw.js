@@ -44,7 +44,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/blank.svg",
-    "revision": "217160c942a535f9700be33623a75314"
+    "revision": "7a080b01360a49f9b5991feee2a3048b"
   },
   {
     "url": "assets/error.gif",
@@ -56,7 +56,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/icons-nav.svg",
-    "revision": "54c5e42c9b101ef67753192ca9862933"
+    "revision": "d41d8cd98f00b204e9800998ecf8427e"
   },
   {
     "url": "assets/icons/android-chrome-192x192.png",
@@ -275,6 +275,10 @@ self.__precacheManifest = [
     "revision": "95c8109489362754779d129de8fac71b"
   },
   {
+    "url": "assets/sprites/press/business-insider.svg",
+    "revision": "b57f853f55fad3e92e41fb24507ff3de"
+  },
+  {
     "url": "assets/sprites/press/ccn.svg",
     "revision": "f35eb5b1f6dacb97a49fadd1824c8eae"
   },
@@ -320,11 +324,11 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/sprites/sprite.css",
-    "revision": "972c89309ca2de79bd55f2729016334a"
+    "revision": "9c69f02ca6f871db6fa3079118793121"
   },
   {
     "url": "assets/sprites/sprite.svg",
-    "revision": "6fd00884678669eb68fc296f5cda0d35"
+    "revision": "832f65d17741f651fd1aa927979d7b58"
   },
   {
     "url": "assets/stories/acoustic-guitar.svg",
@@ -580,7 +584,7 @@ self.__precacheManifest = [
   },
   {
     "url": "error.html",
-    "revision": "7abd7eebda2c49e69186ec1cdfaf63e0"
+    "revision": "78f414d83bab3e619a97e5048488ccc3"
   },
   {
     "url": "fonts/fontawesome-webfont.eot",
@@ -612,7 +616,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "82db36489d9465dca5acfeaf0deaaf64"
+    "revision": "ad472937c6288faaee51d248ee57146a"
   },
   {
     "url": "modals/press.html",
@@ -635,12 +639,12 @@ self.__precacheManifest = [
     "revision": "eee44946103f4ca112b840d425211a5e"
   },
   {
-    "url": "scripts/app.21134de308.min.js",
-    "revision": "21134de30846c6d616b67541e3572e65"
+    "url": "scripts/app.36556a16ce.min.css",
+    "revision": "36556a16cea8e0a90608e9ffc42f3c7d"
   },
   {
-    "url": "scripts/app.fb928ad812.min.css",
-    "revision": "fb928ad812d5ec636140d76cd432b332"
+    "url": "scripts/app.d19fb9d0b2.min.js",
+    "revision": "d19fb9d0b28991a6bb6f6d693cc9dc5b"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();

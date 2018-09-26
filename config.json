@@ -11,9 +11,7 @@
 
 	"paths": {
 		"source": "source/",
-		"build": "build/",
-		"scripts": "scripts/",
-		"assets": "assets/"
+		"build": "build/"
 	},
 
 	"ga": {
@@ -51,6 +49,8 @@
 	},
 
 	"images": {
+		"paths": "assets/",
+
 		"raster": {
 			"level": 5,
 			"interlaced": true,
@@ -119,14 +119,17 @@
 			"minify": true
 		}
 	},
+
+	"scripts": {
+		"output": "scripts/"
+	},
 	
 	"vendors": {
+		"paths": ["_vendors/*.js"],
 		"useVendorScripts": false,
 		"bundle": "vendors.js",
 		"lint": false,
-		"jsAttribute": "async",
-
-		"paths": ["_vendors/*.js"]
+		"jsAttribute": "async"
 	},
 
 	"js": {
@@ -146,7 +149,7 @@
 
 				  "<FEATURE DETECTION / POLYFILLS / FALLBACK>",
 				  "lib/assets/modernizr.js",
-				  ">>>>>lib/polyfills/intersectobserver.js",
+				  "lib/polyfills/intersectionbserver.js",
 				  ">>>>>lib/polyfills/objectfit.js",
 				  ">>>>>lib/polyfills/webp.js",
 
@@ -219,7 +222,7 @@
 				  "lib/gsap/plugins/ScrollToPlugin.js",
 				  ">>>>>lib/gsap/plugins/TextPlugin.js",
 
-				  "<Club GreenSock Plugins>",
+				  "<ANIMATION ENGINE (GSAP CLUB GREENSOCK PLUGINS)>",
 				  ">>>>>lib/gsap/plugins/DrawSVGPlugin.js",
 				  ">>>>>lib/gsap/plugins/MorphSVGPlugin.js",
 				  ">>>>>lib/gsap/plugins/Physics2DPlugin.js",

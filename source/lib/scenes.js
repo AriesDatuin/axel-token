@@ -4,7 +4,8 @@
 
 var	animIcon = $$("svg.anim"),
 
-	animIconMagnifyingGlass = $$("#icon-magnifying-glass"),
+	//animIconMagnifyingGlass = $$("#icon-magnifying-glass"),
+	animIconFingerprint = $$("#icon-fingerprint"),
 	animIconHacker = $$("#icon-hacker"),
 	animIconEye = $$("#icon-sauron"),
 
@@ -50,11 +51,19 @@ var animIconComplete = function() {
 /* MAGNIFYING GLASS
 /* -------------------------------------------------- */
 
+var tlIconFingerprint = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: true, repeat: 0, onComplete: animIconComplete});
+	tlIconFingerprint.staggerTo(animIconFingerprint.children(), 0.25, {autoAlpha: 0, y: -10, scale: 0, transformOrigin: "center center", ease: Expo.easeIn}, 0.12)
+					 .staggerTo(animIconFingerprint.children(), 0.75, {autoAlpha: 1, y: 0, scale: 1, ease: Expo.easeInOut}, -0.12);
+
+
+
+/*
 var tlIconMagnifyingGlass = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: false, repeat: 0, onComplete: animIconComplete});
 	tlIconMagnifyingGlass.to(animIconMagnifyingGlass.find("#magnifying-glass"), 0.5, {autoAlpha: 0, scale: 0.5, rotation: 60, transformOrigin: "center center", ease: Back.easeOut})
 						 .to(animIconMagnifyingGlass.find("#magnifying-glass"), 0.5, {autoAlpha: 1, scale: 1, rotation: 0, ease: Back.easeOut})
 						 .staggerTo(animIconMagnifyingGlass.find("#magnifying-glass-people").children(), 1, {autoAlpha: 0, ease: Expo.easeOut}, 0.12, "-=1.5")
 						 .staggerTo(animIconMagnifyingGlass.find("#magnifying-glass-people").children(), 1, {autoAlpha: 1, ease: Expo.easeOut}, -0.12);
+*/
 
 
 /* -------------------------------------------------- */
@@ -70,10 +79,15 @@ var tlIconHacker = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo
 /* SAURON
 /* -------------------------------------------------- */
 
-var tlIconEye = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: true, repeat: 1, onComplete: animIconComplete});
+var tlIconEye = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: true, repeat: 2, onComplete: animIconComplete});
 	tlIconEye.to(animIconEye.find("#pupil"), 0.5, {rotation: -90, transformOrigin: "center center", ease: Expo.easeOut})
 			 .to(animIconEye.find("#pupil"), 0.25, {rotation: 0, ease: Expo.easeOut})
-			 .to(animIconEye, 0.15, {scaleY: 0.25, ease: Expo.easeIn})
+			 .to(animIconEye, 0.15, {scaleY: 0, ease: Expo.easeIn})
+			 .to(animIconEye, 0.15, {scaleY: 1, ease: Expo.easeIn})
+			 .to(animIconEye.find("#pupil"), 0.25, {rotation: 90, ease: Expo.easeOut})
+			 .to(animIconEye.find("#pupil"), 0.25, {rotation: 60, ease: Expo.easeOut})
+			 .to(animIconEye.find("#pupil"), 0.5, {rotation: -90, ease: Expo.easeOut})
+			 .to(animIconEye, 0.15, {scaleY: 0, ease: Expo.easeIn})
 			 .to(animIconEye, 0.15, {scaleY: 1, ease: Expo.easeIn});
 
 
@@ -119,9 +133,9 @@ var tlIconPublicDecentralization = new TimelineMax({paused: true, delay: 0, repe
 
 var tlIconDataCenters = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: false, repeat: 0, onComplete: animIconComplete});
 	tlIconDataCenters.to(animIconDataCenters.find("#globe"), 0.5, {autoAlpha: 0, scale: 0.9, transformOrigin: "center center", ease: Back.easeOut}, "group-01")
-					 .staggerTo(animIconDataCenters.find("#data-center-nodes").children(), 1, {autoAlpha: 0, scale: 0, transformOrigin: "center center", ease: Back.easeOut}, -0.12, "group-01")
+					 .staggerTo(animIconDataCenters.find("#data-center-nodes").children(), 0.5, {autoAlpha: 0, scale: 0, transformOrigin: "center center", ease: Back.easeOut}, -0.12, "group-01")
 
-					 .staggerTo(animIconDataCenters.find("#data-center-nodes").children(), 1, {autoAlpha: 1, scale: 1, transformOrigin: "center center", ease: Back.easeOut}, 0.12)
+					 .staggerTo(animIconDataCenters.find("#data-center-nodes").children(), 0.5, {autoAlpha: 1, scale: 1, transformOrigin: "center center", ease: Back.easeOut}, 0.12)
 					 .to(animIconDataCenters.find("#globe"), 0.5, {autoAlpha: 1, scale: 1, ease: Back.easeOut}, "-=0.5");
 
 
@@ -164,13 +178,16 @@ var tlIconFullyProtected = new TimelineMax({paused: true, delay: 0, repeatDelay:
 /* DUAL-CHAIN ARCHITECTURE
 /* -------------------------------------------------- */
 
-var tlIconDualChainArchitecture = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: false, repeat: 0, onComplete: animIconComplete });
-	tlIconDualChainArchitecture.to(animIconDualChainArchitecture.find("#dual-chain-01"), 0.5, {autoAlpha: 0, x: 10, y: 10, scale: 0, transformOrigin: "center center", ease: Back.easeOut})
-							   .to(animIconDualChainArchitecture.find("#dual-chain-02"), 0.5, {autoAlpha: 0, x: -10, y: -10, scale: 0, transformOrigin: "center center", ease: Back.easeOut}, "-=0.5")
 
-							   .to(animIconDualChainArchitecture.find("#dual-chain-01"), 0.5, {autoAlpha: 1, x: 0, y: 0, scale: 1, ease: Back.easeOut})
-							   .to(animIconDualChainArchitecture.find("#dual-chain-02"), 0.5, {autoAlpha: 1, x: 0, y: 0, scale: 1, ease: Back.easeOut}, "-=0.5");
+var tlIconDualChainArchitecture = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: false, repeat: 0, onComplete: animIconComplete});
+	tlIconDualChainArchitecture.staggerFromTo(animIconDualChainArchitecture.find("#cube-top-side").children(), 0.5, {autoAlpha: 0, y: -10},
+																													{autoAlpha: 1, y: 0, ease: Expo.easeOut}, 0.12, "group-01")
 
+								.staggerFromTo(animIconDualChainArchitecture.find("#cube-left-side").children(), 0.5, {autoAlpha: 0, x: -10},
+																													  {autoAlpha: 1, x: 0, ease: Expo.easeOut}, 0.12, "group-01")
+
+								.staggerFromTo(animIconDualChainArchitecture.find("#cube-right-side").children(), 0.5, {autoAlpha: 0, x: 10, y: 10},
+																													   {autoAlpha: 1, x: 0, y: 0, ease: Expo.easeOut}, 0.12, "group-01");
 
 /* -------------------------------------------------- */
 /* WITNESS POOL
@@ -202,23 +219,22 @@ var tlIconWeightedReputationSystem = new TimelineMax({paused: true, delay: 0, re
 									.to(animIconWeightedReputationSystem.find("#scale"), 1, {rotation: 0, ease: Bounce.easeOut}, "group-04");
 
 
-/*
-var tlIconWeightedReputationSystem = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: true, repeat: 0, onComplete: animIconComplete});
-	tlIconWeightedReputationSystem.staggerTo(animIconWeightedReputationSystem.children(), 0.5, {autoAlpha: 0, scale: 0, rotation: 36, transformOrigin: "center center", ease: Back.easeOut}, -0.12)
-								  .staggerTo(animIconWeightedReputationSystem.children(), 0.5, {autoAlpha: 1, scale: 1, rotation: 0, ease: Back.easeOut}, 0.12);
-*/
-
-
 /* -------------------------------------------------- */
 /* UNIFICATION
 /* -------------------------------------------------- */
 
-var tlIconUnification = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: false, repeat: 0, onComplete: animIconComplete});
-	tlIconUnification.to(animIconUnification.find("#unification-chain-01"), 0.25, {autoAlpha: 0, x: 10, scale: 0.75, rotation: 60, transformOrigin: "center center", ease: Back.easeOut})
-					 .to(animIconUnification.find("#unification-chain-02"), 0.25, {autoAlpha: 0, x: -10, scale: 0.75, rotation: -60, transformOrigin: "center center", ease: Back.easeOut}, "-=0.25")
+var tlIconUnification = new TimelineMax({paused: true, delay: 2, repeatDelay: 0, yoyo: false, repeat: 0, onComplete: animIconComplete});
+	tlIconUnification.fromTo(animIconUnification.find("#piece-tl"), 0.5, {autoAlpha: 0, x: -25, y: -25, rotation: -36, transformOrigin: "center center"},
+																	  	 {autoAlpha: 1, x: 0, y: 0, rotation: 0, ease: Expo.easeOut}, "-=0.25")
 
-					 .to(animIconUnification.find("#unification-chain-01"), 0.5, {autoAlpha: 1, x: 0, scale: 1, rotation: 0, ease: Back.easeOut})
-					 .to(animIconUnification.find("#unification-chain-02"), 0.5, {autoAlpha: 1, x: 0, scale: 1, rotation: 0, ease: Back.easeOut}, "-=0.5");
+					 .fromTo(animIconUnification.find("#piece-bl"), 0.5, {autoAlpha: 0, x: -25, y: 25, rotation: 36, transformOrigin: "center center"},
+																	   {autoAlpha: 1, x: 0, y: 0, rotation: 0, ease: Expo.easeOut}, "-=0.25")
+
+					 .fromTo(animIconUnification.find("#piece-br"), 0.5, {autoAlpha: 0, x: 25, y: 25, rotation: -36, transformOrigin: "center center"},
+																	   {autoAlpha: 1, x: 0, y: 0, rotation: 0, ease: Expo.easeOut}, "-=0.25")
+
+					 .fromTo(animIconUnification.find("#piece-tr"), 0.5, {autoAlpha: 0, x: 25, y: -25, rotation: 36, transformOrigin: "center center"},
+																	   {autoAlpha: 1, x: 0, y: 0, rotation: 0, ease: Expo.easeOut}, "-=0.25");
 
 
 /* -------------------------------------------------- */
@@ -258,7 +274,7 @@ var tlIconSellAnything = new TimelineMax({paused: true, delay: 0, repeatDelay: 0
 					  .staggerFromTo(animIconSellAnything.find("#content-photo").children(), 0.25, {autoAlpha: 0, scale: 0, transformOrigin: "center center", ease: Back.easeOut}, {autoAlpha: 1, scale: 1, ease: Back.easeOut}, 0.12)
 					  .to(animIconSellAnything.find("#content-photo"), 0.25, {autoAlpha: 0, scale: 0, transformOrigin: "center center", delay: 0.75, ease: Back.easeOut})
 
-					  .staggerFromTo(animIconSellAnything.find("#content-video").children(), 0.25, {autoAlpha: 0, scale: 0, transformOrigin: "center center", ease: Back.easeOut}, {autoAlpha: 1, scale: 1, ease: Back.easeOut}, 0.12)
+					  .staggerFromTo(animIconSellAnything.find("#content-video").children(), 0.25, {autoAlpha: 0, scale: 0, transformOrigin: "center center", ease: Back.easeOut}, {autoAlpha: 1, scale: 1, ease: Back.easeOut}, -0.12)
 					  .to(animIconSellAnything.find("#content-video"), 0.25, {autoAlpha: 0, scale: 0, transformOrigin: "center center", delay: 0.75, ease: Back.easeOut})
 
 					  .to(animIconSellAnything.find("#content-dollar-sign"), 0.25, {autoAlpha: 1, scale: 1, rotation: 0, delay: 0.25, ease: Back.easeOut});
@@ -435,24 +451,23 @@ var tlIconGlobalDecentralizedSelling = new TimelineMax({paused: true, delay: 0, 
 /* INVISIBLE TRANSACTIONS
 /* -------------------------------------------------- */
 
-TweenMax.set(animIconInvisibleTransactions.find("#blind-eye"), {autoAlpha: 0});
-TweenMax.set(animIconInvisibleTransactions.find("#cross-out"), {autoAlpha: 1, scale: 0, transformOrigin: "top right"});
-
 var tlIconInvisibleTransactions = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: true, repeat: 0, onComplete: animIconComplete});
 	tlIconInvisibleTransactions.to(animIconInvisibleTransactions.find("#visible-pupil"), 0.5, {rotation: -90, transformOrigin: "center center", delay: 1, ease: Expo.easeOut})
 							   .to(animIconInvisibleTransactions.find("#visible-pupil"), 0.25, {rotation: 0, ease: Expo.easeOut})
 
+							   .to(animIconInvisibleTransactions.find("#visible-pupil"), 0.5, {rotation: 90, transformOrigin: "center center", ease: Expo.easeOut})
+							   .to(animIconInvisibleTransactions.find("#visible-pupil"), 0.25, {rotation: 0, ease: Expo.easeOut})
+
+							   .to(animIconInvisibleTransactions.find("#visible-pupil"), 0.5, {rotation: -90, transformOrigin: "center center", delay: 1, ease: Expo.easeOut})
+							   .to(animIconInvisibleTransactions.find("#visible-pupil"), 0.25, {rotation: 0, ease: Expo.easeOut})
+
 							   .set(animIconInvisibleTransactions.find("#creepy-eye"), {autoAlpha: 0})
 
-							   .to(animIconInvisibleTransactions.find("#blind-eye"), 0.25, {autoAlpha: 1, ease: Expo.easeOut}, "-=0.25")
-							   .to(animIconInvisibleTransactions.find("#cross-out"), 0.25, {autoAlpha: 1, scale: 1, ease: Expo.easeOut}, "-=0");
+							   .fromTo(animIconInvisibleTransactions.find("#blind-eye"), 0.25, {autoAlpha: 0},
+							   								   								   {autoAlpha: 1, ease: Expo.easeOut}, "-=0.25")
 
-
-
-
-
-
-
+							   .fromTo(animIconInvisibleTransactions.find("#cross-out"), 0.25, {autoAlpha: 0, scale: 0, transformOrigin: "top right"},
+																						   {autoAlpha: 1, scale: 1, ease: Expo.easeOut});
 
 
 /* -------------------------------------------------- */
@@ -538,7 +553,39 @@ var tlAirdropBoxSway = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, 
 
 
 
+/* -------------------------------------------------- */
+/* MASTER TIMELINE
+/* -------------------------------------------------- */
 
+/*
+var tlMasterTimelineScenes = new TimelineMax();
+	tlMasterTimelineScenes.add( tlIconFingerprint )
+						  .add( tlIconHacker )
+						  .add( tlIconEye )
+
+						  .add( tlIconAnonymity )
+						  .add( tlIconReputation )
+						  .add( tlIconPublicDecentralization )
+
+						  .add( tlIconDataCenters )
+						  .add( tlIconGettingTokens )
+						  .add( tlIconFullyProtected )
+
+						  .add( tlIconDualChainArchitecture )
+						  .add( tlIconWitnessPool )
+						  .add( tlIconWeightedReputationSystem )
+						  .add( tlIconUnification )
+
+						  .add( tlIconMiddlemen )
+						  .add( tlIconTransactions )
+
+						  .add( tlIconSellAnything )
+						  .add( tlIconStartupLaunch )
+						  .add( tlIconNoHostageSituations )
+						  .add( tlIconGlobalDecentralizedSelling )
+						  .add( tlIconInvisibleTransactions );
+
+*/
 
 
 
@@ -553,14 +600,15 @@ var tlAirdropBoxSway = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, 
 	var animIconPlayAll = function() {
 		"use strict";
 
-
 	};
 
 	
 	var animIconPauseAll = function() {
 		"use strict";
 
-		tlIconMagnifyingGlass.pause();
+		//tlMasterTimelineScenes.pause();
+
+		tlIconFingerprint.pause();
 		tlIconHacker.pause();
 		tlIconEye.pause();
 		tlIconAnonymity.pause();
@@ -612,17 +660,17 @@ var tlAirdropBoxSway = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, 
 		"use strict";
 		//console.log("Playing animations in view.");
 
-		if ( animIconMagnifyingGlass.hasClass("anim-play") ) {
+		if ( animIconFingerprint.hasClass("anim-play") ) {
 			
-			tlIconMagnifyingGlass.resume();
+			tlIconFingerprint.resume();
 
 		} else {
 
-			tlIconMagnifyingGlass.pause(0);
+			tlIconFingerprint.pause(0);
 
-		} if ( animIconMagnifyingGlass.hasClass("no-pointer") && !tlIconMagnifyingGlass.isActive() ) {
+		} if ( animIconFingerprint.hasClass("no-pointer") && !tlIconFingerprint.isActive() ) {
 			
-			tlIconMagnifyingGlass.restart();
+			tlIconFingerprint.restart();
 
 		}
 
@@ -1023,24 +1071,83 @@ var tlAirdropBoxSway = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, 
 	/* RUN
 	/* -------------------------------------------------- */
 
-	$$(pageContent).on("scrollstart", { latency: $updateInterval }, animIconPauseAll);
-	$$(pageContent).on("scrollstop", { latency: $updateInterval }, animIconController);
+	if ( !$isExplorer ) {
 
-	TweenMax.delayedCall($delayInterval + 2, animIconController);
+		var animIcons = document.querySelectorAll("svg.anim");
 
-	//animIconController();
 
-	/*
-	if ( $microAnimationsPauseOnScroll ) {
+		var animIconOptions = {
+			root: null,
+			rootMargin: "0",
+			threshold: [1.0, 1.0, 1.0, 1.0]
+		}
 
-		$$(pageContent).on("scrollstart", animIconPauseAll);
-		$$(pageContent).on("scrollstop", animIconController);
 
-		animIconPauseAll();
+		animIconObserver = new IntersectionObserver(function (entries) {
+
+			entries.forEach(function (entry) {
+
+				if (entry.intersectionRatio > 0) {
+
+					//observer.unobserve(entry.target);
+					entry.target.classList.add("anim-play");
+					animIconController();
+
+				} else {
+
+					entry.target.classList.remove("anim-play");
+					animIconController();
+
+				}
+			}, animIconOptions);
+		});
+
+		animIcons.forEach(function (element) {
+
+			animIconObserver.observe(element);
+
+		});
+
+
+		/* ES6
+		animIconObserver = new IntersectionObserver(entries => {
+
+			entries.forEach(entry => {
+
+				if (entry.intersectionRatio > 0) {
+
+					console.log("IN VIEW");
+					observer.unobserve(entry.target);
+
+					entry.target.classList.add("anim-play");
+
+					animIconController();
+
+				} else {
+
+					console.log("NOT IN VIEW");
+
+					entry.target.classList.remove("anim-play");
+
+				}
+
+			});
+
+		});
+
+
+		animIcons.forEach(element => {
+
+			animIconObserver.observe(element);
+
+		});
+		*/
 
 	} else {
 
-		animIconPlayAll();
+		$$(pageContent).on("scrollstart", { latency: $updateInterval }, animIconPauseAll);
+		$$(pageContent).on("scrollstop", { latency: $updateInterval }, animIconController);
+
+		TweenMax.delayedCall($delayInterval + 2, animIconController);
 
 	}
-	*/

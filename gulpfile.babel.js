@@ -80,14 +80,8 @@ import workbox from "workbox-build"; // Integrate Service Worker to leverage pre
 
 const config = JSON.parse(fs.readFileSync(configFile)),
 	  server = JSON.parse(fs.readFileSync(serverFile)), // Defined in deploy task.
-
 	  dir = path.resolve, // path.join
-	  root = dir(__dirname),
-
-	  pathSource = config.paths.source,
-	  pathBuild = config.paths.build,
-	  pathScripts = config.paths.scripts,
-	  pathAssets = config.paths.assets;
+	  root = dir(__dirname);
 
 
 /* -------------------------------------------------- */
@@ -115,7 +109,7 @@ export function analytics(done) {
 
 		console.log("Injecting GA tracker...");
 	
-		return gulp.src( pathBuild + "**/*.{html,php}" )
+		return gulp.src( config.paths.build + "**/*.{html,php}" )
 				   .pipe(ga({
 							  url: config.ga.url,
 							  uid: config.ga.uid,
@@ -129,7 +123,7 @@ export function analytics(done) {
 							  sendPageView: config.ga.sendPageView,
 							  tag: config.ga.tagPlacement
 							}))
-				   .pipe(gulp.dest( pathBuild ));
+				   .pipe(gulp.dest( config.paths.build ));
 
 	} else {
 
@@ -148,11 +142,11 @@ export function meta() {
 	
 	console.log("Injecting data from: " + metadataFile);
 	
-	return gulp.src([pathBuild + "browserconfig.xml",
-					 pathBuild + "manifest.json",
-					 pathBuild + "**/*.{html,php}"])
+	return gulp.src([config.paths.build + "browserconfig.xml",
+					 config.paths.build + "manifest.json",
+					 config.paths.build + "**/*.{html,php}"])
 			   .pipe(jsonReplace( {src: metadataFile, identify: "--"} ))
-			   .pipe(gulp.dest( pathBuild ));
+			   .pipe(gulp.dest( config.paths.build ));
 	
 }
 
@@ -165,14 +159,14 @@ export function robotstxt() {
 
 	console.log("Generating robots.txt...");
 
-	return gulp.src([pathBuild + "**/*.html",
-					 "!" + pathBuild + "modals/*"])
+	return gulp.src([config.paths.build + "**/*.html",
+					 "!" + config.paths.build + "modals/*"])
 			   .pipe(robots({useragent: config.robots.useragent,
 			   				 //allow: config.robots.allow,
 			   				 disallow: config.robots.disallow,
 			   				 sitemap: config.options.site + "/sitemap.xml"
 			   }))
-			   .pipe(gulp.dest(pathBuild));
+			   .pipe(gulp.dest(config.paths.build));
 }
 
 
@@ -184,10 +178,10 @@ export function sitemap() {
 
 	console.log("Generating sitemap...");
 
-	return gulp.src([pathBuild + "**/*.html",
-					 "!" + pathBuild + "modals/*"])
+	return gulp.src([config.paths.build + "**/*.html",
+					 "!" + config.paths.build + "modals/*"])
 			   .pipe(generateSitemap( {siteUrl: config.options.site} ))
-			   .pipe(gulp.dest( pathBuild ));
+			   .pipe(gulp.dest( config.paths.build ));
 
 }
 
@@ -206,7 +200,7 @@ export function sw(done) {
 		console.log("Generating Service Worker...");
 
 		return workbox.generateSW({
-								   globDirectory: pathBuild,
+								   globDirectory: config.paths.build,
 								   globPatterns: ["**/*.{css,eot,gif,html,jp2,jpg,jpeg,js,jxr,mp4,mpeg,ogg,ogv,otf,php,png,svg,tiff,ttf,webm,webp,woff,woff2}"],
 			
 								   runtimeCaching: [{
@@ -219,7 +213,7 @@ export function sw(done) {
 														 },
 													 },
 								   					}],
-								   swDest: `${pathBuild}/sw.js`,
+								   swDest: `${config.paths.build}/sw.js`,
 								   clientsClaim: true,
 								   skipWaiting: true
 								  })
@@ -257,7 +251,7 @@ export function sw(done) {
 // JS
 export function checkjs() {
 
-	return gulp.src(pathSource + config.js.paths + "*.js")
+	return gulp.src(config.paths.source + config.js.paths + "*.js")
 			   .pipe(gulpif( config.js.lint, jshint() ))
 			   .pipe(gulpif( config.js.lint, jshint.reporter() ));
 
@@ -267,7 +261,7 @@ export function checkjs() {
 // CSS
 export function checkcss() {
 
-	return gulp.src( pathSource + config.css.paths + "*.css" )
+	return gulp.src( config.paths.source + config.css.paths + "*.css" )
 			   .pipe(gulpif( config.css.lint, csslint.formatter() ))
 			   .pipe(gulpif( config.css.lint, csslint() ));
 
@@ -288,18 +282,18 @@ export function hashscripts(done) {
 		console.log("Hashing script files...");
 
 		// TASK
-		return gulp.src( pathBuild + pathScripts + "**/*" )
+		return gulp.src( config.paths.build + config.scripts.output + "**/*" )
 				   .pipe(rev())
 				   .pipe(revFormat({prefix: config.versioning.scripts.prefix,
 									suffix: config.versioning.scripts.suffix,
 									lastExt: false
 					}))
-				   .pipe(gulp.dest( pathBuild + pathScripts ))
+				   .pipe(gulp.dest( config.paths.build + config.scripts.output ))
 				   .pipe(revDelete())
 				   .pipe(revRewrite())
 
-				   .pipe(rev.manifest( revFile, { base: pathBuild + pathScripts, merge: true } )) 
-				   .pipe(gulp.dest( pathBuild + pathScripts ))
+				   .pipe(rev.manifest( revFile, { base: config.paths.build + config.scripts.output, merge: true } )) 
+				   .pipe(gulp.dest( config.paths.build + config.scripts.output ))
 
 				   .on("end", function () {
 
@@ -307,9 +301,9 @@ export function hashscripts(done) {
 
 									const manifest = gulp.src( revFile );
 
-									return gulp.src([pathBuild + "**/*"])
+									return gulp.src([config.paths.build + "**/*"])
 											   .pipe(revRewrite({ manifest }))
-											   .pipe(gulp.dest( pathBuild ));
+											   .pipe(gulp.dest( config.paths.build ));
 
 											   });
 
@@ -330,20 +324,20 @@ export function hashassets(done) {
 		console.log("Hashing asset files...");
 
 		// TASK
-		return gulp.src([pathBuild + pathAssets + "**/*",
-						 "!" + pathBuild + pathAssets + "icons/*",
-						 "!" + pathBuild + pathAssets + "social/*"])
+		return gulp.src([config.paths.build + config.images.paths + "**/*",
+						 "!" + config.paths.build + config.images.paths + "icons/*",
+						 "!" + config.paths.build + config.images.paths + "social/*"])
 				   .pipe(rev())
 				   .pipe(revFormat({prefix: config.versioning.images.prefix,
 									suffix: config.versioning.images.suffix,
 									lastExt: false
 					}))
-				   .pipe(gulp.dest( pathBuild + pathAssets ))
+				   .pipe(gulp.dest( config.paths.build + config.images.paths ))
 				   .pipe(revDelete())
 				   .pipe(revRewrite())
 
-				   .pipe(rev.manifest( revFile, { base: pathBuild + pathAssets, merge: true } )) 
-				   .pipe(gulp.dest( pathBuild + pathAssets ))
+				   .pipe(rev.manifest( revFile, { base: config.paths.build + config.images.paths, merge: true } )) 
+				   .pipe(gulp.dest( config.paths.build + config.images.paths ))
 
 				   .on("end", function () {
 
@@ -351,9 +345,9 @@ export function hashassets(done) {
 
 									const manifest = gulp.src( revFile );
 
-									return gulp.src([pathBuild + "**/*"])
+									return gulp.src([config.paths.build + "**/*"])
 											   .pipe(revRewrite({ manifest }))
-											   .pipe(gulp.dest( pathBuild ));
+											   .pipe(gulp.dest( config.paths.build ));
 
 											   });
 
@@ -375,9 +369,9 @@ export function inject(done) {
 
 		const manifest = gulp.src( revFile );
 
-		return gulp.src([pathBuild + "**/*"])
+		return gulp.src([config.paths.build + "**/*"])
 				   .pipe(revRewrite({ manifest }))
-				   .pipe(gulp.dest( pathBuild ));
+				   .pipe(gulp.dest( config.paths.build ));
 
 	} else {
 
@@ -411,7 +405,7 @@ export function js() {
 	console.log("Compiling " + config.js.bundle);
 
 
-	return gulp.src(config.js.paths.map( function(base) { return pathSource + base } ), {allowEmpty: true} )
+	return gulp.src(config.js.paths.map( function(base) { return config.paths.source + base } ), {allowEmpty: true} )
 			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.init() ))
 			   //.pipe(modernizr())
 			   //.pipe(babel())
@@ -419,7 +413,7 @@ export function js() {
 			   .pipe(gulpif( production, uglify(uglifyJSOptions).on("error", gutil.log) ))
 			   .pipe(concat(config.js.bundle))
 			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.write("maps") ))
-			   .pipe(gulp.dest( pathBuild + pathScripts ));
+			   .pipe(gulp.dest( config.paths.build + config.scripts.output ));
 
 }
 
@@ -430,7 +424,7 @@ export function vendors() {
 	console.log("Compiling " + config.vendors.bundle);
 
 
-	return gulp.src(config.vendors.paths.map( function(base) { return pathSource + base } ), {allowEmpty: true} )
+	return gulp.src(config.vendors.paths.map( function(base) { return config.paths.source + base } ), {allowEmpty: true} )
 			   .pipe(gulpif( config.vendors.lint, jshint() ))
 			   .pipe(gulpif( config.vendors.lint, jshint.reporter() ))
 			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.init() ))
@@ -440,7 +434,7 @@ export function vendors() {
 			   .pipe(gulpif( production, uglify(uglifyJSOptions).on("error", gutil.log) ))
 			   .pipe(concat(config.vendors.bundle))
 			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.write("maps") ))
-			   .pipe(gulp.dest( pathBuild + pathScripts ));
+			   .pipe(gulp.dest( config.paths.build + config.scripts.output ));
 
 }
 
@@ -460,9 +454,9 @@ const plugins = [postcssAutoprefixer({ cascade: false, support: config.optimizat
 
 
 const purgeCSSOptions = {
-		content: [pathBuild + "**/*.{html,php}",
-				  pathBuild + "**/*.js"],
-		css: [pathBuild + "**/*.css"]
+		content: [config.paths.build + "**/*.{html,php}",
+				  config.paths.build + "**/*.js"],
+		css: [config.paths.build + "**/*.css"]
 	  };
 
 
@@ -499,14 +493,14 @@ export function css() {
 	console.log("Compiling " + config.css.bundle);
 
 
-	return gulp.src(config.css.paths.map( function(base) { return pathSource + base } ), {allowEmpty: true} )
+	return gulp.src(config.css.paths.map( function(base) { return config.paths.source + base } ), {allowEmpty: true} )
 			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.init() ))
 			   .pipe(concat(config.css.bundle, {rebaseUrls: false}))
 			   .pipe(postcss(plugins))
 			   .pipe(gulpif( production, purgecss(purgeCSSOptions) ))
 			   .pipe(gulpif( production, cleanCSS(cleanCSSOptions) ))
 			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.write("maps") ))
-			   .pipe(gulp.dest( pathBuild + pathScripts ))
+			   .pipe(gulp.dest( config.paths.build + config.scripts.output ))
 			   .pipe(browserSync.stream());
 
 }
@@ -535,13 +529,13 @@ export function html() {
 
 
 	// TASK
-	return gulp.src( pathSource + config.html.paths )
+	return gulp.src( config.paths.source + config.html.paths )
 			   .pipe(panini({
-							 data: pathSource + config.html.data,
-							 helpers: pathSource + config.html.helpers,
-							 layouts: pathSource + config.html.layouts,
-							 partials: pathSource + config.html.partials,
-							 root: pathSource + config.html.root
+							 data: config.paths.source + config.html.data,
+							 helpers: config.paths.source + config.html.helpers,
+							 layouts: config.paths.source + config.html.layouts,
+							 partials: config.paths.source + config.html.partials,
+							 root: config.paths.source + config.html.root
 							})
 			   )
 			   .pipe(htmlreplace({
@@ -550,28 +544,28 @@ export function html() {
 										 tpl: '<base href="%s">'
 								  },
 
-								  inlinescripts: {
-										   src: gulp.src( pathSource + config.html.inlineScripts.js ),
+								  scripts: {
+										   src: gulp.src( config.paths.source + config.html.inlineScripts.js ),
 										   tpl: "<script>%s</script>"
 										  },
 
 								  vendors: {
-										   src: pathScripts + config.vendors.bundle,
+										   src: config.scripts.output + config.vendors.bundle,
 										   tpl: '<script src="%s" '+config.vendors.jsAttribute+'></script>'
 										  },
 
 								  critical: {
-											 src: gulp.src( pathSource + config.html.inlineScripts.css ),
+											 src: gulp.src( config.paths.source + config.html.inlineScripts.css ),
 											 tpl: "<style>%s</style>"
 								  },
 
 								  css: {
-										src: pathScripts + config.css.bundle,
+										src: config.scripts.output + config.css.bundle,
 										tpl: '<link rel="preload" href="%s" as="style" onload="this.onload=null;this.rel='+stylesheet+'">'
 								  },
 
 								  js: {
-									   src: pathScripts + config.js.bundle,
+									   src: config.scripts.output + config.js.bundle,
 									   tpl: '<script src="%s" '+config.js.jsAttribute+'></script>'
 								  }
 								  //css: cssApp,
@@ -586,7 +580,7 @@ export function html() {
 			   .pipe(gulpif( !config.vendors.useVendorScripts, removeCode({removeVendor: true}) ))
 			   .pipe(noopener.overwrite())
 			   .pipe(gulpif( production, htmlmin(htmlminOptions) ))
-			   .pipe(gulp.dest( pathBuild ));
+			   .pipe(gulp.dest( config.paths.build ));
 
 }
 
@@ -596,18 +590,18 @@ export function modals() {
 
 	console.log("Compiling modals...");
 
-	return gulp.src( pathSource + config.html.modals.paths )
+	return gulp.src( config.paths.source + config.html.modals.paths )
 			   .pipe(panini({
-							 data: pathSource + config.html.data,
-							 helpers: pathSource + config.html.helpers,
-							 layouts: pathSource + config.html.layouts,
-							 partials: pathSource + config.html.partials,
-							 root: pathSource + config.html.modals.paths
+							 data: config.paths.source + config.html.data,
+							 helpers: config.paths.source + config.html.helpers,
+							 layouts: config.paths.source + config.html.layouts,
+							 partials: config.paths.source + config.html.partials,
+							 root: config.paths.source + config.html.modals.paths
 							})
 			   )
 			   .pipe(gulpif( production, htmlmin(htmlminOptions) ))
 			   .pipe(noopener.overwrite())
-			   .pipe(gulp.dest( pathBuild + config.html.modals.output ));
+			   .pipe(gulp.dest( config.paths.build + config.html.modals.output ));
 
 }
 
@@ -620,23 +614,23 @@ export function move(done) {
 
 	console.log("Copying directories and files...");
 
-	return gulp.src([pathSource + "**/.htaccess",
-					 pathSource + "**/*",
-					 "!" + pathSource + "**/_*/*",
-					 "!" + pathSource + "**/*.html",
-					 "!" + pathSource + "**/*.php"], {base: pathSource})
-				.pipe(gulp.dest( pathBuild ))
+	return gulp.src([config.paths.source + "**/.htaccess",
+					 config.paths.source + "**/*",
+					 "!" + config.paths.source + "**/_*/*",
+					 "!" + config.paths.source + "**/*.html",
+					 "!" + config.paths.source + "**/*.php"], {base: config.paths.source})
+				.pipe(gulp.dest( config.paths.build ))
 
 				.on("end", function () {
 
 					console.log("Deleting unnecessary directories...");
 
-					del([pathBuild + "css/",
-						 pathBuild + "lib/",
-						 //pathBuild + pathAssets + config.images.sprite.paths
+					del([config.paths.build + "css/",
+						 config.paths.build + "lib/",
+						 //config.paths.build + config.images.paths + config.images.sprite.paths
 						]);
 
-					deleteEmpty.sync( pathBuild );
+					deleteEmpty.sync( config.paths.build );
 				
 					return done();
 
@@ -653,15 +647,15 @@ export function assets() {
 
 	console.log("Copying image assets...");
 
-	return gulp.src( pathSource + "**/*.{gif,jpg,jpeg,png,svg}" )
+	return gulp.src( config.paths.source + "**/*.{gif,jpg,jpeg,png,svg}" )
 			   .pipe(rename({
-							 dirname: pathAssets,
+							 dirname: config.images.paths,
 							 //basename: "",
 							 //prefix: "",
 							 //suffix: "",
 							 //extname: ""
 							}))
-			   .pipe(gulp.dest( pathBuild ));
+			   .pipe(gulp.dest( config.paths.build ));
 
 
 }
@@ -676,7 +670,7 @@ export function raster() {
 
 	console.log("Compressing images assets...");
 
-	return gulp.src( pathBuild + "**/*.{gif,jpg,jpeg,png,svg}", {base: pathBuild} )
+	return gulp.src( config.paths.build + "**/*.{gif,jpg,jpeg,png,svg}", {base: config.paths.build} )
 			   .pipe(gulpif( production, imagemin([imagemin.optipng({optimizationLevel: config.images.raster.level}),
 							   imagemin.gifsicle({interlaced: config.images.raster.interlaced}),
 							   imagemin.jpegtran({progressive: config.images.raster.progressive}),
@@ -693,7 +687,7 @@ export function raster() {
 														   	   sns: 80})
 			   ))
 			   
-			   .pipe(gulp.dest( pathBuild ));
+			   .pipe(gulp.dest( config.paths.build ));
 
 }
 
@@ -756,10 +750,10 @@ export function svg() {
 
 	console.log("Compressing svg assets...");
 
-	return gulp.src( pathBuild + "**/*.svg", {base: pathBuild} )
+	return gulp.src( config.paths.build + "**/*.svg", {base: config.paths.build} )
 			   .pipe(svgmin(svgminOptions))
 			   .pipe(gulpif( config.images.svg.convert, svg2png() ))
-			   .pipe(gulp.dest(pathBuild));
+			   .pipe(gulp.dest(config.paths.build));
 
 }
 
@@ -770,7 +764,7 @@ export function sprite() {
 	console.log("Generating svg sprite sheet...");
 
 
-	return gulp.src( pathSource + pathAssets + config.images.sprite.paths + "**/*.svg", {base: pathSource} )
+	return gulp.src( config.paths.source + config.images.paths + config.images.sprite.paths + "**/*.svg", {base: config.paths.source} )
 			   .pipe(svgSprite({
 
 								mode: config.images.sprite.mode, // defs, sprite, symbols
@@ -784,8 +778,8 @@ export function sprite() {
 								svg: { defs: config.images.sprite.mode + ".svg", sprite: config.images.sprite.mode + ".svg", symbols: config.images.sprite.mode + ".svg" },
 
 								cssFile: config.images.sprite.mode + ".css",
-								svgPath: "../" + pathAssets + config.images.sprite.paths + "%f", // Path to be included in CSS.
-								pngPath: "../" + pathAssets + config.images.sprite.paths + "%f", // Path to be included in CSS.
+								svgPath: "../" + config.images.paths + config.images.sprite.paths + "%f", // Path to be included in CSS.
+								pngPath: "../" + config.images.paths + config.images.sprite.paths + "%f", // Path to be included in CSS.
 
 								asyncTransforms: config.images.sprite.asyncTransforms,
 
@@ -796,13 +790,13 @@ export function sprite() {
 			   ))
 
 			   .pipe(gulpif( config.images.sprite.convert, svg2png() ))
-			   .pipe(gulp.dest(pathSource + pathAssets + config.images.sprite.paths))
+			   .pipe(gulp.dest(config.paths.source + config.images.paths + config.images.sprite.paths))
 
 
 			   .on("end", function() {
 			   		
-					return gulp.src( pathSource + pathAssets + config.images.sprite.paths + config.images.sprite.mode + ".css" )
-							   .pipe(gulp.dest(pathSource + "css/elements/"));
+					return gulp.src( config.paths.source + config.images.paths + config.images.sprite.paths + config.images.sprite.mode + ".css" )
+							   .pipe(gulp.dest(config.paths.source + "css/elements/"));
 					
 
 			   });
@@ -822,33 +816,33 @@ export function sprite() {
 
 export function clear() {
 
-	console.log("Cleaning " + pathBuild + " folder...");
+	console.log("Cleaning " + config.paths.build + " folder...");
 	
 	return del([revFile,
-				pathSource + "css/elements/" + config.images.sprite.mode + ".css",
-				pathSource + pathAssets + config.images.sprite.paths + config.images.sprite.mode + ".css",
-				pathSource + pathAssets + config.images.sprite.paths + config.images.sprite.mode + ".svg",
-				pathSource + "css/sorted",
-				pathBuild + "**/*",
-				pathBuild + ".htaccess"]);
+				config.paths.source + "css/elements/" + config.images.sprite.mode + ".css",
+				config.paths.source + config.images.paths + config.images.sprite.paths + config.images.sprite.mode + ".css",
+				config.paths.source + config.images.paths + config.images.sprite.paths + config.images.sprite.mode + ".svg",
+				config.paths.source + "css/sorted",
+				config.paths.build + "**/*",
+				config.paths.build + ".htaccess"]);
 
-	//return deleteEmpty.sync( pathBuild );
+	//return deleteEmpty.sync( config.paths.build );
 
 }
 
 
 export function clean() {
 
-	console.log("Cleaning " + pathBuild + " folder...");
+	console.log("Cleaning " + config.paths.build + " folder...");
 
 	return del([revFile,
-				pathSource + "css/elements/" + config.images.sprite.mode + ".css",
-				pathSource + pathAssets + config.images.sprite.paths + config.images.sprite.mode + ".css",
-				pathSource + pathAssets + config.images.sprite.paths + config.images.sprite.mode + ".svg",
-		 		pathBuild + "fonts/**/*.css",
-		 		pathBuild + "fonts/fonts.list"]);
+				config.paths.source + "css/elements/" + config.images.sprite.mode + ".css",
+				config.paths.source + config.images.paths + config.images.sprite.paths + config.images.sprite.mode + ".css",
+				config.paths.source + config.images.paths + config.images.sprite.paths + config.images.sprite.mode + ".svg",
+		 		config.paths.build + "fonts/**/*.css",
+		 		config.paths.build + "fonts/fonts.list"]);
 
-	//return deleteEmpty.sync( pathBuild );
+	//return deleteEmpty.sync( config.paths.build );
 
 }
 
@@ -868,7 +862,7 @@ export function sync() {
 	browserSync.init({
 					  //files: config.sync.files,
 					  server: {
-							   baseDir: pathBuild,
+							   baseDir: config.paths.build,
 							   serveStaticOptions: {
 													extensions: ["html", "php"],
 							   middleware: function (req, res, next) {
@@ -929,30 +923,30 @@ export function sync() {
 
 
 	// WATCH
-	gulp.watch(pathSource + "**/*.js").on("all", js, reload);
+	gulp.watch(config.paths.source + "**/*.js").on("all", js, reload);
 
-	//gulp.watch(pathSource + config.vendors.path + "**/*.js").on("all", vendors, reload);
+	//gulp.watch(config.paths.source + config.vendors.path + "**/*.js").on("all", vendors, reload);
 
-	gulp.watch(pathSource + "**/*.css").on("all", css);
+	gulp.watch(config.paths.source + "**/*.css").on("all", css);
 
-	gulp.watch(pathSource + "**/*.{app,avi,dmg,doc,eot,exe,gif,jp2,jpg,jpeg,jxr,mid,midi,mp3,mp4,mpeg,mov,ogg,ogv,otf,pdf,png,rar,svg,tiff,ttf,txt,webm,webp,woff,woff2,zip}", gulp.series(sprite, move, reload));
+	gulp.watch(config.paths.source + "**/*.{app,avi,dmg,doc,eot,exe,gif,jp2,jpg,jpeg,jxr,mid,midi,mp3,mp4,mpeg,mov,ogg,ogv,otf,pdf,png,rar,svg,tiff,ttf,txt,webm,webp,woff,woff2,zip}", gulp.series(sprite, move, reload));
 
 	gulp.watch([metadataFile,
-				pathSource + config.html.paths
+				config.paths.source + config.html.paths
 			   ]).on("all", gulp.series(html, modals, meta, refresh));
 
 
 	gulp.watch([configFile,
 				//credentialsFile,
 				metadataFile,
-				pathSource + "{_data,_helpers,_layouts,_modals,_partials}/**/*.{html,hbs,handlebars,json,yml}",
-				pathSource + "**/critical.css",
-				pathSource + "**/browserconfig.xml",
-				pathSource + "**/manifest.json",
+				config.paths.source + "{_data,_helpers,_layouts,_modals,_partials}/**/*.{html,hbs,handlebars,json,yml}",
+				config.paths.source + "**/critical.css",
+				config.paths.source + "**/browserconfig.xml",
+				config.paths.source + "**/manifest.json",
 			   ]).on("all", gulp.series(refresh, html, modals, meta, reload));
 	
 	
-	//gulp.watch([pathSource + "{_modals}/**/*.{html,hbs,handlebars}"]).on("all", gulp.series(modals, reload));
+	//gulp.watch([config.paths.source + "{_modals}/**/*.{html,hbs,handlebars}"]).on("all", gulp.series(modals, reload));
 
 }
 
@@ -1461,14 +1455,14 @@ export function ftpdeploy(done) {
 								 log: gutil.log
 		});
 
-		const globs = [pathBuild + ".htaccess",
-					   pathBuild + "**/*"];
+		const globs = [config.paths.build + ".htaccess",
+					   config.paths.build + "**/*"];
 
 		// Using base = '.' will transfer everything to /public_html correctly.
 		// Turn off buffering in gulp.src for best performance.
 
 		return gulp.src(globs, {base: dir(config.ftp.dist), buffer: false})
-				   //.pipe(conn.newer( pathBuild )) // Only upload newer files.
+				   //.pipe(conn.newer( config.paths.build )) // Only upload newer files.
 				   .pipe(conn.dest( server.ftp.path ))
 
 				   .on("end", function() {
@@ -1572,13 +1566,13 @@ function mode(done) {
 // SORT CSS DECLARATIONS
 export function sort() {
 
-	const sortOutput = pathSource + "smacss",
+	const sortOutput = config.paths.source + "smacss",
 		  sortOrder = "smacss"; // alphabetically, concentric-css, smacss
 
 	console.log("Sorting CSS declarations using: " + sortOrder);
 	console.log("Sorted CSS files saved to: " + sortOutput)
 
-	return gulp.src(config.css.paths.map( function(base) { return pathSource + base } ), {base: pathSource, allowEmpty: true} )
+	return gulp.src(config.css.paths.map( function(base) { return config.paths.source + base } ), {base: config.paths.source, allowEmpty: true} )
 			   .pipe(postcss( [cssDeclarationSorter({order: sortOrder})] )) 
 			   .pipe(gulp.dest( sortOutput ));
 
@@ -1592,7 +1586,7 @@ export function preview(done) {
 
 		//console.log("Opening preview: " + config.options.previewURL);
 
-		return gulp.src( pathBuild + config.options.previewURL )
+		return gulp.src( config.paths.build + config.options.previewURL )
 				   .pipe(open());
 
 	} else if ( config.options.previewURL != null ) {
@@ -1624,9 +1618,9 @@ export function openProject(done) {
 // OPEN SOURCE FOLDER
 export function openSource(done) {
 
-	console.log("Opening " + pathSource + " folder.");
+	console.log("Opening " + config.paths.source + " folder.");
 
-	return gulp.src( pathSource )
+	return gulp.src( config.paths.source )
 			   .pipe(open());
 
 }
@@ -1635,9 +1629,9 @@ export function openSource(done) {
 // OPEN BUILD FOLDER
 export function openBuild(done) {
 
-	console.log("Opening " + pathBuild + " folder.");
+	console.log("Opening " + config.paths.build + " folder.");
 
-	return gulp.src( pathBuild )
+	return gulp.src( config.paths.build )
 			   .pipe(open());
 
 }

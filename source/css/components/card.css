@@ -7,12 +7,16 @@
 	position: relative;
 	padding: 0;
 	border-radius: var(--radius-sm);
-	box-shadow: var(--box-shadow-xl);
+	box-shadow: var(--box-shadow-sm);
 
 	transition: var(--ease-fast);
 }
 
 /* HOVER */
+.card:hover {
+	box-shadow: var(--box-shadow-xl);
+}
+
 /*
 .card-hover:hover {
 	transform: scale(1.01);
