@@ -56,7 +56,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/icons-nav.svg",
-    "revision": "d41d8cd98f00b204e9800998ecf8427e"
+    "revision": "6160059cc76fc2d1774f844cf1add2a5"
   },
   {
     "url": "assets/icons/android-chrome-192x192.png",
@@ -584,7 +584,7 @@ self.__precacheManifest = [
   },
   {
     "url": "error.html",
-    "revision": "78f414d83bab3e619a97e5048488ccc3"
+    "revision": "b697c01e36d1771b8c4281bec29c7aa3"
   },
   {
     "url": "fonts/fontawesome-webfont.eot",
@@ -616,7 +616,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "ad472937c6288faaee51d248ee57146a"
+    "revision": "f03ed6d4ae9907c59ab22f735ddce86d"
   },
   {
     "url": "modals/press.html",

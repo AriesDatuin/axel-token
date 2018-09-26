@@ -11,7 +11,9 @@
 
 	"paths": {
 		"source": "source/",
-		"build": "build/"
+		"build": "build/",
+		"scripts": "scripts/",
+		"assets": "assets/"
 	},
 
 	"ga": {
@@ -49,7 +51,6 @@
 	},
 
 	"images": {
-		"paths": "assets/",
 
 		"raster": {
 			"level": 5,
@@ -115,21 +116,18 @@
 		
 		"inlineScripts": {
 			"js": ["_scripts/*.js"],
-			"css": ["css/critical.css"],
-			"minify": true
+			"css": ["css/critical.css"]
 		}
-	},
-
-	"scripts": {
-		"output": "scripts/"
 	},
 	
 	"vendors": {
-		"paths": ["_vendors/*.js"],
 		"useVendorScripts": false,
+
 		"bundle": "vendors.js",
 		"lint": false,
-		"jsAttribute": "async"
+		"jsAttribute": "async",
+
+		"paths": ["_vendors/*.js"]
 	},
 
 	"js": {

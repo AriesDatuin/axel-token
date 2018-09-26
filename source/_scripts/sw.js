@@ -8,7 +8,7 @@ if ("serviceWorker" in navigator) {
 
 		navigator.serviceWorker.register("sw.js").then(function(registration) {
 
-			console.log("Ver 2.4.2");
+			console.log("Ver 2.4.3");
 			//console.log("ServiceWorker registration successful with scope: ", registration.scope);
 
 		});
