@@ -131,7 +131,7 @@ var utilAssetObserver = function() {
 		
 			.always( function() {
 			
-				lazyLog("LOADING:", element);			
+				//lazyLog("LOADING:", element);			
 				//TweenMax.set(element, {opacity: 0, scale: 0.9});
 			
 			})

@@ -383,13 +383,13 @@ var comModal = function() {
 
 			uiModal += "<div class='modal grid-x align-center align-top' tabindex='-1' aria-hidden='true' role='dialog'>"; // MODAL
 
-				uiModal += "<div class='modal-close close dark margin-sm round-full z-01'><span></span><span></span></div>"; // BUTTON: CLOSE
-
 				uiModal += "<div id='modal-preloader' class='mini-preloader light'><span class='fa fa-circle-o-notch fa-spin' aria-hidden='true' role='document'></span><p>Loading...</p></div>" // PRELOADER
 
-				uiModal += "<div class='cell modal-container'></div>" // CONTAINER
+				uiModal += "<div class='cell modal-container position-relative z-01'></div>" // CONTAINER
 
-				uiModal += "<a class='cell modal-close margin-tb-sm center-element text-secondary text-charcoal-hover text-bold text-uppercase button button-width-full background-white background-white-hover no-touch-feedback prevent-default'><i class='fa fa-times-circle margin-right-xs'></i>Close</a>"; // BUTTON: CLOSE
+				uiModal += "<div class='modal-close close dark margin-sm round-full z-02'><span></span><span></span></div>"; // BUTTON: CLOSE
+
+				//uiModal += "<a class='cell modal-close margin-tb-sm center-element text-secondary text-charcoal-hover text-bold text-uppercase button button-width-full background-white background-white-hover no-touch-feedback prevent-default'><i class='fa fa-times-circle margin-right-xs'></i>Close</a>"; // BUTTON: CLOSE
 
 			uiModal += "</div>"; // MODAL
 	
@@ -487,7 +487,7 @@ var comModal = function() {
 
 		$$(pageContent).on("resize", _.debounce(function() {
 
-													if ( $$(".modal").length ) {
+													if ( $$(".modal").length && $$(".modal").hasClass("modal-auto") ) {
 														   
 														//console.log("Modal is open.");
 
@@ -517,28 +517,32 @@ var comModal = function() {
 				/* -------------------------------------------------- */
 
 				// WIDTH
-				if ( self.data("content-width") === "auto") {
+				if ( self.data("content-width") === "auto" ) {
 
 					//console.log("Modal set to auto size width.");
+					$$(".modal").addClass("modal-auto");
 					dataContentWidth = window.innerWidth / 1.2;
 
 				} else {
 
 					//console.log("Modal not set to auto size width.");
+					$$(".modal").removeClass("modal-auto");
 					dataContentWidth = self.data("content-width");
 
 				}
 
 
 				// HEIGHT
-				if ( self.data("content-height") === "auto") {
+				if ( self.data("content-height") === "auto" ) {
 
 					//console.log("Modal set to auto size height.");
+					$$(".modal").addClass("modal-auto");
 					dataContentHeight = window.innerHeight / 1.2;
 
 				} else {
 
 					//console.log("Modal not set to auto size height.");
+					$$(".modal").removeClass("modal-auto");
 					dataContentHeight = self.data("content-height");
 
 				}

@@ -5,7 +5,7 @@
 /* PARENT */
 .modal {
 	z-index: 99;
-	overflow: auto;
+	overflow: hidden;
 	position: fixed;
 	top: 8%;
 	left: 0;
@@ -19,8 +19,6 @@
 	box-shadow: var(--box-shadow-xl);
 
 	transform: translate3d(0,-8%,1) translateZ(0);
-
-	-webkit-overflow-scrolling: touch;
 
 	/* Force GPU Rendering */
 	/*
@@ -41,9 +39,12 @@
 
 /* CHILD */
 .modal-container {
-	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: scroll;
 	width: 100%;
-	height: auto;
+	height: 100%;
+
+	-webkit-overflow-scrolling: touch;
 }
 
 

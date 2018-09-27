@@ -11,7 +11,7 @@
  * See https://goo.gl/2aRDsh
  */
 
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.1/workbox-sw.js");
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.5.0/workbox-sw.js");
 
 workbox.skipWaiting();
 workbox.clientsClaim();
@@ -116,7 +116,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/icons/safari-pinned-tab.svg",
-    "revision": "0eddbdc440ae6e52de0e9fed6fc40219"
+    "revision": "68a8e083b9d26d045c7aaea94b4d23c1"
   },
   {
     "url": "assets/illustrations/big-ideas.svg",
@@ -132,7 +132,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/illustrations/shopping.svg",
-    "revision": "11251e9d37784dab8a24ddca714aa832"
+    "revision": "66dd49a87885d2811838f164072628e7"
   },
   {
     "url": "assets/illustrations/teamwork.svg",
@@ -268,59 +268,59 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/sprites/press/bitcoin-exchange-guide.svg",
-    "revision": "335ad7a0383b6949976d05a026f80889"
+    "revision": "18dd1eef4402d9bbaa7355ecc7965d90"
   },
   {
     "url": "assets/sprites/press/bitcoininst.svg",
-    "revision": "95c8109489362754779d129de8fac71b"
+    "revision": "a478c68f0bc25356647d03934ee9d73c"
   },
   {
     "url": "assets/sprites/press/business-insider.svg",
-    "revision": "b57f853f55fad3e92e41fb24507ff3de"
+    "revision": "9cdd7931d3f34883e3ebf6096bba2dc0"
   },
   {
     "url": "assets/sprites/press/ccn.svg",
-    "revision": "f35eb5b1f6dacb97a49fadd1824c8eae"
+    "revision": "7ebbbb31b8600134f48bd5e534619cee"
   },
   {
     "url": "assets/sprites/press/coin-announcer.svg",
-    "revision": "b260d75d80777e19210eda1b690f524d"
+    "revision": "f1b6c9d0831f7ef01833d85340ac1fa2"
   },
   {
     "url": "assets/sprites/press/crains.svg",
-    "revision": "d6e52ade6829011f6539fb2fd714680d"
+    "revision": "3733f8dc3774c1561dc79d856273e373"
   },
   {
     "url": "assets/sprites/press/e27.svg",
-    "revision": "7953969164f385c40f07b7da663dbc2d"
+    "revision": "66fcfbf3bf0a4d6de7e4215aae0eeff6"
   },
   {
     "url": "assets/sprites/press/forbes.svg",
-    "revision": "585238759ec91be0e3660553ee493ecf"
+    "revision": "faec2e6f0abba9b724a5008f17efa056"
   },
   {
     "url": "assets/sprites/press/las-vegas-business-press.svg",
-    "revision": "c2221633fb889ca176622a022664d6ae"
+    "revision": "401eff7442e04adf1aa218d2e890834e"
   },
   {
     "url": "assets/sprites/press/pcmag.svg",
-    "revision": "a337dd61b46c9d70b58e730cd83d9d3b"
+    "revision": "40ce1b448d2140414d91d21450c8a993"
   },
   {
     "url": "assets/sprites/press/popular-mechanics.svg",
-    "revision": "df8d6efcb1406006d186a9062756bbe3"
+    "revision": "4cfdbb8f093b02613d4560b656585a6e"
   },
   {
     "url": "assets/sprites/press/tech-bullion.svg",
-    "revision": "320e56d4281396c48595b7f6d3afcd21"
+    "revision": "6ac4c4b8f80fe9692d71230e0f969409"
   },
   {
     "url": "assets/sprites/press/techaeris.svg",
-    "revision": "f9e55f3f2b28c712143bfe88ad04b535"
+    "revision": "46d5a65c09f5a5739bb46eab84522238"
   },
   {
     "url": "assets/sprites/press/vegastech.svg",
-    "revision": "ee6704a0b4adcc56c14bae7b63885efb"
+    "revision": "9e9868ed1b0be53da83c58cc33a1c010"
   },
   {
     "url": "assets/sprites/sprite.css",
@@ -328,7 +328,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/sprites/sprite.svg",
-    "revision": "832f65d17741f651fd1aa927979d7b58"
+    "revision": "8c7a531e9b743e9caa2e7bd4f504afd9"
   },
   {
     "url": "assets/stories/acoustic-guitar.svg",
@@ -584,7 +584,7 @@ self.__precacheManifest = [
   },
   {
     "url": "error.html",
-    "revision": "b697c01e36d1771b8c4281bec29c7aa3"
+    "revision": "3f60e0c6485d6de63e74a032819afb9b"
   },
   {
     "url": "fonts/fontawesome-webfont.eot",
@@ -616,35 +616,35 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "f03ed6d4ae9907c59ab22f735ddce86d"
+    "revision": "4020693e85d2c5933f185ad6a221fa34"
   },
   {
     "url": "modals/press.html",
-    "revision": "2280f2399abb213cfeb2a4802e4f89ac"
+    "revision": "ce75a441950be783e9a7ffa61b78c167"
   },
   {
     "url": "modals/privacy-policy.html",
-    "revision": "c311c08be43af9a9e2ab529b8dbf417e"
+    "revision": "15c1824f1135482cc00961bba0404a33"
   },
   {
     "url": "modals/stories.html",
-    "revision": "1828c39e86a0f9f294fbab90a0250a9f"
+    "revision": "c978df7da305d74eea99647b6c1a31be"
   },
   {
     "url": "modals/team.html",
-    "revision": "cca672da26a62b73b877e1a9a8bff35a"
+    "revision": "709eb0b85b2c0e40ff746b6e7d46e6bf"
   },
   {
     "url": "modals/whitepaper.html",
-    "revision": "eee44946103f4ca112b840d425211a5e"
+    "revision": "18236dd35a4803552fbe9188723f79c2"
   },
   {
-    "url": "scripts/app.36556a16ce.min.css",
-    "revision": "36556a16cea8e0a90608e9ffc42f3c7d"
+    "url": "scripts/app.4e8c2f3244.min.css",
+    "revision": "4e8c2f3244e856d31c36347286c67136"
   },
   {
-    "url": "scripts/app.d19fb9d0b2.min.js",
-    "revision": "d19fb9d0b28991a6bb6f6d693cc9dc5b"
+    "url": "scripts/app.d1a1de1a33.min.js",
+    "revision": "d1a1de1a33a4ac323b004643c173316e"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();

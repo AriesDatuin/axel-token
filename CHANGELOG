@@ -1,3 +1,18 @@
+September 27, 2018
+Version 2.4.3
+	Website / App
+		- Icon animations are now activated via IntersectionObserver for browsers that support the IO API.
+		- Browsers with no IO support will fallback to 'scrollstart' and 'scrollstop' events.
+		- Animated icons will now individually play as they enter the viewport.
+		- Modal popup with a fixed width or height no longer dynamically adjust width or height on browser resize.
+		- Fixed modal popup container being displayed incorrectly on table devices.
+		- Adjusted modal padding.
+		- UI Close button is now fixed in modal padding.
+
+
+
+
+
 September 24, 2018
 Version 2.4.2
 	Website / App
