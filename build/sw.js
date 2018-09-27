@@ -151,20 +151,36 @@ self.__precacheManifest = [
     "revision": "35cc1d7101ffb9b36b85272d5bffd573"
   },
   {
+    "url": "assets/index/diagram-how-it-works-ch.png",
+    "revision": "4d80d9580bbdb40bfd674bb95abf7b77"
+  },
+  {
+    "url": "assets/index/diagram-how-it-works-ch.webp",
+    "revision": "3ee12592bdd8df947ea0bd6e9a94bf63"
+  },
+  {
     "url": "assets/index/diagram-how-it-works.png",
-    "revision": "5a86dfdbedc552cdac3e375d5997c003"
+    "revision": "c550721c515840318d28b82b2c6da6d5"
   },
   {
     "url": "assets/index/diagram-how-it-works.webp",
-    "revision": "a90689df2b0ea0b0a55a9e1059d23ee7"
+    "revision": "1b6b3164a7a98280358e8d2be8d595ad"
+  },
+  {
+    "url": "assets/index/diagram-our-technology-ch.png",
+    "revision": "995b82c541e2d6950824d35ea3cacc9f"
+  },
+  {
+    "url": "assets/index/diagram-our-technology-ch.webp",
+    "revision": "3d87432511b97c4d939ccdd88c67ab10"
   },
   {
     "url": "assets/index/diagram-our-technology.png",
-    "revision": "e9069dbee80161b54a33ffcdb5eb2605"
+    "revision": "fe5dd1b527741971833626f25e8dec9c"
   },
   {
     "url": "assets/index/diagram-our-technology.webp",
-    "revision": "4658efd0b975ce60eeec95614d258652"
+    "revision": "a98988d8cb7cd450feb04a4f8ae0aa8b"
   },
   {
     "url": "assets/index/earth.png",
@@ -583,8 +599,12 @@ self.__precacheManifest = [
     "revision": "33204e7fb12b75033f026fa7be848279"
   },
   {
+    "url": "ch.html",
+    "revision": "6a61a84ad8c4fcacb6a46d3da01f0bbd"
+  },
+  {
     "url": "error.html",
-    "revision": "f97cef8c91547266b6c3b58dcb7a14a6"
+    "revision": "81b3544ddbbd7f5ad89020a22d043a2d"
   },
   {
     "url": "fonts/fontawesome-webfont.eot",
@@ -615,36 +635,60 @@ self.__precacheManifest = [
     "revision": "0d2717cd5d853e5c765ca032dfd41a4d"
   },
   {
-    "url": "index.html",
-    "revision": "5803cf74984118fcd61be9da76eedeb7"
+    "url": "index-ch.html",
+    "revision": "288cbb810eebc3e4256f2e64dba5e56c"
   },
   {
-    "url": "modals/press.html",
+    "url": "index.html",
+    "revision": "8bef8251ac0867b4934395d39b495150"
+  },
+  {
+    "url": "modals/ch/press.html",
     "revision": "efbc89fa4d6e1790c4bcd4c833355935"
   },
   {
-    "url": "modals/privacy-policy.html",
+    "url": "modals/ch/privacy-policy.html",
     "revision": "a1f48516650905d5b64af514a1c6b8c6"
   },
   {
-    "url": "modals/stories.html",
-    "revision": "9d3f8c8703a5cac4c49cce5126d7e1ca"
+    "url": "modals/ch/stories.html",
+    "revision": "c17e6901e193a241ce20a61c31d7376f"
   },
   {
-    "url": "modals/team.html",
-    "revision": "b59bd3b98cd4b303eb5ccd10e9fed632"
+    "url": "modals/ch/team.html",
+    "revision": "b7ee354f6e915b18639b6b0d5a5125d5"
   },
   {
-    "url": "modals/whitepaper.html",
+    "url": "modals/ch/whitepaper.html",
     "revision": "22cb8022215ba1deb0eddf8576928422"
   },
   {
-    "url": "scripts/app.9e4b00499c.min.css",
-    "revision": "9e4b00499c5eed194f0ab9889ea9631a"
+    "url": "modals/en/press.html",
+    "revision": "efbc89fa4d6e1790c4bcd4c833355935"
   },
   {
-    "url": "scripts/app.b8d1a2c050.min.js",
-    "revision": "b8d1a2c0501be6bf53bf4e009d18b003"
+    "url": "modals/en/privacy-policy.html",
+    "revision": "a1f48516650905d5b64af514a1c6b8c6"
+  },
+  {
+    "url": "modals/en/stories.html",
+    "revision": "9d3f8c8703a5cac4c49cce5126d7e1ca"
+  },
+  {
+    "url": "modals/en/team.html",
+    "revision": "b59bd3b98cd4b303eb5ccd10e9fed632"
+  },
+  {
+    "url": "modals/en/whitepaper.html",
+    "revision": "22cb8022215ba1deb0eddf8576928422"
+  },
+  {
+    "url": "scripts/app.910a83dfef.min.js",
+    "revision": "910a83dfef35e9602f55f1f392a28587"
+  },
+  {
+    "url": "scripts/app.b0700b4335.min.css",
+    "revision": "b0700b433532492e54e3c243c1d55498"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();

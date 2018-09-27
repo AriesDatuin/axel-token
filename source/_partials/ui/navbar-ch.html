@@ -3,7 +3,9 @@
 <nav id="navbar" class="center-element width-md">
 	
 
-
+	{{#ifpage 'index'}}
+		{{> scroll-progress}}
+	{{/ifpage}}
 	
 
 	<!-- GRID -->
@@ -32,13 +34,13 @@
 
 
 		<!-- CELL -->
-		<div id="navbar-callout" class="cell shrink list-horizontal">
-
-
-			<a href="https://go.axel.org/AirDrop1" target="_blank" class="button position-relative external">Airdrop Live<span class="fa fa-circle margin-left-xs anim-fade anim-play" aria-hidden="true"></span></a>
+		
+		<div id="navbar-callout" class="cell shrink callout">
 			
-
+			<a href="https://go.axel.org/AirDrop1" target="_blank" class="button position-relative external">空投进行中<span class="fa fa-circle margin-left-xs anim-fade anim-play" aria-hidden="true"></span></a>
+			
 		</div>
+		
 		<!-- // CELL -->
 
 

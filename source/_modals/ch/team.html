@@ -1,0 +1,69 @@
+---
+layout: modal
+assets: assets/
+---
+
+
+<!-- CONTENT -->
+{{#each team-ch.content}}
+
+
+	<article id="team-{{ id }}" class="profile grid-x align-center align-top small-up-1 medium-up-2">
+		
+
+		<!-- CELL -->
+		<div id="photo" class="cell small-order-1 medium-order-2 padding-none overflow-hidden">
+
+
+			<!-- IMAGE -->
+			<img src="{{ image }}" alt="{{ title }}-{{ subtitle }}...">
+			<!-- // IMAGE -->
+
+
+			<!-- BLOCK CAP -->
+			<svg class="block-cap bottom svg-white emergence-ignore-child" preserveAspectRatio="none" viewBox="0 0 1024 100" aria-hidden="true">
+				{{> block-cap-inward  }}
+			</svg>
+			<!-- // BLOCK CAP -->
+
+
+		</div>
+		<!-- // CELL -->
+
+		
+		<!-- CELL -->
+		<div id="description" class="cell small-order-2 medium-order-1 padding-md padding-xs-mobile">
+			
+
+			<!-- COPY -->
+			<h1 class="p2 font-paragraph text-secondary">{{ title }}</h1>
+			<h2 class="p8 font-paragraph text-dark-grey header-accent header-accent-left header-accent-secondary">{{ subtitle }}</h2>
+
+
+			<!-- SOCIAL -->
+			<ul class="social-icons dark list-vertical z-02">
+
+				{{#each social}}
+				<li>
+					<a href="{{ link }}" target="_blank" rel="noopener" class="social-icon-{{ icon }}-hover" aria-label="{{ icon }}">
+						<span class="fa fa-{{ icon }}" aria-hidden="true"></span>
+					</a>
+				</li>
+				{{/each}}
+
+			</ul>
+			<!-- // SOCIAL -->
+
+
+			<p>{{ description }}</p>
+			<!-- // COPY -->
+
+			
+		</div>
+		<!-- // CELL -->
+
+
+	</article>
+
+
+{{/each}}

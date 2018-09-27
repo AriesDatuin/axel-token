@@ -569,7 +569,7 @@ var comModal = function() {
 			
 			TweenMax.set( $$(".modal"), { width: dataContentWidth, height: dataContentHeight } );
 
-			window.location.hash = "#" + dataConentSelector;
+			//window.location.hash = "#" + dataConentSelector;
 
 		});
 

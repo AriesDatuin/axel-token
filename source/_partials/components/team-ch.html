@@ -1,0 +1,70 @@
+
+<!-- CONTENT -->
+{{#each team-ch.content}}
+
+
+	<!-- CARD -->
+	<div id="{{ id }}" class="cell card position-relative padding-none media-object background-white overflow-hidden">
+
+
+		<!-- LINK -->
+		<div class="position-absolute top left width-full height-full popup cursor-pointer prevent-default z-01" data-content-url="{{ link }}" data-content-selector="team-{{ id }}" data-content-width="auto" data-content-height="auto"></div>
+		<!-- // LINK -->
+
+
+		<!-- SOCIAL -->
+		<ul class="social-icons profile list-vertical z-02">
+
+
+			{{#each social}}
+			<li>
+				<a href="{{ link }}" target="_blank" rel="noopener" class="social-icon-{{ icon }}-hover" aria-label="{{ icon }}">
+					<span class="fa fa-{{ icon }}" aria-hidden="true"></span>
+				</a>
+			</li>
+			{{/each}}
+
+
+		</ul>
+		<!-- // SOCIAL -->
+
+
+		<!-- MEDIA OBJECT -->
+		<div class="media-object-section padding-none padding-sm">
+
+
+			<!-- IMAGE -->
+			<div class="wh-xs round-full border-xxs border-solid border-light-grey background-secondary background-cover background-tc background-no-repeat lazy transition-ease" data-src="{{ thumb }}"></div>
+			<!-- // IMAGE -->
+
+
+		</div>
+		<!-- // MEDIA OBJECT -->
+
+
+		<!-- MEDIA OBJECT -->
+		<div class="media-object-section padding-none position-relative width-full">
+
+
+			<!-- COPY -->
+			<div class="position-absolute center-v padding-xs">
+				<h3 class="margin-bottom-none p9 font-paragraph text-secondary text-accent-hover text-bold text-leading-xxs">{{ title }}</h3>
+				<p class="p10 font-paragraph text-dark-grey text-leading-xxs">{{ subtitle }}</p>
+				<!--<p class="p10">{{ description }}</p>-->
+			</div>
+			<!-- // COPY -->
+
+
+		</div>
+		<!-- // MEDIA OBJECT -->
+
+
+
+
+
+	</div>
+	<!-- // CARD -->
+
+
+{{/each}}
+<!-- // CONTENT -->

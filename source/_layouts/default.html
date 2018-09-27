@@ -127,19 +127,31 @@
 	<!-- CONTAINER -->
 	<div id="container">
 
-		{{#ifpage 'index'}}
+		{{#ifpage 'index' 'ch'}}
 			{{> scroll-progress}}
 		{{/ifpage}}
 
 
 		<!-- CONTENT -->
-		{{> navbar}}
+		{{#ifpage 'index'}}
+			{{> navbar}}
+		{{/ifpage}}
+
+		{{#ifpage 'ch'}}
+			{{> navbar-ch}}
+		{{/ifpage}}
 
 
 		{{> body}}
 
 
-		{{> footer}}
+		{{#ifpage 'index'}}
+			{{> footer}}
+		{{/ifpage}}
+
+		{{#ifpage 'ch'}}
+			{{> footer-ch}}
+		{{/ifpage}}
 
 
 		<ul class="social-icons list-vertical fixed right round-left round-sm box-shadow-xl overflow-hidden anim-away show-on-scroll z-10">

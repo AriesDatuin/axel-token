@@ -5,7 +5,7 @@ Version 2.4.3
 		- Browsers with no IO support will fallback to 'scrollstart' and 'scrollstop' events.
 		- Animated icons will now individually play as they enter the viewport.
 		- Modal popup with a fixed width or height no longer dynamically adjust width or height on browser resize.
-		- Fixed modal popup container being displayed incorrectly on table devices.
+		- Fixed modal popup container being displayed incorrectly on tablet devices.
 		- Adjusted modal padding.
 		- UI Close button is now fixed in modal padding.
 
