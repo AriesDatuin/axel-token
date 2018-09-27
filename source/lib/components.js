@@ -487,10 +487,9 @@ var comModal = function() {
 
 		$$(pageContent).on("resize", _.debounce(function() {
 
-													if ( $$(".modal").length && $$(".modal").hasClass("modal-auto") ) {
+													if ( $$(".modal").length && $$(".modal").hasClass("modal-auto") && window.matchMedia("(max-width: 1500px)").matches ) {
 														   
 														//console.log("Modal is open.");
-
 														TweenMax.set( $$(".modal"), { width: window.innerWidth / 1.2, height: window.innerHeight / 1.2 } );
 
 													}
@@ -517,7 +516,7 @@ var comModal = function() {
 				/* -------------------------------------------------- */
 
 				// WIDTH
-				if ( self.data("content-width") === "auto" ) {
+				if ( self.data("content-width") === "auto" && window.matchMedia("(max-width: 1500px)").matches ) {
 
 					//console.log("Modal set to auto size width.");
 					$$(".modal").addClass("modal-auto");
@@ -537,7 +536,7 @@ var comModal = function() {
 
 					//console.log("Modal set to auto size height.");
 					$$(".modal").addClass("modal-auto");
-					dataContentHeight = window.innerHeight / 1.2;
+					dataContentHeight = 768;
 
 				} else {
 
@@ -570,7 +569,18 @@ var comModal = function() {
 			
 			TweenMax.set( $$(".modal"), { width: dataContentWidth, height: dataContentHeight } );
 
+			window.location.hash = "#" + dataConentSelector;
+
 		});
+
+
+		/*
+		var modalPath = window.location.pathname,
+			modalHash = window.location.hash;
+
+
+		modal(dataContentURL, modalHash, dataContentWidth, dataContentHeight);
+		*/
 
 
 		$$(".modal-close").on("click", function(e) {

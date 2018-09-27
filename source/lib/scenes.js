@@ -174,7 +174,6 @@ var tlIconFullyProtected = new TimelineMax({paused: true, delay: 0, repeatDelay:
 /* DUAL-CHAIN ARCHITECTURE
 /* -------------------------------------------------- */
 
-
 var tlIconDualChainArchitecture = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: false, repeat: 0, onComplete: animIconComplete});
 	tlIconDualChainArchitecture.staggerFromTo(animIconDualChainArchitecture.find("#cube-top-side").children(), 0.5, {autoAlpha: 0, y: -10},
 																													{autoAlpha: 1, y: 0, ease: Expo.easeOut}, 0.12, "group-01")
@@ -184,6 +183,7 @@ var tlIconDualChainArchitecture = new TimelineMax({paused: true, delay: 0, repea
 
 							   .staggerFromTo(animIconDualChainArchitecture.find("#cube-right-side").children(), 0.5, {autoAlpha: 0, x: 10, y: 10},
 																													   {autoAlpha: 1, x: 0, y: 0, ease: Expo.easeOut}, 0.12, "group-01");
+
 
 /* -------------------------------------------------- */
 /* WITNESS POOL
@@ -332,9 +332,6 @@ var tlIconStartupLanding = new TimelineMax({paused: true, delay: 0, repeatDelay:
 										}
 
 						}, "-=1");
-
-
-
 
 
 var tlIconStartupLaunch = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: false, repeat: 0,
@@ -1070,7 +1067,7 @@ var tlMasterTimelineScenes = new TimelineMax();
 
 		var animIconOptions = {
 			root: null,
-			rootMargin: "0",
+			rootMargin: "0px",
 			threshold: [1.0, 1.0, 1.0, 1.0]
 		}
 
@@ -1083,7 +1080,11 @@ var tlMasterTimelineScenes = new TimelineMax();
 
 					//observer.unobserve(entry.target);
 					entry.target.classList.add("anim-play");
-					animIconController();
+
+					$$(pageContent).on("scrollstart", { latency: $updateInterval }, animIconPauseAll);
+					$$(pageContent).on("scrollstop", { latency: $updateInterval }, animIconController);
+
+					//animIconController();
 
 				} else {
 
