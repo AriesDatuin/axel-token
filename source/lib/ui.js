@@ -1260,7 +1260,7 @@ var uiButtons = function() {
 		Waves.attach(navToggleLabel, ["waves-block", "waves-light"]);
 		Waves.attach($$(".scroll-to").not(buttonNoWaves), ["waves-block", "waves-light"]);
 		
-		Waves.attach(button, ["waves-block", "waves-effect"]);
+		Waves.attach(button.not(buttonNoWaves), ["waves-block", "waves-effect"]);
 
 		Waves.attach(buttonWavesDarkGrey, ["waves-light"]);
 		Waves.attach(buttonWavesCharcoal, ["waves-light"]);

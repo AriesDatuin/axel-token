@@ -1,3 +1,44 @@
+October 04, 2018
+Version 2.4.5
+	Website / App
+		- Added style guide page.
+		- Added tabindex="-1" to <main> content for accessibility.
+		- Corrected translate3D values for anim-bl class.
+
+
+	Build Framework
+		- Build Framework now checks to see if a server.json configuration file exists upon initial or first run of the compiler and will create one if no file exists.
+		- Build Framework will now generate a style guide page when compiling.
+		- Additional options to CSS and JS optimizations.
+		- Fixed some mismatched CSS variables not being processed by the compiler.
+		- Housekeeping of config.json file.
+
+
+
+
+
+September 28, 2018
+Version 2.4.4
+	Website / App
+		- Added Chinese translation and language options.
+		- Revised some icons and tweaked animations.
+		- Slider page dots are hidden on small screens.
+		- Line breaks <br> should now be displayed correctly in HTML.
+
+
+	Build Framework
+		- Updated Foundation to 6.5.0-rc.3 (See https://github.com/zurb/foundation-sites/releases/ for CHANGELOG).
+		- Added tracking options to config.json.
+		- Added FullStory tracking.
+		- GA is now under tracking options.
+		- Added check to canonical tag.
+		- Fixed line breaks <br> being processed incorrectly in HTML.
+		- Tracking scripts are no longer injected during Development mode.
+
+
+
+
+
 September 27, 2018
 Version 2.4.3
 	Website / App

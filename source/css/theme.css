@@ -408,53 +408,77 @@ a.inactive {
 /* -------------------------------------------------- */	
 
 /* COLORS */
-.text-primary {
+.text-primary,
+.text-primary:active,
+.text-primary:focus {
 	color: var(--primary-color);
 }
 
-.text-secondary {
+.text-secondary,
+.text-secondary:active,
+.text-secondary:focus {
 	color: var(--secondary-color);
 }
 
-.text-accent {
+.text-accent,
+.text-accent:active,
+.text-accent:focus {
 	color: var(--accent-color);
 }
 
-.text-wild {
+.text-wild,
+.text-wild:active,
+.text-wild:focus {
 	color: var(--wild-color);
 }
 
 
 	/* ////////// */
-	.text-white {
+	.text-white,
+	.text-white:active,
+	.text-white:focus {
 		color: var(--white-color);
 	}
 
-	.text-light-grey {
+	.text-light-grey,
+	.text-light-grey:active,
+	.text-light-grey:focus {
 		color: var(--light-grey-color);
 	}
 
-	.text-dark-grey {
+	.text-dark-grey,
+	.text-dark-grey:active,
+	.text-dark-grey:focus {
 		color: var(--dark-grey-color);
 	}
 
-	.text-charcoal {
+	.text-charcoal,
+	.text-charcoal:active,
+	.text-charcoal:focus {
 		color: var(--charcoal-color);
 	}
 
-	.text-black {
+	.text-black,
+	.text-black:active,
+	.text-black:focus {
 		color: var(--black-color);
 	}
 
-	.text-ok {
+	.text-ok,
+	.text-ok:active,
+	.text-ok:focus {
 		color: var(--ok-color);
 	}
 
-	.text-error {
+	.text-error,
+	.text-error:active,
+	.text-error:focus {
 		color: var(--error-color);
 	}
 
-	.text-warning {
+	.text-warning,
+	.text-warning:active,
+	.text-warning:focus {
 		color: var(--warning-color);
 	}
 

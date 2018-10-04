@@ -47,6 +47,14 @@
 	-webkit-overflow-scrolling: touch;
 }
 
+.modal-container {
+	-ms-overflow-style: none;
+}
+
+.modal-container::-webkit-scrollbar {
+	display: none;
+}
+
 
 /* HELPERS */
 .modal.open {

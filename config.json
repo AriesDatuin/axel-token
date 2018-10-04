@@ -1,7 +1,9 @@
 {
 	
 	"options": {
+		"name": "AXEL",
 		"site": "https://axeltoken.com",
+		"siteVersion": "2.4.4",
 		"production": true,
 		"serviceworker": true,
 		"appBanner": false,
@@ -16,19 +18,31 @@
 		"assets": "assets/"
 	},
 
-	"ga": {
-		"track": true,
-		"url": "axeltoken.com",
-		"uid": "UA-126179666-1",
-		"anonymizeIp": true,
-		"bounceTime": "",
-		"demographics": true,
-		"linkAttribution": false,
-		"minify": true,
-		"nonceTag": false,
-		"require": "urlChangeTracker",
-		"sendPageView": true,
-		"tagPlacement": "head"
+	"tracking": {
+
+		"ga": {
+			"allow": true,
+			"url": "axeltoken.com",
+			"uid": "UA-126179666-1",
+			"anonymizeIp": true,
+			"bounceTime": "",
+			"demographics": true,
+			"linkAttribution": false,
+			"minify": true,
+			"nonceTag": false,
+			"require": "urlChangeTracker",
+			"sendPageView": true,
+			"tagPlacement": "head"
+		},
+
+		"fullstory": {
+			"allow": true
+		},
+
+		"pixel": {
+			"allow": false
+		}
+
 	},
 
 	"robots": {
@@ -71,7 +85,11 @@
 		},
 
 		"svg": {
-			"convert": false,
+			"convert": {
+						"allow": true,
+						"format": "png",
+						"scale": "4"
+			},
 			"cleanup": true,
 			"minify": true,
 			"removeEmptyText": true,
@@ -91,13 +109,6 @@
 			"sharpness": 0
 		}
 
-	},
-
-	"optimizations": {
-		"autoprefix": true,
-		"flexbox": true,
-		"grid" : true,
-		"support": ["last 2 versions", "ie >= 9", "android >= 4.4", "ios >= 7"]
 	},
 
 	"html": {
@@ -130,9 +141,40 @@
 		"paths": ["_vendors/*.js"]
 	},
 
+	"styleguide": {
+		"allow": true,
+		"assets": ["!common/**/*.webp", "common/**/*", "icons/**/*", "social/**/*"]
+	},
+
+	"optimizations": {
+		"js": {
+			"lint": true,
+			"dropConsole": true,
+			"ie8Support": false,
+			"keepfnames": false,
+			"mangle": true,
+			"removeDeadCode": true,
+			"toplevel": false
+		},
+		"css": {
+			"lint": false,
+			"autoprefix": true,
+			"cascade": true,
+			"flexbox": true,
+			"grid": false,
+			"log": true,
+			"preserveVariableProperties": false,
+			"preserveInjectedVariables": false,
+			"rebaseURL": false,
+			"removeDuplicatedProperties": false,
+			"removeOutdatedPrefixes": true,
+			"supports": true,
+			"support": ["last 2 versions", "ie >= 9", "android >= 4.4", "ios >= 7"]
+		}
+	},
+
 	"js": {
 		"bundle": "app.js",
-		"lint": true,
 		"jsAttribute": "defer",
 		
 		"paths": ["<JQUERY>",
@@ -279,15 +321,15 @@
 				  "lib/notice.js",
 				  "lib/pages.js",
 				  ">>>>>lib/transition.js",
-				  "lib/app.js"
+				  "lib/app.js",
+				  ">>>>>lib/styleguide.js"
 				 ]
 	
 	},
-	
+
 	"css": {
 		"bundle": "app.css",
-		"lint": false,
-		
+
 		"paths": ["<INIT>",
 				  "css/options.css",
 				  "fonts/fontawesome.css",
@@ -359,7 +401,8 @@
 				  "lib/scenes/*.css",
 				  "css/rules.css",
 				  "css/theme.css",
-				  "css/responsive.css"
+				  "css/responsive.css",
+				  ">>>>>css/styleguide.css"
 				 ]
 	
 	},

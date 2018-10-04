@@ -5,9 +5,9 @@
 	/* COPY
 	/* -------------------------------------------------- */	
 
-	--font-header: 'Comfortaa', cursive, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, Ubuntu, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-	--font-subheader: 'Comfortaa', cursive, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, Ubuntu, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-	--font-heavy: 'Comfortaa', cursive, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, Ubuntu, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	--font-header: "Comfortaa", cursive;
+	--font-subheader: "Comfortaa", cursive;
+	--font-heavy: "Comfortaa", cursive;
 	--font-copy: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, Ubuntu, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	--font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, Ubuntu, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
@@ -32,18 +32,18 @@
 		--wild-color: #afe1fa;
 
 
+		/* COMMON */
+		--white-color: #fff;
+		--light-grey-color: #ddd;
+		--dark-grey-color: #828282;
+		--charcoal-color: #333;
+		--black-color: #000;
+
+
 		/* STATUS */
 		--ok-color: #0f0;
 		--error-color: #f00;
 		--warning-color: #fc0;
-
-
-		/* COMMON */
-		--white-color: #fff;
-		--light-grey-color: #ddd;
-		--dark-grey-color: #4b4b4b;
-		--charcoal-color: #333;
-		--black-color: #000;
 
 
 		/* -------------------------------------------------- */
@@ -57,18 +57,18 @@
 		--wild-color-rgb: 175,225,250;
 
 
-		/* STATUS */
-		--ok-color-rgb: 0,250,0;
-		--error-color-rgb: 250,0,0;
-		--warning-color-rgb: 250,225,0;
-
-
 		/* COMMON */
 		--white-color-rgb: 255,255,255;
 		--light-grey-color-rgb: 225,225,225;
 		--dark-grey-color-rgb: 75,75,75;
 		--charcoal-color-rgb: 50,50,50;
 		--black-color-rgb: 25,25,25;
+
+
+		/* STATUS */
+		--ok-color-rgb: 0,250,0;
+		--error-color-rgb: 250,0,0;
+		--warning-color-rgb: 250,225,0;
 
 
 	/* -------------------------------------------------- */

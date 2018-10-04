@@ -85,7 +85,7 @@
 	outline: 0;
 	border: 0;
 	border-radius: 0;
-	/*background-color: inherit;*/
+	/*background-color: transparent;*/
 
     transition: var(--ease);
     /*transition: all 0.5s cubic-bezier(0.680, -0.55, 0.265, 1.55);*/
@@ -98,7 +98,7 @@
 /* ACTIVE / FOCUS */
 .button:active, .button:focus {
 	color: var(--white-color);
-	background-color: var(--primary-color);
+	/*background-color: var(--primary-color);*/
 }
 
 
@@ -160,48 +160,48 @@
 
 
 /* ANIMATIONS */
-.button-anim-left,
-.button-anim-tl,
-.button-anim-top,
-.button-anim-tr,
-.button-anim-right,
-.button-anim-br,
-.button-anim-bottom,
-.button-anim-bl {
+.anim-left,
+.anim-tl,
+.anim-top,
+.anim-tr,
+.anim-right,
+.anim-br,
+.anim-bottom,
+.anim-bl {
     /*transition: all 0.25s cubic-bezier(0.680, -0.55, 0.265, 1.55);*/
 	transition: var(--ease);
 }
 
-.button-anim-left:hover {
-	transform: translate3d(-5px, 0, 0);
+.anim-left:hover {
+	transform: translate3d(-8px, 0, 0);
 }
 
-.button-anim-tl:hover {
-	transform: translate3d(-5px, -5px, 0);
+.anim-tl:hover {
+	transform: translate3d(-8px, -8px, 0);
 }
 
-.button-anim-top:hover {
-	transform: translate3d(0, -5px, 0);
+.anim-top:hover {
+	transform: translate3d(0, -8px, 0);
 }
 
-.button-anim-tr:hover {
-	transform: translate3d(5px, -5px, 0);
+.anim-tr:hover {
+	transform: translate3d(8px, -8px, 0);
 }
 
-.button-anim-right:hover {
-	transform: translate3d(5px, 0, 0);
+.anim-right:hover {
+	transform: translate3d(8px, 0, 0);
 }
 
-.button-anim-br:hover {
-	transform: translate3d(5px, 5px, 0);
+.anim-br:hover {
+	transform: translate3d(8px, 8px, 0);
 }
 
-.button-anim-bottom:hover {
-	transform: translate3d(0, 5px, 0);
+.anim-bottom:hover {
+	transform: translate3d(0, 8px, 0);
 }
 
-.button-anim-bl:hover {
-	transform: translate3d(-5px, -5px, 0);
+.anim-bl:hover {
+	transform: translate3d(-8px, 8px, 0);
 }
 
 
@@ -209,11 +209,11 @@
 @media screen and (min-width: 0) and (max-width: 1150px) {
 
     /* ANIMATIONS */
-	.button-anim-left:hover,
-	.button-anim-right:hover,
-	.button-anim-tl:hover,
-	.button-anim-tr:hover {
-		transform: translate3d(0, -5px, 0);
+	.anim-left:hover,
+	.anim-right:hover,
+	.anim-tl:hover,
+	.anim-tr:hover {
+		transform: translate3d(0, -4px, 0);
 	}
 
 }
@@ -1896,6 +1896,39 @@ svg {
 
 
 /* -------------------------------------------------- */
+/* ALIGNMENT
+/* -------------------------------------------------- */
+
+.vertical-align-baseline {
+	vertical-align: baseline;
+}
+
+.vertical-align-middle {
+	vertical-align: middle;
+}
+
+.vertical-align-sub {
+	vertical-align: sub;
+}
+
+.vertical-align-super {
+	vertical-align: super;
+}
+
+.vertical-align-top {
+	vertical-align: top;
+}
+
+.vertical-align-text-top {
+	vertical-align: text-top;
+}
+
+.vertical-align-text-bottom {
+	vertical-align: text-bottom;
+}
+
+
+/* -------------------------------------------------- */
 /* RULES
 /* -------------------------------------------------- */
 
@@ -1981,6 +2014,10 @@ svg {
 
 
 /* CURSOR / POINTER */
+.cursor-copy {
+	cursor: copy;
+}
+
 .cursor-default {
 	cursor: default;
 }
@@ -2039,10 +2076,12 @@ svg {
 
 
 /* SCROLLBAR */
-.no-scrollbar,
+.no-scrollbar {
+	-ms-overflow-style: none;
+}
+
 .no-scrollbar::-webkit-scrollbar {
 	display: none;
-	-ms-overflow-style: none;
 }
 
 
@@ -2334,7 +2373,9 @@ svg {
 	white-space: nowrap;
 }
 
-.text-truncate {
+.text-truncate,
+ul.text-truncate li,
+ul.text-truncate li * {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;

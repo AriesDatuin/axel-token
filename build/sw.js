@@ -43,20 +43,284 @@ self.__precacheManifest = [
     "revision": "1dede19592d92f97ac0adf6c751c67f8"
   },
   {
+    "url": "assets/blank.png",
+    "revision": "37d3eea20d7c6b700db0c53e80902eed"
+  },
+  {
     "url": "assets/blank.svg",
-    "revision": "7a080b01360a49f9b5991feee2a3048b"
+    "revision": "ce4e1da1f24283b19f1c62c9d91a376f"
+  },
+  {
+    "url": "assets/blank.webp",
+    "revision": "45684171a1f1f9d6127250a4f5702822"
+  },
+  {
+    "url": "assets/common/big-ideas.png",
+    "revision": "58329926ee086bf53ebc665e51d78baa"
+  },
+  {
+    "url": "assets/common/big-ideas.svg",
+    "revision": "f5ee8eead73fa9894e364798b289a3e9"
+  },
+  {
+    "url": "assets/common/big-ideas.webp",
+    "revision": "98e8504386b50fd322f0f206b91b41fc"
+  },
+  {
+    "url": "assets/common/data-01.png",
+    "revision": "0f6ff4b6cd3bf8572242dbe7b11bb325"
+  },
+  {
+    "url": "assets/common/data-01.webp",
+    "revision": "35cc1d7101ffb9b36b85272d5bffd573"
+  },
+  {
+    "url": "assets/common/earth.png",
+    "revision": "baa8c6fbf7907a7a131dd68d68e706a8"
+  },
+  {
+    "url": "assets/common/earth.webp",
+    "revision": "79f7186cfa0b9a1d3f313844b135ca31"
+  },
+  {
+    "url": "assets/common/icon-dark.png",
+    "revision": "0d3d3e60cae70ad21d40b02fad8e639f"
+  },
+  {
+    "url": "assets/common/icon-dark.svg",
+    "revision": "ed4af9ae17f85f0fed1f7a5ce0d9984c"
+  },
+  {
+    "url": "assets/common/icon-dark.webp",
+    "revision": "f3dac360826df4c1f00749397694bc8a"
+  },
+  {
+    "url": "assets/common/icon-light.png",
+    "revision": "db8f669d4806e9632bbe84c3cb76f67e"
+  },
+  {
+    "url": "assets/common/icon-light.svg",
+    "revision": "27c5a9ac22335bd2874261ff984ecd61"
+  },
+  {
+    "url": "assets/common/icon-light.webp",
+    "revision": "9936ff3b6b4710099efb3551a1b46ae7"
+  },
+  {
+    "url": "assets/common/icon-primary.png",
+    "revision": "9c01136134888db026a972ea1c469253"
+  },
+  {
+    "url": "assets/common/icon-primary.svg",
+    "revision": "b73f04234a8e3997202c1e793908b708"
+  },
+  {
+    "url": "assets/common/icon-primary.webp",
+    "revision": "ba7b74f9b2510617102e41789ed0b16c"
+  },
+  {
+    "url": "assets/common/icon-secondary.png",
+    "revision": "4b4c47ec8f20296d412688ea8bcefbc7"
+  },
+  {
+    "url": "assets/common/icon-secondary.svg",
+    "revision": "90450000e357fcf6a19884f69c404729"
+  },
+  {
+    "url": "assets/common/icon-secondary.webp",
+    "revision": "9231fd90edfa4fa343cd10bd007474f7"
+  },
+  {
+    "url": "assets/common/join-us.png",
+    "revision": "16e13847657b306f3b712bd859b5eab9"
+  },
+  {
+    "url": "assets/common/join-us.svg",
+    "revision": "b222a7eaf9225a280d73ad29047ee7ab"
+  },
+  {
+    "url": "assets/common/join-us.webp",
+    "revision": "e28a61838751a07ee224807d8c5e2f18"
+  },
+  {
+    "url": "assets/common/logo-dark.png",
+    "revision": "ebd32390d88b42c139246060287e4be1"
+  },
+  {
+    "url": "assets/common/logo-dark.svg",
+    "revision": "563a50633e4e23f489866e661475ac5e"
+  },
+  {
+    "url": "assets/common/logo-dark.webp",
+    "revision": "58d74763fa0d9d7c5c829beb567a9ed8"
+  },
+  {
+    "url": "assets/common/logo-light.png",
+    "revision": "356654bc598d6345966c72988fe7328c"
+  },
+  {
+    "url": "assets/common/logo-light.svg",
+    "revision": "8b6726f118340e87200d82e5148b4d37"
+  },
+  {
+    "url": "assets/common/logo-light.webp",
+    "revision": "10d36a6fe5ac47dfcf58d967402795cd"
+  },
+  {
+    "url": "assets/common/logo-primary.png",
+    "revision": "eaa0b4abb6237aa6b49520331b69dcd8"
+  },
+  {
+    "url": "assets/common/logo-primary.svg",
+    "revision": "a0ee516096295b2ebfeb3bb8e35ddced"
+  },
+  {
+    "url": "assets/common/logo-primary.webp",
+    "revision": "d1e32ee3cb09e0aad5bc32a189500ab3"
+  },
+  {
+    "url": "assets/common/logo-secondary.png",
+    "revision": "c477552bd2a54b95332d7c6ffbe5d502"
+  },
+  {
+    "url": "assets/common/logo-secondary.svg",
+    "revision": "380ef183bbfd7247ab1454bf686800ab"
+  },
+  {
+    "url": "assets/common/logo-secondary.webp",
+    "revision": "77af20a9092f40e9aa93cec59e850bf0"
+  },
+  {
+    "url": "assets/common/network-01.png",
+    "revision": "b8b100448244d158b0d74a712bc4182a"
+  },
+  {
+    "url": "assets/common/network-01.webp",
+    "revision": "12c8099d762f8501d5134d96bb2bfea8"
+  },
+  {
+    "url": "assets/common/network-02.png",
+    "revision": "dda2ddeba5490beeb817915439e9650a"
+  },
+  {
+    "url": "assets/common/network-02.webp",
+    "revision": "12919bf925ba4eb7c4b1ea4e83391d75"
+  },
+  {
+    "url": "assets/common/network-03.png",
+    "revision": "e31a27722a2133bc32ba4f2855e75dcb"
+  },
+  {
+    "url": "assets/common/network-03.webp",
+    "revision": "d3954f9f58dd1d2666f65c1869c9e245"
+  },
+  {
+    "url": "assets/common/network-04.png",
+    "revision": "6a28e1ebfe8adcb2b99ef06c1cf48e05"
+  },
+  {
+    "url": "assets/common/network-04.webp",
+    "revision": "bccbd420048dae8a54cafe8f9f0da0cb"
+  },
+  {
+    "url": "assets/common/people.png",
+    "revision": "ce0718917a85d2cc02c0c21bf40fbd13"
+  },
+  {
+    "url": "assets/common/people.webp",
+    "revision": "85fbaf1f395e2a295d963c4018909161"
+  },
+  {
+    "url": "assets/common/scalable.png",
+    "revision": "ce9bbec1e1b4fbda5c23341f31ded0b9"
+  },
+  {
+    "url": "assets/common/scalable.svg",
+    "revision": "16e3a847b73288490690f7a05eb53bb9"
+  },
+  {
+    "url": "assets/common/scalable.webp",
+    "revision": "99b8bcf0f790175be3e4299d6684d8b7"
+  },
+  {
+    "url": "assets/common/shopping.png",
+    "revision": "e710e9ae9f1e8dc9f068d96e0f2ca3c0"
+  },
+  {
+    "url": "assets/common/shopping.svg",
+    "revision": "e5f22e831f97bca408543da788b200b2"
+  },
+  {
+    "url": "assets/common/shopping.webp",
+    "revision": "62717ca14b777f2344759465db3e678c"
+  },
+  {
+    "url": "assets/common/teamwork-01.png",
+    "revision": "dc73f6a652f91623980e9a0907332ed8"
+  },
+  {
+    "url": "assets/common/teamwork-01.webp",
+    "revision": "51e5e22f57c7780f582d9a225c3ddf1d"
+  },
+  {
+    "url": "assets/common/teamwork-02.png",
+    "revision": "5c3e19239fb22c1ad0fc0444757a40ec"
+  },
+  {
+    "url": "assets/common/teamwork-02.webp",
+    "revision": "49a28c728abb45a3f8de7c50cd4a96e2"
+  },
+  {
+    "url": "assets/common/teamwork.png",
+    "revision": "7a8f1084fc624bf021f2f2c3690d692a"
+  },
+  {
+    "url": "assets/common/teamwork.svg",
+    "revision": "849ca8a68c1026799f2c1b9b5524097b"
+  },
+  {
+    "url": "assets/common/teamwork.webp",
+    "revision": "a200d74304a90f345934bbbabd0852f3"
+  },
+  {
+    "url": "assets/common/tokens.png",
+    "revision": "89f8e2d7853c9f8603f3f033507dad30"
+  },
+  {
+    "url": "assets/common/tokens.svg",
+    "revision": "fe3ea07fb81036e625f339c94c5d19f6"
+  },
+  {
+    "url": "assets/common/tokens.webp",
+    "revision": "d39d90207e445be61a8d2f808a98c195"
   },
   {
     "url": "assets/error.gif",
     "revision": "6f851662ad2fe92e38d93dbf1e31b84a"
   },
   {
+    "url": "assets/icon-google.png",
+    "revision": "2d2ed12e7cbbeb616d20f36a7cfb329c"
+  },
+  {
     "url": "assets/icon-google.svg",
-    "revision": "68bc46153c403136512d5a340fa6d5b8"
+    "revision": "f16ad52d955fc63de49886ff657e88cd"
+  },
+  {
+    "url": "assets/icon-google.webp",
+    "revision": "4a63448ea4f476dda6a24616fd12d0af"
+  },
+  {
+    "url": "assets/icons-nav.png",
+    "revision": "2d3dc2142e6d0c0acd5606ac56f2379a"
   },
   {
     "url": "assets/icons-nav.svg",
-    "revision": "6160059cc76fc2d1774f844cf1add2a5"
+    "revision": "54c5e42c9b101ef67753192ca9862933"
+  },
+  {
+    "url": "assets/icons-nav.webp",
+    "revision": "425859e15598b54fcf7d6eba6c8bcd5c"
   },
   {
     "url": "assets/icons/android-chrome-192x192.png",
@@ -115,40 +379,16 @@ self.__precacheManifest = [
     "revision": "7449b58589a56b1878023af0582f0759"
   },
   {
+    "url": "assets/icons/safari-pinned-tab.png",
+    "revision": "3819675de31995d565395ee4ab3707b8"
+  },
+  {
     "url": "assets/icons/safari-pinned-tab.svg",
-    "revision": "0eddbdc440ae6e52de0e9fed6fc40219"
+    "revision": "4e4288245e34e0ebbba58a7bb7faaddd"
   },
   {
-    "url": "assets/illustrations/big-ideas.svg",
-    "revision": "252f77db27366a64ccb049dc7738186e"
-  },
-  {
-    "url": "assets/illustrations/join-us.svg",
-    "revision": "6ad67dbdceccb8423352c5a585f54ca1"
-  },
-  {
-    "url": "assets/illustrations/scalable.svg",
-    "revision": "5376b8a92177eb9e34f92d95d986fe37"
-  },
-  {
-    "url": "assets/illustrations/shopping.svg",
-    "revision": "11251e9d37784dab8a24ddca714aa832"
-  },
-  {
-    "url": "assets/illustrations/teamwork.svg",
-    "revision": "79654a5f94a95babea18718bd8c394e0"
-  },
-  {
-    "url": "assets/illustrations/tokens.svg",
-    "revision": "39ac3e43daf80f66c3eca7dc136f8c58"
-  },
-  {
-    "url": "assets/index/data-01.png",
-    "revision": "0f6ff4b6cd3bf8572242dbe7b11bb325"
-  },
-  {
-    "url": "assets/index/data-01.webp",
-    "revision": "35cc1d7101ffb9b36b85272d5bffd573"
+    "url": "assets/icons/safari-pinned-tab.webp",
+    "revision": "1317b556c08308dee68b2c4d4059bdcf"
   },
   {
     "url": "assets/index/diagram-how-it-works-ch.png",
@@ -183,54 +423,6 @@ self.__precacheManifest = [
     "revision": "a98988d8cb7cd450feb04a4f8ae0aa8b"
   },
   {
-    "url": "assets/index/earth.png",
-    "revision": "baa8c6fbf7907a7a131dd68d68e706a8"
-  },
-  {
-    "url": "assets/index/earth.webp",
-    "revision": "79f7186cfa0b9a1d3f313844b135ca31"
-  },
-  {
-    "url": "assets/index/network-01.png",
-    "revision": "b8b100448244d158b0d74a712bc4182a"
-  },
-  {
-    "url": "assets/index/network-01.webp",
-    "revision": "12c8099d762f8501d5134d96bb2bfea8"
-  },
-  {
-    "url": "assets/index/network-02.png",
-    "revision": "dda2ddeba5490beeb817915439e9650a"
-  },
-  {
-    "url": "assets/index/network-02.webp",
-    "revision": "12919bf925ba4eb7c4b1ea4e83391d75"
-  },
-  {
-    "url": "assets/index/network-03.png",
-    "revision": "e31a27722a2133bc32ba4f2855e75dcb"
-  },
-  {
-    "url": "assets/index/network-03.webp",
-    "revision": "d3954f9f58dd1d2666f65c1869c9e245"
-  },
-  {
-    "url": "assets/index/network-04.png",
-    "revision": "6a28e1ebfe8adcb2b99ef06c1cf48e05"
-  },
-  {
-    "url": "assets/index/network-04.webp",
-    "revision": "bccbd420048dae8a54cafe8f9f0da0cb"
-  },
-  {
-    "url": "assets/index/people.png",
-    "revision": "ce0718917a85d2cc02c0c21bf40fbd13"
-  },
-  {
-    "url": "assets/index/people.webp",
-    "revision": "85fbaf1f395e2a295d963c4018909161"
-  },
-  {
     "url": "assets/index/screenshot-laptop-paid-link.png",
     "revision": "17a2240025be21f2028d1217215aa9e8"
   },
@@ -245,26 +437,6 @@ self.__precacheManifest = [
   {
     "url": "assets/index/screenshot-paid-link.webp",
     "revision": "cc618c62b7329ed52b7f26b6f6eb7c07"
-  },
-  {
-    "url": "assets/index/teamwork-01.png",
-    "revision": "dc73f6a652f91623980e9a0907332ed8"
-  },
-  {
-    "url": "assets/index/teamwork-01.webp",
-    "revision": "51e5e22f57c7780f582d9a225c3ddf1d"
-  },
-  {
-    "url": "assets/index/teamwork-02.png",
-    "revision": "5c3e19239fb22c1ad0fc0444757a40ec"
-  },
-  {
-    "url": "assets/index/teamwork-02.webp",
-    "revision": "49a28c728abb45a3f8de7c50cd4a96e2"
-  },
-  {
-    "url": "assets/index/timeline.svg",
-    "revision": "f9835bc650a2575ba6f0ecf8550c865a"
   },
   {
     "url": "assets/social/profile.png",
@@ -283,80 +455,224 @@ self.__precacheManifest = [
     "revision": "3436c890b6e5397bb736a83a5495960f"
   },
   {
+    "url": "assets/sprites/press/bitcoin-exchange-guide.png",
+    "revision": "d81cf704b6751f86efcc461f200fad42"
+  },
+  {
     "url": "assets/sprites/press/bitcoin-exchange-guide.svg",
-    "revision": "335ad7a0383b6949976d05a026f80889"
+    "revision": "74ff8527c203d6bedc49fe6b82dbcdad"
+  },
+  {
+    "url": "assets/sprites/press/bitcoin-exchange-guide.webp",
+    "revision": "59cbfc0eb2b5af483302f73e1e7e4ec0"
+  },
+  {
+    "url": "assets/sprites/press/bitcoininst.png",
+    "revision": "fd55ee923907772da2c5326112b08cd5"
   },
   {
     "url": "assets/sprites/press/bitcoininst.svg",
-    "revision": "95c8109489362754779d129de8fac71b"
+    "revision": "f46faa0b2d9697cba95239c355ffff3d"
+  },
+  {
+    "url": "assets/sprites/press/bitcoininst.webp",
+    "revision": "c31d1b6347121998f9411507cc25af27"
+  },
+  {
+    "url": "assets/sprites/press/business-insider.png",
+    "revision": "f5f224178e41bb0ecbc10dca526fa856"
   },
   {
     "url": "assets/sprites/press/business-insider.svg",
-    "revision": "b57f853f55fad3e92e41fb24507ff3de"
+    "revision": "93f02a47909f5e12efed45929013f97b"
+  },
+  {
+    "url": "assets/sprites/press/business-insider.webp",
+    "revision": "1b59b3c2a3be291d9bf484267ab33165"
+  },
+  {
+    "url": "assets/sprites/press/ccn.png",
+    "revision": "46689b8299434dd2671023846a73cc45"
   },
   {
     "url": "assets/sprites/press/ccn.svg",
-    "revision": "f35eb5b1f6dacb97a49fadd1824c8eae"
+    "revision": "4dc7e24d8152a44eb40dfd10c5d0cbe3"
+  },
+  {
+    "url": "assets/sprites/press/ccn.webp",
+    "revision": "6723b6feadcc6a3f7a27e43f290f93a2"
+  },
+  {
+    "url": "assets/sprites/press/coin-announcer.png",
+    "revision": "47b061f3cef898a5426cc462738fafac"
   },
   {
     "url": "assets/sprites/press/coin-announcer.svg",
-    "revision": "b260d75d80777e19210eda1b690f524d"
+    "revision": "34b7c3a5b1204096ad4ef3d11267f7f8"
+  },
+  {
+    "url": "assets/sprites/press/coin-announcer.webp",
+    "revision": "f1ad62b0649ef2cedac0115a8fc94b03"
+  },
+  {
+    "url": "assets/sprites/press/crains.png",
+    "revision": "275e710e0d5293ff0de2fe6d1a606305"
   },
   {
     "url": "assets/sprites/press/crains.svg",
-    "revision": "d6e52ade6829011f6539fb2fd714680d"
+    "revision": "a2be08b93013c1860e4382fbb30bc131"
+  },
+  {
+    "url": "assets/sprites/press/crains.webp",
+    "revision": "d6088d6e38f039891fe98dc0238fbf23"
+  },
+  {
+    "url": "assets/sprites/press/e27.png",
+    "revision": "a6426350e04071d21b769a803f9e16df"
   },
   {
     "url": "assets/sprites/press/e27.svg",
-    "revision": "7953969164f385c40f07b7da663dbc2d"
+    "revision": "186fcf7064f1135c927b4b04d642bdb3"
+  },
+  {
+    "url": "assets/sprites/press/e27.webp",
+    "revision": "1ecaedfb07a2394d985223b1f3e0d4f0"
+  },
+  {
+    "url": "assets/sprites/press/forbes.png",
+    "revision": "645334affda476bb09d97a5be8856457"
   },
   {
     "url": "assets/sprites/press/forbes.svg",
-    "revision": "585238759ec91be0e3660553ee493ecf"
+    "revision": "165047da2ec728088532786ea9fb176d"
+  },
+  {
+    "url": "assets/sprites/press/forbes.webp",
+    "revision": "7f5527a97971fa62a513fe0fce156dd3"
+  },
+  {
+    "url": "assets/sprites/press/las-vegas-business-press.png",
+    "revision": "a8133fcae548f24dfe836e07c62c3036"
   },
   {
     "url": "assets/sprites/press/las-vegas-business-press.svg",
-    "revision": "c2221633fb889ca176622a022664d6ae"
+    "revision": "c5df8cc8416bbbfa35c9a899e8d410fc"
+  },
+  {
+    "url": "assets/sprites/press/las-vegas-business-press.webp",
+    "revision": "1ff08730d520efef6c5ea5c1d71feea5"
+  },
+  {
+    "url": "assets/sprites/press/pcmag.png",
+    "revision": "d0d80e0da50d9dbea6e0b2af25a772f9"
   },
   {
     "url": "assets/sprites/press/pcmag.svg",
-    "revision": "a337dd61b46c9d70b58e730cd83d9d3b"
+    "revision": "0a3ed284676eae7d96492184cc5be55f"
+  },
+  {
+    "url": "assets/sprites/press/pcmag.webp",
+    "revision": "eeafb5e61bc6a4510e2271bfceaabbaa"
+  },
+  {
+    "url": "assets/sprites/press/popular-mechanics.png",
+    "revision": "232058bc0fdb7d7b3356630044cff92c"
   },
   {
     "url": "assets/sprites/press/popular-mechanics.svg",
-    "revision": "df8d6efcb1406006d186a9062756bbe3"
+    "revision": "356f294d785552a5bf3791a0f7cea6e3"
+  },
+  {
+    "url": "assets/sprites/press/popular-mechanics.webp",
+    "revision": "759bce47fd1458e66b926718464f3c00"
+  },
+  {
+    "url": "assets/sprites/press/tech-bullion.png",
+    "revision": "b1d44c9639f52571316e15e86b968907"
   },
   {
     "url": "assets/sprites/press/tech-bullion.svg",
-    "revision": "320e56d4281396c48595b7f6d3afcd21"
+    "revision": "b4cfab08633b2137de3db2cb2c4e04b4"
+  },
+  {
+    "url": "assets/sprites/press/tech-bullion.webp",
+    "revision": "80e902bbc21d7829295d48902d516ca6"
+  },
+  {
+    "url": "assets/sprites/press/techaeris.png",
+    "revision": "65d2c017495f99194c40309871abf3db"
   },
   {
     "url": "assets/sprites/press/techaeris.svg",
-    "revision": "f9e55f3f2b28c712143bfe88ad04b535"
+    "revision": "286a38902b3590b6306331855262e606"
+  },
+  {
+    "url": "assets/sprites/press/techaeris.webp",
+    "revision": "b7ee9cbe3bd1bb1e8930786b02874699"
+  },
+  {
+    "url": "assets/sprites/press/vegastech.png",
+    "revision": "54b2dc0a525a6f3463e6a31d00b0aa8c"
   },
   {
     "url": "assets/sprites/press/vegastech.svg",
-    "revision": "ee6704a0b4adcc56c14bae7b63885efb"
+    "revision": "9da63b2d5cfda73cda850ae0fb808d16"
+  },
+  {
+    "url": "assets/sprites/press/vegastech.webp",
+    "revision": "c061bc22270b1951500b9f76a9100318"
   },
   {
     "url": "assets/sprites/sprite.css",
     "revision": "9c69f02ca6f871db6fa3079118793121"
   },
   {
+    "url": "assets/sprites/sprite.png",
+    "revision": "0d5da755f84a361c3d9235ceb8144285"
+  },
+  {
     "url": "assets/sprites/sprite.svg",
-    "revision": "832f65d17741f651fd1aa927979d7b58"
+    "revision": "c6d610b543df9e5130dc52fed7dfff54"
+  },
+  {
+    "url": "assets/sprites/sprite.webp",
+    "revision": "ecb33e071d2e3676645effe0b661906a"
+  },
+  {
+    "url": "assets/stories/acoustic-guitar.png",
+    "revision": "e1b0e3cc7e57805208cc71c2a4b13797"
   },
   {
     "url": "assets/stories/acoustic-guitar.svg",
-    "revision": "a3851367efca76fb954d18b0aa9400be"
+    "revision": "7d4b404819982b814e4365ba8bc1faa1"
+  },
+  {
+    "url": "assets/stories/acoustic-guitar.webp",
+    "revision": "134917833cb8c5ab79d24636da7c1799"
+  },
+  {
+    "url": "assets/stories/camera.png",
+    "revision": "f0e58820325af2dc0c9c8c2a835311ea"
   },
   {
     "url": "assets/stories/camera.svg",
-    "revision": "8b55bf79e1ffe22c98c0271767c8776d"
+    "revision": "ce9ce86cedc94dbdae85388bb896191e"
+  },
+  {
+    "url": "assets/stories/camera.webp",
+    "revision": "c5ad05027c2c767d7636595e1cfbe9a1"
+  },
+  {
+    "url": "assets/stories/gamepad.png",
+    "revision": "902bd752479a220a756c0f1a57d457a4"
   },
   {
     "url": "assets/stories/gamepad.svg",
-    "revision": "f3fe72239405dc77fa13f36f4efd7e31"
+    "revision": "233ad0451e609d4964a0e7cd338075ed"
+  },
+  {
+    "url": "assets/stories/gamepad.webp",
+    "revision": "1960ed493b84868ed0454a89fe97f4e3"
   },
   {
     "url": "assets/stories/large-josh.png",
@@ -405,6 +721,18 @@ self.__precacheManifest = [
   {
     "url": "assets/stories/small-tina.webp",
     "revision": "392c79a6b08109e06134a3d51647c418"
+  },
+  {
+    "url": "assets/styleguide/hero.png",
+    "revision": "2853ae6b2d6df7707590c09ad8a100b7"
+  },
+  {
+    "url": "assets/styleguide/hero.svg",
+    "revision": "a1aaea5c7ed6df6c80b5c5a9ccba687e"
+  },
+  {
+    "url": "assets/styleguide/hero.webp",
+    "revision": "f011eb8cbfc106d94bbf1454f7bc1c2f"
   },
   {
     "url": "assets/team/large-ben-ow.jpg",
@@ -600,23 +928,31 @@ self.__precacheManifest = [
   },
   {
     "url": "ch.html",
-    "revision": "6a61a84ad8c4fcacb6a46d3da01f0bbd"
+    "revision": "1ecb90a3bb82c7fe4459f9b012c1c73c"
   },
   {
     "url": "error.html",
-    "revision": "81b3544ddbbd7f5ad89020a22d043a2d"
+    "revision": "8a4764da879d7b2408942742fa088056"
   },
   {
     "url": "fonts/fontawesome-webfont.eot",
     "revision": "674f50d287a8c48dc19ba404d20fe713"
   },
   {
+    "url": "fonts/fontawesome-webfont.png",
+    "revision": "37d3eea20d7c6b700db0c53e80902eed"
+  },
+  {
     "url": "fonts/fontawesome-webfont.svg",
-    "revision": "760bd83ee04dff470e0277f3eb7deebe"
+    "revision": "acf3dcb7ff752b5296ca23ba2c7c2606"
   },
   {
     "url": "fonts/fontawesome-webfont.ttf",
     "revision": "b06871f281fee6b241d60582ae9369b9"
+  },
+  {
+    "url": "fonts/fontawesome-webfont.webp",
+    "revision": "45684171a1f1f9d6127250a4f5702822"
   },
   {
     "url": "fonts/fontawesome-webfont.woff",
@@ -635,12 +971,8 @@ self.__precacheManifest = [
     "revision": "0d2717cd5d853e5c765ca032dfd41a4d"
   },
   {
-    "url": "index-ch.html",
-    "revision": "288cbb810eebc3e4256f2e64dba5e56c"
-  },
-  {
     "url": "index.html",
-    "revision": "8bef8251ac0867b4934395d39b495150"
+    "revision": "40267b9f281519d6d751a319a9205448"
   },
   {
     "url": "modals/ch/press.html",
@@ -671,8 +1003,12 @@ self.__precacheManifest = [
     "revision": "a1f48516650905d5b64af514a1c6b8c6"
   },
   {
+    "url": "modals/en/sample.html",
+    "revision": "3fcd56b544d6409d6e3d3834e65afa8b"
+  },
+  {
     "url": "modals/en/stories.html",
-    "revision": "9d3f8c8703a5cac4c49cce5126d7e1ca"
+    "revision": "67a53fa9b8c288e279aed9d9fdabc575"
   },
   {
     "url": "modals/en/team.html",
@@ -683,12 +1019,24 @@ self.__precacheManifest = [
     "revision": "22cb8022215ba1deb0eddf8576928422"
   },
   {
-    "url": "scripts/app.910a83dfef.min.js",
-    "revision": "910a83dfef35e9602f55f1f392a28587"
+    "url": "scripts/app.2d855e3117.min.js",
+    "revision": "2d855e3117e24cb27ecf0004a614de42"
   },
   {
-    "url": "scripts/app.b0700b4335.min.css",
-    "revision": "b0700b433532492e54e3c243c1d55498"
+    "url": "scripts/app.3604121ea6.min.css",
+    "revision": "3604121ea613a0849b468da6dd774142"
+  },
+  {
+    "url": "scripts/styleguide.5ca2fe9c85.min.js",
+    "revision": "5ca2fe9c858426d23f9d3447b59c7219"
+  },
+  {
+    "url": "scripts/styleguide.b263badac6.min.css",
+    "revision": "b263badac69a0edc4a7dad42cce3b93e"
+  },
+  {
+    "url": "styleguide.html",
+    "revision": "01c66656489c3262b7aa5e30f79f3342"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();

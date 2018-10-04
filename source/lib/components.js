@@ -366,13 +366,13 @@ var comModal = function() {
 	/* -------------------------------------------------- */
 
 		//*Note: Same origin policy is in effect using this method. External or third-party links will not load into 'modal-container'.
-		// Method: <a href="about.html" class="popup" data-content-selector="#articles" data-content-width="800"></a>
+		// Method: <a href="about.html" class="popup" data-content-selector="#articles" data-content-width="800" data-content-height="auto"></a>
 
 		/* -------------------------------------------------- */
 		/* CACHE SELECTORS
 		/* -------------------------------------------------- */
 
-		var buttonModal = $$(".popup");
+		var buttonModal = $$("[data-content-selector]");
 
 
 		/* -------------------------------------------------- */
@@ -381,7 +381,7 @@ var comModal = function() {
 
 		var uiModal = "";
 
-			uiModal += "<div class='modal grid-x align-center align-top' tabindex='-1' aria-hidden='true' role='dialog'>"; // MODAL
+			uiModal += "<div class='modal grid-x align-center align-top' aria-hidden='true' role='dialog' tabindex='-1'>"; // MODAL
 
 				uiModal += "<div id='modal-preloader' class='mini-preloader light'><span class='fa fa-circle-o-notch fa-spin' aria-hidden='true' role='document'></span><p>Loading...</p></div>" // PRELOADER
 
@@ -406,7 +406,7 @@ var comModal = function() {
 		var modal = function(modalContentURL, modalContentSelector) {
 
 			var modalContentURL, // Variable for content's path / location.
-				modalContentSelector; // Variable for loaded content's selector.
+				modalContentSelector; // Variable for loaded content's element id, ex: '#my-content'.
 
 
 				blocker();
@@ -487,12 +487,21 @@ var comModal = function() {
 
 		$$(pageContent).on("resize", _.debounce(function() {
 
-													if ( $$(".modal").length && $$(".modal").hasClass("modal-auto") && window.matchMedia("(max-width: 1500px)").matches ) {
+													if ( $$(".modal").length && $$(".modal").hasClass("modal-width-auto") && window.matchMedia("(max-width: 1500px)").matches ) {
 														   
 														//console.log("Modal is open.");
-														TweenMax.set( $$(".modal"), { width: window.innerWidth / 1.2, height: window.innerHeight / 1.2 } );
+														TweenMax.set( $$(".modal"), { width: window.innerWidth / 1.2 } );
 
 													}
+
+
+													if ( $$(".modal").length && $$(".modal").hasClass("modal-height-auto") && window.matchMedia("(max-height: 1024px)").matches ) {
+														   
+														//console.log("Modal is open.");
+														TweenMax.set( $$(".modal"), { height: window.innerHeight / 1.2 } );
+
+													}
+
 
 												}, $updateInterval));
 
@@ -507,8 +516,8 @@ var comModal = function() {
 			var self = $(this),
 				dataContentURL = null, // self.attr("href"), // self.data("content-url"), //self.attr("href"), // Read 'data-content-url' of clicked element and store as a value for 'modal(modalContentURL)'.
 				dataConentSelector = self.data("content-selector"), // Read 'data-content-selector' of clicked element and store as a value for 'modal(modalContentSelector)'.
-				dataContentWidth, // Read 'data-content-width' of clicked element and store as a value.
-				dataContentHeight; // Read 'data-content-height' of clicked element and store as a value.
+				dataContentWidth, // Read 'data-content-width' of clicked element and store as a value for 'modal(dataContentWidth)'.
+				dataContentHeight; // Read 'data-content-height' of clicked element and store as a value for 'modal(dataContentHeight)'.
 
 
 				/* -------------------------------------------------- */
@@ -519,13 +528,13 @@ var comModal = function() {
 				if ( self.data("content-width") === "auto" && window.matchMedia("(max-width: 1500px)").matches ) {
 
 					//console.log("Modal set to auto size width.");
-					$$(".modal").addClass("modal-auto");
+					$$(".modal").addClass("modal-width-auto");
 					dataContentWidth = window.innerWidth / 1.2;
 
 				} else {
 
 					//console.log("Modal not set to auto size width.");
-					$$(".modal").removeClass("modal-auto");
+					$$(".modal").removeClass("modal-width-auto");
 					dataContentWidth = self.data("content-width");
 
 				}
@@ -535,19 +544,19 @@ var comModal = function() {
 				if ( self.data("content-height") === "auto" ) {
 
 					//console.log("Modal set to auto size height.");
-					$$(".modal").addClass("modal-auto");
+					$$(".modal").addClass("modal-height-auto");
 					dataContentHeight = 768;
 
 				} else {
 
 					//console.log("Modal not set to auto size height.");
-					$$(".modal").removeClass("modal-auto");
+					$$(".modal").removeClass("modal-height-auto");
 					dataContentHeight = self.data("content-height");
 
 				}
 
 
-			// Check if element has href or is a regular element, ex: div or span.
+			// Check if element has href or is a regular element, ex: 'div' or 'span'.
 			if ( self.is( "a" ) ) {
 
 				dataContentURL = self.attr("href");
@@ -570,6 +579,7 @@ var comModal = function() {
 			TweenMax.set( $$(".modal"), { width: dataContentWidth, height: dataContentHeight } );
 
 			//window.location.hash = "#" + dataConentSelector;
+
 
 		});
 
@@ -601,13 +611,11 @@ var comModal = function() {
 var comParallax = function() {
 
 	dzsprx_init( ".dzsparallaxer", {
-
 		direction: "reverse", // normal, reverse
 		settings_mode: "scroll", // scroll, mouse, mouse_body
 		mode_scroll: "normal", // normal, fromtop
 		animation_duration: "5",
 		easing: "easeInOutSine" // easeIn, easeOutQuad, easeInOutSine
-
 	});
 
 };
@@ -773,17 +781,6 @@ var comSlider = function() {
 	});
 	*/
 
-	
-	/* -------------------------------------------------- */
-	/* PADE DOTS
-	/* -------------------------------------------------- */ 
-
-	if ( $$("ol.flickity-page-dots > li.dot").length > 8 && $isSmallScreen ) {
-
-		$$("ol.flickity-page-dots > li.dot").remove();
-
-	}
-
 
 	/* -------------------------------------------------- */
 	/* CONTROLLER
@@ -937,12 +934,6 @@ var comStories = function() {
 														});
 			
 		});
-
-
-
-
-
-
 
 
 }; // END comCaseStudies

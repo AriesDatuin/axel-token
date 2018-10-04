@@ -1764,17 +1764,32 @@
 	/* ALIGNMENT
 	/* -------------------------------------------------- */
 
-	/* VARIANTS */
-	.vertical-top-mobile {
-		vertical-align: top;
+	.vertical-align-baseline-mobile {
+		vertical-align: baseline;
 	}
 
-	.vertical-middle-mobile {
+	.vertical-align-middle-mobile {
 		vertical-align: middle;
 	}
 
-	.vertical-bottom-mobile {
-		vertical-align: bottom;
+	.vertical-align-sub-mobile {
+		vertical-align: sub;
+	}
+
+	.vertical-align-super-mobile {
+		vertical-align: super;
+	}
+
+	.vertical-align-top-mobile {
+		vertical-align: top;
+	}
+
+	.vertical-align-text-top-mobile {
+		vertical-align: text-top;
+	}
+
+	.vertical-align-text-bottom-mobile {
+		vertical-align: text-bottom;
 	}
 	
 	
@@ -4025,17 +4040,32 @@
 	/* ALIGNMENT
 	/* -------------------------------------------------- */
 
-	/* VARIANTS */
-	.vertical-top-tablet {
-		vertical-align: top;
+	.vertical-align-baseline-tablet {
+		vertical-align: baseline;
 	}
 
-	.vertical-middle-tablet {
+	.vertical-align-middle-tablet {
 		vertical-align: middle;
 	}
 
-	.vertical-bottom-tablet {
-		vertical-align: bottom;
+	.vertical-align-sub-tablet {
+		vertical-align: sub;
+	}
+
+	.vertical-align-super-tablet {
+		vertical-align: super;
+	}
+
+	.vertical-align-top-tablet {
+		vertical-align: top;
+	}
+
+	.vertical-align-text-top-tablet {
+		vertical-align: text-top;
+	}
+
+	.vertical-align-text-bottom-tablet {
+		vertical-align: text-bottom;
 	}
 	
 	

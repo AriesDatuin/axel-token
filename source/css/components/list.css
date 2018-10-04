@@ -55,6 +55,34 @@ ul.list-default li a span:hover::before {
 
 
 /* -------------------------------------------------- */
+/* DOT
+/* -------------------------------------------------- */
+
+/* PARENT */
+ul.list-dot {
+	list-style-type: none;
+}
+
+
+/* ITEM */
+ul.list-dot li {
+
+}
+
+
+/* PSUEDO */
+ul.list-dot li::before {
+	content: '\f111';
+	float: left;
+	margin-left: -0.5rem;
+	color: inherit;
+	font-family: 'FontAwesome';
+	font-size: 0.25em;
+	line-height: 6.5em;
+}
+
+
+/* -------------------------------------------------- */
 /* NUMBERED
 /* -------------------------------------------------- */
 
@@ -112,34 +140,6 @@ ul.list-check li::before {
 	font-family: 'FontAwesome';
 	font-size: 1.25em;
 	line-height: 1.25em;
-}
-
-
-/* -------------------------------------------------- */
-/* NEGATIVE CHECK LIST
-/* -------------------------------------------------- */
-
-/* PARENT */
-ul.list-dot {
-	list-style-type: none;
-}
-
-
-/* ITEM */
-ul.list-dot li {
-
-}
-
-
-/* PSUEDO */
-ul.list-dot li::before {
-	content: '\f111';
-	float: left;
-	margin-left: -0.5rem;
-	color: inherit;
-	font-family: 'FontAwesome';
-	font-size: 0.25em;
-	line-height: 6.5em;
 }
 
 
