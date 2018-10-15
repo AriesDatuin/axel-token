@@ -3,62 +3,54 @@
 /* -------------------------------------------------- */
 
 // BLOCKS
-var anyElement = $$("*"),
-pageContent = window,
-document = $$(document),
-html = $$("html"),
-body = $$("body"),
-container = $$("#container"),
-main = $$("#content"),
-section = $$("section"),
-article = $$("article"),
-block = $$("section"), // Specifiy each content block. Recommend using 'section', 'article', or 'div'.
-footer = $$("#footer"),
+var pageContent = window,
+document = $(document),
+html = $("html"),
+body = $("body"),
+container = $("#container"),
+main = $("#content"),
+block = $("section"), // Specifiy each content block. Recommend using 'section', 'article', or 'div'.
+footer = $("#footer"),
 
 
 // ELEMENTS
-preloader = $$("#preloader"),
-hero = $$(".hero"), 
-    
-navbarToggle = $$("#navbar-toggle"),
-navPanelToggle = $$("#nav-panel-toggle"),
-navToggle = $$(".nav-toggle"),
-navToggleLabel = $$(".nav-toggle-label"), // Set to false or leave blank to remove 'navbarCallout'.
-navbarLabel = $$("#navbar-label"),
-navPanelLabel = $$("#nav-panel-label"),
+preloader = $("#preloader"),
+hero = $(".hero"),
 
 
-navbar = $$("#navbar"),
-navbarMenubar = $$("#navbar .menubar"),
-navbarContents = $$("#navbar-contents"),
-navbarItems = $$("#navbar-items > ul > li"),
-navbarLogo = $$("#navbar-logo"),
-navbarCallout = $$("#navbar-callout"), // Set to false or leave blank to remove 'navbarCallout'.
-navItems = $$(".nav-items"),
+navbarToggle = $("#navbar-toggle"),
+navPanelToggle = $("#nav-panel-toggle"),
+navToggle = $(".nav-toggle"),
+navToggleLabel = $(".nav-toggle-label"), // Set to false or leave blank to remove 'navbarCallout'.
+navbarLabel = $("#navbar-label"),
+navPanelLabel = $("#nav-panel-label"),
 
 
-toolbar = $$("#toolbar"),
-toolbarMenubar = $$("#toolbar .menubar"),
-toolbarContents = $$("#toolbar-contents"),
-toolbarItems = $$("#toolbar-items nav > ul > li"),
+navbar = $("#navbar"),
+navbarMenubar = $("#navbar .menubar"),
+navbarContents = $("#navbar-contents"),
+navbarItems = $("#navbar-items > ul > li"),
+navbarLogo = $("#navbar-logo"),
+navbarCallout = $("#navbar-callout"), // Set to false or leave blank to remove 'navbarCallout'.
+navItems = $(".nav-items"),
 
 
-navPanel = $$("#nav-panel"),
-navPanelMenubar = $$("#nav-panel .menubar"),
-navPanelContents = $$("#nav-panel-contents"),
-navPanelItems = $$("#nav-panel-items > ul > li"),
-navPanelLogo = $$("#nav-panel-logo"),
-navPanelCallout = $$("#nav-panel-callout"), // Set to false or leave blank to remove 'navPanelCallout'.
+toolbar = $("#toolbar"),
+toolbarMenubar = $("#toolbar .menubar"),
+toolbarContents = $("#toolbar-contents"),
+toolbarItems = $("#toolbar-items nav > ul > li"),
 
 
-panelOverlay = $$(".js-off-canvas-overlay"),
-navPanelString = "#nav-panel",
+navPanel = $("#nav-panel"),
+navPanelMenubar = $("#nav-panel .menubar"),
+navPanelContents = $("#nav-panel-contents"),
+navPanelItems = $("#nav-panel-items > ul > li"),
+navPanelLogo = $("#nav-panel-logo"),
+navPanelCallout = $("#nav-panel-callout"), // Set to false or leave blank to remove 'navPanelCallout'.
 
 
-linkBlank = $$('[target="_blank"]'),
-linkExternal = $$(".external"),
-preventDefault = $$(".prevent-default"),
-stopProp = $$(".stop-prop");
+panelOverlay = $(".js-off-canvas-overlay"),
+navPanelString = "#nav-panel";
 	
 	
 /* -------------------------------------------------- */
@@ -124,13 +116,15 @@ $disableNavPanelMomentumScrolling = false,
 
 
 // MICRO ANIMATIONS / INTERACTIONS
-$microAnimationsPauseOnScroll = true, // Set whether animations will play only if in the viewport. Recommended to leave this setting 'true' for performance.
-$microAnimationsTiming = 1,
+$pauseAnimationOnScroll = true, // Set whether animations will play only if in the viewport. Recommended to leave this setting 'true' for performance.
+$animationTiming = 1,
 
 
 // THROTTLE / DEBOUNCE INTERVAL
 $delayInterval = 1, // Set delay interval before function fires.
-$updateInterval = 500, // Set debounce / throttling interval. Increasing this value will limit events being fired every so often.
+$updateInterval = 1000, // Set debounce / throttling interval. Increasing this value will limit events being fired every so often.
+$throttleTrail = true,
+$throttleLeading = true,
 
 
 // BUTTONS

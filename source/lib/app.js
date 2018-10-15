@@ -29,10 +29,11 @@ var components = function() {
 	//comStories();
 	//comTilt();
 
+	utilMediaObserver();
 	utilEmergence();
 	utilPageVisibility();
 
-	animController();
+	animCore();
 	
 	hasTouch();
 
@@ -41,7 +42,7 @@ var components = function() {
 var core = function() {
 
 	comCounter();
-	comModal();
+	comModalDialog();
 	comSlider();
 	comStories();
 
@@ -73,9 +74,7 @@ var disableContent = function() {
 	"use strict";
 	//console.log("Content disabled.");
 
-	html.css({"overflow-x" : "hidden",
-			  "overflow-y" : "hidden"
-			});
+	html.css({"overflow-x" : "hidden", "overflow-y" : "hidden"});
 
 
 	//bodyScrollLock.disableBodyScroll(document.querySelector(".modal"));
@@ -86,9 +85,7 @@ var enableContent = function() {
 	"use strict";
 	//console.log("Content enabled.");
 	
-	html.css({"overflow-x" : "hidden",
-			  "overflow-y" : "scroll"
-			});
+	html.css({"overflow-x" : "hidden", "overflow-y" : "scroll"});
 
 
 	//bodyScrollLock.clearAllBodyScrollLocks();

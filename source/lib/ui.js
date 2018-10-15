@@ -10,7 +10,7 @@ var uiInit = function() {
 	/* CACHE SELECTORS
 	/* -------------------------------------------------- */		
 
-	var zIndexStackOrder = $$(".stack-order-auto");
+	var zIndexStackOrder = $(".stack-order-auto");
 
 	
 	/* -------------------------------------------------- */
@@ -21,7 +21,7 @@ var uiInit = function() {
 	$$(document).foundation();
 	
  	// Reinitialize 'Equalizer' plugin.
-	//TweenMax.delayedCall($delayInterval, Foundation.reInit, ["equalizer"]);
+	//TweenMax.delayedCall(2, Foundation.reInit, ["equalizer"]);
     
 
 	/* -------------------------------------------------- */
@@ -211,28 +211,22 @@ var uiInit = function() {
     /* SCROLL PROGRESS
     /* -------------------------------------------------- */
 	
-	if ( $navbarAllowSticky || $$(".scroll-progress").length ) {
-		
-		//$(navbar).children().before('<div id="scroll-progress" class="background-secondary-gradient"></div>');
-		
-		var scrollProgressUpdate = function() {
+	var scrollProgressUpdate = function() {
 
-			var $windowScrollProgressTop = $$(window).scrollTop(),
-				$documentScrollProgressHeight = $$(document).height(),
-				$windowScrollProgressHeight = $$(window).height(),
-				$totalScroll = ($windowScrollProgressTop / ($documentScrollProgressHeight - $windowScrollProgressHeight)) * 100;
+		var $windowScrollProgressTop = $(window).scrollTop(),
+			$documentScrollProgressHeight = $(document).height(),
+			$windowScrollProgressHeight = $(window).height(),
+			$totalScroll = ($windowScrollProgressTop / ($documentScrollProgressHeight - $windowScrollProgressHeight)) * 100;
 
-			//console.log("total scroll" + totalScroll);
+		//console.log("total scroll" + $totalScroll);
 
-			$$(".scroll-progress").css({"width" : $totalScroll + "%"});
+		$$(".scroll-progress").css({"width" : $totalScroll + "%"});
 
-		};
+	};
 
-        scrollProgressUpdate();
-		
-		$$(pageContent).on("scroll", _.throttle(scrollProgressUpdate, $updateInterval));
+    scrollProgressUpdate();
 	
-	}
+	$$(pageContent).on("scroll", _.throttle(scrollProgressUpdate, $updateInterval, {trailing: $throttleTrail, leading: $throttleLeading} ));
 
 
 }; // END uiInit
@@ -250,14 +244,14 @@ var uiCommon = function() {
 	/* CACHE SELECTORS
 	/* -------------------------------------------------- */
 
-	var closePanel = $$(".close-panel"),
-		animAway = $$(".anim-away");
+	var closePanel = $(".close-panel"),
+		animAway = $(".anim-away");
 
 
 	closePanel.find("span").addClass("fa-eye-slash");
 
 
-	closePanel.on("click touchdown", function() {
+	closePanel.on("click", function() {
 		
 		var self = $(this);
 		
@@ -330,8 +324,10 @@ var uiLinkDelegation = function() {
 	/* CACHE SELECTORS
 	/* -------------------------------------------------- */
 	
-	var	navPreviousPage = $$(".previous-page"),
-		navLink = $$("a").not('[target="_blank"]').not(".dropdown").not(".external").not(".prevent-default").not(navPreviousPage).not(".scroll-to");
+	var	navPreviousPage = $(".previous-page"),
+		navLink = $("a:not([target='_blank']").not("[data-content-selector]").not(".dropdown").not(".prevent-default").not(".scroll-to").not(navPreviousPage),
+		preventDefault = $(".prevent-default"),
+		stopProp = $(".stop-prop");
 	
 	
 	/* -------------------------------------------------- */
@@ -522,8 +518,8 @@ var uiScrollEvents = function() {
 	/* CACHE SELECTORS
 	/* -------------------------------------------------- */
 	
-	var	showOnScroll = $$(".show-on-scroll"),
-		hideOnScroll = $$(".hide-on-scroll");
+	var	showOnScroll = $(".show-on-scroll"),
+		hideOnScroll = $(".hide-on-scroll");
 	
 	
 	// ON SCROLL
@@ -788,8 +784,8 @@ var uiSmoothScroll = function() {
 	/* CACHE SELECTORS
 	/* -------------------------------------------------- */	
 	
-	var	scrollTo = $$(".scroll-to"),
-		scrollToTop = $$('.scroll-to[href$="#top"]');	
+	var	scrollTo = $(".scroll-to"),
+		scrollToTop = $('.scroll-to[href$="#"]');	
 	
 	
 	/* -------------------------------------------------- */
@@ -917,14 +913,14 @@ var uiNav = function() {
 	/* CACHE SELECTORS
 	/* -------------------------------------------------- */
 	
-	var	navbarMenu = $$("#navbar-items > ul.nav"),
-		navbarDropdown = $$(".dropdown"),
-		subnav = $$("ul.subnav"),
+	var	navbarMenu = $("#navbar-items > ul.nav"),
+		navbarDropdown = $(".dropdown"),
+		subnav = $("ul.subnav"),
 
-		navFeatures = $$("ul.features.nav"),
-		navCompany = $$("ul.company.nav"),
-		navResources = $$("ul.resources.nav"),
-		navQuickLinks = $$("ul.quick-links.nav");
+		navFeatures = $("ul.features.nav"),
+		navCompany = $("ul.company.nav"),
+		navResources = $("ul.resources.nav"),
+		navQuickLinks = $("ul.quick-links.nav");
 
 	
 	/* -------------------------------------------------- */
@@ -1193,25 +1189,28 @@ var uiButtons = function() {
 	/* CACHE SELECTORS
 	/* -------------------------------------------------- */
 	
-	var	button = $$(".button"),
-		buttonNoTouchFeedback = $$(".no-touch-feedback"),
+	var	button = $(".button"),
 
-		buttonWavesDarkGrey = $$(".button.background-dark-grey"),
-		buttonWavesCharcoal = $$(".button.background-charcoal"),
-		buttonWavesBlack = $$(".button.background-black"),
+		/*
+		buttonWavesDarkGrey = $(".button.background-dark-grey"),
+		buttonWavesCharcoal = $(".button.background-charcoal"),
+		buttonWavesBlack = $(".button.background-black"),
 
-		buttonWavesPrimary = $$(".button.background-primary"),
-		buttonWavesSecondary = $$(".button.background-secondary"),
-		buttonWavesAccent = $$(".button.background-accent"),
-		buttonWavesLightgrey = $$(".button.background-light-grey"),
-		buttonWavesWhite = $$(".button.background-white"),
+		buttonWavesPrimary = $(".button.background-primary"),
+		buttonWavesSecondary = $(".button.background-secondary"),
+		buttonWavesAccent = $(".button.background-accent"),
+		buttonWavesLightgrey = $(".button.background-light-grey"),
+		buttonWavesWhite = $(".button.background-white"),
 
-		buttonWavesDefault = $$(".button.button-fx-waves-button"),
-		buttonWavesCircle = $$(".button.button-fx-waves-circle"),
-		buttonWavesLight = $$(".button.button-fx-waves-light"),
-		buttonWavesFloat = $$(".button.button-fx-float"),
-		buttonWavesBlock = $$(".button.button-fx-waves-block"),
-		buttonNoWaves = $$(".no-waves");
+		buttonWavesDefault = $(".button.button-fx-waves-button"),
+		buttonWavesCircle = $(".button.button-fx-waves-circle"),
+		buttonWavesLight = $(".button.button-fx-waves-light"),
+		buttonWavesFloat = $(".button.button-fx-float"),
+		buttonWavesBlock = $(".button.button-fx-waves-block"),
+		*/
+
+		buttonNoTouchFeedback = $(".no-touch-feedback"),
+		buttonNoWaves = $(".no-waves");
 	
 	
 	/* -------------------------------------------------- */
@@ -1223,7 +1222,7 @@ var uiButtons = function() {
 		button.not(buttonNoTouchFeedback).on("mousedown touchstart", function() {
 		
 			var self = $(this);
-			
+
 			TweenMax.set(self, {x: 1, y: 1, scale: 0.95, boxShadow: "0 8px 10px 1px rgba(0,0,0,0.06), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.08)"});
 		
 		}).on("mouseup mouseleave touchend touchleave touchmove", function() {
@@ -1246,12 +1245,12 @@ var uiButtons = function() {
 		var options = {
 			// How long Waves effect duration 
 			// when it's clicked (in milliseconds)
-			duration: 500,
+			duration: 1000,
 
 			// Delay showing Waves effect on touch
 			// and hide the effect if user scrolls
 			// (0 to disable delay) (in milliseconds)
-			delay: 0
+			delay: 500
 		};
        
 		
@@ -1262,6 +1261,7 @@ var uiButtons = function() {
 		
 		Waves.attach(button.not(buttonNoWaves), ["waves-block", "waves-effect"]);
 
+		/*
 		Waves.attach(buttonWavesDarkGrey, ["waves-light"]);
 		Waves.attach(buttonWavesCharcoal, ["waves-light"]);
 		Waves.attach(buttonWavesBlack, ["waves-light"]);
@@ -1278,6 +1278,7 @@ var uiButtons = function() {
 		Waves.attach(buttonWavesLight, ["waves-light"]);
 		Waves.attach(buttonWavesFloat, ["waves-float"]);
 		Waves.attach(buttonWavesBlock, ["waves-block"]);
+		*/
 
 		Waves.init(options);
 		
@@ -1302,10 +1303,10 @@ var uiRelayout = function() {
 	/* CACHE SELECTORS
 	/* -------------------------------------------------- */
 	
-	var	menubarLogo = $$(".menubar .logo"),
-		menubarCallout = $$(".menubar .callout"),
-		menubarNavToggleLabel = $$(".menubar .nav-toggle-label"),
-		menubarNavToggle = $$(".menubar .nav-toggle");
+	var	menubarLogo = $(".menubar .logo"),
+		menubarCallout = $(".menubar .callout"),
+		menubarNavToggleLabel = $(".menubar .nav-toggle-label"),
+		menubarNavToggle = $(".menubar .nav-toggle");
 	
 	
 	/* -------------------------------------------------- */

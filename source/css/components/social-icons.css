@@ -3,20 +3,20 @@
 /* -------------------------------------------------- */
 
 /* COMMON */
-ul.social-icons {
+.social-icons {
 	display: block;
 	position: relative;
 }
 
-ul.social-icons.top,
-ul.social-icons.bottom {
+.social-icons.top,
+.social-icons.bottom {
 	position: absolute;
 	left: 0;
 	right: 0;
 }
 
-ul.social-icons.left,
-ul.social-icons.right {
+.social-icons.left,
+.social-icons.right {
 	position: absolute;
 	top: 50%;
 	
@@ -25,25 +25,25 @@ ul.social-icons.right {
 
 
 /* PARENT */
-ul.social-icons.top {
+.social-icons.top {
 	top: 0;
 }
 
-ul.social-icons.bottom {
+.social-icons.bottom {
 	bottom: 0;
 }
 
-ul.social-icons.left {
+.social-icons.left {
 	left: 0;
 }
 
-ul.social-icons.right {
+.social-icons.right {
 	right: 0;
 }
 
 
 /* LINK */
-ul.social-icons > li > a {
+.social-icons > li > a {
 	z-index: auto;
 	cursor: pointer;
 	overflow: hidden;
@@ -69,7 +69,7 @@ ul.social-icons > li > a {
 
 
 /* ICON */
-ul.social-icons > li > a .fa {
+.social-icons > li > a .fa {
 	z-index: auto;
 	position: absolute;
 	top: 50%;
@@ -83,7 +83,7 @@ ul.social-icons > li > a .fa {
 /*
 @media screen and (min-width: 0) and (max-width: 980px) {
 
-	ul.social-icons.style-fixed {
+	.social-icons.style-fixed {
 		display: none;
 	}
 
@@ -94,10 +94,10 @@ ul.social-icons > li > a .fa {
 @media screen and (min-width: 0) and (max-width: 1023px) {
 
 	/* PARENT */
-	ul.social-icons.top:not(.fixed),
-	ul.social-icons.left:not(.fixed),
-	ul.social-icons.bottom:not(.fixed),
-	ul.social-icons.right:not(.fixed) {
+	.social-icons.top:not(.fixed),
+	.social-icons.left:not(.fixed),
+	.social-icons.bottom:not(.fixed),
+	.social-icons.right:not(.fixed) {
 		/*display: block;*/
 		position: relative;
 		top: auto;
@@ -108,10 +108,10 @@ ul.social-icons > li > a .fa {
 		transform: translateY(0%);
 	}
     
-    ul.social-icons.top:not(.fixed) > li,
-	ul.social-icons.left:not(.fixed) > li,
-	ul.social-icons.bottom:not(.fixed) > li,
-	ul.social-icons.right:not(.fixed) > li {
+    .social-icons.top:not(.fixed) > li,
+	.social-icons.left:not(.fixed) > li,
+	.social-icons.bottom:not(.fixed) > li,
+	.social-icons.right:not(.fixed) > li {
         display: inline-block;
 		margin: 0.2rem 0.4rem 0.2rem 0.4rem;
     }
@@ -121,7 +121,7 @@ ul.social-icons > li > a .fa {
 @media screen and (min-width: 0) and (max-width: 667px) {
 	
 	/* STYLES */
-	ul.social-icons.fixed {
+	.social-icons.fixed {
 		display: none;
 	}
 	
@@ -133,62 +133,62 @@ ul.social-icons > li > a .fa {
 /* -------------------------------------------------- */
 
 /* DEFAULT */
-ul.social-icons > li > a {
+.social-icons > li > a {
 	color: var(--dark-grey-color);
 	background-color: transparent;
 }
 
-ul.social-icons > li > a:hover {
+.social-icons > li > a:hover {
 	color: var(--white-color);
 }
 
 
 /* LIGHT */
-ul.social-icons.light > li > a {
+.social-icons.light > li > a {
 	color: var(--accent-color);
 	background-color: transparent;
 }
 
-ul.social-icons.light > li > a:hover {
+.social-icons.light > li > a:hover {
 	color: var(--white-color);
 }
 
 
 /* DARK */
-ul.social-icons.dark > li > a {
+.social-icons.dark > li > a {
 	color: var(--secondary-color);
 	background-color: transparent;
 }
 
-ul.social-icons.dark > li > a:hover {
+.social-icons.dark > li > a:hover {
 	color: var(--white-color);
 	background-color: var(--secondary-color);
 }
 
 
 /* FIXED */
-ul.social-icons.fixed {
+.social-icons.fixed {
 	position: fixed;
 }
 
-ul.social-icons.fixed > li:not(:last-child) {
+.social-icons.fixed > li:not(:last-child) {
 	border-bottom: thin solid var(--light-grey-color);
 	background-color: var(--white-color);
 }
 
-ul.social-icons.fixed > li > a {
+.social-icons.fixed > li > a {
 	font-size: 1em;
 	color: var(--secondary-color);
 	border-radius: 0;
 	background-color: transparent;
 }
 
-ul.social-icons.fixed > li > a:hover {
+.social-icons.fixed > li > a:hover {
 	color: var(--white-color); 
 	background-color: var(--secondary-color);
 }
 
-ul.social-icons.fixed:hover {
+.social-icons.fixed:hover {
  	box-shadow: 0 16px 24px 2px rgba(var(--secondary-color-rgb),0.1),
 				0 6px 30px 5px rgba(var(--secondary-color-rgb),0.14),
 				0 8px 10px -5px rgba(var(--secondary-color-rgb),0.16);

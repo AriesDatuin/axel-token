@@ -19,6 +19,8 @@ import hubRegistry from "gulp-hub"; // Register tasks.
 
 
 // MODULES
+import a11y from "gulp-a11y"; // Performs and accessibility audit.
+import accessibility from "gulp-accessibility"; // Audit app's accessibility.
 import awsPublish from "gulp-awspublish"; // Push files to AWS S3 Bucket.
 import awsSDK from "aws-sdk"; // Official AWS SDK for JavaScript, available for browsers and mobile devices, or Node.js backends.
 import babel from "gulp-babel"; // JavaScript converter and compiler.
@@ -41,6 +43,7 @@ import gutil from "gulp-util"; // For logging tasks and process streams.
 import htmlmin from "gulp-htmlmin"; // Minify HTML files.
 import htmlreplace from "gulp-html-replace"; // Replace build blocks in HTML files.
 import imagemin from "gulp-imagemin"; // Compress raster image assets.
+import inject from "gulp-inject"; // Inject JS and CSS files.
 import jsonReplace from "gulp-json-replace"; // Replaces strings from JSON data.
 import jshint from "gulp-jshint"; // Detect errors and potential problems in JavaScript code.
 import modernizr from "gulp-modernizr"; // Detect browser and device specific features.
@@ -84,13 +87,16 @@ import zip from "gulp-zip"; // ZIP compress files.
 const config = JSON.parse(fs.readFileSync(configFile)),
 	  //server = JSON.parse(fs.readFileSync(serverFile)), // Defined in deploy task.
 
-	  dir = path.resolve, // path.join
-	  root = dir(__dirname),
+	  dirJoin = path.join,
+	  dirResolve = path.resolve,
+	  //dirRelative = path.relative,
+	  root = dirResolve(__dirname),
 
 	  pathSource = config.paths.source,
 	  pathBuild = config.paths.build,
 	  pathScripts = config.paths.scripts,
-	  pathAssets = config.paths.assets;
+	  pathAssets = config.paths.assets,
+	  pathTemp = "_temp/"
 
 
 /* -------------------------------------------------- */
@@ -134,8 +140,8 @@ const plugins = [postcssAutoprefixer({
 				 //postcssMQPacker(),
 
 				 postcssVariables({
-				 				   preserve: config.optimizations.css.preserveVariableProperties, // Preserve variable properties (false).
-				 				   preserveInjectedVariables: config.optimizations.css.preserveInjectedVariables // Preserve injected variable properties (false).
+				 				   preserve: config.optimizations.css.preserveVariables, // Preserve variable properties (false).
+				 				   preserveInjectedVariables: config.optimizations.css.preserveVariables // Preserve injected variable properties (false).
 				 }),
 				 postcssZIndex(),
 				];
@@ -148,6 +154,7 @@ const purgeCSSOptions = {
 
 const cleanCSSOptions = {
 		compatibility: "*",
+		rebaseTo: config.optimizations.css.rebase,
 		level: {
 				1: {
 					all: true,
@@ -256,18 +263,18 @@ export function analytics(done) {
 	
 		return gulp.src( pathBuild + "**/*.{html,php}" )
 				   .pipe(ga({
-							  url: config.tracking.ga.url,
-							  uid: config.tracking.ga.uid,
-							  anonymizeIp: config.tracking.ga.anonymizeIp,
-							  bounceTime: config.tracking.ga.bounceTime,
-							  demographics: config.tracking.ga.demographics,
-							  linkAttribution: config.tracking.ga.linkAttribution,
-							  minify: config.tracking.ga.minify,
-							  nonceTag: config.tracking.ga.nonceTag,
-							  require: config.tracking.ga.require,
-							  sendPageView: config.tracking.ga.sendPageView,
-							  tag: config.tracking.ga.tagPlacement
-							}))
+							 url: config.tracking.ga.url,
+							 uid: config.tracking.ga.uid,
+							 anonymizeIp: config.tracking.ga.anonymizeIp,
+							 bounceTime: config.tracking.ga.bounceTime,
+							 demographics: config.tracking.ga.demographics,
+							 linkAttribution: config.tracking.ga.linkAttribution,
+							 minify: config.tracking.ga.minify,
+							 nonceTag: config.tracking.ga.nonceTag,
+							 require: config.tracking.ga.require,
+							 sendPageView: config.tracking.ga.sendPageView,
+							 tag: config.tracking.ga.tagPlacement
+				   }))
 				   .pipe(gulp.dest( pathBuild ));
 
 	} else {
@@ -306,7 +313,8 @@ export function robotstxt() {
 
 	return gulp.src([pathBuild + "**/*.html",
 					 "!" + pathBuild + "modals/*"])
-			   .pipe(robots({useragent: config.robots.useragent,
+			   .pipe(robots({
+			   				 useragent: config.robots.useragent,
 			   				 //allow: config.robots.allow,
 			   				 disallow: config.robots.disallow,
 			   				 sitemap: config.options.site + "/sitemap.xml"
@@ -349,10 +357,8 @@ export function sw(done) {
 													 urlPattern: new RegExp('^https://fonts.(?:googleapis|gstatic).com/(.*)'),
 													 handler: "cacheFirst",
 													 options: {
-														 cacheName: "font-cache",
-														 expiration: {
-															 maxEntries: 10,
-														 },
+													 		   cacheName: "font-cache",
+													 		   expiration: { maxEntries: 10 },
 													 },
 								   					}],
 								   swDest: `${pathBuild}/sw.js`,
@@ -415,128 +421,15 @@ export function checkcss() {
 
 
 /* -------------------------------------------------- */
-/* VERSIONING / CACHE BUST
-/* -------------------------------------------------- */
-
-//*Note: In order for cache-bust to work 'production' in 'config.json' must be set to 'true'.
-
-// JS
-export function hashscripts(done) {
-
-	if ( config.versioning.scripts.allow && production ) {
-
-		console.log("Hashing script files...");
-
-		return gulp.src( pathBuild + pathScripts + "**/*" )
-				   .pipe(rev())
-				   .pipe(revFormat({prefix: config.versioning.scripts.prefix,
-									suffix: config.versioning.scripts.suffix,
-									lastExt: false
-					}))
-				   .pipe(gulp.dest( pathBuild + pathScripts ))
-				   .pipe(revDelete())
-				   .pipe(revRewrite())
-
-				   .pipe(rev.manifest( revFile, { base: pathBuild + pathScripts, merge: true } )) 
-				   .pipe(gulp.dest( pathBuild + pathScripts ))
-
-				   .on("end", function () {
-
-									console.log("Injecting revisioned script files...");
-
-									const manifest = gulp.src( revFile );
-
-									return gulp.src([pathBuild + "**/*"])
-											   .pipe(revRewrite({ manifest }))
-											   .pipe(gulp.dest( pathBuild ));
-
-											   });
-
-	} else {
-
-		return done();
-
-	}
-
-}
-
-
-// ASSETS
-export function hashassets(done) {
-
-	if ( config.versioning.images.allow && production ) {
-
-		console.log("Hashing asset files...");
-
-		// TASK
-		return gulp.src([pathBuild + pathAssets + "**/*",
-						 "!" + pathBuild + pathAssets + "icons/*",
-						 "!" + pathBuild + pathAssets + "social/*"])
-				   .pipe(rev())
-				   .pipe(revFormat({prefix: config.versioning.images.prefix,
-									suffix: config.versioning.images.suffix,
-									lastExt: false
-					}))
-				   .pipe(gulp.dest( pathBuild + pathAssets ))
-				   .pipe(revDelete())
-				   .pipe(revRewrite())
-
-				   .pipe(rev.manifest( revFile, { base: pathBuild + pathAssets, merge: true } )) 
-				   .pipe(gulp.dest( pathBuild + pathAssets ))
-
-				   .on("end", function () {
-
-									console.log("Injecting revisioned asset files...");
-
-									const manifest = gulp.src( revFile );
-
-									return gulp.src([pathBuild + "**/*"])
-											   .pipe(revRewrite({ manifest }))
-											   .pipe(gulp.dest( pathBuild ));
-
-											   });
-
-	} else {
-
-		return done();
-
-	}
-
-}
-
-
-// INJECT
-export function inject(done) {
-
-	if ( config.versioning.scripts && production ) {
-
-		console.log("Injecting hashed files...");
-
-		const manifest = gulp.src( revFile );
-
-		return gulp.src([pathBuild + "**/*"])
-				   .pipe(revRewrite({ manifest }))
-				   .pipe(gulp.dest( pathBuild ));
-
-	} else {
-
-		return done();
-
-	}
-
-}
-
-
-/* -------------------------------------------------- */
 /* JS
 /* -------------------------------------------------- */
 
 // MAIN
 export function js() {
 
-	console.log("Compiling " + config.js.bundle);
+	console.log("Compiling " + config.js.bundle + "...");
 
-	return gulp.src(config.js.paths.map( function(base) { return pathSource + base } ), {allowEmpty: true} )
+	return gulp.src( config.js.paths.map( function(base) { return pathSource + base } ), {allowEmpty: true} )
 			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.init() ))
 			   //.pipe(modernizr())
 			   //.pipe(babel())
@@ -549,12 +442,46 @@ export function js() {
 }
 
 
+// STYLEGUIDE
+export function styleguidejs() {
+
+	//console.log("Compiling Style Guide scripts...");
+
+	return gulp.src( config.js.paths.map( function(base) { return pathSource + base } ), {allowEmpty: true} )
+			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.init() ))
+			   //.pipe(modernizr())
+			   //.pipe(babel())
+			   //.pipe(removeCode({production: true}))
+			   //.pipe(gulpif( production, uglify(uglifyJSOptions).on("error", gutil.log) ))
+			   .pipe(concat("styleguide.js"))
+			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.write("maps") ))
+			   .pipe(gulp.dest( pathBuild + pathScripts ))
+
+
+			   .on("end", function () {
+
+								console.log("Compiling Style Guide scripts...");
+
+								return gulp.src([pathBuild + pathScripts + "styleguide.js", pathSource + "lib/assets/clipboard.js", pathSource + "lib/styleguide.js"])
+										   //.pipe(gulpif( config.options.sourcemaps, sourcemaps.init() ))
+										   //.pipe(modernizr())
+										   //.pipe(babel())
+										   .pipe(removeCode({production: true}))
+										   .pipe(gulpif( production, uglify(uglifyJSOptions).on("error", gutil.log) ))
+										   .pipe(concat("styleguide.js"))
+										   //.pipe(gulpif( config.options.sourcemaps, sourcemaps.write("maps") ))
+										   .pipe(gulp.dest( pathBuild + pathScripts ));
+										});
+
+}
+
+
 // VENDORS
 export function vendors() {
 
-	console.log("Compiling " + config.vendors.bundle);
+	console.log("Compiling " + config.vendors.bundle + "...");
 
-	return gulp.src(config.vendors.paths.map( function(base) { return pathSource + base } ), {allowEmpty: true} )
+	return gulp.src( pathSource + config.vendors.paths, {allowEmpty: true} )
 			   .pipe(gulpif( config.vendors.lint, jshint() ))
 			   .pipe(gulpif( config.vendors.lint, jshint.reporter() ))
 			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.init() ))
@@ -576,17 +503,236 @@ export function vendors() {
 // MAIN
 export function css() {
 
-	console.log("Compiling " + config.css.bundle);
+	console.log("Compiling " + config.css.bundle + "...");
 
-	return gulp.src(config.css.paths.map( function(base) { return pathSource + base } ), {allowEmpty: true} )
+	return gulp.src( config.css.paths.map( function(base) { return pathSource + base } ), {allowEmpty: true} )
 			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.init() ))
-			   .pipe(concat(config.css.bundle, {rebaseUrls: config.optimizations.css.rebaseURL}))
-			   .pipe(postcss(plugins))
-			   .pipe(gulpif( production, purgecss(purgeCSSOptions) ))
-			   .pipe(gulpif( production, cleanCSS(cleanCSSOptions) ))
+			   .pipe(concat(config.css.bundle))
+			   //.pipe(postcss(plugins))
+			   //.pipe(gulpif( production, purgecss(purgeCSSOptions) ))
+			   //.pipe(gulpif( production, cleanCSS(cleanCSSOptions) ))
 			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.write("maps") ))
 			   .pipe(gulp.dest( pathBuild + pathScripts ))
-			   .pipe(browserSync.stream());
+			   //.pipe(browserSync.stream());
+
+			   .on("end", function() {
+			   		
+			   		// CSS
+					return gulp.src([pathBuild + pathScripts + config.css.bundle,
+							   		 pathBuild + pathTemp + config.images.sprite.paths + config.images.sprite.mode + ".css"], {allowEmpty: true} )
+
+							   //.pipe(gulpif( config.options.sourcemaps, sourcemaps.init() ))
+							   .pipe(concat(config.css.bundle))
+							   .pipe(postcss(plugins))
+							   .pipe(gulpif( production, purgecss(purgeCSSOptions) ))
+							   .pipe(gulpif( production, cleanCSS(cleanCSSOptions) ))
+							   //.pipe(gulpif( config.options.sourcemaps, sourcemaps.write("maps") ))
+							   .pipe(gulp.dest( pathBuild + pathScripts ))
+							   .pipe(browserSync.stream());
+
+			   });
+
+}
+
+
+// STYLEGUIDE
+export function styleguidecss() {
+
+	//console.log("Compiling Style Guide styles...");
+
+	return gulp.src( config.css.paths.map( function(base) { return pathSource + base } ), {allowEmpty: true} )
+			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.init() ))
+			   .pipe(concat("styleguide.css"))
+			   //.pipe(postcss(plugins))
+			   //.pipe(gulpif( production, purgecss(purgeCSSOptions) ))
+			   //.pipe(gulpif( production, cleanCSS(cleanCSSOptions) ))
+			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.write("maps") ))
+			   .pipe(gulp.dest( pathBuild + pathScripts ))
+			   //.pipe(browserSync.stream())
+
+
+			   .on("end", function () {
+
+					console.log("Compiling Style Guide styles...");
+
+					return gulp.src([pathBuild + pathScripts + "styleguide.css", pathSource + "css/styleguide.css"])
+							   //.pipe(gulpif( config.options.sourcemaps, sourcemaps.init() ))
+							   .pipe(concat("styleguide.css"))
+							   .pipe(postcss(plugins))
+							   .pipe(gulpif( production, purgecss(purgeCSSOptions) ))
+							   .pipe(gulpif( production, cleanCSS(cleanCSSOptions) ))
+							   //.pipe(gulpif( config.options.sourcemaps, sourcemaps.write("maps") ))
+							   .pipe(gulp.dest( pathBuild + pathScripts ))
+							   .pipe(browserSync.stream());
+							});
+
+}
+
+
+/* -------------------------------------------------- */
+/* FINGERPRINT / VERSIONING / CACHE BUST
+/* -------------------------------------------------- */
+
+//*Note: In order for cache-bust to work 'production' in 'config.json' must be set to 'true'.
+
+// JS
+export function fingerprintscripts(done) {
+
+	if ( config.versioning.scripts.allow && production ) {
+
+		console.log("Fingerprinting script files...");
+
+		return gulp.src( pathBuild + pathScripts + "**/*" )
+				   .pipe(rev())
+				   .pipe(revFormat({prefix: config.versioning.scripts.prefix,
+									suffix: config.versioning.scripts.suffix,
+									lastExt: false
+					}))
+				   .pipe(gulp.dest( pathBuild + pathScripts ))
+				   .pipe(revDelete())
+				   .pipe(revRewrite())
+				   .pipe(rev.manifest( revFile, { base: pathBuild + pathScripts, merge: true } )) 
+				   .pipe(gulp.dest( pathBuild + pathScripts ))
+
+				   .on("end", function () {
+
+								console.log("Injecting revisioned script files...");
+
+								const manifest = gulp.src( revFile );
+
+								return gulp.src([pathBuild + "**/*"])
+										   .pipe(revRewrite({ manifest }))
+										   .pipe(gulp.dest( pathBuild ));
+
+									   });
+
+	} else {
+
+		return done();
+
+	}
+
+}
+
+
+// ASSETS
+export function fingerprintassets(done) {
+
+	if ( config.versioning.images.allow && production ) {
+
+		console.log("Fingerprinting asset files...");
+
+		// TASK
+		return gulp.src([pathBuild + pathAssets + "**/*",
+						 "!" + pathBuild + pathAssets + "icons/*",
+						 "!" + pathBuild + pathAssets + "social/*",
+						 "!" + pathBuild + pathAssets + config.images.sprite.paths + "**/*.svg"])
+				   .pipe(rev())
+				   .pipe(revFormat({prefix: config.versioning.images.prefix,
+									suffix: config.versioning.images.suffix,
+									lastExt: false
+					}))
+				   .pipe(gulp.dest( pathBuild + pathAssets ))
+				   .pipe(revDelete())
+				   .pipe(revRewrite())
+				   .pipe(rev.manifest( revFile, { base: pathBuild + pathAssets, merge: true } )) 
+				   .pipe(gulp.dest( pathBuild + pathAssets ))
+
+				   .on("end", function () {
+
+								console.log("Injecting revisioned asset files...");
+
+								const manifest = gulp.src( revFile );
+
+								return gulp.src([pathBuild + "**/*"])
+										   .pipe(revRewrite({ manifest }))
+										   .pipe(gulp.dest( pathBuild ));
+
+									   });
+
+	} else {
+
+		return done();
+
+	}
+
+}
+
+
+// INJECT
+export function injectscripts() {
+
+	console.log("Compiling HTML...");
+
+	const stylesheet = "'stylesheet'";
+
+	const relative = true,
+		  removeTags = true,
+		  ignorePath = pathBuild + config.html.modals.paths,
+		  addRootSlash = false,
+		  name = "inject";
+
+	inject.transform.html.js = filepath => '<script src='+filepath+' '+config.js.attribute+'></script>';
+	inject.transform.html.css = filepath => '<link rel="preload" href='+filepath+' as="style" onload="this.onload=null;this.rel='+stylesheet+'">';
+
+
+	// TESTING AREA
+	//.pipe(inject(gulp.src(pathBuild + pathScripts + config.CSS.bundle, {read: false}), {relative: false}))
+	//.pipe(inject(gulp.src(pathBuild + pathScripts + config.js.bundle, {read: false}), {relative: false}))
+	return gulp.src(pathBuild + "**/*.{html,php}", {base: pathBuild} )
+
+			   .pipe(inject(
+
+					gulp.src([pathBuild + pathScripts + config.js.bundle,
+							  pathBuild + pathScripts + config.css.bundle], {read: false, allowEmpty: true} ), {
+
+							  relative: relative,
+							  starttag: "<!-- inject:app:{{ext}} -->"} ), {
+
+					}
+				
+			   ) // END APP INJECTION
+
+
+			   .pipe(inject(
+
+					gulp.src([pathBuild + pathScripts + config.vendors.bundle], {read: false, allowEmpty: true} ), {
+
+							  relative: relative,
+							  starttag: "<!-- inject:vendors:{{ext}} -->"} ), {
+
+					}
+				
+			   ) // END VENDOR INJECTION
+
+
+			   .pipe(inject(
+
+					gulp.src([pathBuild + pathScripts + "styleguide.js",
+							  pathBuild + pathScripts + "styleguide.css"], {read: false, allowEmpty: true} ), {
+
+							  relative: relative,
+							  starttag: "<!-- inject:styleguide:{{ext}} -->"} ), {
+
+					}
+				
+			   ) // END STYLEGUIDE INJECTION
+
+
+
+			   //.pipe(defer())	
+			   //.pipe(gulpif( !server.aws.upload, removeCode({removeBase: true}) ))
+			   .pipe(gulpif( !config.tracking.fullstory.allow || !production, removeCode({removeFullStory: true}) ))
+			   .pipe(gulpif( !config.options.serviceworker || !production, removeCode({removeServiceWorker: true}) ))
+			   .pipe(gulpif( !config.options.appBanner, removeCode({removeAppBanner: true}) ))
+			   .pipe(gulpif( !config.vendors.allow, removeCode({removeVendor: true}) ))
+
+			   .pipe(removeCode({production: true}) )
+			   .pipe(replace("&lt;br&gt;", "<br>"))
+			   .pipe(noopener.overwrite())
+			   .pipe(replace("siteVersion", config.options.siteVersion))
+			   .pipe(gulpif( production, htmlmin(htmlminOptions) ))
+			   .pipe(gulp.dest( pathBuild ));
 
 }
 
@@ -595,23 +741,22 @@ export function css() {
 /* HTML
 /* -------------------------------------------------- */
 
+
 // MAIN
 export function html() {
 
 	console.log("Compiling HTML...");
 
-	const stylesheet = "'stylesheet'";
-
 	return gulp.src( pathSource + config.html.paths )
 
 			   .pipe(panini({
-							 data: pathSource + config.html.data,
-							 helpers: pathSource + config.html.helpers,
+							 root: pathSource + config.html.root,
 							 layouts: pathSource + config.html.layouts,
 							 partials: pathSource + config.html.partials,
-							 root: pathSource + config.html.root
-							})
-			   )
+							 helpers: pathSource + config.html.helpers,
+							 data: pathSource + config.html.data
+				}))
+
 
 			   .pipe(htmlreplace({
 								  /*
@@ -620,60 +765,22 @@ export function html() {
 										tpl: '<base href="%s">'
 								  },
 								  */
-
-								  inlinescripts: {
+								  inlinejs: {
 										src: gulp.src( pathSource + config.html.inlineScripts.js ),
 										tpl: "<script>%s</script>"
 								  },
 
-								  vendors: {
-										src: pathScripts + config.vendors.bundle,
-										tpl: '<script src="%s" '+config.vendors.jsAttribute+'></script>'
-								  },
-
-								  critical: {
+								  inlinecss: {
 										src: gulp.src( pathSource + config.html.inlineScripts.css ),
 										tpl: "<style>%s</style>"
-								  },
-
-								  css: {
-										src: pathScripts + config.css.bundle,
-										tpl: '<link rel="preload" href="%s" as="style" onload="this.onload=null;this.rel='+stylesheet+'">'
-								  },
-
-								  js: {
-									   src: pathScripts + config.js.bundle,
-									   tpl: '<script src="%s" '+config.js.jsAttribute+'></script>'
 								  }
-								  //css: cssApp,
-								  //js: jsApp
 
-			   }, {keepUnassigned: true, keepBlockTags: true, resolvePaths: true} ))
+			   }, {keepUnassigned: false, keepBlockTags: false, resolvePaths: true} ))
 
-			   //.pipe(defer())	
-			   .pipe(removeCode({production: true}) )
-			   //.pipe(gulpif( !server.aws.upload, removeCode({removeBase: true}) ))
-			   .pipe(gulpif( !config.tracking.fullstory.allow || !production, removeCode({removeFullStory: true}) ))
-			   .pipe(gulpif( !config.options.serviceworker || !production, removeCode({removeServiceWorker: true}) ))
-			   .pipe(gulpif( !config.options.appBanner, removeCode({removeAppBanner: true}) ))
-			   .pipe(gulpif( !config.vendors.useVendorScripts, removeCode({removeVendor: true}) ))
-			   .pipe(replace("&lt;br&gt;", "<br>"))
-			   .pipe(noopener.overwrite())
-			   .pipe(gulpif( production, htmlmin(htmlminOptions) ))
+
 			   .pipe(gulp.dest( pathBuild ))
 
-
-			   .on("end", function() {
-			   		
-					return gulp.src( pathBuild + "**/*.{html,php}", {base: pathBuild} )
-							   .pipe(replace("siteVersion", config.options.siteVersion))
-							   .pipe(gulp.dest( pathBuild ))
-					
-
-			   });
-
 }
-
 
 // MODALS
 export function modals() {
@@ -699,108 +806,25 @@ export function modals() {
 }
 
 
-/* -------------------------------------------------- */
-/* STYLEGUIDE
-/* -------------------------------------------------- */
+// ACCESSIBILITY
+export function a11ycheck(done) {
 
-// JS
-export function styleguidejs() {
+	if ( config.accessibility.allow ) {
 
-	console.log("Compiling Styleguide scripts...");
+		return gulp.src( pathBuild + "**/*.{html,php}", { base: pathBuild } )
+				   .pipe(a11y())
+				   .pipe(a11y.reporter())
+				   .pipe(accessibility({ force: true }))
+				   .on("error", console.log)
+				   .pipe(accessibility.report({ reportType: "txt" } ))
+				   .pipe(rename({ extname: ".txt" } ))
+				   .pipe(gulp.dest("reports/") );
 
-	return gulp.src( pathSource + "lib/styleguide/*.js" )
-			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.init() ))
-			   //.pipe(modernizr())
-			   //.pipe(babel())
-			   .pipe(removeCode({production: true}))
-			   .pipe(gulpif( production, uglify(uglifyJSOptions).on("error", gutil.log) ))
-			   .pipe(concat("styleguide.js"))
-			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.write("maps") ))
-			   .pipe(gulp.dest( pathBuild + pathScripts ));
+	} else {
 
-}
+		return done();
 
-
-// CSS
-export function styleguidecss() {
-
-	console.log("Compiling Styleguide styles...");
-
-	return gulp.src( pathSource + "lib/styleguide/*.css" )
-			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.init() ))
-			   .pipe(concat("styleguide.css", {rebaseUrls: config.optimizations.css.rebaseURL}))
-			   .pipe(postcss(plugins))
-			   .pipe(gulpif( production, purgecss(purgeCSSOptions) ))
-			   //.pipe(gulpif( production, cleanCSS(cleanCSSOptions) ))
-			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.write("maps") ))
-			   .pipe(gulp.dest( pathBuild + pathScripts ))
-			   .pipe(browserSync.stream());
-
-}
-
-
-// HTML
-export function styleguidehtml() {
-
-	console.log("Compiling HTML...");
-
-	const stylesheet = "'stylesheet'";
-
-	return gulp.src( pathSource + config.html.paths )
-			   .pipe(panini({
-							 data: pathSource + config.html.data,
-							 helpers: pathSource + config.html.helpers,
-							 layouts: pathSource + config.html.layouts,
-							 partials: pathSource + config.html.partials,
-							 root: pathSource + config.html.root
-							})
-			   )
-			   .pipe(htmlreplace({
-								  base: {
-										 src: "https://" + "s3-" + server.aws.region + ".amazonaws.com/" + server.aws.bucket + "/",
-										 tpl: '<base href="%s">'
-								  },
-
-								  inlinescripts: {
-										   src: gulp.src( pathSource + config.html.inlineScripts.js ),
-										   tpl: "<script>%s</script>"
-										  },
-
-								  vendors: {
-										   src: pathScripts + config.vendors.bundle,
-										   tpl: '<script src="%s" '+config.vendors.jsAttribute+'></script>'
-										  },
-
-								  critical: {
-											 src: gulp.src( pathSource + config.html.inlineScripts.css ),
-											 tpl: "<style>%s</style>"
-								  },
-
-								  css: {
-										src: pathScripts + config.css.bundle,
-										tpl: '<link rel="preload" href="%s" as="style" onload="this.onload=null;this.rel='+stylesheet+'">'
-								  },
-
-								  js: {
-									   src: pathScripts + config.js.bundle,
-									   tpl: '<script src="%s" '+config.js.jsAttribute+'></script>'
-								  }
-								  //css: cssApp,
-								  //js: jsApp
-
-			   }, {keepUnassigned: true, keepBlockTags: true, resolvePaths: true} ))
-			   //.pipe(defer())	
-			   .pipe(removeCode({production: true}) )
-			   .pipe(gulpif( !server.aws.upload, removeCode({removeBase: true}) ))
-			   .pipe(gulpif( !config.tracking.fullstory.allow || !production, removeCode({removeFullStory: true}) ))
-			   .pipe(gulpif( !config.options.serviceworker || !production, removeCode({removeServiceWorker: true}) ))
-			   .pipe(gulpif( !config.options.appBanner, removeCode({removeAppBanner: true}) ))
-			   .pipe(gulpif( !config.vendors.useVendorScripts, removeCode({removeVendor: true}) ))
-			   .pipe(replace("&lt;br&gt;", "<br>"))
-			   .pipe(noopener.overwrite())
-			   .pipe(gulpif( production, htmlmin(htmlminOptions) ))
-			   .pipe(gulp.dest( pathBuild ));
-
+	}
 }
 
 
@@ -813,20 +837,22 @@ export function move(done) {
 	console.log("Copying directories and files...");
 
 	return gulp.src([pathSource + "**/.htaccess",
+					 pathSource + "**/manifest.json",
+					 pathSource + "**/browserconfig.xml",
 					 pathSource + "**/*",
-					 "!" + pathSource + "**/_*/*",
-					 "!" + pathSource + "**/*.html",
-					 "!" + pathSource + "**/*.php"], {base: pathSource})
+					 "!" + pathSource + "{_*/*,**/*.html,**/*.php,css/**/*,lib/**/*}"
+					 ], {base: pathSource})
 				.pipe(gulp.dest( pathBuild ))
 
 				.on("end", function () {
 
 					console.log("Deleting unnecessary directories...");
 
+					/*
 					del([pathBuild + "css/",
 						 pathBuild + "lib/",
-						 //pathBuild + pathAssets + config.images.sprite.paths
 						]);
+						*/
 
 					deleteEmpty.sync( pathBuild );
 				
@@ -914,7 +940,7 @@ export function svg() {
 			   .pipe(svgmin(svgminOptions))
 			   .pipe(gulpif( config.images.svg.convert.allow, rasterize({ format: config.images.svg.convert.format, scale: config.images.svg.convert.scale }) ))
 			   .pipe(gulpif( config.images.svg.convert.allow, rename({ extname: "." + config.images.svg.convert.format }) ))
-			   //.pipe(gulpif( config.images.svg.convert, svg2png() ))	
+
 			   .pipe(gulp.dest(pathBuild));
 
 }
@@ -924,7 +950,6 @@ export function svg() {
 export function sprite() {
 
 	console.log("Generating svg sprite sheet...");
-
 
 	return gulp.src( pathSource + pathAssets + config.images.sprite.paths + "**/*.svg", {base: pathSource} )
 			   .pipe(svgSprite({
@@ -950,22 +975,42 @@ export function sprite() {
 
 		   				   }
 			   ))
-
-			   .pipe(gulpif( config.images.sprite.convert, svg2png() ))
-			   .pipe(gulp.dest(pathSource + pathAssets + config.images.sprite.paths))
+			   .pipe(gulp.dest(pathBuild + pathTemp + config.images.sprite.paths))
 
 
 			   .on("end", function() {
 			   		
-					return gulp.src( pathSource + pathAssets + config.images.sprite.paths + config.images.sprite.mode + ".css" )
-							   .pipe(gulp.dest(pathSource + "css/elements/"));
-					
+			   		// CSS
+			   		/*
+					gulp.src( [pathBuild + pathScripts + config.css.bundle,
+							   pathBuild + pathTemp + config.images.sprite.paths + config.images.sprite.mode + ".css"] )
+
+						//.pipe(gulpif( config.options.sourcemaps, sourcemaps.init() ))
+						.pipe(concat(config.css.bundle))
+						.pipe(postcss(plugins))
+						.pipe(gulpif( production, purgecss(purgeCSSOptions) ))
+						.pipe(gulpif( production, cleanCSS(cleanCSSOptions) ))
+						//.pipe(gulpif( config.options.sourcemaps, sourcemaps.write("maps") ))
+						.pipe(gulp.dest( pathBuild + pathScripts ))
+						.pipe(browserSync.stream());
+						*/
+
+
+					// SVG
+					gulp.src( pathBuild + pathTemp + "**/*.svg" )
+						.pipe(svgmin(svgminOptions))
+						.pipe(gulp.dest(pathBuild + pathAssets));
+
+
+					// RASTER
+					gulp.src( pathBuild + pathTemp + "**/*.svg" )
+						.pipe(gulpif( config.images.sprite.convert.allow, rasterize({ format: config.images.sprite.convert.format, scale: config.images.sprite.convert.scale }) ))
+						.pipe(gulpif( config.images.sprite.convert.allow, rename({ extname: "." + config.images.sprite.convert.format }) ))
+						.pipe(gulp.dest(pathBuild + pathAssets));
 
 			   });
 
-
 			   //return done();
-
 
 }
 
@@ -976,33 +1021,37 @@ export function sprite() {
 
 // DO NOT EDIT THESE CODE BLOCKS! YOU WILL END UP DELETING THE PROJECT'S ROOT FOLDER.
 
-export function clear() {
+export function clear(done) {
 
 	console.log("Cleaning " + pathBuild + " folder...");
 	
-	return del([revFile,
-				pathSource + "css/elements/" + config.images.sprite.mode + ".css",
-				pathSource + pathAssets + config.images.sprite.paths + config.images.sprite.mode + ".css",
-				pathSource + pathAssets + config.images.sprite.paths + config.images.sprite.mode + ".svg",
-				pathSource + "css/sorted",
-				pathBuild + "**/*",
-				pathBuild + ".htaccess"]);
+	del([revFile,
+		 pathSource + "css/elements/" + config.images.sprite.mode + ".css",
+		 pathSource + pathAssets + config.images.sprite.paths + config.images.sprite.mode + ".css",
+		 pathSource + pathAssets + config.images.sprite.paths + config.images.sprite.mode + ".svg",
+		 pathSource + "css/sorted",
+		 pathBuild + "**/*",
+		 pathBuild + ".htaccess"], { allowEmpty: true });
 
 	//return deleteEmpty.sync( pathBuild );
+
+	return done();
 
 }
 
 
-export function clean() {
+export function clean(done) {
 
 	console.log("Cleaning " + pathBuild + " folder...");
 
-	return del([revFile,
-				pathSource + "css/elements/" + config.images.sprite.mode + ".css",
-				pathSource + pathAssets + config.images.sprite.paths + config.images.sprite.mode + ".css",
-				pathSource + pathAssets + config.images.sprite.paths + config.images.sprite.mode + ".svg",
-		 		pathBuild + "fonts/**/*.css",
-		 		pathBuild + "fonts/fonts.list"]);
+	del([revFile,
+		 pathSource + "css/elements/" + config.images.sprite.mode + ".css",
+		 pathSource + pathAssets + config.images.sprite.paths + config.images.sprite.mode + ".css",
+		 pathSource + pathAssets + config.images.sprite.paths + config.images.sprite.mode + ".svg",
+		 pathBuild + pathTemp,
+		 pathBuild + "fonts/**/*.css"], { allowEmpty: true });
+
+	return done();
 
 	//return deleteEmpty.sync( pathBuild );
 
@@ -1194,36 +1243,36 @@ export function sync() {
 
 
 	// WATCH
-	gulp.watch(pathSource + "**/*.js").on("all", js, reload);
+	gulp.watch(pathSource + "**/*.js").on("all", gulp.series(js, styleguidejs, injectscripts), reload);
+	gulp.watch(pathSource + config.vendors.paths).on("all", vendors, reload);
 
-	//gulp.watch(pathSource + config.vendors.path + "**/*.js").on("all", vendors, reload);
 
 	gulp.watch(pathSource + "**/*.css").on("all", css);
 
 
-	gulp.watch(pathSource + "**/*.js").on("all", styleguidejs, reload);
-	gulp.watch(pathSource + "**/*.css").on("all", styleguidecss);
+	gulp.watch(pathSource + "css/styleguide.css").on("all", styleguidecss);
 
 
-	gulp.watch(pathSource + "**/*.{app,avi,dmg,doc,eot,exe,gif,jp2,jpg,jpeg,jxr,mid,midi,mp3,mp4,mpeg,mov,ogg,ogv,otf,pdf,png,rar,svg,tiff,ttf,txt,webm,webp,woff,woff2,zip}", gulp.series(sprite, move, reload));
+	gulp.watch(pathSource + pathAssets + config.images.sprite.paths + "**/*.svg").on("all", sprite, css, reload);
+
+
+	//gulp.watch(pathSource + "**/*.{app,avi,dmg,doc,eot,exe,gif,jp2,jpg,jpeg,jxr,mid,midi,mp3,mp4,mpeg,mov,ogg,ogv,otf,pdf,png,rar,svg,tiff,ttf,txt,webm,webp,woff,woff2,zip}").on("all", move, reload);
 
 
 	gulp.watch([metadataFile,
-				pathSource + config.html.paths
-			   ]).on("all", gulp.series(html, modals, meta, refresh));
+				pathSource + config.html.paths,
 
 
-	gulp.watch([configFile,
+				//configFile,
 				//credentialsFile,
-				metadataFile,
+				//pathSource + metadataFile,
+				pathSource + config.html.inlineScripts.js,
+				pathSource + config.html.inlineScripts.css,
 				pathSource + "{_data,_helpers,_layouts,_modals,_partials}/**/*.{html,hbs,handlebars,json,yml}",
-				pathSource + "**/critical.css",
 				pathSource + "**/browserconfig.xml",
-				pathSource + "**/manifest.json",
-			   ]).on("all", gulp.series(refresh, html, modals, meta, reload));
-	
-	
-	//gulp.watch([pathSource + "{_modals}/**/*.{html,hbs,handlebars}"]).on("all", gulp.series(modals, reload));
+				pathSource + "**/manifest.json"
+
+			   ]).on("all", gulp.series(html, modals, meta, refresh, gulp.series(refresh, html, modals, injectscripts, meta, reload) ));
 
 }
 
@@ -1258,7 +1307,7 @@ export function awsdeploy(done) {
 				// Define custom headers
 				const headers = { "Cache-Control": server.aws.cachecontrol };
 
-				return gulp.src( dir(server.aws.dist + "**/*"), { base: dir(server.aws.dist) } )
+				return gulp.src( dirResolve(server.aws.dist + "**/*"), { base: dirResolve(server.aws.dist) } )
 						   .pipe(gulpif( server.aws.gzip, awsPublish.gzip({ ext: ".gz" }) )) // GZIP, Set Content-Encoding headers and add .gz extension.
 						   .pipe(publisher.publish(headers)) // Publisher will add Content-Length, Content-Type and headers specified above. If not specified it will set x-amz-acl to public-read by default
 						   .pipe(gulpif( server.aws.cache, publisher.cache() )) // Create a cache file to speed up consecutive uploads.
@@ -1325,7 +1374,7 @@ export function ftpdeploy(done) {
 			// Using base = '.' will transfer everything to /public_html correctly.
 			// Turn off buffering in gulp.src for best performance.
 
-			return gulp.src(globs, {base: dir(config.ftp.dist), buffer: false})
+			return gulp.src(globs, {base: dirResolve(config.ftp.dist), buffer: false})
 					   //.pipe(conn.newer( pathBuild )) // Only upload newer files.
 					   .pipe(conn.dest( server.ftp.path ))
 
@@ -1356,51 +1405,6 @@ export function ftpdeploy(done) {
 /* -------------------------------------------------- */
 /* ACTIONS / HELPERS
 /* -------------------------------------------------- */		
-
-// CHECK FILE
-export function checkfile(done) {
-
-	fs.access("file.txt", (err) => {
-
-		if (err) {
-
-			console.log("File found!");
-			//console.log(err.code);
-			//console.log(err.message);
-
-		} else {
-
-			console.log("File not found!");
-
-		}
-
-	});
-
-	return done();
-
-}
-
-
-export function createfile(done) {
-
-	fs.stat("file.txt", function(err, stat) {
-
-		if (err == null) {
-
-			console.log("Passed!");
-
-		} else {
-
-			console.log(err.code);
-
-		}
-
-	});
-
-	return done();
-
-}
-
 
 // REFRESH
 function refresh(done) {
@@ -1485,73 +1489,19 @@ export function preview(done) {
 }
 
 
-// OPEN PROJECT FOLDER
-export function openProject(done) {
-
-	console.log("Opening " + root + " folder.");
-
-	return gulp.src( "./" )
-			   .pipe(open());
-
-}
-
-
-// OPEN SOURCE FOLDER
-export function openSource(done) {
-
-	console.log("Opening " + pathSource + " folder.");
-
-	return gulp.src( pathSource )
-			   .pipe(open());
-
-}
-
-
-// OPEN BUILD FOLDER
-export function openBuild(done) {
-
-	console.log("Opening " + pathBuild + " folder.");
-
-	return gulp.src( pathBuild )
-			   .pipe(open());
-
-}
-
-// VERSION
-export function ver(done) {
-
-	console.log("//////////////////////////////");
-	console.log("//////// BUILD ENGINE ////////");
-	console.log("////////   VER. 2.0   ////////");
-	console.log("//////////////////////////////");
-	
-	return done();
-
-}
-
-
-// COMPLETED
-function completed(done) {
-
-	console.log("///////////////////////////////");
-	console.log("////// TASK(S) COMPLETED //////");
-	console.log("///////////////////////////////");
-
-	return done();
-
-}
-
-
 /* -------------------------------------------------- */
 /* TEST / BUILD / DEPLOY
 /* -------------------------------------------------- */
 
 // TEST
-gulp.task("test", gulp.series(mode, clear, html, modals, sprite, vendors, js, css, styleguidejs, styleguidecss, move, meta, svg, zipassets, raster, clean, sync));
+gulp.task("test", gulp.series(mode, clear, checkjs, checkcss, html, modals, sprite, vendors, styleguidejs, styleguidecss, js, css, injectscripts, move, sprite, meta, a11ycheck, svg, zipassets, raster, clean, sync));
 
 
 // BUILD
-gulp.task("build", gulp.series(clear, checkjs, checkcss, html, modals, sprite, vendors, js, css, styleguidejs, styleguidecss, move, meta, hashscripts, hashassets, svg, zipassets, raster, analytics, robotstxt, sitemap, sw, clean, preview));
+gulp.task("build", gulp.series(clear, checkjs, checkcss, html, modals, sprite, vendors, styleguidejs, styleguidecss, js, css, injectscripts, move, meta, a11ycheck, fingerprintscripts, fingerprintassets, svg, zipassets, raster, analytics, robotstxt, sitemap, sw, clean, preview));
+
+
+//gulp.task("build", gulp.series(clear, checkjs, checkcss, inlinejs, inlinecss, html, modals, vendors, styleguidejs, styleguidecss, js, css, injectscripts, move, sprite, meta, a11ycheck, fingerprintscripts, fingerprintassets, svg, zipassets, raster, analytics, robotstxt, sitemap, sw, clean, preview));
 
 
 // DEPLOY
@@ -1563,8 +1513,4 @@ gulp.task("build", gulp.series(clear, checkjs, checkcss, html, modals, sprite, v
 /* -------------------------------------------------- */
 
 // ASSETS
-gulp.task("images", gulp.series(move, sprite, assets, svg, zipassets, raster, clean));
-
-
-// HTML / CSS / JS
-gulp.task("htmlscripts", gulp.series(checkjs, checkcss, html, modals, sprite, vendors, js, css, styleguidejs, styleguidecss, move, meta, hashscripts, analytics, sitemap, sw, clean, preview));
+gulp.task("images", gulp.series(move, sprite, assets, sprite, svg, zipassets, raster, clean));

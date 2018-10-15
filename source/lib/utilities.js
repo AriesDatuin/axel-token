@@ -150,7 +150,7 @@ var utilAssetObserver = function() {
 
 			.done( function() {
 			
-				lazyLog("LOADED:", element);
+				//lazyLog("LOADED:", element);
 				//TweenMax.to(element, 0.35, {opacity: 1, scale: 1, delay: 0.5, ease: Back.easeOut});
 				imageBackgroundResize();
 			
@@ -158,7 +158,7 @@ var utilAssetObserver = function() {
 		
 			.fail( function() {
 			
-				lazyLog("UNABLE TO LOAD", element);
+				//lazyLog("UNABLE TO LOAD", element);
 			
 			});
 
@@ -189,6 +189,49 @@ var utilAssetObserver = function() {
 	
 	
 }; // END utilIntersectionObserver
+
+
+/* -------------------------------------------------- */
+/* MEDIA OBSERVER
+/* -------------------------------------------------- */
+
+// CACHE SELECTORS
+var mediaVideo = $(".video"); 
+
+
+// INIT
+mediaVideo.video({
+	attr_ready: "data-video-ready",
+	attr_playing: "data-video-playing",
+	attr_paused: "data-video-paused"
+});
+
+
+// ACTIONS
+$$(".play").on("click", function() {
+
+	mediaVideo.playVideo();
+
+});
+
+
+// FUNCTIONS
+var utilMediaObserver = function() {
+
+	/*
+	if ( mediaVideo.is("[data-video-paused]") ) {
+
+		mediaVideo.playVideo();
+
+	} if ( mediaVideo.is("[data-video-playing]") ) {
+
+		mediaVideo.pauseVideo();
+
+	}
+	*/
+
+
+}; // END utilVideoObserver
 
 
 /* -------------------------------------------------- */
@@ -262,9 +305,9 @@ var utilDataAttributes = function() {
 var utilEmergence = function() {
 
 	// VARS
-	var	emergenceElement = $$("[data-emergence]"),
-		emergenceIgnore = $$(".emergence-ignore"),
-		emergenceIgnoreChild = $$(".emergence-ignore-child");
+	var	emergenceElement = $("[data-emergence]"),
+		emergenceIgnore = $(".emergence-ignore"),
+		emergenceIgnoreChild = $(".emergence-ignore-child");
 	
 	
 	// PROPERTIES
@@ -298,15 +341,17 @@ var utilEmergence = function() {
 
 				}
 
-				//$(element).addClass("emergence-visible");
 				$(element).find(anim).not(animInteract).addClass("anim-play");
+				$(element).find(".video[data-video-paused]").playVideo();
+
 
 			} else if ( state === "reset" ) {
 
 				//console.log("Element is hidden with reset.");
 
-				//$(element).removeClass("emergence-visible");
 				$(element).find(anim).not(animInteract).removeClass("anim-play");
+				$(element).find(".video[data-video-playing]").pauseVideo();
+
 
 			} else if ( state === "noreset" ) {
 
@@ -336,8 +381,8 @@ var utilPageVisibility = function() {
 	"use strict";
 	
 	// CACHE SELECTORS
-	var pageVisibility = $$(".page-visibility"),
-		pageVisibilityIgnore = $$(".page-visibility-ignore");
+	var pageVisibility = $(".page-visibility"),
+		pageVisibilityIgnore = $(".page-visibility-ignore");
 
 
 	// VARS
@@ -351,9 +396,12 @@ var utilPageVisibility = function() {
 	function isPageHidden () {
 		//console.log("Page is inactive.");
 
+		animCore();
+		utilMediaObserver();
+
 		TweenMax.set(pageVisibility.not(pageVisibilityIgnore), {opacity: 0});
 
-		animPauseAll();
+
 
 	}
 
@@ -361,9 +409,13 @@ var utilPageVisibility = function() {
 	function isPageVisible () {
 		//console.log("Page is active");
 
-		animController();
+		animCore();
+		utilMediaObserver();
 
 		TweenMax.staggerTo(pageVisibility.not(pageVisibilityIgnore), 0.25, {opacity: 1, ease: Power2.easeInOut}, 0.12);
+
+
+
 
 	}
 	
@@ -379,7 +431,7 @@ var utilPrint = function() {
 	"use strict";
 	
 	// CACHE SELECTORS
-	var print = $$(".print");
+	var print = $(".print");
 	
 	
 	// FUNCTIONS

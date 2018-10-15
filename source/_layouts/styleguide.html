@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html lang="en" prefix="og: http://ogp.me/ns#">
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
 <head>
 <title>--name | {{{ title }}}</title>
 <meta charset="utf-8">
@@ -8,15 +8,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes, user-scalable=yes, viewport-fit=cover">
 
 
-<!-- CANONLICAL -->
+<!-- CANONICAL -->
 {{#ifpage 'index'}}
-<link rel="canonical" href="--url">
+	<link rel="canonical" href="--url">
 {{/ifpage}}
 
 {{#unlesspage 'index'}}
-<link rel="canonical" href="--url{{ page }}">
+	<link rel="canonical" href="--url{{ page }}">
 {{/unlesspage}}
-<!-- // CANONLICAL -->
+<!-- // CANONICAL -->
 
 
 <!-- CORE -->
@@ -72,28 +72,18 @@
 <meta name="twitter:image:alt" content="--url">
 
 
-<!-- APP BANNER -->
-<!--removeIf(removeAppBanner)-->
-<meta name="apple-itunes-app" content="app-id=--itunes-app-id">
-<meta name="google-play-app" content="app-id=--play-app-id">
-<!--endRemoveIf(removeAppBanner)-->
 
 
 
-
-
-<!-- build:critical -->
+<!-- build:inlinecss -->
 <!-- endbuild -->
 
 
-<!-- build:css -->
-<!-- endbuild -->
+<!-- inject:styleguide:css -->
+<!-- endinject -->
 
 
-<link rel="preload" href="{{ root }}scripts/styleguide.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-
-
-<!-- build:inlinescripts -->
+<!-- build:inlinejs -->
 <!-- endbuild -->
 
 
@@ -111,10 +101,9 @@
 	<!-- JAVASCRIPT DISABLED MESSAGE / NOTE: AFFECTS PAGE SPEED INDEX SCORE. MOVE UNDER build:css. -->
 	<noscript>
 
-		<!-- build:css -->
-		<!-- endbuild -->
+		<!-- inject:styleguide:css -->
+		<!-- endinject -->
 
-		<link rel="preload" href="{{ root }}scripts/stylesheet.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
 		<div>
 			<img src="assets/error.gif" alt="Ooops, your JavaScript is disabled."/>
@@ -131,7 +120,7 @@
 
 	<!-- ERROR -->
 	<div id="error">
-		<p>Please resize your window or rotate <span class="fa fa-repeat margin-lr-xs" aria-hidden="true"></span> your phone to portrait mode.</p>
+		<p>Please resize your window or rotate your phone to portrait mode.</p>
 	</div>
 	<!-- // ERROR -->
 
@@ -160,19 +149,20 @@
 	<!-- // CONTAINER -->
 
 
+	{{> modal}}
+	{{> blocker}}
 
 
 
-	<!-- build:js -->
-	<!-- endbuild -->
 
 
-	<script src="{{ root }}scripts/styleguide.js" defer></script>
+	<!-- inject:styleguide:js -->
+	<!-- endinject -->
 
 
 	<!--removeIf(removeVendor)-->
-	<!-- build:vendors -->
-	<!-- endbuild -->
+	<!-- inject:vendors:js -->
+	<!-- endinject -->
 	<!--endRemoveIf(removeVendor)-->
 
 

@@ -21,7 +21,7 @@ img:not([src]) {
 
 /* HELPERS */
 img.lazy:not(.lazy-ignore) {
-    transform: scale3d(0.75,0.75,1);
+    transform: scale3d(0.95,0.95,1);
 }
 
 img.lazy.loaded:not(.lazy-ignore) {

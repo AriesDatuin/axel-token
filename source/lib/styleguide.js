@@ -28,9 +28,12 @@ var copyToClipboard = function() {
 		// COPY TO CLIPBOARD
 		self.find(".copy-to-clipboard-button").on("click", function() {
 
+
+			console.log("test");
+
  			var tlCopied = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: false, repeat: 1});
  				tlCopied.fromTo($(this).find(".copy-to-clipboard-status"), 0.25, {opacity: 0},
-												   {opacity: 1, ease: Expo.easeOut})
+												   								 {opacity: 1, ease: Expo.easeOut})
 
  						.to($(this).find(".copy-to-clipboard-status"), 0.25, {opacity: 0, ease: Expo.easeOut})
 
@@ -49,12 +52,6 @@ var copyToClipboard = function() {
 
 
 }; // END stylePropClass
-
-
-
-
-
-
 
 
 /* -------------------------------------------------- */
@@ -87,19 +84,19 @@ var stylePropClassList = function() {
 		// COPY WINDOW CONTENTS
 		var copyWindow = "";
 
-			copyWindow += "<div class='display-block position-relative margin-top-sm padding-top-md padding-lr-md padding-bottom-lg round-sm text-white background-charcoal box-shadow-lg-hover transition-fast'>"; // PARENT
+			copyWindow += "<div class='prop-note-block copy-to-clipboard'>"; // PARENT
 
 
 				copyWindow += "<strong>Class List</strong><br>" // TITLE
 
-				copyWindow += "<div class='copy-to-clipboard-content'>" + styleProps + "</div>" // CONTENTS
+				copyWindow += "<code class='copy-to-clipboard-content'>" + styleProps + "</code>" // CONTENTS
 
 
-				copyWindow += "<a class='copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default'>"; // COPY
+				copyWindow += "<a class='copy-to-clipboard-button prevent-default'>"; // COPY
 
-					copyWindow += "<span class='copy-to-clipboard-status display-inline opacity-00'>Copied!</span>" // LABEL
+					copyWindow += "<span class='copy-to-clipboard-status'>Copied!</span>" // LABEL
 
-					copyWindow += "<span class='margin-left-xs fa fa-file cursor-pointer' aria-label='Copy' aria-hidden='true'></span>" // BUTTON: COPY
+					copyWindow += "<span class='fa fa-file' aria-label='Copy' aria-hidden='true'></span>" // BUTTON: COPY
 
 				copyWindow += "</a>"
 
@@ -116,7 +113,7 @@ var stylePropClassList = function() {
 
  			var tlCopied = new TimelineMax({paused: true, delay: 0, repeatDelay: 0, yoyo: false, repeat: 1});
  				tlCopied.fromTo(self.next().find(".copy-to-clipboard-button").find(".copy-to-clipboard-status"), 0.25, {opacity: 0},
-																					 {opacity: 1, ease: Expo.easeOut})
+																					 								   {opacity: 1, ease: Expo.easeOut})
 
  						.to(self.next().find(".copy-to-clipboard-button").find(".copy-to-clipboard-status"), 0.25, {opacity: 0, ease: Expo.easeOut})
 
@@ -174,7 +171,7 @@ var stylePropFonts = function() {
 		fontFamilyHeader = $$("#prop-css-font-families .font-header").css("font-family").replace(/\s|, cursive|, display|, handwriting|, monospace|, sans-serif|, serif/g, ""),
 		fontFamilySubheader = $$("#prop-css-font-families .font-subheader").css("font-family").replace(/\s|, cursive|, display|, handwriting|, monospace|, sans-serif|, serif/g, ""),
 		fontFamilyHeavy = $$("#prop-css-font-families .font-heavy").css("font-family").replace(/\s|, cursive|, display|, handwriting|, monospace|, sans-serif|, serif/g, ""),
-		fontFamilyParagraph = $$("#prop-css-font-families .font-paragraph").css("font-family").replace(/\s|, cursive|, display|, handwriting|, monospace|, sans-serif|, serif/g, "");
+		fontFamilyParagraph = $$("#prop-css-font-families .font-copy").css("font-family").replace(/\s|, cursive|, display|, handwriting|, monospace|, sans-serif|, serif/g, "");
 
 
 		//console.log(fontFamilyHeader + fontFamilySubheader + fontFamilyParagraph);
@@ -227,7 +224,7 @@ var stylePropFonts = function() {
 			styleProps = self.css("font-size");
 
 
-		self.before( "<span class='display-block margin-top-md margin-bottom-xxs border-thin border-bottom border-solid border-dark-grey font-paragraph text-dark-grey'>Font size: " + styleProps + "</span>" );
+		self.before( "<span class='subheader-style'>Font size: " + styleProps + "</span>" );
 
 
 		//console.log(styleProps);

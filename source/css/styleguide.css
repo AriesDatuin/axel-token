@@ -1,4 +1,13 @@
 /* -------------------------------------------------- */
+/* CODE
+/* -------------------------------------------------- */
+
+code {
+	border: 0;
+}
+
+
+/* -------------------------------------------------- */
 /* LIST
 /* -------------------------------------------------- */
 
@@ -17,17 +26,49 @@
 /* -------------------------------------------------- */
 
 .prop-note-block {
+	display: block;
+	position: relative;
+	margin: 1rem 0 0 0;
+	padding: 1rem 1rem 1rem 1rem;
+	color: #fff;
+	border-radius: 8px;
+	background-color: #333;
+	box-shadow: 0 0 0 0 rgba(0,0,0,0),
+			  	0 0 0 0 rgba(0,0,0,0),
+			  	0 0 0 0 rgba(0,0,0,0);
 
+	transition: var(--ease-normal);
 }
 
 
-.prop-note-block:not(.copy-to-clipboard) span {
-	/*margin: 0 0.25rem 0 0.25rem;
-	padding: 0.25rem;*/
-	color: #fffab0;
-	font-style: italic;
-	border-radius: 8px;
-	/*background-color: #fffab0;*/
+.prop-note-block:hover {
+	box-shadow: var(--box-shadow-xl);
+}
+
+.prop-note-block .copy-to-clipboard-content {
+	color: var(--white-color);
+	background-color: transparent;
+}
+
+
+.prop-note-block .copy-to-clipboard-button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: var(--gutter-sm);
+	color: var(--light-grey-color);
+}
+
+
+.prop-note-block .copy-to-clipboard-button .copy-to-clipboard-status {
+	opacity: 0;
+	display: inline;
+}
+
+
+.prop-note-block .copy-to-clipboard-button .fa {
+	cursor: pointer;
+	margin-left:  0.75rem;
 }
 
 
@@ -36,7 +77,8 @@
 /* -------------------------------------------------- */
 
 .code-highlight span,
-ul.code-highlight li span {
+ul.code-highlight li span,
+code {
 	display: inline-table;
 	padding: 0.25rem 0.5rem 0.25rem 0.5rem;
 	width: auto;
@@ -61,7 +103,7 @@ i {
 	display: inline-block;
 	position: relative;
 	width: 100%;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, Ubuntu, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font-family: var(--font-copy);
 	font-size: 1.5em;
 }
 
@@ -71,8 +113,17 @@ i {
 	margin-left: 0;
 	width: 100%;
 	height: 1px;
-	background-color: #333;
+	background-color: var(--charcoal-color);
 
+}
+
+
+.subheader-style {
+	display: block;
+	margin: 2rem 0 2rem 0;
+	color: var(--dark-grey-color);
+	font-family: var(--font-copy);
+	border-bottom: thin solid var(--dark-grey-color);
 }
 
 

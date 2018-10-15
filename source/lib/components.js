@@ -116,8 +116,8 @@ var comBlog = function() {
 		/* -------------------------------------------------- */
 		
 		var blogData = "https://api.rss2json.com/v1/api.json",
-			$blogSection = $$("#blog"),
-			$blogContent = $$("#blog-content"),
+			$blogSection = $("#blog"),
+			$blogContent = $("#blog-content"),
 			blogDataFeed = {
 				rss_url: "https://medium.com/feed/@axelunlimited"
 			};
@@ -233,8 +233,8 @@ var comBlog = function() {
 var comCounter = function() {
 	
 	// CACHE SELECTORS
-	var counter01 = $$("#counter-01.anim"),
-		counter02 = $$("#counter-02.anim");
+	var counter01 = $("#counter-01.anim"),
+		counter02 = $("#counter-02.anim");
 
 
 	// OPTIONS
@@ -246,7 +246,6 @@ var comCounter = function() {
 		duration: 5000, // Change how long the javascript expects the CSS animation to take.
 		theme: "minimal", // Specify the theme: default, minimal, car, plaza, slot-machine, train-station, digital
 		animation: "count" // Count is a simpler animation method which just increments the value, use it when you're looking for something more subtle.
-
 	}; //od = new Odometer(counterOptions);
 
 
@@ -272,7 +271,7 @@ var comCounter = function() {
 
 	$$(pageContent).on("scrollstop", animCounterController);
 
-	TweenMax.delayedCall($delayInterval, animCounterController);
+	TweenMax.delayedCall(0, animCounterController);
 
 
 }; // END comOdometer
@@ -282,62 +281,59 @@ var comCounter = function() {
 /* MODAL
 /* -------------------------------------------------- */
 
-var comModal = function() {
-	
+var comModalDialog = function() {
+
+	/* -------------------------------------------------- */
+	/* CACHE SELECTORS
+	/* -------------------------------------------------- */
+
+	var modal = $("#modal"),
+		blocker = $("#blocker"),
+		buttonModalDialog = $("[data-content-selector]");
+
+
 	/* -------------------------------------------------- */
 	/* BLOCKER
 	/* -------------------------------------------------- */
 
 		/* -------------------------------------------------- */
-		/* CONTENT
-		/* -------------------------------------------------- */
-
-		//$('<div class="blocker background-black z-02"></div>').appendTo( $$(body) );
-
-		var uiBlockerContent = "";
-			uiBlockerContent += "<div class='blocker'></div>";
-
-		// Append content.
-		$$(uiBlockerContent).appendTo( $$(body) );
-
-
-		/* -------------------------------------------------- */
 		/* FUNCTIONS
 		/* -------------------------------------------------- */
 
-		var blocker = function() {
+		var block = function() {
 
 			if ( !$$(html).hasClass("blocker-active") ) {
 
-				TweenMax.to( $$(".blocker"), 0.25, {display: "block", opacity: 0.9, ease: Power4.easeIn,
+				TweenMax.to( blocker, 0.25, {display: "block", opacity: 0.9,
 
-												   onStart: function() {
-														  
-													   disableContent();
-													   $$(html).addClass("blocker-active");
-													   //$$(body).addClass("is-off-canvas-open");
-													   $$(".blocker").addClass("no-pointer");
+												onStart: function() {
 
-												   },
+													disableContent();
+													$$(html).addClass("blocker-active");
+													//$$(body).addClass("is-off-canvas-open");
+													blocker.addClass("no-pointer");
 
-												   onComplete: function() {
-														  
-													   $$(".blocker").removeClass("no-pointer");
-														  
-												   }
+												},
+
+												onComplete: function() {
+													  
+													blocker.removeClass("no-pointer");
+													  
+												}
+
 				});
 
 			} else {
 
-				TweenMax.to( $$(".blocker"), 0.25, {display: "none", opacity: 0, delay: 0.25, ease: Power4.easeOut,
+				TweenMax.to( blocker, 0.25, {display: "none", opacity: 0,
 
 												onStart: function() {
-														 
+
 													enableContent();
 													$$(html).removeClass("blocker-active");
 													//$$(body).removeClass("is-off-canvas-open");
-													$$(".blocker").addClass("no-pointer");
-														 
+													blocker.addClass("no-pointer");
+
 												}
 				});
 
@@ -350,113 +346,133 @@ var comModal = function() {
 		/* ACTIONS
 		/* -------------------------------------------------- */
 
-		$$(".blocker").on("click", function(e) {
+		blocker.on("click", function(e) {
 			e.preventDefault();
 
-			//var self = $(this);
-
-			blocker();
-			modal();
+			block();
+			modalDialog();
 
 		});
 
 
 	/* -------------------------------------------------- */
-	/* POPUP
+	/* MODAL
 	/* -------------------------------------------------- */
 
 		//*Note: Same origin policy is in effect using this method. External or third-party links will not load into 'modal-container'.
 		// Method: <a href="about.html" class="popup" data-content-selector="#articles" data-content-width="800" data-content-height="auto"></a>
 
-		/* -------------------------------------------------- */
-		/* CACHE SELECTORS
-		/* -------------------------------------------------- */
-
-		var buttonModal = $$("[data-content-selector]");
-
 
 		/* -------------------------------------------------- */
 		/* CONTENT
 		/* -------------------------------------------------- */
-
-		var uiModal = "";
-
-			uiModal += "<div class='modal grid-x align-center align-top' aria-hidden='true' role='dialog' tabindex='-1'>"; // MODAL
-
-				uiModal += "<div id='modal-preloader' class='mini-preloader light'><span class='fa fa-circle-o-notch fa-spin' aria-hidden='true' role='document'></span><p>Loading...</p></div>" // PRELOADER
-
-				uiModal += "<div class='cell modal-container position-relative z-01'></div>" // CONTAINER
-
-				uiModal += "<div class='modal-close close dark margin-sm round-full z-02'><span></span><span></span></div>"; // BUTTON: CLOSE
-
-				//uiModal += "<a class='cell modal-close margin-tb-sm center-element text-secondary text-charcoal-hover text-bold text-uppercase button button-width-full background-white background-white-hover no-touch-feedback prevent-default'><i class='fa fa-times-circle margin-right-xs'></i>Close</a>"; // BUTTON: CLOSE
-
-			uiModal += "</div>"; // MODAL
 	
-		// Append content.
-		$$(uiModal).appendTo( $$(body) );
-	
-		TweenMax.set( $$(".modal"), {display: "none", opacity: 0});
+		TweenMax.set( modal, {display: "none", opacity: 0});
 
 
 		/* -------------------------------------------------- */
 		/* FUNCTIONS
 		/* -------------------------------------------------- */
 
-		var modal = function(modalContentURL, modalContentSelector) {
+		var modalDialog = function(modalContentURL, modalContentSelector) {
 
 			var modalContentURL, // Variable for content's path / location.
 				modalContentSelector; // Variable for loaded content's element id, ex: '#my-content'.
 
 
-				blocker();
+				block();
 
 				if ( !$$(html).hasClass("blocker-active") ) {
 
-					TweenMax.to( $$(".modal"), 0.25, {display: "block", opacity: 1, ease: Expo.easeOut,
+					TweenMax.to( modal, 0.25, {display: "block", opacity: 1, ease: Expo.easeOut,
 
 													   onStart: function() {
 
-															   $$(html).addClass("no-pointer");
+																   $$(html).addClass("no-pointer");
 
-															   $$(".modal-close").not(".close").css({"display" : "none"});
-
-															   $$(".modal-container").load(modalContentURL + modalContentSelector, function ( response, status, xhr ) {
-
-																   // PRELOADER
-																   TweenMax.set( $$("#modal-preloader"), {display: "block", opacity: 1, scale: 1});
+																   //modal.find("#modal-close").not(".close").css({"display" : "none"});
 
 
-																   // CALLBACK
-																   if ( status == "success" ) {
-
-																	   //utilAssetObserver();
-																	 
-																	   //console.log( modalContentURL + modalContentSelector);
-
-																	   TweenMax.to( $$("#modal-preloader"), 0.25, {display: "none", opacity: 0, scale: 0.75, delay: 0, ease: Expo.easeInOut});
-
-																	   $$(".modal-close").not(".close").css({"display" : "block"});
-
-																   } else {
-
-																	   var msg = "Error: Unable to load " + modalContentURL + modalContentSelector;
-
-																	   //$(this).html( msg + xhr.status + " " + xhr.statusText );
-																	   $$(this).html( '<div class="center-vh text-charcoal text-center"> <span class="fa fa-exclamation-circle p4" aria-hidden="true"></span> <p>'+msg+'</p> </div>' );
-
-																	   TweenMax.to( $$("#modal-preloader"), 0.25, {display: "none", opacity: 0, scale: 0.75, delay: 0.5, ease: Expo.easeInOut});
-
-																   }
+																   modal.find("#modal-container").load(modalContentURL + modalContentSelector, function ( response, status, xhr ) {
 
 
-														   });
+																		modal.find("#modal-error").addClass("hide").find("p").text("");
+
+
+																		// PRELOADER
+																		TweenMax.set( modal.find("#modal-preloader"), {display: "block", opacity: 1, scale: 1});
+
+
+																		// CALLBACK
+																		if ( status == "success" ) {
+
+
+																		   // ACCESSIBILITY
+																		   var dialogTitle = modal.find("#modal-title").text(),
+																		   	   dialogDescription = modal.find("#modal-description").text();
+
+
+																		   if ( modal.find("#modal-title").length ) {
+
+																				modal.attr("aria-labelledby", dialogTitle);
+
+																			} else {
+
+																				modal.attr("aria-labelledby", "Dialog");
+
+																			}
+
+
+																		   if ( modal.find("#modal-description").length ) {
+
+																				modal.attr("aria-describedby", dialogDescription);
+
+																			} else {
+
+																				modal.attr("aria-describedby", "");
+
+																			}
+
+
+																		   //utilAssetObserver();
+																		 
+																		   //console.log( modalContentURL + modalContentSelector);
+
+																		   TweenMax.to( modal.find("#modal-preloader"), 0.25, {display: "none", opacity: 0, scale: 0.75, delay: 0, ease: Expo.easeOut});
+
+																		   //modal.find("#modal-close").not(".close").css({"display" : "block"});
+
+
+																		} else {
+
+																		   var message = "Error: Unable to load " + modalContentURL + modalContentSelector;
+
+																		   //$(this).html( msg + xhr.status + " " + xhr.statusText );
+
+																		   //$$(this).text( '<div class="center-vh text-charcoal text-center"> <span class="fa fa-exclamation-circle p4" aria-hidden="true"></span> <p>'+msg+'</p> </div>' );
+
+																		   TweenMax.to( modal.find("#modal-preloader"), 0.25, {display: "none", opacity: 0, scale: 0.75, delay: 1, ease: Expo.easeOut,
+																																onComplete: function() {
+																																	modal.find("#modal-error").removeClass("hide")
+																																		 .find("p").text(message);
+																																	}
+																		   														});
+
+
+																		   // ACCESSIBILITY
+																		   modal.attr("aria-labelledby", "Error")
+																		   		.attr("aria-describedby", "We're sorry. This content is currently unavailable.");
+
+																		}
+
+
+																   });
 
 													   },
 
 													   onComplete: function() {
 
-														   //$$(".modal").addClass("open");
+														   //modal.addClass("open");
 														   $$(html).removeClass("no-pointer");
 
 													   }
@@ -464,17 +480,13 @@ var comModal = function() {
 
 				} else {
 
-					TweenMax.to( $$(".modal"), 0.25, {display: "none", opacity: 0, ease: Expo.easeOut,
-
-														onStart: function() {
-
-															//$$(".modal").removeClass("open");
-
-														},
+					TweenMax.to( modal, 0.25, {display: "none", opacity: 0, ease: Expo.easeOut,
 
 														onComplete: function() {
 														   
-															$$(".modal-container").html(""); // Clear 'modal-container' and free up some memory.
+														   modal.attr("aria-labelledby", "Inactive") // Accessibility
+														   		.attr("aria-describedby", "This dialog window is currently inactive.")
+														   		.find("#modal-container").html(""); // Clear content.
 
 													   }
 
@@ -487,37 +499,38 @@ var comModal = function() {
 
 		$$(pageContent).on("resize", _.debounce(function() {
 
-													if ( $$(".modal").length && $$(".modal").hasClass("modal-width-auto") && window.matchMedia("(max-width: 1500px)").matches ) {
+													if ( modal.length && modal.hasClass("modal-width-auto") && window.matchMedia("(max-width: 1500px)").matches ) {
 														   
-														//console.log("Modal is open.");
-														TweenMax.set( $$(".modal"), { width: window.innerWidth / 1.2 } );
+														//console.log("Modal width set to 'auto'.");
+														TweenMax.to( modal, 0.25, { width: window.innerWidth / 1.2, ease: Power4.easeOut } );
 
 													}
 
 
-													if ( $$(".modal").length && $$(".modal").hasClass("modal-height-auto") && window.matchMedia("(max-height: 1024px)").matches ) {
+													if ( modal.length && modal.hasClass("modal-height-auto") && window.matchMedia("(max-height: 768px)").matches ) {
 														   
-														//console.log("Modal is open.");
-														TweenMax.set( $$(".modal"), { height: window.innerHeight / 1.2 } );
+														//console.log("Modal height set to 'auto'.");
+														TweenMax.to( modal, 0.25, { height: window.innerHeight / 1.2, ease: Power4.easeOut } );
+														//modal.css({"height" : "auto"});
 
 													}
 
 
-												}, $updateInterval));
+												}, 100));
 
 
 		/* -------------------------------------------------- */
 		/* ACTIONS
 		/* -------------------------------------------------- */
 
-		buttonModal.on("click", function(e) {
+		buttonModalDialog.on("click", function(e) {
 			e.preventDefault();
 			
 			var self = $(this),
-				dataContentURL = null, // self.attr("href"), // self.data("content-url"), //self.attr("href"), // Read 'data-content-url' of clicked element and store as a value for 'modal(modalContentURL)'.
-				dataConentSelector = self.data("content-selector"), // Read 'data-content-selector' of clicked element and store as a value for 'modal(modalContentSelector)'.
-				dataContentWidth, // Read 'data-content-width' of clicked element and store as a value for 'modal(dataContentWidth)'.
-				dataContentHeight; // Read 'data-content-height' of clicked element and store as a value for 'modal(dataContentHeight)'.
+				dataContentURL = null, // self.attr("href"), // self.data("content-url"), //self.attr("href"), // Read 'data-content-url' of clicked element and store as a value for 'modalDialog(modalContentURL)'.
+				dataConentSelector = self.data("content-selector"), // Read 'data-content-selector' of clicked element and store as a value for 'modalDialog(modalContentSelector)'.
+				dataContentWidth, // Read 'data-content-width' of clicked element and store as a value for 'modalDialog(dataContentWidth)'.
+				dataContentHeight; // Read 'data-content-height' of clicked element and store as a value for 'modalDialog(dataContentHeight)'.
 
 
 				/* -------------------------------------------------- */
@@ -528,13 +541,13 @@ var comModal = function() {
 				if ( self.data("content-width") === "auto" && window.matchMedia("(max-width: 1500px)").matches ) {
 
 					//console.log("Modal set to auto size width.");
-					$$(".modal").addClass("modal-width-auto");
+					modal.addClass("modal-width-auto");
 					dataContentWidth = window.innerWidth / 1.2;
 
 				} else {
 
 					//console.log("Modal not set to auto size width.");
-					$$(".modal").removeClass("modal-width-auto");
+					modal.removeClass("modal-width-auto");
 					dataContentWidth = self.data("content-width");
 
 				}
@@ -544,41 +557,42 @@ var comModal = function() {
 				if ( self.data("content-height") === "auto" ) {
 
 					//console.log("Modal set to auto size height.");
-					$$(".modal").addClass("modal-height-auto");
-					dataContentHeight = 768;
+					modal.addClass("modal-height-auto");
+					//dataContentHeight = 768;
+					dataContentHeight = window.innerHeight / 1.2;
 
 				} else {
 
 					//console.log("Modal not set to auto size height.");
-					$$(".modal").removeClass("modal-height-auto");
+					modal.removeClass("modal-height-auto");
 					dataContentHeight = self.data("content-height");
 
 				}
 
 
-			// Check if element has href or is a regular element, ex: 'div' or 'span'.
-			if ( self.is( "a" ) ) {
+				// Check if element has href or is a regular element, ex: 'div' or 'span'.
+				if ( self.is( "a" ) ) {
 
-				dataContentURL = self.attr("href");
+					dataContentURL = self.attr("href");
 
-				//console.log("Element has href: " + dataContentURL);
+					//console.log("Element has href: " + dataContentURL);
 
- 			} else {
+	 			} else {
 
- 				dataContentURL = self.data("content-url");
+	 				dataContentURL = self.data("content-url");
 
- 				//console.log("Element does not have href: " + dataContentURL);
+	 				//console.log("Element does not have href: " + dataContentURL);
 
- 			}
+	 			}
 
 
-			//console.log(dataContentURL + " #" + dataConentSelector + " @ " + dataContentWidth + " x " + dataContentHeight);
-			
-			modal(dataContentURL, " #" + dataConentSelector, dataContentWidth, dataContentHeight);
-			
-			TweenMax.set( $$(".modal"), { width: dataContentWidth, height: dataContentHeight } );
+				//console.log(dataContentURL + " #" + dataConentSelector + " @ " + dataContentWidth + " x " + dataContentHeight);
+				
+				modalDialog(dataContentURL, " #" + dataConentSelector, dataContentWidth, dataContentHeight);
+				
+				TweenMax.set( modal, { width: dataContentWidth, height: dataContentHeight } );
 
-			//window.location.hash = "#" + dataConentSelector;
+				//window.location.hash = "#" + dataConentSelector;
 
 
 		});
@@ -588,15 +602,14 @@ var comModal = function() {
 		var modalPath = window.location.pathname,
 			modalHash = window.location.hash;
 
-
-		modal(dataContentURL, modalHash, dataContentWidth, dataContentHeight);
+		modalDialog(dataContentURL, modalHash, dataContentWidth, dataContentHeight);
 		*/
 
 
-		$$(".modal-close").on("click", function(e) {
+		modal.find("#modal-close").on("click", function(e) {
 			e.preventDefault();
 
-			modal();
+			modalDialog();
 
 		});
 
@@ -669,18 +682,18 @@ var comSlider = function() {
 	/* CACHE SELECTORS
 	/* -------------------------------------------------- */
 
-	var sliderDefault = $$(".slider-default"),
-		sliderDefaultAdapt = $$(".slider-default.adapt").flickity({});
+	var sliderDefault = $(".slider-default"),
+		sliderDefaultAdapt = $(".slider-default.adapt").flickity({});
 
 
     /* -------------------------------------------------- */
     /* SLIDER
     /* -------------------------------------------------- */
 
-    //var sliderDefault = $$(".slider-default");
+    //var sliderDefault = $(".slider-default");
       
-    TweenMax.set(sliderDefault, {autoAlpha: 0});
-    TweenMax.to(sliderDefault, 0.5, {autoAlpha: 1, delay: 1});
+    TweenMax.fromTo(sliderDefault, 0.5, {autoAlpha: 0},
+    							   		{autoAlpha: 1, delay: 1});
 
     // Disable vertical touch scrolling when interacting with any slider.
 	/*
@@ -715,7 +728,7 @@ var comSlider = function() {
 	
     
 	// SET-UP
-    //var sliderDefaultAdapt = $$(".slider-default.adapt").flickity({});
+    //var sliderDefaultAdapt = $(".slider-default.adapt").flickity({});
     
     sliderDefault.has(".adapt").each(function() {
         
@@ -767,7 +780,7 @@ var comSlider = function() {
 	/*
 	TweenMax.set("#slider-testimonials .slider-item:not(.is-selected)", {scale: 0.75, transformOrigin: "bottom center"});
 
-	//var sliderTestimonials = $$("#slider-testimonials").flickity({});
+	//var sliderTestimonials = $("#slider-testimonials").flickity({});
 
 	$$("#slider-testimonials").on("select.flickity", function() {
 
@@ -795,8 +808,8 @@ var comSlider = function() {
 
 			if ( self.hasClass("anim-play") ) {
 
-				$$(pageContent).on("scrollstart", function() { self.flickity("pausePlayer"); } );
-				$$(pageContent).on("scrollstop", function() { self.flickity("unpausePlayer"); } );
+				$$(pageContent).on("scrollstart", function() { self.flickity("pausePlayer"); } )
+							   .on("scrollstop", function() { self.flickity("unpausePlayer"); } );
 
 				self.flickity("playPlayer");
 				//self.flickity("unpausePlayer");
@@ -827,31 +840,11 @@ var comStories = function() {
 	/* CACHE SELECTORS
 	/* -------------------------------------------------- */
 
-    var caseStudyUser = $$("#stories .profiles .cell"),
-    	caseStudies = $$("#stories .profiles"),
-        caseStudyJosh = $$("#josh"),
-        caseStudyShera = $$("#shera"),
-        caseStudyTina = $$("#tina");
-
-
-	/*
-	window.onresize = function () {
-
-
-			TweenMax.delayedCall(1, function() { 
-
-
-				caseStudiesHeight = $$("#user-stories .profiles").height(); // Store original 'height' of parent section.
-				console.log("Height: " + caseStudiesHeight);
-				TweenMax.to($caseStudies, 0.25, {height: caseStudiesHeight + 50, ease: Expo.easeIn});
-
-
-
-			});
-			
-
-	}
-	*/
+    var caseStudyUser = $("#stories .profiles .cell"),
+    	caseStudies = $("#stories .profiles"),
+        caseStudyJosh = $("#josh"),
+        caseStudyShera = $("#shera"),
+        caseStudyTina = $("#tina");
 
 
 	/* -------------------------------------------------- */
@@ -859,12 +852,12 @@ var comStories = function() {
 	/* -------------------------------------------------- */
 	
 	/*
-	var $textTrim = $$(".text-trim"),
+	var textTrim = $(".text-trim"),
 		maxCharCount = 100;    
 
 	$textTrim.each( function() {  
 		
-		var $self = $$(this).text();
+		var $self = $(this).text();
 		
 		if( $self.length < maxCharCount ) return;
 
@@ -906,32 +899,24 @@ var comStories = function() {
 		// JOSH
 		caseStudyUser.on("mouseover touchstart", function() {
 			
-			var self = $(this);
-			
-			self.addClass("overflow-hidden");
-			
-			TweenMax.to(self.find(".story-icon"), 0.75, {autoAlpha: 0, scale: 0.75, ease: Back.easeOut});
-			TweenMax.to(self.find(".text-container"), 1, {autoAlpha: 0, ease: Power4.easeOut});
-			TweenMax.to(self.find("a.button"), 1, {autoAlpha: 0, ease: Power4.easeOut});
-			TweenMax.to(self.find("[data-src]"), 0.5, {autoAlpha: 1, scale: 1, ease: Power4.easeOut});
+			var self = $(this),
+				tlCaseStudy = new TimelineMax({paused: false});
+				tlCaseStudy.add( function() { self.addClass("overflow-hidden"); }, "group-1" )
+						   .to(self.find(".story-icon"), 0.75, {autoAlpha: 0, scale: 0.75, ease: Back.easeOut}, "group-1")
+						   .to(self.find(".text-container"), 1, {autoAlpha: 0, ease: Power4.easeOut}, "group-1")
+						   .to(self.find("a.button"), 1, {autoAlpha: 0, ease: Power4.easeOut}, "group-1")
+						   .to(self.find("[data-src]"), 0.5, {autoAlpha: 1, scale: 1, ease: Power4.easeOut}, "group-1");
 			
 			
 		}).on("mouseout touchend touchleave", function() {
 			
-			var self = $(this);
-			
-			TweenMax.to(self.find(".text-container"), 0.75, {autoAlpha: 1, ease: Power4.easeOut});
-			TweenMax.to(self.find("a.button"), 0.75, {autoAlpha: 1, ease: Power4.easeOut});
-			TweenMax.to(self.find("[data-src]"), 0.25, {autoAlpha: 0, scale: 1.12, ease: Power4.easeOut,
-
-														   onComplete: function() {
-
-															   self.removeClass("overflow-hidden");
-															   TweenMax.to(self.find(".story-icon"), 0.5, {autoAlpha: 1, scale: 1, ease: Back.easeOut});
-				
-														   }
-
-														});
+			var self = $(this),
+				tlCaseStudy = new TimelineMax({paused: false});
+				tlCaseStudy.to(self.find(".text-container"), 0.75, {autoAlpha: 1, ease: Power4.easeOut}, "group-1")
+						   .to(self.find("a.button"), 0.75, {autoAlpha: 1, ease: Power4.easeOut}, "group-1")
+						   .to(self.find("[data-src]"), 0.25, {autoAlpha: 0, scale: 1.12, ease: Power4.easeOut}, "group-1")
+						   .to(self.find(".story-icon"), 0.5, {autoAlpha: 1, scale: 1, ease: Back.easeOut}, "group-1")
+						   .add( function() { self.removeClass("overflow-hidden"); }, "group-1" );
 			
 		});
 

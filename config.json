@@ -18,6 +18,11 @@
 		"assets": "assets/"
 	},
 
+	"accessibility": {
+		"allow": false,
+		"generateReport": true
+	},
+
 	"tracking": {
 
 		"ga": {
@@ -74,7 +79,11 @@
 
 		"sprite": {
 			"paths": "sprites/",
-			"convert": false,
+			"convert": {
+						"allow": true,
+						"format": "png",
+						"scale": "1"
+			},
 			"mode": "sprite",
 			"class": "sprite-wrapper",
 			"selector": "sprite",
@@ -88,7 +97,7 @@
 			"convert": {
 						"allow": true,
 						"format": "png",
-						"scale": "4"
+						"scale": "2"
 			},
 			"cleanup": true,
 			"minify": true,
@@ -126,24 +135,23 @@
 		},
 		
 		"inlineScripts": {
-			"js": ["_scripts/*.js"],
-			"css": ["css/critical.css"]
+			"js": "_scripts/*.js",
+			"css": "css/critical.css"
 		}
 	},
 	
 	"vendors": {
-		"useVendorScripts": false,
+		"allow": false,
 
 		"bundle": "vendors.js",
 		"lint": false,
-		"jsAttribute": "async",
+		"attribute": "async",
 
-		"paths": ["_vendors/*.js"]
+		"paths": "_vendors/*.js"
 	},
 
 	"styleguide": {
-		"allow": true,
-		"assets": ["!common/**/*.webp", "common/**/*", "icons/**/*", "social/**/*"]
+		"assets": ["!common/**/*.webp", "common/**/*"]
 	},
 
 	"optimizations": {
@@ -163,9 +171,8 @@
 			"flexbox": true,
 			"grid": false,
 			"log": true,
-			"preserveVariableProperties": false,
-			"preserveInjectedVariables": false,
-			"rebaseURL": false,
+			"preserveVariables": false,
+			"rebase": false,
 			"removeDuplicatedProperties": false,
 			"removeOutdatedPrefixes": true,
 			"supports": true,
@@ -175,7 +182,7 @@
 
 	"js": {
 		"bundle": "app.js",
-		"jsAttribute": "defer",
+		"attribute": "defer",
 		
 		"paths": ["<JQUERY>",
 				  "lib/jquery/jquery.js",
@@ -204,20 +211,24 @@
 				  ">>>>>lib/forms/login.js",
 
 
-				  "<WRAPPERS>",
+				  "<MEDIA / WRAPPERS>",
 				  ">>>>>lib/assets/fitvids.js",
 				  ">>>>>lib/assets/mediawrapper.js",
+				  "lib/assets/videocontroller.js",
 
 
 				  "<UTILITIES>",
 				  ">>>>>lib/assets/backbone.js",
 				  ">>>>>lib/assets/focusingly.js",
+				  "lib/assets/lodash.js",
 				  "lib/assets/lazyload.js",
 				  "lib/assets/passiveeventlisteners.js",
 				  "lib/assets/print.js",
+				  ">>>>>lib/assets/scrolllock.js",
 				  "lib/assets/scrollstartstop.js",
 				  ">>>>>lib/assets/smoothstate.js",
-				  "lib/assets/underscore.js",
+				  "lib/assets/throttle.js",
+				  ">>>>>lib/assets/underscore.js",
 				  "lib/assets/visibility.js",
 				  ">>>>>lib/assets/watch.js",
 
@@ -241,7 +252,6 @@
 
 
 				  "<SCROLL MANIPULATION>",
-				  ">>>>>lib/assets/scrolllock.js",
 				  "lib/dzsparallaxer/dzsparallaxer.js",
 				  "lib/assets/emergence.js",
 				  ">>>>>lib/assets/rellax.js",
@@ -270,6 +280,10 @@
 				  ">>>>>lib/gsap/plugins/ScrambleTextPlugin.js",
 				  "lib/gsap/plugins/SplitTextPlugin.js",
 				  ">>>>>lib/gsap/plugins/ThrowPropsPlugin.js",
+
+
+				  "<ANIMATION ENGINE (OTHER)>",
+				  "lib/micron/**/*.js",
 
 
 				  "<3D LIBS>",
@@ -309,8 +323,7 @@
 				  "<APP>",
 				  "lib/options.js",
 				  "lib/detect.js",
-				  "lib/animations.js",
-				  "lib/scenes.js",
+				  "lib/animations/*.js",
 				  ">>>>>lib/languages/en-strings.js",
 				  ">>>>>lib/languages/es-strings.js",
 				  ">>>>>lib/language.js",
@@ -322,7 +335,7 @@
 				  "lib/pages.js",
 				  ">>>>>lib/transition.js",
 				  "lib/app.js",
-				  ">>>>>lib/styleguide.js"
+				  ">>>>>lib/benchmark.js"
 				 ]
 	
 	},
@@ -357,6 +370,10 @@
 
 				  "<SCROLL MANIPULATION>",
 				  "lib/dzsparallaxer/dzsparallaxer.css",
+
+
+				  "<ANIMATION ENGINE (OTHER)>",
+				  "lib/micron/**/*.css",
 
 
 				  "<3D>",
@@ -398,11 +415,10 @@
 				  "<APP>",
 				  "css/copy.css",
 				  "css/layout.css",
-				  "lib/scenes/*.css",
 				  "css/rules.css",
 				  "css/theme.css",
 				  "css/responsive.css",
-				  ">>>>>css/styleguide.css"
+				  "css/accessibility.css"
 				 ]
 	
 	},

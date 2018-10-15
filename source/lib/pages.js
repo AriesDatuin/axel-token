@@ -2,9 +2,9 @@
 /* CACHE SELECTORS
 /* -------------------------------------------------- */
 	
-var page = $$(".page").data("page"),
+var page = $(".page").data("page"),
 	
-	linkHome = $$(".link-home");
+	linkHome = $(".link-home");
 
 
 /* -------------------------------------------------- */
@@ -36,8 +36,8 @@ var pages = function() {
 		var heroIntro = function() {
 
 
-	        var introParent = $$("#hero"),
-				introHeader = $$("#hero header");
+	        var introParent = $("#hero"),
+				introHeader = $("#hero header");
 	        
 			
 	        // SET-UP

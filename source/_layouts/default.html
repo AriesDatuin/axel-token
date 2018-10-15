@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html lang="en" prefix="og: http://ogp.me/ns#">
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
 <head>
 <title>--name | {{{ title }}}</title>
 <meta charset="utf-8">
@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes, user-scalable=yes, viewport-fit=cover">
 
 
-<!-- CANONLICAL -->
+<!-- CANONICAL -->
 {{#ifpage 'index'}}
 	<link rel="canonical" href="--url">
 {{/ifpage}}
@@ -16,7 +16,7 @@
 {{#unlesspage 'index'}}
 	<link rel="canonical" href="--url{{ page }}">
 {{/unlesspage}}
-<!-- // CANONLICAL -->
+<!-- // CANONICAL -->
 
 
 <!-- CORE -->
@@ -82,15 +82,15 @@
 
 
 
-<!-- build:critical -->
+<!-- build:inlinecss -->
 <!-- endbuild -->
 
 
-<!-- build:css -->
-<!-- endbuild -->
+<!-- inject:app:css -->
+<!-- endinject -->
 
 
-<!-- build:inlinescripts -->
+<!-- build:inlinejs -->
 <!-- endbuild -->
 
 
@@ -108,8 +108,8 @@
 	<!-- JAVASCRIPT DISABLED MESSAGE / NOTE: AFFECTS PAGE SPEED INDEX SCORE. MOVE UNDER build:css. -->
 	<noscript>
 
-		<!-- build:css -->
-		<!-- endbuild -->	
+		<!-- inject:app:css -->
+		<!-- endinject -->
 
 		<div>
 			<img src="assets/error.gif" alt="Ooops, your JavaScript is disabled."/>
@@ -126,7 +126,7 @@
 
 	<!-- ERROR -->
 	<div id="error">
-		<p>Please resize your window or rotate <span class="fa fa-repeat margin-lr-xs" aria-hidden="true"></span> your phone to portrait mode.</p>
+		<p>Please resize your window or rotate your phone to portrait mode.</p>
 	</div>
 	<!-- // ERROR -->
 
@@ -182,16 +182,20 @@
 	<!-- // CONTAINER -->
 
 
+	{{> modal}}
+	{{> blocker}}
 
 
 
-	<!-- build:js -->
-	<!-- endbuild -->
+
+
+	<!-- inject:app:js -->
+	<!-- endinject -->
 
 
 	<!--removeIf(removeVendor)-->
-	<!-- build:vendors -->
-	<!-- endbuild -->
+	<!-- inject:vendors:js -->
+	<!-- endinject -->
 	<!--endRemoveIf(removeVendor)-->
 
 

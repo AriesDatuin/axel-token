@@ -185,7 +185,7 @@ main section {
 		/* -------------------------------------------------- */
 
 		/* X */
-		.grid-x.grid-margin-x > .cell:not(.margin-none):not(.margin-top-none):not(.margin-left-none):not(.margin-bottom-none):not(.margin-right-none):not(.margin-tb-none):not(.margin-lr-none) {
+		.grid-x.grid-margin-x > .cell:not(.margin-none-mobile):not(.margin-top-none-mobile):not(.margin-left-none-mobile):not(.margin-bottom-none-mobile):not(.margin-right-none-mobile):not(.margin-tb-none-mobile):not(.margin-lr-none-mobile) {
 			/*
 			margin-top: var(--cell-margin-top-mobile);
 			margin-left: var(--cell-margin-left-mobile);
@@ -196,7 +196,7 @@ main section {
 
 
 		/* Y */
-		.grid-y.grid-margin-y > .cell:not(.margin-none) {
+		.grid-y.grid-margin-y > .cell:not(.margin-none-mobile) {
 			/*
 			margin-top: var(--cell-margin-top-mobile);
 			margin-bottom: var(--cell-margin-bottom-mobile);
@@ -248,7 +248,7 @@ main section {
 		/* -------------------------------------------------- */
 
 		/* X */
-		.grid-x.grid-padding-x > .cell:not(.padding-none):not(.padding-top-none):not(.padding-left-none):not(.padding-bottom-none):not(.padding-right-none):not(.padding-tb-none):not(.padding-lr-none) {
+		.grid-x.grid-padding-x > .cell:not(.padding-none-mobile):not(.padding-top-none-mobile):not(.padding-left-none-mobile):not(.padding-bottom-none-mobile):not(.padding-right-none-mobile):not(.padding-tb-none-mobile):not(.padding-lr-none-mobile) {
 			padding-top: var(--cell-padding-top-mobile);
 			padding-left: var(--cell-padding-left-mobile);
 			padding-bottom: var(--cell-padding-bottom-mobile);
@@ -257,7 +257,7 @@ main section {
 
 
 		/* Y */
-		.grid-y.grid-padding-y > .cell:not(.padding-none) {
+		.grid-y.grid-padding-y > .cell:not(.padding-none-mobile) {
 			padding-top: var(--cell-padding-top-mobile);
 			padding-bottom: var(--cell-padding-bottom-mobile);
 		}
@@ -271,7 +271,7 @@ main section {
 			padding-right: 0;
 		}
 
-
+		
 		.grid-x.grid-padding-x > .cell.padding-left-none-mobile {
 			padding-left: 0;
 		}
@@ -366,7 +366,7 @@ main section {
 
 
 /* CHILD */
-.button-group .button {
+.button-group:not(.margin-none) .button {
 	margin-left: 1rem;
 	margin-right: 1rem;
 	font-size: 1em;
@@ -378,6 +378,13 @@ main section {
 
 .button-group .button:last-child {
 	margin-right: 0;
+}
+
+
+.button-group.margin-none .button {
+	margin-left: 0;
+	margin-right: 0;
+	font-size: 1em;
 }
 
 

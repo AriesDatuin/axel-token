@@ -1,0 +1,22 @@
+/* -------------------------------------------------- */
+/* ROCKET
+/* -------------------------------------------------- */
+
+.rocket {
+	position: relative;
+	font-size: 1.75em;
+	text-align: center;
+}
+
+.chem-trail {
+	opacity: 0;
+	display: none;
+	position: absolute;
+	left: -258px;
+	bottom: -237px;
+	width: 5px;
+	height: 500px;
+	border-radius: 100px;
+	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+	transform: rotate(-270deg);
+}

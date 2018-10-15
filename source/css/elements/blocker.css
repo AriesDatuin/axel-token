@@ -3,9 +3,8 @@
 /* -------------------------------------------------- */
 
 /* PARENT */
-.blocker {
+#blocker {
 	cursor: default;
-	opacity: 0;
 	display: none;
 	position: fixed;
 	top: 0;

@@ -19,19 +19,8 @@ h1, h2, h3, h4, h5, h6,
     font-family: var(--font-heavy);
 }
 
-.font-paragraph {
+.font-copy {
     font-family: var(--font-copy);
-}
-
-blockquote p,
-.font-blockquote {
-    /*font-family: var(--font-copy);*/
-}
-
-cite,
-.font-cite {
-    /*font-family: var(--font-copy);*/
-	font-style: italic;
 }
 
 .font-system {
@@ -213,7 +202,6 @@ blockquote p, cite {
 /* -------------------------------------------------- */
 
  /* COMMMON */
-.header-accent::after,
 .header-accent-left::after,
 .header-accent-right::after,
 .header-accent-center::after {
@@ -243,15 +231,15 @@ blockquote p, cite {
 
 
 /* STYLES */
-.header-accent-quarter::after {
+.header-accent-25::after {
 	width: 25%;
 }
 
-.header-accent-half::after {
+.header-accent-50::after {
 	width: 50%;
 }
 
-.header-accent-three-quarters::after {
+.header-accent-75::after {
 	width: 75%;
 }
 

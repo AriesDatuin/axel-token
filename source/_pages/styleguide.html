@@ -7,7 +7,7 @@ modals: modals/en/
 
 
 <!-- CONTENT -->
-<main id="content" class="page position-relative center-element padding-top-lg-mobile padding-bottom-xl width-md off-canvas-content" data-page="{{ page }}" data-off-canvas-content tabindex="-1">
+<main id="content" class="page position-relative center padding-top-lg-mobile padding-bottom-xl width-md off-canvas-content" data-page="{{ page }}" data-off-canvas-content role="main">
 
 
 	<!-- FONT FAMILY CONTAINER !DO NOT DELETE! -->
@@ -15,7 +15,7 @@ modals: modals/en/
 		<div class="font-header"></div>
 		<div class="font-subheader"></div>
 		<div class="font-heavy"></div>
-		<div class="font-paragraph"></div>
+		<div class="font-copy"></div>
 	</div>
 	<!-- // FONT FAMILY CONTAINER !DO NOT DELETE! -->
 
@@ -24,7 +24,7 @@ modals: modals/en/
 
 
 	<!-- SECTION: HERO -->
-	<section id="introduction">
+	<section id="introduction" class="margin-top-lg margin-top-none-mobile">
 
 
 		<!-- BLOCK CAP -->
@@ -94,25 +94,21 @@ modals: modals/en/
 
 
 		<!-- GRID -->
-		<div class="grid-x grid-padding-x align-stretch small-up-1 medium-up-2 position-relative">
+		<div class="grid-x grid-padding-x align-stretch position-relative">
 
 
 			<!-- CELL -->
 			<div class="cell">
 
-				<a href="{{ root }}--name-brand-assets.zip" id="download-graphic-assets" class="round-full button button-fx-secondary button-fx-flat button-fx-static box-shadow-sm box-shadow-xl-hover anim-top" download>Graphic Assets</a>
+				<!-- BUTTON GROUP -->
+				<div class="button-group expanded stacked-for-small center">
 
+					<a href="{{ root }}--name-brand-assets.zip" id="download-graphic-assets" class="round-full button button-fx-secondary button-fx-flat button-fx-static box-shadow-sm box-shadow-xl-hover anim-top" download>Graphic Assets</a>
 
-			</div>
-			<!-- // CELL -->
+					<a href="#" id="download-font-assets" class="round-full button button-fx-secondary button-fx-flat button-fx-static box-shadow-sm box-shadow-xl-hover anim-top" download>Fonts</a>
 
-
-
-
-			<!-- CELL -->
-			<div class="cell">
-
-				<a href="#" id="download-font-assets" class="round-full button button-fx-secondary button-fx-flat button-fx-static box-shadow-sm box-shadow-xl-hover anim-top" download>Fonts</a>
+				</div>
+				<!-- // BUTTON GROUP -->
 
 
 			</div>
@@ -363,7 +359,7 @@ modals: modals/en/
 
 
 	<!-- SECTION: STATUS COLORS -->
-	<section id="misc-colors">
+	<section id="status-colors">
 
 
 		<!-- HEADER -->
@@ -403,7 +399,7 @@ modals: modals/en/
 
 				<!-- SAMPLE -->
 				<li class="text-warning">
-					<span class="margin-right-xxs background-warning"></span>Yellow
+					<span class="margin-right-xxs background-warning"></span>Warning
 				</li>
 				<!-- // SAMPLE -->
 
@@ -473,7 +469,7 @@ modals: modals/en/
 
 
 				<!-- IMAGE -->
-				<img class="center-element lazy" alt="Primary --name logo" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/logo-primary.svg">
+				<img class="center lazy" alt="Primary --name logo" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/logo-primary.svg">
 				<!-- // IMAGE -->
 
 
@@ -486,7 +482,7 @@ modals: modals/en/
 
 
 				<!-- IMAGE -->
-				<img class="center-element lazy" alt="Secondary --name logo" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/logo-secondary.svg">
+				<img class="center lazy" alt="Secondary --name logo" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/logo-secondary.svg">
 				<!-- // IMAGE -->
 
 
@@ -499,7 +495,7 @@ modals: modals/en/
 
 
 				<!-- IMAGE -->
-				<img class="center-element lazy" alt="Dark --name logo" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/logo-dark.svg">
+				<img class="center lazy" alt="Dark --name logo" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/logo-dark.svg">
 				<!-- // IMAGE -->
 
 
@@ -512,7 +508,7 @@ modals: modals/en/
 
 
 				<!-- IMAGE -->
-				<div class="round-xxs center-element background-charcoal">
+				<div class="round-xxs center background-charcoal">
 					<img class="padding-xs lazy" alt="Light --name logo" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/logo-light.svg">
 				</div>
 				<!-- // IMAGE -->
@@ -535,7 +531,7 @@ modals: modals/en/
 
 
 				<!-- IMAGE -->
-				<img class="center-element wh-xs lazy" alt="Primary --name logo" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/logo-primary.svg">
+				<img class="center wh-xs lazy" alt="Primary --name logo" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/logo-primary.svg">
 				<!-- // IMAGE -->
 
 
@@ -548,7 +544,7 @@ modals: modals/en/
 
 
 				<!-- IMAGE -->
-				<img class="center-element wh-xs lazy" alt="Secondary --name logo" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/logo-secondary.svg">
+				<img class="center wh-xs lazy" alt="Secondary --name logo" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/logo-secondary.svg">
 				<!-- // IMAGE -->
 
 
@@ -561,7 +557,7 @@ modals: modals/en/
 
 
 				<!-- IMAGE -->
-				<img class="center-element wh-xs lazy" alt="Dark --name logo" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/logo-dark.svg">
+				<img class="center wh-xs lazy" alt="Dark --name logo" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/logo-dark.svg">
 				<!-- // IMAGE -->
 
 
@@ -574,7 +570,7 @@ modals: modals/en/
 
 
 				<!-- IMAGE -->
-				<div class="round-xxs center-element wh-xs background-charcoal">
+				<div class="round-xxs center wh-xs background-charcoal">
 					<img class="padding-xs lazy" alt="Light --name logo" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/logo-light.svg">
 				</div>
 				<!-- // IMAGE -->
@@ -613,8 +609,8 @@ modals: modals/en/
 
 
 				<!-- IMAGE -->
-				<div class="center-element round-lg wh-xxs background-transparent">
-					<img class="padding-xs lazy" alt="Light --name logo" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/icon-primary.svg">
+				<div class="center round-lg wh-xxs background-transparent">
+					<img class="padding-xs lazy" alt="Primary --name logo" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/icon-primary.svg">
 				</div>
 				<!-- // IMAGE -->
 
@@ -628,8 +624,8 @@ modals: modals/en/
 
 
 				<!-- IMAGE -->
-				<div class="center-element round-lg wh-xxs background-transparent">
-					<img class="padding-xs center-element lazy" alt="Light --name logo" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/icon-secondary.svg">
+				<div class="center round-lg wh-xxs background-transparent">
+					<img class="padding-xs center lazy" alt="Secondary --name logo" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/icon-secondary.svg">
 				</div>
 				<!-- // IMAGE -->
 
@@ -643,8 +639,8 @@ modals: modals/en/
 
 
 				<!-- IMAGE -->
-				<div class="center-element round-lg wh-xxs background-transparent">
-					<img class="padding-xs lazy" alt="Light --name logo" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/icon-dark.svg">
+				<div class="center round-lg wh-xxs background-transparent">
+					<img class="padding-xs lazy" alt="Dark --name logo" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/icon-dark.svg">
 				</div>
 				<!-- // IMAGE -->
 
@@ -658,7 +654,7 @@ modals: modals/en/
 
 
 				<!-- IMAGE -->
-				<div class="center-element round-lg wh-xxs background-secondary">
+				<div class="center round-lg wh-xxs background-secondary">
 					<img class="padding-xs lazy" alt="Light --name logo" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/icon-light.svg">
 				</div>
 				<!-- // IMAGE -->
@@ -675,6 +671,59 @@ modals: modals/en/
 	</section>
 	<!-- // SECTION: APP ICON -->
 
+
+
+
+
+	<!-- SECTION: VISUAL EXAMPLES -->
+	<section id="visual-examples" class="position-relative">
+
+
+		<!-- HEADER -->
+		<h2 class="padding-auto header-style">Visual Sample Images</h2>
+		<!-- // HEADER -->
+
+
+		<!-- GRID -->
+		<div class="grid-x grid-padding-x align-center align-middle small-up-2 medium-up-2 large-up-3 position-relative">
+
+
+			<!-- CELL -->
+			<img class="lazy cell" alt="Sample 1" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/big-ideas.svg">
+			<!-- // CELL -->
+
+
+			<!-- CELL -->
+			<img class="lazy cell" alt="Sample 2" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/join-us.svg">
+			<!-- // CELL -->
+
+
+			<!-- CELL -->
+			<img class="lazy cell" alt="Sample 3" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/scalable.svg">
+			<!-- // CELL -->
+
+
+			<!-- CELL -->
+			<img class="lazy cell" alt="Sample 4" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/shopping.svg">
+			<!-- // CELL -->
+
+
+			<!-- CELL -->
+			<img class="lazy cell" alt="Sample 5" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/teamwork.svg">
+			<!-- // CELL -->
+
+
+			<!-- CELL -->
+			<img class="lazy cell" alt="Sample 6" src="{{root}}{{assets}}blank.svg" data-src="{{ root }}{{ assets }}common/tokens.svg">
+			<!-- // CELL -->
+
+
+		</div>
+		<!-- // GRID -->
+
+
+	</section>
+	<!-- // SECTION: VISUAL EXAMPLES -->
 
 
 
@@ -725,19 +774,19 @@ modals: modals/en/
 			<ul class="cell">
 
 				<!-- SAMPLE -->
-				<li class="prop-css-font-family text-bold font-paragraph"><!-- CSS PROP INFO --></li>
+				<li class="prop-css-font-family text-bold font-copy"><!-- CSS PROP INFO --></li>
 				<!-- // SAMPLE -->
 
 				<!-- CSS PROP INFO -->
 				<li>
 
 					<ul class="margin-top-sm margin-lr-none p10 text-truncate">
-						<li><h1 class="prop-css-font-attributes font-paragraph text-primary">H1 Subheader Title</h1></li>
-						<li><h2 class="prop-css-font-attributes font-paragraph text-secondary">H2 Subheader Title</h2></li>
-						<li><h3 class="prop-css-font-attributes font-paragraph text-secondary">H3 Subheader Title</h3></li>
-						<li><h4 class="prop-css-font-attributes font-paragraph text-secondary">H4 Subheader Title</h4></li>
-						<li><h5 class="prop-css-font-attributes font-paragraph">H5 Subheader Title</h5></li>
-						<li><h6 class="prop-css-font-attributes font-paragraph">H6 Subheader Title</h6></li>
+						<li><h1 class="prop-css-font-attributes font-copy text-primary">H1 Subheader Title</h1></li>
+						<li><h2 class="prop-css-font-attributes font-copy text-secondary">H2 Subheader Title</h2></li>
+						<li><h3 class="prop-css-font-attributes font-copy text-secondary">H3 Subheader Title</h3></li>
+						<li><h4 class="prop-css-font-attributes font-copy text-secondary">H4 Subheader Title</h4></li>
+						<li><h5 class="prop-css-font-attributes font-copy">H5 Subheader Title</h5></li>
+						<li><h6 class="prop-css-font-attributes font-copy">H6 Subheader Title</h6></li>
 					</ul>
 
 				</li>
@@ -759,7 +808,7 @@ modals: modals/en/
 			<ul class="cell">
 
 				<!-- SAMPLE -->
-				<li class="prop-css-font-family text-bold font-paragraph"><!-- CSS PROP INFO --></li>
+				<li class="prop-css-font-family text-bold font-copy"><!-- CSS PROP INFO --></li>
 				<!-- // SAMPLE -->
 
 				<!-- CSS PROP INFO -->
@@ -780,7 +829,7 @@ modals: modals/en/
 			<ul class="cell">
 
 				<!-- SAMPLE -->
-				<li class="prop-css-font-family text-bold font-paragraph"><!-- CSS PROP INFO --></li>
+				<li class="prop-css-font-family text-bold font-copy"><!-- CSS PROP INFO --></li>
 				<!-- // SAMPLE -->
 
 				<!-- CSS PROP INFO -->
@@ -1021,9 +1070,9 @@ modals: modals/en/
 
 
 				<!-- NOTE -->
-				<div class="prop-note-block display-block position-relative margin-top-sm padding-md round-sm text-white background-charcoal">
+				<div class="prop-note-block">
 					<strong>Note</strong><br>
-					There is no limit to how many buttons can be placed inside <span>.button-group</span>, though this will be determined by the width of your container content. It is recommened to limit the button amount to 4.
+					There is no limit to how many buttons can be placed inside <span>.button-group</span>, although this will be determined by the width of your container content. It is recommened to limit the button amount to 2.
 				</div>
 				<!-- // NOTE -->
 
@@ -1050,9 +1099,9 @@ modals: modals/en/
 		<!-- HEADER -->
 		<header class="padding-auto">
 
-			<h2 class="header-style">Modal Component</h2>
+			<h2 class="header-style">Modal/Dialog Component</h2>
 
-			<p>Modals can be used to load external HTML content within the same domain or subdomain. This component will not allow content loaded from other domains or web pages due to performance and security.</p>
+			<p>Modals can be used to load external HTML content within the same domain or subdomain. This component will not allow content loaded from other domains or websites for security and performance reasons. The component will only allow 1 modal at a time. Use modals sparignly!</p>
 
 		</header>
 		<!-- // HEADER -->
@@ -1065,13 +1114,17 @@ modals: modals/en/
 
 			<ul class="list-vertical list-margin-tb-xs margin-top-sm code-highlight">
 
-				<li><span>data-content-url="path"</span> - Url path to external content. Used on block-level elements such as div's and li's.</li>
+				<li><code>data-content-url="path"</code> - Url path to external content. Used on block-level elements such as div's and li's.</li>
 
-				<li><span>data-content-selector="id-selector"</span> - the selector id to load the content, ex: #my-selector</li>
+				<li><code>data-content-selector="id-selector"</code> - the selector id to load the content, ex: #my-selector</li>
 
-				<li><span>data-content-width="400"</span> - Define a fixed width or set to <i>auto</i> and the modal will resize appropriately according to the browser's width.</li>
+				<li><code>data-content-width="400"</code> - Define a fixed width or set to <i>auto</i> and the modal will resize appropriately according to the browser's width.</li>
 
-				<li><span>data-content-height="600</span> - Define a fixed height or set to <i>auto</i> and the modal will resize appropriately according to the browser's height.</li>
+				<li><code>data-content-height="600</code> - Define a fixed height or set to <i>auto</i> and the modal will resize appropriately according to the browser's height.</li>
+
+				<li><code>modal-title="My Dialog Box"</code> - For accessibility, use this class to define the content's main title.</li>
+
+				<li><code>modal-description="This is a dialog box."</code> - For accessibility, use this class to define the content's description.</li>
 
 			</ul>
 
@@ -1087,23 +1140,23 @@ modals: modals/en/
 			<div class="cell">
 
 
-				<a href="{{ modals }}sample" class="round-full button button-fx-primary button-fx-flat button-fx-static box-shadow-sm box-shadow-xl-hover anim-top prevent-default" data-content-selector="modal-sample" data-content-width="650" data-content-height="auto">Open Modal</a>
+				<button href="{{ modals }}sample" class="round-full button button-fx-primary button-fx-flat button-fx-static box-shadow-sm box-shadow-xl-hover anim-top prevent-default" data-content-url="{{ modals }}sample" data-content-selector="modal-sample" data-content-width="auto" data-content-height="auto">Open Modal</button>
 
 
 				<!-- NOTE -->
-				<div class="prop-note-block copy-to-clipboard display-block position-relative margin-top-sm padding-md round-sm text-white background-charcoal">
+				<div class="prop-note-block copy-to-clipboard">
 
 
 					<!-- HEADER -->
 					<strong>Attributes</strong><br>
-					<p class="text-italic p10 text-light-grey">Used with an 'href' attribute.</p>
+					<p class="text-italic p10 text-light-grey">Used with a 'button' element, 'data-content-url' and sizing set to 'auto'.</p>
 					<!-- // HEADER -->
 
 
 					<!-- CONTENT -->
-					<p class="copy-to-clipboard-content">
-						href="path/to/modal/content" data-content-selector="id-selector" data-content-selector="650" data-content-height="650"
-					</p>
+					<code class="copy-to-clipboard-content">
+						data-content-url="path/to/modal/content" data-content-selector="id-selector" data-content-width="auto" data-content-height="auto"
+					</code>
 					<!-- // CONTENT -->
 
 
@@ -1127,23 +1180,23 @@ modals: modals/en/
 			<div class="cell">
 
 
-				<div class="round-full button button-fx-primary button-fx-flat button-fx-static box-shadow-sm box-shadow-xl-hover anim-top prevent-default" data-content-url="{{ modals }}sample" data-content-selector="modal-sample" data-content-width="650" data-content-height="auto">Open Modal</div>
+				<div class="round-full button button-fx-primary button-fx-flat button-fx-static box-shadow-sm box-shadow-xl-hover anim-top prevent-default" data-content-url="{{ modals }}sample" data-content-selector="modal-sample" data-content-width="650" data-content-height="650">Open Modal</div>
 
 
 				<!-- NOTE -->
-				<div class="prop-note-block copy-to-clipboard display-block position-relative margin-top-sm padding-md round-sm text-white background-charcoal">
+				<div class="prop-note-block copy-to-clipboard">
 
 
 					<!-- HEADER -->
 					<strong>Attributes</strong><br>
-					<p class="text-italic p10 text-light-grey">Used with a 'data-content-url' attribute.</p>
+					<p class="text-italic p10 text-light-grey">Used with a 'div' element and 'data-content-url' attribute with fixed sizing.</p>
 					<!-- // HEADER -->
 
 
 					<!-- CONTENT -->
-					<p class="copy-to-clipboard-content">
-						data-content-url="path/to/modal/content" data-content-selector="id-selector" data-content-selector="650" data-content-height="650"
-					</p>
+					<code class="copy-to-clipboard-content">
+						data-content-url="path/to/modal/content" data-content-selector="id-selector" data-content-width="650" data-content-height="400"
+					</code>
 					<!-- // CONTENT -->
 
 
@@ -1171,19 +1224,19 @@ modals: modals/en/
 
 
 				<!-- NOTE -->
-				<div class="prop-note-block copy-to-clipboard display-block position-relative margin-top-sm padding-md round-sm text-white background-charcoal">
+				<div class="prop-note-block copy-to-clipboard">
 
 
 					<!-- HEADER -->
 					<strong>Attributes</strong><br>
-					<p class="text-italic p10 text-light-grey">Used with a hyperlink text.</p>
+					<p class="text-italic p10 text-light-grey">Used with hyperlink text.</p>
 					<!-- // HEADER -->
 
 
 					<!-- CONTENT -->
-					<p class="copy-to-clipboard-content">
-						href="path/to/modal/content" data-content-selector="id-selector" data-content-selector="650" data-content-height="650"
-					</p>
+					<code class="copy-to-clipboard-content">
+						href="path/to/modal/content" data-content-selector="id-selector" data-content-width="650" data-content-height="650"
+					</code>
 					<!-- // CONTENT -->
 
 
@@ -1214,14 +1267,16 @@ modals: modals/en/
 
 
 
-	<!-- SECTION: BASIC ANIMATIONS -->
-	<section id="animations" class="emergence-ignore" data-emergence="hidden">
+	<!-- SECTION: MOUSEOVER ANIMATIONS -->
+	<section id="hover-animations" class="emergence-ignore" data-emergence="hidden">
 
 
 		<!-- HEADER -->
 		<header class="padding-auto">
 
-			<h2 class="header-style">Basic Animations</h2>
+			<h2 class="header-style">Mouse Over Animations (CSS Transitions)</h2>
+
+			<p>These animations are disabled on mobile devices.</p>
 
 		</header>
 		<!-- // HEADER -->
@@ -1234,9 +1289,9 @@ modals: modals/en/
 
 			<ul class="list-vertical list-margin-tb-xs margin-top-sm code-highlight">
 
-				<li><span>anim-play</span> - Play the element's animation.</li>
+				<li><code>anim-play</code> - Play the element's animation.</li>
 
-				<li><span>anim-interact</span> - The element's animation will play once when in the viewport, and will play on mouse or touch interaction.</li>
+				<li><code>anim-interact</code> - The element's animation will play once when in the viewport, and will play on mouse or touch interaction.</li>
 
 			</ul>
 
@@ -1335,22 +1390,22 @@ modals: modals/en/
 
 
 	</section>
-	<!-- // SECTION: BSIC ANIMATIONS -->
+	<!-- // SECTION: MOUSEOVER ANIMATIONS -->
 
 
 
 
 
-	<!-- SECTION: ADVANCED ANIMATIONS -->
-	<section id="animations" class="emergence-ignore" data-emergence="hidden">
+	<!-- SECTION: MICROINTERACTIONS -->
+	<section id="micro-interactions" class="emergence-ignore" data-emergence="hidden">
 
 
 		<!-- HEADER -->
 		<header class="padding-auto">
 
-			<h2 class="header-style">Advanced Animations</h2>
+			<h2 class="header-style">Microinteractions (CSS Animations with JS Manipulation)</h2>
 
-			<p>By default animations are paused when the element is not in the viewport. When the element is visible in the viewport the animation will automatically play. Most animations will loop or repeat indefinitely. You can prevent this by using <i>anim-interact</i> and the element's animation will only play once when in the viewport and can play again on mouse or touch interaction.</p>
+			<p>For microinteractions, the framework utilizes the <a href="https://webkul.github.io/micron/docs.html" target="_blank" class="text-bold text-secondary text-accent-hover">Micron JS animation library</a>. Microinteractions will trigger on mouseover as well as touchstart events.</p>
 
 		</header>
 		<!-- // HEADER -->
@@ -1363,9 +1418,13 @@ modals: modals/en/
 
 			<ul class="list-vertical list-margin-tb-xs margin-top-sm code-highlight">
 
-				<li><span>anim-play</span> - Play the element's animation.</li>
+				<li><code>data-micron="interaction"</code> - Define an animtion type: <strong>blink, bounce, fade, flicker, groove, jelly, jerk, pop, shake, squeeze, swing, tada</strong>.</li>
 
-				<li><span>anim-interact</span> - The element's animation will play once when in the viewport, and will play on mouse or touch interaction.</li>
+				<li><code>data-micron-duration="number"</code> - Define the duration (in seconds) of the animation.</li>
+
+				<li><code>data-micron-timing="type"</code> - Define the timing or easing: <strong>linear, ease-in, ease-out, ease-in-out</strong>.</li>
+
+				<li><code>data-micron-bind="true" data-micron-id="id-selector"</code> - Define the triggering element, and interaction will be applied to the element which reference to the defined id attribute.</li>
 
 			</ul>
 
@@ -1374,18 +1433,44 @@ modals: modals/en/
 
 
 		<!-- GRID -->
-		<div class="grid-x grid-padding-x align-stretch small-up-1 medium-up-2 large-up-4 position-relative">
+		<div class="grid-x grid-padding-x align-stretch small-up-1 medium-up-2 large-up-3 position-relative">
 
 
 			<!-- CELL -->
 			<div class="cell">
 
-				<p class="margin-bottom p10 text-bold">Appear</p>
-				<ul class="prop-class-list list-horizontal list-margin-lr-xxs anim anim-appear">
-					<li class="round-md wh-xxxs background-secondary"></li>
-					<li class="round-md wh-xxxs background-secondary"></li>
-					<li class="round-md wh-xxxs background-secondary"></li>
-				</ul>
+				<!-- SAMPLE -->
+				<p class="margin-bottom p10 text-bold">Blink</p>
+				<div class="round-md wh-xxxs background-secondary" data-micron="blink" data-micron-duration=".5" data-micron-timing="ease-out"></div>
+				<!-- // SAMPLE -->
+
+
+				<!-- NOTE -->
+				<div class="prop-note-block copy-to-clipboard">
+
+
+					<!-- HEADER -->
+					<strong>Attributes</strong><br>
+					<!-- // HEADER -->
+
+
+					<!-- CONTENT -->
+					<code class="copy-to-clipboard-content">
+						 data-micron="blink"
+					</code>
+					<!-- // CONTENT -->
+
+
+					<!-- BUTTON -->
+					<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+						<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+						<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+					</a>
+					<!-- // BUTTON -->
+
+
+				</div>
+				<!-- // NOTE -->
 
 			</div>
 			<!-- // CELL -->
@@ -1394,8 +1479,38 @@ modals: modals/en/
 			<!-- CELL -->
 			<div class="cell">
 
+				<!-- SAMPLE -->
 				<p class="margin-bottom p10 text-bold">Bounce</p>
-				<div class="prop-class-list round-md wh-xxxs background-secondary anim anim-bounce"></div>
+				<div class="round-md wh-xxxs background-secondary" data-micron="bounce" data-micron-duration=".5" data-micron-timing="ease-out"></div>
+				<!-- // SAMPLE -->
+
+
+				<!-- NOTE -->
+				<div class="prop-note-block copy-to-clipboard">
+
+
+					<!-- HEADER -->
+					<strong>Attributes</strong><br>
+					<!-- // HEADER -->
+
+
+					<!-- CONTENT -->
+					<code class="copy-to-clipboard-content">
+						 data-micron="bounce"
+					</code>
+					<!-- // CONTENT -->
+
+
+					<!-- BUTTON -->
+					<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+						<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+						<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+					</a>
+					<!-- // BUTTON -->
+
+
+				</div>
+				<!-- // NOTE -->
 
 			</div>
 			<!-- // CELL -->
@@ -1404,28 +1519,38 @@ modals: modals/en/
 			<!-- CELL -->
 			<div class="cell">
 
-				<p class="margin-bottom p10 text-bold">Dance</p>
-				<div class="prop-class-list round-md wh-xxxs background-secondary anim anim-dance"></div>
-
-			</div>
-			<!-- // CELL -->
-
-
-			<!-- CELL -->
-			<div class="cell">
-
-				<p class="margin-bottom p10 text-bold">Heartbeat</p>
-				<div class="prop-class-list round-md wh-xxxs background-secondary anim anim-beat"></div>
-
-			</div>
-			<!-- // CELL -->
-
-
-			<!-- CELL -->
-			<div class="cell">
-
+				<!-- SAMPLE -->
 				<p class="margin-bottom p10 text-bold">Fade</p>
-				<div class="prop-class-list round-md wh-xxxs background-secondary anim anim-fade"></div>
+				<div class="round-md wh-xxxs background-secondary" data-micron="fade" data-micron-duration=".5" data-micron-timing="ease-out"></div>
+				<!-- // SAMPLE -->
+
+
+				<!-- NOTE -->
+				<div class="prop-note-block copy-to-clipboard">
+
+
+					<!-- HEADER -->
+					<strong>Attributes</strong><br>
+					<!-- // HEADER -->
+
+
+					<!-- CONTENT -->
+					<code class="copy-to-clipboard-content">
+						 data-micron="fade"
+					</code>
+					<!-- // CONTENT -->
+
+
+					<!-- BUTTON -->
+					<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+						<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+						<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+					</a>
+					<!-- // BUTTON -->
+
+
+				</div>
+				<!-- // NOTE -->
 
 			</div>
 			<!-- // CELL -->
@@ -1434,12 +1559,38 @@ modals: modals/en/
 			<!-- CELL -->
 			<div class="cell">
 
-				<p class="margin-bottom p10 text-bold">Float</p>
-				<ul class="prop-class-list list-horizontal list-margin-lr-xxs">
-					<li class="round-md wh-xxxs background-secondary anim anim-float"></li>
-					<li class="round-md wh-xxxs background-secondary anim anim-float"></li>
-					<li class="round-md wh-xxxs background-secondary anim anim-float"></li>
-				</ul>
+				<!-- SAMPLE -->
+				<p class="margin-bottom p10 text-bold">Flicker</p>
+				<div class="round-md wh-xxxs background-secondary" data-micron="flicker" data-micron-duration=".5" data-micron-timing="ease-out"></div>
+				<!-- // SAMPLE -->
+
+
+				<!-- NOTE -->
+				<div class="prop-note-block copy-to-clipboard">
+
+
+					<!-- HEADER -->
+					<strong>Attributes</strong><br>
+					<!-- // HEADER -->
+
+
+					<!-- CONTENT -->
+					<code class="copy-to-clipboard-content">
+						 data-micron="flicker"
+					</code>
+					<!-- // CONTENT -->
+
+
+					<!-- BUTTON -->
+					<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+						<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+						<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+					</a>
+					<!-- // BUTTON -->
+
+
+				</div>
+				<!-- // NOTE -->
 
 			</div>
 			<!-- // CELL -->
@@ -1448,8 +1599,318 @@ modals: modals/en/
 			<!-- CELL -->
 			<div class="cell">
 
-				<p class="margin-bottom p10 text-bold">Rattle</p>
-				<div class="prop-class-list round-md wh-xxxs background-secondary anim anim-rattle"></div>
+				<!-- SAMPLE -->
+				<p class="margin-bottom p10 text-bold">Groove</p>
+				<div class="round-md wh-xxxs background-secondary" data-micron="groove" data-micron-duration=".5" data-micron-timing="ease-out"></div>
+				<!-- // SAMPLE -->
+
+
+				<!-- NOTE -->
+				<div class="prop-note-block copy-to-clipboard">
+
+
+					<!-- HEADER -->
+					<strong>Attributes</strong><br>
+					<!-- // HEADER -->
+
+
+					<!-- CONTENT -->
+					<code class="copy-to-clipboard-content">
+						 data-micron="groove"
+					</code>
+					<!-- // CONTENT -->
+
+
+					<!-- BUTTON -->
+					<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+						<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+						<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+					</a>
+					<!-- // BUTTON -->
+
+
+				</div>
+				<!-- // NOTE -->
+
+			</div>
+			<!-- // CELL -->
+
+
+			<!-- CELL -->
+			<div class="cell">
+
+				<!-- SAMPLE -->
+				<p class="margin-bottom p10 text-bold">Jelly</p>
+				<div class="round-md wh-xxxs background-secondary" data-micron="jelly" data-micron-duration=".5" data-micron-timing="ease-out"></div>
+				<!-- // SAMPLE -->
+
+
+				<!-- NOTE -->
+				<div class="prop-note-block copy-to-clipboard">
+
+
+					<!-- HEADER -->
+					<strong>Attributes</strong><br>
+					<!-- // HEADER -->
+
+
+					<!-- CONTENT -->
+					<code class="copy-to-clipboard-content">
+						 data-micron="jelly"
+					</code>
+					<!-- // CONTENT -->
+
+
+					<!-- BUTTON -->
+					<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+						<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+						<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+					</a>
+					<!-- // BUTTON -->
+
+
+				</div>
+				<!-- // NOTE -->
+
+			</div>
+			<!-- // CELL -->
+			
+
+			<!-- CELL -->
+			<div class="cell">
+
+				<!-- SAMPLE -->
+				<p class="margin-bottom p10 text-bold">Jerk</p>
+				<div class="round-md wh-xxxs background-secondary" data-micron="jerk" data-micron-duration=".5" data-micron-timing="ease-out"></div>
+				<!-- // SAMPLE -->
+
+
+				<!-- NOTE -->
+				<div class="prop-note-block copy-to-clipboard">
+
+
+					<!-- HEADER -->
+					<strong>Attributes</strong><br>
+					<!-- // HEADER -->
+
+
+					<!-- CONTENT -->
+					<code class="copy-to-clipboard-content">
+						 data-micron="jerk"
+					</code>
+					<!-- // CONTENT -->
+
+
+					<!-- BUTTON -->
+					<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+						<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+						<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+					</a>
+					<!-- // BUTTON -->
+
+
+				</div>
+				<!-- // NOTE -->
+
+			</div>
+			<!-- // CELL -->
+			
+
+			<!-- CELL -->
+			<div class="cell">
+
+				<!-- SAMPLE -->
+				<p class="margin-bottom p10 text-bold">Pop</p>
+				<div class="round-md wh-xxxs background-secondary" data-micron="pop" data-micron-duration=".5" data-micron-timing="ease-out"></div>
+				<!-- // SAMPLE -->
+
+
+				<!-- NOTE -->
+				<div class="prop-note-block copy-to-clipboard">
+
+
+					<!-- HEADER -->
+					<strong>Attributes</strong><br>
+					<!-- // HEADER -->
+
+
+					<!-- CONTENT -->
+					<code class="copy-to-clipboard-content">
+						 data-micron="pop"
+					</code>
+					<!-- // CONTENT -->
+
+
+					<!-- BUTTON -->
+					<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+						<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+						<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+					</a>
+					<!-- // BUTTON -->
+
+
+				</div>
+				<!-- // NOTE -->
+
+			</div>
+			<!-- // CELL -->
+			
+
+			<!-- CELL -->
+			<div class="cell">
+
+				<!-- SAMPLE -->
+				<p class="margin-bottom p10 text-bold">Shake</p>
+				<div class="round-md wh-xxxs background-secondary" data-micron="shake" data-micron-duration=".5" data-micron-timing="ease-out"></div>
+				<!-- // SAMPLE -->
+
+
+				<!-- NOTE -->
+				<div class="prop-note-block copy-to-clipboard">
+
+
+					<!-- HEADER -->
+					<strong>Attributes</strong><br>
+					<!-- // HEADER -->
+
+
+					<!-- CONTENT -->
+					<code class="copy-to-clipboard-content">
+						 data-micron="shake"
+					</code>
+					<!-- // CONTENT -->
+
+
+					<!-- BUTTON -->
+					<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+						<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+						<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+					</a>
+					<!-- // BUTTON -->
+
+
+				</div>
+				<!-- // NOTE -->
+
+			</div>
+			<!-- // CELL -->
+			
+
+			<!-- CELL -->
+			<div class="cell">
+
+				<!-- SAMPLE -->
+				<p class="margin-bottom p10 text-bold">Squeeze</p>
+				<div class="round-md wh-xxxs background-secondary" data-micron="squeeze" data-micron-duration=".5" data-micron-timing="ease-out"></div>
+				<!-- // SAMPLE -->
+
+
+				<!-- NOTE -->
+				<div class="prop-note-block copy-to-clipboard">
+
+
+					<!-- HEADER -->
+					<strong>Attributes</strong><br>
+					<!-- // HEADER -->
+
+
+					<!-- CONTENT -->
+					<code class="copy-to-clipboard-content">
+						 data-micron="squeeze"
+					</code>
+					<!-- // CONTENT -->
+
+
+					<!-- BUTTON -->
+					<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+						<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+						<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+					</a>
+					<!-- // BUTTON -->
+
+
+				</div>
+				<!-- // NOTE -->
+
+			</div>
+			<!-- // CELL -->
+			
+
+			<!-- CELL -->
+			<div class="cell">
+
+				<!-- SAMPLE -->
+				<p class="margin-bottom p10 text-bold">Swing</p>
+				<div class="round-md wh-xxxs background-secondary" data-micron="swing" data-micron-duration=".5" data-micron-timing="ease-out"></div>
+				<!-- // SAMPLE -->
+
+
+				<!-- NOTE -->
+				<div class="prop-note-block copy-to-clipboard">
+
+
+					<!-- HEADER -->
+					<strong>Attributes</strong><br>
+					<!-- // HEADER -->
+
+
+					<!-- CONTENT -->
+					<code class="copy-to-clipboard-content">
+						 data-micron="swing"
+					</code>
+					<!-- // CONTENT -->
+
+
+					<!-- BUTTON -->
+					<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+						<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+						<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+					</a>
+					<!-- // BUTTON -->
+
+
+				</div>
+				<!-- // NOTE -->
+
+			</div>
+			<!-- // CELL -->
+			
+
+			<!-- CELL -->
+			<div class="cell">
+
+				<!-- SAMPLE -->
+				<p class="margin-bottom p10 text-bold">Tada</p>
+				<div class="round-md wh-xxxs background-secondary" data-micron="tada" data-micron-duration=".5" data-micron-timing="ease-out"></div>
+				<!-- // SAMPLE -->
+
+
+				<!-- NOTE -->
+				<div class="prop-note-block copy-to-clipboard">
+
+
+					<!-- HEADER -->
+					<strong>Attributes</strong><br>
+					<!-- // HEADER -->
+
+
+					<!-- CONTENT -->
+					<code class="copy-to-clipboard-content">
+						 data-micron="tada"
+					</code>
+					<!-- // CONTENT -->
+
+
+					<!-- BUTTON -->
+					<a class="copy-to-clipboard-button position-absolute bottom right margin-xs text-accent prevent-default">
+						<span class="copy-to-clipboard-status display-inline opacity-00">Copied!</span>
+						<span class="margin-left-xs fa fa-file cursor-pointer" aria-hidden="true"></span>
+					</a>
+					<!-- // BUTTON -->
+
+
+				</div>
+				<!-- // NOTE -->
 
 			</div>
 			<!-- // CELL -->
@@ -1460,8 +1921,7 @@ modals: modals/en/
 
 
 	</section>
-	<!-- // SECTION: ADVANCED ANIMATIONS -->
-
+	<!-- // SECTION: MICROINTERACTIONS -->
 
 
 

@@ -41,11 +41,11 @@ var $hasTouch = "ontouchstart" in document.documentElement || navigator.maxTouch
 /* CACHE SELECTORS
 /* -------------------------------------------------- */
 
-var isiOS = $$(".is-ios"),
-	isAndroid = $$(".is-android"),
-	isMobile = $$(".is-mobile"),
-	//isTablet = $$(".is-tablet"),
-	isDesktop = $$(".is-desktop");
+var isiOS = $(".is-ios"),
+	isAndroid = $(".is-android"),
+	isMobile = $(".is-mobile"),
+	//isTablet = $(".is-tablet"),
+	isDesktop = $(".is-desktop");
 
 
 /* -------------------------------------------------- */
@@ -54,7 +54,7 @@ var isiOS = $$(".is-ios"),
 
 var $isSmallScreen = Modernizr.mq("(min-width: 0) and (max-width: 640px)"),
 	$isMediumScreen = Modernizr.mq("(min-width: 641px) and (max-width: 1024px)"),
-	$isLargeScreen = Modernizr.mq("(min-width: 1025px)"), // Anything above this number will be considered large screen.
+	$isLargeScreen = Modernizr.mq("(min-width: 1025px)"), // Anything above this number will be considered a large screen.
 	
 	$isAndroid = navigator.userAgent.toLowerCase().indexOf("android") > -1,
 	$isiPhone = navigator.userAgent.toLowerCase().indexOf("iphone") > -1,
@@ -327,8 +327,6 @@ var hasTouch = function() {
 		document.createElement("aside");
 		*/
 
-		//$$("[class*='drop-shadow-']").addClass("box-shadow-xl");
-		$$("svg.top-offset").removeClass("drop-shadow-md");
 	}
 
 
@@ -337,13 +335,16 @@ var hasTouch = function() {
 	/* -------------------------------------------------- */
 
 	if ( $isExplorer ) {
-		console.log("///////////////////////////////////////////////////////////////");
-		console.log("Unable to render this app! This project needs to be compiled.");
-		console.log("In your CLI:");
-		console.log("cd THIS APP'S FOLDER LOCATION");
-		console.log("gulp build");
-		console.log("Once compiled check '/build' folder to view this app.");
-		console.log("///////////////////////////////////////////////////////////////");	}
+
+		console.log("/////////////////////////////////////////////////////////////////");
+		console.log("Unable to render this app. This project needs to be compiled!////");
+		console.log("In your CLI://///////////////////////////////////////////////////");
+		console.log("cd [to app's project or folder location]/////////////////////////");
+		console.log("gulp build///////////////////////////////////////////////////////");
+		console.log("Once compiled check your project's build folder to view this app.");
+		console.log("/////////////////////////////////////////////////////////////////");
+
+	}
 
 
 	/* -------------------------------------------------- */

@@ -20,11 +20,6 @@
 		/* HEX
 		/* -------------------------------------------------- */
 
-		/* BASE COLOR */
-		--body-color: #fff;
-		--container-color: #fff;
-
-
 		/* THEME */
 		--primary-color: #fa0096;
 		--secondary-color: #6400fa;
@@ -136,7 +131,6 @@
 		--cell-margin-right-mobile: auto;
 		*/
 
-
 		--margin-top-auto-mobile: 0rem;
 		--margin-left-auto-mobile: auto;
 		--margin-bottom-auto-mobile: 0rem;
@@ -207,23 +201,23 @@
 		/* EQUAL WIDTH / HEIGHT
 		/* -------------------------------------------------- */	
 
-		--size-generic-xxxs: 50px;
+		--size-xxxs: 50px;
 
-		--size-generic-xxs: 75px;
+		--size-xxs: 75px;
 
-		--size-generic-xs: 100px;
+		--size-xs: 100px;
 
-		--size-generic-sm: 150px;
+		--size-sm: 150px;
 
-		--size-generic-md: 200px;
+		--size-md: 200px;
 
-		--size-generic-lg: 250px;
+		--size-lg: 250px;
 
-		--size-generic-xl: 300px;
+		--size-xl: 300px;
 
-		--size-generic-xxl: 350px;
+		--size-xxl: 350px;
 
-		--size-generic-xxxl: 400px;
+		--size-xxxl: 400px;
 
 
 	/* -------------------------------------------------- */

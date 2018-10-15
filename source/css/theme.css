@@ -278,126 +278,118 @@
 /* -------------------------------------------------- */
 
 /* COLORS */
-a.link-primary:not(.button) {
+.link-primary {
 	color: var(--primary-color);
 }
 
-a.link-secondary:not(.button) {
+.link-secondary {
 	color: var(--secondary-color);
 }
 
-a.link-accent:not(.button) {
+.link-accent {
 	color: var(--accent-color);
 }
 
-a.link-wild:not(.button) {
+.link-wild {
 	color: var(--wild-color);
 }
 
 
 	/* ////////// */
-	a.link-white:not(.button) {
+	.link-white {
 		color: var(--white-color);
 	}
 
-	a.link-light-grey:not(.button) {
+	.link-light-grey {
 		color: var(--light-grey-color);
 	}
 
-	a.link-dark-grey:not(.button) {
+	.link-dark-grey {
 		color: var(--dark-grey-color);
 	}
 
-	a.link-charcoal:not(.button) {
+	.link-charcoal {
 		color: var(--charcoal-color);
 	}
 
-	a.link-black:not(.button) {
+	.link-black {
 		color: var(--black-color);
 	}
 
-	a.link-ok:not(.button) {
+	.link-ok {
 		color: var(--ok-color);
 	}
 
-	a.link-error:not(.button) {
+	.link-error {
 		color: var(--error-color);
 	}
 
-	a.link-warning:not(.button) {
+	.link-warning {
 		color: var(--warning-color);
 	}
 
 
 /* HOVER */
-a.link-primary-hover:not(.button):hover {
+.link-primary-hover:hover {
 	color: var(--primary-color);
 }
 
-a.link-secondary-hover:not(.button):hover {
+.link-secondary-hover:hover {
 	color: var(--secondary-color);
 }
 
-a.link-accent-hover:not(.button):hover {
+.link-accent-hover:hover {
 	color: var(--accent-color);
 }
 
-a.link-wild-hover:not(.button):hover {
+.link-wild-hover:hover {
 	color: var(--wild-color);
 }
 
 
 	/* ////////// */
-	a.link-white:not(.button):hover {
+	.link-white:hover {
 		color: var(--white-color);
 	}
 
-	a.link-light-grey-hover:not(.button):hover {
+	.link-light-grey-hover:hover {
 		color: var(--light-grey-color);
 	}
 
-	a.link-dark-grey-hover:not(.button):hover {
+	.link-dark-grey-hover:hover {
 		color: var(--dark-grey-color);
 	}
 
-	a.link-charcoal-hover:not(.button):hover {
+	.link-charcoal-hover:hover {
 		color: var(--charcoal-color);
 	}
 
-	a.link-black-hover:not(.button):hover {
+	.link-black-hover:hover {
 		color: var(--black-color);
 	}
 
-	a.link-ok-hover:not(.button):hover {
+	.link-ok-hover:hover {
 		color: var(--ok-color);
 	}
 
-	a.link-error-hover:not(.button):hover {
+	.link-error-hover:hover {
 		color: var(--error-color);
 	}
 
-	a.link-warning-hover:not(.button):hover {
+	.link-warning-hover:hover {
 		color: var(--warning-color);
 	}
 
 
 /* STATES */
-a.active {
-	color: var(--secondary-color);
-}
-
 a.inactive {
 	pointer-events: none;
 	cursor: pointer;
 	color: var(--dark-grey-color);
 }
 
-.button.active {
-	color: var(--secondary-color);
-	background-color: var(--charcoal-color);
-}
-
-.button.inactive {
+.button.inactive,
+.button.disabled {
 	color: var(--dark-grey-color);
 	background-color: var(--charcoal-color);
 }

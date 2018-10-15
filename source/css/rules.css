@@ -12,10 +12,8 @@
    Only apply to text animated with SplitText, otherwise this is a very performance heavy fix. */
 .fix-font-render {
 	font-kerning: none;
-	
 	-webkit-text-rendering: optimizeSpeed;
 	text-rendering: optimizeSpeed;
-	
 	transform: translateZ(0);
 }
 
@@ -29,7 +27,8 @@
 
 
 /* Auto-height YouTube iFrame video container. */
-.iframe-container {
+.iframe-container,
+.video-container {
 	overflow: hidden;
 	position: relative;
 	padding-top: 30px;
@@ -37,7 +36,8 @@
 	height: 0;
 }
 
-.iframe-container iframe, .iframe-container object, .iframe-container embed {
+.iframe-container iframe,
+.video-container iframe {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -112,53 +112,6 @@
 */
 
 
-/* SIZES */
-.button-xxxs {
-	min-width: var(--size-generic-xxxs);
-	max-width: var(--size-generic-xxxs);;
-}
-
-.button-xxs {
-	min-width: var(--size-generic-xxs);
-	max-width: var(--size-generic-xxs);
-}
-
-.button-xs {
-	min-width: var(--size-generic-xs);
-	max-width: var(--size-generic-xs);
-}
-
-.button-sm {
-	min-width: var(--size-generic-sm);
-	max-width: var(--size-generic-sm);
-}
-
-.button-md {
-	min-width: var(--size-generic-md);
-	max-width: var(--size-generic-md);
-}
-
-.button-lg {
-	min-width: var(--size-generic-lg);
-	max-width: var(--size-generic-lg);
-}
-
-.button-xl {
-	min-width: var(--size-generic-xl);
-	max-width: var(--size-generic-xl);
-}
-
-.button-xxl {
-	min-width: var(--size-generic-xxl);
-	max-width: var(--size-generic-xxl);
-}
-
-.button-xxxl {
-	min-width: var(--size-generic-xxxl);
-	max-width: var(--size-generic-xxxl);
-}
-
-
 /* ANIMATIONS */
 .anim-left,
 .anim-tl,
@@ -209,12 +162,14 @@
 @media screen and (min-width: 0) and (max-width: 1150px) {
 
     /* ANIMATIONS */
+    /*
 	.anim-left:hover,
 	.anim-right:hover,
 	.anim-tl:hover,
 	.anim-tr:hover {
 		transform: translate3d(0, -4px, 0);
 	}
+	*/
 
 }
 
@@ -268,15 +223,15 @@
 	max-width: var(--width-xxxl);
 }
 
-.width-quarter {
+.width-25 {
 	width: 25%;
 }
 
-.width-half {
+.width-59 {
 	width: 50%;
 }
 
-.width-three-quarters {
+.width-75 {
 	width: 75%;
 }
 
@@ -329,15 +284,15 @@
 	height: var(--height-xxxl);
 }
 
-.height-quarter {
+.height-25 {
     height: 25vh;
 }
 
-.height-half {
+.height-50 {
     height: 50vh;
 }
 
-.height-three-quarters {
+.height-75 {
     height: 75vh;
 }
 
@@ -355,48 +310,48 @@
 /* -------------------------------------------------- */
 
 .wh-xxxs {
-	width: var(--size-generic-xxxs);
-	height: var(--size-generic-xxxs);;
+	width: var(--size-xxxs);
+	height: var(--size-xxxs);;
 }
 
 .wh-xxs {
-	width: var(--size-generic-xxs);
-	height: var(--size-generic-xxs);
+	width: var(--size-xxs);
+	height: var(--size-xxs);
 }
 
 .wh-xs {
-	width: var(--size-generic-xs);
-	height: var(--size-generic-xs);
+	width: var(--size-xs);
+	height: var(--size-xs);
 }
 
 .wh-sm {
-	width: var(--size-generic-sm);
-	height: var(--size-generic-sm);
+	width: var(--size-sm);
+	height: var(--size-sm);
 }
 
 .wh-md {
-	width: var(--size-generic-md);
-	height: var(--size-generic-md);
+	width: var(--size-md);
+	height: var(--size-md);
 }
 
 .wh-lg {
-	width: var(--size-generic-lg);
-	height: var(--size-generic-lg);
+	width: var(--size-lg);
+	height: var(--size-lg);
 }
 
 .wh-xl {
-	width: var(--size-generic-xl);
-	height: var(--size-generic-xl);
+	width: var(--size-xl);
+	height: var(--size-xl);
 }
 
 .wh-xxl {
-	width: var(--size-generic-xxl);
-	height: var(--size-generic-xxl);
+	width: var(--size-xxl);
+	height: var(--size-xxl);
 }
 
 .wh-xxxl {
-	width: var(--size-generic-xxxl);
-	height: var(--size-generic-xxxl);
+	width: var(--size-xxxl);
+	height: var(--size-xxxl);
 }
 
 
@@ -433,39 +388,39 @@ svg {
 
 /* SIZES */
 .img-xxxs {
-	max-width: var(--size-generic-xxxs);
+	max-width: var(--size-xxxs);
 }
 
 .img-xxs {
-	max-width: var(--size-generic-xxs);
+	max-width: var(--size-xxs);
 }
 
 .img-xs {
-	max-width: var(--size-generic-xs);
+	max-width: var(--size-xs);
 }
 
 .img-sm {
-	max-width: var(--size-generic-sm);
+	max-width: var(--size-sm);
 }
 
 .img-md {
-	max-width: var(--size-generic-md);
+	max-width: var(--size-md);
 }
 
 .img-lg {
-	max-width: var(--size-generic-lg);
+	max-width: var(--size-lg);
 }
 
 .img-xl {
-	max-width: var(--size-generic-xl);
+	max-width: var(--size-xl);
 }
 
 .img-xxl {
-	max-width: var(--size-generic-xxl);
+	max-width: var(--size-xxl);
 }
 
 .img-xxxl {
-	max-width: var(--size-generic-xxxl);
+	max-width: var(--size-xxxl);
 }
 
 
@@ -1783,7 +1738,7 @@ svg {
     justify-content: center;
 }
 
-.center-element {
+.center {
 	left: 0;
 	right: 0;
 	margin-left: auto;
@@ -2120,24 +2075,15 @@ svg {
 
 /* ROTATE */
 .rotate-90 {
-  -ms-filter: 'progid:DXImageTransform.Microsoft.BasicImage(rotation=1)';
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
+	transform: rotate(90deg);
 }
 
 .rotate-180 {
-  -ms-filter: 'progid:DXImageTransform.Microsoft.BasicImage(rotation=2)';
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
+	transform: rotate(180deg);
 }
 
 .rotate-270 {
-  -ms-filter: 'progid:DXImageTransform.Microsoft.BasicImage(rotation=3)';
-  -webkit-transform: rotate(270deg);
-  -ms-transform: rotate(270deg);
-  transform: rotate(270deg);
+	transform: rotate(270deg);
 }
 
 
@@ -2996,8 +2942,6 @@ li::after {
 
 
 .fullscreen {
-	margin-left: auto;
-	margin-right: auto;
 	width: 100%;
 	height: 100%;
 	min-height: 100vh;
