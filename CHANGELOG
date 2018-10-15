@@ -1,17 +1,29 @@
-October 04, 2018
+October 15, 2018
 Version 2.4.5
 	Website / App
+		- Revised microinteractions utilizing Micron JS.
 		- Added style guide page.
-		- Added tabindex="-1" to <main> content for accessibility.
+		- Modals now using semantically correct dialog element instead of a <div>.
+		- Improved accessibility of dialog boxes.
 		- Corrected translate3D values for anim-bl class.
+		- Increased throttle value for onscroll updates.
+		- Rewrote some icon animation events.
+		- Optimized icon animations.
+		- Added Youtube video.
+		- Added utilMediaObserver for video content control.
 
 
 	Build Framework
 		- Build Framework now checks to see if a server.json configuration file exists upon initial or first run of the compiler and will create one if no file exists.
 		- Build Framework will now generate a style guide page when compiling.
+			- The build framework will also auto-generate a style guide page in dev mode.
+			- styleguide.html can be edited during development as is treated like any other page.
+
 		- Additional options to CSS and JS optimizations.
 		- Fixed some mismatched CSS variables not being processed by the compiler.
-		- Housekeeping of config.json file.
+		- Removed unnecessary and redundant tasks from gulp.babel.js.
+		- Removed unnecessary and redundant options and values from config.json.
+		- General housekeeping of gulp.babel.js and config.json.
 
 
 
