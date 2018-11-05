@@ -3,6 +3,6 @@ Disallow: /assets/
 Disallow: /cgi-bin/
 Disallow: /downloads/
 Disallow: /fonts/
-Disallow: /modals/
+Disallow: /dialog/
 Disallow: /scripts/
 Sitemap: https://axeltoken.com/sitemap.xml

@@ -1,3 +1,38 @@
+October 22, 2018
+Version 2.4.6
+	Website / App
+		- Removed Lodash library in favor of Underscore JS.
+		- Updated Underscore JS to 1.9.1 (See https://github.com/jashkenas/underscore for CHANGELOG).
+		- Name changes to select modules and components.
+		- uiScrollTo no longer throws excessive Uncaught TypeErrors originating from TweenMax.
+		- Added uiScrollTrack feature.
+		- Modified and improved Micron JS library.
+			- Revised data attributes to better reflect current animation framework.
+			- Added class helpers for better control of animations.
+			- Library now responds to scroll events.
+			- Optimized core library code.
+
+
+	Build Framework
+		- Improved and updated style guide documentation.
+		- Added version info options for app and styleguide to config.json.
+
+
+
+
+
+October 16, 2018
+Version 2.4.5 (no version change)
+	Website / App
+		- Fixed links from going to specified url.
+		- Fixed elements with microinteractions not playing on mouse or touch interaction.
+		- Fixed dialog not being fully centered.
+		- Fixed dialog dynamic auto-sizing.
+
+
+
+
+
 October 15, 2018
 Version 2.4.5
 	Website / App
@@ -17,6 +52,7 @@ Version 2.4.5
 		- Build Framework now checks to see if a server.json configuration file exists upon initial or first run of the compiler and will create one if no file exists.
 		- Build Framework will now generate a style guide page when compiling.
 			- The build framework will also auto-generate a style guide page in dev mode.
+			- Additionally, the build framework will compile brand assets and fonts into a ZIP folder ready for download.
 			- styleguide.html can be edited during development as is treated like any other page.
 
 		- Additional options to CSS and JS optimizations.

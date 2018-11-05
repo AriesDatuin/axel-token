@@ -1,0 +1,62 @@
+/* -------------------------------------------------- */
+/* TOOLBAR
+/* -------------------------------------------------- */
+
+/* PARENT */
+#toolbar {
+    position: fixed;
+    bottom: 0;
+
+    width: 100%;
+
+    border-top: 1px solid rgba(75,75,75,0);
+    background-color: rgba(50,50,50,1);
+}
+
+
+/* CHILD */
+#toolbar #toolbar-contents {
+    position: relative;
+}
+
+#toolbar #toolbar-contents .cell {
+    height: 100%;
+}
+
+#toolbar #toolbar-contents .cell a {
+    font-size: 1em;
+
+    display: table;
+
+    height: 100%;
+
+    color: var(--white-color);
+}
+
+#toolbar #toolbar-contents .cell a div {
+    display: table-cell;
+
+    vertical-align: middle;
+}
+
+#toolbar #toolbar-contents .cell a div .fa {
+    position: relative;
+    top: auto;
+    left: auto;
+
+    width: auto;
+    margin-right: .5rem;
+    margin-left: .5rem;
+
+    transform: translate(0,0);
+}
+
+
+/* STICKY */
+#toolbar.sticky {
+    border-top: 1px solid rgba(50,50,50,1);
+}
+
+#toolbar.sticky #toolbar-contents .cell a {
+    color: var(--white-color);
+}

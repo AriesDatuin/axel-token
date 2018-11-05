@@ -1,0 +1,40 @@
+/* -------------------------------------------------- */
+/* HERO
+/* -------------------------------------------------- */
+
+/* PARENT */
+.hero#hero {
+    position: relative;
+}
+
+
+/* HEADER */
+.hero#hero header {}
+
+
+/* COPY */
+.hero#hero header h1 {
+    font-size: 2em;
+    line-height: 1.5em;
+}
+
+.hero#hero header p {
+    font-size: 1.25em;
+    line-height: 1.5em;
+}
+
+
+/* RESPONSIVE */
+@media screen and (min-width: 0) and (max-width: 414px) {
+
+    .hero#hero header h1 {
+        font-size: 1.5em;
+        line-height: 1.25em;
+    }
+
+    .hero#hero header p {
+        font-size: 1em;
+        line-height: 1.25em;
+    }
+
+}

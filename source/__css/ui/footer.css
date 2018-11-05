@@ -1,0 +1,114 @@
+/* -------------------------------------------------- */
+/* FOOTER
+/* -------------------------------------------------- */
+
+/* PARENT */
+footer {
+    display: block;
+}
+
+
+/* CHILD */
+footer .nav-items {
+    width: 100%;
+    /*max-width: 1024px;*/
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+footer .nav-items div ul.nav {
+    padding-top: 1rem;
+}
+
+
+/* ITEM */
+footer .nav-items div ul.nav > li {
+    position: relative;
+
+    /* width: 100%; */
+    margin: .25rem 0 .25rem 0;
+    padding: 0 0 0 0;
+}
+
+footer .nav-items div ul.nav > li::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 0;
+    height: 1px;
+
+    content: '';
+    transition: var(--transition);
+
+    background-color: transparent;
+}
+
+footer .nav-items div ul.nav > li:hover::before {
+    width: 100%;
+}
+
+
+/* TITLE */
+footer .nav-items div ul.nav > li.title {
+    font-size: 1em;
+    font-weight: bold;
+
+    margin: 0 0 0 0;
+
+    cursor: default;
+    user-select: none;
+    pointer-events: none;
+
+    color: var(--dark-grey-color);
+}
+
+/*
+#footer .nav-items div ul.nav > li.title::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 25%;
+    height: 1px;
+
+    content: '';
+
+    background-color: var(--dark-grey-color);
+}
+*/
+
+/* LINK */
+footer .nav-items div ul.nav > li > a {
+    font-size: .875em;
+    /*display: block;*/
+
+    overflow: hidden;
+
+    width: 100%;
+    padding: .5rem .75rem .5rem .75rem;
+
+    transition: var(--transition);
+    text-align: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    color: var(--dark-grey-color);
+}
+
+
+/* HOVER */
+footer .nav-items div ul.nav > li:hover > a {
+    margin-left: 0;
+
+    color: var(--white-color);
+}
+
+
+/* ACTIVE */
+footer .nav-items div ul.nav > li > a.active {
+    cursor: pointer;
+    pointer-events: none;
+
+    color: var(--primary-color);
+}

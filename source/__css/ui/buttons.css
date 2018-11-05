@@ -1,0 +1,114 @@
+/* -------------------------------------------------- */
+/* GRADIENT
+/* -------------------------------------------------- */
+
+/* COMMON */
+.button-fx-primary,
+.button-fx-secondary,
+.button-fx-accent,
+.button-fx-wild,
+.button-fx-charcoal {
+    position: relative;
+
+    transition: var(--transition-quick);
+    /*transform: translate3d(0, 0, 0);*/
+
+    color: var(--white-color);
+    background-size: 200% auto;
+    text-shadow: 1px 1px 0 rgba(175,175,175,1),
+    0 0 0 rgba(0,0,0,.5);
+}
+
+
+/* HOVER */
+.button-fx-primary:hover,
+.button-fx-secondary:hover,
+.button-fx-accent:hover,
+.button-fx-wild:hover,
+.button-fx-charcoal:hover {
+    /*transform: translate3d(-1px, -1px, 2px);*/
+
+    color: var(--white-color);
+    background-position: right center;
+    text-shadow: 2px 2px 0 rgba(175,175,175,1);
+}
+
+
+/* COLORS */
+.button-fx-primary {
+    background-image: linear-gradient(to right, var(--primary-color) 0%, var(--secondary-color) 100%);
+}
+
+.button-fx-secondary {
+    background-image: linear-gradient(to right, var(--secondary-color) 0%, var(--accent-color) 100%);
+}
+
+.button-fx-accent {
+    background-image: linear-gradient(to right, var(--accent-color) 0%, var(--wild-color) 100%);
+}
+
+.button-fx-wild {
+    background-image: linear-gradient(to right, var(--wild-color) 0%, var(--accent-color) 100%);
+}
+
+.button-fx-charcoal {
+    background-image: linear-gradient(to right, var(--dark-grey-color) 0%, var(--charcoal-color) 100%);
+}
+
+
+/* PSUEDO */
+.button-fx-primary::after,
+.button-fx-secondary::after,
+.button-fx-accent::after,
+.button-fx-wild::after,
+.button-fx-charcoal::after {
+    position: absolute;
+    z-index: -1;
+    top: .125rem;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    content: '';
+
+    opacity: .75;
+    border-radius: 100px;
+    background: inherit;
+
+    filter: blur(.125rem);
+}
+
+
+/* HOVER */
+.button-fx-primary:hover::after,
+.button-fx-secondary:hover::after,
+.button-fx-accent:hover::after,
+.button-fx-wild:hover::after,
+.button-fx-charcoal:hover::after {
+    top: .25rem;
+
+    opacity: .75;
+    background: inherit;
+
+    filter: blur(.25rem);
+}
+
+
+/* HELPERS */
+.button-fx-flat {
+    text-shadow: none;
+}
+
+.button-fx-flat:hover {
+    text-shadow: none;
+}
+
+.button-fx-flat::after {
+    display: none;
+}
+
+
+.button-fx-static:hover {
+    transform: none;
+}

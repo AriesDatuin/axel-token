@@ -2,24 +2,186 @@
 layout: default
 title: Welcome
 assets: assets/
-modals: modals/en/
+dialog: dialog/en/
 ---
 
 
-<!-- CONTENT -->
-<main id="content" class="page position-relative center off-canvas-content" data-page="{{ page }}" data-off-canvas-content role="main">
+<!-- {{ page }} -->
+
+
+<!-- SECTION: HERO -->
+<section id="hero" class="hero grid-x grid-padding-x align-center align-middle position-relative padding-none padding-top-xl background-white background-cover background-repeat background-center overflow-hidden no-selection emergence-ignore" data-src="{{ root }}{{ images }}index/network-03.png" data-emergence="hidden" role="banner">
+
+
+	<!-- BACKGROUND: IMAGE -->
+	<!--
+	<div class="position-absolute top left width-full height-full overflow-hidden z-auto">
+		<div class="position-absolute top left width-full height-full background-cover background-tr background-tc-tablet background-no-repeat lazy"
+			 data-src="{{ root }}{{ images }}{{ page }}/hero@2x.png"
+			 data-srcset="{{ root }}{{ images }}{{ page }}/hero@1x.png 220w,
+						  {{ root }}{{ images }}{{ page }}/hero@2x.png 330w"
+			 data-sizes="220px">
+		</div>
+	</div>
+	-->
+	<!-- // BACKGROUND: IMAGE -->
+
+
+	<!-- CANVAS -->
+	<div class="position-absolute left bottom fade-bottom width-full height-75 no-pointer z-auto"></div>
+	<canvas id="fx-neural-network" class="position-absolute top left z-auto"></canvas>
+	<!-- // CANVAS -->
 
 
 
 
 
-{{> hero}}
+	<!-- BACKGROUND -->
+	<!--
+	<div class="position-absolute top right width-xxs height-full background-auto background-bl background-no-repeat overflow-visible lazy hide-mobile z-auto" data-src="{{ root }}{{ images }}/illustrations/rocket.svg"></div>
+	-->
+
+
+	<!--
+	<img class="position-absolute width-lg lazy hide" style="top: 0; right: -20em;" alt="Welcome to AXEL!" data-src="{{ root }}{{ images }}/illustrations/rocket.svg">
+	-->
+	<!-- // BACKGROUND -->
 
 
 
 
 
-{{> logos}}
+	<!-- HEADER -->
+	<header class="cell position-relative width-xs z-02">
+
+
+		<!-- COPY -->
+        <h1 class="font-header text-primary text-bold fix-font-render">The Native Blockchain Deployment Redefining Distributed Exchange Protocols</h1>
+        <p class="text-charcoal fix-font-render">The AXEL (Autonomous eXchange via Entrusted Ledger) Blockchain is the next evolution of our platform and delegated proof of stake consensus.</p>
+		<!-- // COPY -->
+
+		
+		<!-- BUTTON GROUP -->
+		<div class="button-group expanded stacked-for-small margin-top-lg">
+
+			<a href="https://t.me/axelnetwork" target="_blank" class="width-xxxs round-full button button-fx-primary anim-top">Join Our Telegram</a>
+
+			<button class="width-xxxs round-full button button-fx-secondary prevent-default anim-top" data-content-url="{{ dialog }}whitepaper" data-content-selector="white-paper" data-content-width="650" data-content-height="560">Read the White Paper</button>
+
+			<a href="https://go.axel.org/whitelist" target="_blank" class="width-xxxs round-full button button-fx-secondary anim-top">Join the Whitelist</a>
+
+		</div>
+		<!-- // BUTTON GROUP -->
+
+
+		<!-- LANGUAGE OPTIONS -->
+		<!--
+		<ul id="language-settings" class="list-horizontal list-margin-lr-xxxs margin-top-lg text-dark-grey text-bold text-uppercase text-center">
+
+			<li class="text-dark-grey text-bold text-uppercase">Lang:</li>
+
+			<li><a href="/" target="_parent" class="text-secondary-hover no-pointer">English</a></li>
+
+			<li><span class="fa fa-caret-left"></span></li>
+
+			<li><a href="ch" target="_parent" class="text-secondary-hover">Chinese</a></li>
+			
+		</ul>
+		-->
+		<!-- // LANGUAGE OPTIONS -->
+
+
+	</header>
+	<!-- // HEADER -->
+
+
+	<!-- SOCIAL -->
+	<ul class="cell social-icons dark list-horizontal list-margin-lr-xxxs list-margin-lr-none-mobile text-center">
+		{{> social-icons}}
+	</ul>
+	<!-- // SOCIAL --> 
+
+
+	<!-- SCROLL HINT -->
+	<a href="#welcome" class="cell padding-none margin-tb-md scroll-to no-waves hide-on-scroll z-01" aria-label="Learn more">
+		{{> scroll-hint}}
+	</a>
+	<!-- // SCROLL HINT -->
+
+
+</section>
+<!-- // SECTION: HERO -->
+
+
+
+
+
+<!-- CONTENT: PRESS -->
+<section id="welcome" class="position-relative margin-top-xxl margin-top-xl-tablet margin-top-none-mobile" aria-hidden="true" data-emergence="hidden">
+
+
+	<!-- HEADER -->
+	<h2 class="padding-auto padding-tb-none text-secondary text-center header-center header-secondary">What People Are Saying</h2>
+	<!-- // HEADER -->
+
+
+	<!-- SLIDER -->
+	<div class="slider-default overflow dark js-flickity anim" style="height: 250px;" 
+		 data-flickity-options='{"cellSelector": ".slider-item",
+								 "initialIndex": 0,
+								 "accessibility": true,
+								 "setGallerySize": true,
+								 "resize": true,
+								 "cellAlign": "center",
+								 "contain": true,
+								 "imagesLoaded": true,
+								 "percentPosition": false,
+								 "rightToLeft": false,
+								 "draggable": true,
+								 "freeScroll": true,
+								 "wrapAround": true,
+								 "groupCells": false,
+								 "autoPlay": 2000,
+								 "pauseAutoPlayOnHover": false,
+								 "adaptiveHeight": false,
+								 "watchCSS": false,
+								 "dragThreshold": 10,
+								 "selectedAttraction": 0.2,
+								 "friction": 0.8,
+								 "freeScrollFriction": 0.03,
+								 "prevNextButtons": false,
+								 "pageDots": true,
+								 "lazyLoad": 2,
+								 "bgLazyLoad": 1
+								}'>
+
+
+		<!-- ITEM -->
+		{{#each logos-press.content}}
+		<div data-id="{{ id }}" class="slider-item text-center margin-lr-lg">
+			
+			<a href="{{ link }}" target="_blank" class="sprite-wrapper {{ id }}" aria-label="{{ title }}"></a>
+			
+		</div>
+		{{/each}}
+		<!-- // ITEM -->
+		
+	
+	</div>
+	<!-- // SLIDER -->
+
+
+	<!-- BUTTON -->
+	<div class="padding-auto">
+
+		<a href="{{ dialog }}press" class="width-xxs round-full button button-fx-secondary button-fx-flat button-fx-static box-shadow-sm box-shadow-xl-hover anim-top prevent-default" data-content-selector="articles" data-content-width="650" data-content-height="auto">View More Articles</a>
+		
+	</div>
+	<!-- // BUTTON -->
+
+
+</section>
+<!-- // CONTENT: PRESS -->
 
 
 
@@ -30,26 +192,26 @@ modals: modals/en/
 
 
 	<!-- BLOCK CAP -->
-	<svg class="block-cap top svg-white emergence-ignore-child" preserveAspectRatio="none" viewBox="0 0 1024 100" aria-hidden="true">
+	<svg class="block-cap top svg-white emergence-ignore" preserveAspectRatio="none" viewBox="0 0 1024 100" aria-hidden="true">
 		{{> block-cap-outward }}
 	</svg>
 	<!-- // BLOCK CAP -->
 
 
 	<!-- BLOCK CAP -->
-	<svg class="block-cap bottom svg-white emergence-ignore-child" preserveAspectRatio="none" viewBox="0 0 1024 100" aria-hidden="true">
+	<svg class="block-cap bottom svg-white emergence-ignore" preserveAspectRatio="none" viewBox="0 0 1024 100" aria-hidden="true">
 		{{> block-cap-inward }}
 	</svg>
 	<!-- // BLOCK CAP -->
 
 
 	<!-- HEADER -->
-	<h2 class="padding-auto p2 font-copy text-white text-center header-accent-center header-accent-white">Distributed Data Is Completely Broken:<br>Here's Why</h2>
+	<h2 class="padding-auto text-white text-center header-center header-white">Distributed Data Is Completely Broken:<br>Here's Why</h2>
 	<!-- // HEADER -->
 
 
 	<!-- GRID -->
-	<div class="grid-x grid-margin-x margin-none-mobile grid-margin-y grid-padding-x align-center align-stretch small-up-1 medium-up-2 center width-md emergence-ignore-child">
+	<div class="grid-x grid-margin-x margin-none-mobile grid-margin-y grid-padding-x align-center align-stretch small-up-1 medium-up-2 center width-md emergence-ignore">
 
 
 		<!-- CELL -->
@@ -57,9 +219,9 @@ modals: modals/en/
 
 			<!-- COPY -->
 			<div class="text-center">
-				<p class="p8 font-copy text-dark-grey text-bold text-uppercase">In 2005 there were</p>
+				<p class="p4 text-dark-grey text-bold text-uppercase">In 2005 there were</p>
 				<p id="counter-01" class="odometer margin-bottom-none h1 text-secondary text-bold text-uppercase anim"></p>
-				<p class="p5 font-copy text-dark-grey text-bold text-uppercase">data breaches</p>
+				<p class="p5 text-dark-grey text-bold text-uppercase">data breaches</p>
 			</div>
 			<!-- // COPY -->
 
@@ -72,9 +234,9 @@ modals: modals/en/
 
 			<!-- COPY -->
 			<div class="text-center">
-				<p class="p8 font-copy text-dark-grey text-bold text-uppercase">By 2017 the number jumps to</p>
+				<p class="p4 text-dark-grey text-bold text-uppercase">By 2017 the number jumps to</p>
 				<p id="counter-02" class="odometer margin-bottom-none h1 text-secondary text-bold text-uppercase anim"></p>
-				<p class="p5 font-copy text-dark-grey text-bold text-uppercase">data breaches</p>
+				<p class="p5 text-dark-grey text-bold text-uppercase">data breaches</p>
 			</div>
 			<!-- // COPY -->
 
@@ -88,9 +250,9 @@ modals: modals/en/
 
 	<!-- COPY -->
 	<div class="padding-top-lg text-center">
-		<p class="p6 font-copy text-white text-bold text-uppercase">With</p>
+		<p class="p5 font-copy text-white text-bold text-uppercase">With</p>
 		<p class="margin-bottom-none giant-print text-accent text-bold text-uppercase drop-shadow-md">7.8 Billion</p>
-		<p class="p4 font-copy text-white text-bold text-uppercase header-accent-center header-accent-accent">records exposed</p>
+		<p class="p4 font-copy text-white text-bold text-uppercase header-center header-accent">records exposed</p>
 	</div>
 	<!-- // COPY -->
 
@@ -153,8 +315,8 @@ modals: modals/en/
 
 
 			<!-- COPY -->
-			<h3 class="p10 font-copy text-white text-bold">The $6B Race To Destroy User Privacy</h3>
-			<p class="p10 text-white text-leading-xs">
+			<h3 class="h5 text-white">The $6B Race To Destroy User Privacy</h3>
+			<p class="text-white">
 			The Googles and Amazons of the world are in furious competition to monopolize user data and create the world's most centralized data storage exchange.<br><br>
 
 			This centralization is costing users custody over their data.
@@ -208,8 +370,8 @@ modals: modals/en/
 
 
 				<!-- COPY -->
-				<h3 class="p10 font-copy text-white text-bold">Hacked: Dropbox, Amazon, And Facebook</h3>
-				<p class="p10 text-white text-leading-xs">
+				<h3 class="h5 text-white">Hacked: Dropbox, Amazon, And Facebook</h3>
+				<p class="text-white">
 				2017 had over 1,300 data breaches. Storing your data on third-party servers is not secure. Period. Companies holding it don’t have the incentive to ensure the level of protection you need - and they’re big targets.<br><br>
 
 				As long as there is a centralized repository kept by one company, and one common point of failure, your data is at risk.
@@ -251,8 +413,8 @@ modals: modals/en/
 
 
 			<!-- COPY -->
-			<h3 class="p10 font-copy text-white text-bold">The Growing Trend Of Compromising With Privacy</h3>
-			<p class="p10 text-white text-leading-xs">
+			<h3 class="h5 text-white">The Growing Trend Of Compromising With Privacy</h3>
+			<p class="text-white">
 			More and more, technologies like the IoT and draconian terms-of-service agreements demand we give up ownership of our data to use modern technologies.<br><br>
 
 			The alternative of near-complete isolation isn't attractive or realistic for the vast majority of the world.
@@ -291,7 +453,7 @@ modals: modals/en/
 		<div class="cell medium-6 small-order-2 medium-order-1">
 
 			<!-- COPY -->
-			<h2 class="margin-bottom-md p2 font-copy text-secondary header-accent-left header-accent-secondary">A Team Of Distributed Exchange Developers With A Track Record</h2>
+			<h2 class="margin-bottom-md text-secondary header-left header-secondary">A Team Of Distributed Exchange Developers With A Track Record</h2>
 
 			<p>
 			AXEL has millions of users across 50+ countries that actively store, transfer, and move data at scale. With a 5+ year history in scaling decentralized technology, and over 100 team members, AXEL is uniquely suited to solve one of the biggest problems of the digital age.
@@ -303,7 +465,7 @@ modals: modals/en/
 
 
 		<!-- CELL -->
-		<div class="cell medium-6 small-order-1 medium-order-2 padding-none background-none emergence-ignore-child">
+		<div class="cell medium-6 small-order-1 medium-order-2 padding-none background-none emergence-ignore">
 
 
 			<!-- IMAGE -->
@@ -343,12 +505,12 @@ modals: modals/en/
 
 
 	<!-- HEADER -->
-	<h2 class="padding-auto p2 font-copy text-secondary text-center header-accent-center header-accent-secondary">The AXEL Network</h2>
+	<h2 class="padding-auto text-secondary text-center header-center header-secondary">The AXEL Network</h2>
 	<!-- // HEADER -->
 
 
 	<!-- GRID -->
-	<div class="grid-x grid-margin-x grid-margin-y grid-padding-x align-left align-stretch small-up-1 medium-up-2 large-up-3 center width-md emergence-ignore-child">
+	<div class="grid-x grid-margin-x grid-margin-y grid-padding-x align-left align-stretch small-up-1 medium-up-2 large-up-3 center width-md emergence-ignore">
 
 
 		<!-- CELL -->
@@ -390,7 +552,7 @@ modals: modals/en/
 
 
 			<!-- COPY -->
-			<h3 class="margin-bottom-md p6 font-copy text-white header-accent-left header-accent-white">Privacy Without Anonymity</h3>
+			<h3 class="margin-bottom-md h5 text-white header-left header-white">Privacy Without Anonymity</h3>
 
 			<p class="text-white">
 			A unique dual-chain structure allows individuals on the chain to maintain their privacy while establishing trust.<br><br>
@@ -444,7 +606,7 @@ modals: modals/en/
 
 
 			<!-- COPY -->
-			<h3 class="margin-bottom-md p6 font-copy text-white header-accent-left header-accent-white">Detail-Free Reputation</h3>
+			<h3 class="margin-bottom-md h5 text-white header-left header-white">Detail-Free Reputation</h3>
 
 			<p class="text-white">
 			The AXEL Blockchain adds confidence to first-time transactions without publicity. Users (and services) on the chain will have public standings showing earned reputability.<br><br>
@@ -489,7 +651,7 @@ modals: modals/en/
 
 
 			<!-- COPY -->
-			<h3 class="margin-bottom-md p6 font-copy text-white header-accent-left header-accent-white">Personal Unification - Public Decentralization</h3>
+			<h3 class="margin-bottom-md h5 text-white header-left header-white">Personal Unification - Public Decentralization</h3>
 
 			<p class="text-white">
 			Our patented TackApp technology allows people to unify their entire file ecosystems without the cloud.<br><br>
@@ -541,7 +703,7 @@ modals: modals/en/
 
 
 			<!-- HEADER -->
-			<h2 class="margin-left-xl margin-none-mobile p2 font-copy text-secondary text-left header-accent-left header-accent-secondary">Scalable <span class="text-accent">+</span> Accessible <span class="text-accent">+</span> Secure</h2>
+			<h2 class="margin-left-xl margin-none-mobile text-secondary text-left header-left header-secondary">Scalable <span class="text-accent">+</span> Accessible <span class="text-accent">+</span> Secure</h2>
 			<!-- // HEADER -->
 
 
@@ -576,8 +738,8 @@ modals: modals/en/
 
 
 					<!-- COPY -->
-					<h3 class="p10 font-copy text-bold">Data Centers</h3>
-					<p class="p10 text-dark-grey text-leading-xs">
+					<h3 class="h5">Data Centers</h3>
+					<p class="text-dark-grey">
 					Data centers all over the world are ready and able to participate in a new distributed blockchain that allows users to truly own their data while participating in a connected future.
 					</p>
 					<!-- // COPY -->
@@ -623,8 +785,8 @@ modals: modals/en/
 
 
 					<!-- COPY -->
-					<h3 class="p10 font-copy text-bold">Getting AXEL's</h3>
-					<p class="p10 text-dark-grey text-leading-xs">
+					<h3 class="h5">Getting AXEL's</h3>
+					<p class="text-dark-grey">
 					Users will be able to easily rent out their excess storage space and processing power and act as witnesses to the network for tokens.
 					</p>
 					<!-- // COPY -->
@@ -666,8 +828,8 @@ modals: modals/en/
 
 
 					<!-- COPY -->
-					<h3 class="p10 font-copy text-bold">Fully Protected</h3>
-					<p class="p10 text-dark-grey text-leading-xs">
+					<h3 class="h5">Fully Protected</h3>
+					<p class="text-dark-grey">
 					Our network, combined with our on-device apps, ensures that data is unique, removable, and bypasses vulnerable one-point-of-failure systems. A small digital footprint minimizes risk.
 					</p>
 					<!-- // COPY -->
@@ -701,7 +863,7 @@ modals: modals/en/
 
 
 	<!-- GRID -->
-	<div class="grid-x grid-margin-x grid-padding-x align-center align-middle small-up-1 medium-up-2 center width-lg emergence-ignore-child">
+	<div class="grid-x grid-margin-x grid-padding-x align-center align-middle small-up-1 medium-up-2 center width-lg emergence-ignore">
 
 
 		<!-- CELL -->
@@ -722,7 +884,7 @@ modals: modals/en/
 
 
 			<!-- HEADER -->
-			<h2 class="padding-top-sm margin-left-xl margin-none-mobile p2 font-copy text-secondary text-left header-accent-left header-accent-secondary">Our Technology</h2>
+			<h2 class="padding-top-sm margin-left-xl margin-none-mobile text-secondary text-left header-left header-secondary">Our Technology</h2>
 			<!-- // HEADER -->
 
 
@@ -769,8 +931,8 @@ modals: modals/en/
 
 
 					<!-- COPY -->
-					<h3 class="p10 font-copy text-bold">Dual-Chain Architecture</h3>
-					<p class="p10 text-dark-grey text-leading-xs">
+					<h3 class="h5">Dual-Chain Architecture</h3>
+					<p class="text-dark-grey">
 					The AXEL Blockchain utilizes a unique dual-chain structure that lets users build authority without the usual exposure. A private chain stores personal details, while, in parallel, the public chain delivers iron-clad verification by providing the "big picture" view to the greater network.
 					</p>
 					<!-- // COPY -->
@@ -842,8 +1004,8 @@ modals: modals/en/
 
 
 					<!-- COPY -->
-					<h3 class="p10 font-copy text-bold">"Witness Pool" Ad-Hoc Consensus</h3>
-					<p class="p10 text-dark-grey text-leading-xs">
+					<h3 class="h5">"Witness Pool" Ad-Hoc Consensus</h3>
+					<p class="text-dark-grey">
 					Transactions are processed by a small group of random participants, rather than being run through the entire network. 51% exploits become difficult, as no one knows which nodes are participating. It'll be far faster than standard architectures - with a leaner profile.
 					</p>
 					<!-- // COPY -->
@@ -887,8 +1049,8 @@ modals: modals/en/
 
 
 					<!-- COPY -->
-					<h3 class="p10 font-copy text-bold">Weighted Reputation System</h3>
-					<p class="p10 text-dark-grey text-leading-xs">
+					<h3 class="h5">Weighted Reputation System</h3>
+					<p class="text-dark-grey">
 					Our network celebrates positive participants and punishes bad actors - without compromising privacy. Users can flag (and reward) one another. Services on the chain will also affect repute. Anyone can transact with relative unknowns in full awareness.
 					</p>
 					<!-- // COPY -->
@@ -936,8 +1098,8 @@ modals: modals/en/
 
 
 					<!-- COPY -->
-					<h3 class="p10 font-copy text-bold">TackApp Unification</h3>
-					<p class="p10 text-dark-grey text-leading-xs">
+					<h3 class="h5">TackApp Unification</h3>
+					<p class="text-dark-grey">
 					AXEL's patented TackApp technology lets users unify their file ecosystems with anywhere, anytime access - without requiring them to store their files on a centralized server. There are no size limits or restrictions on what they can share or monetize.
 					</p>
 					<!-- // COPY -->
@@ -971,7 +1133,7 @@ modals: modals/en/
 
 
 	<!-- GRID -->
-	<div class="grid-x grid-margin-x grid-padding-x align-center align-middle small-up-1 medium-up-2 center width-lg emergence-ignore-child">
+	<div class="grid-x grid-margin-x grid-padding-x align-center align-middle small-up-1 medium-up-2 center width-lg emergence-ignore">
 
 
 		<!-- CELL -->
@@ -992,7 +1154,7 @@ modals: modals/en/
 
 
 			<!-- HEADER -->
-			<h2 class="p2 font-copy text-secondary text-left text-center-mobile header-accent-left header-accent-center-mobile header-accent-secondary">Here's How We Plan For Users To Get &amp; Spend AXEL Tokens</h2>
+			<h2 class="text-secondary text-left text-center-mobile header-left header-center-mobile header-secondary">Here's How We Plan For Users To Get &amp; Spend AXEL Tokens</h2>
 			<!-- // HEADER -->
 
 
@@ -1021,7 +1183,7 @@ modals: modals/en/
 
 
 	<!-- BLOCK CAP -->
-	<svg class="block-cap bottom svg-secondary emergence-ignore-child" preserveAspectRatio="none" viewBox="0 0 1024 100" aria-hidden="true">
+	<svg class="block-cap bottom svg-secondary emergence-ignore z-01" preserveAspectRatio="none" viewBox="0 0 1024 100" aria-hidden="true">
 		{{> block-cap-inward }}
 	</svg>
 	<!-- // BLOCK CAP -->
@@ -1077,7 +1239,7 @@ modals: modals/en/
 			
 
 			<!-- HEADER -->
-			<h2 class="position-relative font-copy padding-auto p2 text-white text-center header-accent-center header-accent-white z-auto">Historical &amp; Planned Development Timeline</h2>
+			<h2 class="position-relative font-copy padding-auto text-white text-center header-center header-white z-auto">Historical &amp; Planned Development Timeline</h2>
 			<!-- // HEADER -->
 
 
@@ -1088,20 +1250,19 @@ modals: modals/en/
 				<div class="card tip-bottom overflow-visible margin-sm padding-sm background-white">
 					
 					<!-- COPY -->
-					<h3 class="p10 font-copy text-dark-grey text-bold">2013</h3>
+					<h3 class="h5 text-dark-grey">2013</h3>
 
-					<ul class="list-horizontal p10 text-dark-grey">
+					<ul class="list-horizontal text-dark-grey">
 						<li>Launch of CloudLocker decentralized storage device.</li>
 					</ul>
 					<!-- // COPY -->
 
-
 				</div>
 
 
-				<div class="position-absolute center-vh margin-top-md width-full border-xxs border-top border-dotted border-light-grey text-center">
-					<span class="position-absolute center-v left p10 text-white fa fa-circle" aria-hidden="true"></span>
-					<span class="position-absolute center-vh p10 text-accent fa fa-circle" aria-hidden="true"></span>
+				<div class="position-absolute center-vh margin-top-lg width-full border-xxs border-top border-dotted border-light-grey text-center">
+					<span class="position-absolute center-v left text-white fa fa-circle" aria-hidden="true"></span>
+					<span class="position-absolute center-vh text-accent fa fa-circle" aria-hidden="true"></span>
 				</div>
 
 				
@@ -1116,9 +1277,9 @@ modals: modals/en/
 				<div class="card tip-bottom overflow-visible margin-sm padding-sm background-white">
 					
 					<!-- COPY -->
-					<h3 class="p10 font-copy text-dark-grey text-bold">2014</h3>
+					<h3 class="h5 text-dark-grey">2014</h3>
 
-					<ul class="list-horizontal p10 text-dark-grey">
+					<ul class="list-horizontal text-dark-grey">
 						<li>Multi-Factor Authenticated Sharing on file transfers.</li>
 					</ul>
 					<!-- // COPY -->
@@ -1126,7 +1287,7 @@ modals: modals/en/
 				</div>
 
 
-				<div class="position-absolute center-vh margin-top-md width-full border-xxs border-top border-dotted border-light-grey text-center"><span class="position-absolute center-vh p10 text-accent fa fa-circle" aria-hidden="true"></span></div>
+				<div class="position-absolute center-vh margin-top-lg width-full border-xxs border-top border-dotted border-light-grey text-center"><span class="position-absolute center-vh text-accent fa fa-circle" aria-hidden="true"></span></div>
 
 				
 			</div>
@@ -1140,9 +1301,9 @@ modals: modals/en/
 				<div class="card tip-bottom overflow-visible margin-sm padding-sm background-white">
 					
 					<!-- COPY -->
-					<h3 class="p10 font-copy text-dark-grey text-bold">2015</h3>
+					<h3 class="h5 text-dark-grey">2015</h3>
 
-					<ul class="list-horizontal p10 text-dark-grey">
+					<ul class="list-horizontal text-dark-grey">
 						<li>Launch of desktop TackApp.</li>
 					</ul>
 					<!-- // COPY -->
@@ -1150,7 +1311,7 @@ modals: modals/en/
 				</div>
 
 
-				<div class="position-absolute center-vh margin-top-md width-full border-xxs border-top border-dotted border-light-grey text-center"><span class="position-absolute center-vh p10 text-accent fa fa-circle" aria-hidden="true"></span></div>
+				<div class="position-absolute center-vh margin-top-lg width-full border-xxs border-top border-dotted border-light-grey text-center"><span class="position-absolute center-vh text-accent fa fa-circle" aria-hidden="true"></span></div>
 
 				
 			</div>
@@ -1164,9 +1325,9 @@ modals: modals/en/
 				<div class="card tip-bottom overflow-visible margin-sm padding-sm background-white">
 					
 					<!-- COPY -->
-					<h3 class="p10 font-copy text-dark-grey text-bold">2016</h3>
+					<h3 class="h5 text-dark-grey">2016</h3>
 
-					<ul class="list-horizontal p10 text-dark-grey">
+					<ul class="list-horizontal text-dark-grey">
 						<li>Launch of mobile TackApp.</li>
 					</ul>
 					<!-- // COPY -->
@@ -1174,7 +1335,7 @@ modals: modals/en/
 				</div>
 
 
-				<div class="position-absolute center-vh margin-top-md width-full border-xxs border-top border-dotted border-light-grey text-center"><span class="position-absolute center-vh p10 text-accent fa fa-circle" aria-hidden="true"></span></div>
+				<div class="position-absolute center-vh margin-top-lg width-full border-xxs border-top border-dotted border-light-grey text-center"><span class="position-absolute center-vh text-accent fa fa-circle" aria-hidden="true"></span></div>
 
 				
 			</div>
@@ -1188,9 +1349,9 @@ modals: modals/en/
 				<div class="card tip-bottom overflow-visible margin-sm padding-sm background-white">
 					
 					<!-- COPY -->
-					<h3 class="p10 font-copy text-dark-grey text-bold">Q2 2018</h3>
+					<h3 class="h5 text-dark-grey">Q2 2018</h3>
 
-					<ul class="list-horizontal p10 text-dark-grey">
+					<ul class="list-horizontal text-dark-grey">
 						<li>Release of new user experience and interface on all applications.</li>
 					</ul>
 					<!-- // COPY -->
@@ -1198,7 +1359,7 @@ modals: modals/en/
 				</div>
 
 
-				<div class="position-absolute center-vh margin-top-md width-full border-xxs border-top border-dotted border-light-grey text-center"><span class="position-absolute center-vh p10 text-accent fa fa-circle" aria-hidden="true"></span></div>
+				<div class="position-absolute center-vh margin-top-lg width-full border-xxs border-top border-dotted border-light-grey text-center"><span class="position-absolute center-vh text-accent fa fa-circle" aria-hidden="true"></span></div>
 
 				
 			</div>
@@ -1211,9 +1372,9 @@ modals: modals/en/
 				<div class="card tip-bottom overflow-visible margin-sm padding-sm background-white">
 					
 					<!-- COPY -->
-					<h3 class="p10 font-copy text-dark-grey text-bold">Q3 2018</h3>
+					<h3 class="h5 text-dark-grey">Q3 2018</h3>
 
-					<ul class="list-horizontal p10 text-dark-grey">
+					<ul class="list-horizontal text-dark-grey">
 						<li>Launch of AXEL Pay.</li>
 					</ul>
 					<!-- // COPY -->
@@ -1221,7 +1382,7 @@ modals: modals/en/
 				</div>
 
 
-				<div class="position-absolute center-vh margin-top-md width-full border-xxs border-top border-dotted border-light-grey text-center"><span class="position-absolute center-vh p10 text-accent fa fa-circle" aria-hidden="true"></span></div>
+				<div class="position-absolute center-vh margin-top-lg width-full border-xxs border-top border-dotted border-light-grey text-center"><span class="position-absolute center-vh text-accent fa fa-circle" aria-hidden="true"></span></div>
 
 				
 			</div>
@@ -1235,9 +1396,9 @@ modals: modals/en/
 				<div class="card tip-bottom overflow-visible margin-sm padding-sm background-white">
 					
 					<!-- COPY -->
-					<h3 class="p10 font-copy text-secondary text-bold">Q4 2018</h3>
+					<h3 class="h5 text-secondary">Q4 2018</h3>
 
-					<ul class="list-horizontal list-dot p10">
+					<ul class="list-horizontal list-dot">
 						<li>AXEL Token release on ERC20 and launch of Privacy Share.</li>
 						<li>Beta version of the AXEL Exchange with search function.</li>
 					</ul>
@@ -1246,8 +1407,8 @@ modals: modals/en/
 				</div>
 
 
-				<div class="position-absolute center-vh margin-top-md width-full border-xxs border-top border-dotted border-light-grey text-center">
-					<span class="position-absolute center-vh p10 text-accent fa fa-circle" aria-hidden="true"></span>
+				<div class="position-absolute center-vh margin-top-lg width-full border-xxs border-top border-dotted border-light-grey text-center">
+					<span class="position-absolute center-vh text-accent fa fa-circle" aria-hidden="true"></span>
 				</div>
 
 				
@@ -1262,9 +1423,9 @@ modals: modals/en/
 				<div class="card tip-bottom overflow-visible margin-sm padding-sm background-white">
 					
 					<!-- COPY -->
-					<h3 class="p10 font-copy text-secondary text-bold">Q4 2019</h3>
+					<h3 class="h5 text-secondary">Q4 2019</h3>
 
-					<ul class="list-horizontal list-dot p10">
+					<ul class="list-horizontal list-dot">
 						<li>Beta version of the AXEL Blockchain.</li>
 						<li>Start of one-to-one token exchange for migration to the new AXEL Token.</li>
 					</ul>
@@ -1273,8 +1434,8 @@ modals: modals/en/
 				</div>
 
 
-				<div class="position-absolute center-vh margin-top-md width-full border-xxs border-top border-dotted border-light-grey text-center">
-					<span class="position-absolute center-vh p10 text-accent fa fa-circle" aria-hidden="true"></span>
+				<div class="position-absolute center-vh margin-top-lg width-full border-xxs border-top border-dotted border-light-grey text-center">
+					<span class="position-absolute center-vh text-accent fa fa-circle" aria-hidden="true"></span>
 				</div>
 
 				
@@ -1289,9 +1450,9 @@ modals: modals/en/
 				<div class="card tip-bottom overflow-visible margin-sm padding-sm background-white">
 					
 					<!-- COPY -->
-					<h3 class="p10 font-copy text-secondary text-bold">Q3 2020</h3>
+					<h3 class="h5 text-secondary">Q3 2020</h3>
 
-					<ul class="list-horizontal p10">
+					<ul class="list-horizontal">
 						<li>Full deployment of the AXEL Blockchain.</li>
 					</ul>
 					<!-- // COPY -->
@@ -1299,8 +1460,8 @@ modals: modals/en/
 				</div>
 
 
-				<div class="position-absolute center-vh margin-top-md width-full border-xxs border-top border-dotted border-light-grey text-center">
-					<span class="position-absolute center-vh p10 text-accent fa fa-circle" aria-hidden="true"></span>
+				<div class="position-absolute center-vh margin-top-lg width-full border-xxs border-top border-dotted border-light-grey text-center">
+					<span class="position-absolute center-vh text-accent fa fa-circle" aria-hidden="true"></span>
 				</div>
 
 				
@@ -1315,9 +1476,9 @@ modals: modals/en/
 				<div class="card tip-bottom overflow-visible margin-sm padding-sm background-white">
 					
 					<!-- COPY -->
-					<h3 class="p10 font-copy text-secondary text-bold">Q4 2020</h3>
+					<h3 class="h5 text-secondary">Q4 2020</h3>
 
-					<ul class="list-horizontal p10">
+					<ul class="list-horizontal">
 						<li>Completion of one-to-one token exchange for migration to the new AXEL Token.</li>
 					</ul>
 					<!-- // COPY -->
@@ -1325,9 +1486,9 @@ modals: modals/en/
 				</div>
 
 
-				<div class="position-absolute center-vh margin-top-md width-full border-xxs border-top border-dotted border-light-grey text-center">
-					<span class="position-absolute center-v right p10 text-white fa fa-circle" aria-hidden="true"></span>
-					<span class="position-absolute center-vh p10 text-accent fa fa-circle" aria-hidden="true"></span>
+				<div class="position-absolute center-vh margin-top-lg width-full border-xxs border-top border-dotted border-light-grey text-center">
+					<span class="position-absolute center-v right text-white fa fa-circle" aria-hidden="true"></span>
+					<span class="position-absolute center-vh text-accent fa fa-circle" aria-hidden="true"></span>
 				</div>
 
 				
@@ -1355,14 +1516,14 @@ modals: modals/en/
 
 
 	<!-- BLOCK CAP -->
-	<svg class="block-cap bottom svg-white emergence-ignore-child" preserveAspectRatio="none" viewBox="0 0 1024 100" aria-hidden="true">
+	<svg class="block-cap bottom svg-white emergence-ignore" preserveAspectRatio="none" viewBox="0 0 1024 100" aria-hidden="true">
 		{{> block-cap-inward  }}
 	</svg>
 	<!-- // BLOCK CAP -->
 
 
 	<!-- HEADER -->
-	<h2 class="padding-auto p2 font-copy text-white text-center header-accent-center header-accent-white">The Team</h2>
+	<h2 class="padding-auto text-white text-center header-center header-white">The Team</h2>
 	<!-- // HEADER -->
 
 
@@ -1379,6 +1540,33 @@ modals: modals/en/
 
 </section>
 <!-- // SECTION: THE TEAM -->
+
+
+
+
+
+<!-- CONTENT: PARTNERS -->
+<section id="partners" aria-hidden="true" data-emergence="hidden">
+
+
+	<!-- HEADER -->
+	<h2 class="font-copy padding-auto padding-bottom-none text-secondary text-center header-center header-secondary">Partners</h2>
+	<!-- // HEADER -->
+
+
+	<div class="grid-x align-left align-middle small-up-1 medium-up-2 large-up-3 text-center">
+
+		<!-- ITEM -->
+		{{#each logos-partners.content}}
+		<a href="{{ link }}" target="_blank" class="cell sprite-wrapper {{ id }}" aria-label="{{ title }}"></a>
+		{{/each}}
+		<!-- // ITEM -->
+
+	</div>
+
+
+</section>
+<!-- // CONTENT: PARTNERS -->
 
 
 
@@ -1431,7 +1619,7 @@ modals: modals/en/
 		<!-- CELL -->
 		<div class="cell medium-5 small-order-2 medium-order-2">
 
-			<h2 class="margin-bottom-md p2 font-copy text-secondary header-accent-left header-accent-secondary">The AXEL Exchange Will Be The Blockchain's Flagship Native App</h2>
+			<h2 class="margin-bottom-md font-copy text-secondary header-left header-secondary">The AXEL Exchange Will Be The Blockchain's Flagship Native App</h2>
 
 			<p>
 			The centralization of control in the hands of content platforms has locked millions out of the digital economy. The AXEL Exchange will be the first DApp on the network.
@@ -1446,7 +1634,7 @@ modals: modals/en/
 
 
 	<!-- GRID -->
-	<div class="grid-x grid-margin-x grid-margin-y grid-padding-x align-center align-stretch small-up-1 medium-up-2 center width-md emergence-ignore-child">
+	<div class="grid-x grid-margin-x grid-margin-y grid-padding-x align-center align-stretch small-up-1 medium-up-2 center width-md emergence-ignore">
 
 
 		<!-- CELL -->
@@ -1489,7 +1677,7 @@ modals: modals/en/
 
 
 			<!-- COPY -->
-			<h3 class="margin-bottom-md p6 font-copy text-white header-accent-left header-accent-white">Getting Rid Of Middlemen (And Their Fees)</h3>
+			<h3 class="margin-bottom-md h5 text-white header-left header-white">Getting Rid Of Middlemen (And Their Fees)</h3>
 
 			<p class="text-white">
 			The AXEL Blockchain will demonstrate its utility by helping the AXEL Exchange transform paid content - one of the most centralized and unbalanced industries out there.
@@ -1521,7 +1709,7 @@ modals: modals/en/
 
 
 			<!-- COPY -->
-			<h3 class="margin-bottom-md p6 font-copy text-white header-accent-left header-accent-white">P2P Transactions Without The Compromise</h3>
+			<h3 class="margin-bottom-md h5 font-copy text-white header-left header-white">P2P Transactions Without The Compromise</h3>
 
 			<p class="text-white">
 			The AXEL Exchange will give creators the visibility and ease of platforms - without the loss of control. Sellers can completely customize their pricing and business models - and keep 95% of every sale.
@@ -1548,7 +1736,7 @@ modals: modals/en/
 
 
 	<!-- HEADER -->
-	<h2 class="padding-auto padding-tb-none center width-xs p2 font-copy text-secondary text-center text-left-mobile header-accent-center header-accent-left-mobile header-accent-secondary">Like What The Car Was To The Horse - AXEL Will Be To Paid Digital Content</h2>
+	<h2 class="padding-auto padding-tb-none center width-xs font-copy text-secondary text-center text-left-mobile header-center header-left-mobile header-secondary">Like What The Car Was To The Horse - AXEL Will Be To Paid Digital Content</h2>
 	<!-- // HEADER -->
 
 
@@ -1617,8 +1805,8 @@ modals: modals/en/
 
 
 				<!-- COPY -->
-				<h3 class="p10 font-copy text-bold">Sell Anything In Seconds, Easily</h3>
-				<p class="p10 text-dark-grey text-leading-xs">
+				<h3 class="h5">Sell Anything In Seconds, Easily</h3>
+				<p class="text-dark-grey">
 				Imagine clicking on any file on your computer, selecting options, and having it searchable and buyable on a global exchange in seconds. A blog post you wrote, a video you shot, a photo you took. Easy.
 				</p>
 				<!-- // COPY -->
@@ -1683,8 +1871,8 @@ modals: modals/en/
 
 
 				<!-- COPY -->
-				<h3 class="p10 font-copy text-bold">Startup Is Free</h3>
-				<p class="p10 text-dark-grey text-leading-xs">
+				<h3 class="h5">Startup Is Free</h3>
+				<p class="text-dark-grey">
 				Selling online today is expensive. Starting with AXEL will be free. No storefront fees: anyone can instantly start selling without spending a dime. Transaction fees will be small and transparent.
 				</p>
 				<!-- // COPY -->
@@ -1732,8 +1920,8 @@ modals: modals/en/
 
 
 				<!-- COPY -->
-				<h3 class="p10 font-copy text-bold">No "Hostage Situations"</h3>
-				<p class="p10 text-dark-grey text-leading-xs">
+				<h3 class="h5">No "Hostage Situations"</h3>
+				<p class="text-dark-grey">
 				Our system completely rewrites the rules on how online transactions work. Both parties get what they want at the exact same time, guaranteed by the technology itself. No chasing up payments.
 				</p>
 				<!-- // COPY -->
@@ -1821,8 +2009,8 @@ modals: modals/en/
 
 
 				<!-- COPY -->
-				<h3 class="p10 font-copy text-bold">Global Decentralized Selling</h3>
-				<p class="p10 text-dark-grey text-leading-xs">
+				<h3 class="h5">Global Decentralized Selling</h3>
+				<p class="text-dark-grey">
 				A decentralized exchange means users keep and own their content. Patented technology ensures everything is directly from device to device. No arbitrary censorship or regulations.
 				</p>
 				<!-- // COPY -->
@@ -1879,8 +2067,8 @@ modals: modals/en/
 
 
 				<!-- COPY -->
-				<h3 class="p10 font-copy text-bold">"Invisible" Transactions</h3>
-				<p class="p10 text-dark-grey text-leading-xs">
+				<h3 class="h5">"Invisible" Transactions</h3>
+				<p class="text-dark-grey">
 				Utilizing the AXEL Token and blockchain technology guarantees that encrypted transactions are practically "invisible" to external parties. It's privacy without compromise.
 				</p>
 				<!-- // COPY -->
@@ -1910,7 +2098,7 @@ modals: modals/en/
 
 
 	<!-- BLOCK CAP -->
-	<svg class="block-cap bottom svg-white emergence-ignore-child hide" preserveAspectRatio="none" viewBox="0 0 1024 100" aria-hidden="true">
+	<svg class="block-cap bottom svg-white emergence-ignore hide" preserveAspectRatio="none" viewBox="0 0 1024 100" aria-hidden="true">
 		{{> block-cap-inward  }}
 	</svg>
 	<!-- // BLOCK CAP -->
@@ -1930,7 +2118,7 @@ modals: modals/en/
 
 	<!-- ANIMATION: HORIZONTAL SCROLL -->
 	<!--
-	<div class="position-absolute top padding-none width-full height-full background-pattern overflow-hidden anim anim-play anim-horizontal emergence-ignore-child">
+	<div class="position-absolute top padding-none width-full height-full background-pattern overflow-hidden anim anim-play anim-horizontal emergence-ignore">
 
 		<div class="top float-left width-full height-full background-contain background-repeat lazy" data-src="{{ root }}{{ assets }}common/people.png"></div>
 
@@ -1948,7 +2136,7 @@ modals: modals/en/
 
                         
 			<!-- COPY -->
-			<h2 class="p4 text-white text-uppercase">Millions Of People Already Use AXEL – The App That Will Catalyze The Exchange</h2>
+			<h2 class="text-white">Millions Of People Already Use AXEL – The App That Will Catalyze The Exchange</h2>
 			<p class="text-white">
 			AXEL is a multi-platform app that makes files easy. Share, stream, or transfer them between your devices.<br><br>
 
@@ -2015,7 +2203,7 @@ modals: modals/en/
 		<div class="cell small-order-2 medium-order-2">
 
 			<!-- COPY -->
-			<h2 class="margin-bottom-md p2 font-copy text-secondary header-accent-left header-accent-secondary">The $600 Billion Digital Content Market Desperately Needs A Better Way</h2>
+			<h2 class="margin-bottom-md text-secondary header-left header-secondary">The $600 Billion Digital Content Market Desperately Needs A Better Way</h2>
 			<p>
 			Digital content is huge, projected to hit $1 trillion within the decade. Think for a moment of how many digital products, how many services, are exchanged and paid for online daily.<br><br>
 
@@ -2049,12 +2237,12 @@ modals: modals/en/
 	
 	
 	<!-- HEADER -->
-	<h2 class="padding-auto center width-xs p2 font-copy text-secondary text-center header-secondary header-accent-center header-accent-secondary">The Unique Benefits Will Attract A Dynamic Group Of People To Build The Exchange</h2>
+	<h2 class="padding-auto center width-xs text-secondary text-center header-secondary header-center header-secondary">The Unique Benefits Will Attract A Dynamic Group Of People To Build The Exchange</h2>
 	<!-- // HEADER -->
 
 	
 	<!-- GRID -->
-    <div class="profiles grid-x grid-margin-x align-left align-top small-up-1 medium-up-2 large-up-3 padding-top-lg center width-sm emergence-ignore-child">
+    <div class="profiles grid-x grid-margin-x align-left align-top small-up-1 medium-up-2 large-up-3 padding-top-lg center width-sm emergence-ignore">
 
 
     	{{> stories}}
@@ -2076,14 +2264,14 @@ modals: modals/en/
 
 
 	<!-- BLOCK CAP -->
-	<svg class="block-cap bottom svg-charcoal emergence-ignore-child" preserveAspectRatio="none" viewBox="0 0 1024 100" aria-hidden="true">
+	<svg class="block-cap bottom svg-charcoal emergence-ignore" preserveAspectRatio="none" viewBox="0 0 1024 100" aria-hidden="true">
 		{{> block-cap-inward  }}
 	</svg>
 	<!-- // BLOCK CAP -->
 
 
 	<!-- HEADER -->
-	<h2 class="padding-auto center p2 font-copy text-secondary text-center header-accent-center header-accent-secondary">Join Us On Our Mission</h2>
+	<h2 class="padding-auto center text-secondary text-center header-center header-secondary">Join Us On Our Mission</h2>
 	<!-- // HEADER -->
 
 
@@ -2120,7 +2308,7 @@ modals: modals/en/
 
 
 					<!-- COPY -->
-					<h3 class="p8 padding-top-xs padding-top-none-mobile font-copy text-white">Join Our Telegram</h3>
+					<h3 class="h5 padding-top-xs padding-top-none-mobile font-copy text-white">Join Our Telegram</h3>
 					<!-- // COPY -->
 
 
@@ -2133,7 +2321,7 @@ modals: modals/en/
 
 
 			<!-- CARD -->
-			<a href="{{ modals }}whitepaper" class="card media-object stack-for-small margin-tb-sm margin-bottom-none-mobile padding-sm background-secondary anim-right" data-content-selector="white-paper" data-content-width="650" data-content-height="560" aria-label="Read the White Paper">
+			<a href="{{ dialog }}whitepaper" class="card media-object stack-for-small margin-tb-sm margin-bottom-none-mobile padding-sm background-secondary anim-right" data-content-selector="white-paper" data-content-width="650" data-content-height="560" aria-label="Read the White Paper">
 
 
 				  <!-- MEDIA OBJECT -->
@@ -2157,7 +2345,7 @@ modals: modals/en/
 
 
 					<!-- COPY -->
-					<h3 class="p8 padding-top-xs padding-top-none-mobile font-copy text-white">Read the White Paper</h3>
+					<h3 class="h5 padding-top-xs padding-top-none-mobile font-copy text-white">Read the White Paper</h3>
 					<!-- // COPY -->
 
 
@@ -2194,7 +2382,7 @@ modals: modals/en/
 
 
 					<!-- COPY -->
-					<h3 class="p8 padding-top-xs padding-top-none-mobile font-copy text-white">Join the Whitelist</h3>
+					<h3 class="h5 padding-top-xs padding-top-none-mobile font-copy text-white">Join the Whitelist</h3>
 					<!-- // COPY -->
 
 
@@ -2231,5 +2419,4 @@ modals: modals/en/
 <!-- // SECTION: JOIN US ON OUR MISSION -->
 
 
-</main>
-<!-- // CONTENT -->
+<!-- // {{ page }} -->

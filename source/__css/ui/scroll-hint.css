@@ -1,0 +1,149 @@
+/* -------------------------------------------------- */
+/* SCROLL HINT
+/* -------------------------------------------------- */
+
+/* COMMON */
+.scroll-hint .mouse,
+.scroll-hint .mouse .scroll-tick,
+.scroll-hint p {
+    transition: var(--transition);
+} 
+
+
+/* PARENT */
+.scroll-hint {
+    position: relative;
+    right: 0;
+    left: 0;
+
+    width: 50px;
+    height: 50px;
+    margin-right: auto;
+    margin-left: auto;
+
+    border-radius: 100px;
+    background-color: transparent;
+}
+
+
+/* MOUSE */
+.scroll-hint .mouse {
+    position: relative;
+    top: 50%;
+
+    width: 22px;
+    height: 35px;
+    margin: 0 auto 0 auto;
+
+    transform: translateY(-50%);
+    animation: animMouse .5s linear;
+    animation-play-state: paused;
+
+    border: 2px solid var(--dark-grey-color);
+    border-radius: 15px;
+}
+
+.scroll-hint .mouse .scroll-tick {
+    display: block;
+
+    width: 4px;
+    height: 4px;
+    margin: .25rem auto 0 auto;
+
+    animation: animScroll 1s linear infinite;
+    animation-play-state: paused;
+    animation-direction: normal;
+
+    border-radius: 4px;
+    background-color: var(--dark-grey-color);
+}
+
+
+/* HELPERS */
+.scroll-hint.active .mouse {
+    animation-play-state: running;
+}
+
+
+.scroll-hint.active .mouse .scroll-tick {
+    animation-play-state: running;
+}
+
+
+/* LABEL */
+.scroll-hint p {
+    font-size: .875em;
+
+    position: relative;
+    bottom: 0;
+
+    margin: .25rem 0 .25rem 0;
+    padding: 0 0 0 0;
+
+    text-align: center;
+
+    color: var(--light-grey-color);
+}
+
+
+/* HOVER */
+.scroll-hint:hover .mouse {
+    border: 2px solid var(--secondary-color);
+    background-color: var(--secondary-color);
+} 
+
+.scroll-hint:hover .mouse .scroll-tick {
+    background-color: var(--white-color);
+}
+
+.scroll-hint:hover p {
+    color: var(--secondary-color);
+}
+
+
+/* HELPERS */
+.scroll-hint.reverse .mouse .scroll-tick {
+    animation-direction: reverse;
+}
+
+
+/* ANIMATION */
+@keyframes animMouse {
+
+    0% {
+        transform: translate3d(0, 40px, 0);
+
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+
+        opacity: 1;
+    }
+
+}
+
+@keyframes animScroll {
+
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate3d(0, 20px, 0);
+
+        opacity: 0;
+    }
+    
+}
+
+
+/* RESPONSIVE */
+@media screen and (min-height: 0) and (max-height: 730px) {
+
+    .scroll-hint {
+        display: none;
+    }
+
+}

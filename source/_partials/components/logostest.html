@@ -1,0 +1,96 @@
+
+<!-- CONTENT: LOGOS -->
+<section id="welcome" class="position-relative margin-top-xxxl margin-top-xl-tablet margin-top-none-mobile" aria-hidden="true" data-emergence="hidden">
+
+
+	<!-- HEADER -->
+	<h2 class="font-copy padding-auto padding-tb-none p2 text-secondary text-center header-center header-secondary">What People Are Saying</h2>
+	<!-- // HEADER -->
+
+
+	<!-- SLIDER -->
+	<div class="slick overflow dark"
+		 data-slick='{
+
+
+"infinite": true,
+"initialSlide": 0,
+
+"vertical": false,
+"verticalSwiping": false,
+
+"arrows": true,
+"dots": true,
+"dotsClass": slick-dots,
+
+"autoplay": true,
+"autoplaySpeed": 2000,
+
+"centerMode": false,
+"centerPadding": 50px,
+
+"useCSS": true,
+"cssEase": linear,
+"useTransform": true,
+
+"draggable": true,
+
+"touchMove": true,
+"touchThreshold": 10,
+"edgeFriction": 0.15,
+"fade": false,
+
+"swipe": true,
+"swipeToSlide": false,
+
+"lazyLoad": ondemand,
+
+"slidesPerRow": 1,
+"slidesToShow": 4,
+"slidesToScroll": 4,
+
+"speed": 500,
+"waitForAnimate": true,
+
+"variableWidth": false,
+"adaptiveHeight": true,
+
+"pauseOnFocus" true,
+"pauseOnHover": true,
+"pauseOnDotsHover": true,
+
+"accessibility": true,
+"mobileFirst": false,
+"respondTo": window,
+"rtl": false,
+"zIndex": 1000
+
+					 }'>
+
+
+		<!-- ITEM -->
+		{{#each logos-press.content}}
+		<div class="text-center">
+			
+			<a href="{{ link }}" target="_blank" class="sprite-wrapper {{ id }}" aria-label="{{ title }}"></a>
+			
+		</div>
+		{{/each}}
+		<!-- // ITEM -->
+		
+	
+	</div>
+	<!-- // SLIDER -->
+
+
+	<!-- BUTTON -->
+	<div class="padding-auto padding-bottom-xl">
+
+		<a href="{{ modals }}press" class="width-xxs round-full button button-fx-secondary button-fx-flat button-fx-static box-shadow-sm box-shadow-xl-hover anim-top prevent-default" data-content-selector="articles" data-content-width="650" data-content-height="auto">View More Articles</a>
+		
+	</div>
+	<!-- // BUTTON -->
+
+
+</section>
+<!-- // CONTENT: LOGOS -->

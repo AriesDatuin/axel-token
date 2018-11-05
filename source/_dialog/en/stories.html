@@ -1,0 +1,53 @@
+---
+layout: dialog
+assets: assets/
+---
+
+
+<!-- CONTENT -->
+{{#each stories.content}}
+
+
+	<article id="story-{{ id }}" class="profile grid-x align-center align-top small-up-1 medium-up-2">
+		
+
+		<!-- CELL -->
+		<div id="photo" class="cell small-order-1 medium-order-2 padding-none height-50-mobile overflow-hidden">
+
+
+			<!-- IMAGE -->
+			<img src="{{ image }}" alt="{{ title }}-{{ subtitle }}...">
+			<!-- // IMAGE -->
+
+
+			<!-- BLOCK CAP -->
+			<svg class="block-cap bottom svg-white emergence-ignore-child" preserveAspectRatio="none" viewBox="0 0 1024 100" aria-hidden="true">
+				{{> block-cap-inward  }}
+			</svg>
+			<!-- // BLOCK CAP -->
+
+
+		</div>
+		<!-- // CELL -->
+
+
+		<!-- CELL -->
+		<div id="description" class="cell small-order-2 medium-order-1 padding-tb-lg padding-lr-md">
+			
+			
+			<!-- COPY -->
+			<h1 id="dialog-title" class="h2 font-copy text-secondary header-left header-secondary">{{ title }}</h1>
+			<!--<h2 class="p8 font-copy text-dark-grey header header-left header-secondary">{{ subtitle }}</h2>-->
+			<p id="dialog-description">{{ description }}</p>
+			<!-- // COPY -->
+
+			
+		</div>
+		<!-- // CELL -->
+
+
+	</article>
+
+
+{{/each}}
+<!-- // CONTENT -->

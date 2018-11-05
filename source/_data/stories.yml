@@ -19,7 +19,7 @@ content:
   icon: assets/stories/camera.svg
   thumb: assets/stories/small-josh.png
   image: assets/stories/large-josh.png
-  link: modals/en/stories
+  link: dialog/en/stories
 
 
  -
@@ -38,7 +38,7 @@ content:
   icon: assets/stories/acoustic-guitar.svg
   thumb: assets/stories/small-shera.png
   image: assets/stories/large-shera.png
-  link: modals/en/stories
+  link: dialog/en/stories
 
 
  -
@@ -61,4 +61,4 @@ content:
   icon: assets/stories/gamepad.svg
   thumb: assets/stories/small-tina.png
   image: assets/stories/large-tina.png
-  link: modals/en/stories
+  link: dialog/en/stories

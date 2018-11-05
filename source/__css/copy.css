@@ -1,0 +1,391 @@
+/* -------------------------------------------------- */
+/* GENERAL
+/* -------------------------------------------------- */
+
+body {
+    font-family: var(--font-copy);
+}
+
+h1, .font-header {
+    font-family: var(--font-header);
+}
+
+h2, h3, h4, h5, h6, .font-subheader {
+    font-family: var(--font-copy);
+}
+
+.font-heavy {
+    font-family: var(--font-heavy);
+    font-weight: bold;
+}
+
+.font-copy {
+    font-family: var(--font-copy);
+}
+
+.font-stack {
+    font-family: var(--font-stack);
+}
+
+/*
+a, blockquote, button, div, figcaption, h1, h2, h3, h4, h5, h6, input, label, dl, li, ol, p, select, span, table, textarea {
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	letter-spacing: inherit;
+	text-align: inherit;
+	border: 0;
+	
+	voice-family: female;
+	volume: medium;
+	azimuth: 0;
+	elevation: level;
+	pitch: medium;
+	richness: 50;
+	stress: 25;
+	speak: normal;
+	speak-header: once;
+	speak-numeral: continuous;
+	speak-punctuation: none;
+	speech-rate: medium;
+}
+*/
+
+a, button, input, label, cite, dt, dd, li, ol, div, p, span, tr, th, td {
+    font-family: inherit;
+    font-size: inherit;
+
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+
+    letter-spacing: inherit;
+
+    color: inherit;
+    /*text-align: inherit;*/
+    border: 0;
+}
+
+
+/* -------------------------------------------------- */
+/* LINKS
+/* -------------------------------------------------- */
+
+/* STATES */
+a:not(.button):not([class^='social-icon-']):not([class='card']) {
+    transition: var(--transition);
+}
+
+a:not(.button):not([class^='social-icon-']):not([class='card']):hover {
+    text-decoration: none;
+}
+
+a:not(.button):not([class^='social-icon-']):not([class='card']):focus {
+    /*color: var(--accent-color);*/
+    text-decoration: none;
+}
+
+a:not(.button):not([class^='social-icon-']):not([class='card']):active {
+    text-decoration: none;
+
+    color: var(--accent-color);
+    background-color: transparent;
+}
+
+
+/* HELPERS */
+a.inactive,
+a.disabled {
+    cursor: pointer;
+    pointer-events: none;
+    color: var(--light-grey-color);
+}
+
+
+/* -------------------------------------------------- */
+/* HEADER
+/* -------------------------------------------------- */	
+
+h1, .h1 {
+    font-size: 3rem;
+}
+
+h2, .h2 {
+    font-size: 2rem;
+}
+
+h3, .h3 {
+    font-size: 1.75rem;
+}
+
+h4, .h4 {
+    font-size: 1.5rem;
+}
+
+h5, .h5 {
+    font-size: 1.25rem;
+}
+
+h6, .h6 {
+    font-size: 1rem;
+}
+
+
+/* RESPONSIVE */
+@media print, screen and (min-width: 40em) {
+
+	h1, .h1 {
+		font-size: 3rem;
+	}
+
+	h2, .h2 {
+		font-size: 2rem;
+	}
+
+	h3, .h3 {
+		font-size: 1.75rem;
+	}
+
+	h4, .h4 {
+		font-size: 1.5rem;
+	}
+
+	h5, .h5 {
+		font-size: 1.25rem;
+	}
+
+	h6, .h6 {
+		font-size: 1rem;
+	}
+
+}
+
+/* -------------------------------------------------- */
+/* PARAGRAPHS
+/* -------------------------------------------------- */
+
+p {
+    font-size: 1em;
+}
+
+.p1 {
+    font-size: 2em;
+}
+
+.p2 {
+    font-size: 1.75em;
+}
+
+.p3 {
+    font-size: 1.5em;
+}
+
+.p4 {
+    font-size: 1.25em;
+}
+
+.p5 {
+    font-size: 0.875em;
+}
+
+.p6 {
+    font-size: .75em;
+}
+
+.small-print {
+    font-size: .75em;
+}
+
+.giant-print {
+    font-size: 5em;
+    line-height: .8em;
+}
+
+
+/* REPONSIVE */
+@media only screen and (min-width: 0) and (max-width: 375px) {
+
+    .giant-print {
+        font-size: 4.5em;
+        line-height: .8em;
+    }
+
+}
+
+
+/* -------------------------------------------------- */
+/* BLOCKQUOTE
+/* -------------------------------------------------- */	
+
+blockquote {
+    position: relative;
+
+    width: 100%;
+    /*border-left: 1px solid var(--white-color);*/
+}
+
+blockquote::after {
+    font-family: 'FontAwesome';
+    font-size: 4em;
+
+    position: absolute;
+    z-index: auto;
+    top: -.25em;
+    left: .12em;
+
+    content: '\f10d';
+
+    opacity: .15;
+}
+
+blockquote p, cite {
+    color: var(--charcoal-color);
+}
+
+
+/* -------------------------------------------------- */
+/* HEADER STYLES
+/* -------------------------------------------------- */
+
+/* COMMMON */
+.header::after,
+.header-right::after,
+.header-left::after,
+.header-center::after {
+    display: block;
+
+    width: 10%;
+    height: 4px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    content: '';
+
+    border-radius: 0;
+}
+
+.header-right::after {
+    margin-right: 0;
+    margin-left: auto;
+}
+
+.header-left::after {
+    margin-right: auto;
+    margin-left: 0;
+}
+
+.header-center::after {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+/* STYLES */
+.header-25::after {
+    width: 25%;
+}
+
+.header-50::after {
+    width: 50%;
+}
+
+.header-75::after {
+    width: 75%;
+}
+
+.header-full::after {
+    width: 100%;
+}
+
+
+/* COLORS: BRAND */
+.header-primary::after {
+    background-color: var(--primary-color);
+}
+
+.header-secondary::after {
+    background-color: var(--secondary-color);
+}
+
+.header-accent::after {
+    background-color: var(--accent-color);
+}
+
+.header-wild-accent::after {
+    background-color: var(--wild-color);
+}
+
+
+/* COLORS: GRAYSCALE */
+.header-white::after {
+    background-color: var(--white-color);
+}
+
+.header-light-grey::after {
+    background-color: var(--light-grey-color);
+}
+
+.header-dark-grey::after {
+    background-color: var(--dark-grey-color);
+}
+
+.header-charcoal::after {
+    background-color: var(--charcoal-color);
+}
+
+.header-black::after {
+    background-color: var(--black-color);
+}
+
+
+/* COLORS: STATUS */
+.header-ok::after {
+    background-color: var(--ok-color);
+}
+
+.header-error::after {
+    background-color: var(--error-color);
+}
+
+.header-warning::after {
+    background-color: var(--warning-color);
+}
+
+
+/* REPONSIVE */
+@media only screen and (min-width: 0) and (max-width: 639px) {
+
+    .header-right-mobile::after {
+        margin-right: 0;
+        margin-left: auto;
+    }
+
+    .header-left-mobile::after {
+        margin-right: auto;
+        margin-left: 0;
+    }
+
+    .header-center-mobile::after {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+}
+
+@media only screen and (min-width: 0) and (max-width: 1023px) {
+
+    .header-right-tablet::after {
+        margin-right: 0;
+        margin-left: auto;
+    }
+
+    .header-left-tablet::after {
+        margin-right: auto;
+        margin-left: 0;
+    }
+
+    .header-center-tablet::after {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+}

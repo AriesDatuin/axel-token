@@ -3,7 +3,8 @@
 	"options": {
 		"name": "AXEL",
 		"site": "https://axeltoken.com",
-		"siteVersion": "2.4.5",
+		"siteVersion": "2.4.7",
+		"styleguideVersion": "2.4.7",
 		"production": true,
 		"serviceworker": true,
 		"appBanner": false,
@@ -11,7 +12,7 @@
 		"previewURL": "index.html"
 	},
 
-	"paths": {
+	"root": {
 		"source": "source/",
 		"build": "build/",
 		"scripts": "scripts/",
@@ -25,10 +26,14 @@
 
 	"tracking": {
 
+		"fullstory": {
+			"allow": true
+		},
+
 		"ga": {
 			"allow": true,
 			"url": "axeltoken.com",
-			"uid": "UA-126179666-1",
+			"id": "UA-92957315-1",
 			"anonymizeIp": true,
 			"bounceTime": "",
 			"demographics": true,
@@ -40,8 +45,14 @@
 			"tagPlacement": "head"
 		},
 
-		"fullstory": {
-			"allow": true
+		"gtm": {
+			"allow": true,
+			"id": "GTM-NQCR4WM"
+		},
+
+		"mouseflow": {
+			"allow": true,
+			"id": "66e7a8ba-ba2a-42bc-98cb-cc72c6ac1b08"
 		},
 
 		"pixel": {
@@ -53,7 +64,7 @@
 	"robots": {
 		"useragent": "*",
 		"allow": [""],
-		"disallow": ["/assets/", "/cgi-bin/", "/downloads/", "/fonts/", "/modals/", "/scripts/"]
+		"disallow": ["/assets/", "/cgi-bin/", "/downloads/", "/fonts/", "/dialog/", "/scripts/"]
 	},
 
 	"versioning": {
@@ -78,7 +89,7 @@
 		},
 
 		"sprite": {
-			"paths": "sprites/",
+			"files": "sprites/",
 			"convert": {
 						"allow": true,
 						"format": "png",
@@ -121,7 +132,7 @@
 	},
 
 	"html": {
-		"paths": "_pages/**/*.{html,hbs,handlebars}",
+		"files": "_pages/**/*.{html,hbs,handlebars}",
 		
 		"root": "_pages/",
 		"layouts": "_layouts/",
@@ -129,14 +140,14 @@
 		"helpers": "_helpers/",
 		"data": "_data/",
 
-		"modals": {
-			"paths": "_modals/**/*.{html,hbs,handlebars}",
-			"output": "modals/"
+		"dialog": {
+			"files": "_dialog/**/*.{html,hbs,handlebars}",
+			"output": "dialog/"
 		},
 		
 		"inlineScripts": {
-			"js": "_scripts/*.js",
-			"css": "css/critical.css"
+			"js": "__scripts/*.js",
+			"css": "__css/critical.css"
 		}
 	},
 	
@@ -147,7 +158,7 @@
 		"lint": false,
 		"attribute": "async",
 
-		"paths": "_vendors/*.js"
+		"files": "__vendors/*.js"
 	},
 
 	"styleguide": {
@@ -183,173 +194,162 @@
 	"js": {
 		"bundle": "app.js",
 		"attribute": "defer",
+		"root": "__lib/",
 		
-		"paths": ["<JQUERY>",
-				  "lib/jquery/jquery.js",
+		"files": ["<JQUERY>",
+				  "__lib/jquery/jquery.js",
 
 
 				  "<PLUGINS>",
 				  ">>>>>lib/jquery/jquery.mobile.js",
-				  ">>>>>lib/jquery/plugins/jquery.easing.js",
-				  "lib/assets/selectorcache.js",
+				  "__lib/jquery/plugins/jquery.easing.js",
+				  "__lib/assets/selectorcache.js",
 
 
-				  "<FEATURE DETECTION / POLYFILLS / FALLBACK>",
-				  "lib/assets/modernizr.js",
-				  "lib/polyfills/intersectionbserver.js",
-				  ">>>>>lib/polyfills/objectfit.js",
-				  ">>>>>lib/polyfills/webp.js",
+				  "<POLYFILLS / FALLBACK>",
+				  "__lib/polyfills/modernizr.js",
+				  "__lib/polyfills/intersectionbserver.js",
+				  ">>>>>__lib/polyfills/objectfit.js",
+				  ">>>>>__lib/polyfills/webp.js",
 
 
 				  "<DATA>",
-				  "lib/assets/cookies.js",
-				  ">>>>>lib/assets/dateformat.js",
-				  ">>>>>lib/assets/loadjson.js",
-
-
-				  "<FORMS>",
-				  ">>>>>lib/forms/login.js",
+				  "__lib/assets/cookies.js",
+				  ">>>>>__lib/assets/loadjson.js",
 
 
 				  "<MEDIA / WRAPPERS>",
-				  ">>>>>lib/assets/fitvids.js",
-				  ">>>>>lib/assets/mediawrapper.js",
-				  "lib/assets/videocontroller.js",
+				  "__lib/assets/videocontroller.js",
 
 
 				  "<UTILITIES>",
-				  ">>>>>lib/assets/backbone.js",
-				  ">>>>>lib/assets/focusingly.js",
-				  "lib/assets/lodash.js",
-				  "lib/assets/lazyload.js",
-				  "lib/assets/passiveeventlisteners.js",
-				  "lib/assets/print.js",
-				  ">>>>>lib/assets/scrolllock.js",
-				  "lib/assets/scrollstartstop.js",
-				  ">>>>>lib/assets/smoothstate.js",
-				  "lib/assets/throttle.js",
-				  ">>>>>lib/assets/underscore.js",
-				  "lib/assets/visibility.js",
-				  ">>>>>lib/assets/watch.js",
+				  ">>>>>__lib/assets/backbone.js",
+				  "__lib/assets/lazyload.js",
+				  "__lib/assets/passiveeventlisteners.js",
+				  "__lib/assets/print.js",
+				  ">>>>>__lib/assets/scrolllock.js",
+				  ">>>>>__lib/assets/scrollprogress.js",
+				  "__lib/assets/scrollstartstop.js",
+				  ">>>>>__lib/assets/smoothstate.js",
+				  "__lib/assets/stickykit.js",
+				  "__lib/assets/underscore.js",
+				  "__lib/assets/visibility.js",
 
 
 				  "<UI>",
-				  "lib/assets/headroom.js",
-				  ">>>>>lib/assets/menuaim.js",
+				  "__lib/assets/headroom.js",
+				  ">>>>>__lib/assets/menuaim.js",
 
 
 				  "<FX>",
-				  ">>>>>lib/assets/granim.js",
-				  ">>>>>lib/particles/particles.core.js",
-				  ">>>>>lib/particles/particles.app.js",
-				  "lib/assets/neuralnetwork.js",
+				  ">>>>>__lib/assets/granim.js",
+				  ">>>>>__lib/particles/particles.core.js",
+				  ">>>>>__lib/particles/particles.app.js",
+				  "__lib/assets/neuralnetwork.js",
 
 
 				  "<ELEMENT MANIPULATION>",
-				  ">>>>>lib/assets/adaptive-background.js",
-				  ">>>>>lib/assets/duotone.js",
-				  ">>>>>lib/assets/tilt.js",
+				  ">>>>>__lib/assets/adaptivebackground.js",
+				  ">>>>>__lib/assets/duotone.js",
+				  ">>>>>__lib/assets/tilt.js",
 
 
 				  "<SCROLL MANIPULATION>",
-				  "lib/dzsparallaxer/dzsparallaxer.js",
-				  "lib/assets/emergence.js",
-				  ">>>>>lib/assets/rellax.js",
-				  ">>>>>lib/assets/scrollama.js",
-				  ">>>>>lib/assets/scrollissimo.js",
-				  ">>>>>lib/assets/scrollme.js",
+				  "__lib/dzsparallaxer/dzsparallaxer.js",
+				  "__lib/assets/emergence.js",
+				  ">>>>>__lib/assets/rellax.js",
+				  ">>>>>__lib/assets/scrollama.js",
+				  ">>>>>__lib/assets/scrollissimo.js",
+				  ">>>>>__lib/assets/scrollme.js",
 
 
 				  "<ANIMATION ENGINE (GSAP)>",
-				  "lib/gsap/TweenMax.js",
-				  ">>>>>lib/gsap/TimelineMax.js",
-				  ">>>>>lib/gsap/plugins/BezierPlugin.js",
-				  ">>>>>lib/gsap/plugins/ColorPropsPlugin.js",
-				  ">>>>>lib/gsap/plugins/CSSPlugin.js",
-				  ">>>>>lib/gsap/plugins/CSSRulePlugin.js",
-				  ">>>>>lib/gsap/plugins/DirectionalRotationPlugin.js",
-				  ">>>>>lib/gsap/plugins/ModifiersPlugin.js",
-				  "lib/gsap/plugins/ScrollToPlugin.js",
-				  ">>>>>lib/gsap/plugins/TextPlugin.js",
+				  "__lib/gsap/TweenMax.js",
+				  ">>>>>__lib/gsap/TimelineMax.js",
+				  ">>>>>__lib/gsap/plugins/BezierPlugin.js",
+				  ">>>>>__lib/gsap/plugins/ColorPropsPlugin.js",
+				  ">>>>>__lib/gsap/plugins/CSSPlugin.js",
+				  ">>>>>__lib/gsap/plugins/CSSRulePlugin.js",
+				  ">>>>>__lib/gsap/plugins/DirectionalRotationPlugin.js",
+				  ">>>>>__lib/gsap/plugins/ModifiersPlugin.js",
+				  ">>>>>__lib/gsap/plugins/ScrollToPlugin.js",
+				  ">>>>>__lib/gsap/plugins/TextPlugin.js",
 
 				  "<ANIMATION ENGINE (GSAP CLUB GREENSOCK PLUGINS)>",
-				  ">>>>>lib/gsap/plugins/DrawSVGPlugin.js",
-				  ">>>>>lib/gsap/plugins/MorphSVGPlugin.js",
-				  ">>>>>lib/gsap/plugins/Physics2DPlugin.js",
-				  ">>>>>lib/gsap/plugins/PhysicsPropsPlugin.js",
-				  ">>>>>lib/gsap/plugins/ScrambleTextPlugin.js",
-				  "lib/gsap/plugins/SplitTextPlugin.js",
-				  ">>>>>lib/gsap/plugins/ThrowPropsPlugin.js",
-
-
-				  "<ANIMATION ENGINE (OTHER)>",
-				  "lib/micron/**/*.js",
+				  ">>>>>__lib/gsap/plugins/DrawSVGPlugin.js",
+				  ">>>>>__lib/gsap/plugins/MorphSVGPlugin.js",
+				  ">>>>>__lib/gsap/plugins/Physics2DPlugin.js",
+				  ">>>>>__lib/gsap/plugins/PhysicsPropsPlugin.js",
+				  ">>>>>__lib/gsap/plugins/ScrambleTextPlugin.js",
+				  "__lib/gsap/plugins/SplitTextPlugin.js",
+				  ">>>>>__lib/gsap/plugins/ThrowPropsPlugin.js",
 
 
 				  "<3D LIBS>",
-				  ">>>>>lib/three/three.js",
-				  ">>>>>lib/three/plugins/three.controls.js",
+				  ">>>>>__lib/three/three.js",
+				  ">>>>>__lib/three/plugins/three.controls.js",
 
 
 				  "<OTHER LIBS>",
-				  ">>>>>lib/p5/p5.js",
-				  ">>>>>lib/p5/plugins/p5.dom.js",
-				  ">>>>>lib/p5/plugins/p5.sound.js",
+				  ">>>>>__lib/p5/p5.js",
+				  ">>>>>__lib/p5/plugins/p5.dom.js",
+				  ">>>>>__lib/p5/plugins/p5.sound.js",
 
 
 				  "<COMPONENTS>",
-				  ">>>>>lib/fullpage/plugins/dragandmove.js",
-				  ">>>>>lib/fullpage/plugins/scrolloverflow.js",
-				  ">>>>>lib/fullpage/fullpage.extensions.js",
-				  ">>>>>lib/fullpage/fullpage.js",
+				  ">>>>>__lib/fullpage/plugins/dragandmove.js",
+				  ">>>>>__lib/fullpage/plugins/scrolloverflow.js",
+				  ">>>>>__lib/fullpage/fullpage.extensions.js",
+				  ">>>>>__lib/fullpage/fullpage.js",
 
-				  "lib/metafizzy/flickity.js",
-				  "lib/metafizzy/imagesloaded.js",
-				  ">>>>>lib/metafizzy/isotope.js",
-				  "lib/metafizzy/plugins/background.lazyload.js",
-				  "lib/odometer/odometer.js",
+				  "__lib/metafizzy/flickity.js",
+				  "__lib/metafizzy/imagesloaded.js",
+				  ">>>>>__lib/metafizzy/isotope.js",
+				  "__lib/metafizzy/plugins/background.lazyload.js",
+
+				  ">>>>>__lib/slick/slick.js",
+
+				  "__lib/odometer/odometer.js",
 
 
 				  "<WIDGETS>",
-				  ">>>>>lib/smart-app-banner/smart-app-banner.js",
-				  "lib/waves/waves.js",
+				  ">>>>>__lib/smart-app-banner/smart-app-banner.js",
+				  "__lib/waves/waves.js",
 
 
 				  "<FRAMEWORK>",
-				  "lib/framework/foundation.js",
-				  ">>>>>lib/framework/plugins/what-input.js",
+				  "__lib/framework/foundation.js",
+				  ">>>>>__lib/framework/plugins/what-input.js",
 
 
 				  "<APP>",
-				  "lib/options.js",
-				  "lib/detect.js",
-				  "lib/animations/*.js",
-				  ">>>>>lib/languages/en-strings.js",
-				  ">>>>>lib/languages/es-strings.js",
-				  ">>>>>lib/language.js",
-				  "lib/utilities.js",
-				  "lib/components.js",
-				  "lib/ui.js",
-				  ">>>>>lib/hashnav.js",
-				  "lib/notice.js",
-				  "lib/pages.js",
-				  ">>>>>lib/transition.js",
-				  "lib/app.js",
-				  ">>>>>lib/benchmark.js"
+				  "__lib/options.js",
+				  "__lib/detect.js",
+				  "__lib/animations/*.js",
+				  "__lib/utilities.js",
+				  "__lib/components.js",
+				  "__lib/ui.js",
+				  ">>>>>__lib/hashnav.js",
+				  "__lib/notice.js",
+				  "__lib/pages.js",
+				  ">>>>>__lib/transition.js",
+				  "__lib/app.js",
+				  ">>>>>__lib/benchmark.js"
 				 ]
 	
 	},
 
 	"css": {
 		"bundle": "app.css",
+		"root": "__css/",
 
-		"paths": ["<INIT>",
-				  "css/options.css",
+		"files": ["<INIT>",
+				  "__css/options.css",
 				  "fonts/fontawesome.css",
 
 
 				  "<JQUERY>",
-				  ">>>>>lib/jquery/jquery.mobile.css",
+				  ">>>>>__lib/jquery/jquery.mobile.css",
 
 
 				  "<DETECTION / FALLBACKS / POLYFILLS>",
@@ -369,11 +369,7 @@
 
 
 				  "<SCROLL MANIPULATION>",
-				  "lib/dzsparallaxer/dzsparallaxer.css",
-
-
-				  "<ANIMATION ENGINE (OTHER)>",
-				  "lib/micron/**/*.css",
+				  "__lib/dzsparallaxer/dzsparallaxer.css",
 
 
 				  "<3D>",
@@ -381,44 +377,49 @@
 
 
 				  "<COMPONENTS>",
-				  ">>>>>lib/fullpage/fullpage.css",
-				  ">>>>>lib/fullpage/nav.css",
-				  "lib/metafizzy/flickity.css",
-				  "lib/odometer/odometer-theme-minimal.css",
+				  ">>>>>__lib/fullpage/fullpage.css",
+				  ">>>>>__lib/fullpage/nav.css",
+				  "__lib/metafizzy/flickity.css",
+
+				  ">>>>>__lib/slick/slick.css",
+				  ">>>>>__lib/slick/slick-theme.css",
+
+				  "__lib/odometer/odometer-theme-minimal.css",
 
 
 				  "<WIDGETS>",
-				  "lib/waves/waves.css",
+				  "__lib/waves/waves.css",
 
 
 				  "<FRAMEWORK>",
-				  "lib/framework/foundation.css",
-				  ">>>>>lib/framework/foundation.rtl.css",
+				  "__lib/framework/foundation.css",
+				  ">>>>>__lib/framework/foundation.rtl.css",
 
 
 				  "<ELEMENTS>",
-				  "css/elements/*.css",
+				  "__css/elements/*.css",
 
 
 				  "<UI>",
-				  "css/ui/*.css",
+				  "__css/ui/*.css",
 
 
 				  "<COMPONENTS>",
-				  "css/components/*.css",
+				  "__css/components/*.css",
 
 
 				  "<UTILITIES>",
-				  "css/utilities/*.css",
+				  "__css/utilities/*.css",
 
 
 				  "<APP>",
-				  "css/copy.css",
-				  "css/layout.css",
-				  "css/rules.css",
-				  "css/theme.css",
-				  "css/responsive.css",
-				  "css/accessibility.css"
+				  "__lib/animations/*.css",
+				  "__css/copy.css",
+				  "__css/layout.css",
+				  "__css/rules.css",
+				  "__css/theme.css",
+				  "__css/responsive.css",
+				  ">>>>>__css/accessibility.css"
 				 ]
 	
 	},

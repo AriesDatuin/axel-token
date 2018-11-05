@@ -134,16 +134,11 @@
 
 
 
-	<!-- CONTAINER -->
-	<div id="container">
-
-		{{#ifpage 'index' 'ch'}}
-			{{> scroll-progress}}
-		{{/ifpage}}
+	<!-- MAIN -->
+	<main id="main-{{ page }}" class="page position-relative off-canvas-content" data-page="{{ page }}" data-off-canvas-content role="main">
 
 
-		<!-- CONTENT -->
-		{{#ifpage 'index'}}
+		{{#ifpage 'index' 'error'}}
 			{{> navbar}}
 		{{/ifpage}}
 
@@ -155,7 +150,7 @@
 		{{> body}}
 
 
-		{{#ifpage 'index'}}
+		{{#ifpage 'index' 'error'}}
 			{{> footer}}
 		{{/ifpage}}
 
@@ -164,39 +159,32 @@
 		{{/ifpage}}
 
 
-		<ul class="social-icons list-vertical fixed right round-left round-sm box-shadow-xl overflow-hidden anim-away show-on-scroll z-10">
+	</main>
+	<!-- // MAIN -->
 
-			{{> social-icons}}
+	{{> scroll-progress}}
 
-			<li class="background-white">
-				<a href="#" class="close-panel prevent-default" aria-label="Close social links.">
-					<span class="fa" aria-hidden="true"></span>
-				</a>
-			</li>
-
-		</ul>
-		<!-- // CONTENT -->
+	{{> quicklinks}}
 
 
-	</div>
-	<!-- // CONTAINER -->
-
-
-	{{> modal}}
+	{{> dialog}}
 	{{> blocker}}
 
 
+	{{> privacy-policy}}
 
+
+
+
+
+	<!--removeIf(removeVendors)-->
+	<!-- inject:vendors:js -->
+	<!-- endinject -->
+	<!--endRemoveIf(removeVendors)-->
 
 
 	<!-- inject:app:js -->
 	<!-- endinject -->
-
-
-	<!--removeIf(removeVendor)-->
-	<!-- inject:vendors:js -->
-	<!-- endinject -->
-	<!--endRemoveIf(removeVendor)-->
 
 
 

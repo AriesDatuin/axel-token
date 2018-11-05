@@ -104,7 +104,6 @@
 		<!-- inject:styleguide:css -->
 		<!-- endinject -->
 
-
 		<div>
 			<img src="assets/error.gif" alt="Ooops, your JavaScript is disabled."/>
 			<span>JavaScript is disabled on your browser</span>.<br>
@@ -128,42 +127,50 @@
 
 
 
-	<!-- CONTAINER -->
-	<div id="container">
+	<!-- MAIN -->
+	<main id="main-{{ page }}" class="page off-canvas-content" data-page="{{ page }}" data-off-canvas-content role="main">
 
-
-		<!-- CONTENT -->
-		{{#ifpage 'styleguide'}}
-			{{> navbar}}
-		{{/ifpage}}
 		
-
 		{{> body}}
 
-		
-		{{> footer}}
-		<!-- // CONTENT -->
+
+	</main>
+	<!-- // MAIN -->
 
 
-	</div>
-	<!-- // CONTAINER -->
-
-
-	{{> modal}}
+	{{> dialog}}
 	{{> blocker}}
 
 
+	{{> privacy-policy}}
 
+
+
+
+
+	<!--removeIf(removeVendors)-->
+	<!-- inject:vendors:js -->
+	<!-- endinject -->
+	<!--endRemoveIf(removeVendors)-->
 
 
 	<!-- inject:styleguide:js -->
 	<!-- endinject -->
 
 
-	<!--removeIf(removeVendor)-->
-	<!-- inject:vendors:js -->
-	<!-- endinject -->
-	<!--endRemoveIf(removeVendor)-->
+
+
+
+	<script>
+
+		var version = "styleguideVersion",
+			versionInfo = document.getElementById("styleguide-version");
+
+		console.log(version);
+
+		versionInfo.textContent = "Ver. " + version;
+
+	</script>
 
 
 

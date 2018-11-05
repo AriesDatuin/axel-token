@@ -1,13 +1,13 @@
 "use strict";
 
 /* -------------------------------------------------- */
-/* CONFIG FILE
+/* CONFIG FILES
 /* -------------------------------------------------- */
 
-let configFile = "config.json",
-	revFile = "rev.json",
-	serverFile = "server.json",
-	metadataFile = "metadata.json";
+const configFile = "config.json",
+	  revFile = "rev.json",
+	  serverFile = "server.json",
+	  metadataFile = "metadata.json";
 
 /* -------------------------------------------------- */
 /* MODULES
@@ -23,45 +23,21 @@ import a11y from "gulp-a11y"; // Performs and accessibility audit.
 import accessibility from "gulp-accessibility"; // Audit app's accessibility.
 import awsPublish from "gulp-awspublish"; // Push files to AWS S3 Bucket.
 import awsSDK from "aws-sdk"; // Official AWS SDK for JavaScript, available for browsers and mobile devices, or Node.js backends.
-import babel from "gulp-babel"; // JavaScript converter and compiler.
 import browserSync from "browser-sync"; browserSync.create(); // Sync and update changes for local development.
 import browserSyncHTMLInjector from "bs-html-injector"; // Plugin to update (inject) HTML changes similar to CSS injection.
-import csslint from "gulp-csslint"; // Detect errors and potential problems in CSS syntax.
-import cleanCSS from "gulp-clean-css"; // Minify CSS files.
 import concat from "gulp-concat"; // Bundle JS or CSS files.
-import cssDeclarationSorter from "css-declaration-sorter"; // Sort CSS declarations.
-import defer from "gulp-defer"; // Moves render blocking JavaScript and CSS files into a deferred loading section.
 import del from "del"; // Delete files and directories.
 import deleteEmpty from "delete-empty"; // Delete empty directories.
 import ftp from "vinyl-ftp"; // Deploy to server.
 import fs from "fs"; // Read, sync and parse.
-import ga from "gulp-ga"; // Include Google Analytics tracker.
-import generateSitemap from "gulp-sitemap"; // Generate a sitemap.
 import git from "gulp-git"; // Push files to Github.
 import gulpif from "gulp-if"; // Allows for conditional operators (if, &&, ||, ==, ===, <, >) in pipe streams.
 import gutil from "gulp-util"; // For logging tasks and process streams.
-import htmlmin from "gulp-htmlmin"; // Minify HTML files.
-import htmlreplace from "gulp-html-replace"; // Replace build blocks in HTML files.
-import imagemin from "gulp-imagemin"; // Compress raster image assets.
 import inject from "gulp-inject"; // Inject JS and CSS files.
 import jsonReplace from "gulp-json-replace"; // Replaces strings from JSON data.
-import jshint from "gulp-jshint"; // Detect errors and potential problems in JavaScript code.
-import modernizr from "gulp-modernizr"; // Detect browser and device specific features.
-import noopener from "gulp-noopener"; // Inserts 'rel=noopener' to links that open in a new window.
 import open from "gulp-open"; // Access and open files in a browser.
 import path from "path"; // Resolves pathing issues.
-import panini from "panini"; // Foundation Handlebars templating engine.
-import postcss from "gulp-postcss"; // CSS Pre and post processer.
-import postcssAutoprefixer from "autoprefixer"; // Adds vendor prefixes using data from Can I Use.
-import postcssCalc from "postcss-calc"; // Reduces calc() references whenever possible.
-import postcssCombineDuplicatedSelectors from "postcss-combine-duplicated-selectors"; // Combine similar CSS selectors.
-import postcssMQPacker from "css-mqpacker"; // Combine (pack) similar media query rules.
-import postcssVariables from "postcss-css-variables"; // Process CSS variables.
-import postcssZIndex from "postcss-zindex"; // Reduce z-index values without compromising integrity of stack order and layout.
 import prompt from "gulp-prompt"; // Allow user inputs.
-import purgecss from "gulp-purgecss"; // Removes unused CSS in production files. *Note: This will enable ':hover' states on touch devices.
-import purgeHtml from "purgecss-from-html" // Removes unused CSS in production files. *Note: This will enable ':hover' states on touch devices.
-import rasterize from "gulp-raster"; // Rasterize (JPG, PNG) SVG assets.
 import removeCode from "gulp-remove-code"; // Remove sections of code from files based on conditions.
 import rename from "gulp-rename"; // Rename directories and file names.
 import replace from "gulp-replace"; // Find and replace string or text.
@@ -69,19 +45,64 @@ import rev from "gulp-rev"; // File revisioning.
 import revRewrite from "gulp-rev-rewrite"; // Rewrite occurrences of file names which have been renamed by gulp-rev.
 import revDelete from "gulp-rev-delete-original"; // Delete the original file rewritten by gulp-rev or gulp-rev-all.
 import revFormat from "gulp-rev-format"; // Formatting options for revisioned files.
-import robots from "gulp-robots"; // Generate robots.txt.
 import sourcemaps from "gulp-sourcemaps"; // Generate JS or CSS sourcemaps.
-import svg2png from "gulp-svg2png"; // Convert SVG files to PNG files.
-import svgmin from "gulp-svgmin"; //Compress SVG assets.
-import svgSprite from "gulp-svg-sprites"; // Generate an SVG sprite sheet.
-import uglify from "gulp-uglify"; // Minify JS files.
-import webp from "gulp-webp"; // Convert image assets to WebP format.
-import workbox from "workbox-build"; // Integrate Service Worker to leverage precache features.
 import zip from "gulp-zip"; // ZIP compress files.
 
 
+// HTML MODULES
+import htmlmin from "gulp-htmlmin"; // Minify HTML files.
+import htmlreplace from "gulp-html-replace"; // Replace build blocks in HTML files.
+import noopener from "gulp-noopener"; // Inserts 'rel=noopener' to links that open in a new window.
+import panini from "panini"; // Foundation Handlebars templating engine.
+import purgeHtml from "purgecss-from-html" // Removes unused CSS in production files. *Note: This will enable ':hover' states on touch devices.
+
+
+// JS MODULES
+import babel from "gulp-babel"; // JavaScript converter and compiler.
+import defer from "gulp-defer"; // Moves render blocking JavaScript and CSS files into a deferred loading section.
+import jshint from "gulp-jshint"; // Detect errors and potential problems in JavaScript code.
+import modernizr from "gulp-modernizr"; // Detect browser and device specific features.
+import uglify from "gulp-uglify"; // Minify JS files.
+
+
+// CSS MODULES
+import csscomb from "gulp-csscomb"; // Sort CSS Properties.
+import csslint from "gulp-csslint"; // Detect errors and potential problems in CSS syntax.
+import cleanCSS from "gulp-clean-css"; // Minify CSS files.
+import postcss from "gulp-postcss"; // CSS Pre and post processer.
+import postcssAutoprefixer from "autoprefixer"; // Adds vendor prefixes using data from Can I Use.
+import postcssCalc from "postcss-calc"; // Reduces calc() references whenever possible.
+import postcssCombineDuplicatedSelectors from "postcss-combine-duplicated-selectors"; // Combine similar CSS selectors.
+import postcssMQPacker from "css-mqpacker"; // Combine (pack) similar media query rules.
+import postcssVariables from "postcss-css-variables"; // Process CSS variables.
+import postcssZIndex from "postcss-zindex"; // Reduce z-index values without compromising integrity of stack order and layout.
+import purgecss from "gulp-purgecss"; // Removes unused CSS in production files. *Note: This will enable ':hover' states on touch devices.
+import sass from "gulp-sass"; // Compile SCSS files.
+import sassCompiler from "node-sass"; // SASS Compiler.
+import sassGlob from "gulp-sass-glob"; // Glob imports for SASS.
+
+
+// ASSET MODULES
+import imagemin from "gulp-imagemin"; // Compress raster image assets.
+import rasterize from "gulp-raster"; // Rasterize (JPG, PNG) SVG assets.
+import svg2png from "gulp-svg2png"; // Convert SVG files to PNG files.
+import svgmin from "gulp-svgmin"; //Compress SVG assets.
+import svgSprite from "gulp-svg-sprites"; // Generate an SVG sprite sheet.
+import webp from "gulp-webp"; // Convert image assets to WebP format.
+
+
+// CACHE / CRAWLING / TRACKING
+import fullstory from "_fullstory"; // Inject FullStory.
+import ga from "gulp-ga"; // Inject Google Analytics.
+import generateSitemap from "gulp-sitemap"; // Generate a sitemap.
+import gtm from "gulp-gtm"; // Inject Google Tag Manager.
+import mouseflow from "_mouseflow"; // Inject Mouseflow.
+import robots from "gulp-robots"; // Generate robots.txt.
+import workbox from "workbox-build"; // Integrate Service Worker to leverage precache features.
+
+
 /* -------------------------------------------------- */
-/* SOURCE PATHS
+/* FILE PATHS
 /* -------------------------------------------------- */
 
 const config = JSON.parse(fs.readFileSync(configFile)),
@@ -92,11 +113,13 @@ const config = JSON.parse(fs.readFileSync(configFile)),
 	  //dirRelative = path.relative,
 	  root = dirResolve(__dirname),
 
-	  pathSource = config.paths.source,
-	  pathBuild = config.paths.build,
-	  pathScripts = config.paths.scripts,
-	  pathAssets = config.paths.assets,
-	  pathTemp = "_temp/"
+	  pathSource = config.root.source,
+	  pathJS = config.js.root,
+	  pathCSS = config.css.root,
+	  pathBuild = config.root.build,
+	  pathScripts = config.root.scripts,
+	  pathAssets = config.root.assets,
+	  pathTemp = "_temp/";
 
 
 /* -------------------------------------------------- */
@@ -150,6 +173,11 @@ const purgeCSSOptions = {
 		content: [pathBuild + "**/*.{html,php}",
 				  pathBuild + "**/*.js"],
 		css: [pathBuild + "**/*.css"]
+	  },
+	  purgeStyleguideCSSOptions = {
+		content: [pathBuild + "**/styleguide.{html,php}",
+				  pathBuild + "**/styleguide.js"],
+		css: [pathBuild + "**/styleguide.css"]
 	  };
 
 const cleanCSSOptions = {
@@ -252,19 +280,40 @@ const svgminOptions = {
 
 
 /* -------------------------------------------------- */
-/* GOOGLE ANALYTICS
+/* ANALYTICS / TRACKING
 /* -------------------------------------------------- */
 
-export function analytics(done) {
+// FULLSTORY
+export function injectfullstory(done) {
+
+	if ( config.tracking.fullstory.allow || !production ) {
+
+		console.log("Injecting FullStory...");
+	
+		return gulp.src( pathBuild + "**/*.{html,php}" )
+				   .pipe(fullstory({}))
+				   .pipe(gulp.dest( pathBuild ));
+
+	} else {
+
+		return done();
+
+	}
+
+}
+
+
+// GOOGLE ANALYTICS
+export function injectga(done) {
 
 	if ( config.tracking.ga.allow || !production ) {
 
-		console.log("Injecting GA tracker...");
+		console.log("Injecting Google Analytics...");
 	
 		return gulp.src( pathBuild + "**/*.{html,php}" )
 				   .pipe(ga({
 							 url: config.tracking.ga.url,
-							 uid: config.tracking.ga.uid,
+							 uid: config.tracking.ga.id,
 							 anonymizeIp: config.tracking.ga.anonymizeIp,
 							 bounceTime: config.tracking.ga.bounceTime,
 							 demographics: config.tracking.ga.demographics,
@@ -275,6 +324,46 @@ export function analytics(done) {
 							 sendPageView: config.tracking.ga.sendPageView,
 							 tag: config.tracking.ga.tagPlacement
 				   }))
+				   .pipe(gulp.dest( pathBuild ));
+
+	} else {
+
+		return done();
+
+	}
+
+}
+
+
+// GOOGLE TAG MANAGER
+export function injectgtm(done) {
+
+	if ( config.tracking.gtm.allow || !production ) {
+
+		console.log("Injecting Google Tag Manager...");
+	
+		return gulp.src( pathBuild + "**/*.{html,php}" )
+				   .pipe(gtm({containerId: config.tracking.gtm.id}))
+				   .pipe(gulp.dest( pathBuild ));
+
+	} else {
+
+		return done();
+
+	}
+
+}
+
+
+// MOUSEFLOW
+export function injectmouseflow(done) {
+
+	if ( config.tracking.mouseflow.allow || !production ) {
+
+		console.log("Injecting Mouseflow...");
+	
+		return gulp.src( pathBuild + "**/*.{html,php}" )
+				   .pipe(mouseflow({id: config.tracking.mouseflow.id}))
 				   .pipe(gulp.dest( pathBuild ));
 
 	} else {
@@ -312,7 +401,7 @@ export function robotstxt() {
 	console.log("Generating robots.txt...");
 
 	return gulp.src([pathBuild + "**/*.html",
-					 "!" + pathBuild + "modals/*"])
+					 "!" + pathBuild + config.html.dialog.output + "**/*"])
 			   .pipe(robots({
 			   				 useragent: config.robots.useragent,
 			   				 //allow: config.robots.allow,
@@ -332,7 +421,7 @@ export function sitemap() {
 	console.log("Generating sitemap...");
 
 	return gulp.src([pathBuild + "**/*.html",
-					 "!" + pathBuild + "modals/*"])
+					 "!" + pathBuild + config.html.dialog.output + "**/*"])
 			   .pipe(generateSitemap( {siteUrl: config.options.site} ))
 			   .pipe(gulp.dest( pathBuild ));
 
@@ -401,7 +490,7 @@ export function checkjs() {
 
 	console.log("Checking JS for errors...");
 
-	return gulp.src(pathSource + config.js.paths + "*.js")
+	return gulp.src(pathSource + pathJS + "*.js")
 			   .pipe(gulpif( config.optimizations.js.lint, jshint() ))
 			   .pipe(gulpif( config.optimizations.js.lint, jshint.reporter() ));
 
@@ -413,7 +502,7 @@ export function checkcss() {
 
 	console.log("Checking CSS for errors...");
 
-	return gulp.src( pathSource + config.css.paths + "*.css" )
+	return gulp.src( pathSource + pathCSS + "**/*.css" )
 			   .pipe(gulpif( config.optimizations.css.lint, csslint.formatter() ))
 			   .pipe(gulpif( config.optimizations.css.lint, csslint() ));
 
@@ -429,7 +518,7 @@ export function js() {
 
 	console.log("Compiling " + config.js.bundle + "...");
 
-	return gulp.src( config.js.paths.map( function(base) { return pathSource + base } ), {allowEmpty: true} )
+	return gulp.src( config.js.files.map( function(base) { return pathSource + base } ), {allowEmpty: true} )
 			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.init() ))
 			   //.pipe(modernizr())
 			   //.pipe(babel())
@@ -447,7 +536,7 @@ export function styleguidejs() {
 
 	//console.log("Compiling Style Guide scripts...");
 
-	return gulp.src( config.js.paths.map( function(base) { return pathSource + base } ), {allowEmpty: true} )
+	return gulp.src( config.js.files.map( function(base) { return pathSource + base } ), {allowEmpty: true} )
 			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.init() ))
 			   //.pipe(modernizr())
 			   //.pipe(babel())
@@ -462,7 +551,9 @@ export function styleguidejs() {
 
 								console.log("Compiling Style Guide scripts...");
 
-								return gulp.src([pathBuild + pathScripts + "styleguide.js", pathSource + "lib/assets/clipboard.js", pathSource + "lib/styleguide.js"])
+								return gulp.src([pathBuild + pathScripts + "styleguide.js",
+												 pathSource + pathJS + "assets/clipboard.js",
+												 pathSource + pathJS + "styleguide.js"])
 										   //.pipe(gulpif( config.options.sourcemaps, sourcemaps.init() ))
 										   //.pipe(modernizr())
 										   //.pipe(babel())
@@ -481,7 +572,7 @@ export function vendors() {
 
 	console.log("Compiling " + config.vendors.bundle + "...");
 
-	return gulp.src( pathSource + config.vendors.paths, {allowEmpty: true} )
+	return gulp.src( pathSource + config.vendors.files, {allowEmpty: true} )
 			   .pipe(gulpif( config.vendors.lint, jshint() ))
 			   .pipe(gulpif( config.vendors.lint, jshint.reporter() ))
 			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.init() ))
@@ -500,12 +591,30 @@ export function vendors() {
 /* CSS
 /* -------------------------------------------------- */
 
+// TEST
+export function scss() {
+
+	console.log("Compiling SCSS...");
+
+	return gulp.src( pathSource + "__a/**/*.scss", { base: null, allowEmpty: true } )
+			   //.pipe(sourcemaps.init())
+			   .pipe(sassGlob( { ignorePaths: [] } ))
+			   .pipe( sass({ outputStyle: null, trace: true, verbose: true }).on("error", sass.logError) )
+			   //.pipe(sourcemaps.write())
+			   .pipe( gulp.dest( pathSource + "__a/" ) );
+
+}
+
+
+
+
+
 // MAIN
 export function css() {
 
 	console.log("Compiling " + config.css.bundle + "...");
 
-	return gulp.src( config.css.paths.map( function(base) { return pathSource + base } ), {allowEmpty: true} )
+	return gulp.src( config.css.files.map( function(base) { return pathSource + base } ), {allowEmpty: true} )
 			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.init() ))
 			   .pipe(concat(config.css.bundle))
 			   //.pipe(postcss(plugins))
@@ -519,7 +628,7 @@ export function css() {
 			   		
 			   		// CSS
 					return gulp.src([pathBuild + pathScripts + config.css.bundle,
-							   		 pathBuild + pathTemp + config.images.sprite.paths + config.images.sprite.mode + ".css"], {allowEmpty: true} )
+							   		 pathBuild + pathTemp + config.images.sprite.files + config.images.sprite.mode + ".css"], {allowEmpty: true} )
 
 							   //.pipe(gulpif( config.options.sourcemaps, sourcemaps.init() ))
 							   .pipe(concat(config.css.bundle))
@@ -540,7 +649,7 @@ export function styleguidecss() {
 
 	//console.log("Compiling Style Guide styles...");
 
-	return gulp.src( config.css.paths.map( function(base) { return pathSource + base } ), {allowEmpty: true} )
+	return gulp.src( config.css.files.map( function(base) { return pathSource + base } ), {allowEmpty: true} )
 			   .pipe(gulpif( config.options.sourcemaps, sourcemaps.init() ))
 			   .pipe(concat("styleguide.css"))
 			   //.pipe(postcss(plugins))
@@ -555,11 +664,11 @@ export function styleguidecss() {
 
 					console.log("Compiling Style Guide styles...");
 
-					return gulp.src([pathBuild + pathScripts + "styleguide.css", pathSource + "css/styleguide.css"])
+					return gulp.src([pathBuild + pathScripts + "styleguide.css", pathSource + "__css/styleguide.css"])
 							   //.pipe(gulpif( config.options.sourcemaps, sourcemaps.init() ))
 							   .pipe(concat("styleguide.css"))
 							   .pipe(postcss(plugins))
-							   .pipe(gulpif( production, purgecss(purgeCSSOptions) ))
+							   .pipe(gulpif( production, purgecss(purgeStyleguideCSSOptions) ))
 							   .pipe(gulpif( production, cleanCSS(cleanCSSOptions) ))
 							   //.pipe(gulpif( config.options.sourcemaps, sourcemaps.write("maps") ))
 							   .pipe(gulp.dest( pathBuild + pathScripts ))
@@ -626,7 +735,7 @@ export function fingerprintassets(done) {
 		return gulp.src([pathBuild + pathAssets + "**/*",
 						 "!" + pathBuild + pathAssets + "icons/*",
 						 "!" + pathBuild + pathAssets + "social/*",
-						 "!" + pathBuild + pathAssets + config.images.sprite.paths + "**/*.svg"])
+						 "!" + pathBuild + pathAssets + config.images.sprite.files + "**/*.svg"])
 				   .pipe(rev())
 				   .pipe(revFormat({prefix: config.versioning.images.prefix,
 									suffix: config.versioning.images.suffix,
@@ -660,15 +769,15 @@ export function fingerprintassets(done) {
 
 
 // INJECT
-export function injectscripts() {
+export function injectscripts(done) {
 
-	console.log("Compiling HTML...");
+	console.log("Injecting scripts...");
 
 	const stylesheet = "'stylesheet'";
 
 	const relative = true,
 		  removeTags = true,
-		  ignorePath = pathBuild + config.html.modals.paths,
+		  ignorePath = pathBuild + config.html.dialog.files,
 		  addRootSlash = false,
 		  name = "inject";
 
@@ -703,7 +812,7 @@ export function injectscripts() {
 
 					}
 				
-			   ) // END VENDOR INJECTION
+			   ) // END VENDORS INJECTION
 
 
 			   .pipe(inject(
@@ -719,18 +828,17 @@ export function injectscripts() {
 			   ) // END STYLEGUIDE INJECTION
 
 
-
 			   //.pipe(defer())	
 			   //.pipe(gulpif( !server.aws.upload, removeCode({removeBase: true}) ))
-			   .pipe(gulpif( !config.tracking.fullstory.allow || !production, removeCode({removeFullStory: true}) ))
 			   .pipe(gulpif( !config.options.serviceworker || !production, removeCode({removeServiceWorker: true}) ))
 			   .pipe(gulpif( !config.options.appBanner, removeCode({removeAppBanner: true}) ))
-			   .pipe(gulpif( !config.vendors.allow, removeCode({removeVendor: true}) ))
+			   .pipe(gulpif( !config.vendors.allow, removeCode({removeVendors: true}) ))
 
 			   .pipe(removeCode({production: true}) )
 			   .pipe(replace("&lt;br&gt;", "<br>"))
 			   .pipe(noopener.overwrite())
 			   .pipe(replace("siteVersion", config.options.siteVersion))
+			   .pipe(replace("styleguideVersion", config.options.styleguideVersion))
 			   .pipe(gulpif( production, htmlmin(htmlminOptions) ))
 			   .pipe(gulp.dest( pathBuild ));
 
@@ -741,13 +849,12 @@ export function injectscripts() {
 /* HTML
 /* -------------------------------------------------- */
 
-
 // MAIN
 export function html() {
 
 	console.log("Compiling HTML...");
 
-	return gulp.src( pathSource + config.html.paths )
+	return gulp.src( pathSource + config.html.files )
 
 			   .pipe(panini({
 							 root: pathSource + config.html.root,
@@ -777,31 +884,31 @@ export function html() {
 
 			   }, {keepUnassigned: false, keepBlockTags: false, resolvePaths: true} ))
 
-
 			   .pipe(gulp.dest( pathBuild ))
 
 }
 
-// MODALS
-export function modals() {
 
-	console.log("Compiling modals...");
+// DILAOG / MODALS
+export function dialog() {
 
-	return gulp.src( pathSource + config.html.modals.paths )
+	console.log("Compiling dialog content...");
+
+	return gulp.src( pathSource + config.html.dialog.files )
 
 			   .pipe(panini({
 							 data: pathSource + config.html.data,
 							 helpers: pathSource + config.html.helpers,
 							 layouts: pathSource + config.html.layouts,
 							 partials: pathSource + config.html.partials,
-							 root: pathSource + config.html.modals.paths
+							 root: pathSource + config.html.dialog.files
 							})
 			   )
 
 			   .pipe(gulpif( production, htmlmin(htmlminOptions) ))
 			   .pipe(replace("&lt;br&gt;", "<br>"))
 			   .pipe(noopener.overwrite())
-			   .pipe(gulp.dest( pathBuild + config.html.modals.output ));
+			   .pipe(gulp.dest( pathBuild + config.html.dialog.output ));
 
 }
 
@@ -810,6 +917,8 @@ export function modals() {
 export function a11ycheck(done) {
 
 	if ( config.accessibility.allow ) {
+
+		console.log("Running accessibility audit...");
 
 		return gulp.src( pathBuild + "**/*.{html,php}", { base: pathBuild } )
 				   .pipe(a11y())
@@ -822,9 +931,12 @@ export function a11ycheck(done) {
 
 	} else {
 
+		console.log("Skipping accessibility audit.");
+
 		return done();
 
 	}
+
 }
 
 
@@ -840,19 +952,15 @@ export function move(done) {
 					 pathSource + "**/manifest.json",
 					 pathSource + "**/browserconfig.xml",
 					 pathSource + "**/*",
-					 "!" + pathSource + "{_*/*,**/*.html,**/*.php,css/**/*,lib/**/*}"
+					 "!" + pathSource + pathJS,
+					 "!" + pathSource + pathCSS,
+					 "!" + pathSource + "{_*/*,__*/**,**/*.html,**/*.php}"
 					 ], {base: pathSource})
 				.pipe(gulp.dest( pathBuild ))
 
 				.on("end", function () {
 
 					console.log("Deleting unnecessary directories...");
-
-					/*
-					del([pathBuild + "css/",
-						 pathBuild + "lib/",
-						]);
-						*/
 
 					deleteEmpty.sync( pathBuild );
 				
@@ -880,7 +988,6 @@ export function assets() {
 							 //extname: ""
 							}))
 			   .pipe(gulp.dest( pathBuild ));
-
 
 }
 
@@ -951,7 +1058,7 @@ export function sprite() {
 
 	console.log("Generating svg sprite sheet...");
 
-	return gulp.src( pathSource + pathAssets + config.images.sprite.paths + "**/*.svg", {base: pathSource} )
+	return gulp.src( pathSource + pathAssets + config.images.sprite.files + "**/*.svg", {base: pathSource} )
 			   .pipe(svgSprite({
 
 								mode: config.images.sprite.mode, // defs, sprite, symbols
@@ -965,8 +1072,8 @@ export function sprite() {
 								svg: { defs: config.images.sprite.mode + ".svg", sprite: config.images.sprite.mode + ".svg", symbols: config.images.sprite.mode + ".svg" },
 
 								cssFile: config.images.sprite.mode + ".css",
-								svgPath: "../" + pathAssets + config.images.sprite.paths + "%f", // Path to be included in CSS.
-								pngPath: "../" + pathAssets + config.images.sprite.paths + "%f", // Path to be included in CSS.
+								svgPath: "../" + pathAssets + config.images.sprite.files + "%f", // Path to be included in CSS.
+								pngPath: "../" + pathAssets + config.images.sprite.files + "%f", // Path to be included in CSS.
 
 								asyncTransforms: config.images.sprite.asyncTransforms,
 
@@ -975,7 +1082,7 @@ export function sprite() {
 
 		   				   }
 			   ))
-			   .pipe(gulp.dest(pathBuild + pathTemp + config.images.sprite.paths))
+			   .pipe(gulp.dest(pathBuild + pathTemp + config.images.sprite.files))
 
 
 			   .on("end", function() {
@@ -983,7 +1090,7 @@ export function sprite() {
 			   		// CSS
 			   		/*
 					gulp.src( [pathBuild + pathScripts + config.css.bundle,
-							   pathBuild + pathTemp + config.images.sprite.paths + config.images.sprite.mode + ".css"] )
+							   pathBuild + pathTemp + config.images.sprite.files + config.images.sprite.mode + ".css"] )
 
 						//.pipe(gulpif( config.options.sourcemaps, sourcemaps.init() ))
 						.pipe(concat(config.css.bundle))
@@ -1026,10 +1133,10 @@ export function clear(done) {
 	console.log("Cleaning " + pathBuild + " folder...");
 	
 	del([revFile,
-		 pathSource + "css/elements/" + config.images.sprite.mode + ".css",
-		 pathSource + pathAssets + config.images.sprite.paths + config.images.sprite.mode + ".css",
-		 pathSource + pathAssets + config.images.sprite.paths + config.images.sprite.mode + ".svg",
-		 pathSource + "css/sorted",
+		 pathSource + pathCSS + config.images.sprite.mode + ".css",
+		 pathSource + pathAssets + config.images.sprite.files + config.images.sprite.mode + ".css",
+		 pathSource + pathAssets + config.images.sprite.files + config.images.sprite.mode + ".svg",
+		 pathSource + "__css/sorted",
 		 pathBuild + "**/*",
 		 pathBuild + ".htaccess"], { allowEmpty: true });
 
@@ -1045,9 +1152,9 @@ export function clean(done) {
 	console.log("Cleaning " + pathBuild + " folder...");
 
 	del([revFile,
-		 pathSource + "css/elements/" + config.images.sprite.mode + ".css",
-		 pathSource + pathAssets + config.images.sprite.paths + config.images.sprite.mode + ".css",
-		 pathSource + pathAssets + config.images.sprite.paths + config.images.sprite.mode + ".svg",
+		 pathSource + pathCSS + config.images.sprite.mode + ".css",
+		 pathSource + pathAssets + config.images.sprite.files + config.images.sprite.mode + ".css",
+		 pathSource + pathAssets + config.images.sprite.files + config.images.sprite.mode + ".svg",
 		 pathBuild + pathTemp,
 		 pathBuild + "fonts/**/*.css"], { allowEmpty: true });
 
@@ -1089,7 +1196,7 @@ if ( fs.existsSync(serverFile) ) {
 
 export function serverconfig(done) {
 
-	let json = {
+	const json = {
 
 				"aws": {
 					"upload": false,
@@ -1243,36 +1350,36 @@ export function sync() {
 
 
 	// WATCH
-	gulp.watch(pathSource + "**/*.js").on("all", gulp.series(js, styleguidejs, injectscripts), reload);
-	gulp.watch(pathSource + config.vendors.paths).on("all", vendors, reload);
+	gulp.watch([pathSource + "**/*.js",
+				"!" + pathSource + config.html.inlineScripts.js
+				]).on("all", gulp.series(js, styleguidejs, injectscripts), reload);
+
+	gulp.watch(pathSource + config.vendors.files).on("all", vendors, reload);
 
 
-	gulp.watch(pathSource + "**/*.css").on("all", css);
+	gulp.watch([pathSource + "**/*.css",
+				"!" + pathSource + config.html.inlineScripts.css
+				]).on("all", gulp.series(css, styleguidecss));
 
 
-	gulp.watch(pathSource + "css/styleguide.css").on("all", styleguidecss);
+	//gulp.watch(pathSource + "css/styleguide.css").on("all", styleguidecss);
 
 
-	gulp.watch(pathSource + pathAssets + config.images.sprite.paths + "**/*.svg").on("all", sprite, css, reload);
+	gulp.watch(pathSource + pathAssets + config.images.sprite.files + "**/*.svg").on("all", sprite, css, reload);
 
 
-	//gulp.watch(pathSource + "**/*.{app,avi,dmg,doc,eot,exe,gif,jp2,jpg,jpeg,jxr,mid,midi,mp3,mp4,mpeg,mov,ogg,ogv,otf,pdf,png,rar,svg,tiff,ttf,txt,webm,webp,woff,woff2,zip}").on("all", move, reload);
+	gulp.watch(pathSource + "**/*.{app,avi,dmg,doc,eot,exe,gif,jp2,jpg,jpeg,jxr,mid,midi,mp3,mp4,mpeg,mov,ogg,ogv,otf,pdf,png,rar,svg,tiff,ttf,txt,webm,webp,woff,woff2,zip}").on("all", move, reload);
 
 
-	gulp.watch([metadataFile,
-				pathSource + config.html.paths,
-
-
-				//configFile,
+	gulp.watch([//configFile,
 				//credentialsFile,
-				//pathSource + metadataFile,
+				pathSource + metadataFile,
+				pathSource + "**/browserconfig.xml",
 				pathSource + config.html.inlineScripts.js,
 				pathSource + config.html.inlineScripts.css,
-				pathSource + "{_data,_helpers,_layouts,_modals,_partials}/**/*.{html,hbs,handlebars,json,yml}",
-				pathSource + "**/browserconfig.xml",
-				pathSource + "**/manifest.json"
-
-			   ]).on("all", gulp.series(html, modals, meta, refresh, gulp.series(refresh, html, modals, injectscripts, meta, reload) ));
+				pathSource + config.html.files,
+				pathSource + "{_data,_helpers,_layouts,_dialog,_partials}/**/*.{html,hbs,handlebars,json,yml}",
+				]).on("all", gulp.series(html, dialog, meta, refresh, gulp.series(refresh, html, dialog, injectscripts, meta, reload) ));
 
 }
 
@@ -1403,7 +1510,7 @@ export function ftpdeploy(done) {
 
 
 /* -------------------------------------------------- */
-/* ACTIONS / HELPERS
+/* HELPERS
 /* -------------------------------------------------- */		
 
 // REFRESH
@@ -1448,17 +1555,16 @@ function mode(done) {
 }
 
 
-// SORT CSS DECLARATIONS
-export function sort() {
+// SORT CSS PROPERTIES
+export function sortproperties() {
 
-	const sortOutput = pathSource + "smacss",
-		  sortOrder = "smacss"; // alphabetically, concentric-css, smacss
+	const sortOutput = pathSource + pathCSS;
 
-	console.log("Sorting CSS declarations using: " + sortOrder);
+	console.log("Sorting CSS properties.");
 	console.log("Sorted CSS files saved to: " + sortOutput)
 
-	return gulp.src(config.css.paths.map( function(base) { return pathSource + base } ), {base: pathSource, allowEmpty: true} )
-			   .pipe(postcss( [cssDeclarationSorter({order: sortOrder})] )) 
+	return gulp.src(config.css.files.map( function(base) { return pathSource + base } ), {base: pathSource, allowEmpty: true} )
+			   .pipe(csscomb())
 			   .pipe(gulp.dest( sortOutput ));
 
 }
@@ -1494,14 +1600,14 @@ export function preview(done) {
 /* -------------------------------------------------- */
 
 // TEST
-gulp.task("test", gulp.series(mode, clear, checkjs, checkcss, html, modals, sprite, vendors, styleguidejs, styleguidecss, js, css, injectscripts, move, sprite, meta, a11ycheck, svg, zipassets, raster, clean, sync));
+gulp.task("test", gulp.series(mode, clear, checkjs, checkcss, html, dialog, sprite, vendors, styleguidejs, styleguidecss, js, css, injectscripts, move, sprite, meta, a11ycheck, svg, zipassets, raster, clean, sync));
 
 
 // BUILD
-gulp.task("build", gulp.series(clear, checkjs, checkcss, html, modals, sprite, vendors, styleguidejs, styleguidecss, js, css, injectscripts, move, meta, a11ycheck, fingerprintscripts, fingerprintassets, svg, zipassets, raster, analytics, robotstxt, sitemap, sw, clean, preview));
+gulp.task("build", gulp.series(clear, checkjs, checkcss, html, dialog, sprite, vendors, styleguidejs, styleguidecss, js, css, injectscripts, move, meta, a11ycheck, fingerprintscripts, fingerprintassets, svg, zipassets, gulp.series(injectfullstory, injectga, injectgtm, injectmouseflow, robotstxt, sitemap, sw), clean, preview));
 
 
-//gulp.task("build", gulp.series(clear, checkjs, checkcss, inlinejs, inlinecss, html, modals, vendors, styleguidejs, styleguidecss, js, css, injectscripts, move, sprite, meta, a11ycheck, fingerprintscripts, fingerprintassets, svg, zipassets, raster, analytics, robotstxt, sitemap, sw, clean, preview));
+//gulp.task("build", gulp.series(clear, checkjs, checkcss, html, dialog, sprite, vendors, styleguidejs, styleguidecss, js, css, injectscripts, move, meta, a11ycheck, fingerprintscripts, fingerprintassets, svg, zipassets, raster, gulp.series(injectfullstory, injectga, injectgtm, injectmouseflow, robotstxt, sitemap, sw), clean, preview));
 
 
 // DEPLOY
