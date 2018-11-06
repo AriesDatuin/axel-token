@@ -1,0 +1,28 @@
+/* -------------------------------------------------- */
+/* BLOCKQUOTE
+/* -------------------------------------------------- */    
+
+blockquote {
+    position: relative;
+
+    width: 100%;
+    /*border-left: 1px solid $white-color;*/
+}
+
+blockquote::after {
+    font-family: 'FontAwesome';
+    font-size: 4em;
+
+    position: absolute;
+    z-index: auto;
+    top: -.25em;
+    left: .12em;
+
+    content: '\f10d';
+
+    opacity: .15;
+}
+
+blockquote p, cite {
+    color: $charcoal-color;
+}

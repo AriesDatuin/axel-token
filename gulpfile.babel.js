@@ -46,6 +46,7 @@ import revRewrite from "gulp-rev-rewrite"; // Rewrite occurrences of file names 
 import revDelete from "gulp-rev-delete-original"; // Delete the original file rewritten by gulp-rev or gulp-rev-all.
 import revFormat from "gulp-rev-format"; // Formatting options for revisioned files.
 import sourcemaps from "gulp-sourcemaps"; // Generate JS or CSS sourcemaps.
+import webfontloader from "_webfontloader"; // Injects WebFontLoader.
 import zip from "gulp-zip"; // ZIP compress files.
 
 
@@ -98,6 +99,7 @@ import generateSitemap from "gulp-sitemap"; // Generate a sitemap.
 import gtm from "gulp-gtm"; // Inject Google Tag Manager.
 import mouseflow from "_mouseflow"; // Inject Mouseflow.
 import robots from "gulp-robots"; // Generate robots.txt.
+import serviceworker from "_serviceworker"; // Inject Service Worker.
 import workbox from "workbox-build"; // Integrate Service Worker to leverage precache features.
 
 
@@ -291,7 +293,7 @@ export function injectfullstory(done) {
 		console.log("Injecting FullStory...");
 	
 		return gulp.src( pathBuild + "**/*.{html,php}" )
-				   .pipe(fullstory({}))
+				   .pipe(fullstory({id: config.tracking.fullstory.id}))
 				   .pipe(gulp.dest( pathBuild ));
 
 	} else {
@@ -436,7 +438,12 @@ export function sw(done) {
 
 	if ( config.options.serviceworker && production ) {
 
-		console.log("Generating Service Worker...");
+		console.log("Generating and injecting Service Worker...");
+
+		gulp.src( pathBuild + "**/*.{html,php}" )
+			.pipe(serviceworker({}))
+			.pipe(gulp.dest( pathBuild ));
+
 
 		return workbox.generateSW({
 								   globDirectory: pathBuild,
@@ -679,6 +686,22 @@ export function styleguidecss() {
 
 
 /* -------------------------------------------------- */
+/* WEB FONT LOADER
+/* -------------------------------------------------- */
+
+// FULLSTORY
+export function injectwebfontloader() {
+
+		console.log("Injecting WebFontLoader...");
+	
+		return gulp.src( pathBuild + "**/*.{html,php}" )
+				   .pipe(webfontloader({fonts: config.fonts.assets}))
+				   .pipe(gulp.dest( pathBuild ));
+
+}
+
+
+/* -------------------------------------------------- */
 /* FINGERPRINT / VERSIONING / CACHE BUST
 /* -------------------------------------------------- */
 
@@ -830,7 +853,7 @@ export function injectscripts(done) {
 
 			   //.pipe(defer())	
 			   //.pipe(gulpif( !server.aws.upload, removeCode({removeBase: true}) ))
-			   .pipe(gulpif( !config.options.serviceworker || !production, removeCode({removeServiceWorker: true}) ))
+			   //.pipe(gulpif( !config.options.serviceworker || !production, removeCode({removeServiceWorker: true}) ))
 			   .pipe(gulpif( !config.options.appBanner, removeCode({removeAppBanner: true}) ))
 			   .pipe(gulpif( !config.vendors.allow, removeCode({removeVendors: true}) ))
 
@@ -1604,7 +1627,7 @@ gulp.task("test", gulp.series(mode, clear, checkjs, checkcss, html, dialog, spri
 
 
 // BUILD
-gulp.task("build", gulp.series(clear, checkjs, checkcss, html, dialog, sprite, vendors, styleguidejs, styleguidecss, js, css, injectscripts, move, meta, a11ycheck, fingerprintscripts, fingerprintassets, svg, zipassets, gulp.series(injectfullstory, injectga, injectgtm, injectmouseflow, robotstxt, sitemap, sw), clean, preview));
+gulp.task("build", gulp.series(clear, checkjs, checkcss, html, dialog, sprite, gulp.series(injectwebfontloader, injectfullstory, injectga, injectgtm, injectmouseflow), vendors, styleguidejs, styleguidecss, js, css, injectscripts, move, meta, a11ycheck, fingerprintscripts, fingerprintassets, svg, zipassets, raster, robotstxt, sitemap, sw, clean, preview));
 
 
 //gulp.task("build", gulp.series(clear, checkjs, checkcss, html, dialog, sprite, vendors, styleguidejs, styleguidecss, js, css, injectscripts, move, meta, a11ycheck, fingerprintscripts, fingerprintassets, svg, zipassets, raster, gulp.series(injectfullstory, injectga, injectgtm, injectmouseflow, robotstxt, sitemap, sw), clean, preview));

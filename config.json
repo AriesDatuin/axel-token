@@ -9,7 +9,7 @@
 		"serviceworker": true,
 		"appBanner": false,
 		"sourcemaps": false,
-		"previewURL": "index.html"
+		"previewURL": false
 	},
 
 	"root": {
@@ -27,7 +27,8 @@
 	"tracking": {
 
 		"fullstory": {
-			"allow": true
+			"allow": true,
+			"id": "F7FKX"
 		},
 
 		"ga": {
@@ -78,6 +79,10 @@
 			"prefix": ".",
 			"suffix": ""
 		}
+	},
+
+	"fonts": {
+		"assets": ["Comfortaa"]
 	},
 
 	"images": {

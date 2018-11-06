@@ -1,0 +1,212 @@
+/* -------------------------------------------------- */
+/* GENERAL
+/* -------------------------------------------------- */
+
+body {
+    font-family: $font-copy;
+}
+
+h1, .font-header {
+    font-family: $font-header;
+}
+
+h2, h3, h4, h5, h6, .font-subheader {
+    font-family: $font-copy;
+}
+
+.font-heavy {
+    font-family: $font-heavy;
+    font-weight: bold;
+}
+
+.font-copy {
+    font-family: $font-copy;
+}
+
+.font-stack {
+    font-family: $font-stack;
+}
+
+/*
+a, blockquote, button, div, figcaption, h1, h2, h3, h4, h5, h6, input, label, dl, li, ol, p, select, span, table, textarea {
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	letter-spacing: inherit;
+	text-align: inherit;
+	border: 0;
+	
+	voice-family: female;
+	volume: medium;
+	azimuth: 0;
+	elevation: level;
+	pitch: medium;
+	richness: 50;
+	stress: 25;
+	speak: normal;
+	speak-header: once;
+	speak-numeral: continuous;
+	speak-punctuation: none;
+	speech-rate: medium;
+}
+*/
+
+a, button, input, label, cite, dt, dd, li, ol, div, p, span, tr, th, td {
+    font-family: inherit;
+    font-size: inherit;
+
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+
+    /*text-align: inherit;*/
+    letter-spacing: inherit;
+
+    color: inherit;
+    border: 0;
+}
+
+
+/* -------------------------------------------------- */
+/* LINKS
+/* -------------------------------------------------- */
+
+/* STATES */
+a:not(.button):not([class^='social-icon-']):not([class='card']) {
+    transition: $transition;
+}
+
+a:not(.button):not([class^='social-icon-']):not([class='card']):hover {
+    text-decoration: none;
+}
+
+a:not(.button):not([class^='social-icon-']):not([class='card']):focus {
+    /*color: $accent-color;*/
+    text-decoration: none;
+}
+
+a:not(.button):not([class^='social-icon-']):not([class='card']):active {
+    text-decoration: none;
+
+    color: $accent-color;
+    background-color: transparent;
+}
+
+
+/* HELPERS */
+a.inactive,
+a.disabled {
+    cursor: pointer;
+    pointer-events: none;
+    color: $light-grey-color;
+}
+
+
+/* -------------------------------------------------- */
+/* HEADER
+/* -------------------------------------------------- */	
+
+h1, .h1 {
+    font-size: 3rem;
+}
+
+h2, .h2 {
+    font-size: 2rem;
+}
+
+h3, .h3 {
+    font-size: 1.75rem;
+}
+
+h4, .h4 {
+    font-size: 1.5rem;
+}
+
+h5, .h5 {
+    font-size: 1.25rem;
+}
+
+h6, .h6 {
+    font-size: 1rem;
+}
+
+
+/* RESPONSIVE */
+@media print, screen and (min-width: 40em) {
+
+	h1, .h1 {
+		font-size: 3rem;
+	}
+
+	h2, .h2 {
+		font-size: 2rem;
+	}
+
+	h3, .h3 {
+		font-size: 1.75rem;
+	}
+
+	h4, .h4 {
+		font-size: 1.5rem;
+	}
+
+	h5, .h5 {
+		font-size: 1.25rem;
+	}
+
+	h6, .h6 {
+		font-size: 1rem;
+	}
+
+}
+
+/* -------------------------------------------------- */
+/* PARAGRAPHS
+/* -------------------------------------------------- */
+
+p {
+    font-size: 1em;
+}
+
+.p1 {
+    font-size: 2em;
+}
+
+.p2 {
+    font-size: 1.75em;
+}
+
+.p3 {
+    font-size: 1.5em;
+}
+
+.p4 {
+    font-size: 1.25em;
+}
+
+.p5 {
+    font-size: 0.875em;
+}
+
+.p6 {
+    font-size: .75em;
+}
+
+.small-print {
+    font-size: .75em;
+}
+
+.giant-print {
+    font-size: 5em;
+    line-height: .8em;
+}
+
+
+/* REPONSIVE */
+@media only screen and (min-width: 0) and (max-width: 375px) {
+
+    .giant-print {
+        font-size: 4.5em;
+        line-height: .8em;
+    }
+
+}
