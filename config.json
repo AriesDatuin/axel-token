@@ -27,12 +27,12 @@
 	"tracking": {
 
 		"fullstory": {
-			"allow": true,
+			"allow": false,
 			"id": "F7FKX"
 		},
 
 		"ga": {
-			"allow": true,
+			"allow": false,
 			"url": "axeltoken.com",
 			"id": "UA-92957315-1",
 			"anonymizeIp": true,
@@ -47,17 +47,18 @@
 		},
 
 		"gtm": {
-			"allow": true,
+			"allow": false,
 			"id": "GTM-NQCR4WM"
 		},
 
 		"mouseflow": {
-			"allow": true,
+			"allow": false,
 			"id": "66e7a8ba-ba2a-42bc-98cb-cc72c6ac1b08"
 		},
 
 		"pixel": {
-			"allow": false
+			"allow": false,
+			"id": ""
 		}
 
 	},
@@ -88,6 +89,7 @@
 	"images": {
 
 		"raster": {
+			"allow": false,
 			"level": 5,
 			"interlaced": true,
 			"progressive": true

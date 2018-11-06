@@ -93,6 +93,7 @@ import webp from "gulp-webp"; // Convert image assets to WebP format.
 
 
 // CACHE / CRAWLING / TRACKING
+import facebookpixel from "_facebookpixel"; // Inject Facebook Pixel.
 import fullstory from "_fullstory"; // Inject FullStory.
 import ga from "gulp-ga"; // Inject Google Analytics.
 import generateSitemap from "gulp-sitemap"; // Generate a sitemap.
@@ -284,6 +285,26 @@ const svgminOptions = {
 /* -------------------------------------------------- */
 /* ANALYTICS / TRACKING
 /* -------------------------------------------------- */
+
+// FACEBOOK PIXEL
+export function injectfacebookpixel(done) {
+
+	if ( config.tracking.pixel.allow || !production ) {
+
+		console.log("Injecting Facebook Pixel...");
+	
+		return gulp.src( pathBuild + "**/*.{html,php}" )
+				   .pipe(facebookpixel({id: config.tracking.pixel.id}))
+				   .pipe(gulp.dest( pathBuild ));
+
+	} else {
+
+		return done();
+
+	}
+
+}
+
 
 // FULLSTORY
 export function injectfullstory(done) {
@@ -853,16 +874,15 @@ export function injectscripts(done) {
 
 			   //.pipe(defer())	
 			   //.pipe(gulpif( !server.aws.upload, removeCode({removeBase: true}) ))
-			   //.pipe(gulpif( !config.options.serviceworker || !production, removeCode({removeServiceWorker: true}) ))
 			   .pipe(gulpif( !config.options.appBanner, removeCode({removeAppBanner: true}) ))
 			   .pipe(gulpif( !config.vendors.allow, removeCode({removeVendors: true}) ))
 
 			   .pipe(removeCode({production: true}) )
 			   .pipe(replace("&lt;br&gt;", "<br>"))
 			   .pipe(noopener.overwrite())
-			   .pipe(replace("siteVersion", config.options.siteVersion))
-			   .pipe(replace("styleguideVersion", config.options.styleguideVersion))
-			   .pipe(gulpif( production, htmlmin(htmlminOptions) ))
+			   //.pipe(replace("siteVersion", config.options.siteVersion))
+			   //.pipe(replace("styleguideVersion", config.options.styleguideVersion))
+			   //.pipe(gulpif( production, htmlmin(htmlminOptions) ))
 			   .pipe(gulp.dest( pathBuild ));
 
 }
@@ -963,6 +983,21 @@ export function a11ycheck(done) {
 }
 
 
+// HELPER
+export function minify(done) {
+
+	console.log("Minifying all assets...");
+
+	return gulp.src( pathBuild + "**/*.{html,php}" )
+			   .pipe(replace("siteVersion", config.options.siteVersion))
+			   .pipe(replace("styleguideVersion", config.options.styleguideVersion))
+			   .pipe(gulpif( production, htmlmin(htmlminOptions) ))
+			   .pipe(gulp.dest( pathBuild ));
+
+}
+
+
+
 /* -------------------------------------------------- */
 /* MOVE FOLDERS AND ASSETS
 /* -------------------------------------------------- */
@@ -1040,7 +1075,7 @@ export function raster() {
 	console.log("Compressing images assets...");
 
 	return gulp.src( pathBuild + "**/*.{gif,jpg,jpeg,png,svg}", {base: pathBuild} )
-			   .pipe(gulpif( production, imagemin([imagemin.optipng({optimizationLevel: config.images.raster.level}),
+			   .pipe(gulpif( config.images.raster.allow, imagemin([imagemin.optipng({optimizationLevel: config.images.raster.level}),
 							   imagemin.gifsicle({interlaced: config.images.raster.interlaced}),
 							   imagemin.jpegtran({progressive: config.images.raster.progressive}),
 							  ], {verbose: true}) )
@@ -1627,7 +1662,7 @@ gulp.task("test", gulp.series(mode, clear, checkjs, checkcss, html, dialog, spri
 
 
 // BUILD
-gulp.task("build", gulp.series(clear, checkjs, checkcss, html, dialog, sprite, gulp.series(injectwebfontloader, injectfullstory, injectga, injectgtm, injectmouseflow), vendors, styleguidejs, styleguidecss, js, css, injectscripts, move, meta, a11ycheck, fingerprintscripts, fingerprintassets, svg, zipassets, raster, robotstxt, sitemap, sw, clean, preview));
+gulp.task("build", gulp.series(clear, checkjs, checkcss, html, dialog, sprite, gulp.series(injectfacebookpixel, injectfullstory, injectga, injectgtm, injectmouseflow), injectwebfontloader, vendors, styleguidejs, styleguidecss, js, css, injectscripts, move, meta, a11ycheck, fingerprintscripts, fingerprintassets, svg, zipassets, raster, robotstxt, sitemap, sw, minify, clean, preview));
 
 
 //gulp.task("build", gulp.series(clear, checkjs, checkcss, html, dialog, sprite, vendors, styleguidejs, styleguidecss, js, css, injectscripts, move, meta, a11ycheck, fingerprintscripts, fingerprintassets, svg, zipassets, raster, gulp.series(injectfullstory, injectga, injectgtm, injectmouseflow, robotstxt, sitemap, sw), clean, preview));
