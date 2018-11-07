@@ -32,7 +32,7 @@
 
 /* VARIANTS */
 .tip-top::after {
-    top: -.5em;
+    top: -0.5em;
     left: 50%;
 
     transform: translateX(-50%) rotate(45deg);
@@ -40,13 +40,13 @@
 
 .tip-right::after {
     top: 50%;
-    right: -.5em;
+    right: -0.5em;
 
     transform: translateY(-50%) rotate(45deg);
 }
 
 .tip-bottom::after {
-    bottom: -.5em;
+    bottom: -0.5em;
     left: 50%;
 
     transform: translateX(-50%) rotate(45deg);
@@ -54,7 +54,7 @@
 
 .tip-left::after {
     top: 50%;
-    left: -.5em;
+    left: -0.5em;
 
     transform: translateY(-50%) rotate(45deg);
 }
@@ -65,14 +65,14 @@
 
     /* VARIANTS */
     .tip-left::after {
-        top: -.5em;
+        top: -0.5em;
         left: 50%;
 
         transform: translateX(-50%) rotate(45deg);
     }
 
     .tip-right::after {
-        bottom: -.5em;
+        bottom: -0.5em;
         left: 50%;
 
         transform: translateX(-50%) rotate(45deg);

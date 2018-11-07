@@ -113,8 +113,6 @@ var core = function() {
 
 var components = function() {
 
-	
-
 	//comAccordion();
 	//comAnimGradient();
 	//comBlog();

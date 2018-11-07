@@ -207,8 +207,7 @@ var utilAssetObserver = function() {
 		/* -------------------------------------------------- */
 
 		new LazyLoad(lazyOptions);
-	
-	
+
 }; // END utilIntersectionObserver
 
 
@@ -249,7 +248,6 @@ var utilMediaObserver = function() {
 		mediaVideo.pauseVideo();
 
 	}
-
 
 }; // END utilVideoObserver
 
@@ -313,8 +311,7 @@ var utilDataAttributes = function() {
 		//img.src = img.getAttribute('data-jpg');
 
 	}
-	
-	
+
 }; // END utilDataAttributes
 
 
@@ -500,7 +497,6 @@ var utilEmergence = function() {
 	//emergenceReset();
 	//emergence.disengage();
 
-	
 }; // END utilEmergence
 
 
@@ -556,7 +552,6 @@ var utilPageVisibility = function() {
 
 
 	}
-	
 
 }; // END utilPageVisibility
 
@@ -593,7 +588,6 @@ var utilPrint = function() {
         });
 
     });
-
 
 }; // END utilPrint
 
@@ -640,4 +634,4 @@ var utilScrollProgress = function() {
 
 }; // END utilScrollProgress
 
-$$(window).on("scroll", _.throttle(utilScrollProgress, $updateInterval / 2, {trailing: $throttleTrail, leading: $throttleLeading} ));
+$$(window).on("scroll", _.throttle(utilScrollProgress, $updateInterval, {trailing: $throttleTrail, leading: $throttleLeading} ));

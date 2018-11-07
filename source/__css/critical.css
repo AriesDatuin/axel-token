@@ -217,7 +217,7 @@ noscript div span {
     display: block;
 
     width: 100%;
-    padding: 0 .75rem 0 .75rem;
+    padding: 0 0.75rem 0 0.75rem;
 
     transform: translate(-50%,-50%);
     text-align: center;

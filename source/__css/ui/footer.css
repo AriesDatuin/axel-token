@@ -26,7 +26,7 @@ footer .nav-items div ul.nav > li {
     position: relative;
 
     /* width: 100%; */
-    margin: .25rem 0 .25rem 0;
+    margin: 0.25rem 0 0.25rem 0;
     padding: 0 0 0 0;
 }
 
@@ -80,13 +80,13 @@ footer .nav-items div ul.nav > li.title {
 
 /* LINK */
 footer .nav-items div ul.nav > li > a {
-    font-size: .875em;
+    font-size: 0.875em;
     /*display: block;*/
 
     overflow: hidden;
 
     width: 100%;
-    padding: .5rem .75rem .5rem .75rem;
+    padding: 0.5rem 0.75rem 0.5rem 0.75rem;
 
     transition: var(--transition);
     text-align: left;

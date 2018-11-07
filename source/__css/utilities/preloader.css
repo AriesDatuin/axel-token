@@ -21,7 +21,7 @@ img:not([src]) {
 
 /* HELPERS */
 img.lazy:not(.lazy-ignore) {
-    transform: scale3d(.95,.95,1);
+    transform: scale3d(0.95,0.95,1);
 }
 
 img.lazy.loaded:not(.lazy-ignore) {
@@ -105,7 +105,7 @@ img[data-srcset] {
 .mini-preloader p {
     display: none;
 
-    margin-top: .5rem;
+    margin-top: 0.5rem;
 }
 
 

@@ -35,7 +35,6 @@ var uiInit = function() {
 
 	});
 
-
 }; // END uiInit
 
 
@@ -174,7 +173,6 @@ var uiNavbar = function() {
 		//TweenMax.to(subnav.find("li"), 0.15, {autoAlpha: 0, rotationX: -10, ease: Expo.easeIn});
 
 	}
-
 
 }; // END uiNav
 //endRemoveIf(production)
@@ -416,7 +414,6 @@ var uiNavPanel = function() {
 
 	});
 
-
 }; // END uiNavPanel
 //endRemoveIf(production)
 
@@ -528,8 +525,7 @@ var uiLinkDelegation = function() {
 		return false;
 
 	});
-	
-	
+
 }; // END uiLinkDelegation
 
 
@@ -982,7 +978,6 @@ var uiScrollTo = function() {
 
 	TweenMax.delayedCall($delayInterval, checkHash);
 
-
 }; // END uiScrollTo
 
 
@@ -1172,8 +1167,7 @@ var uiButtons = function() {
 		//buttonNoWaves.removeClass("waves-effect");
 
 	}
-	
-	
+
 }; // END uiButtons
 
 
@@ -1318,10 +1312,8 @@ var uiRelayout = function() {
 		toolbarMenubar.find(".cell a div .fa").css({"display" : "block",
 													"margin" : "0 0 0 0"});
 
-
 	}
 		
-
 }; // END uiRelayout
 
 

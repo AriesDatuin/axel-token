@@ -22,7 +22,7 @@
 
 /* CHILD */
 #quicklinks li {
-    font-size: .875em;
+    font-size: 0.875em;
 
     background-color: var(--white-color);
 }

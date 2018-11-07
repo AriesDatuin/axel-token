@@ -89,7 +89,6 @@
 	"images": {
 
 		"raster": {
-			"allow": false,
 			"level": 5,
 			"interlaced": true,
 			"progressive": true

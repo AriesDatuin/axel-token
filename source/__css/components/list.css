@@ -32,21 +32,21 @@
 }
 
 .list-default li a span {
-    font-size: .8em;
+    font-size: 0.8em;
     font-weight: bold;
     display: block;
     color: var(--secondary-color);
 }
 
 .list-default li:nth-child(even) {
-    background-color: rgba(0, 0, 0, .01);
+    background-color: rgba(0,0,0, 0.01);
 }
 
 
 /* PSUEDO */
 .list-default li a span::before {
     font-family: FontAwesome;
-    margin-right: .5rem;
+    margin-right: 0.5rem;
     content: '\f054';
 }
 
@@ -68,10 +68,10 @@
 /* CHILD */
 .list-dot li::before {
     font-family: 'FontAwesome';
-    font-size: .25em;
+    font-size: 0.25em;
     line-height: 4em;
     float: left;
-    margin-left: -.75rem;
+    margin-left: -0.75rem;
     content: '\f111';
     color: inherit;
 }
@@ -178,8 +178,8 @@ dd:last-child {
 
 dt::before {
     font-family: FontAwesome;
-    font-size: .75em;
-    margin-right: .5rem;
+    font-size: 0.75em;
+    margin-right: 0.5rem;
     content: '\f054';
     color: inherit;
 }

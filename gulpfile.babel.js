@@ -194,15 +194,15 @@ const cleanCSSOptions = {
 				2: {
 					mergeAdjacentRules: false, // Controls mergeing adjacent rules (true).
 					mergeIntoShorthands: false, // Controls merging properties into shorthands (true). *Note: Might cause unusual results. 
-					mergeMedia: false, // Controls merging @media rules (true). *Note: Might cause unusual results.
-					mergeNonAdjacentRules: false, // Controls merging non-adjacent rules (true).
+					mergeMedia: true, // Controls merging @media rules (true). *Note: Might cause unusual results.
+					mergeNonAdjacentRules: true, // Controls merging non-adjacent rules (true).
 					mergeSemantically: false, // Controls semantic merging (false).
-					overrideProperties: false, // Controls property overriding based on understandability (true).
+					overrideProperties: true, // Controls property overriding based on understandability (true).
 					removeEmpty: true, // Controls empty rules and nested blocks (true).
-					reduceNonAdjacentRules: false, // Controls non-adjacent rules (true).
-					removeDuplicateFontRules: false, // Controls duplicate @font-face (true).
-					removeDuplicateMediaBlocks: false, // Controls duplicate @media (true).
-					removeDuplicateRules: false, // Controls duplicate rules (true).
+					reduceNonAdjacentRules: true, // Controls non-adjacent rules (true).
+					removeDuplicateFontRules: true, // Controls duplicate @font-face (true).
+					removeDuplicateMediaBlocks: true, // Controls duplicate @media (true).
+					removeDuplicateRules: true, // Controls duplicate rules (true).
 					removeUnusedAtRules: false, // Controls unused at rule (false). *Note: Available since 4.1.0.
 					restructureRules: false, // Controls rule restructuring (false).
 					skipProperties: [] // Controls which properties won't be optimized, defaults to '[]' which means all will be optimized (since 4.1.0).
@@ -1075,7 +1075,7 @@ export function raster() {
 	console.log("Compressing images assets...");
 
 	return gulp.src( pathBuild + "**/*.{gif,jpg,jpeg,png,svg}", {base: pathBuild} )
-			   .pipe(gulpif( config.images.raster.allow, imagemin([imagemin.optipng({optimizationLevel: config.images.raster.level}),
+			   .pipe(gulpif( production, imagemin([imagemin.optipng({optimizationLevel: config.images.raster.level}),
 							   imagemin.gifsicle({interlaced: config.images.raster.interlaced}),
 							   imagemin.jpegtran({progressive: config.images.raster.progressive}),
 							  ], {verbose: true}) )
@@ -1662,7 +1662,7 @@ gulp.task("test", gulp.series(mode, clear, checkjs, checkcss, html, dialog, spri
 
 
 // BUILD
-gulp.task("build", gulp.series(clear, checkjs, checkcss, html, dialog, sprite, gulp.series(injectfacebookpixel, injectfullstory, injectga, injectgtm, injectmouseflow), injectwebfontloader, vendors, styleguidejs, styleguidecss, js, css, injectscripts, move, meta, a11ycheck, fingerprintscripts, fingerprintassets, svg, zipassets, raster, robotstxt, sitemap, sw, minify, clean, preview));
+gulp.task("build", gulp.series(clear, checkjs, checkcss, html, dialog, sprite, injectfullstory, injectga, injectgtm, injectmouseflow, injectwebfontloader, vendors, styleguidejs, styleguidecss, js, css, injectscripts, move, meta, a11ycheck, fingerprintscripts, fingerprintassets, svg, zipassets, raster, robotstxt, sitemap, sw, minify, clean, preview));
 
 
 //gulp.task("build", gulp.series(clear, checkjs, checkcss, html, dialog, sprite, vendors, styleguidejs, styleguidecss, js, css, injectscripts, move, meta, a11ycheck, fingerprintscripts, fingerprintassets, svg, zipassets, raster, gulp.series(injectfullstory, injectga, injectgtm, injectmouseflow, robotstxt, sitemap, sw), clean, preview));

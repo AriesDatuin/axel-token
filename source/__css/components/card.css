@@ -17,7 +17,7 @@
 
 /* HOVER */
 .card:hover { 
-    box-shadow: var(--box-shadow-xl);
+    /*box-shadow: var(--box-shadow-md);*/
 }
 
 

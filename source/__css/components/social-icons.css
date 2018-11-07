@@ -97,7 +97,7 @@
     .social-icons.bottom:not(.fixed) > li,
     .social-icons.left:not(.fixed) > li {
         display: inline-block;
-        margin: .2rem .4rem .2rem .4rem;
+        margin: 0.2rem 0.4rem 0.2rem 0.4rem;
     }
 
 }
@@ -138,9 +138,9 @@
 }
 
 .social-icons.fixed:hover {
-    box-shadow: 0 16px 24px 2px rgba(var(--secondary-color-rgb), .1),
-                0 6px 30px 5px rgba(var(--secondary-color-rgb), .14),
-                0 8px 10px -5px rgba(var(--secondary-color-rgb), .16);
+    box-shadow: 0 16px 24px 2px rgba(var(--secondary-color-rgb), 0.1),
+                0 6px 30px 5px rgba(var(--secondary-color-rgb), 0.14),
+                0 8px 10px -5px rgba(var(--secondary-color-rgb), 0.16);
 }
 
 

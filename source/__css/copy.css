@@ -71,24 +71,24 @@ a, button, input, label, cite, dt, dd, li, ol, div, p, span, tr, th, td {
 /* -------------------------------------------------- */
 
 /* STATES */
-a:not(.button):not([class^='social-icon-']):not([class='card']) {
+a:not(.button):not(.card):not([class^='social-icon-']) {
     transition: var(--transition);
 }
 
-a:not(.button):not([class^='social-icon-']):not([class='card']):hover {
+a:not(.button):not(.card):not([class^='social-icon-']):hover {
     text-decoration: none;
 }
 
-a:not(.button):not([class^='social-icon-']):not([class='card']):focus {
+a:not(.button):not(.card):not([class^='social-icon-']):focus {
     /*color: var(--accent-color);*/
     text-decoration: none;
 }
 
-a:not(.button):not([class^='social-icon-']):not([class='card']):active {
+a:not(.button):not(.card):not([class^='social-icon-']):active {
     text-decoration: none;
 
     color: var(--accent-color);
-    background-color: transparent;
+    /*background-color: inherit;*/
 }
 
 
@@ -189,16 +189,16 @@ p {
 }
 
 .p6 {
-    font-size: .75em;
+    font-size: 0.75em;
 }
 
 .small-print {
-    font-size: .75em;
+    font-size: 0.75em;
 }
 
 .giant-print {
     font-size: 5em;
-    line-height: .8em;
+    line-height: 0.8em;
 }
 
 
@@ -207,7 +207,7 @@ p {
 
     .giant-print {
         font-size: 4.5em;
-        line-height: .8em;
+        line-height: 0.8em;
     }
 
 }
@@ -230,12 +230,12 @@ blockquote::after {
 
     position: absolute;
     z-index: auto;
-    top: -.25em;
-    left: .12em;
+    top: -0.25em;
+    left: 0.12em;
 
     content: '\f10d';
 
-    opacity: .15;
+    opacity: 0.15;
 }
 
 blockquote p, cite {

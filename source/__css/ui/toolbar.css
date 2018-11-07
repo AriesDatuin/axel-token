@@ -9,8 +9,8 @@
 
     width: 100%;
 
-    border-top: 1px solid rgba(75,75,75,0);
-    background-color: rgba(50,50,50,1);
+    border-top: 1px solid rgba(75,75,75, 0);
+    background-color: rgba(50,50,50, 1);
 }
 
 
@@ -45,8 +45,8 @@
     left: auto;
 
     width: auto;
-    margin-right: .5rem;
-    margin-left: .5rem;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
 
     transform: translate(0,0);
 }
@@ -54,7 +54,7 @@
 
 /* STICKY */
 #toolbar.sticky {
-    border-top: 1px solid rgba(50,50,50,1);
+    border-top: 1px solid rgba(50,50,50, 1);
 }
 
 #toolbar.sticky #toolbar-contents .cell a {

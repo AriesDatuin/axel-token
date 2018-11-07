@@ -38,7 +38,6 @@ var comAccordion = function() {
 		
 	};
 
-	
 }; // END comAccordion
 //endRemoveIf(production)
 
@@ -96,7 +95,6 @@ var comAnimGradient() {
 	$$(window).backgroundDefault = function() {
 		granimInstance.changeState("default-state");
 	};
-	
 	
 }
 */ // END comAnimGradient
@@ -220,7 +218,6 @@ var comBlog = function() {
 			});
 	
 	}
-
 	
 }; // END comBlog
 //endRemoveIf(production)
@@ -288,8 +285,7 @@ var comCounter = function() {
 
 	$$(window).on("scrollstart scrollstop", counterController );
 
-	TweenMax.delayedCall(0.5, counterController);
-
+	TweenMax.delayedCall(0.25, counterController);
 
 }; // END comOdometer
 
@@ -648,7 +644,6 @@ var comDialog = function() {
 
 		}, 100));
 
-
 }; // END comDialog
 
 
@@ -798,7 +793,6 @@ var comQuicklinks = function() {
 
 	});
 
-	
 }; // END uiQuicklinks
 
 
@@ -953,7 +947,6 @@ var comSlider = function() {
 
 	$$(window).on("scrollstop", animSliderController);
 
-
 }; // END comSlider
 
 
@@ -1031,7 +1024,7 @@ var comStories = function() {
 				tlCaseStudy.add( function() { self.addClass("overflow-hidden"); }, "group-1" )
 						   .to(self.find(".story-icon"), 0.75, {autoAlpha: 0, scale: 0.75, ease: Back.easeOut}, "group-1")
 						   .to(self.find(".text-container"), 1, {autoAlpha: 0, ease: Power4.easeOut}, "group-1")
-						   .to(self.find("a.button"), 1, {autoAlpha: 0, ease: Power4.easeOut}, "group-1")
+						   .to(self.find(".button"), 1, {autoAlpha: 0, ease: Power4.easeOut}, "group-1")
 						   .to(self.find("[data-src]"), 0.5, {autoAlpha: 1, scale: 1, ease: Power4.easeOut}, "group-1");
 			
 			
@@ -1040,13 +1033,12 @@ var comStories = function() {
 			var self = $(this),
 				tlCaseStudy = new TimelineMax({paused: false});
 				tlCaseStudy.to(self.find(".text-container"), 0.75, {autoAlpha: 1, ease: Power4.easeOut}, "group-1")
-						   .to(self.find("a.button"), 0.75, {autoAlpha: 1, ease: Power4.easeOut}, "group-1")
+						   .to(self.find(".button"), 0.75, {autoAlpha: 1, ease: Power4.easeOut}, "group-1")
 						   .to(self.find("[data-src]"), 0.25, {autoAlpha: 0, scale: 1.12, ease: Power4.easeOut}, "group-1")
 						   .to(self.find(".story-icon"), 0.5, {autoAlpha: 1, scale: 1, ease: Back.easeOut}, "group-1")
 						   .add( function() { self.removeClass("overflow-hidden"); }, "group-1" );
 			
 		});
-
 
 }; // END comCaseStudies
 
@@ -1097,7 +1089,6 @@ var comTilt = function() {
     if ( $hasTouch ) {
         tilt.methods.destroy.call(tilt);
 	}
-	
 	
 }
 */ // END comTilt

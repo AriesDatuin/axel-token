@@ -4,14 +4,14 @@
 
 
 	<!-- CARD -->
-    <div id="{{ id }}" class="card cell border-xs border-solid border-secondary" data-content-url="{{ link }}" data-content-selector="story-{{ id }}" data-content-width="auto" data-content-height="auto">
+    <div id="{{ id }}" class="card cell border-xs border-solid border-secondary overflow-visible" data-content-url="{{ link }}" data-content-selector="story-{{ id }}" data-content-width="auto" data-content-height="auto">
 
 		
-		<!-- IMAGE -->
+		<!-- ICON -->
 		<div class="story-icon position-absolute wh-xs center round-full background-accent top-offset no-pointer">
 			<img src="{{ icon }}" alt="{{ title }}" class="padding-sm center-vh">
 		</div>
-		<!-- // IMAGE -->
+		<!-- // ICON -->
 		
 		
 		<!-- COPY -->
@@ -25,7 +25,9 @@
 		
 		
 		<!-- BUTTON -->
-		<div class="margin-bottom-xs text-accent text-white-hover text-bold text-uppercase button background-transparent background-transparent-hover no-touch-feedback prevent-default"><span class="fa fa-external-link margin-right-xs"></span>Read story</div>
+		<div class="margin-bottom-xs text-accent text-white-hover text-bold text-uppercase button background-transparent background-transparent-hover no-touch-feedback prevent-default">
+			<span class="fa fa-external-link margin-right-xs"></span>Read story
+		</div>
 		<!-- // BUTTON -->
 		
 		

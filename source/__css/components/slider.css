@@ -16,7 +16,7 @@
     overflow: hidden;
 
     width: 100%;
-    padding: .5rem 1rem .5rem 1rem !important;
+    padding: 0.5rem 1rem 0.5rem 1rem !important;
 
     transition: var(--transition);
     text-align: center;
@@ -233,7 +233,7 @@ img.flickity-lazyerror {
 
     width: 10px;
     height: 10px;
-    margin: 0 .75rem 0 .75rem;
+    margin: 0 0.75rem 0 0.75rem;
 
     cursor: pointer;
     transition: var(--transition);

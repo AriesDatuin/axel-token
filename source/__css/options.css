@@ -95,9 +95,9 @@
         --cell-padding-left: 2rem;
 
         /*
-		--cell-margin-top: .5rem;
+		--cell-margin-top: 0.5rem;
         --cell-margin-right: auto;
-        --cell-margin-bottom: .5rem;
+        --cell-margin-bottom: 0.5rem;
 		--cell-margin-left: auto;
     	*/
 
@@ -197,9 +197,9 @@
         /* ALL
     	/* -------------------------------------------------- */
 
-        --gutter-xxxs: .25rem .25rem .25rem .25rem;
-        --gutter-xxs: .5rem .5rem .5rem .5rem;
-        --gutter-xs: .75rem .75rem .75rem .75rem;
+        --gutter-xxxs: 0.25rem 0.25rem 0.25rem 0.25rem;
+        --gutter-xxs: 0.5rem 0.5rem 0.5rem 0.5rem;
+        --gutter-xs: 0.75rem 0.75rem 0.75rem 0.75rem;
         --gutter-sm: 1rem 1rem 1rem 1rem;
         --gutter-md: 2rem 2rem 2rem 2rem;
         --gutter-lg: 4rem 4rem 4rem 4rem;
@@ -212,9 +212,9 @@
         /* SINGLE
     	/* -------------------------------------------------- */
 
-        --gutter-single-xxxs: .25rem;
-        --gutter-single-xxs: .5rem;
-        --gutter-single-xs: .75rem;
+        --gutter-single-xxxs: 0.25rem;
+        --gutter-single-xxs: 0.5rem;
+        --gutter-single-xs: 0.75rem;
         --gutter-single-sm: 1rem;
         --gutter-single-md: 2rem;
         --gutter-single-lg: 4rem;
@@ -231,10 +231,10 @@
         /* LETTER SPACING
     	/* -------------------------------------------------- */
 
-        --text-letter-spacing-xxxs: .125rem;
-        --text-letter-spacing-xxs: .25rem;
-        --text-letter-spacing-xs: .5rem;
-        --text-letter-spacing-sm: .75rem;
+        --text-letter-spacing-xxxs: 0.125rem;
+        --text-letter-spacing-xxs: 0.25rem;
+        --text-letter-spacing-xs: 0.5rem;
+        --text-letter-spacing-sm: 0.75rem;
         --text-letter-spacing-md: 1rem;
         --text-letter-spacing-lg: 1.25rem;
         --text-letter-spacing-xl: 1.5rem;
@@ -301,19 +301,19 @@
 
 
     /* BOX SHADOW; REFERENCE: VERT, HORIZ, BLUR, SPREAD, COLOR / OPACITY */
-    --box-shadow-xs: 0px 2px 4px 0px rgba(0,0,0, .25);
-    --box-shadow-sm: 0px 4px 6px 0px rgba(0,0,0, .25);
-    --box-shadow-md: 0px 6px 8px 0px rgba(0,0,0, .25);
-    --box-shadow-lg: 0px 8px 20px 0px rgba(0,0,0, .25);
-    --box-shadow-xl: 0px 15px 30px 0px rgba(0,0,0, .25);
+    --box-shadow-xs: 0px 2px 4px 0px rgba(0,0,0, 0.25);
+    --box-shadow-sm: 0px 4px 6px 0px rgba(0,0,0, 0.25);
+    --box-shadow-md: 0px 6px 8px 0px rgba(0,0,0, 0.25);
+    --box-shadow-lg: 0px 8px 20px 0px rgba(0,0,0, 0.25);
+    --box-shadow-xl: 0px 15px 30px 0px rgba(0,0,0, 0.25);
 
 
     /* DROP SHADOW; REFERENCE: VERT, HORIZ, BLUR, COLOR / OPACITY */
-    --drop-shadow-xs: drop-shadow( 2px 2px 0px rgba(0,0,0, .25) );
-    --drop-shadow-sm: drop-shadow( 4px 4px 4px rgba(0,0,0, .25) );
-    --drop-shadow-md: drop-shadow( 6px 6px 6px rgba(0,0,0, .25) );
-    --drop-shadow-lg: drop-shadow( 8px 8px 8px rgba(0,0,0, .25) );
-    --drop-shadow-xl: drop-shadow( 10px 10px 10px rgba(0,0,0, .25) );
+    --drop-shadow-xs: drop-shadow( 2px 2px 0px rgba(0,0,0, 0.25) );
+    --drop-shadow-sm: drop-shadow( 4px 4px 4px rgba(0,0,0, 0.25) );
+    --drop-shadow-md: drop-shadow( 6px 6px 6px rgba(0,0,0, 0.25) );
+    --drop-shadow-lg: drop-shadow( 8px 8px 8px rgba(0,0,0, 0.25) );
+    --drop-shadow-xl: drop-shadow( 10px 10px 10px rgba(0,0,0, 0.25) );
 
 
     /* BLUR */
