@@ -192,7 +192,7 @@ const cleanCSSOptions = {
 					specialComments: false
 				},
 				2: {
-					mergeAdjacentRules: false, // Controls mergeing adjacent rules (true).
+					mergeAdjacentRules: true, // Controls mergeing adjacent rules (true).
 					mergeIntoShorthands: false, // Controls merging properties into shorthands (true). *Note: Might cause unusual results. 
 					mergeMedia: true, // Controls merging @media rules (true). *Note: Might cause unusual results.
 					mergeNonAdjacentRules: true, // Controls merging non-adjacent rules (true).
