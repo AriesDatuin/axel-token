@@ -2634,51 +2634,63 @@ dl, ul {
 
 
 /* WEIGHT */
-.border-xxxs {
+.border-xxxs,
+.border-xxxs-hover:hover {
     border-width: var(--border-xxxs);
 }
 
-.border-xxs {
+.border-xxs,
+.border-xxs-hover:hover {
     border-width: var(--border-xxs);
 }
 
-.border-xs {
+.border-xs,
+.border-xs-hover:hover {
     border-width: var(--border-xs);
 }
 
-.border-sm {
+.border-sm,
+.border-sm-hover:hover {
     border-width: var(--border-sm);
 }
 
-.border-md {
+.border-md,
+.border-md-hover:hover {
     border-width: var(--border-md);
 }
 
-.border-lg {
+.border-lg,
+.border-lg-hover:hover {
     border-width: var(--border-lg);
 }
 
-.border-xl {
+.border-xl,
+.border-xl-hover:hover {
     border-width: var(--border-xl);
 }
 
-.border-xxl {
+.border-xxl,
+.border-xxl-hover:hover {
     border-width: var(--border-xxl);
 }
 
-.border-xxxl {
+.border-xxxl,
+.border-xxxl-hover:hover {
     border-width: var(--border-xxxl);
 }
 
-.border-thin {
+.border-thin,
+.border-thin-hover:hover {
     border-width: thin;
 }
 
-.border-medium {
+.border-medium,
+.border-medium-hover:hover {
     border-width: medium;
 }
 
-.border-thick {
+.border-thick,
+.border-thick-hover:hover {
     border-width: thick;
 }
 

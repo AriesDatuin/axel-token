@@ -8,7 +8,7 @@
 
     padding: 0;
 
-    transition: var(--transition-fast);
+    /*transition: var(--transition-fast);*/
 
     border-radius: var(--radius-sm);
     box-shadow: var(--box-shadow-sm);

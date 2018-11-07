@@ -3,36 +3,15 @@ layout: dialog
 assets: assets/
 ---
 
-
 <!-- CONTENT -->
 {{#each team.content}}
 
 
-	<article id="team-{{ id }}" class="profile grid-x align-center align-top small-up-1 medium-up-2">
+	<article id="team-{{ id }}" class="profile grid-x align-center align-middle">
 		
-
-		<!-- CELL -->
-		<div id="photo" class="cell small-order-1 medium-order-2 padding-none overflow-hidden">
-
-
-			<!-- IMAGE -->
-			<img src="{{ image }}" alt="{{ title }}-{{ subtitle }}...">
-			<!-- // IMAGE -->
-
-
-			<!-- BLOCK CAP -->
-			<svg class="block-cap bottom svg-white emergence-ignore-child" preserveAspectRatio="none" viewBox="0 0 1024 100" aria-hidden="true">
-				{{> block-cap-inward  }}
-			</svg>
-			<!-- // BLOCK CAP -->
-
-
-		</div>
-		<!-- // CELL -->
-
 		
 		<!-- CELL -->
-		<div id="description" class="cell small-order-2 medium-order-1 padding-tb-lg padding-lr-md">
+		<div id="description" class="cell padding-tb-lg padding-lr-md">
 			
 
 			<!-- COPY -->
