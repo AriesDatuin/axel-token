@@ -192,17 +192,17 @@ const cleanCSSOptions = {
 					specialComments: false
 				},
 				2: {
-					mergeAdjacentRules: true, // Controls mergeing adjacent rules (true).
+					mergeAdjacentRules: false, // Controls mergeing adjacent rules (true).
 					mergeIntoShorthands: false, // Controls merging properties into shorthands (true). *Note: Might cause unusual results. 
-					mergeMedia: true, // Controls merging @media rules (true). *Note: Might cause unusual results.
-					mergeNonAdjacentRules: true, // Controls merging non-adjacent rules (true).
+					mergeMedia: false, // Controls merging @media rules (true). *Note: Might cause unusual results.
+					mergeNonAdjacentRules: false, // Controls merging non-adjacent rules (true).
 					mergeSemantically: false, // Controls semantic merging (false).
-					overrideProperties: true, // Controls property overriding based on understandability (true).
+					overrideProperties: false, // Controls property overriding based on understandability (true).
 					removeEmpty: true, // Controls empty rules and nested blocks (true).
-					reduceNonAdjacentRules: true, // Controls non-adjacent rules (true).
-					removeDuplicateFontRules: true, // Controls duplicate @font-face (true).
-					removeDuplicateMediaBlocks: true, // Controls duplicate @media (true).
-					removeDuplicateRules: true, // Controls duplicate rules (true).
+					reduceNonAdjacentRules: false, // Controls non-adjacent rules (true).
+					removeDuplicateFontRules: false, // Controls duplicate @font-face (true).
+					removeDuplicateMediaBlocks: false, // Controls duplicate @media (true).
+					removeDuplicateRules: false, // Controls duplicate rules (true).
 					removeUnusedAtRules: false, // Controls unused at rule (false). *Note: Available since 4.1.0.
 					restructureRules: false, // Controls rule restructuring (false).
 					skipProperties: [] // Controls which properties won't be optimized, defaults to '[]' which means all will be optimized (since 4.1.0).
@@ -662,7 +662,7 @@ export function css() {
 							   .pipe(concat(config.css.bundle))
 							   .pipe(postcss(plugins))
 							   .pipe(gulpif( production, purgecss(purgeCSSOptions) ))
-							   //.pipe(gulpif( production, cleanCSS(cleanCSSOptions) ))
+							   .pipe(gulpif( production, cleanCSS(cleanCSSOptions) ))
 							   //.pipe(gulpif( config.options.sourcemaps, sourcemaps.write("maps") ))
 							   .pipe(gulp.dest( pathBuild + pathScripts ))
 							   .pipe(browserSync.stream());
