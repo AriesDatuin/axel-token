@@ -183,7 +183,7 @@
 			"toplevel": false
 		},
 		"css": {
-			"lint": false,
+			"lint": true,
 			"autoprefix": true,
 			"cascade": true,
 			"flexbox": true,

@@ -42,13 +42,13 @@
     background-color: var(--white-color);
 }
 
-::-webkit-scrollbar-track-piece {}
+/*::-webkit-scrollbar-track-piece {}*/
 
 
 /* CORNER / RESIZER */
-::-webkit-scrollbar-corner {}
+/*::-webkit-scrollbar-corner {}*/
 
-::-webkit-resizer {} 
+/*::-webkit-resizer {}*/
 
 
 /* -------------------------------------------------- */

@@ -662,7 +662,7 @@ export function css() {
 							   .pipe(concat(config.css.bundle))
 							   .pipe(postcss(plugins))
 							   .pipe(gulpif( production, purgecss(purgeCSSOptions) ))
-							   .pipe(gulpif( production, cleanCSS(cleanCSSOptions) ))
+							   //.pipe(gulpif( production, cleanCSS(cleanCSSOptions) ))
 							   //.pipe(gulpif( config.options.sourcemaps, sourcemaps.write("maps") ))
 							   .pipe(gulp.dest( pathBuild + pathScripts ))
 							   .pipe(browserSync.stream());
