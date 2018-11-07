@@ -1662,7 +1662,7 @@ gulp.task("test", gulp.series(mode, clear, checkjs, checkcss, html, dialog, spri
 
 
 // BUILD
-gulp.task("build", gulp.series(clear, checkjs, checkcss, html, dialog, sprite, injectfullstory, injectga, injectgtm, injectmouseflow, injectwebfontloader, vendors, styleguidejs, styleguidecss, js, css, injectscripts, move, meta, a11ycheck, fingerprintscripts, fingerprintassets, svg, zipassets, raster, robotstxt, sitemap, sw, minify, clean, preview));
+gulp.task("build", gulp.series(clear, checkjs, checkcss, html, dialog, sprite, injectfullstory, injectga, injectgtm, injectmouseflow, injectwebfontloader, vendors, styleguidejs, styleguidecss, js, css, injectscripts, move, meta, a11ycheck, fingerprintscripts, fingerprintassets, svg, zipassets, raster, robotstxt, sitemap, clean, sw, minify, preview));
 
 
 //gulp.task("build", gulp.series(clear, checkjs, checkcss, html, dialog, sprite, vendors, styleguidejs, styleguidecss, js, css, injectscripts, move, meta, a11ycheck, fingerprintscripts, fingerprintassets, svg, zipassets, raster, gulp.series(injectfullstory, injectga, injectgtm, injectmouseflow, robotstxt, sitemap, sw), clean, preview));
