@@ -598,6 +598,15 @@ var comDialog = function() {
 	 			}
 
 
+	 			if ( $isMobile ) {
+
+	 				dialog.css({ "left" : "50%",
+	 							 "transform" : "translate(-50%,-50%)" 
+	 							 });
+
+	 			}
+
+
 				//console.log($dataContentURL + " #" + $dataConentSelector + " @ " + $dataContentWidth + " x " + $dataContentHeight);
 				
 				dialogOpen($dataContentURL, " #" + $dataConentSelector, $dataContentWidth, $dataContentHeight);
