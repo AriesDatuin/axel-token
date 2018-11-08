@@ -192,7 +192,7 @@ const cleanCSSOptions = {
 					specialComments: false
 				},
 				2: {
-					mergeAdjacentRules: false, // Controls mergeing adjacent rules (true).
+					mergeAdjacentRules: false, // Controls mergeing adjacent rules (true). *Note: Might cause unusual results. 
 					mergeIntoShorthands: false, // Controls merging properties into shorthands (true). *Note: Might cause unusual results. 
 					mergeMedia: true, // Controls merging @media rules (true). *Note: Might cause unusual results.
 					mergeNonAdjacentRules: true, // Controls merging non-adjacent rules (true).
@@ -468,7 +468,7 @@ export function sw(done) {
 
 		return workbox.generateSW({
 								   globDirectory: pathBuild,
-								   globPatterns: ["**/*.{css,eot,gif,html,jp2,jpg,jpeg,js,jxr,mp4,mpeg,ogg,ogv,otf,php,png,svg,tiff,ttf,webm,webp,woff,woff2}"],
+								   globPatterns: ["**/*.{css,eot,gif,html,jp2,jpg,jpeg,js,jxr,mp4,mpeg,ogg,ogv,otf,php,png,svg,ttf,webm,webp,woff,woff2}"],
 			
 								   runtimeCaching: [{
 													 urlPattern: new RegExp('^https://fonts.(?:googleapis|gstatic).com/(.*)'),
@@ -1662,7 +1662,7 @@ gulp.task("test", gulp.series(mode, clear, checkjs, checkcss, html, dialog, spri
 
 
 // BUILD
-gulp.task("build", gulp.series(clear, checkjs, checkcss, html, dialog, sprite, injectfullstory, injectga, injectgtm, injectmouseflow, injectwebfontloader, vendors, styleguidejs, styleguidecss, js, css, move, meta, a11ycheck, injectscripts, fingerprintscripts, fingerprintassets, svg, zipassets, raster, robotstxt, sitemap, clean, sw, minify, preview));
+gulp.task("build", gulp.series(clear, checkjs, checkcss, html, dialog, sprite, injectfullstory, injectga, injectgtm, injectmouseflow, injectwebfontloader, vendors, styleguidejs, styleguidecss, js, css, move, meta, a11ycheck, injectscripts, fingerprintscripts, fingerprintassets, svg, zipassets, raster, robotstxt, sitemap, minify, sw, clean, preview));
 
 
 //gulp.task("build", gulp.series(clear, checkjs, checkcss, html, dialog, sprite, vendors, styleguidejs, styleguidecss, js, css, injectscripts, move, meta, a11ycheck, fingerprintscripts, fingerprintassets, svg, zipassets, raster, gulp.series(injectfullstory, injectga, injectgtm, injectmouseflow, robotstxt, sitemap, sw), clean, preview));
