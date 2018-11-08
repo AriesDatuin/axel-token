@@ -5,7 +5,7 @@
 		"short_name": "AXEL",
 		"url": "https://axeltoken.com/",
 		"start_url": "index.html",
-		"display": "standalone",
+		"display": "browser",
 		"description": "The AXEL (Autonomous eXchange via Entrusted Ledger) Blockchain is the next evolution of our platform, with a unique dual-chain architecture and delegated proof of stake consensus.",
 		
 		"favicon-16": "assets/icons/favicon-16x16.png",
