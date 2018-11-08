@@ -32,7 +32,7 @@
 		},
 
 		"ga": {
-			"allow": false,
+			"allow": true,
 			"url": "axeltoken.com",
 			"id": "UA-92957315-1",
 			"anonymizeIp": true,
@@ -47,12 +47,12 @@
 		},
 
 		"gtm": {
-			"allow": false,
+			"allow": true,
 			"id": "GTM-NQCR4WM"
 		},
 
 		"mouseflow": {
-			"allow": false,
+			"allow": true,
 			"id": "66e7a8ba-ba2a-42bc-98cb-cc72c6ac1b08"
 		},
 

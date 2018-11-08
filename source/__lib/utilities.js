@@ -349,7 +349,7 @@ var utilEmergence = function() {
 		container: emergenceWrapper,
 		reset: true,
 		handheld: true,
-		throttle: $updateInterval / 2,
+		throttle: $updateInterval,
 		elemCushion: 0,
 		offsetTop: 0,
 		offsetRight: 0,
@@ -399,7 +399,7 @@ var utilEmergence = function() {
 				/* ACTIVATE
 				/* -------------------------------------------------- */
 
-				$(element).find(".anim").not(animInteract).removeClass("anim-pause").addClass("anim-play");
+				$(element).find(".anim").removeClass("anim-pause").addClass("anim-play");
 				//$(element).find(".video[data-video-paused]").playVideo();
 
 
@@ -411,8 +411,8 @@ var utilEmergence = function() {
 					/* CACHE SELECTORS
 					/* -------------------------------------------------- */
 
-					var $hash = window.location.hash,
-						$hashID = $(element).attr("id");
+					//var $hash = window.location.hash,
+						//$hashID = $(element).attr("id");
 
 
 					/* -------------------------------------------------- */
@@ -474,7 +474,7 @@ var utilEmergence = function() {
 				/* DEACTIVATE
 				/* -------------------------------------------------- */
 
-				$(element).find(".anim").not(animInteract).addClass("anim-pause").removeClass("anim-play");
+				$(element).find(".anim").addClass("anim-pause").removeClass("anim-play");
 				$(element).find(".video[data-video-playing]").pauseVideo();
 
 

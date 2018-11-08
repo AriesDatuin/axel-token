@@ -5,8 +5,8 @@ var watchEvents = function() {
   var dataAnim = $("[data-anim]");
 
 
-  dataAnim.on("mousedown mouseover touchstart", function (ev) {
-
+  dataAnim.on("mouseover touchstart", function (ev) {
+console.log("mouseover");
     var self = $(this);
     var animTrigger = ev.target;
     var animPrefix = "anim-";
@@ -52,12 +52,12 @@ var watchEvents = function() {
       if (isNaN(animDataDuration)) {
         console.log("%c Animation Error : data-anim-duration can only be number or decimal", "color:red");
         console.log("%c Animation Fallback : data-anim-duration set to default", "color:orange");
-        twinNode.style.animationDuration = ".45s";
+        twinNode.style.animationDuration = "0.45s";
       } else {
         twinNode.style.animationDuration = animDataDuration + "s";
       }
     } else {
-      twinNode.style.animationDuration = ".45s";
+      twinNode.style.animationDuration = "0.45s";
     }
 
     //Easing Timing Function
@@ -104,11 +104,11 @@ var watchEvents = function() {
 
 
   /* +ADDED */
-  }).on("mouseup mouseout touchend", function (ev) {
+  }).on("mouseout touchend", function (ev) {
 
     var self = $(this);
 
-    //console.log( self.data("anim") )
+    console.log( self.data("anim") )
 
     //self.css( { "animation-iteration-count" : "1", "animation-name" : "none" } );
     self.addClass("anim-pause");
@@ -118,9 +118,9 @@ var watchEvents = function() {
 
 
 
-  $(".anim").on("mouseup mouseout touchend", function (ev) {
+  $(".anim").on("mouseout touchend", function (ev) {
 
-    //console.log("out");
+    console.log("out");
 
     var self = $(this);
 
@@ -130,11 +130,14 @@ var watchEvents = function() {
   });
   /* // +ADDED */
 
-
-
 }
 
-// If anim.js gets fetched asynchronously
+
+
+
+
+
+// If animations.microinteractions.js gets fetched asynchronously
 // We may or may not catch the DOMContentLoaded event
 if (document.readyState != "loading") {
   watchEvents();
