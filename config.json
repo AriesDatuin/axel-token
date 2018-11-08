@@ -3,8 +3,8 @@
 	"options": {
 		"name": "AXEL",
 		"site": "https://axeltoken.com",
-		"siteVersion": "2.4.8",
-		"styleguideVersion": "2.4.8",
+		"siteVersion": "2.4.7",
+		"styleguideVersion": "2.4.7",
 		"production": true,
 		"serviceworker": true,
 		"appBanner": false,
@@ -32,7 +32,7 @@
 		},
 
 		"ga": {
-			"allow": true,
+			"allow": false,
 			"url": "axeltoken.com",
 			"id": "UA-92957315-1",
 			"anonymizeIp": true,
@@ -47,12 +47,12 @@
 		},
 
 		"gtm": {
-			"allow": true,
+			"allow": false,
 			"id": "GTM-NQCR4WM"
 		},
 
 		"mouseflow": {
-			"allow": true,
+			"allow": false,
 			"id": "66e7a8ba-ba2a-42bc-98cb-cc72c6ac1b08"
 		},
 
